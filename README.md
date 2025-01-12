@@ -1,7 +1,7 @@
 ---
 modified: 2025-01-11T14:11:04+00:00
 created: 2024-12-15T23:25:04+01:00
-Website: [comphy-lab.org](https://publish.obsidian.md/comphy-lab/)
+website: https://publish.obsidian.md/comphy-lab/
 ---
 # Computational Multiphase Physics (CoMPhy)
 
