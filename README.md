@@ -35,7 +35,18 @@ Our research focuses on understanding complex fluid phenomena through computatio
 
 ## Contributing
 
-We welcome contributions from researchers, students, and collaborators. If you'd like to contribute to our documentation or research projects, please open a pull request at [GitHub](https://github.com/comphy-lab/CoMPhy-Lab-Blogs).
+We welcome contributions from researchers, students, and collaborators. Here's how you can contribute:
+
+1. **Issues**: Found a problem or have a suggestion? Open an issue using our templates:
+   - Use the Documentation Request template for suggesting new content
+   - Use the Content Correction template for reporting errors or outdated information
+
+2. **Pull Requests**: Want to contribute directly? 
+   - Fork the repository
+   - Make your changes
+   - Submit a pull request with a clear description of your changes
+
+Visit our [GitHub repository](https://github.com/comphy-lab/CoMPhy-Lab-Blogs) to get started.
 
 ---
 *Note: This documentation is maintained by the CoMPhy Lab team and is regularly updated with our latest research findings and computational methods.*
