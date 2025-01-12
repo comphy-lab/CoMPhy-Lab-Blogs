@@ -37,10 +37,10 @@ Our research focuses on understanding complex fluid phenomena through computatio
 
 We welcome contributions from researchers, students, and collaborators. Here's how you can contribute:
 
-1. **Issues**: Found a problem or have a suggestion? Open an issue using our templates:
-   - Use the Blog Topic Request template to suggest new blog topics
-   - Use the Documentation Request template for suggesting new documentation
-   - Use the Content Correction template for reporting errors or outdated information
+1. **Issues**: Found a problem or have a suggestion? Choose an option below:
+   - [🗣️ Request a new blog topic](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/issues/new?template=blog_topic_request.md&labels=blog-request,enhancement)
+   - [📚 Request documentation](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/issues/new?template=documentation_request.md&labels=documentation)
+   - [🔍 Report content correction](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/issues/new?template=content_correction.md&labels=correction)
 
 2. **Pull Requests**: Want to contribute directly? 
    - Fork the repository
