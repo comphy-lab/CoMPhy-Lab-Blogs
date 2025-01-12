@@ -38,7 +38,8 @@ Our research focuses on understanding complex fluid phenomena through computatio
 We welcome contributions from researchers, students, and collaborators. Here's how you can contribute:
 
 1. **Issues**: Found a problem or have a suggestion? Open an issue using our templates:
-   - Use the Documentation Request template for suggesting new content
+   - Use the Blog Topic Request template to suggest new blog topics
+   - Use the Documentation Request template for suggesting new documentation
    - Use the Content Correction template for reporting errors or outdated information
 
 2. **Pull Requests**: Want to contribute directly? 
