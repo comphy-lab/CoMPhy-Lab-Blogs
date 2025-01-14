@@ -1,5 +1,5 @@
 ---
-modified: 2025-01-12T23:02:15+01:00
+modified: 2025-01-13T14:13:30+01:00
 created: 2024-12-31T12:12:38+01:00
 tags:
   - non-Newtonian
@@ -11,6 +11,8 @@ tags:
 > Date published:: Dec 31, 2024<br>
 > Date modified:: Jan 12, 2025 at 22:46 CET
 
+> [!tldr] TL;DR
+> The **Herschel–Bulkley** model unifies Newtonian, Bingham, and power-law fluids via a yield stress and a strain-rate-dependent viscosity. An ￼$\epsilon$-regularization ensures stable computations and recovers simpler models (Newtonian, Bingham) by tuning model parameters. Dimensionless groups (e.g., the plasto-capillary number ￼ and the effective Ohnesorge) capture the interplay of fluid rheology, capillarity, and flow scales. Implementation details are provided, along with references, open-source code, and demonstrations of bubble-burst simulations in viscoplastic media.
 ## Features:
 * Yield stress $\tau_y$
 * Power law dependance on the strain rate
