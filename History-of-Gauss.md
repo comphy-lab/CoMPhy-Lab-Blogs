@@ -1,7 +1,12 @@
 ---
-modified: 2025-01-21T02:00:40+00:00
+modified: 2025-01-21T11:04:55+00:00
 created: 2025-01-21T00:56:59+00:00
 ---
+> [!significance] Metadata
+> Author:: [Vatsal Sanjay](https://vatsalsanjay.com)<br>
+> Date published:: Jan 21, 2025<br>
+> Date modified:: Jan 21, 2025 at 11:04 CET
+
 ## History of Gauss (and one recent event):
 
 Carl Friedrich Gauss (1777–1855) was a brilliant mathematician who made breakthroughs in just about every area of math and physics you can think of–he crunched numbers like a prodigy even as a kid, later proved key theorems in algebra and laid the groundwork for number theory, geometry, and analysis. Beyond math, he helped calculate the orbit of the dwarf planet Ceres, co-invented an early telegraph, and teamed up with physicist **Wilhelm Weber** to measure and model the Earth’s magnetic field. His name is attached to many concepts, including "Gauss’s law" (topic of this blog) in electromagnetism, which is a cornerstone in understanding electric fields. Gauss’s relentless curiosity earned him the nickname "the Prince of Mathematicians,” and his work remains at the heart of modern science and engineering. Even today—nearly two centuries after his death—people still visit his grave in Göttingen to pay homage (see figure below, 😉).

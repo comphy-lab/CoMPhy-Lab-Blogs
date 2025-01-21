@@ -1,8 +1,18 @@
 ---
-modified: 2025-01-21T04:05:04+00:00
+modified: 2025-01-21T04:29:00+00:00
 created: 2025-01-18T14:48:32+01:00
 status: Working 🏗️
 ---
+> [!link] Back to main website
+> [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
+
+# Gauss law of electrostatics
+
+> [!significance] Metadata
+> Author:: [Vatsal Sanjay](https://vatsalsanjay.com)<br>
+> Date published:: Jan 21, 2025<br>
+> Date modified:: Jan 21, 2025 at 04:08 CET
+
 > [!important] Pre-requisites 
 > I assume a working knowledge of 
 > * Electric field $\vec{E}$.
@@ -13,7 +23,8 @@ status: Working 🏗️
 > * [[Principle of superposition of electric fields]]
  
 ---
-## Question we ask: which of the following three surfaces will see he maximum flux of $\vec{E}$ pass through itself?
+
+## Question we ask: which of the following three surfaces will see the maximum flux of $\vec{E}$ pass through itself?
 
 ![fig1](20250121002320090_Gauss%20law%20of%20Electrostatics.png)
 Fig. A cone, a sphere, and a batman symbol (enclose it in the front and the back) encircle a lonely charge of magnitude $q$. Which of the three will experience maximum eleectric field flux passing through them? This is perhaps the most counterintuitive result of the Gauss law. 
@@ -238,6 +249,8 @@ Gauss' law is agnostic to the number of dimensions in the problem. In this note,
 1. How does the Coulomb's law change in 2D?
 2. Adapt Gauss’s law to a 2D problem, where **flux** becomes a line integral around a closed loop. Consider a point charge qqq in a 2D plane. Choose a circle of radius $r$ around the charge as the "Gaussian" boundary. Compute the total radial component of $\vec{E}$ along this circle and show that it is proportional to $q/\varepsilon_0$ (with an appropriate constant reflecting 2D geometry).
 3. For a hypothetical "4D" space, the electric field of a point charge might scale differently with distance. Use dimensional analysis to argue how Gauss’s law might look there, and what the "closed surface” would mean in 4D. **Hint:** Highlight the dimension-agnostic idea that flux = enclosed charge/$\varepsilon_0$​ remains structurally the same, although radius-dependencies of $\vec{E}$ and definitions of "surface" change with dimension.
+
+**Note:** To submit answers to the questions above or in case you find a mistake in this note, please feel free to open a pull request at the repository: [link to repository](https://github.com/comphy-lab/CoMPhy-Lab-Blogs).
 
 ---
 > [!testy] Some side notes:

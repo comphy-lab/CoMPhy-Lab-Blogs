@@ -21,11 +21,22 @@ Our research focuses on understanding complex fluid phenomena through computatio
 
 ## Published Notes and Documentation
 
-### 2025
+### Seminar talks/resources:
+#### 2025
+1. 2025-01-19 [[Seminar-UIUC-abstract]]
+   - UIUC fluid seminar abstract exploring polymeric flows as a tunable testbed for unsteady, nonlinear continuum mechanics.
+
+### Lecture notes:
+#### 2025
+1. 2025-01-21 [[Gauss law of Electrostatics]]
+   - Analysis of electric field flux through different surfaces using Gauss's law, with visual demonstrations.
+
+### Blog posts:
+#### 2025
 1. 2025-01-11 [[Features-of-capillary-waves-during-asymmetric-bubble-coalescence]]
    - Analysis of capillary wave dynamics during bubble coalescence, focusing on energy transfer and wave propagation mechanisms.
 
-### 2024
+#### 2024
 1. 2024-12-31 [[Herschel–Bulkley formulation]]
    - Mathematical formulation of the Herschel-Bulkley model for non-Newtonian flows, with emphasis on yield stress fluids.
 
@@ -47,7 +58,7 @@ We welcome contributions from researchers, students, and collaborators. Here's h
 
 2. **Pull Requests**: Want to contribute directly? 
    - Fork the repository
-   - Make your changes
+   - Make your changes (it can simply be correcting grammar or making a new post - simply write in plain text or markdown format and add it to the root folder).
    - Submit a pull request with a clear description of your changes
 
 Visit our [GitHub repository](https://github.com/comphy-lab/CoMPhy-Lab-Blogs) to get started.
