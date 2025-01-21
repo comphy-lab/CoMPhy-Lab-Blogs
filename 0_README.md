@@ -1,9 +1,12 @@
 ---
-modified: 2025-01-11T14:11:04+00:00
+modified: 2025-01-19T21:58:04+00:00
 created: 2024-12-15T23:25:04+01:00
 website: https://publish.obsidian.md/comphy-lab/
 ---
 # Computational Multiphase Physics (CoMPhy)
+
+> [!meta] Back to main website
+> [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
 
 Welcome to the CoMPhy Lab's documentation hub! We are based at the Physics of Fluids Department at the University of Twente, where we explore non-Newtonian free-surface flows and soft matter singularities.
 

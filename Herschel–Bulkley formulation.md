@@ -1,13 +1,16 @@
 ---
-modified: 2025-01-13T14:13:30+01:00
+modified: 2025-01-19T21:51:08+00:00
 created: 2024-12-31T12:12:38+01:00
 tags:
   - non-Newtonian
   - Herschel-Bulkley-model
 ---
 # Herschel–Bulkley formulation for non-Newtonian flows
+> [!meta] Back to main website
+> [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
+
 > [!significance] Metadata
-> Author:: [Vatsal Sanjay](https://comphy-lab.org/VatsalSy)
+> Author:: [Vatsal Sanjay](https://vatsalsanjay.com)
 > Date published:: Dec 31, 2024<br>
 > Date modified:: Jan 12, 2025 at 22:46 CET
 
