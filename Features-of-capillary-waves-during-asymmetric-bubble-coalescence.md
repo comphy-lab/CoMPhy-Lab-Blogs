@@ -1,14 +1,16 @@
 ---
-modified: 2025-01-13T13:59:21+01:00
+modified: 2025-01-19T21:51:23+00:00
 created: 2025-01-11T13:58:29+00:00
 tags:
   - bubbles
   - capillary-waves
 ---
 # Features of capillary waves during asymmetric bubble coalescence
+> [!meta] Back to main website
+> [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
 
 > [!significance] Metadata
-> Author:: [Vatsal Sanjay](https://comphy-lab.org/VatsalSy)
+> Author:: [Vatsal Sanjay](https://vatsalsanjay.com)
 > Date published:: Jan 12, 2025<br>
 > Date modified:: Jan 12, 2025 at 22:07 CET
 
