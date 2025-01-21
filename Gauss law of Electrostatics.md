@@ -1,5 +1,5 @@
 ---
-modified: 2025-01-21T04:29:00+00:00
+modified: 2025-01-21T13:46:45+00:00
 created: 2025-01-18T14:48:32+01:00
 status: Working 🏗️
 ---
@@ -113,7 +113,7 @@ $$
 > [!danger] Displace the charge all you want, it won’t change the flux
 > The flux of $\vec{E}$ only depends on the amount of charge contained inside a Gaussian surface and not on whether or not the charge is moving inside the space enclosed by this Gaussian surface.
 
-**Remarkable property:** If charges are moved around **but do not cross** the boundary of **A**, the flux of **E** through **A** remains **unchanged**. Despite this unchanging flux, the field **E** itself can undergo substantial modifications everywhere else. Conversely, if charges **do** cross the boundary of **A**, the flux through **A** will generally change.
+**Remarkable property:** If charges are moved around **but do not cross** the boundary of $A$, the flux of $E$ through $A$ remains **unchanged**. Despite this unchanging flux, the field $E$ itself can undergo substantial modifications everywhere else. Conversely, if charges **do** cross the boundary of $A$, the flux through $A$ will generally change.
 
 > [!danger] A charge outside the Gaussian surface imparts net zero flux in that control surface
 > It is easier to see by construction that electric field lines coming out of a charge outside a Gaussian surface will pass straight through without creating any global flux. 
