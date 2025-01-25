@@ -4,31 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "dd97bf82cf78de7a",
+        "id": "9f8d53c02fe85d2f",
         "type": "tabs",
         "children": [
           {
-            "id": "99d5a82c7089d8f3",
+            "id": "619479f1caf855c0",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Lecture-Notes/Gauss law of Electrostatics.md",
-                "mode": "preview",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Gauss law of Electrostatics"
+              "type": "home-tab-view",
+              "state": {},
+              "icon": "search",
+              "title": "Home tab"
             }
           }
         ]
@@ -108,7 +94,6 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "Lecture-Notes/Gauss law of Electrostatics.md",
                 "options": {
                   "collapse-filter": false,
                   "search": "",
@@ -136,7 +121,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "Graph of Gauss law of Electrostatics"
+              "title": "Graph view"
             }
           }
         ]
@@ -159,13 +144,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lecture-Notes/Gauss law of Electrostatics.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Gauss law of Electrostatics"
+              "title": "Outline"
             }
           },
           {
@@ -256,15 +240,15 @@
       "callout-manager:Insert Callout": false
     }
   },
-  "active": "99d5a82c7089d8f3",
+  "active": "619479f1caf855c0",
   "lastOpenFiles": [
+    "Lecture-Notes/Gauss law of Electrostatics.md",
     "0_README.md",
     "Talks/Seminar-UIUC-abstract.md",
     "Talks/Seminar-UIUC-abstract.pdf",
     "Blog/Herschel–Bulkley formulation.pdf",
     "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.pdf",
     "Blog/Herschel–Bulkley formulation.md",
-    "Lecture-Notes/Gauss law of Electrostatics.md",
     "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
     "Lecture-Notes/Seminar-UIUC-abstract.md",
     "Lecture-Notes/Herschel–Bulkley formulation.md",
