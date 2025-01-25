@@ -1,0 +1,16 @@
+{
+  "cssTheme": "Obsidian gruvbox",
+  "baseFontSizeAction": false,
+  "baseFontSize": 16,
+  "interfaceFontFamily": "Hack,Computer Modern",
+  "textFontFamily": "Hack,Computer Modern",
+  "monospaceFontFamily": "Hack,Computer Modern",
+  "enabledCssSnippets": [
+    "supercharged-links-gen",
+    "custom-panel"
+  ],
+  "translucency": true,
+  "showViewHeader": true,
+  "nativeMenus": true,
+  "showRibbon": true
+}

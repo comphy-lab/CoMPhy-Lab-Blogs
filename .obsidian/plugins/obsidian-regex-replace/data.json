@@ -1,0 +1,10 @@
+{
+  "findText": "\\bb",
+  "replaceText": "",
+  "useRegEx": false,
+  "selOnly": false,
+  "caseInsensitive": true,
+  "processLineBreak": true,
+  "processTab": false,
+  "prefillFind": true
+}

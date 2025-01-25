@@ -1,0 +1,22 @@
+{
+  "attachmentFolderPath": "_Media",
+  "showUnsupportedFiles": true,
+  "newFileLocation": "root",
+  "newFileFolderPath": "",
+  "alwaysUpdateLinks": true,
+  "promptDelete": false,
+  "showLineNumber": true,
+  "propertiesInDocument": "visible",
+  "strictLineBreaks": true,
+  "tabSize": 2,
+  "showInlineTitle": true,
+  "pdfExportSettings": {
+    "includeName": false,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 74
+  },
+  "trashOption": "system",
+  "defaultViewMode": "preview"
+}

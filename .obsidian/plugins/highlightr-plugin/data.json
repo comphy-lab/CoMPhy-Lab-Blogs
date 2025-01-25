@@ -1,0 +1,22 @@
+{
+  "highlighterStyle": "realistic",
+  "highlighterMethods": "css-classes",
+  "highlighters": {
+    "RED": "#cc241d",
+    "ORANGE": "#D65D0E",
+    "YELLOW": "#FABD2F",
+    "GREEN": "#98971A",
+    "BLUE": "#458588",
+    "GREY": "#928374",
+    "PURPLE": "#B16286"
+  },
+  "highlighterOrder": [
+    "RED",
+    "ORANGE",
+    "YELLOW",
+    "GREEN",
+    "BLUE",
+    "PURPLE",
+    "GREY"
+  ]
+}
