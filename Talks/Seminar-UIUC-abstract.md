@@ -3,6 +3,7 @@ modified: 2025-01-19T21:51:14+00:00
 created: 2025-01-19T18:50:50+00:00
 aliases:
   - Seminar-UIUC-abstract
+status: done ✅
 ---
 # Can polymeric flows be the Drosophila of continuum mechanics?
 > [!meta] Back to main website
