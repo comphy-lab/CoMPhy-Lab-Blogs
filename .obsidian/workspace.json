@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "9f8d53c02fe85d2f",
+        "id": "bfc7cbc8ca9d76d3",
         "type": "tabs",
         "children": [
           {
-            "id": "619479f1caf855c0",
+            "id": "1211caee5b27bd63",
             "type": "leaf",
             "state": {
               "type": "home-tab-view",
@@ -240,8 +240,11 @@
       "callout-manager:Insert Callout": false
     }
   },
-  "active": "619479f1caf855c0",
+  "active": "1211caee5b27bd63",
   "lastOpenFiles": [
+    "Blog/Stokes waves_arbitary order.md",
+    "_Media/Stokes waves_arbitary order-20250125232439287.png",
+    "_Media/Stokes waves_arbitary order-20250125232359069.png",
     "Lecture-Notes/Gauss law of Electrostatics.md",
     "0_README.md",
     "Talks/Seminar-UIUC-abstract.md",
@@ -275,7 +278,6 @@
     "Gaussian surface is very similar to the control volume in fluid mechanics.md",
     "Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
     "0_ToDo-Blog-public.md",
-    "What is electric field flux?.md",
     "_scripts",
     "_Media/Gauss-law-in-electrostatics-20250119215311743.png",
     "_Media/20250121032315000_Gauss law of Electrostatics.png",
@@ -285,8 +287,6 @@
     "_Media/20250112214243110_Features-of-capillary-waves-during-asymmetric-bubble-coalescence.png",
     "_Media/20250112214226072_Features-of-capillary-waves-during-asymmetric-bubble-coalescence.png",
     "_Media/20250112214151030_Features-of-capillary-waves-during-asymmetric-bubble-coalescence.png",
-    "_Media/20250112214130458_Features-of-capillary-waves-during-asymmetric-bubble-coalescence.png",
-    "_Media/20250112214056729_Features-of-capillary-waves-during-asymmetric-bubble-coalescence.png",
     "Inbox/Untitled.canvas"
   ]
 }

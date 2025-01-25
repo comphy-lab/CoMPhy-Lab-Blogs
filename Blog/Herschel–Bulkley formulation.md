@@ -6,6 +6,7 @@ tags:
   - Herschel-Bulkley-model
 aliases:
   - Herschel–Bulkley formulation
+status: done ✅
 ---
 # Herschel–Bulkley formulation for non-Newtonian flows
 > [!meta] Back to main website

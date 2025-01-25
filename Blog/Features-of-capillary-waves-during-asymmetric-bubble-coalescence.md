@@ -5,6 +5,7 @@ tags:
   - bubbles
   - capillary-waves
 alias: Features-of-capillary-waves-during-asymmetric-bubble-coalescence
+status: done ✅
 ---
 # Features of capillary waves during asymmetric bubble coalescence
 > [!meta] Back to main website
