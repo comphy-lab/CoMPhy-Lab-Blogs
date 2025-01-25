@@ -1,0 +1,22 @@
+{
+  "deletionDestination": "obsidian",
+  "obsidianTrashCleanupAge": 7,
+  "excludeInclude": 0,
+  "excludedFolders": [
+    "_FileOrganizer2000/Fabric",
+    "Templates",
+    "_scripts"
+  ],
+  "attachmentsExcludeInclude": 0,
+  "attachmentExtensions": [
+    "md",
+    "pdf",
+    "sty",
+    "css"
+  ],
+  "deletionConfirmation": true,
+  "runOnStartup": true,
+  "removeFolders": true,
+  "ignoredFrontmatter": [],
+  "ignoreAllFrontmatter": false
+}

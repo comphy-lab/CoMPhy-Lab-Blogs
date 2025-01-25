@@ -1,0 +1,8 @@
+{
+  "openExternalURLs": true,
+  "enableAdblocking": true,
+  "searchEngine": "custom",
+  "markdownPath": "_FileOrganizer2000/Inbox",
+  "homepage": "https://chatgpt.com/",
+  "customSearchEngine": "https://chat.openai.com/?q=%s"
+}
