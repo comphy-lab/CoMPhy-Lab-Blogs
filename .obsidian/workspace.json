@@ -4,35 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "10cebce252ef67e7",
+        "id": "5d7bafb6517c235b",
         "type": "tabs",
         "children": [
           {
-            "id": "5b6c0e03f9ece883",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Lecture-Notes/Gauss law of Electrostatics.md",
-                "mode": "preview",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Gauss law of Electrostatics"
-            }
-          },
-          {
-            "id": "ba5567caeb911b84",
+            "id": "11bd7aeeee125829",
             "type": "leaf",
             "state": {
               "type": "home-tab-view",
@@ -41,8 +17,7 @@
               "title": "Home tab"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -265,17 +240,17 @@
       "callout-manager:Insert Callout": false
     }
   },
-  "active": "ba5567caeb911b84",
+  "active": "11bd7aeeee125829",
   "lastOpenFiles": [
-    "Code-Documentations",
+    "0_README.md",
+    "README.md",
     "Lecture-Notes/Gauss law of Electrostatics.md",
+    "Code-Documentations",
     "_AtomicNotes/Relationship between rate of change of a physical quantity and its divergence.md",
     "Talks/Seminar-UIUC-abstract.md",
     "Code-Documentations/Herschel–Bulkley formulation.md",
     "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
-    "README.md",
     "0_ToDo-Blog-public.md",
-    "0_README.md",
     "Blog/Stokes waves_arbitary order.md",
     "_Media/Stokes waves_arbitary order-20250125232439287.png",
     "_Media/Stokes waves_arbitary order-20250125232359069.png",
@@ -308,7 +283,6 @@
     "_Media/Gauss-law-in-electrostatics-20250119215311743.png",
     "_Media/20250121032315000_Gauss law of Electrostatics.png",
     "_Media/plates.png",
-    "Seminar-UIUC-abstract.pdf",
     "_Media/20250112214304930_Features-of-capillary-waves-during-asymmetric-bubble-coalescence.png",
     "_Media/20250112214243110_Features-of-capillary-waves-during-asymmetric-bubble-coalescence.png",
     "_Media/20250112214226072_Features-of-capillary-waves-during-asymmetric-bubble-coalescence.png",
