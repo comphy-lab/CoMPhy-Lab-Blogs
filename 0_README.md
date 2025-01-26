@@ -1,7 +1,7 @@
 ---
 modified: 2025-01-25T14:46:37+01:00
 created: 2024-12-15T23:25:04+01:00
-website: https://publish.obsidian.md/comphy-lab/
+website: https://blogs-comphy-lab.org/
 status: done ✅
 ---
 # Computational Multiphase Physics (CoMPhy)
@@ -13,12 +13,7 @@ Welcome to the CoMPhy Lab's documentation hub! We are based at the Physics of Fl
 
 ## About Us
 
-Our research focuses on understanding complex fluid phenomena through computational methods and theoretical modeling. We specialize in:
-
-- Non-Newtonian free-surface flows
-- Soft matter singularities
-- Computational fluid dynamics
-- Multiphase physics
+See: [About us](https://comphy-lab.org/about)
 
 ## Published Notes and Documentation
 

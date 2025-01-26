@@ -1,5 +1,5 @@
 ---
-modified: 2025-01-19T21:51:08+00:00
+modified: 2025-01-26T11:51:01+01:00
 created: 2024-12-31T12:12:38+01:00
 tags:
   - non-Newtonian
@@ -8,15 +8,15 @@ aliases:
   - Herschel–Bulkley formulation
 status: done ✅
 ---
-# Herschel–Bulkley formulation for non-Newtonian flows
 > [!meta] Back to main website
 > [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
 
-> [!significance] Metadata
+> [!significance]- Metadata
 > Author:: [Vatsal Sanjay](https://vatsalsanjay.com)
 > Date published:: Dec 31, 2024<br>
-> Date modified:: Jan 12, 2025 at 22:46 CET
+> Date modified:: Jan 26, 2025 at 11:50 CET
 
+# Herschel–Bulkley formulation for non-Newtonian flows
 > [!tldr] TL;DR
 > The **Herschel–Bulkley** model unifies Newtonian, Bingham, and power-law fluids via a yield stress and a strain-rate-dependent viscosity. An ￼$\epsilon$-regularization ensures stable computations and recovers simpler models (Newtonian, Bingham) by tuning model parameters. Dimensionless groups (e.g., the plasto-capillary number ￼ and the effective Ohnesorge) capture the interplay of fluid rheology, capillarity, and flow scales. Implementation details are provided, along with references, open-source code, and demonstrations of bubble-burst simulations in viscoplastic media.
 ## Features:
