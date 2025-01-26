@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "0_README",
+      "path": "0_README.md"
+    },
+    {
+      "basename": "README",
+      "path": "README.md"
+    },
+    {
       "basename": "Gauss law of Electrostatics",
       "path": "Lecture-Notes/Gauss law of Electrostatics.md"
     },
@@ -23,10 +31,6 @@
     {
       "basename": "0_ToDo-Blog-public",
       "path": "0_ToDo-Blog-public.md"
-    },
-    {
-      "basename": "0_README",
-      "path": "0_README.md"
     },
     {
       "basename": "Stokes waves_arbitary order",
