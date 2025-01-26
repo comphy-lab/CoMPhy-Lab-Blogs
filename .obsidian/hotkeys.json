@@ -98,7 +98,7 @@
     }
   ],
   "global-search:open": [],
-  "omnisearch:show-modal-infile": [
+  "editor:open-search": [
     {
       "modifiers": [
         "Mod"
@@ -106,7 +106,6 @@
       "key": "F"
     }
   ],
-  "editor:open-search": [],
   "file-explorer:new-file-in-new-pane": [],
   "editor:toggle-source": [
     {

@@ -2239,7 +2239,7 @@ border-radius: 1.5em;} */
 }
 
 .nav-folder-title[data-path^='_Media'] {
-  background-color: #d3869b;  /* soft pink */
+  background-color: #8ec07c;  /* soft pink */
   color: var(--background-primary);
 }
 .nav-folder-title[data-path^='_Media'] .nav-folder-title-content::before {
@@ -2520,7 +2520,7 @@ border-radius: 1.5em;} */
 }
 
 .nav-folder-title[data-path^='_Media'] {
-  background-color: #d3869b;  /* gruvbox pink */
+  background-color: #8ec07c;  /* gruvbox pink */
   color: var(--background-primary);
 }
 
@@ -2567,4 +2567,13 @@ border-radius: 1.5em;} */
 
 .nav-folder-title[data-path^='Talks'] .nav-folder-title-content::before {
   content: "🎤";
+}
+
+.nav-folder-title[data-path^='Code-Documentations'] {
+  background-color: #b16286;  /* gruvbox purple */
+  color: var(--background-primary);
+}
+.nav-folder-title[data-path^='Code-Documentations'] .nav-folder-title-content::before {
+  content: "📚 ";
+  font-size: 1.3em;
 }

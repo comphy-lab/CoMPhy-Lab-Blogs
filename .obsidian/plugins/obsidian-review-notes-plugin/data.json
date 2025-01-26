@@ -2973,7 +2973,7 @@
       "filename": "Features-of-capillary-waves-during-asymmetric-bubble-coalescence"
     },
     {
-      "path": "Blog/Herschel–Bulkley formulation.md",
+      "path": "Code-Documentations/Herschel–Bulkley formulation.md",
       "filename": "Herschel–Bulkley formulation"
     },
     {
@@ -2987,6 +2987,10 @@
     {
       "path": "_Media/Stokes waves_arbitary order-20250125232439287.png",
       "filename": "Stokes waves_arbitary order-20250125232439287"
+    },
+    {
+      "path": "_AtomicNotes/Relationship between rate of change of a physical quantity and its divergence.md",
+      "filename": "Relationship between rate of change of a physical quantity and its divergence"
     }
   ]
 }

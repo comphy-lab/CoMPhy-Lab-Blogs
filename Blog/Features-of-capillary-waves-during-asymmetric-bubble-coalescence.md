@@ -1,5 +1,5 @@
 ---
-modified: 2025-01-25T13:56:28+01:00
+modified: 2025-01-26T11:49:57+01:00
 created: 2025-01-11T13:58:29+00:00
 tags:
   - bubbles
@@ -7,15 +7,15 @@ tags:
 alias: Features-of-capillary-waves-during-asymmetric-bubble-coalescence
 status: done ✅
 ---
-# Features of capillary waves during asymmetric bubble coalescence
 > [!meta] Back to main website
 > [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
 
-> [!significance] Metadata
+> [!significance]- Metadata
 > Author:: [Vatsal Sanjay](https://vatsalsanjay.com)
 > Date published:: Jan 12, 2025<br>
-> Date modified:: Jan 12, 2025 at 22:07 CET
+> Date modified:: Jan 26, 2025 at 11:50 CET
 
+# Features of capillary waves during asymmetric bubble coalescence
 > [!tldr] TL;DR
 > During the coalescence of bubbles with different sizes, the **speed** of the ensuing capillary waves remains almost unchanged and scales with the inertio‐capillary velocity. However, the strength (or curvature) of these waves depends on the bubble size ratio. In the equal‐sized case, the wave curvature diminishes and then plateaus, whereas for highly asymmetric (large vs. tiny) bubbles, the curvature initially decreases but then rebounds sharply due to the changing geometry. Two **approximate** scaling laws emerge for the strongest wave curvature: ￼ in the low‐viscosity limit and ￼ in the moderate‐to‐higher viscosity regime. Experimental data diverge somewhat from these simple power laws, indicating a need for refined models to explain the distinct curvature behavior at low Ohnesorge numbers.
 
