@@ -1,9 +1,9 @@
 ---
-modified: 2025-01-25T14:46:37+01:00
+modified: 2025-01-28T20:28:39+01:00
 created: 2024-12-15T23:25:04+01:00
 website: https://blogs-comphy-lab.org/
 publish: false
-status: done 
+status: done
 ---
 
 # CoMPhy Lab Blog Repository
@@ -59,7 +59,7 @@ We have templates for different types of issues:
 
 ### Local Development
 
-1. Install [Obsidian](https://obsidian.md/)
+1. Install [Obsidian](https://obsidian.md/) (recommended but not necessary)
 2. Clone this repository
 3. Open the repository as an Obsidian vault
 4. Make your changes

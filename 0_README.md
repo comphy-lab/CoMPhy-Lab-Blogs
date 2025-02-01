@@ -1,14 +1,10 @@
 ---
-modified: 2025-01-26T21:24:10+01:00
+modified: 2025-01-28T20:27:47+01:00
 created: 2024-12-15T23:25:04+01:00
 website: https://blogs-comphy-lab.org/
 status: done ✅
 ---
 # Computational Multiphase Physics (CoMPhy)
-
-> [!meta] Back to main website
-> [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
-
 Welcome to the CoMPhy Lab's documentation hub! We are based at the Physics of Fluids Department at the University of Twente, where we explore non-Newtonian free-surface flows and soft matter singularities.
 
 ## About Us
@@ -62,3 +58,6 @@ Visit our [GitHub repository](https://github.com/comphy-lab/CoMPhy-Lab-Blogs) to
 
 ---
 *Note: This documentation is maintained by the CoMPhy Lab team and is regularly updated with our latest research findings and computational methods.*
+
+> [!meta] Back to main website
+> [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
