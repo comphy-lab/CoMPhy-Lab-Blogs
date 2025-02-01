@@ -1,5 +1,5 @@
 ---
-modified: 2025-01-26T11:51:01+01:00
+modified: 2025-01-28T20:26:35+01:00
 created: 2024-12-31T12:12:38+01:00
 tags:
   - non-Newtonian
@@ -8,14 +8,6 @@ aliases:
   - Herschel–Bulkley formulation
 status: done ✅
 ---
-> [!meta] Back to main website
-> [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
-
-> [!significance]- Metadata
-> Author:: [Vatsal Sanjay](https://vatsalsanjay.com)
-> Date published:: Dec 31, 2024<br>
-> Date modified:: Jan 26, 2025 at 11:50 CET
-
 # Herschel–Bulkley formulation for non-Newtonian flows
 > [!tldr] TL;DR
 > The **Herschel–Bulkley** model unifies Newtonian, Bingham, and power-law fluids via a yield stress and a strain-rate-dependent viscosity. An ￼$\epsilon$-regularization ensures stable computations and recovers simpler models (Newtonian, Bingham) by tuning model parameters. Dimensionless groups (e.g., the plasto-capillary number ￼ and the effective Ohnesorge) capture the interplay of fluid rheology, capillarity, and flow scales. Implementation details are provided, along with references, open-source code, and demonstrations of bubble-burst simulations in viscoplastic media.
@@ -119,3 +111,11 @@ Reproduced from: [P.-Y. Lagrée's Sandbox](http://basilisk.fr/sandbox/M1EMN/Exem
 [1] N. J. Balmforth, I. A. Frigaard, and G. Ovarlez, “Yielding to Stress: Recent Developments in Viscoplastic Fluid Mechanics,” _Annu. Rev. Fluid Mech._, vol. 46, pp. 121–146, Jan. 2014, doi: [10.1146/annurev-fluid-010313-141424](https://doi.org/10.1146/annurev-fluid-010313-141424).
 
 [2] V. Sanjay, D. Lohse, and M. Jalaal, “Bursting bubble in a viscoplastic medium,” _J. Fluid Mech._, vol. 922, p. A2, 2021.
+
+> [!significance]- Metadata
+> Author:: [Vatsal Sanjay](https://vatsalsanjay.com)
+> Date published:: Dec 31, 2024<br>
+> Date modified:: Jan 26, 2025 at 11:50 CET
+
+> [!meta] Back to main website
+> [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)

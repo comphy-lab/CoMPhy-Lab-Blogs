@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "5d7bafb6517c235b",
+        "id": "86877c6685af3073",
         "type": "tabs",
         "children": [
           {
-            "id": "11bd7aeeee125829",
+            "id": "18d17c367547b470",
             "type": "leaf",
             "state": {
               "type": "home-tab-view",
@@ -240,21 +240,23 @@
       "callout-manager:Insert Callout": false
     }
   },
-  "active": "11bd7aeeee125829",
+  "active": "18d17c367547b470",
   "lastOpenFiles": [
-    "0_README.md",
+    "Talks/Seminar-UIUC-abstract.md",
     "README.md",
+    "Private-ToDo-Blog-public.md",
+    "0_ToDo-Blog-public.md",
+    "0_README.md",
     "Lecture-Notes/Gauss law of Electrostatics.md",
+    "Code-Documentations/Herschel–Bulkley formulation.md",
+    "Blog/Thesis-Viscous Free-Surface Flows.md",
+    "Blog/Stokes waves_arbitary order.md",
+    "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
+    "Talks/Seminar-UIUC-abstract.pdf",
     "Code-Documentations",
     "_AtomicNotes/Relationship between rate of change of a physical quantity and its divergence.md",
-    "Talks/Seminar-UIUC-abstract.md",
-    "Code-Documentations/Herschel–Bulkley formulation.md",
-    "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
-    "0_ToDo-Blog-public.md",
-    "Blog/Stokes waves_arbitary order.md",
     "_Media/Stokes waves_arbitary order-20250125232439287.png",
     "_Media/Stokes waves_arbitary order-20250125232359069.png",
-    "Talks/Seminar-UIUC-abstract.pdf",
     "Code-Documentations/Herschel–Bulkley formulation.pdf",
     "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.pdf",
     "Lecture-Notes/Seminar-UIUC-abstract.md",
@@ -277,8 +279,6 @@
     "Principle of superposition of electric fields.md",
     "permittivity of free space.md",
     "History-of-Gauss.md",
-    "Herschel–Bulkley formulation.md",
-    "Geometric description of electric field.md",
     "_scripts",
     "_Media/Gauss-law-in-electrostatics-20250119215311743.png",
     "_Media/20250121032315000_Gauss law of Electrostatics.png",

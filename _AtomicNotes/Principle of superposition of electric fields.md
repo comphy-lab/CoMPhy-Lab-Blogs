@@ -2,6 +2,7 @@
 modified: 2025-01-21T11:05:30+00:00
 created: 2025-01-21T01:44:54+00:00
 type: atomic note
+status: done ✅
 ---
 > [!significance] Metadata
 > Author:: [Vatsal Sanjay](https://vatsalsanjay.com)<br>

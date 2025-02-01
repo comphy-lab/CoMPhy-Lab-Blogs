@@ -1,13 +1,10 @@
 ---
-modified: 2025-01-19T21:58:28+00:00
+modified: 2025-01-28T20:28:10+01:00
 created: 2025-01-02T00:26:54+01:00
 status: Working 🏗️
 tags:
   - "#TODO-master"
 ---
-> [!meta] Back to main website
-> [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
-
 ![CoMPhy-Lab](_Media/CoMPhy-Lab-no-name.png)
 
 Here is a list of things on our to-publish list:
@@ -104,3 +101,8 @@ Below is a list of all the papers and the thesis requiring a dedicated blog post
 
 - [ ] **On air entrainment in a water pool by impingement of a jet**  
   Link: [DOI](https://doi.org/10.1002/aic.15828)
+
+---
+
+> [!meta] Back to main website
+> [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)

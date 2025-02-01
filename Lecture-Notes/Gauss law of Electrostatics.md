@@ -1,18 +1,11 @@
 ---
-modified: 2025-01-26T21:23:15+01:00
+modified: 2025-01-28T20:27:15+01:00
 created: 2025-01-18T14:48:32+01:00
-status: Working 🏗️
+status: done ✅
 aliases:
   - Gauss law of Electrostatics
 ---
-> [!link] Back to main website
-> [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
-
-> [!significance]- Metadata
-> Author:: [Vatsal Sanjay](https://vatsalsanjay.com)<br>
-> Date published:: Jan 21, 2025<br>
-> Date modified:: Jan 25, 2025 at 14:22 
-
+# Gauss law of electrostatics
 > [!important]- Pre-requisites 
 > I assume a working knowledge of 
 > * Electric field $\vec{E}$.
@@ -22,7 +15,6 @@ aliases:
 > $E = q/(4\pi\varepsilon_0r^2)$
 > * [[Principle of superposition of electric fields]]
 
-# Gauss law of electrostatics
 > [!tldr] TL;DR
 > Gauss’ law states that the net electric flux through any closed surface is proportional to the total charge enclosed inside it. Its integral form, $\oint \vec{E} \cdot d\vec{A} = q_{\text{in}}/\varepsilon_0$, is most practically used with high‐symmetry geometries (spherical, cylindrical, planar). Even though it might seem universal, using it directly for complex geometries often requires additional methods. The differential form, $\vec{\nabla} \cdot \vec{E} = \rho/\varepsilon_0$, underpins charge‐field relationships in Maxwell’s equations. Key insights include: _flux remains invariant if charges stay within the boundary_, and _external charges yield zero net flux through a given surface_. Applications to spherical shells, infinite planes, and wires highlight its computational utility. However, without symmetry, one typically reverts to direct integration or other approaches.
 
@@ -385,3 +377,11 @@ $$
 > * To explore some history, see: [[History-of-Gauss]]
 > * Here, we discuss a lot about Gaussian surfaces. The fluid dynamicist in me cannot help but point out that a [[Gaussian surface is very similar to the control volume in fluid mechanics]]. 💡
 ---
+
+> [!significance]- Metadata
+> Author:: [Vatsal Sanjay](https://vatsalsanjay.com)<br>
+> Date published:: Jan 21, 2025<br>
+> Date modified:: Jan 25, 2025 at 14:22 
+
+> [!link] Back to main website
+> [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)

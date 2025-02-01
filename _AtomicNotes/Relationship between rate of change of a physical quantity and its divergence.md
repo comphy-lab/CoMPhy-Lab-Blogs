@@ -3,6 +3,7 @@ modified: 2025-01-26T11:54:13+01:00
 created: 2025-01-26T11:17:08+01:00
 aliases:
   - Relationship between rate of change of a physical quantity and its divergence
+status: done ✅
 ---
 # Relationship between rate of change of a physical quantity and its divergence
 
