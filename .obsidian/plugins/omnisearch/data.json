@@ -1,6 +1,7 @@
 {
   "useCache": true,
   "hideExcluded": false,
+  "recencyBoost": "0",
   "downrankedFoldersFilters": [
     "_Media",
     "_FileOrganizer2000",

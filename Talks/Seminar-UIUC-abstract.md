@@ -1,9 +1,9 @@
 ---
-modified: 2025-01-28T22:27:37+01:00
+modified: 2025-02-22T00:04:42+01:00
 created: 2025-01-19T18:50:50+00:00
 aliases:
   - Seminar-UIUC-abstract
-status: done ✅
+status: Working 🏗️
 ---
 # Can polymeric flows be the Drosophila of continuum mechanics?
 

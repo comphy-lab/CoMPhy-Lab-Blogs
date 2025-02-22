@@ -1,5 +1,5 @@
 ---
-modified: 2025-01-28T20:27:47+01:00
+modified: 2025-02-02T21:29:46+01:00
 created: 2024-12-15T23:25:04+01:00
 website: https://blogs-comphy-lab.org/
 status: done ✅
@@ -15,23 +15,23 @@ See: [About us](https://comphy-lab.org/about)
 
 ### Blog posts:
 #### 2025
-1. 2025-01-11 [[Features-of-capillary-waves-during-asymmetric-bubble-coalescence]]
-   - Analysis of capillary wave dynamics during bubble coalescence, focusing on energy transfer and wave propagation mechanisms.
+##### Capillary waves:  
+2025-01-11 [[Features-of-capillary-waves-during-asymmetric-bubble-coalescence]]: Analysis of capillary wave dynamics during bubble coalescence, focusing on energy transfer and wave propagation mechanisms.
 
 ### Code Documentation
 #### 2024
-1. 2024-12-31 [[Herschel–Bulkley formulation]]
-   - Mathematical formulation of the Herschel-Bulkley model for non-Newtonian flows, with emphasis on yield stress fluids.
+##### H-B formulation:
+2024-12-31 [[Herschel–Bulkley formulation]]: Mathematical formulation of the Herschel-Bulkley model for non-Newtonian flows, with emphasis on yield stress fluids.
 
 ### Lecture notes:
 #### 2025
-1. 2025-01-21 [[Gauss law of Electrostatics]]
-   - Analysis of electric field flux through different surfaces using Gauss's law, with visual demonstrations.
+##### Gauss' Law:
+2025-01-21 [[Gauss law of Electrostatics]]: Analysis of electric field flux through different surfaces using Gauss's law, with visual demonstrations.
 
 ### Seminar talks/resources:
 #### 2025
-1. 2025-01-19 [[Seminar-UIUC-abstract]]
-   - UIUC fluid seminar abstract exploring polymeric flows as a tunable testbed for unsteady, nonlinear continuum mechanics.
+##### Seminar-UIUC
+2025-01-19 [[Seminar-UIUC-abstract]]: UIUC fluid seminar abstract exploring polymeric flows as a tunable testbed for unsteady, nonlinear continuum mechanics.
 
 ## Connect With Us
 
