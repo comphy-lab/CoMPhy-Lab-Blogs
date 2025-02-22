@@ -4139,6 +4139,10 @@ var enUS = {
         Label: "Preview deleted files",
         Description: "Show a confirmation box with list of files to be removed"
       },
+      DeleteEmptyMarkdownFiles: {
+        Label: "Delete empty Markdown files",
+        Description: "Removes Markdown files if their size is 0"
+      },
       RemoveFolders: {
         Label: "Remove folders",
         Description: "Include folders in cleanup"
@@ -4330,7 +4334,8 @@ var DEFAULT_SETTINGS = {
   runOnStartup: false,
   removeFolders: false,
   ignoredFrontmatter: [],
-  ignoreAllFrontmatter: false
+  ignoreAllFrontmatter: false,
+  deleteEmptyMarkdownFiles: true
 };
 var FileCleanerSettingTab = class extends import_obsidian2.PluginSettingTab {
   constructor(app, plugin) {
@@ -4436,6 +4441,18 @@ var FileCleanerSettingTab = class extends import_obsidian2.PluginSettingTab {
       text.inputEl.style.minHeight = "4rem";
       text.inputEl.style.maxHeight = "8rem";
     });
+    new import_obsidian2.Setting(containerEl).setName(
+      translate().Settings.RegularOptions.DeleteEmptyMarkdownFiles.Label
+    ).setDesc(
+      translate().Settings.RegularOptions.DeleteEmptyMarkdownFiles.Description
+    ).addToggle((toggle) => {
+      toggle.setValue(this.plugin.settings.deleteEmptyMarkdownFiles);
+      toggle.onChange((value) => {
+        this.plugin.settings.deleteEmptyMarkdownFiles = value;
+        this.plugin.saveSettings();
+        this.display();
+      });
+    });
     new import_obsidian2.Setting(containerEl).setName(translate().Settings.RegularOptions.IgnoredFrontmatter.Label).setDesc(
       translate().Settings.RegularOptions.IgnoredFrontmatter.Description
     ).addTextArea((text) => {
@@ -4450,7 +4467,9 @@ var FileCleanerSettingTab = class extends import_obsidian2.PluginSettingTab {
       text.inputEl.style.maxWidth = "18rem";
       text.inputEl.style.minHeight = "4rem";
       text.inputEl.style.maxHeight = "12rem";
-    }).setDisabled(this.plugin.settings.ignoreAllFrontmatter).controlEl.setCssStyles(
+    }).setDisabled(
+      this.plugin.settings.ignoreAllFrontmatter || !this.plugin.settings.deleteEmptyMarkdownFiles
+    ).controlEl.setCssStyles(
       this.plugin.settings.ignoreAllFrontmatter && {
         color: ""
       }
@@ -4464,7 +4483,7 @@ var FileCleanerSettingTab = class extends import_obsidian2.PluginSettingTab {
         this.plugin.saveSettings();
         this.display();
       });
-    });
+    }).setDisabled(!this.plugin.settings.deleteEmptyMarkdownFiles);
     new import_obsidian2.Setting(containerEl).setName(translate().Settings.RegularOptions.PreviewDeletedFiles.Label).setDesc(
       translate().Settings.RegularOptions.PreviewDeletedFiles.Description
     ).addToggle((toggle) => {
@@ -4574,6 +4593,7 @@ function userHasPlugin(id, app) {
 function checkMarkdown(file, app, settings) {
   return __async(this, null, function* () {
     if (file.extension !== "md") return false;
+    if (!settings.deleteEmptyMarkdownFiles) return false;
     const metadata = app.metadataCache;
     const links = metadata.getBacklinksForFile(file).data;
     if (links.size > 0) return false;
@@ -4594,11 +4614,16 @@ function checkMarkdown(file, app, settings) {
 
 // src/helpers/canvas.ts
 var import_obsidian4 = require("obsidian");
-function getCanvasCardAttachments(canvasNode) {
-  const matches = canvasNode.text.matchAll(/[!]?\[\[(.*?)\]\]/g);
-  const files = Array.from(matches).map((file) => {
-    if (file[0].startsWith("![[")) return file[1];
-    else return `${file[1]}.md`;
+function getCanvasCardAttachments(canvasNode, canvas, app) {
+  const matchedFiles = [];
+  for (const match of canvasNode.text.matchAll(/[!]?\[\[(.*?)\]\]/g)) {
+    matchedFiles.push(match[1].split("|")[0]);
+  }
+  for (const match of canvasNode.text.matchAll(/[!]\[.*?\]\((.*?)\)/g)) {
+    matchedFiles.push(match[1]);
+  }
+  const files = matchedFiles.map((filePath) => {
+    return app.metadataCache.getFirstLinkpathDest(filePath, canvas.path).path;
   });
   return files;
 }
@@ -4617,7 +4642,9 @@ function getCanvasAttachments(app) {
                 // Filter out non-markdown files
                 (node) => node.type === "file" && !node.file.endsWith(".md")
               ).map((node) => node.file).reduce((prev, cur) => [...prev, cur], []);
-              const cardNodes = data["nodes"].filter((node) => node.type === "text").map((node) => getCanvasCardAttachments(node)).reduce((prev, cur) => [...prev, ...cur], []);
+              const cardNodes = data["nodes"].filter((node) => node.type === "text").map(
+                (node) => getCanvasCardAttachments(node, file, app)
+              ).reduce((prev, cur) => [...prev, ...cur], []);
               return [...fileNodes, ...cardNodes];
             } catch (error) {
               new import_obsidian4.Notice(`Failed to parse canvas file: ${file.path}`);

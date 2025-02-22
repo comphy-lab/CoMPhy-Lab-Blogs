@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "86877c6685af3073",
+        "id": "50f3a73d387f40de",
         "type": "tabs",
         "children": [
           {
-            "id": "18d17c367547b470",
+            "id": "710e7cdec55b3f53",
             "type": "leaf",
             "state": {
               "type": "home-tab-view",
@@ -128,7 +128,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 353.5
+    "width": 216.5
   },
   "right": {
     "id": "f94baa4cb92838bd",
@@ -144,12 +144,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Talks/Seminar-Durham-abstract.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Seminar-Durham-abstract"
             }
           },
           {
@@ -220,7 +221,8 @@
               "title": "Review Notes"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -234,24 +236,86 @@
       "switcher:Open quick switcher": true,
       "graph:Open graph view": false,
       "command-palette:Open command palette": true,
+      "workspaces:Manage workspace layouts": false,
       "obsidian-review-notes-plugin:View Recent Notes": false,
       "file-cleaner-redux:Clean files": false,
-      "workspaces:Manage workspace layouts": false,
       "callout-manager:Insert Callout": false
     }
   },
-  "active": "18d17c367547b470",
+  "floating": {
+    "id": "2b2303adf42b76da",
+    "type": "floating",
+    "children": [
+      {
+        "id": "b8b5fbcfe4624c3b",
+        "type": "window",
+        "children": [
+          {
+            "id": "93324cafed93135d",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "3a282b85b56bb811",
+                "type": "leaf",
+                "state": {
+                  "type": "webviewer",
+                  "state": {
+                    "url": "https://help.obsidian.md/Obsidian+Publish/Custom+domains",
+                    "title": "Custom domains - Obsidian Help",
+                    "mode": "webview"
+                  },
+                  "icon": "globe-2",
+                  "title": "Custom domains - Obsidian Help"
+                }
+              },
+              {
+                "id": "3302fc5a5896b5d3",
+                "type": "leaf",
+                "state": {
+                  "type": "webviewer",
+                  "state": {
+                    "url": "https://developers.cloudflare.com/ssl/origin-configuration/ssl-modes/full/",
+                    "title": "Full - SSL/TLS encryption modes · Cloudflare SSL/TLS docs",
+                    "mode": "webview"
+                  },
+                  "icon": "globe-2",
+                  "title": "Full - SSL/TLS encryption modes · Cloudflare SSL/TLS docs"
+                }
+              }
+            ],
+            "currentTab": 1
+          }
+        ],
+        "direction": "vertical",
+        "x": 516,
+        "y": 209,
+        "width": 1024,
+        "height": 800,
+        "maximize": true,
+        "zoom": 0
+      }
+    ]
+  },
+  "active": "710e7cdec55b3f53",
   "lastOpenFiles": [
+    "Blog/2025-JFM-viscous-drop-impact.md",
+    "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
+    "_Media/JFM-viscous-drop-impact-blog-1740211513533.jpg",
+    "_Media/JFM-viscous-drop-impact-blog-1740211822831.png",
+    "_Media/JFM-viscous-drop-impact-blog-1740211923766.png",
     "Talks/Seminar-UIUC-abstract.md",
+    "Bursting-bubbles-complex.md",
+    "Talks/Seminar-Durham-abstract.pdf",
+    "Talks/Seminar-Durham-abstract.md",
+    "_Media/Durham.png",
+    "Lecture-Notes/Gauss law of Electrostatics.md",
+    "0_README.md",
     "README.md",
     "Private-ToDo-Blog-public.md",
     "0_ToDo-Blog-public.md",
-    "0_README.md",
-    "Lecture-Notes/Gauss law of Electrostatics.md",
     "Code-Documentations/Herschel–Bulkley formulation.md",
     "Blog/Thesis-Viscous Free-Surface Flows.md",
     "Blog/Stokes waves_arbitary order.md",
-    "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
     "Talks/Seminar-UIUC-abstract.pdf",
     "Code-Documentations",
     "_AtomicNotes/Relationship between rate of change of a physical quantity and its divergence.md",
@@ -276,17 +340,9 @@
     "Lecture-Notes",
     "Talks",
     "_Media/20250119213726033_Seminar-UIUC-abstract.png",
-    "Principle of superposition of electric fields.md",
-    "permittivity of free space.md",
-    "History-of-Gauss.md",
-    "_scripts",
     "_Media/Gauss-law-in-electrostatics-20250119215311743.png",
     "_Media/20250121032315000_Gauss law of Electrostatics.png",
     "_Media/plates.png",
-    "_Media/20250112214304930_Features-of-capillary-waves-during-asymmetric-bubble-coalescence.png",
-    "_Media/20250112214243110_Features-of-capillary-waves-during-asymmetric-bubble-coalescence.png",
-    "_Media/20250112214226072_Features-of-capillary-waves-during-asymmetric-bubble-coalescence.png",
-    "_Media/20250112214151030_Features-of-capillary-waves-during-asymmetric-bubble-coalescence.png",
     "Inbox/Untitled.canvas"
   ]
 }

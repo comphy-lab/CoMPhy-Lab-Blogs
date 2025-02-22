@@ -4,7 +4,7 @@
   "baseFontSize": 16,
   "interfaceFontFamily": "Hack,Computer Modern",
   "textFontFamily": "Hack,Computer Modern",
-  "monospaceFontFamily": "Hack,Computer Modern",
+  "monospaceFontFamily": "Computer Modern,Hack",
   "enabledCssSnippets": [
     "supercharged-links-gen",
     "custom-panel"
