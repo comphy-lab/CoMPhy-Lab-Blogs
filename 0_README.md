@@ -15,6 +15,12 @@ See: [About us](https://comphy-lab.org/about)
 
 ### Blog posts:
 #### 2025
+##### Elastoinertial turbulence:
+2025-02-24 [[Arrowheads in elastoinertial turbulence]]: Critical review of arrowhead structures in elastoinertial turbulence, examining their existence in 3D flows and experimental observations.
+
+##### Drop impact dynamics:
+2025-02-22 [[2025-JFM-viscous-drop-impact]]: Comprehensive study of viscosity's role in drop impact forces, from raindrops to inkjet printing applications.
+
 ##### Capillary waves:  
 2025-01-11 [[Features-of-capillary-waves-during-asymmetric-bubble-coalescence]]: Analysis of capillary wave dynamics during bubble coalescence, focusing on energy transfer and wave propagation mechanisms.
 

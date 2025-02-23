@@ -144,13 +144,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Talks/Seminar-Durham-abstract.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Seminar-Durham-abstract"
+              "title": "Outline"
             }
           },
           {
@@ -241,7 +240,7 @@
       "callout-manager:Insert Callout": false
     }
   },
-  "active": "fba8ea7510a6a83e",
+  "active": "f2d11dd89efa8b8f",
   "lastOpenFiles": [
     "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
     "Blog/Arrowheads in elastoinertial turbulence.md",
