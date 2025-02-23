@@ -1,12 +1,20 @@
 {
   "recentFiles": [
     {
-      "basename": "2025-JFM-viscous-drop-impact",
-      "path": "Blog/2025-JFM-viscous-drop-impact.md"
-    },
-    {
       "basename": "Features-of-capillary-waves-during-asymmetric-bubble-coalescence",
       "path": "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md"
+    },
+    {
+      "basename": "Arrowheads in elastoinertial turbulence",
+      "path": "Blog/Arrowheads in elastoinertial turbulence.md"
+    },
+    {
+      "basename": "README",
+      "path": "README.md"
+    },
+    {
+      "basename": "2025-JFM-viscous-drop-impact",
+      "path": "Blog/2025-JFM-viscous-drop-impact.md"
     },
     {
       "basename": "Seminar-UIUC-abstract",
@@ -31,10 +39,6 @@
     {
       "basename": "0_README",
       "path": "0_README.md"
-    },
-    {
-      "basename": "README",
-      "path": "README.md"
     },
     {
       "basename": "Private-ToDo-Blog-public",
@@ -195,10 +199,6 @@
     {
       "basename": "Case of the three students",
       "path": "_Inbox/Case of the three students.md"
-    },
-    {
-      "basename": "2023-07-06_BGUM2023_backup_20241229_010910",
-      "path": "Z_Archive/2023-07-06_BGUM2023_backup_20241229_010910.md"
     }
   ],
   "omittedPaths": [],

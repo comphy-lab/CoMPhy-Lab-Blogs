@@ -67,6 +67,8 @@ We have templates for different types of issues:
 
 For more detailed information about our blog and documentation structure, see [0_README.md](0_README.md).
 
+### Note
+- [[favicon.ico]] is the favicon for the website blog.
 ## License
 
 Content is licensed under [appropriate license - please specify]

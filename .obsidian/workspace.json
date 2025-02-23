@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "50f3a73d387f40de",
+        "id": "5cd8e0100316c19d",
         "type": "tabs",
         "children": [
           {
-            "id": "710e7cdec55b3f53",
+            "id": "f2d11dd89efa8b8f",
             "type": "leaf",
             "state": {
               "type": "home-tab-view",
@@ -221,8 +221,7 @@
               "title": "Review Notes"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "horizontal",
@@ -242,64 +241,13 @@
       "callout-manager:Insert Callout": false
     }
   },
-  "floating": {
-    "id": "2b2303adf42b76da",
-    "type": "floating",
-    "children": [
-      {
-        "id": "b8b5fbcfe4624c3b",
-        "type": "window",
-        "children": [
-          {
-            "id": "93324cafed93135d",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "3a282b85b56bb811",
-                "type": "leaf",
-                "state": {
-                  "type": "webviewer",
-                  "state": {
-                    "url": "https://help.obsidian.md/Obsidian+Publish/Custom+domains",
-                    "title": "Custom domains - Obsidian Help",
-                    "mode": "webview"
-                  },
-                  "icon": "globe-2",
-                  "title": "Custom domains - Obsidian Help"
-                }
-              },
-              {
-                "id": "3302fc5a5896b5d3",
-                "type": "leaf",
-                "state": {
-                  "type": "webviewer",
-                  "state": {
-                    "url": "https://developers.cloudflare.com/ssl/origin-configuration/ssl-modes/full/",
-                    "title": "Full - SSL/TLS encryption modes · Cloudflare SSL/TLS docs",
-                    "mode": "webview"
-                  },
-                  "icon": "globe-2",
-                  "title": "Full - SSL/TLS encryption modes · Cloudflare SSL/TLS docs"
-                }
-              }
-            ],
-            "currentTab": 1
-          }
-        ],
-        "direction": "vertical",
-        "x": 516,
-        "y": 209,
-        "width": 1024,
-        "height": 800,
-        "maximize": true,
-        "zoom": 0
-      }
-    ]
-  },
-  "active": "710e7cdec55b3f53",
+  "active": "fba8ea7510a6a83e",
   "lastOpenFiles": [
-    "Blog/2025-JFM-viscous-drop-impact.md",
     "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
+    "Blog/Arrowheads in elastoinertial turbulence.md",
+    "README.md",
+    "favicon.ico",
+    "Blog/2025-JFM-viscous-drop-impact.md",
     "_Media/JFM-viscous-drop-impact-blog-1740211513533.jpg",
     "_Media/JFM-viscous-drop-impact-blog-1740211822831.png",
     "_Media/JFM-viscous-drop-impact-blog-1740211923766.png",
@@ -310,7 +258,6 @@
     "_Media/Durham.png",
     "Lecture-Notes/Gauss law of Electrostatics.md",
     "0_README.md",
-    "README.md",
     "Private-ToDo-Blog-public.md",
     "0_ToDo-Blog-public.md",
     "Code-Documentations/Herschel–Bulkley formulation.md",
@@ -338,7 +285,6 @@
     "untitled folder",
     "Blog",
     "Lecture-Notes",
-    "Talks",
     "_Media/20250119213726033_Seminar-UIUC-abstract.png",
     "_Media/Gauss-law-in-electrostatics-20250119215311743.png",
     "_Media/20250121032315000_Gauss law of Electrostatics.png",
