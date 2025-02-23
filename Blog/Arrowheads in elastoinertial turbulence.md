@@ -92,3 +92,10 @@ Recent research converges on a nuanced view of arrowhead (narwhal) structures in
 They were a landmark discovery as a coherent viscoelastic wave, and they have deepened our insight into polymer–flow interactions. However, both simulations and theory now indicate that they are **transient players** in fully developed 3D turbulence rather than the primary architects of it. In fact, the energy transfer analysis between flow and polymer reveals that both chaotic regimes maintain through the same near-wall mechanism, independent of the weak arrowhead structure. These findings indicate that the arrowhead represents a passive flow structure, detached from the self-sustaining mechanics of elastic turbulence inertia (EIT) ([M. Beneitez, J. Page, Y. Dubief & R. R. Kerswell, J. Fluid Mech., 981, A30 (2024)](https://doi.org/10.1017/jfm.2024.50)). The community’s focus has shifted to how such structures populate the state space and trigger transitions, rather than expecting them to appear as steady patterns in experiments. Ongoing work continues to unravel the multi-stage transition to elastic and elasto-inertial turbulence $–$ with arrowhead/narwhal waves serving as a valuable piece of the puzzle, albeit one with clear limitations. This critical understanding ensures that we appreciate the arrowhead structures for what they are: insightful and pedagogical solutions that illuminate EIT’s mechanics, but ultimately unstable in the wild chaos of real 3D turbulence.
 
 --- 
+
+> [!significance]- Metadata
+> Author:: [Vatsal Sanjay](https://vatsalsanjay.com)
+> Date published:: Feb 24, 2025
+
+> [!meta] Back to main website
+> [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab), [Blogs](https://blogs.comphy-lab.org)
