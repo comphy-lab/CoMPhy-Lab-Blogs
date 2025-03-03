@@ -1,16 +1,18 @@
 {
-  "cssTheme": "Obsidian gruvbox",
-  "baseFontSizeAction": false,
+  "cssTheme": "Durham gruvbox",
+  "baseFontSizeAction": true,
   "baseFontSize": 16,
-  "interfaceFontFamily": "Hack,Computer Modern",
-  "textFontFamily": "Hack,Computer Modern",
-  "monospaceFontFamily": "Computer Modern,Hack",
+  "interfaceFontFamily": "Hack",
+  "textFontFamily": "Hack",
+  "monospaceFontFamily": "Hack",
   "enabledCssSnippets": [
     "supercharged-links-gen",
-    "custom-panel"
+    "custom-panel",
+    "dynamic-note-width"
   ],
   "translucency": true,
   "showViewHeader": true,
   "nativeMenus": true,
-  "showRibbon": true
+  "showRibbon": true,
+  "accentColor": "#68246d"
 }

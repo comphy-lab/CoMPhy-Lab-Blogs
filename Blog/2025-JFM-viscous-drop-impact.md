@@ -1,7 +1,10 @@
 ---
-modified: 2025-02-22T14:13:17+01:00
+modified: 2025-02-26T00:53:23+01:00
 created: 2025-02-22T08:55:29+01:00
 status: done ✅
+tags:
+  - dropImpact
+  - viscous
 ---
 # The role of viscosity on drop impact forces on non-wetting surfaces: From Raindrops to Inkjet Printing
 

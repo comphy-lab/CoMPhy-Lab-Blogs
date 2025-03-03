@@ -1,14 +1,15 @@
 ---
-modified: 2025-02-24T00:15:29+01:00
+modified: 2025-02-26T11:43:14+01:00
 created: 2025-02-23T13:33:34+01:00
 tags:
   - arrowhead
   - narwhal
-  - Coherent Structures in Elastoinertial Turbulence
+  - Coherent
+  - Elastoinertial
+  - Turbulence
 status: done ✅
 ---
-
-# The Rise and Fall of Arrowhead (narwhals) Structures in Elastoinertial Turbulence: A Critical Review
+# Reflections about arrowhead (narwhals) Structures in Elastoinertial Turbulence
 
 ## Executive Summary
 Arrowhead structures, nicknamed "narwhals," were initially discovered as coherent patterns in elastoinertial turbulence (EIT) simulations. While these structures provided valuable insights into polymer-flow interactions $-$ they can be the pathway to explain elastoinertial turbulence $-$ recent research reveals they might be artifacts of 2D simulations that become unstable in realistic 3D flows. 

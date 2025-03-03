@@ -1,10 +1,10 @@
 ---
-modified: 2025-02-02T21:29:46+01:00
+modified: 2025-02-26T01:55:58+01:00
 created: 2024-12-15T23:25:04+01:00
 website: https://blogs-comphy-lab.org/
 status: done ✅
 ---
-# Computational Multiphase Physics (CoMPhy)
+# Computational Multiphase Physics <br> (CoMPhy)
 Welcome to the CoMPhy Lab's documentation hub! We are based at the Physics of Fluids Department at the University of Twente, where we explore non-Newtonian free-surface flows and soft matter singularities.
 
 ## About Us
