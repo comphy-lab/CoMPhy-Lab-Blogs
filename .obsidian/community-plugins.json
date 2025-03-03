@@ -34,5 +34,8 @@
   "recent-files-obsidian",
   "file-cleaner-redux",
   "callout-manager",
-  "callout-suggestions"
+  "callout-suggestions",
+  "editor-width-slider",
+  "obsidian-pandoc-reference-list",
+  "obsidian-zotero-desktop-connector"
 ]

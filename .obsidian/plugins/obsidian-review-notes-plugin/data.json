@@ -1,3 +1,24 @@
 {
-  "files": []
+  "files": [
+    {
+      "path": "Blog/Arrowheads in elastoinertial turbulence.md",
+      "filename": "Arrowheads in elastoinertial turbulence"
+    },
+    {
+      "path": "Blog/2025-JFM-viscous-drop-impact.md",
+      "filename": "2025-JFM-viscous-drop-impact"
+    },
+    {
+      "path": "publish.css",
+      "filename": "publish"
+    },
+    {
+      "path": "0_README.md",
+      "filename": "0_README"
+    },
+    {
+      "path": "James G. Oldroyd.md",
+      "filename": "James G. Oldroyd"
+    }
+  ]
 }

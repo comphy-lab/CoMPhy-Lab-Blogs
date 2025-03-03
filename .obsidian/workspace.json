@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "5cd8e0100316c19d",
+        "id": "ac32f4b3d8f71efe",
         "type": "tabs",
         "children": [
           {
-            "id": "f2d11dd89efa8b8f",
+            "id": "6e3e8a34e5ac2a81",
             "type": "leaf",
             "state": {
               "type": "home-tab-view",
@@ -16,8 +16,33 @@
               "icon": "search",
               "title": "Home tab"
             }
+          },
+          {
+            "id": "b6c96187775b2ed3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "James G. Oldroyd.md",
+                "mode": "source",
+                "source": true,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "James G. Oldroyd"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,6 +119,7 @@
             "state": {
               "type": "localgraph",
               "state": {
+                "file": "James G. Oldroyd.md",
                 "options": {
                   "collapse-filter": false,
                   "search": "",
@@ -121,14 +147,15 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "title": "Graph of James G. Oldroyd"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 216.5
+    "width": 253.5,
+    "collapsed": true
   },
   "right": {
     "id": "f94baa4cb92838bd",
@@ -144,12 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "James G. Oldroyd.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of James G. Oldroyd"
             }
           },
           {
@@ -224,7 +252,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 440.5
+    "width": 440.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -240,13 +269,15 @@
       "callout-manager:Insert Callout": false
     }
   },
-  "active": "f2d11dd89efa8b8f",
+  "active": "b6c96187775b2ed3",
   "lastOpenFiles": [
-    "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
+    "James G. Oldroyd.md",
     "Blog/Arrowheads in elastoinertial turbulence.md",
+    "0_README.md",
+    "Blog/2025-JFM-viscous-drop-impact.md",
+    "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
     "README.md",
     "favicon.ico",
-    "Blog/2025-JFM-viscous-drop-impact.md",
     "_Media/JFM-viscous-drop-impact-blog-1740211513533.jpg",
     "_Media/JFM-viscous-drop-impact-blog-1740211822831.png",
     "_Media/JFM-viscous-drop-impact-blog-1740211923766.png",
@@ -256,7 +287,6 @@
     "Talks/Seminar-Durham-abstract.md",
     "_Media/Durham.png",
     "Lecture-Notes/Gauss law of Electrostatics.md",
-    "0_README.md",
     "Private-ToDo-Blog-public.md",
     "0_ToDo-Blog-public.md",
     "Code-Documentations/Herschel–Bulkley formulation.md",
@@ -279,7 +309,6 @@
     "_AtomicNotes/Principle of superposition of electric fields.md",
     "_AtomicNotes/permittivity of free space.md",
     "_AtomicNotes/History-of-Gauss.md",
-    "_AtomicNotes/Gaussian surface is very similar to the control volume in fluid mechanics.md",
     "_AtomicNotes",
     "untitled folder",
     "Blog",

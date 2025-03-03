@@ -10,7 +10,7 @@
   "wordmark": "CoMPhy-web",
   "customFont": "interfaceFont",
   "fontSize": "4em",
-  "fontColorType": "default",
+  "fontColorType": "accentColor",
   "fontWeight": 600,
   "maxResults": 8,
   "showbookmarkedFiles": true,
@@ -24,22 +24,26 @@
   "unresolvedLinks": true,
   "recentFilesStore": [
     {
-      "filepath": "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
-      "timestamp": 1740352711966
+      "filepath": "James G. Oldroyd.md",
+      "timestamp": 1740983370930
     },
     {
       "filepath": "Blog/Arrowheads in elastoinertial turbulence.md",
-      "timestamp": 1740352446325
+      "timestamp": 1740567363279
     },
     {
-      "filepath": "README.md",
-      "timestamp": 1740352423383
+      "filepath": "0_README.md",
+      "timestamp": 1740533480264
+    },
+    {
+      "filepath": "Blog/2025-JFM-viscous-drop-impact.md",
+      "timestamp": 1740527598511
     }
   ],
   "bookmarkedFileStore": [],
   "searchDelay": 0,
   "replaceNewTabs": true,
-  "newTabOnStart": true,
+  "newTabOnStart": false,
   "closePreviousSessionTabs": false,
   "omnisearch": true,
   "showOmnisearchExcerpt": true
