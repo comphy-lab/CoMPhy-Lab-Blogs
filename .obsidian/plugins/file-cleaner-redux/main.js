@@ -4135,6 +4135,15 @@ var enUS = {
         Label: "Ignore all frontmatter",
         Description: "Ignores all frontmatter, including the ones set above."
       },
+      CodeblockParsing: {
+        Label: "Codeblock parsing",
+        Description: `
+          List of codeblock-types that should be checked for attachments.
+          Supports regular expressions.
+          Comma-separated.
+        `,
+        Placeholder: "Example:\nad-summary, ad-.*, tabs"
+      },
       PreviewDeletedFiles: {
         Label: "Preview deleted files",
         Description: "Show a confirmation box with list of files to be removed"
@@ -4335,6 +4344,7 @@ var DEFAULT_SETTINGS = {
   removeFolders: false,
   ignoredFrontmatter: [],
   ignoreAllFrontmatter: false,
+  codeblockTypes: [],
   deleteEmptyMarkdownFiles: true
 };
 var FileCleanerSettingTab = class extends import_obsidian2.PluginSettingTab {
@@ -4484,6 +4494,23 @@ var FileCleanerSettingTab = class extends import_obsidian2.PluginSettingTab {
         this.display();
       });
     }).setDisabled(!this.plugin.settings.deleteEmptyMarkdownFiles);
+    new import_obsidian2.Setting(containerEl).setName(translate().Settings.RegularOptions.CodeblockParsing.Label).setDesc(translate().Settings.RegularOptions.CodeblockParsing.Description).addTextArea((text) => {
+      text.setValue(this.plugin.settings.codeblockTypes.join(", ")).onChange((value) => __async(this, null, function* () {
+        this.plugin.settings.codeblockTypes = value.split(",").map((ext) => ext.trim()).filter((ext) => ext.length > 1 && ext !== "");
+        this.plugin.saveSettings();
+      }));
+      text.setPlaceholder(
+        translate().Settings.RegularOptions.CodeblockParsing.Placeholder
+      );
+      text.inputEl.style.minWidth = "18rem";
+      text.inputEl.style.maxWidth = "18rem";
+      text.inputEl.style.minHeight = "4rem";
+      text.inputEl.style.maxHeight = "12rem";
+    }).controlEl.setCssStyles(
+      this.plugin.settings.ignoreAllFrontmatter && {
+        color: ""
+      }
+    );
     new import_obsidian2.Setting(containerEl).setName(translate().Settings.RegularOptions.PreviewDeletedFiles.Label).setDesc(
       translate().Settings.RegularOptions.PreviewDeletedFiles.Description
     ).addToggle((toggle) => {
@@ -4619,11 +4646,18 @@ function getCanvasCardAttachments(canvasNode, canvas, app) {
   for (const match of canvasNode.text.matchAll(/[!]?\[\[(.*?)\]\]/g)) {
     matchedFiles.push(match[1].split("|")[0]);
   }
-  for (const match of canvasNode.text.matchAll(/[!]\[.*?\]\((.*?)\)/g)) {
-    matchedFiles.push(match[1]);
+  for (const match of canvasNode.text.matchAll(/[!]\[.*?\]\((.*)\)/g)) {
+    matchedFiles.push(
+      // markdown link uses URL encoding for links (%20 is a space)
+      match[1].replace(/%20/gi, " ")
+    );
   }
   const files = matchedFiles.map((filePath) => {
-    return app.metadataCache.getFirstLinkpathDest(filePath, canvas.path).path;
+    const fileLink = app.metadataCache.getFirstLinkpathDest(
+      filePath,
+      canvas.path
+    );
+    if (fileLink) return fileLink.path;
   });
   return files;
 }
@@ -4653,7 +4687,7 @@ function getCanvasAttachments(app) {
         );
       }))
     );
-    return canvasAttachmentsInitial.filter((f) => f.length > 0).reduce((prev, cur) => [...prev, ...cur], []);
+    return canvasAttachmentsInitial.filter((f) => f).filter((f) => f.length > 0).reduce((prev, cur) => [...prev, ...cur], []);
   });
 }
 function checkCanvas(file, app) {
@@ -4741,6 +4775,83 @@ function checkExcalidraw(file, app) {
   });
 }
 
+// src/helpers/codeblock.ts
+function getCodeblockAttachments(app, languageFilter) {
+  return __async(this, null, function* () {
+    if (!languageFilter) return [];
+    console.group("Codeblock attachments");
+    const indexingStart = Date.now();
+    const files = yield getCodeblocksFromMarkdownFiles(app);
+    const attachments = files.map(({ file, codeblocks }) => {
+      const foundAttachments = [];
+      codeblocks.forEach((block) => {
+        if (!block || !block.language.match(languageFilter)) return;
+        for (const match of block.content.matchAll(/[!]?\[\[(.*?)\]\]/g)) {
+          foundAttachments.push(match[1].split("|")[0]);
+        }
+        for (const match of block.content.matchAll(/[!]\[.*?\]\((.*?)\)/g)) {
+          foundAttachments.push(match[1]);
+        }
+      });
+      return foundAttachments.map((filePath) => {
+        const fileLink = app.metadataCache.getFirstLinkpathDest(
+          filePath,
+          file.path
+        );
+        if (fileLink) return fileLink.path;
+      });
+    });
+    const duration = (Date.now() - indexingStart) / 1e3;
+    console.log(
+      `Found ${attachments.length} attachments in codeblocks in ${duration}ms.`
+    );
+    console.groupEnd();
+    return attachments.flatMap((attachment) => [...attachment]);
+  });
+}
+function getCodeblocksFromMarkdownFiles(app) {
+  return __async(this, null, function* () {
+    const files = yield Promise.all(
+      app.vault.getFiles().filter((file) => file.extension == "md").map((file) => {
+        return { file, cache: app.metadataCache.getFileCache(file) };
+      }).filter((file) => file.cache.sections).filter(
+        (file) => file.cache.sections.filter((section) => section.type === "code").length > 0
+      ).map(({ file }) => file).map((file) => __async(this, null, function* () {
+        return {
+          file,
+          codeblocks: yield getMarkdownCodeblocks(file, app)
+        };
+      }))
+    );
+    return files;
+  });
+}
+function getMarkdownCodeblocks(file, app) {
+  return __async(this, null, function* () {
+    const cache = app.metadataCache.getFileCache(file);
+    if (!cache.sections) return [];
+    const fileContentRaw = yield app.vault.cachedRead(file);
+    const sections = cache.sections.filter((section) => section.type === "code").map((section) => __async(this, null, function* () {
+      const content = fileContentRaw.slice(
+        section.position.start.offset,
+        section.position.end.offset
+      );
+      return parseCodeblock(content);
+    }));
+    return Promise.all(sections);
+  });
+}
+function parseCodeblock(codeblock) {
+  const fence = codeblock.match(/^[`~]{3,}/g);
+  if (!fence) return null;
+  const content = codeblock.replace(RegExp(`^${fence}+`), "").replace(RegExp(`${fence}+$`), "");
+  const language = content.split(/[\r\n]+/)[0];
+  return {
+    language,
+    content: content.replace(RegExp(`^${language}`), "").trim()
+  };
+}
+
 // src/util.ts
 function checkFile(app, settings, file, extensions) {
   return __async(this, null, function* () {
@@ -4800,6 +4911,12 @@ function runCleanup(app, settings) {
     inUseAttachmentsInitial.push(...yield getCanvasAttachments(app));
     if (userHasPlugin("obsidian-admonition", app))
       inUseAttachmentsInitial.push(...yield getAdmonitionAttachments(app));
+    if (settings.codeblockTypes.length > 0) {
+      const codeblockLanguages = RegExp(`${settings.codeblockTypes.join("|")}`);
+      inUseAttachmentsInitial.push(
+        ...yield getCodeblockAttachments(app, codeblockLanguages)
+      );
+    }
     const inUseAttachments = Array.from(new Set(inUseAttachmentsInitial));
     const folders = getFolders(app).filter((folder) => folder.path !== "/").sort(
       (a, b) => (
