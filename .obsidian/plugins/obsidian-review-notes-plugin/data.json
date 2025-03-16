@@ -17,8 +17,32 @@
       "filename": "0_README"
     },
     {
-      "path": "James G. Oldroyd.md",
+      "path": "Blog/James G. Oldroyd.md",
       "filename": "James G. Oldroyd"
+    },
+    {
+      "path": "Lecture-Notes/Basilisk101/1st-workingAssignment.md",
+      "filename": "1st-workingAssignment"
+    },
+    {
+      "path": "Lecture-Notes/Basilisk101/0-README.md",
+      "filename": "0-README"
+    },
+    {
+      "path": "Lecture-Notes/Basilisk101/2nd-workingAssignment.md",
+      "filename": "2nd-workingAssignment"
+    },
+    {
+      "path": "Lecture-Notes/Surface-parameterization.md",
+      "filename": "Surface-parameterization"
+    },
+    {
+      "path": "Lecture-Notes/Basilisk101/3rd-workingAssignment.md",
+      "filename": "3rd-workingAssignment"
+    },
+    {
+      "path": "Lecture-Notes/Basilisk101/4th-workingAssignment.md",
+      "filename": "4th-workingAssignment"
     }
   ]
 }
