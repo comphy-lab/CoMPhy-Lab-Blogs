@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "29e1585498f18fe7",
+        "id": "1962cf72341ae61d",
         "type": "tabs",
         "children": [
           {
-            "id": "be3c735e7f3cb002",
+            "id": "ab4f4b30ff465669",
             "type": "leaf",
             "state": {
               "type": "home-tab-view",
@@ -128,8 +128,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 288.5,
-    "collapsed": true
+    "width": 288.5
   },
   "right": {
     "id": "f94baa4cb92838bd",
@@ -145,13 +144,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lecture-Notes/Basilisk101/1st-workingAssignment.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1st-workingAssignment"
+              "title": "Outline"
             }
           },
           {
@@ -226,8 +224,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 440.5,
-    "collapsed": true
+    "width": 440.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -243,8 +240,12 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "be3c735e7f3cb002",
+  "active": "ab4f4b30ff465669",
   "lastOpenFiles": [
+    "Blog/2025-JFM-viscous-drop-impact.md",
+    "Blog/James G. Oldroyd.md",
+    "Blog/Arrowheads in elastoinertial turbulence.md",
+    "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
     "Lecture-Notes/Basilisk101/4th-workingAssignment.md",
     "Lecture-Notes/Basilisk101/1-conduction-takeaways.md",
     "Lecture-Notes/Basilisk101/2nd-workingAssignment.md",
@@ -258,14 +259,10 @@
     "Lecture-Notes/Gauss law of Electrostatics.md",
     "Lecture-Notes/Basilisk101",
     "Lecture-Notes/untitled folder",
-    "Blog/James G. Oldroyd.md",
     "_Media/James G. Oldroyd-1741128879880.png",
     "_Media/James G. Oldroyd-1741126749363.jpeg",
     "_Media/James G. Oldroyd-1741126421305.png",
-    "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
-    "Blog/Arrowheads in elastoinertial turbulence.md",
     "0_README.md",
-    "Blog/2025-JFM-viscous-drop-impact.md",
     "README.md",
     "favicon.ico",
     "_Media/JFM-viscous-drop-impact-blog-1740211513533.jpg",

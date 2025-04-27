@@ -1,5 +1,5 @@
 ---
-modified: 2025-03-10T00:06:43+01:00
+modified: 2025-04-17T05:24:07+02:00
 created: 2025-03-03T06:46:50+01:00
 status: Working 🏗️
 publish: false
@@ -10,7 +10,7 @@ publish: false
 
 > Portrait and bio sketch of James G. Oldroyd. Slide taken from John Hinch's talk on _Oldroyd B, and not A?_
 
-### Early Life and Education  []()
+### Early Life and Education
 
 James Gardner Oldroyd (25 April 1921 – 22 November 1982) demonstrated exceptional mathematical aptitude in Bradford, England. He entered Bradford Grammar School at age 10, matriculating in nine subjects by age 14. Unable to advance immediately to university due to his youth, he dedicated four years in sixth form to developing mathematical expertise while acquiring fluency in German and French. In 1939, Oldroyd secured a state scholarship to Trinity College, Cambridge, where he established an exemplary academic record. He received the Rouse Ball Prize in 1941 and the Mayhew Prize in 1942 as Cambridge's outstanding student in applied mathematics, graduating with first-class honors. Oldroyd maintained strong academic affiliations with Trinity College post-graduation, returning as a research scholar (1945–46) and securing a junior fellowship (1947). During this period, he completed his PhD thesis titled *“A mathematical discussion of some rheological problems,”* with guidance and critiques from W. R. Dean (of *Dean flow* fame) and Alan H. Wilson. Dean and Wilson $-$ both Cambridge trained mathematicians significantly influenced Oldroyd's approach to fluid mechanics and solid mechanics. His doctoral work (PhD awarded 1949) established fundamental principles in non-Newtonian fluid mechanics, culminating in his Cambridge Sc.D. in 1958 for his substantial contributions to the field [^1].
 
