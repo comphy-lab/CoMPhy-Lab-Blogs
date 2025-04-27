@@ -1,5 +1,5 @@
 ---
-modified: 2025-02-26T11:43:14+01:00
+modified: 2025-04-10T13:18:58+02:00
 created: 2025-02-23T13:33:34+01:00
 tags:
   - arrowhead
@@ -8,6 +8,8 @@ tags:
   - Elastoinertial
   - Turbulence
 status: done ✅
+aliases:
+  - Arrowheads
 ---
 # Reflections about arrowhead (narwhals) Structures in Elastoinertial Turbulence
 
