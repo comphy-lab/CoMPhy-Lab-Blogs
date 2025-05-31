@@ -4144,6 +4144,10 @@ var enUS = {
         `,
         Placeholder: "Example:\nad-summary, ad-.*, tabs"
       },
+      FileAgeThreshold: {
+        Label: "File age threshold",
+        Description: "Only files and folders over the specified threshold will be cleaned up (in number of days)"
+      },
       PreviewDeletedFiles: {
         Label: "Preview deleted files",
         Description: "Show a confirmation box with list of files to be removed"
@@ -4345,7 +4349,8 @@ var DEFAULT_SETTINGS = {
   ignoredFrontmatter: [],
   ignoreAllFrontmatter: false,
   codeblockTypes: [],
-  deleteEmptyMarkdownFiles: true
+  deleteEmptyMarkdownFiles: true,
+  fileAgeThreshold: 0
 };
 var FileCleanerSettingTab = class extends import_obsidian2.PluginSettingTab {
   constructor(app, plugin) {
@@ -4511,6 +4516,18 @@ var FileCleanerSettingTab = class extends import_obsidian2.PluginSettingTab {
         color: ""
       }
     );
+    new import_obsidian2.Setting(containerEl).setName(translate().Settings.RegularOptions.FileAgeThreshold.Label).setDesc(translate().Settings.RegularOptions.FileAgeThreshold.Description).addText((text) => {
+      text.setPlaceholder("0");
+      if (this.plugin.settings.fileAgeThreshold > 0)
+        text.setValue(String(this.plugin.settings.fileAgeThreshold));
+      text.onChange((value) => {
+        const newAge = Number(value.trim());
+        if (newAge >= 0) {
+          this.plugin.settings.fileAgeThreshold = newAge;
+          this.plugin.saveSettings();
+        }
+      });
+    });
     new import_obsidian2.Setting(containerEl).setName(translate().Settings.RegularOptions.PreviewDeletedFiles.Label).setDesc(
       translate().Settings.RegularOptions.PreviewDeletedFiles.Description
     ).addToggle((toggle) => {
@@ -4855,6 +4872,10 @@ function parseCodeblock(codeblock) {
 // src/util.ts
 function checkFile(app, settings, file, extensions) {
   return __async(this, null, function* () {
+    const NOW = Date.now();
+    const ageThreshold = settings.fileAgeThreshold * 24 * 60 * 60 * 1e3;
+    const fileAge = file.stat.mtime;
+    if (ageThreshold > 0 && fileAge > NOW - ageThreshold) return false;
     if (file.extension === "md") {
       if (userHasPlugin("obsidian-excalidraw-plugin", app) && (yield checkExcalidraw(file, app)))
         return true;

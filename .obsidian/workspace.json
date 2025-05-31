@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "1962cf72341ae61d",
+        "id": "b3ee34fd437f48ee",
         "type": "tabs",
         "children": [
           {
-            "id": "ab4f4b30ff465669",
+            "id": "cdbf2b8445bd6fb9",
             "type": "leaf",
             "state": {
               "type": "home-tab-view",
@@ -16,8 +16,33 @@
               "icon": "search",
               "title": "Home tab"
             }
+          },
+          {
+            "id": "1670186939319f3f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Commonwealth-Split-site-PhD-Scholarships.md",
+                "mode": "source",
+                "source": true,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Commonwealth-Split-site-PhD-Scholarships"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -94,6 +119,7 @@
             "state": {
               "type": "localgraph",
               "state": {
+                "file": "Commonwealth-Split-site-PhD-Scholarships.md",
                 "options": {
                   "collapse-filter": false,
                   "search": "",
@@ -121,14 +147,14 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "title": "Graph of Commonwealth-Split-site-PhD-Scholarships"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 288.5
+    "width": 378.5
   },
   "right": {
     "id": "f94baa4cb92838bd",
@@ -144,12 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Commonwealth-Split-site-PhD-Scholarships.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Commonwealth-Split-site-PhD-Scholarships"
             }
           },
           {
@@ -240,8 +267,11 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "ab4f4b30ff465669",
+  "active": "1670186939319f3f",
   "lastOpenFiles": [
+    "Commonwealth-Split-site-PhD-Scholarships.md",
+    "2025-JFM-Viscoelatic-Worthington-jets.md",
+    "Blog/History-Worthington-jets-from-bursting-bubbles.md",
     "Blog/2025-JFM-viscous-drop-impact.md",
     "Blog/James G. Oldroyd.md",
     "Blog/Arrowheads in elastoinertial turbulence.md",
@@ -280,12 +310,9 @@
     "Blog/Stokes waves_arbitary order.md",
     "Talks/Seminar-UIUC-abstract.pdf",
     "Code-Documentations",
-    "_AtomicNotes/Relationship between rate of change of a physical quantity and its divergence.md",
     "_Media/Stokes waves_arbitary order-20250125232439287.png",
     "Code-Documentations/Herschel–Bulkley formulation.pdf",
     "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.pdf",
-    "Lecture-Notes/Seminar-UIUC-abstract.md",
-    "Lecture-Notes/Herschel–Bulkley formulation.md",
     "_AtomicNotes",
     "untitled folder",
     "Inbox/Untitled.canvas"

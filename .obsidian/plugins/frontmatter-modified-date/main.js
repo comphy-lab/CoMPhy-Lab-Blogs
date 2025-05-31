@@ -141,21 +141,31 @@ var FrontmatterModified = class extends import_obsidian2.Plugin {
       }));
     } else if (this.settings.useKeyupEvents) {
       this.registerDomEvent(document, "input", (event) => {
-        var _a;
-        try {
-          if ((_a = event == null ? void 0 : event.target) == null ? void 0 : _a.closest(".markdown-source-view > .cm-editor")) {
-            if (/^.$/u.test(event.data || "")) {
-              const file = this.app.workspace.getActiveFile();
-              if (file instanceof import_obsidian2.TFile) {
-                this.updateFrontmatter(file).then();
-              }
-            }
-          }
-        } catch (e) {
+        if (/^.$/u.test(event.data || "")) {
+          this.handleTypingEvent(event);
         }
+      });
+      this.registerDomEvent(document, "paste", (event) => {
+        this.handleTypingEvent(event);
       });
     }
     this.addSettingTab(new FrontmatterModifiedSettingTab(this.app, this));
+  }
+  /**
+   * Receive a typing event and initiate the frontmatter update process
+   */
+  handleTypingEvent(event) {
+    var _a;
+    try {
+      if ((_a = event == null ? void 0 : event.target) == null ? void 0 : _a.closest(".markdown-source-view > .cm-editor")) {
+        const file = this.app.workspace.getActiveFile();
+        if (file instanceof import_obsidian2.TFile) {
+          this.updateFrontmatter(file).then();
+        }
+      }
+    } catch (e) {
+      console.log(e);
+    }
   }
   async loadSettings() {
     this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
@@ -197,7 +207,7 @@ var FrontmatterModified = class extends import_obsidian2.Plugin {
           }
         }
         if (secondsSinceLastUpdate > 30) {
-          let newEntry = now.format(this.settings.momentFormat);
+          let newEntry = this.formatFrontmatterDate(now);
           if (isAppendArray) {
             let entries = ((_f = cache == null ? void 0 : cache.frontmatter) == null ? void 0 : _f[this.settings.frontmatterProperty]) || [];
             if (!Array.isArray(entries))
@@ -219,13 +229,24 @@ var FrontmatterModified = class extends import_obsidian2.Plugin {
           this.app.fileManager.processFrontMatter(file, (frontmatter) => {
             frontmatter[this.settings.frontmatterProperty] = newEntry;
             if (!this.settings.onlyUpdateExisting && this.settings.createdDateProperty && !frontmatter[this.settings.createdDateProperty]) {
-              frontmatter[this.settings.createdDateProperty] = (0, import_obsidian2.moment)(file.stat.ctime).format(this.settings.momentFormat);
+              frontmatter[this.settings.createdDateProperty] = this.formatFrontmatterDate((0, import_obsidian2.moment)(file.stat.ctime || now));
             }
           });
         }
       }
     }, this.settings.timeout * 1e3);
   }
+  /**
+   * Outputs the date in the user's specified MomentJS format.
+   * If that format evalutes to an integer it will return an integer,
+   * otherwise a string.
+   */
+  formatFrontmatterDate(date) {
+    const output = date.format(this.settings.momentFormat);
+    if (output.match(/^\d+$/)) {
+      return parseInt(output, 10);
+    } else {
+      return output;
+    }
+  }
 };
-
-/* nosourcemap */

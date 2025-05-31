@@ -1,10 +1,11 @@
 ---
-modified: 2025-04-17T07:12:32+02:00
+modified: 2025-05-06T12:48:38+02:00
 created: 2025-02-22T08:55:29+01:00
 status: done ✅
 tags:
   - dropImpact
   - viscous
+  - WorthingtonJets
 ---
 # The role of viscosity on drop impact forces on non-wetting surfaces: From Raindrops to Inkjet Printing
 
@@ -90,7 +91,7 @@ This work opens several interesting avenues for future investigation:
 For researchers working in this field, the paper presents new scaling laws that unify previous observations and provide a foundation for future work. The careful experimental validation combined with theoretical analysis makes this a significant contribution to our understanding of drop impact dynamics.
 
 > [!faq] Original Paper
-> Sanjay, V., Zhang, B., Lv, C., & Lohse, D. (2025). The role of viscosity on drop impact forces. Journal of Fluid Mechanics, 1004, A6. [Open Access](https://doi.org/10.1017/jfm.2024.982). 
+> V. Sanjay, B. Zhang, C. Lv & D. Lohse, The role of viscosity on drop impact forces, J. Fluid Mech., 1004, A6 (2025) [Open Access](https://doi.org/10.1017/jfm.2024.982). 
 
 ## Cover of J. Fluid Mech. vol 1004
 
