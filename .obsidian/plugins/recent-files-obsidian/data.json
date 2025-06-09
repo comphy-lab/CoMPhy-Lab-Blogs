@@ -1,8 +1,20 @@
 {
   "recentFiles": [
     {
+      "basename": "2025-06-30_Conference-VPflow-abstract",
+      "path": "Talks/2025-06-30_Conference-VPflow-abstract.md"
+    },
+    {
+      "basename": "Seminar-UIUC-abstract",
+      "path": "Talks/Seminar-UIUC-abstract.md"
+    },
+    {
+      "basename": "Seminar-Durham-abstract",
+      "path": "Talks/Seminar-Durham-abstract.md"
+    },
+    {
       "basename": "Commonwealth-Split-site-PhD-Scholarships",
-      "path": "Commonwealth-Split-site-PhD-Scholarships.md"
+      "path": "Join-Us/Commonwealth-Split-site-PhD-Scholarships.md"
     },
     {
       "basename": "2025-JFM-Viscoelatic-Worthington-jets",
@@ -69,20 +81,12 @@
       "path": "README.md"
     },
     {
-      "basename": "Seminar-UIUC-abstract",
-      "path": "Talks/Seminar-UIUC-abstract.md"
-    },
-    {
       "basename": "Bursting-bubbles-complex",
       "path": "Bursting-bubbles-complex.md"
     },
     {
       "basename": "Seminar-Durham-abstract",
       "path": "Talks/Seminar-Durham-abstract.pdf"
-    },
-    {
-      "basename": "Seminar-Durham-abstract",
-      "path": "Talks/Seminar-Durham-abstract.md"
     },
     {
       "basename": "Private-ToDo-Blog-public",
@@ -195,10 +199,6 @@
     {
       "basename": "NotesSync",
       "path": "Resources-non-research/codesNapps/NotesSync.md"
-    },
-    {
-      "basename": "How to run bview remotely!!",
-      "path": "Resources-non-research/codesNapps/How to run bview remotely!!.md"
     }
   ],
   "omittedPaths": [],
