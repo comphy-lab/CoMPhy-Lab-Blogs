@@ -1,7 +1,7 @@
 {
   "cssTheme": "Durham gruvbox",
   "baseFontSizeAction": true,
-  "baseFontSize": 17,
+  "baseFontSize": 20,
   "interfaceFontFamily": "Hack",
   "textFontFamily": "Hack",
   "monospaceFontFamily": "Hack",

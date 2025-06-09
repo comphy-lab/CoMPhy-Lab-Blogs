@@ -2671,3 +2671,10 @@ div.oz-folder-contents {
 .nav-folder-title[data-path^='Wish-List'] .nav-folder-title-content::before {
   content: "✨ "; font-size: 1.3em;
 }
+
+.nav-folder-title[data-path^='Join-Us'] {
+  color: #b8bb26;  /* bright green - welcoming color */
+}
+.nav-folder-title[data-path^='Join-Us'] .nav-folder-title-content::before {
+  content: "🤝 "; font-size: 1.3em;
+}
