@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "2b0be0ece1fc7e8c",
+        "id": "2c0d9bd5d04025b5",
         "type": "tabs",
         "children": [
           {
-            "id": "972d808d9cca9429",
+            "id": "c6409421290073e8",
             "type": "leaf",
             "state": {
               "type": "home-tab-view",
@@ -239,6 +239,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "markdown-importer:Open format converter": true,
       "publish:Publish changes...": false,
       "random-note:Open random note": false,
@@ -251,8 +252,12 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "972d808d9cca9429",
+  "active": "c6409421290073e8",
   "lastOpenFiles": [
+    "Blog/History-Worthington-jets-from-bursting-bubbles.md",
+    "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
+    "Blog/Arrowheads in elastoinertial turbulence.md",
+    "Blog/2025-JFM-viscous-drop-impact.md",
     "Talks/2025-06-30_Conference-VPflow-abstract.md",
     "Talks/Seminar-UIUC-abstract.md",
     "Talks/Seminar-Durham-abstract.md",
@@ -268,11 +273,7 @@
     "Join-Us",
     "CLAUDE.md",
     "2025-JFM-Viscoelatic-Worthington-jets.md",
-    "Blog/History-Worthington-jets-from-bursting-bubbles.md",
-    "Blog/2025-JFM-viscous-drop-impact.md",
     "Blog/James G. Oldroyd.md",
-    "Blog/Arrowheads in elastoinertial turbulence.md",
-    "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
     "Lecture-Notes/Basilisk101/4th-workingAssignment.md",
     "Lecture-Notes/Basilisk101/1-conduction-takeaways.md",
     "Lecture-Notes/Basilisk101/2nd-workingAssignment.md",
