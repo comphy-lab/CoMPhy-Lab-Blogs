@@ -1,5 +1,5 @@
 ---
-modified: 2025-05-06T12:48:38+02:00
+modified: 2025-08-27T00:36:40+01:00
 created: 2025-02-22T08:55:29+01:00
 status: done ✅
 tags:
@@ -15,9 +15,6 @@ When a liquid drop hits a surface, the impact creates fascinating fluid dynamics
 
 > [!tldr] TL;DR
 > Viscosity alters the forces a liquid drop exerts when it strikes a non-wetting surface, shifting the balance from inertia-dominated (like water) to enhanced viscous effects (like honey). Two force peaks arise: one at the initial impact and another tied to the Worthington jet just before bounce. Dimensionless numbers (Weber and Ohnesorge) govern these regimes, showing why higher-viscosity drops can yield unexpectedly large forces. The findings unify scaling laws across viscosities, guiding applications in printing, agriculture, and beyond, and pointing to future inquiries on soft surfaces and non-Newtonian fluids.
-
-> [!summary] Podcast
-> <iframe width="100%" height="180" frameborder="no" scrolling="no" seamless="" src="https://share.transistor.fm/e/8b61d47a?color=FFFFFF&background=30343C"></iframe>
 
 ## The Basics: What Happens When a Drop Hits a Surface?
 
