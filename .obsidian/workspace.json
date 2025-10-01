@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "2c0d9bd5d04025b5",
+        "id": "79fbd7674dbdf32b",
         "type": "tabs",
         "children": [
           {
-            "id": "c6409421290073e8",
+            "id": "c8e4545d08f1bf08",
             "type": "leaf",
             "state": {
               "type": "home-tab-view",
@@ -29,7 +29,6 @@
       {
         "id": "45ac0ca660ea19bf",
         "type": "tabs",
-        "dimension": 76.48514851485149,
         "children": [
           {
             "id": "344cf9ac59113cc7",
@@ -79,49 +78,6 @@
               },
               "icon": "lucide-search",
               "title": "Search"
-            }
-          }
-        ]
-      },
-      {
-        "id": "32d440b9f97c95ec",
-        "type": "tabs",
-        "dimension": 23.51485148514851,
-        "children": [
-          {
-            "id": "99b265706d338d5f",
-            "type": "leaf",
-            "state": {
-              "type": "localgraph",
-              "state": {
-                "options": {
-                  "collapse-filter": false,
-                  "search": "",
-                  "localJumps": 2,
-                  "localBacklinks": true,
-                  "localForelinks": true,
-                  "localInterlinks": true,
-                  "showTags": true,
-                  "showAttachments": false,
-                  "hideUnresolved": false,
-                  "collapse-color-groups": true,
-                  "colorGroups": [],
-                  "collapse-display": true,
-                  "showArrow": false,
-                  "textFadeMultiplier": 0,
-                  "nodeSizeMultiplier": 1,
-                  "lineSizeMultiplier": 1,
-                  "collapse-forces": true,
-                  "centerStrength": 0.518713248970312,
-                  "repelStrength": 10,
-                  "linkStrength": 1,
-                  "linkDistance": 250,
-                  "scale": 0.7825283883844861,
-                  "close": true
-                }
-              },
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
             }
           }
         ]
@@ -230,8 +186,7 @@
               "title": "References"
             }
           }
-        ],
-        "currentTab": 6
+        ]
       }
     ],
     "direction": "horizontal",
@@ -252,12 +207,18 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "c6409421290073e8",
+  "active": "c8e4545d08f1bf08",
   "lastOpenFiles": [
-    "Blog/History-Worthington-jets-from-bursting-bubbles.md",
-    "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
+    "Blog/visual-pdes.md",
     "Blog/Arrowheads in elastoinertial turbulence.md",
+    "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.pdf",
+    "Blog/History-Worthington-jets-from-bursting-bubbles.md",
+    "Lecture-Notes/Basilisk101/0-README.md",
+    "Code-Documentations/Herschel–Bulkley formulation.md",
+    "0_README.md",
+    "README.md",
     "Blog/2025-JFM-viscous-drop-impact.md",
+    "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
     "Talks/2025-06-30_Conference-VPflow-abstract.md",
     "Talks/Seminar-UIUC-abstract.md",
     "Talks/Seminar-Durham-abstract.md",
@@ -282,23 +243,17 @@
     "_Media/Surface-parameterization-1741713152627.png",
     "_Media/Surface-parameterization-1741712767672.png",
     "Lecture-Notes/Basilisk101/1st-workingAssignment.md",
-    "Lecture-Notes/Basilisk101/0-README.md",
-    "**1st-workingAssignment**.md",
-    "Lecture-Notes/Gauss law of Electrostatics.md",
     "Lecture-Notes/Basilisk101",
     "Lecture-Notes/untitled folder",
     "_Media/James G. Oldroyd-1741128879880.png",
     "_Media/James G. Oldroyd-1741126749363.jpeg",
     "_Media/James G. Oldroyd-1741126421305.png",
-    "0_README.md",
-    "README.md",
     "favicon.ico",
     "_Media/JFM-viscous-drop-impact-blog-1740211513533.jpg",
     "_Media/JFM-viscous-drop-impact-blog-1740211822831.png",
     "Talks/Seminar-Durham-abstract.pdf",
     "Talks/Seminar-UIUC-abstract.pdf",
     "Code-Documentations",
-    "Code-Documentations/Herschel–Bulkley formulation.pdf",
     "Inbox/Untitled.canvas"
   ]
 }
