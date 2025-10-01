@@ -1,20 +1,44 @@
 {
   "recentFiles": [
     {
-      "basename": "History-Worthington-jets-from-bursting-bubbles",
-      "path": "Blog/History-Worthington-jets-from-bursting-bubbles.md"
-    },
-    {
-      "basename": "Features-of-capillary-waves-during-asymmetric-bubble-coalescence",
-      "path": "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md"
+      "basename": "visual-pdes",
+      "path": "Blog/visual-pdes.md"
     },
     {
       "basename": "Arrowheads in elastoinertial turbulence",
       "path": "Blog/Arrowheads in elastoinertial turbulence.md"
     },
     {
+      "basename": "Features-of-capillary-waves-during-asymmetric-bubble-coalescence",
+      "path": "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.pdf"
+    },
+    {
+      "basename": "History-Worthington-jets-from-bursting-bubbles",
+      "path": "Blog/History-Worthington-jets-from-bursting-bubbles.md"
+    },
+    {
+      "basename": "0-README",
+      "path": "Lecture-Notes/Basilisk101/0-README.md"
+    },
+    {
+      "basename": "Herschel–Bulkley formulation",
+      "path": "Code-Documentations/Herschel–Bulkley formulation.md"
+    },
+    {
+      "basename": "0_README",
+      "path": "0_README.md"
+    },
+    {
+      "basename": "README",
+      "path": "README.md"
+    },
+    {
       "basename": "2025-JFM-viscous-drop-impact",
       "path": "Blog/2025-JFM-viscous-drop-impact.md"
+    },
+    {
+      "basename": "Features-of-capillary-waves-during-asymmetric-bubble-coalescence",
+      "path": "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md"
     },
     {
       "basename": "2025-06-30_Conference-VPflow-abstract",
@@ -65,20 +89,8 @@
       "path": "Lecture-Notes/Basilisk101/1st-workingAssignment.md"
     },
     {
-      "basename": "0-README",
-      "path": "Lecture-Notes/Basilisk101/0-README.md"
-    },
-    {
       "basename": "Gauss law of Electrostatics",
       "path": "Lecture-Notes/Gauss law of Electrostatics.md"
-    },
-    {
-      "basename": "0_README",
-      "path": "0_README.md"
-    },
-    {
-      "basename": "README",
-      "path": "README.md"
     },
     {
       "basename": "Bursting-bubbles-complex",
@@ -95,10 +107,6 @@
     {
       "basename": "0_ToDo-Blog-public",
       "path": "0_ToDo-Blog-public.md"
-    },
-    {
-      "basename": "Herschel–Bulkley formulation",
-      "path": "Code-Documentations/Herschel–Bulkley formulation.md"
     },
     {
       "basename": "Thesis-Viscous Free-Surface Flows",
@@ -191,14 +199,6 @@
     {
       "basename": "RemindersSync",
       "path": "Resources-non-research/codesNapps/RemindersSync.md"
-    },
-    {
-      "basename": "Ollama commands",
-      "path": "Resources-non-research/codesNapps/Ollama commands.md"
-    },
-    {
-      "basename": "NotesSync",
-      "path": "Resources-non-research/codesNapps/NotesSync.md"
     }
   ],
   "omittedPaths": [],
