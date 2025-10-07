@@ -11,10 +11,24 @@
             "id": "5e9bd1adcd407119",
             "type": "leaf",
             "state": {
-              "type": "home-tab-view",
-              "state": {},
-              "icon": "search",
-              "title": "Home tab"
+              "type": "markdown",
+              "state": {
+                "file": "2025-JFM-Viscoelatic-Worthington-jets.md",
+                "mode": "preview",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "2025-JFM-Viscoelatic-Worthington-jets"
             }
           }
         ]
@@ -100,12 +114,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "2025-JFM-Viscoelatic-Worthington-jets.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of 2025-JFM-Viscoelatic-Worthington-jets"
             }
           },
           {

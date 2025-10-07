@@ -25,7 +25,7 @@ When a bubble bursts at a liquid surface, it doesn't simply disappear. Instead, 
 4. This convergence creates a focused flow that forms an upward-shooting "Worthington jet" [^4][^5][^6]
 5. This jet may break into droplets that escape into the air
 
-While this process is relatively well-understood for simple liquids like water (Newtonian fluids), many real-world scenarios involve liquids containing polymers—from biological fluids to industrial solutions. Our research investigated how these polymers fundamentally alter the bubble bursting dynamics. See [[History-Worthington-jets-from-bursting-bubbles]] for historical context. 
+While this process is relatively well-understood for simple liquids like water (Newtonian fluids), many real-world scenarios involve liquids containing polymers—from biological fluids to industrial solutions. Our research investigated how these polymers fundamentally alter the bubble bursting dynamics. See [[2025-History-Worthington-jets-from-bursting-bubbles]] for historical context. 
 
 ## The Physics at Play: A Dance of Forces
 
