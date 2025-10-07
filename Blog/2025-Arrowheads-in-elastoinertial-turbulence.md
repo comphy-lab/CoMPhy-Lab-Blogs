@@ -1,5 +1,5 @@
 ---
-modified: 2025-10-07T05:52:28+01:00
+modified: 2025-10-07T06:01:35+01:00
 created: 2025-02-23T13:33:34+01:00
 tags:
   - arrowhead
@@ -10,7 +10,7 @@ tags:
 status: done ✅
 aliases:
   - Arrowheads
-  - Arrowheads+in+elastoinertial+turbulence
+  - Arrowheads in elastoinertial turbulence
 ---
 # Reflections about arrowhead (narwhals) Structures in Elastoinertial Turbulence
 

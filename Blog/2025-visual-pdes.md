@@ -1,6 +1,13 @@
 ---
-modified: 2025-10-02T11:04:45+01:00
+modified: 2025-10-07T06:07:29+01:00
 created: 2025-10-01T12:14:38+01:00
+status: done ✅
+tags:
+  - PDE
+  - visualization
+  - simulation
+  - GPU
+  - computational-tools
 ---
 # Visual PDE: Where mathematics becomes art you can paint with your fingers
 
