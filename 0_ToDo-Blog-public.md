@@ -1,5 +1,5 @@
 ---
-modified: 2025-01-28T20:28:10+01:00
+modified: 2025-10-06T19:25:07+01:00
 created: 2025-01-02T00:26:54+01:00
 status: Working 🏗️
 tags:
@@ -9,7 +9,7 @@ tags:
 
 Here is a list of things on our to-publish list:
 
-- [ ] Stokes waves and related topics 📅 2025-03-01 ⏳ 2025-02-05  ^E1A6F85F-5E63-405E-9EF7-E8CC8662D3CC
+- [ ] Stokes waves and related topics 📅 2025-12-01   ^E1A6F85F-5E63-405E-9EF7-E8CC8662D3CC
 - [x] Showcase bubbles, waves: 📅 2025-01-12  ^0B681993-8C8A-49A5-93B6-83368684058E
 
 # To-Do: Blog Posts on Research Papers and Thesis
