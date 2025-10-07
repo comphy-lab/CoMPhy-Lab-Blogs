@@ -1,8 +1,8 @@
 {
   "files": [
     {
-      "path": "Blog/Arrowheads in elastoinertial turbulence.md",
-      "filename": "Arrowheads in elastoinertial turbulence"
+      "path": "Blog/2025-Arrowheads-in-elastoinertial-turbulence.md",
+      "filename": "2025-Arrowheads-in-elastoinertial-turbulence"
     },
     {
       "path": "Blog/2025-JFM-viscous-drop-impact.md",
@@ -17,8 +17,8 @@
       "filename": "0_README"
     },
     {
-      "path": "Blog/James G. Oldroyd.md",
-      "filename": "James G. Oldroyd"
+      "path": "Blog/2025-James-G-Oldroyd.md",
+      "filename": "2025-James-G-Oldroyd"
     },
     {
       "path": "Lecture-Notes/Basilisk101/1st-workingAssignment.md",
@@ -49,8 +49,8 @@
       "filename": "2025-JFM-Viscoelatic-Worthington-jets"
     },
     {
-      "path": "Blog/History-Worthington-jets-from-bursting-bubbles.md",
-      "filename": "History-Worthington-jets-from-bursting-bubbles"
+      "path": "Blog/2025-History-Worthington-jets-from-bursting-bubbles.md",
+      "filename": "2025-History-Worthington-jets-from-bursting-bubbles"
     },
     {
       "path": "Join-Us/Commonwealth-Split-site-PhD-Scholarships.md",
@@ -65,8 +65,24 @@
       "filename": "vpflow-abstract-1749493281374"
     },
     {
-      "path": "Blog/visual-pdes.md",
-      "filename": "visual-pdes"
+      "path": "Blog/2025-visual-pdes.md",
+      "filename": "2025-visual-pdes"
+    },
+    {
+      "path": "0_ToDo-Blog-public.md",
+      "filename": "0_ToDo-Blog-public"
+    },
+    {
+      "path": "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md",
+      "filename": "2025-Curvature-Inversion-in-Laser‑Struck-Droplets"
+    },
+    {
+      "path": "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
+      "filename": "2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence"
+    },
+    {
+      "path": "Blog/2025-Stokes-waves-arbitary-order.md",
+      "filename": "2025-Stokes-waves-arbitary-order"
     }
   ]
 }

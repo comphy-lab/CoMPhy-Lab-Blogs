@@ -1,20 +1,48 @@
 {
   "recentFiles": [
     {
-      "basename": "visual-pdes",
-      "path": "Blog/visual-pdes.md"
+      "basename": "2025-visual-pdes",
+      "path": "Blog/2025-visual-pdes.md"
     },
     {
-      "basename": "Arrowheads in elastoinertial turbulence",
-      "path": "Blog/Arrowheads in elastoinertial turbulence.md"
+      "basename": "2025-Thesis-Viscous-Free-Surface-Flows",
+      "path": "Blog/2025-Thesis-Viscous-Free-Surface-Flows.md"
     },
     {
-      "basename": "Features-of-capillary-waves-during-asymmetric-bubble-coalescence",
-      "path": "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.pdf"
+      "basename": "2025-Stokes-waves-arbitary-order",
+      "path": "Blog/2025-Stokes-waves-arbitary-order.md"
     },
     {
-      "basename": "History-Worthington-jets-from-bursting-bubbles",
-      "path": "Blog/History-Worthington-jets-from-bursting-bubbles.md"
+      "basename": "2025-JFM-viscous-drop-impact",
+      "path": "Blog/2025-JFM-viscous-drop-impact.md"
+    },
+    {
+      "basename": "2025-History-Worthington-jets-from-bursting-bubbles",
+      "path": "Blog/2025-History-Worthington-jets-from-bursting-bubbles.md"
+    },
+    {
+      "basename": "2025-James-G-Oldroyd",
+      "path": "Blog/2025-James-G-Oldroyd.md"
+    },
+    {
+      "basename": "2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence",
+      "path": "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md"
+    },
+    {
+      "basename": "2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence",
+      "path": "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.pdf"
+    },
+    {
+      "basename": "2025-Curvature-Inversion-in-Laser‑Struck-Droplets",
+      "path": "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md"
+    },
+    {
+      "basename": "2025-Arrowheads-in-elastoinertial-turbulence",
+      "path": "Blog/2025-Arrowheads-in-elastoinertial-turbulence.md"
+    },
+    {
+      "basename": "0_ToDo-Blog-public",
+      "path": "0_ToDo-Blog-public.md"
     },
     {
       "basename": "0-README",
@@ -31,14 +59,6 @@
     {
       "basename": "README",
       "path": "README.md"
-    },
-    {
-      "basename": "2025-JFM-viscous-drop-impact",
-      "path": "Blog/2025-JFM-viscous-drop-impact.md"
-    },
-    {
-      "basename": "Features-of-capillary-waves-during-asymmetric-bubble-coalescence",
-      "path": "Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md"
     },
     {
       "basename": "2025-06-30_Conference-VPflow-abstract",
@@ -59,10 +79,6 @@
     {
       "basename": "2025-JFM-Viscoelatic-Worthington-jets",
       "path": "2025-JFM-Viscoelatic-Worthington-jets.md"
-    },
-    {
-      "basename": "James G. Oldroyd",
-      "path": "Blog/James G. Oldroyd.md"
     },
     {
       "basename": "4th-workingAssignment",
@@ -103,18 +119,6 @@
     {
       "basename": "Private-ToDo-Blog-public",
       "path": "Private-ToDo-Blog-public.md"
-    },
-    {
-      "basename": "0_ToDo-Blog-public",
-      "path": "0_ToDo-Blog-public.md"
-    },
-    {
-      "basename": "Thesis-Viscous Free-Surface Flows",
-      "path": "Blog/Thesis-Viscous Free-Surface Flows.md"
-    },
-    {
-      "basename": "Stokes waves_arbitary order",
-      "path": "Blog/Stokes waves_arbitary order.md"
     },
     {
       "basename": "Seminar-UIUC-abstract",
@@ -195,10 +199,6 @@
     {
       "basename": "Removing Abstract from .bib Files",
       "path": "Resources-non-research/codesNapps/Removing Abstract from .bib Files.md"
-    },
-    {
-      "basename": "RemindersSync",
-      "path": "Resources-non-research/codesNapps/RemindersSync.md"
     }
   ],
   "omittedPaths": [],
