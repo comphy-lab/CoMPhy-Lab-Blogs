@@ -1,8 +1,7 @@
 ---
-modified: 2025-10-07T05:55:32+01:00
+modified: 2025-10-07T06:05:10+01:00
 created: 2025-05-06T12:39:04+02:00
-aliases:
-  - Historical+note+on+Worthington+jets+from+bursting+bubbles
+status: Working 🏗️
 publish: false
 ---
 # Historical note on Worthington jets from bursting bubbles

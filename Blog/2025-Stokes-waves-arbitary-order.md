@@ -1,12 +1,12 @@
 ---
-modified: 2025-10-07T05:56:05+01:00
+modified: 2025-10-07T06:05:52+01:00
 created: 2024-12-24T18:10:43+01:00
 author: Vatsal Sanjay
 affiliation: CoMPhy Lab, Physics of Fluids department, Univ. Twente
 tags:
   - stokeswaves
 priority: good to have 🍀
-status: ToDo 📝
+status: Working 🏗️
 publish: false
 ---
 # Stokes waves of arbitrary order

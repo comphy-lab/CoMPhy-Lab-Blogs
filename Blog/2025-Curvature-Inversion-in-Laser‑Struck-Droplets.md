@@ -1,6 +1,12 @@
 ---
-modified: 2025-10-06T20:00:50+01:00
+modified: 2025-10-07T06:05:29+01:00
 created: 2025-10-06T19:47:13+01:00
+status: done ✅
+tags:
+  - laser-droplet
+  - EUV-lithography
+  - tin
+  - curvature
 ---
 # Curvature Inversion in Laser‑Struck Droplets
 
