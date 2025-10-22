@@ -1,5 +1,5 @@
 ---
-modified: 2025-02-26T01:55:58+01:00
+modified: 2025-10-07T07:08:46+01:00
 created: 2024-12-15T23:25:04+01:00
 website: https://blogs-comphy-lab.org/
 status: done ✅
@@ -15,12 +15,11 @@ See: [About us](https://comphy-lab.org/about)
 
 ### Blog posts:
 #### 2025
-##### Computational tools & visualization:
-2025-10-01 [[2025-visual-pdes]]: Interactive browser-based PDE simulator - exploring pattern formation, reaction-diffusion systems, and mathematical visualization through GPU-accelerated simulations. A "Desmos for PDEs" that runs in your browser.
 
 ##### Laser-droplet interactions:
 2025-10-06 [[2025-Curvature-Inversion-in-Laser‑Struck-Droplets]]: Understanding how laser-induced pressure impulses control droplet sheet curvature in EUV lithography - from raised-cosine impulses to forward-bending sheets in tin microdroplets.
-
+##### Computational tools & visualization:
+2025-10-01 [[2025-visual-pdes]]: Interactive browser-based PDE simulator - exploring pattern formation, reaction-diffusion systems, and mathematical visualization through GPU-accelerated simulations. A "Desmos for PDEs" that runs in your browser.
 ##### Elastoinertial turbulence:
 2025-02-24 [[2025-Arrowheads-in-elastoinertial-turbulence]]: Critical review of arrowhead structures in elastoinertial turbulence, examining their existence in 3D flows and experimental observations.
 
@@ -33,12 +32,12 @@ See: [About us](https://comphy-lab.org/about)
 ### Code Documentation
 #### 2024
 ##### H-B formulation:
-2024-12-31 [[Herschel–Bulkley formulation]]: Mathematical formulation of the Herschel-Bulkley model for non-Newtonian flows, with emphasis on yield stress fluids.
+2024-12-31 [[2025-Herschel–Bulkley-formulation]]: Mathematical formulation of the Herschel-Bulkley model for non-Newtonian flows, with emphasis on yield stress fluids.
 
 ### Lecture notes:
 #### 2025
 ##### Gauss' Law:
-2025-01-21 [[Gauss law of Electrostatics]]: Analysis of electric field flux through different surfaces using Gauss's law, with visual demonstrations.
+2025-01-21 [[Gauss-law-of-Electrostatics]]: Analysis of electric field flux through different surfaces using Gauss's law, with visual demonstrations.
 
 ### Seminar talks/resources:
 #### 2025

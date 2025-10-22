@@ -1,6 +1,54 @@
 {
   "recentFiles": [
     {
+      "basename": "0-README",
+      "path": "Lecture-Notes/Basilisk101/0-README.md"
+    },
+    {
+      "basename": "2025-Arrowheads-in-elastoinertial-turbulence",
+      "path": "Blog/2025-Arrowheads-in-elastoinertial-turbulence.md"
+    },
+    {
+      "basename": "2025-Why-Double‑Network-Hydrogels-Dont-Shatter",
+      "path": "Blog/2025-Why-Double‑Network-Hydrogels-Dont-Shatter.md"
+    },
+    {
+      "basename": "Surface-parameterization",
+      "path": "Lecture-Notes/Surface-parameterization.md"
+    },
+    {
+      "basename": "Gauss-law-of-Electrostatics",
+      "path": "Lecture-Notes/Gauss-law-of-Electrostatics.md"
+    },
+    {
+      "basename": "4th-workingAssignment",
+      "path": "Lecture-Notes/Basilisk101/4th-workingAssignment.md"
+    },
+    {
+      "basename": "3rd-workingAssignment",
+      "path": "Lecture-Notes/Basilisk101/3rd-workingAssignment.md"
+    },
+    {
+      "basename": "2nd-workingAssignment",
+      "path": "Lecture-Notes/Basilisk101/2nd-workingAssignment.md"
+    },
+    {
+      "basename": "1st-workingAssignment",
+      "path": "Lecture-Notes/Basilisk101/1st-workingAssignment.md"
+    },
+    {
+      "basename": "1-conduction-takeaways",
+      "path": "Lecture-Notes/Basilisk101/1-conduction-takeaways.md"
+    },
+    {
+      "basename": "Commonwealth-Split-site-PhD-Scholarships",
+      "path": "Join-Us/Commonwealth-Split-site-PhD-Scholarships.md"
+    },
+    {
+      "basename": "2025-Herschel–Bulkley-formulation",
+      "path": "Code-Documentations/2025-Herschel–Bulkley-formulation.md"
+    },
+    {
       "basename": "2025-visual-pdes",
       "path": "Blog/2025-visual-pdes.md"
     },
@@ -15,6 +63,10 @@
     {
       "basename": "2025-JFM-viscous-drop-impact",
       "path": "Blog/2025-JFM-viscous-drop-impact.md"
+    },
+    {
+      "basename": "2025-JFM-Viscoelatic-Worthington-jets",
+      "path": "Blog/2025-JFM-Viscoelatic-Worthington-jets.md"
     },
     {
       "basename": "2025-James-G-Oldroyd",
@@ -33,40 +85,28 @@
       "path": "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md"
     },
     {
-      "basename": "2025-Arrowheads-in-elastoinertial-turbulence",
-      "path": "Blog/2025-Arrowheads-in-elastoinertial-turbulence.md"
-    },
-    {
-      "basename": "2025-JFM-Viscoelatic-Worthington-jets",
-      "path": "2025-JFM-Viscoelatic-Worthington-jets.md"
+      "basename": "2025-Herschel–Bulkley-formulation",
+      "path": "Code-Documentations/2025-Herschel–Bulkley-formulation.pdf"
     },
     {
       "basename": "2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence",
       "path": "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.pdf"
     },
     {
-      "basename": "0_ToDo-Blog-public",
-      "path": "0_ToDo-Blog-public.md"
-    },
-    {
-      "basename": "0-README",
-      "path": "Lecture-Notes/Basilisk101/0-README.md"
-    },
-    {
-      "basename": "Herschel–Bulkley formulation",
-      "path": "Code-Documentations/Herschel–Bulkley formulation.md"
-    },
-    {
       "basename": "0_README",
       "path": "0_README.md"
     },
     {
-      "basename": "README",
-      "path": "README.md"
-    },
-    {
       "basename": "2025-06-30_Conference-VPflow-abstract",
       "path": "Talks/2025-06-30_Conference-VPflow-abstract.md"
+    },
+    {
+      "basename": "0_ToDo-Blog-public",
+      "path": "0_ToDo-Blog-public.md"
+    },
+    {
+      "basename": "README",
+      "path": "README.md"
     },
     {
       "basename": "Seminar-UIUC-abstract",
@@ -75,42 +115,6 @@
     {
       "basename": "Seminar-Durham-abstract",
       "path": "Talks/Seminar-Durham-abstract.md"
-    },
-    {
-      "basename": "Commonwealth-Split-site-PhD-Scholarships",
-      "path": "Join-Us/Commonwealth-Split-site-PhD-Scholarships.md"
-    },
-    {
-      "basename": "4th-workingAssignment",
-      "path": "Lecture-Notes/Basilisk101/4th-workingAssignment.md"
-    },
-    {
-      "basename": "1-conduction-takeaways",
-      "path": "Lecture-Notes/Basilisk101/1-conduction-takeaways.md"
-    },
-    {
-      "basename": "2nd-workingAssignment",
-      "path": "Lecture-Notes/Basilisk101/2nd-workingAssignment.md"
-    },
-    {
-      "basename": "3rd-workingAssignment",
-      "path": "Lecture-Notes/Basilisk101/3rd-workingAssignment.md"
-    },
-    {
-      "basename": "Surface-parameterization",
-      "path": "Lecture-Notes/Surface-parameterization.md"
-    },
-    {
-      "basename": "1st-workingAssignment",
-      "path": "Lecture-Notes/Basilisk101/1st-workingAssignment.md"
-    },
-    {
-      "basename": "Gauss law of Electrostatics",
-      "path": "Lecture-Notes/Gauss law of Electrostatics.md"
-    },
-    {
-      "basename": "Bursting-bubbles-complex",
-      "path": "Bursting-bubbles-complex.md"
     },
     {
       "basename": "Seminar-Durham-abstract",
@@ -195,10 +199,6 @@
     {
       "basename": "SwiftRead PRO license key",
       "path": "Resources-non-research/codesNapps/SwiftRead PRO license key.md"
-    },
-    {
-      "basename": "Removing Abstract from .bib Files",
-      "path": "Resources-non-research/codesNapps/Removing Abstract from .bib Files.md"
     }
   ],
   "omittedPaths": [],

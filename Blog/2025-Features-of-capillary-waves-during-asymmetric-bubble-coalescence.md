@@ -1,10 +1,12 @@
 ---
-modified: 2025-10-07T06:04:47+01:00
+modified: 2025-10-07T09:12:47+01:00
 created: 2025-01-11T13:58:29+00:00
 tags:
   - bubbles
   - capillary-waves
-alias: Features-of-capillary-waves-during-asymmetric-bubble-coalescence
+aliases:
+  - Features-of-capillary-waves-during-asymmetric-bubble-coalescence
+  - Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence
 status: done ✅
 ---
 # Features of capillary waves during asymmetric bubble coalescence

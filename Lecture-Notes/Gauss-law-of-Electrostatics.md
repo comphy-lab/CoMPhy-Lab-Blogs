@@ -4,6 +4,8 @@ created: 2025-01-18T14:48:32+01:00
 status: done ✅
 aliases:
   - Gauss law of Electrostatics
+  - "Lecture-Notes/Gauss-law-of-Electrostatics"
+  - "Lecture-Notes/Gauss law of Electrostatics"
 ---
 # Gauss law of electrostatics
 > [!important]- Pre-requisites 
