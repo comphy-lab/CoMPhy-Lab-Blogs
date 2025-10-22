@@ -4,59 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "8092f0d6447ba1f9",
+        "id": "f1b67077d0ae6aae",
         "type": "tabs",
         "children": [
           {
-            "id": "641d8fd8e6785358",
+            "id": "72f44e1512d5005e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
-                "mode": "preview",
-                "source": true,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "1-Intro-Soft-Matter"
-            }
-          },
-          {
-            "id": "c273c8540c3e9157",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
-                "mode": "preview",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "1-Intro-Soft-Matter"
+              "type": "home-tab-view",
+              "state": {},
+              "icon": "search",
+              "title": "Home tab"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -123,7 +84,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 378.5
+    "width": 378.5,
+    "collapsed": true
   },
   "right": {
     "id": "f94baa4cb92838bd",
@@ -139,13 +101,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1-Intro-Soft-Matter"
+              "title": "Outline"
             }
           },
           {
@@ -248,7 +209,7 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "c273c8540c3e9157",
+  "active": "72f44e1512d5005e",
   "lastOpenFiles": [
     "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
     "Lecture-Notes/Intro-Soft-Matter/0-README.md",
