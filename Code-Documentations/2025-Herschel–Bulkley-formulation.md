@@ -1,11 +1,14 @@
 ---
-modified: 2025-01-28T20:26:35+01:00
+modified: 2025-10-07T10:03:14+01:00
 created: 2024-12-31T12:12:38+01:00
 tags:
   - non-Newtonian
   - Herschel-Bulkley-model
 aliases:
+  - Herschel–Bulkley-formulation
   - Herschel–Bulkley formulation
+  - "Code-Documentations/Herschel–Bulkley formulation"
+  - Herschel–Bulkley
 status: done ✅
 ---
 # Herschel–Bulkley formulation for non-Newtonian flows
@@ -103,7 +106,7 @@ Reproduced from: [P.-Y. Lagrée's Sandbox](http://basilisk.fr/sandbox/M1EMN/Exem
 [Open on YouTube](https://youtu.be/NmvCVsiEZIA)
 
 ### More resources
-| [GitHub](https://github.com/comphy-lab/BurstingBubble_Herschel-Bulkley) | [Demo](https://youtu.be/NmvCVsiEZIA) | [License](https://github.com/comphy-lab/BurstingBubble_Herschel-Bulkley/blob/main/LICENSE) | [Latest Changes](https://github.com/comphy-lab/BurstingBubble_Herschel-Bulkley/commits/main) | [[Herschel–Bulkley formulation.pdf\|pdf]] |
+| [GitHub](https://github.com/comphy-lab/BurstingBubble_Herschel-Bulkley) | [Demo](https://youtu.be/NmvCVsiEZIA) | [License](https://github.com/comphy-lab/BurstingBubble_Herschel-Bulkley/blob/main/LICENSE) | [Latest Changes](https://github.com/comphy-lab/BurstingBubble_Herschel-Bulkley/commits/main) | [[2025-Herschel–Bulkley-formulation.pdf\|pdf]] |
 | :---------------------------------------------------------------------: | :----------------------------------: | :----------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------: | ----------------------------------------- |
 
 ## References

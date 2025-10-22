@@ -4,17 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "d5ab8c40fb313cac",
+        "id": "8092f0d6447ba1f9",
         "type": "tabs",
         "children": [
           {
-            "id": "a6d389eb1bb97fe9",
+            "id": "641d8fd8e6785358",
             "type": "leaf",
             "state": {
-              "type": "home-tab-view",
-              "state": {},
-              "icon": "search",
-              "title": "Home tab"
+              "type": "markdown",
+              "state": {
+                "file": "Lecture-Notes/Basilisk101/0-README.md",
+                "mode": "preview",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "0-README"
             }
           }
         ]
@@ -100,12 +114,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Lecture-Notes/Basilisk101/0-README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of 0-README"
             }
           },
           {
@@ -207,40 +222,42 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "a6d389eb1bb97fe9",
+  "active": "641d8fd8e6785358",
   "lastOpenFiles": [
+    "Lecture-Notes/Intro-Soft-Matter",
+    "Blog/2025-Arrowheads-in-elastoinertial-turbulence.md",
+    "Blog/2025-Why-Double‑Network-Hydrogels-Dont-Shatter.md",
+    "Lecture-Notes/Surface-parameterization.md",
+    "Lecture-Notes/Gauss-law-of-Electrostatics.md",
+    "Lecture-Notes/Basilisk101/4th-workingAssignment.md",
+    "Lecture-Notes/Basilisk101/3rd-workingAssignment.md",
+    "Lecture-Notes/Basilisk101/2nd-workingAssignment.md",
+    "Lecture-Notes/Basilisk101/1st-workingAssignment.md",
+    "Lecture-Notes/Basilisk101/1-conduction-takeaways.md",
+    "Lecture-Notes/Basilisk101/0-README.md",
+    "Join-Us/Commonwealth-Split-site-PhD-Scholarships.md",
+    "Code-Documentations/2025-Herschel–Bulkley-formulation.md",
     "Blog/2025-visual-pdes.md",
     "Blog/2025-Thesis-Viscous-Free-Surface-Flows.md",
     "Blog/2025-Stokes-waves-arbitary-order.md",
     "Blog/2025-JFM-viscous-drop-impact.md",
+    "Blog/2025-JFM-Viscoelatic-Worthington-jets.md",
     "Blog/2025-James-G-Oldroyd.md",
     "Blog/2025-History-Worthington-jets-from-bursting-bubbles.md",
     "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
     "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md",
-    "Blog/2025-Arrowheads-in-elastoinertial-turbulence.md",
-    "2025-JFM-Viscoelatic-Worthington-jets.md",
+    "Code-Documentations/2025-Herschel–Bulkley-formulation.pdf",
     "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.pdf",
-    "0_ToDo-Blog-public.md",
-    "Lecture-Notes/Basilisk101/0-README.md",
-    "Code-Documentations/Herschel–Bulkley formulation.md",
     "0_README.md",
-    "README.md",
+    "Bursting-bubbles-complex.md",
     "Talks/2025-06-30_Conference-VPflow-abstract.md",
-    "Talks/Seminar-UIUC-abstract.md",
-    "Talks/Seminar-Durham-abstract.md",
-    "_Media/2025-06-30_Conference-VPflow-abstract-1749493868724.png",
     "_Media/vpflow-abstract-1749493281374.png",
+    "0_ToDo-Blog-public.md",
+    "_Media/2025-06-30_Conference-VPflow-abstract-1749493868724.png",
     "_Media/Untitled 1-1749492892475.png",
     "Talks/2025-06-30_Conference-VPflow-abstract.pdf",
     "Talks/vpflow-abstract.pdf",
-    "Talks/Conference-VPflow-abstract.md",
-    "Talks/vpflow-abstract.md",
-    "Join-Us/Commonwealth-Split-site-PhD-Scholarships.md",
-    "Join-Us/README.md",
     "Join-Us",
-    "CLAUDE.md",
-    "Lecture-Notes/Basilisk101/4th-workingAssignment.md",
-    "Lecture-Notes/Basilisk101/1-conduction-takeaways.md",
     "_Media/Surface-parameterization-1741713152627.png",
     "_Media/Surface-parameterization-1741712767672.png",
     "Lecture-Notes/Basilisk101",
@@ -253,7 +270,6 @@
     "_Media/JFM-viscous-drop-impact-blog-1740211822831.png",
     "Talks/Seminar-Durham-abstract.pdf",
     "Talks/Seminar-UIUC-abstract.pdf",
-    "Code-Documentations",
     "Inbox/Untitled.canvas"
   ]
 }

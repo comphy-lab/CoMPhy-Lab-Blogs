@@ -45,7 +45,7 @@
       "filename": "4th-workingAssignment"
     },
     {
-      "path": "2025-JFM-Viscoelatic-Worthington-jets.md",
+      "path": "Blog/2025-JFM-Viscoelatic-Worthington-jets.md",
       "filename": "2025-JFM-Viscoelatic-Worthington-jets"
     },
     {
@@ -83,6 +83,26 @@
     {
       "path": "Blog/2025-Stokes-waves-arbitary-order.md",
       "filename": "2025-Stokes-waves-arbitary-order"
+    },
+    {
+      "path": "Blog/2025-Thesis-Viscous-Free-Surface-Flows.md",
+      "filename": "2025-Thesis-Viscous-Free-Surface-Flows"
+    },
+    {
+      "path": "Code-Documentations/2025-Herschel–Bulkley-formulation.md",
+      "filename": "2025-Herschel–Bulkley-formulation"
+    },
+    {
+      "path": "_AtomicNotes/Gaussian surface is very similar to the control volume in fluid mechanics.md",
+      "filename": "Gaussian surface is very similar to the control volume in fluid mechanics"
+    },
+    {
+      "path": "Lecture-Notes/Gauss-law-of-Electrostatics.md",
+      "filename": "Gauss-law-of-Electrostatics"
+    },
+    {
+      "path": "Blog/2025-Why-Double‑Network-Hydrogels-Dont-Shatter.md",
+      "filename": "2025-Why-Double‑Network-Hydrogels-Dont-Shatter"
     }
   ]
 }

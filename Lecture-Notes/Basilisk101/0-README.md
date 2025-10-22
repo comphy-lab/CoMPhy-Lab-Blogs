@@ -1,8 +1,9 @@
 ---
 modified: 2025-03-11T01:00:40+01:00
 created: 2025-03-10T00:07:36+01:00
+aliases:
+  - Basilisk101
 ---
-
 ## Think before you compute
 - Conservation laws and the numerical solution of the Navier–Stokes equations
 - Transport equations

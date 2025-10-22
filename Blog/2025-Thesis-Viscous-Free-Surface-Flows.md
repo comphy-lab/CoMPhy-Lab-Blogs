@@ -1,7 +1,7 @@
 ---
 modified: 2025-01-26T23:18:12+01:00
 created: 2025-01-26T23:16:43+01:00
-alias: Vatsal-thesis
+aliases: Vatsal-thesis
 status: ToDo 📝
 publish: false
 ---

@@ -11,7 +11,6 @@
   "nldates-obsidian",
   "periodic-notes",
   "darlal-switcher-plus",
-  "frontmatter-modified-date",
   "obsidian-advanced-uri",
   "image-converter",
   "obsidian-image-toolkit",
@@ -38,5 +37,6 @@
   "editor-width-slider",
   "obsidian-pandoc-reference-list",
   "obsidian-zotero-desktop-connector",
-  "obsidian-tidy-footnotes"
+  "obsidian-tidy-footnotes",
+  "frontmatter-modified-date"
 ]
