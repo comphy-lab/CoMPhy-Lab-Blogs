@@ -13,7 +13,31 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lecture-Notes/Basilisk101/0-README.md",
+                "file": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
+                "mode": "preview",
+                "source": true,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "1-Intro-Soft-Matter"
+            }
+          },
+          {
+            "id": "c273c8540c3e9157",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
                 "mode": "preview",
                 "source": false,
                 "backlinks": true,
@@ -28,10 +52,11 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "0-README"
+              "title": "1-Intro-Soft-Matter"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -114,13 +139,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lecture-Notes/Basilisk101/0-README.md",
+                "file": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 0-README"
+              "title": "Outline of 1-Intro-Soft-Matter"
             }
           },
           {
@@ -205,7 +230,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 440.5
+    "width": 440.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -222,8 +248,23 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "641d8fd8e6785358",
+  "active": "c273c8540c3e9157",
   "lastOpenFiles": [
+    "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
+    "Lecture-Notes/Intro-Soft-Matter/0-README.md",
+    "_Media/1-Intro-Soft-Matter-1761105451051.png",
+    "_Media/1-Intro-Soft-Matter-1761105418528.png",
+    "_Media/1-Intro-Soft-Matter-1761105367372.png",
+    "Lecture-Notes/Basilisk101/1st-workingAssignment.md",
+    "Lecture-Notes/Basilisk101/1-conduction-takeaways.md",
+    "Blog/2025-JFM-Viscoelatic-Worthington-jets.md",
+    "_Media/1-Intro-Soft-Matter-1761103927376.png",
+    "_Media/1-Intro-Soft-Matter-1761103886417.png",
+    "_Media/1-Intro-Soft-Matter-1761103864489.png",
+    "_Media/1-Intro-Soft-Matter-1761103839157.png",
+    "_Media/1-Intro-Soft-Matter-1761103818495.png",
+    "_Media/1-Intro-Soft-Matter-1761103784897.png",
+    "Lecture-Notes/Basilisk101/0-README.md",
     "Lecture-Notes/Intro-Soft-Matter",
     "Blog/2025-Arrowheads-in-elastoinertial-turbulence.md",
     "Blog/2025-Why-Double‑Network-Hydrogels-Dont-Shatter.md",
@@ -232,16 +273,12 @@
     "Lecture-Notes/Basilisk101/4th-workingAssignment.md",
     "Lecture-Notes/Basilisk101/3rd-workingAssignment.md",
     "Lecture-Notes/Basilisk101/2nd-workingAssignment.md",
-    "Lecture-Notes/Basilisk101/1st-workingAssignment.md",
-    "Lecture-Notes/Basilisk101/1-conduction-takeaways.md",
-    "Lecture-Notes/Basilisk101/0-README.md",
     "Join-Us/Commonwealth-Split-site-PhD-Scholarships.md",
     "Code-Documentations/2025-Herschel–Bulkley-formulation.md",
     "Blog/2025-visual-pdes.md",
     "Blog/2025-Thesis-Viscous-Free-Surface-Flows.md",
     "Blog/2025-Stokes-waves-arbitary-order.md",
     "Blog/2025-JFM-viscous-drop-impact.md",
-    "Blog/2025-JFM-Viscoelatic-Worthington-jets.md",
     "Blog/2025-James-G-Oldroyd.md",
     "Blog/2025-History-Worthington-jets-from-bursting-bubbles.md",
     "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
@@ -250,26 +287,14 @@
     "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.pdf",
     "0_README.md",
     "Bursting-bubbles-complex.md",
-    "Talks/2025-06-30_Conference-VPflow-abstract.md",
     "_Media/vpflow-abstract-1749493281374.png",
-    "0_ToDo-Blog-public.md",
-    "_Media/2025-06-30_Conference-VPflow-abstract-1749493868724.png",
-    "_Media/Untitled 1-1749492892475.png",
     "Talks/2025-06-30_Conference-VPflow-abstract.pdf",
     "Talks/vpflow-abstract.pdf",
     "Join-Us",
-    "_Media/Surface-parameterization-1741713152627.png",
-    "_Media/Surface-parameterization-1741712767672.png",
     "Lecture-Notes/Basilisk101",
     "Lecture-Notes/untitled folder",
-    "_Media/James G. Oldroyd-1741128879880.png",
-    "_Media/James G. Oldroyd-1741126749363.jpeg",
-    "_Media/James G. Oldroyd-1741126421305.png",
     "favicon.ico",
-    "_Media/JFM-viscous-drop-impact-blog-1740211513533.jpg",
-    "_Media/JFM-viscous-drop-impact-blog-1740211822831.png",
     "Talks/Seminar-Durham-abstract.pdf",
-    "Talks/Seminar-UIUC-abstract.pdf",
     "Inbox/Untitled.canvas"
   ]
 }

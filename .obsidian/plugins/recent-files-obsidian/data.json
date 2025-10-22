@@ -1,6 +1,26 @@
 {
   "recentFiles": [
     {
+      "basename": "1-Intro-Soft-Matter",
+      "path": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md"
+    },
+    {
+      "basename": "0-README",
+      "path": "Lecture-Notes/Intro-Soft-Matter/0-README.md"
+    },
+    {
+      "basename": "1st-workingAssignment",
+      "path": "Lecture-Notes/Basilisk101/1st-workingAssignment.md"
+    },
+    {
+      "basename": "1-conduction-takeaways",
+      "path": "Lecture-Notes/Basilisk101/1-conduction-takeaways.md"
+    },
+    {
+      "basename": "2025-JFM-Viscoelatic-Worthington-jets",
+      "path": "Blog/2025-JFM-Viscoelatic-Worthington-jets.md"
+    },
+    {
       "basename": "0-README",
       "path": "Lecture-Notes/Basilisk101/0-README.md"
     },
@@ -33,14 +53,6 @@
       "path": "Lecture-Notes/Basilisk101/2nd-workingAssignment.md"
     },
     {
-      "basename": "1st-workingAssignment",
-      "path": "Lecture-Notes/Basilisk101/1st-workingAssignment.md"
-    },
-    {
-      "basename": "1-conduction-takeaways",
-      "path": "Lecture-Notes/Basilisk101/1-conduction-takeaways.md"
-    },
-    {
       "basename": "Commonwealth-Split-site-PhD-Scholarships",
       "path": "Join-Us/Commonwealth-Split-site-PhD-Scholarships.md"
     },
@@ -63,10 +75,6 @@
     {
       "basename": "2025-JFM-viscous-drop-impact",
       "path": "Blog/2025-JFM-viscous-drop-impact.md"
-    },
-    {
-      "basename": "2025-JFM-Viscoelatic-Worthington-jets",
-      "path": "Blog/2025-JFM-Viscoelatic-Worthington-jets.md"
     },
     {
       "basename": "2025-James-G-Oldroyd",
@@ -191,14 +199,6 @@
     {
       "basename": "Fenton's Papers Summary",
       "path": "_AtomicNotes/Fenton's Papers Summary.md"
-    },
-    {
-      "basename": "Granular blobs and active solids",
-      "path": "_Inbox/Granular blobs and active solids.md"
-    },
-    {
-      "basename": "SwiftRead PRO license key",
-      "path": "Resources-non-research/codesNapps/SwiftRead PRO license key.md"
     }
   ],
   "omittedPaths": [],
