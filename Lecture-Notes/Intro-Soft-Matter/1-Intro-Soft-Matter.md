@@ -1,6 +1,6 @@
 ---
 created: 2025-10-14T10:00:00+01:00
-modified: 2025-10-22T05:12:02+01:00
+modified: 2025-10-22T16:38:27+01:00
 tags:
   - lecture
   - soft-matter
@@ -11,7 +11,6 @@ date: 2025-10-15
 status: done ✅
 publish: true
 ---
-
 # Lecture 1: Different Faces of Soft Condensed Matter
 
 An introduction to soft materials, why they're soft, and how we measure softness. See [[0-README|course overview and structure]] for context.
@@ -342,6 +341,8 @@ Researchers at Sorbonne Université studied bubble formation dynamics by varying
 > - The **instability** responsible
 > - Its **thermodynamic driver** (what energy is minimized?)
 > - One **engineering application** or **mitigation strategy** (e.g., in printing, mixing, coating)
+
+[[Lecture1-ComplementaryQuestions-Answers]]
 
 ---
 

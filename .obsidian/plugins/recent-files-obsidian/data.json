@@ -1,6 +1,10 @@
 {
   "recentFiles": [
     {
+      "basename": "Lecture1-ComplementaryQuestions-Answers",
+      "path": "Lecture-Notes/Intro-Soft-Matter/Lecture1-ComplementaryQuestions-Answers.md"
+    },
+    {
       "basename": "1-Intro-Soft-Matter",
       "path": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "Stokes waves_arbitary order",
       "path": "Resources-research/Stokes waves_arbitary order.md"
-    },
-    {
-      "basename": "Fenton's Papers Summary",
-      "path": "_AtomicNotes/Fenton's Papers Summary.md"
     }
   ],
   "omittedPaths": [],
