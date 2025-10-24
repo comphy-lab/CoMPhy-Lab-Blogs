@@ -24,20 +24,12 @@
   "unresolvedLinks": true,
   "recentFilesStore": [
     {
+      "filepath": "Lecture-Notes/Intro-Soft-Matter/Lecture1-ComplementaryQuestions-Answers.md",
+      "timestamp": 1761151817286
+    },
+    {
       "filepath": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
-      "timestamp": 1761106318852
-    },
-    {
-      "filepath": "Lecture-Notes/Intro-Soft-Matter/0-README.md",
-      "timestamp": 1761106290865
-    },
-    {
-      "filepath": "Lecture-Notes/Basilisk101/1st-workingAssignment.md",
-      "timestamp": 1761104878524
-    },
-    {
-      "filepath": "Lecture-Notes/Basilisk101/1-conduction-takeaways.md",
-      "timestamp": 1761104875046
+      "timestamp": 1761147497042
     }
   ],
   "bookmarkedFileStore": [],

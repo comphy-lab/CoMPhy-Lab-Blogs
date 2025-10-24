@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "f1b67077d0ae6aae",
+        "id": "c42b1a3f23367d2e",
         "type": "tabs",
         "children": [
           {
-            "id": "72f44e1512d5005e",
+            "id": "3e5e349bda732cf0",
             "type": "leaf",
             "state": {
               "type": "home-tab-view",
@@ -84,8 +84,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 378.5,
-    "collapsed": true
+    "width": 378.5
   },
   "right": {
     "id": "f94baa4cb92838bd",
@@ -191,8 +190,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 440.5,
-    "collapsed": true
+    "width": 440.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -209,8 +207,9 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "72f44e1512d5005e",
+  "active": "3e5e349bda732cf0",
   "lastOpenFiles": [
+    "Lecture-Notes/Intro-Soft-Matter/Lecture1-ComplementaryQuestions-Answers.md",
     "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
     "Lecture-Notes/Intro-Soft-Matter/0-README.md",
     "_Media/1-Intro-Soft-Matter-1761105451051.png",
