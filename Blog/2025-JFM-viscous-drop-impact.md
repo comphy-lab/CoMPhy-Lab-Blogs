@@ -112,3 +112,5 @@ For researchers working in this field, the paper presents new scaling laws that 
 
 > [!meta] Back to main website
 > [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab), [Blogs](https://blogs.comphy-lab.org)
+>
+> 📝 [Edit this page on GitHub](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/blob/main/Blog/2025-JFM-viscous-drop-impact.md)

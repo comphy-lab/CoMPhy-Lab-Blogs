@@ -4086,10 +4086,10 @@ __export(index_exports, {
   default: () => FileCleanerPlugin2
 });
 module.exports = __toCommonJS(index_exports);
-var import_obsidian12 = require("obsidian");
+var import_obsidian13 = require("obsidian");
 
 // src/settings.ts
-var import_obsidian2 = require("obsidian");
+var import_obsidian3 = require("obsidian");
 
 // src/i18n.ts
 var moment = __toESM(require_moment());
@@ -4212,6 +4212,16 @@ var enUS = {
         Description: "Runs the cleaner on startup"
       }
     },
+    ExternalPluginSupport: {
+      Header: "External plugin support",
+      Excalidraw: {
+        Header: "Excalidraw",
+        TreatAsAttachments: {
+          Label: "Treat Excalidraw files as attachments",
+          Description: "With this option enabled any Excalidraw that are no longer referenced by other files, will be removed."
+        }
+      }
+    },
     DangerZone: {
       Header: "Danger zone",
       ResetSettings: {
@@ -4332,295 +4342,8 @@ function ResetSettingsModal({
   modal.open();
 }
 
-// src/settings.ts
-var ExcludeInclude = ((ExcludeInclude2) => {
-  ExcludeInclude2[ExcludeInclude2["Exclude"] = Number(false)] = "Exclude";
-  ExcludeInclude2[ExcludeInclude2["Include"] = Number(true)] = "Include";
-  return ExcludeInclude2;
-})(ExcludeInclude || {});
-var DEFAULT_SETTINGS = {
-  deletionDestination: "system" /* SystemTrash */,
-  obsidianTrashCleanupAge: -1,
-  excludeInclude: ExcludeInclude.Exclude,
-  excludedFolders: [],
-  attachmentsExcludeInclude: ExcludeInclude.Include,
-  attachmentExtensions: [],
-  deletionConfirmation: true,
-  runOnStartup: false,
-  removeFolders: false,
-  ignoredFrontmatter: [],
-  ignoreAllFrontmatter: false,
-  codeblockTypes: [],
-  deleteEmptyMarkdownFiles: true,
-  deleteEmptyMarkdownFilesWithBacklinks: false,
-  fileAgeThreshold: 0,
-  closeNewTabs: false,
-  deleteEmptyFileOnClose: false
-};
-var FileCleanerSettingTab = class extends import_obsidian2.PluginSettingTab {
-  constructor(app, plugin) {
-    super(app, plugin);
-    this.plugin = plugin;
-  }
-  display() {
-    const { containerEl } = this;
-    this.containerEl.empty();
-    new import_obsidian2.Setting(containerEl).setName(translate().Settings.RegularOptions.DeletedFiles.Label).setDesc(translate().Settings.RegularOptions.DeletedFiles.Description).addDropdown(
-      (dropdown) => dropdown.addOption(
-        "system",
-        translate().Settings.RegularOptions.DeletedFiles.Options.MoveToSystemTrash
-      ).addOption(
-        "obsidian",
-        translate().Settings.RegularOptions.DeletedFiles.Options.MoveToObsidianTrash
-      ).addOption(
-        "permanent",
-        translate().Settings.RegularOptions.DeletedFiles.Options.PermanentDelete
-      ).setValue(this.plugin.settings.deletionDestination).onChange((value) => {
-        switch (value) {
-          case "permanent" /* Permanent */:
-            this.plugin.settings.deletionDestination = "permanent" /* Permanent */;
-            break;
-          case "obsidian" /* ObsidianTrash */:
-            this.plugin.settings.deletionDestination = "obsidian" /* ObsidianTrash */;
-            break;
-          default:
-          case "system" /* SystemTrash */:
-            this.plugin.settings.deletionDestination = "system" /* SystemTrash */;
-            break;
-        }
-        this.plugin.saveSettings();
-        this.display();
-      })
-    );
-    this.plugin.settings.deletionDestination === "obsidian" /* ObsidianTrash */ && new import_obsidian2.Setting(containerEl).setName(
-      translate().Settings.RegularOptions.ObsidianTrashCleanupAge.Label
-    ).setDesc(
-      translate().Settings.RegularOptions.ObsidianTrashCleanupAge.Description
-    ).addText((text2) => {
-      const days = this.plugin.settings.obsidianTrashCleanupAge;
-      text2.setPlaceholder("7");
-      text2.setValue(days >= 0 ? String(days) : "");
-      text2.inputEl.style.minWidth = "18rem";
-      text2.onChange((value) => {
-        const days2 = Number(value.match(/^\d+/)) || -1;
-        this.plugin.settings.obsidianTrashCleanupAge = days2;
-        this.plugin.saveSettings();
-      });
-    });
-    this.containerEl.createEl("h3", {
-      text: translate().Settings.Folders.Header
-    });
-    new import_obsidian2.Setting(containerEl).setName(translate().Settings.Folders.RemoveFolders.Label).setDesc(translate().Settings.Folders.RemoveFolders.Description).addToggle((toggle) => {
-      toggle.setValue(this.plugin.settings.removeFolders);
-      toggle.onChange((value) => {
-        this.plugin.settings.removeFolders = value;
-        this.plugin.saveSettings();
-      });
-    });
-    new import_obsidian2.Setting(containerEl).setName(translate().Settings.Folders.FolderFiltering.Label).setDesc(translate().Settings.Folders.FolderFiltering.Description).addToggle((toggle) => {
-      toggle.setValue(Boolean(this.plugin.settings.excludeInclude));
-      toggle.onChange((value) => {
-        this.plugin.settings.excludeInclude = Number(value);
-        this.plugin.saveSettings();
-        this.display();
-      });
-    });
-    new import_obsidian2.Setting(containerEl).setName(
-      this.plugin.settings.excludeInclude ? translate().Settings.Folders.FolderFiltering.Included.Label : translate().Settings.Folders.FolderFiltering.Excluded.Label
-    ).setDesc(
-      this.plugin.settings.excludeInclude ? translate().Settings.Folders.FolderFiltering.Included.Description : translate().Settings.Folders.FolderFiltering.Excluded.Description
-    ).addTextArea((text2) => {
-      text2.setValue(this.plugin.settings.excludedFolders.join("\n")).onChange((value) => __async(this, null, function* () {
-        this.plugin.settings.excludedFolders = value.split(/\n/).map((ext) => ext.trim()).filter((ext) => ext !== "");
-        this.plugin.saveSettings();
-      }));
-      text2.setPlaceholder(
-        translate().Settings.Folders.FolderFiltering.Placeholder
-      );
-      text2.inputEl.style.minWidth = "18rem";
-      text2.inputEl.style.maxWidth = "18rem";
-      text2.inputEl.style.minHeight = "8rem";
-      text2.inputEl.style.maxHeight = "16rem";
-    });
-    this.containerEl.createEl("h3", {
-      text: translate().Settings.Files.Header
-    });
-    new import_obsidian2.Setting(containerEl).setName(translate().Settings.Files.Attachments.Label).setDesc(translate().Settings.Files.Attachments.Description).addToggle((toggle) => {
-      toggle.setValue(
-        Boolean(this.plugin.settings.attachmentsExcludeInclude)
-      );
-      toggle.onChange((value) => {
-        this.plugin.settings.attachmentsExcludeInclude = Number(value);
-        this.plugin.saveSettings();
-        this.display();
-      });
-    });
-    new import_obsidian2.Setting(containerEl).setName(
-      this.plugin.settings.attachmentsExcludeInclude ? translate().Settings.Files.Attachments.Included.Label : translate().Settings.Files.Attachments.Excluded.Label
-    ).setDesc(
-      this.plugin.settings.attachmentsExcludeInclude ? translate().Settings.Files.Attachments.Included.Description : translate().Settings.Files.Attachments.Excluded.Description
-    ).addTextArea((text2) => {
-      text2.setValue(
-        this.plugin.settings.attachmentExtensions.map((ext) => `.${ext}`).join(", ")
-      ).onChange((value) => __async(this, null, function* () {
-        this.plugin.settings.attachmentExtensions = value.split(",").map((ext) => ext.trim()).filter((ext) => ext.startsWith(".") && ext.length > 1).filter((ext) => ext !== "").map((ext) => ext.replace(/^\./, ""));
-        this.plugin.saveSettings();
-      }));
-      text2.setPlaceholder(
-        this.plugin.settings.attachmentsExcludeInclude ? translate().Settings.Files.Attachments.Included.Placeholder : translate().Settings.Files.Attachments.Excluded.Placeholder
-      );
-      text2.inputEl.style.minWidth = "18rem";
-      text2.inputEl.style.maxWidth = "18rem";
-      text2.inputEl.style.minHeight = "4rem";
-      text2.inputEl.style.maxHeight = "8rem";
-    });
-    new import_obsidian2.Setting(containerEl).setName(translate().Settings.Files.FileAgeThreshold.Label).setDesc(translate().Settings.Files.FileAgeThreshold.Description).addText((text2) => {
-      text2.setPlaceholder("0");
-      text2.inputEl.type = "number";
-      text2.inputEl.min = "0";
-      if (this.plugin.settings.fileAgeThreshold > 0)
-        text2.setValue(String(this.plugin.settings.fileAgeThreshold));
-      text2.onChange((value) => {
-        const newAge = Number(value.trim());
-        if (newAge >= 0) {
-          this.plugin.settings.fileAgeThreshold = newAge;
-          this.plugin.saveSettings();
-        } else text2.setValue("0");
-      });
-    });
-    this.containerEl.createEl("h4", {
-      text: translate().Settings.MarkdownFiles.Header
-    });
-    new import_obsidian2.Setting(containerEl).setName(
-      translate().Settings.MarkdownFiles.DeleteEmptyMarkdownFiles.Label
-    ).setDesc(
-      translate().Settings.MarkdownFiles.DeleteEmptyMarkdownFiles.Description
-    ).addToggle((toggle) => {
-      toggle.setValue(this.plugin.settings.deleteEmptyMarkdownFiles);
-      toggle.onChange((value) => {
-        this.plugin.settings.deleteEmptyMarkdownFiles = value;
-        this.plugin.saveSettings();
-        this.display();
-      });
-    });
-    this.plugin.settings.deleteEmptyMarkdownFiles && new import_obsidian2.Setting(containerEl).setName(
-      translate().Settings.MarkdownFiles.DeleteEmptyMarkdownFilesWithBacklinks.Label
-    ).setDesc(
-      translate().Settings.MarkdownFiles.DeleteEmptyMarkdownFilesWithBacklinks.Description
-    ).addToggle((toggle) => {
-      toggle.setValue(
-        this.plugin.settings.deleteEmptyMarkdownFilesWithBacklinks
-      );
-      toggle.onChange((value) => {
-        this.plugin.settings.deleteEmptyMarkdownFilesWithBacklinks = value;
-        this.plugin.saveSettings();
-        this.display();
-      });
-    });
-    new import_obsidian2.Setting(containerEl).setName(translate().Settings.MarkdownFiles.IgnoredFrontmatter.Label).setDesc(
-      translate().Settings.MarkdownFiles.IgnoredFrontmatter.Description
-    ).addTextArea((text2) => {
-      text2.setValue(this.plugin.settings.ignoredFrontmatter.join(", ")).onChange((value) => __async(this, null, function* () {
-        this.plugin.settings.ignoredFrontmatter = value.split(",").map((ext) => ext.trim()).filter((ext) => ext.length > 1 && ext !== "");
-        this.plugin.saveSettings();
-      }));
-      text2.setPlaceholder(
-        translate().Settings.MarkdownFiles.IgnoredFrontmatter.Placeholder
-      );
-      text2.inputEl.style.minWidth = "18rem";
-      text2.inputEl.style.maxWidth = "18rem";
-      text2.inputEl.style.minHeight = "4rem";
-      text2.inputEl.style.maxHeight = "12rem";
-    }).setDisabled(
-      this.plugin.settings.ignoreAllFrontmatter || !this.plugin.settings.deleteEmptyMarkdownFiles
-    ).controlEl.setCssStyles(
-      this.plugin.settings.ignoreAllFrontmatter && {
-        color: ""
-      }
-    );
-    new import_obsidian2.Setting(containerEl).setName(translate().Settings.MarkdownFiles.IgnoreAllFrontmatter.Label).setDesc(
-      translate().Settings.MarkdownFiles.IgnoreAllFrontmatter.Description
-    ).addToggle((toggle) => {
-      toggle.setValue(this.plugin.settings.ignoreAllFrontmatter);
-      toggle.onChange((value) => {
-        this.plugin.settings.ignoreAllFrontmatter = value;
-        this.plugin.saveSettings();
-        this.display();
-      });
-    }).setDisabled(!this.plugin.settings.deleteEmptyMarkdownFiles);
-    new import_obsidian2.Setting(containerEl).setName(translate().Settings.MarkdownFiles.CodeblockParsing.Label).setDesc(translate().Settings.MarkdownFiles.CodeblockParsing.Description).addTextArea((text2) => {
-      text2.setValue(this.plugin.settings.codeblockTypes.join(", ")).onChange((value) => __async(this, null, function* () {
-        this.plugin.settings.codeblockTypes = value.split(",").map((ext) => ext.trim()).filter((ext) => ext.length > 1 && ext !== "");
-        this.plugin.saveSettings();
-      }));
-      text2.setPlaceholder(
-        translate().Settings.MarkdownFiles.CodeblockParsing.Placeholder
-      );
-      text2.inputEl.style.minWidth = "18rem";
-      text2.inputEl.style.maxWidth = "18rem";
-      text2.inputEl.style.minHeight = "4rem";
-      text2.inputEl.style.maxHeight = "12rem";
-    }).controlEl.setCssStyles(
-      this.plugin.settings.ignoreAllFrontmatter && {
-        color: ""
-      }
-    );
-    this.containerEl.createEl("h3", {
-      text: translate().Settings.Other.Header
-    });
-    new import_obsidian2.Setting(containerEl).setName(translate().Settings.Other.CloseNewTabs.Label).setDesc(translate().Settings.Other.CloseNewTabs.Description).addToggle((toggle) => {
-      toggle.setValue(this.plugin.settings.closeNewTabs);
-      toggle.onChange((value) => {
-        this.plugin.settings.closeNewTabs = value;
-        this.plugin.saveSettings();
-      });
-    });
-    new import_obsidian2.Setting(containerEl).setName(translate().Settings.Other.DeleteEmptyFileOnClose.Label).setDesc(translate().Settings.Other.DeleteEmptyFileOnClose.Description).addToggle((toggle) => {
-      toggle.setValue(this.plugin.settings.deleteEmptyFileOnClose);
-      toggle.onChange((value) => {
-        this.plugin.settings.deleteEmptyFileOnClose = value;
-        this.plugin.saveSettings();
-      });
-    });
-    new import_obsidian2.Setting(containerEl).setName(translate().Settings.Other.PreviewDeletedFiles.Label).setDesc(translate().Settings.Other.PreviewDeletedFiles.Description).addToggle((toggle) => {
-      toggle.setValue(this.plugin.settings.deletionConfirmation);
-      toggle.onChange((value) => {
-        this.plugin.settings.deletionConfirmation = value;
-        this.plugin.saveSettings();
-      });
-    });
-    new import_obsidian2.Setting(containerEl).setName(translate().Settings.Other.RunOnStartup.Label).setDesc(translate().Settings.Other.RunOnStartup.Description).addToggle((toggle) => {
-      toggle.setValue(this.plugin.settings.runOnStartup);
-      toggle.onChange((value) => {
-        this.plugin.settings.runOnStartup = value;
-        this.plugin.saveSettings();
-      });
-    });
-    this.containerEl.createEl("h3", {
-      text: translate().Settings.DangerZone.Header
-    });
-    new import_obsidian2.Setting(containerEl).setName(translate().Settings.DangerZone.ResetSettings.Label).setDesc(translate().Settings.DangerZone.ResetSettings.Description).addButton((button) => {
-      button.setWarning().setButtonText(translate().Settings.DangerZone.ResetSettings.Button).onClick(() => {
-        ResetSettingsModal({
-          app: this.app,
-          onConfirm: () => {
-            this.plugin.settings = DEFAULT_SETTINGS;
-            this.plugin.saveSettings();
-            this.display();
-            this.plugin.loadSettings();
-            new import_obsidian2.Notice(translate().Notifications.SettingsReset);
-          }
-        });
-      });
-    });
-  }
-};
-
-// src/util.ts
-var import_obsidian11 = require("obsidian");
-
 // src/helpers/helpers.ts
-var import_obsidian3 = require("obsidian");
+var import_obsidian2 = require("obsidian");
 function removeFile(file, app, settings) {
   return __async(this, null, function* () {
     if (!(yield app.vault.adapter.exists(file.path))) return;
@@ -4643,9 +4366,9 @@ function removeFiles(files, app, settings) {
       for (const file of files) {
         removeFile(file, app, settings);
       }
-      new import_obsidian3.Notice(translate().Notifications.CleanSuccessful);
+      new import_obsidian2.Notice(translate().Notifications.CleanSuccessful);
     } else {
-      new import_obsidian3.Notice(translate().Notifications.NoFileToClean);
+      new import_obsidian2.Notice(translate().Notifications.NoFileToClean);
     }
   });
 }
@@ -4672,12 +4395,331 @@ function getExtensions(settings) {
     (extension) => extension !== "*"
   );
   if (settings.attachmentExtensions.includes("*")) extensions.push(".*");
-  return RegExp(`^(${["md", ...extensions].join("|")})$`);
+  return extensions;
 }
 function userHasPlugin(id, app) {
   const plugins = app.plugins.plugins;
   return plugins.hasOwnProperty(id);
 }
+
+// src/settings.ts
+var ExcludeInclude = ((ExcludeInclude2) => {
+  ExcludeInclude2[ExcludeInclude2["Exclude"] = Number(false)] = "Exclude";
+  ExcludeInclude2[ExcludeInclude2["Include"] = Number(true)] = "Include";
+  return ExcludeInclude2;
+})(ExcludeInclude || {});
+var DEFAULT_SETTINGS = {
+  deletionDestination: "system" /* SystemTrash */,
+  obsidianTrashCleanupAge: -1,
+  excludeInclude: ExcludeInclude.Exclude,
+  excludedFolders: [],
+  attachmentsExcludeInclude: ExcludeInclude.Include,
+  attachmentExtensions: [],
+  deletionConfirmation: true,
+  runOnStartup: false,
+  removeFolders: false,
+  ignoredFrontmatter: [],
+  ignoreAllFrontmatter: false,
+  codeblockTypes: [],
+  deleteEmptyMarkdownFiles: true,
+  deleteEmptyMarkdownFilesWithBacklinks: false,
+  fileAgeThreshold: 0,
+  closeNewTabs: false,
+  deleteEmptyFileOnClose: false,
+  ExternalPlugins: {
+    Excalidraw: {
+      TreatAsAttachments: false
+    }
+  }
+};
+var supportedPlugins = /* @__PURE__ */ new Set([
+  // plugin IDs goes here
+  "obsidian-excalidraw-plugin"
+]);
+var FileCleanerSettingTab = class extends import_obsidian3.PluginSettingTab {
+  constructor(app, plugin) {
+    super(app, plugin);
+    this.plugin = plugin;
+  }
+  display() {
+    const { containerEl } = this;
+    this.containerEl.empty();
+    new import_obsidian3.Setting(containerEl).setName(translate().Settings.RegularOptions.DeletedFiles.Label).setDesc(translate().Settings.RegularOptions.DeletedFiles.Description).addDropdown(
+      (dropdown) => dropdown.addOption(
+        "system",
+        translate().Settings.RegularOptions.DeletedFiles.Options.MoveToSystemTrash
+      ).addOption(
+        "obsidian",
+        translate().Settings.RegularOptions.DeletedFiles.Options.MoveToObsidianTrash
+      ).addOption(
+        "permanent",
+        translate().Settings.RegularOptions.DeletedFiles.Options.PermanentDelete
+      ).setValue(this.plugin.settings.deletionDestination).onChange((value) => {
+        switch (value) {
+          case "permanent" /* Permanent */:
+            this.plugin.settings.deletionDestination = "permanent" /* Permanent */;
+            break;
+          case "obsidian" /* ObsidianTrash */:
+            this.plugin.settings.deletionDestination = "obsidian" /* ObsidianTrash */;
+            break;
+          default:
+          case "system" /* SystemTrash */:
+            this.plugin.settings.deletionDestination = "system" /* SystemTrash */;
+            break;
+        }
+        this.plugin.saveSettings();
+        this.display();
+      })
+    );
+    this.plugin.settings.deletionDestination === "obsidian" /* ObsidianTrash */ && new import_obsidian3.Setting(containerEl).setName(
+      translate().Settings.RegularOptions.ObsidianTrashCleanupAge.Label
+    ).setDesc(
+      translate().Settings.RegularOptions.ObsidianTrashCleanupAge.Description
+    ).addText((text2) => {
+      const days = this.plugin.settings.obsidianTrashCleanupAge;
+      text2.setPlaceholder("7");
+      text2.setValue(days >= 0 ? String(days) : "");
+      text2.inputEl.style.minWidth = "18rem";
+      text2.onChange((value) => {
+        const days2 = Number(value.match(/^\d+/)) || -1;
+        this.plugin.settings.obsidianTrashCleanupAge = days2;
+        this.plugin.saveSettings();
+      });
+    });
+    this.containerEl.createEl("h3", {
+      text: translate().Settings.Folders.Header
+    });
+    new import_obsidian3.Setting(containerEl).setName(translate().Settings.Folders.RemoveFolders.Label).setDesc(translate().Settings.Folders.RemoveFolders.Description).addToggle((toggle) => {
+      toggle.setValue(this.plugin.settings.removeFolders);
+      toggle.onChange((value) => {
+        this.plugin.settings.removeFolders = value;
+        this.plugin.saveSettings();
+      });
+    });
+    new import_obsidian3.Setting(containerEl).setName(translate().Settings.Folders.FolderFiltering.Label).setDesc(translate().Settings.Folders.FolderFiltering.Description).addToggle((toggle) => {
+      toggle.setValue(Boolean(this.plugin.settings.excludeInclude));
+      toggle.onChange((value) => {
+        this.plugin.settings.excludeInclude = Number(value);
+        this.plugin.saveSettings();
+        this.display();
+      });
+    });
+    new import_obsidian3.Setting(containerEl).setName(
+      this.plugin.settings.excludeInclude ? translate().Settings.Folders.FolderFiltering.Included.Label : translate().Settings.Folders.FolderFiltering.Excluded.Label
+    ).setDesc(
+      this.plugin.settings.excludeInclude ? translate().Settings.Folders.FolderFiltering.Included.Description : translate().Settings.Folders.FolderFiltering.Excluded.Description
+    ).addTextArea((text2) => {
+      text2.setValue(this.plugin.settings.excludedFolders.join("\n")).onChange((value) => __async(this, null, function* () {
+        this.plugin.settings.excludedFolders = value.split(/\n/).map((ext) => ext.trim()).filter((ext) => ext !== "");
+        this.plugin.saveSettings();
+      }));
+      text2.setPlaceholder(
+        translate().Settings.Folders.FolderFiltering.Placeholder
+      );
+      text2.inputEl.style.minWidth = "18rem";
+      text2.inputEl.style.maxWidth = "18rem";
+      text2.inputEl.style.minHeight = "8rem";
+      text2.inputEl.style.maxHeight = "16rem";
+    });
+    this.containerEl.createEl("h3", {
+      text: translate().Settings.Files.Header
+    });
+    new import_obsidian3.Setting(containerEl).setName(translate().Settings.Files.Attachments.Label).setDesc(translate().Settings.Files.Attachments.Description).addToggle((toggle) => {
+      toggle.setValue(
+        Boolean(this.plugin.settings.attachmentsExcludeInclude)
+      );
+      toggle.onChange((value) => {
+        this.plugin.settings.attachmentsExcludeInclude = Number(value);
+        this.plugin.saveSettings();
+        this.display();
+      });
+    });
+    new import_obsidian3.Setting(containerEl).setName(
+      this.plugin.settings.attachmentsExcludeInclude ? translate().Settings.Files.Attachments.Included.Label : translate().Settings.Files.Attachments.Excluded.Label
+    ).setDesc(
+      this.plugin.settings.attachmentsExcludeInclude ? translate().Settings.Files.Attachments.Included.Description : translate().Settings.Files.Attachments.Excluded.Description
+    ).addTextArea((text2) => {
+      text2.setValue(
+        this.plugin.settings.attachmentExtensions.map((ext) => `.${ext}`).join(", ")
+      ).onChange((value) => __async(this, null, function* () {
+        this.plugin.settings.attachmentExtensions = value.split(",").map((ext) => ext.trim()).filter((ext) => ext.startsWith(".") && ext.length > 1).filter((ext) => ext !== "").map((ext) => ext.replace(/^\./, ""));
+        this.plugin.saveSettings();
+      }));
+      text2.setPlaceholder(
+        this.plugin.settings.attachmentsExcludeInclude ? translate().Settings.Files.Attachments.Included.Placeholder : translate().Settings.Files.Attachments.Excluded.Placeholder
+      );
+      text2.inputEl.style.minWidth = "18rem";
+      text2.inputEl.style.maxWidth = "18rem";
+      text2.inputEl.style.minHeight = "4rem";
+      text2.inputEl.style.maxHeight = "8rem";
+    });
+    new import_obsidian3.Setting(containerEl).setName(translate().Settings.Files.FileAgeThreshold.Label).setDesc(translate().Settings.Files.FileAgeThreshold.Description).addText((text2) => {
+      text2.setPlaceholder("0");
+      text2.inputEl.type = "number";
+      text2.inputEl.min = "0";
+      if (this.plugin.settings.fileAgeThreshold > 0)
+        text2.setValue(String(this.plugin.settings.fileAgeThreshold));
+      text2.onChange((value) => {
+        const newAge = Number(value.trim());
+        if (newAge >= 0) {
+          this.plugin.settings.fileAgeThreshold = newAge;
+          this.plugin.saveSettings();
+        } else text2.setValue("0");
+      });
+    });
+    this.containerEl.createEl("h4", {
+      text: translate().Settings.MarkdownFiles.Header
+    });
+    new import_obsidian3.Setting(containerEl).setName(
+      translate().Settings.MarkdownFiles.DeleteEmptyMarkdownFiles.Label
+    ).setDesc(
+      translate().Settings.MarkdownFiles.DeleteEmptyMarkdownFiles.Description
+    ).addToggle((toggle) => {
+      toggle.setValue(this.plugin.settings.deleteEmptyMarkdownFiles);
+      toggle.onChange((value) => {
+        this.plugin.settings.deleteEmptyMarkdownFiles = value;
+        this.plugin.saveSettings();
+        this.display();
+      });
+    });
+    this.plugin.settings.deleteEmptyMarkdownFiles && new import_obsidian3.Setting(containerEl).setName(
+      translate().Settings.MarkdownFiles.DeleteEmptyMarkdownFilesWithBacklinks.Label
+    ).setDesc(
+      translate().Settings.MarkdownFiles.DeleteEmptyMarkdownFilesWithBacklinks.Description
+    ).addToggle((toggle) => {
+      toggle.setValue(
+        this.plugin.settings.deleteEmptyMarkdownFilesWithBacklinks
+      );
+      toggle.onChange((value) => {
+        this.plugin.settings.deleteEmptyMarkdownFilesWithBacklinks = value;
+        this.plugin.saveSettings();
+        this.display();
+      });
+    });
+    new import_obsidian3.Setting(containerEl).setName(translate().Settings.MarkdownFiles.IgnoredFrontmatter.Label).setDesc(
+      translate().Settings.MarkdownFiles.IgnoredFrontmatter.Description
+    ).addTextArea((text2) => {
+      text2.setValue(this.plugin.settings.ignoredFrontmatter.join(", ")).onChange((value) => __async(this, null, function* () {
+        this.plugin.settings.ignoredFrontmatter = value.split(",").map((ext) => ext.trim()).filter((ext) => ext.length > 1 && ext !== "");
+        this.plugin.saveSettings();
+      }));
+      text2.setPlaceholder(
+        translate().Settings.MarkdownFiles.IgnoredFrontmatter.Placeholder
+      );
+      text2.inputEl.style.minWidth = "18rem";
+      text2.inputEl.style.maxWidth = "18rem";
+      text2.inputEl.style.minHeight = "4rem";
+      text2.inputEl.style.maxHeight = "12rem";
+    }).setDisabled(
+      this.plugin.settings.ignoreAllFrontmatter || !this.plugin.settings.deleteEmptyMarkdownFiles
+    ).controlEl.setCssStyles(
+      this.plugin.settings.ignoreAllFrontmatter && {
+        color: ""
+      }
+    );
+    new import_obsidian3.Setting(containerEl).setName(translate().Settings.MarkdownFiles.IgnoreAllFrontmatter.Label).setDesc(
+      translate().Settings.MarkdownFiles.IgnoreAllFrontmatter.Description
+    ).addToggle((toggle) => {
+      toggle.setValue(this.plugin.settings.ignoreAllFrontmatter);
+      toggle.onChange((value) => {
+        this.plugin.settings.ignoreAllFrontmatter = value;
+        this.plugin.saveSettings();
+        this.display();
+      });
+    }).setDisabled(!this.plugin.settings.deleteEmptyMarkdownFiles);
+    new import_obsidian3.Setting(containerEl).setName(translate().Settings.MarkdownFiles.CodeblockParsing.Label).setDesc(translate().Settings.MarkdownFiles.CodeblockParsing.Description).addTextArea((text2) => {
+      text2.setValue(this.plugin.settings.codeblockTypes.join(", ")).onChange((value) => __async(this, null, function* () {
+        this.plugin.settings.codeblockTypes = value.split(",").map((ext) => ext.trim()).filter((ext) => ext.length > 1 && ext !== "");
+        this.plugin.saveSettings();
+      }));
+      text2.setPlaceholder(
+        translate().Settings.MarkdownFiles.CodeblockParsing.Placeholder
+      );
+      text2.inputEl.style.minWidth = "18rem";
+      text2.inputEl.style.maxWidth = "18rem";
+      text2.inputEl.style.minHeight = "4rem";
+      text2.inputEl.style.maxHeight = "12rem";
+    }).controlEl.setCssStyles(
+      this.plugin.settings.ignoreAllFrontmatter && {
+        color: ""
+      }
+    );
+    this.containerEl.createEl("h3", {
+      text: translate().Settings.Other.Header
+    });
+    new import_obsidian3.Setting(containerEl).setName(translate().Settings.Other.CloseNewTabs.Label).setDesc(translate().Settings.Other.CloseNewTabs.Description).addToggle((toggle) => {
+      toggle.setValue(this.plugin.settings.closeNewTabs);
+      toggle.onChange((value) => {
+        this.plugin.settings.closeNewTabs = value;
+        this.plugin.saveSettings();
+      });
+    });
+    new import_obsidian3.Setting(containerEl).setName(translate().Settings.Other.DeleteEmptyFileOnClose.Label).setDesc(translate().Settings.Other.DeleteEmptyFileOnClose.Description).addToggle((toggle) => {
+      toggle.setValue(this.plugin.settings.deleteEmptyFileOnClose);
+      toggle.onChange((value) => {
+        this.plugin.settings.deleteEmptyFileOnClose = value;
+        this.plugin.saveSettings();
+      });
+    });
+    new import_obsidian3.Setting(containerEl).setName(translate().Settings.Other.PreviewDeletedFiles.Label).setDesc(translate().Settings.Other.PreviewDeletedFiles.Description).addToggle((toggle) => {
+      toggle.setValue(this.plugin.settings.deletionConfirmation);
+      toggle.onChange((value) => {
+        this.plugin.settings.deletionConfirmation = value;
+        this.plugin.saveSettings();
+      });
+    });
+    new import_obsidian3.Setting(containerEl).setName(translate().Settings.Other.RunOnStartup.Label).setDesc(translate().Settings.Other.RunOnStartup.Description).addToggle((toggle) => {
+      toggle.setValue(this.plugin.settings.runOnStartup);
+      toggle.onChange((value) => {
+        this.plugin.settings.runOnStartup = value;
+        this.plugin.saveSettings();
+      });
+    });
+    if ([...supportedPlugins].filter((plugin) => userHasPlugin(plugin, this.app)).length > 0) {
+      this.containerEl.createEl("h3", {
+        text: translate().Settings.ExternalPluginSupport.Header
+      });
+      if (userHasPlugin("obsidian-excalidraw-plugin", this.app)) {
+        this.containerEl.createEl("h4", {
+          text: translate().Settings.ExternalPluginSupport.Excalidraw.Header
+        });
+        new import_obsidian3.Setting(containerEl).setName(
+          translate().Settings.ExternalPluginSupport.Excalidraw.TreatAsAttachments.Label
+        ).setDesc(
+          translate().Settings.ExternalPluginSupport.Excalidraw.TreatAsAttachments.Description
+        ).addToggle((toggle) => {
+          toggle.setValue(
+            this.plugin.settings.ExternalPlugins.Excalidraw.TreatAsAttachments
+          );
+          toggle.onChange((value) => {
+            this.plugin.settings.ExternalPlugins.Excalidraw.TreatAsAttachments = value;
+            this.plugin.saveSettings();
+          });
+        });
+      }
+    }
+    this.containerEl.createEl("h3", {
+      text: translate().Settings.DangerZone.Header
+    });
+    new import_obsidian3.Setting(containerEl).setName(translate().Settings.DangerZone.ResetSettings.Label).setDesc(translate().Settings.DangerZone.ResetSettings.Description).addButton((button) => {
+      button.setWarning().setButtonText(translate().Settings.DangerZone.ResetSettings.Button).onClick(() => {
+        ResetSettingsModal({
+          app: this.app,
+          onConfirm: () => {
+            this.plugin.settings = DEFAULT_SETTINGS;
+            this.plugin.saveSettings();
+            this.display();
+            this.plugin.loadSettings();
+            new import_obsidian3.Notice(translate().Notifications.SettingsReset);
+          }
+        });
+      });
+    });
+  }
+};
+
+// src/util.ts
+var import_obsidian12 = require("obsidian");
 
 // src/helpers/markdown.ts
 var import_obsidian4 = require("obsidian");
@@ -4774,7 +4816,7 @@ var _a, _b;
 var node_env = (_b = (_a = globalThis.process) == null ? void 0 : _a.env) == null ? void 0 : _b.NODE_ENV;
 var dev_fallback_default = node_env && !node_env.toLowerCase().startsWith("prod");
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/shared/utils.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/shared/utils.js
 var is_array = Array.isArray;
 var index_of = Array.prototype.indexOf;
 var array_from = Array.from;
@@ -4821,7 +4863,7 @@ function to_array(value, n) {
   return array;
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/constants.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/constants.js
 var DERIVED = 1 << 1;
 var EFFECT = 1 << 2;
 var RENDER_EFFECT = 1 << 3;
@@ -4860,7 +4902,7 @@ var ELEMENT_NODE = 1;
 var TEXT_NODE = 3;
 var COMMENT_NODE = 8;
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/errors.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/errors.js
 function async_derived_orphan() {
   if (dev_fallback_default) {
     const error = new Error(`async_derived_orphan
@@ -5016,7 +5058,7 @@ https://svelte.dev/e/svelte_boundary_reset_onerror`);
   }
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/constants.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/constants.js
 var EACH_ITEM_REACTIVE = 1;
 var EACH_INDEX_REACTIVE = 1 << 1;
 var EACH_IS_CONTROLLED = 1 << 2;
@@ -5046,7 +5088,7 @@ var NAMESPACE_HTML = "http://www.w3.org/1999/xhtml";
 var NAMESPACE_SVG = "http://www.w3.org/2000/svg";
 var ATTACHMENT_KEY = "@attach";
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/warnings.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/warnings.js
 var bold = "font-weight: bold";
 var normal = "font-weight: normal";
 function await_reactivity_loss(name) {
@@ -5135,7 +5177,7 @@ https://svelte.dev/e/svelte_boundary_reset_noop`, bold, normal);
   }
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/hydration.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/hydration.js
 var hydrating = false;
 function set_hydrating(value) {
   hydrating = value;
@@ -5208,7 +5250,7 @@ function read_hydration_instruction(node) {
   );
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/reactivity/equality.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/reactivity/equality.js
 function equals(value) {
   return value === this.v;
 }
@@ -5219,7 +5261,7 @@ function safe_equals(value) {
   return !safe_not_equal(value, this.v);
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/flags/index.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/flags/index.js
 var async_mode_flag = false;
 var legacy_mode_flag = false;
 var tracing_mode_flag = false;
@@ -5227,7 +5269,7 @@ function enable_legacy_mode_flag() {
   legacy_mode_flag = true;
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dev/tracing.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dev/tracing.js
 var tracing_expressions = null;
 function get_stack(label) {
   let error = Error();
@@ -5274,7 +5316,7 @@ function tag_proxy(value, label) {
   return value;
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/context.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/context.js
 var component_context = null;
 function set_component_context(context) {
   component_context = context;
@@ -5330,22 +5372,12 @@ function is_runes() {
   return !legacy_mode_flag || component_context !== null && component_context.l === null;
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/task.js
-var request_idle_callback = typeof requestIdleCallback === "undefined" ? (cb) => setTimeout(cb, 1) : requestIdleCallback;
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/task.js
 var micro_tasks = [];
-var idle_tasks = [];
 function run_micro_tasks() {
   var tasks = micro_tasks;
   micro_tasks = [];
   run_all(tasks);
-}
-function run_idle_tasks() {
-  var tasks = idle_tasks;
-  idle_tasks = [];
-  run_all(tasks);
-}
-function has_pending_tasks() {
-  return micro_tasks.length > 0 || idle_tasks.length > 0;
 }
 function queue_micro_task(fn) {
   if (micro_tasks.length === 0 && !is_flushing_sync) {
@@ -5356,22 +5388,13 @@ function queue_micro_task(fn) {
   }
   micro_tasks.push(fn);
 }
-function queue_idle_task(fn) {
-  if (idle_tasks.length === 0) {
-    request_idle_callback(run_idle_tasks);
-  }
-  idle_tasks.push(fn);
-}
 function flush_tasks() {
-  if (micro_tasks.length > 0) {
+  while (micro_tasks.length > 0) {
     run_micro_tasks();
-  }
-  if (idle_tasks.length > 0) {
-    run_idle_tasks();
   }
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/error-handling.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/error-handling.js
 var adjustments = /* @__PURE__ */ new WeakMap();
 function handle_error(error) {
   var effect2 = active_effect;
@@ -5443,17 +5466,17 @@ function apply_adjustments(error) {
   }
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/reactivity/batch.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/reactivity/batch.js
 var batches = /* @__PURE__ */ new Set();
 var current_batch = null;
 var previous_batch = null;
-var batch_deriveds = null;
+var batch_values = null;
 var effect_pending_updates = /* @__PURE__ */ new Set();
 var queued_root_effects = [];
 var last_scheduled_effect = null;
 var is_flushing = false;
 var is_flushing_sync = false;
-var _previous, _callbacks, _pending, _deferred, _neutered, _async_effects, _boundary_async_effects, _render_effects, _effects, _block_effects, _dirty_effects, _maybe_dirty_effects, _Batch_instances, traverse_effect_tree_fn, defer_effects_fn, commit_fn;
+var _previous, _callbacks, _pending, _deferred, _boundary_async_effects, _render_effects, _effects, _block_effects, _dirty_effects, _maybe_dirty_effects, _Batch_instances, traverse_effect_tree_fn, defer_effects_fn, commit_fn;
 var _Batch = class _Batch {
   constructor() {
     __privateAdd(this, _Batch_instances);
@@ -5486,20 +5509,8 @@ var _Batch = class _Batch {
      */
     __privateAdd(this, _deferred, null);
     /**
-     * True if an async effect inside this batch resolved and
-     * its parent branch was already deleted
-     */
-    __privateAdd(this, _neutered, false);
-    /**
-     * Async effects (created inside `async_derived`) encountered during processing.
-     * These run after the rest of the batch has updated, since they should
-     * always have the latest values
-     * @type {Effect[]}
-     */
-    __privateAdd(this, _async_effects, []);
-    /**
-     * The same as `#async_effects`, but for effects inside a newly-created
-     * `<svelte:boundary>` — these do not prevent the batch from committing
+     * Async effects inside a newly-created `<svelte:boundary>`
+     * — these do not prevent the batch from committing
      * @type {Effect[]}
      */
     __privateAdd(this, _boundary_async_effects, []);
@@ -5545,64 +5556,34 @@ var _Batch = class _Batch {
     var _a3;
     queued_root_effects = [];
     previous_batch = null;
-    var current_values = null;
-    if (async_mode_flag && batches.size > 1) {
-      current_values = /* @__PURE__ */ new Map();
-      batch_deriveds = /* @__PURE__ */ new Map();
-      for (const [source2, current] of this.current) {
-        current_values.set(source2, { v: source2.v, wv: source2.wv });
-        source2.v = current;
-      }
-      for (const batch of batches) {
-        if (batch === this) continue;
-        for (const [source2, previous] of __privateGet(batch, _previous)) {
-          if (!current_values.has(source2)) {
-            current_values.set(source2, { v: source2.v, wv: source2.wv });
-            source2.v = previous;
-          }
-        }
-      }
-    }
+    this.apply();
     for (const root3 of root_effects) {
       __privateMethod(this, _Batch_instances, traverse_effect_tree_fn).call(this, root3);
     }
-    if (__privateGet(this, _async_effects).length === 0 && __privateGet(this, _pending) === 0) {
+    if (__privateGet(this, _pending) === 0) {
+      var previous_batch_sources = batch_values;
       __privateMethod(this, _Batch_instances, commit_fn).call(this);
       var render_effects = __privateGet(this, _render_effects);
       var effects = __privateGet(this, _effects);
       __privateSet(this, _render_effects, []);
       __privateSet(this, _effects, []);
       __privateSet(this, _block_effects, []);
-      previous_batch = current_batch;
+      previous_batch = this;
       current_batch = null;
+      batch_values = previous_batch_sources;
       flush_queued_effects(render_effects);
       flush_queued_effects(effects);
-      if (current_batch === null) {
-        current_batch = this;
-      } else {
-        batches.delete(this);
-      }
+      previous_batch = null;
       (_a3 = __privateGet(this, _deferred)) == null ? void 0 : _a3.resolve();
     } else {
       __privateMethod(this, _Batch_instances, defer_effects_fn).call(this, __privateGet(this, _render_effects));
       __privateMethod(this, _Batch_instances, defer_effects_fn).call(this, __privateGet(this, _effects));
       __privateMethod(this, _Batch_instances, defer_effects_fn).call(this, __privateGet(this, _block_effects));
     }
-    if (current_values) {
-      for (const [source2, { v, wv }] of current_values) {
-        if (source2.wv <= wv) {
-          source2.v = v;
-        }
-      }
-      batch_deriveds = null;
-    }
-    for (const effect2 of __privateGet(this, _async_effects)) {
-      update_effect(effect2);
-    }
+    batch_values = null;
     for (const effect2 of __privateGet(this, _boundary_async_effects)) {
       update_effect(effect2);
     }
-    __privateSet(this, _async_effects, []);
     __privateSet(this, _boundary_async_effects, []);
   }
   /**
@@ -5616,13 +5597,26 @@ var _Batch = class _Batch {
       __privateGet(this, _previous).set(source2, value);
     }
     this.current.set(source2, source2.v);
+    batch_values == null ? void 0 : batch_values.set(source2, source2.v);
   }
   activate() {
     current_batch = this;
   }
   deactivate() {
     current_batch = null;
-    previous_batch = null;
+    batch_values = null;
+  }
+  flush() {
+    if (queued_root_effects.length > 0) {
+      this.activate();
+      flush_effects();
+      if (current_batch !== null && current_batch !== this) {
+        return;
+      }
+    } else if (__privateGet(this, _pending) === 0) {
+      __privateMethod(this, _Batch_instances, commit_fn).call(this);
+    }
+    this.deactivate();
     for (const update2 of effect_pending_updates) {
       effect_pending_updates.delete(update2);
       update2();
@@ -5631,43 +5625,20 @@ var _Batch = class _Batch {
       }
     }
   }
-  neuter() {
-    __privateSet(this, _neutered, true);
-  }
-  flush() {
-    if (queued_root_effects.length > 0) {
-      flush_effects();
-    } else {
-      __privateMethod(this, _Batch_instances, commit_fn).call(this);
-    }
-    if (current_batch !== this) {
-      return;
-    }
-    if (__privateGet(this, _pending) === 0) {
-      batches.delete(this);
-    }
-    this.deactivate();
-  }
   increment() {
     __privateSet(this, _pending, __privateGet(this, _pending) + 1);
   }
   decrement() {
     __privateSet(this, _pending, __privateGet(this, _pending) - 1);
-    if (__privateGet(this, _pending) === 0) {
-      for (const e of __privateGet(this, _dirty_effects)) {
-        set_signal_status(e, DIRTY);
-        schedule_effect(e);
-      }
-      for (const e of __privateGet(this, _maybe_dirty_effects)) {
-        set_signal_status(e, MAYBE_DIRTY);
-        schedule_effect(e);
-      }
-      __privateSet(this, _render_effects, []);
-      __privateSet(this, _effects, []);
-      this.flush();
-    } else {
-      this.deactivate();
+    for (const e of __privateGet(this, _dirty_effects)) {
+      set_signal_status(e, DIRTY);
+      schedule_effect(e);
     }
+    for (const e of __privateGet(this, _maybe_dirty_effects)) {
+      set_signal_status(e, MAYBE_DIRTY);
+      schedule_effect(e);
+    }
+    this.flush();
   }
   /** @param {() => void} fn */
   add_callback(fn) {
@@ -5696,13 +5667,23 @@ var _Batch = class _Batch {
   static enqueue(task) {
     queue_micro_task(task);
   }
+  apply() {
+    if (!async_mode_flag || batches.size === 1) return;
+    batch_values = new Map(this.current);
+    for (const batch of batches) {
+      if (batch === this) continue;
+      for (const [source2, previous] of __privateGet(batch, _previous)) {
+        if (!batch_values.has(source2)) {
+          batch_values.set(source2, previous);
+        }
+      }
+    }
+  }
 };
 _previous = new WeakMap();
 _callbacks = new WeakMap();
 _pending = new WeakMap();
 _deferred = new WeakMap();
-_neutered = new WeakMap();
-_async_effects = new WeakMap();
 _boundary_async_effects = new WeakMap();
 _render_effects = new WeakMap();
 _effects = new WeakMap();
@@ -5732,9 +5713,8 @@ traverse_effect_tree_fn = function(root3) {
       } else if (async_mode_flag && (flags2 & RENDER_EFFECT) !== 0) {
         __privateGet(this, _render_effects).push(effect2);
       } else if ((flags2 & CLEAN) === 0) {
-        if ((flags2 & ASYNC) !== 0) {
-          var effects = ((_a3 = effect2.b) == null ? void 0 : _a3.is_pending()) ? __privateGet(this, _boundary_async_effects) : __privateGet(this, _async_effects);
-          effects.push(effect2);
+        if ((flags2 & ASYNC) !== 0 && ((_a3 = effect2.b) == null ? void 0 : _a3.is_pending())) {
+          __privateGet(this, _boundary_async_effects).push(effect2);
         } else if (is_dirty(effect2)) {
           if ((effect2.f & BLOCK_EFFECT) !== 0) __privateGet(this, _block_effects).push(effect2);
           update_effect(effect2);
@@ -5769,12 +5749,52 @@ defer_effects_fn = function(effects) {
  * Append and remove branches to/from the DOM
  */
 commit_fn = function() {
-  if (!__privateGet(this, _neutered)) {
-    for (const fn of __privateGet(this, _callbacks)) {
-      fn();
-    }
+  var _a3;
+  for (const fn of __privateGet(this, _callbacks)) {
+    fn();
   }
   __privateGet(this, _callbacks).clear();
+  if (batches.size > 1) {
+    __privateGet(this, _previous).clear();
+    let is_earlier = true;
+    for (const batch of batches) {
+      if (batch === this) {
+        is_earlier = false;
+        continue;
+      }
+      const sources = [];
+      for (const [source2, value] of this.current) {
+        if (batch.current.has(source2)) {
+          if (is_earlier && value !== batch.current.get(source2)) {
+            batch.current.set(source2, value);
+          } else {
+            continue;
+          }
+        }
+        sources.push(source2);
+      }
+      if (sources.length === 0) {
+        continue;
+      }
+      const others = [...batch.current.keys()].filter((s) => !this.current.has(s));
+      if (others.length > 0) {
+        for (const source2 of sources) {
+          mark_effects(source2, others);
+        }
+        if (queued_root_effects.length > 0) {
+          current_batch = batch;
+          batch.apply();
+          for (const root3 of queued_root_effects) {
+            __privateMethod(_a3 = batch, _Batch_instances, traverse_effect_tree_fn).call(_a3, root3);
+          }
+          queued_root_effects = [];
+          batch.deactivate();
+        }
+      }
+    }
+    current_batch = null;
+  }
+  batches.delete(this);
 };
 var Batch = _Batch;
 function flushSync(fn) {
@@ -5786,12 +5806,14 @@ function flushSync(fn) {
   try {
     var result;
     if (fn) {
-      flush_effects();
+      if (current_batch !== null) {
+        flush_effects();
+      }
       result = fn();
     }
     while (true) {
       flush_tasks();
-      if (queued_root_effects.length === 0 && !has_pending_tasks()) {
+      if (queued_root_effects.length === 0) {
         current_batch == null ? void 0 : current_batch.flush();
         if (queued_root_effects.length === 0) {
           last_scheduled_effect = null;
@@ -5882,6 +5904,43 @@ function flush_queued_effects(effects) {
   }
   eager_block_effects = null;
 }
+function mark_effects(value, sources) {
+  if (value.reactions !== null) {
+    for (const reaction of value.reactions) {
+      const flags2 = reaction.f;
+      if ((flags2 & DERIVED) !== 0) {
+        mark_effects(
+          /** @type {Derived} */
+          reaction,
+          sources
+        );
+      } else if ((flags2 & (ASYNC | BLOCK_EFFECT)) !== 0 && depends_on(reaction, sources)) {
+        set_signal_status(reaction, DIRTY);
+        schedule_effect(
+          /** @type {Effect} */
+          reaction
+        );
+      }
+    }
+  }
+}
+function depends_on(reaction, sources) {
+  if (reaction.deps !== null) {
+    for (const dep of reaction.deps) {
+      if (sources.includes(dep)) {
+        return true;
+      }
+      if ((dep.f & DERIVED) !== 0 && depends_on(
+        /** @type {Derived} */
+        dep,
+        sources
+      )) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
 function schedule_effect(signal) {
   var effect2 = last_scheduled_effect = signal;
   while (effect2.parent !== null) {
@@ -5898,7 +5957,7 @@ function schedule_effect(signal) {
   queued_root_effects.push(effect2);
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/reactivity/create-subscriber.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/reactivity/create-subscriber.js
 function createSubscriber(start) {
   let subscribers = 0;
   let version = source(0);
@@ -5929,7 +5988,7 @@ function createSubscriber(start) {
   };
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/blocks/boundary.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/blocks/boundary.js
 var flags = EFFECT_TRANSPARENT | EFFECT_PRESERVED | BOUNDARY_EFFECT;
 function boundary(node, props, children) {
   new Boundary(node, props, children);
@@ -6258,6 +6317,9 @@ update_pending_count_fn = function(d) {
       __privateGet(this, _anchor).before(__privateGet(this, _offscreen_fragment));
       __privateSet(this, _offscreen_fragment, null);
     }
+    queue_micro_task(() => {
+      Batch.ensure().flush();
+    });
   }
 };
 function move_effect(effect2, fragment) {
@@ -6273,7 +6335,7 @@ function move_effect(effect2, fragment) {
   }
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/reactivity/async.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/reactivity/async.js
 function flatten(sync, async2, fn) {
   const d = is_runes() ? derived : derived_safe_equal;
   if (async2.length === 0) {
@@ -6288,7 +6350,6 @@ function flatten(sync, async2, fn) {
   var restore = capture();
   var was_hydrating = hydrating;
   Promise.all(async2.map((expression) => async_derived(expression))).then((result) => {
-    batch == null ? void 0 : batch.activate();
     restore();
     try {
       fn([...sync.map(d), ...result]);
@@ -6336,7 +6397,7 @@ function unset_context() {
   if (dev_fallback_default) set_from_async_derived(null);
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/reactivity/deriveds.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/reactivity/deriveds.js
 var current_async_effect = null;
 function set_from_async_derived(v) {
   current_async_effect = v;
@@ -6398,22 +6459,20 @@ function async_derived(fn, location) {
     /** @type {V} */
     UNINITIALIZED
   );
-  var prev = null;
   var should_suspend = !active_reaction;
+  var deferreds = /* @__PURE__ */ new Map();
   async_effect(() => {
     var _a3;
     if (dev_fallback_default) current_async_effect = active_effect;
+    var d = deferred();
+    promise = d.promise;
     try {
-      var p = fn();
-      if (prev) Promise.resolve(p).catch(() => {
-      });
+      Promise.resolve(fn()).then(d.resolve, d.reject).then(unset_context);
     } catch (error) {
-      p = Promise.reject(error);
+      d.reject(error);
+      unset_context();
     }
     if (dev_fallback_default) current_async_effect = null;
-    var r2 = () => p;
-    promise = (_a3 = prev == null ? void 0 : prev.then(r2, r2)) != null ? _a3 : Promise.resolve(p);
-    prev = promise;
     var batch = (
       /** @type {Batch} */
       current_batch
@@ -6421,10 +6480,14 @@ function async_derived(fn, location) {
     var pending2 = boundary2.is_pending();
     if (should_suspend) {
       boundary2.update_pending_count(1);
-      if (!pending2) batch.increment();
+      if (!pending2) {
+        batch.increment();
+        (_a3 = deferreds.get(batch)) == null ? void 0 : _a3.reject(STALE_REACTION);
+        deferreds.delete(batch);
+        deferreds.set(batch, d);
+      }
     }
     const handler = (value, error = void 0) => {
-      prev = null;
       current_async_effect = null;
       if (!pending2) batch.activate();
       if (error) {
@@ -6437,6 +6500,11 @@ function async_derived(fn, location) {
           signal.f ^= ERROR_VALUE;
         }
         internal_set(signal, value);
+        for (const [b, d2] of deferreds) {
+          deferreds.delete(b);
+          if (b === batch) break;
+          d2.reject(STALE_REACTION);
+        }
         if (dev_fallback_default && location !== void 0) {
           recent_async_deriveds.add(signal);
           setTimeout(() => {
@@ -6455,13 +6523,12 @@ function async_derived(fn, location) {
         boundary2.update_pending_count(-1);
         if (!pending2) batch.decrement();
       }
-      unset_context();
     };
-    promise.then(handler, (e) => handler(null, e || "unknown"));
-    if (batch) {
-      return () => {
-        queueMicrotask(() => batch.neuter());
-      };
+    d.promise.then(handler, (e) => handler(null, e || "unknown"));
+  });
+  teardown(() => {
+    for (const d of deferreds.values()) {
+      d.reject(STALE_REACTION);
     }
   });
   if (dev_fallback_default) {
@@ -6557,15 +6624,15 @@ function update_derived(derived2) {
   if (is_destroying_effect) {
     return;
   }
-  if (batch_deriveds !== null) {
-    batch_deriveds.set(derived2, derived2.v);
+  if (batch_values !== null) {
+    batch_values.set(derived2, derived2.v);
   } else {
     var status = (skip_reaction || (derived2.f & UNOWNED) !== 0) && derived2.deps !== null ? MAYBE_DIRTY : CLEAN;
     set_signal_status(derived2, status);
   }
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/reactivity/sources.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/reactivity/sources.js
 var inspect_effects = /* @__PURE__ */ new Set();
 var old_values = /* @__PURE__ */ new Map();
 function set_inspect_effects(v) {
@@ -6743,7 +6810,7 @@ function mark_reactions(signal, status) {
   }
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/proxy.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/proxy.js
 var regex_is_valid_identifier = /^[a-zA-Z_$][a-zA-Z_$0-9]*$/;
 function proxy(value) {
   if (typeof value !== "object" || value === null || STATE_SYMBOL in value) {
@@ -7029,7 +7096,7 @@ function inspectable_array(array) {
   });
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dev/equality.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dev/equality.js
 function init_array_prototype_warnings() {
   const array_prototype2 = Array.prototype;
   const cleanup = Array.__svelte_cleanup;
@@ -7080,7 +7147,7 @@ function init_array_prototype_warnings() {
   };
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/operations.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/operations.js
 var $window;
 var $document;
 var is_firefox;
@@ -7204,7 +7271,7 @@ function should_defer_append() {
   return (flags2 & EFFECT_RAN) !== 0;
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/elements/misc.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/elements/misc.js
 function autofocus(dom, value) {
   if (value) {
     const body = document.body;
@@ -7242,7 +7309,7 @@ function add_form_reset_listener() {
   }
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/elements/bindings/shared.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/elements/bindings/shared.js
 function without_reactive_context(fn) {
   var previous_reaction = active_reaction;
   var previous_effect = active_effect;
@@ -7256,7 +7323,7 @@ function without_reactive_context(fn) {
   }
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/reactivity/effects.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/reactivity/effects.js
 function validate_effect(rune) {
   if (active_effect === null && active_reaction === null) {
     effect_orphan(rune);
@@ -7592,10 +7659,10 @@ function resume_children(effect2, local) {
   }
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/legacy.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/legacy.js
 var captured_signals = null;
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/runtime.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/runtime.js
 var is_updating_effect = false;
 function set_is_updating_effect(value) {
   is_updating_effect = value;
@@ -7909,7 +7976,7 @@ function update_effect(effect2) {
   }
 }
 function get(signal) {
-  var _a3, _b3, _c2, _d;
+  var _a3, _b3, _c2, _d, _e;
   var flags2 = signal.f;
   var is_derived = (flags2 & DERIVED) !== 0;
   (_a3 = captured_signals) == null ? void 0 : _a3.add(signal);
@@ -8000,12 +8067,15 @@ function get(signal) {
   } else if (is_derived) {
     derived2 = /** @type {Derived} */
     signal;
-    if ((_d = batch_deriveds) == null ? void 0 : _d.has(derived2)) {
-      return batch_deriveds.get(derived2);
+    if ((_d = batch_values) == null ? void 0 : _d.has(derived2)) {
+      return batch_values.get(derived2);
     }
     if (is_dirty(derived2)) {
       update_derived(derived2);
     }
+  }
+  if ((_e = batch_values) == null ? void 0 : _e.has(signal)) {
+    return batch_values.get(signal);
   }
   if ((signal.f & ERROR_VALUE) !== 0) {
     throw signal.v;
@@ -8085,7 +8155,7 @@ function deep_read(value, visited = /* @__PURE__ */ new Set()) {
   }
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/utils.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/utils.js
 function is_capture_event(name) {
   return name.endsWith("capture") && name !== "gotpointercapture" && name !== "lostpointercapture";
 }
@@ -8227,7 +8297,7 @@ function is_raw_text_element(name) {
   );
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/elements/events.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/elements/events.js
 var all_registered_events = /* @__PURE__ */ new Set();
 var root_event_handles = /* @__PURE__ */ new Set();
 function create_event(event_name, dom, handler, options = {}) {
@@ -8350,20 +8420,20 @@ function handle_event_propagation(event2) {
   }
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/blocks/svelte-head.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/blocks/svelte-head.js
 var head_anchor;
 function reset_head_anchor() {
   head_anchor = void 0;
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/reconciler.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/reconciler.js
 function create_fragment_from_html(html2) {
   var elem = document.createElement("template");
   elem.innerHTML = html2.replaceAll("<!>", "<!---->");
   return elem.content;
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/template.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/template.js
 function assign_nodes(start, end) {
   var effect2 = (
     /** @type {Effect} */
@@ -8508,7 +8578,7 @@ function append(anchor, dom) {
   );
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/render.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/render.js
 var should_intro = true;
 function set_should_intro(value) {
   should_intro = value;
@@ -8683,7 +8753,7 @@ function unmount(component2, options) {
   return Promise.resolve();
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/blocks/if.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/blocks/if.js
 function if_block(node, fn, elseif = false) {
   if (hydrating) {
     hydrate_next();
@@ -8772,7 +8842,7 @@ function if_block(node, fn, elseif = false) {
   }
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/blocks/each.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/blocks/each.js
 var current_each_item = null;
 function set_current_each_item(item) {
   current_each_item = item;
@@ -9242,7 +9312,7 @@ function link(state2, prev, next2) {
   }
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/blocks/slot.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/blocks/slot.js
 function slot(anchor, $$props, name, slot_props, fallback_fn) {
   var _a3;
   if (hydrating) {
@@ -9263,7 +9333,7 @@ function slot(anchor, $$props, name, slot_props, fallback_fn) {
   }
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/blocks/svelte-element.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/blocks/svelte-element.js
 function element(node, get_tag, is_svg, render_fn, get_namespace, location) {
   var _a3;
   let was_hydrating = hydrating;
@@ -9353,7 +9423,7 @@ function element(node, get_tag, is_svg, render_fn, get_namespace, location) {
   }
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/elements/attachments.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/elements/attachments.js
 function attach(node, get_fn) {
   var fn = void 0;
   var e;
@@ -9390,7 +9460,7 @@ function clsx() {
   return n;
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/shared/attributes.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/shared/attributes.js
 function clsx2(value) {
   if (typeof value === "object") {
     return clsx(value);
@@ -9518,7 +9588,7 @@ function to_style(value, styles) {
   return value == null ? null : String(value);
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/elements/class.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/elements/class.js
 function set_class(dom, is_html, value, hash2, prev_classes, next_classes) {
   var prev = dom.__className;
   if (hydrating || prev !== value || prev === void 0) {
@@ -9544,7 +9614,7 @@ function set_class(dom, is_html, value, hash2, prev_classes, next_classes) {
   return next_classes;
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/elements/style.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/elements/style.js
 function update_styles(dom, prev = {}, next2, priority) {
   for (var key2 in next2) {
     var value = next2[key2];
@@ -9580,7 +9650,7 @@ function set_style(dom, value, prev_styles, next_styles) {
   return next_styles;
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/elements/bindings/select.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/elements/bindings/select.js
 function select_option(select, value, mounting = false) {
   if (select.multiple) {
     if (value == void 0) {
@@ -9632,7 +9702,7 @@ function get_option_value(option) {
   }
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/elements/attributes.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/elements/attributes.js
 var CLASS = Symbol("class");
 var STYLE = Symbol("style");
 var IS_CUSTOM_ELEMENT = Symbol("is custom element");
@@ -9655,7 +9725,7 @@ function remove_input_defaults(input) {
     }
   };
   input.__on_r = remove_defaults;
-  queue_idle_task(remove_defaults);
+  queue_micro_task(remove_defaults);
   add_form_reset_listener();
 }
 function set_checked(element2, checked) {
@@ -9960,7 +10030,7 @@ function srcset_url_equal(element2, srcset) {
   );
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/legacy/lifecycle.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/legacy/lifecycle.js
 function init(immutable = false) {
   const context = (
     /** @type {ComponentContextLegacy} */
@@ -10019,7 +10089,7 @@ function observe_all(context, props) {
   props();
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/reactivity/store.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/reactivity/store.js
 var is_store_binding = false;
 var IS_UNMOUNTED = Symbol();
 function capture_store_binding(fn) {
@@ -10032,7 +10102,7 @@ function capture_store_binding(fn) {
   }
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/reactivity/props.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/reactivity/props.js
 var legacy_rest_props_handler = {
   get(target, key2) {
     if (target.exclude.includes(key2)) return;
@@ -10287,7 +10357,7 @@ function prop(props, key2, flags2, fallback2) {
   );
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/legacy/legacy-client.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/legacy/legacy-client.js
 function createClassComponent(options) {
   return new Svelte4Component(options);
 }
@@ -10390,7 +10460,7 @@ var Svelte4Component = class {
 _events = new WeakMap();
 _instance = new WeakMap();
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/client/dom/elements/custom-element.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/client/dom/elements/custom-element.js
 var SvelteElement;
 if (typeof HTMLElement === "function") {
   SvelteElement = class extends HTMLElement {
@@ -10613,7 +10683,7 @@ function get_custom_elements_slots(element2) {
   return result;
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/index-client.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/index-client.js
 if (dev_fallback_default) {
   let throw_rune_error = function(rune) {
     if (!(rune in globalThis)) {
@@ -10641,19 +10711,19 @@ if (dev_fallback_default) {
   throw_rune_error("$bindable");
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/version.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/version.js
 var PUBLIC_VERSION = "5";
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/disclose-version.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/disclose-version.js
 var _a2, _b2, _c;
 if (typeof window !== "undefined") {
   ((_c = (_b2 = (_a2 = window.__svelte) != null ? _a2 : window.__svelte = {}).v) != null ? _c : _b2.v = /* @__PURE__ */ new Set()).add(PUBLIC_VERSION);
 }
 
-// node_modules/.pnpm/svelte@5.39.6/node_modules/svelte/src/internal/flags/legacy.js
+// node_modules/.pnpm/svelte@5.40.2/node_modules/svelte/src/internal/flags/legacy.js
 enable_legacy_mode_flag();
 
-// node_modules/.pnpm/lucide-svelte@0.525.0_svelte@5.39.6/node_modules/lucide-svelte/dist/defaultAttributes.js
+// node_modules/.pnpm/lucide-svelte@0.525.0_svelte@5.40.2/node_modules/lucide-svelte/dist/defaultAttributes.js
 var defaultAttributes = {
   xmlns: "http://www.w3.org/2000/svg",
   width: 24,
@@ -10667,7 +10737,7 @@ var defaultAttributes = {
 };
 var defaultAttributes_default = defaultAttributes;
 
-// node_modules/.pnpm/lucide-svelte@0.525.0_svelte@5.39.6/node_modules/lucide-svelte/dist/Icon.svelte
+// node_modules/.pnpm/lucide-svelte@0.525.0_svelte@5.40.2/node_modules/lucide-svelte/dist/Icon.svelte
 var root = from_svg(`<svg><!><!></svg>`);
 function Icon($$anchor, $$props) {
   const $$sanitized_props = legacy_rest_props($$props, ["children", "$$slots", "$$events", "$$legacy"]);
@@ -10724,7 +10794,7 @@ function Icon($$anchor, $$props) {
   pop();
 }
 
-// node_modules/.pnpm/lucide-svelte@0.525.0_svelte@5.39.6/node_modules/lucide-svelte/dist/icons/external-link.svelte
+// node_modules/.pnpm/lucide-svelte@0.525.0_svelte@5.40.2/node_modules/lucide-svelte/dist/icons/external-link.svelte
 function External_link($$anchor, $$props) {
   const $$sanitized_props = legacy_rest_props($$props, ["children", "$$slots", "$$events", "$$legacy"]);
   const iconNode = [
@@ -10751,7 +10821,7 @@ function External_link($$anchor, $$props) {
   }));
 }
 
-// node_modules/.pnpm/lucide-svelte@0.525.0_svelte@5.39.6/node_modules/lucide-svelte/dist/icons/file.svelte
+// node_modules/.pnpm/lucide-svelte@0.525.0_svelte@5.40.2/node_modules/lucide-svelte/dist/icons/file.svelte
 function File($$anchor, $$props) {
   const $$sanitized_props = legacy_rest_props($$props, ["children", "$$slots", "$$events", "$$legacy"]);
   const iconNode = [
@@ -10777,7 +10847,7 @@ function File($$anchor, $$props) {
   }));
 }
 
-// node_modules/.pnpm/lucide-svelte@0.525.0_svelte@5.39.6/node_modules/lucide-svelte/dist/icons/folder-open.svelte
+// node_modules/.pnpm/lucide-svelte@0.525.0_svelte@5.40.2/node_modules/lucide-svelte/dist/icons/folder-open.svelte
 function Folder_open($$anchor, $$props) {
   const $$sanitized_props = legacy_rest_props($$props, ["children", "$$slots", "$$events", "$$legacy"]);
   const iconNode = [
@@ -10802,7 +10872,7 @@ function Folder_open($$anchor, $$props) {
   }));
 }
 
-// node_modules/.pnpm/lucide-svelte@0.525.0_svelte@5.39.6/node_modules/lucide-svelte/dist/icons/square-check-big.svelte
+// node_modules/.pnpm/lucide-svelte@0.525.0_svelte@5.40.2/node_modules/lucide-svelte/dist/icons/square-check-big.svelte
 function Square_check_big($$anchor, $$props) {
   const $$sanitized_props = legacy_rest_props($$props, ["children", "$$slots", "$$events", "$$legacy"]);
   const iconNode = [
@@ -10828,7 +10898,7 @@ function Square_check_big($$anchor, $$props) {
   }));
 }
 
-// node_modules/.pnpm/lucide-svelte@0.525.0_svelte@5.39.6/node_modules/lucide-svelte/dist/icons/square.svelte
+// node_modules/.pnpm/lucide-svelte@0.525.0_svelte@5.40.2/node_modules/lucide-svelte/dist/icons/square.svelte
 function Square($$anchor, $$props) {
   const $$sanitized_props = legacy_rest_props($$props, ["children", "$$slots", "$$events", "$$legacy"]);
   const iconNode = [
@@ -11103,7 +11173,7 @@ function getAdmonitionAttachments(app) {
 
 // src/helpers/extras/excalidraw.ts
 var import_obsidian9 = require("obsidian");
-function checkExcalidraw(file, app) {
+function checkExcalidraw(file, app, settings) {
   return __async(this, null, function* () {
     const metadata = app.metadataCache;
     const frontmatter = metadata.getFileCache(file).frontmatter;
@@ -11112,6 +11182,7 @@ function checkExcalidraw(file, app) {
       return false;
     const links = metadata.getBacklinksForFile(file).keys();
     if (links.length > 0) return false;
+    if (settings.ExternalPlugins.Excalidraw.TreatAsAttachments) return true;
     const content = yield app.vault.cachedRead(file);
     const blockStart = content.search(/{[ \t\n]*"type":[ ]*"excalidraw"/);
     const blockEnd = content.search(/```\n?%%/);
@@ -11211,6 +11282,29 @@ function parseCodeblock(codeblock) {
   };
 }
 
+// src/helpers/extras/ink.ts
+var import_obsidian11 = require("obsidian");
+function getInkAttachments(app) {
+  return __async(this, null, function* () {
+    console.group("Ink");
+    const indexingStart = Date.now();
+    const files = yield getCodeblocksFromMarkdownFiles(app);
+    const codeblocks = files.flatMap((file) => file.codeblocks).filter(
+      (block2) => ["handwritten-ink", "handdrawn-ink"].includes(block2.language)
+    );
+    const attachments = codeblocks.map((block2) => {
+      const content = JSON.parse(block2.content);
+      return content.filepath;
+    });
+    const duration = (Date.now() - indexingStart) / 1e3;
+    console.log(
+      `Found ${attachments.length} attachments in Ink blocks in ${duration}ms.`
+    );
+    console.groupEnd();
+    return attachments;
+  });
+}
+
 // src/util.ts
 function checkFile(app, settings, file, extensions) {
   return __async(this, null, function* () {
@@ -11219,16 +11313,17 @@ function checkFile(app, settings, file, extensions) {
     const fileAge = file.stat.mtime;
     if (ageThreshold > 0 && fileAge > NOW - ageThreshold) return false;
     if (file.extension === "md") {
-      if (userHasPlugin("obsidian-excalidraw-plugin", app) && (yield checkExcalidraw(file, app)))
+      if (userHasPlugin("obsidian-excalidraw-plugin", app) && (yield checkExcalidraw(file, app, settings)))
         return true;
       return yield checkMarkdown(file, app, settings);
     } else if (file.extension === "canvas") {
       return yield checkCanvas(file, app);
     }
+    const extensionsRegex = RegExp(`^(${["md", ...extensions].join("|")})$`);
     if (settings.attachmentsExcludeInclude === ExcludeInclude.Include) {
-      return file.extension.match(extensions);
+      return file.extension.match(extensionsRegex);
     } else if (settings.attachmentsExcludeInclude === ExcludeInclude.Exclude) {
-      return !file.extension.match(extensions);
+      return !file.extension.match(extensionsRegex);
     }
   });
 }
@@ -11274,6 +11369,8 @@ function scanVault(app, settings) {
     inUseAttachmentsInitial.push(...yield getCanvasAttachments(app));
     if (userHasPlugin("obsidian-admonition", app))
       inUseAttachmentsInitial.push(...yield getAdmonitionAttachments(app));
+    if (userHasPlugin("ink", app))
+      inUseAttachmentsInitial.push(...yield getInkAttachments(app));
     if (settings.codeblockTypes.length > 0) {
       const codeblockLanguages = RegExp(`${settings.codeblockTypes.join("|")}`);
       inUseAttachmentsInitial.push(
@@ -11291,6 +11388,7 @@ function scanVault(app, settings) {
     const filesToRemove = [];
     const foldersToRemove = [];
     const extensions = getExtensions(settings);
+    if (userHasPlugin("ink", app)) extensions.push("drawing", "writing");
     for (const folder of folders) {
       if (settings.excludeInclude === ExcludeInclude.Exclude && isFolderExcluded(folder, settings) || settings.excludeInclude === ExcludeInclude.Include && isFolderIncluded(folder, settings))
         continue;
@@ -11329,7 +11427,7 @@ function runCleanup(filesToRemove, foldersToRemove, app, settings) {
     const filesAndFolders = [...filesToRemove];
     filesAndFolders.push(...foldersToRemove.reverse());
     if (filesAndFolders.length === 0)
-      new import_obsidian11.Notice(translate().Notifications.NoFileToClean);
+      new import_obsidian12.Notice(translate().Notifications.NoFileToClean);
     else {
       if (!settings.deletionConfirmation)
         yield removeFiles(filesAndFolders, app, settings);
@@ -11355,7 +11453,7 @@ function runCleanup(filesToRemove, foldersToRemove, app, settings) {
 }
 
 // src/index.ts
-var FileCleanerPlugin2 = class extends import_obsidian12.Plugin {
+var FileCleanerPlugin2 = class extends import_obsidian13.Plugin {
   constructor() {
     super(...arguments);
     this.lastOpenedFiles = [];
@@ -11468,3 +11566,5 @@ lucide-svelte/dist/icons/square.svelte:
    *
    *)
 */
+
+/* nosourcemap */

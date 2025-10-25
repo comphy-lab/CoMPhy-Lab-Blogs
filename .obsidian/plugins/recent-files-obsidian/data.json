@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "2025-Curvature-Inversion-in-Laser‑Struck-Droplets",
+      "path": "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md"
+    },
+    {
+      "basename": "2025-Emmy-Noether-Symmetry-Conservation",
+      "path": "Blog/2025-Emmy-Noether-Symmetry-Conservation.md"
+    },
+    {
       "basename": "Lecture1-ComplementaryQuestions-Answers",
       "path": "Lecture-Notes/Intro-Soft-Matter/Lecture1-ComplementaryQuestions-Answers.md"
     },
@@ -91,10 +99,6 @@
     {
       "basename": "2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence",
       "path": "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md"
-    },
-    {
-      "basename": "2025-Curvature-Inversion-in-Laser‑Struck-Droplets",
-      "path": "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md"
     },
     {
       "basename": "2025-Herschel–Bulkley-formulation",
@@ -195,10 +199,6 @@
     {
       "basename": "Dispersion Relation and Higher Order Corrections",
       "path": "_AtomicNotes/Dispersion Relation and Higher Order Corrections.md"
-    },
-    {
-      "basename": "Stokes waves_arbitary order",
-      "path": "Resources-research/Stokes waves_arbitary order.md"
     }
   ],
   "omittedPaths": [],
