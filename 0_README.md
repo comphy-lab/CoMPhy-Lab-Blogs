@@ -18,6 +18,10 @@ See: [About us](https://comphy-lab.org/about)
 
 ##### Laser-droplet interactions:
 2025-10-06 [[2025-Curvature-Inversion-in-Laser‑Struck-Droplets]]: Understanding how laser-induced pressure impulses control droplet sheet curvature in EUV lithography - from raised-cosine impulses to forward-bending sheets in tin microdroplets.
+
+##### Scientist profiles & history:
+2025-10-24 [[2025-Emmy-Noether-Symmetry-Conservation]]: Emmy Noether's revolutionary contributions to mathematics and physics - from overcoming gender barriers in academia to discovering the profound connection between symmetry and conservation laws that now underpins all of modern physics.
+
 ##### Computational tools & visualization:
 2025-10-01 [[2025-visual-pdes]]: Interactive browser-based PDE simulator - exploring pattern formation, reaction-diffusion systems, and mathematical visualization through GPU-accelerated simulations. A "Desmos for PDEs" that runs in your browser.
 ##### Elastoinertial turbulence:

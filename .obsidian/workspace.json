@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "c42b1a3f23367d2e",
+        "id": "6295fa8e67992ac2",
         "type": "tabs",
         "children": [
           {
-            "id": "3e5e349bda732cf0",
+            "id": "fc915ef1dc4fd631",
             "type": "leaf",
             "state": {
               "type": "home-tab-view",
@@ -84,7 +84,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 378.5
+    "width": 378.5,
+    "collapsed": true
   },
   "right": {
     "id": "f94baa4cb92838bd",
@@ -207,8 +208,10 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "3e5e349bda732cf0",
+  "active": "fc915ef1dc4fd631",
   "lastOpenFiles": [
+    "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md",
+    "Blog/2025-Emmy-Noether-Symmetry-Conservation.md",
     "Lecture-Notes/Intro-Soft-Matter/Lecture1-ComplementaryQuestions-Answers.md",
     "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
     "Lecture-Notes/Intro-Soft-Matter/0-README.md",
@@ -242,11 +245,9 @@
     "Blog/2025-James-G-Oldroyd.md",
     "Blog/2025-History-Worthington-jets-from-bursting-bubbles.md",
     "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
-    "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md",
     "Code-Documentations/2025-Herschel–Bulkley-formulation.pdf",
     "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.pdf",
     "0_README.md",
-    "Bursting-bubbles-complex.md",
     "_Media/vpflow-abstract-1749493281374.png",
     "Talks/2025-06-30_Conference-VPflow-abstract.pdf",
     "Talks/vpflow-abstract.pdf",
