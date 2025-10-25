@@ -1,5 +1,5 @@
 ---
-modified: 2025-10-07T10:03:14+01:00
+modified: 2025-10-25T20:06:39+01:00
 created: 2024-12-31T12:12:38+01:00
 tags:
   - non-Newtonian
@@ -7,7 +7,7 @@ tags:
 aliases:
   - Herschel–Bulkley-formulation
   - Herschel–Bulkley formulation
-  - "Code-Documentations/Herschel–Bulkley formulation"
+  - Code-Documentations/Herschel–Bulkley formulation
   - Herschel–Bulkley
 status: done ✅
 ---

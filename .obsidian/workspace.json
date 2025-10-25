@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "6295fa8e67992ac2",
+        "id": "2105ab4465fd7510",
         "type": "tabs",
         "children": [
           {
-            "id": "fc915ef1dc4fd631",
+            "id": "fcf3e62c17a1e118",
             "type": "leaf",
             "state": {
               "type": "home-tab-view",
@@ -84,8 +84,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 378.5,
-    "collapsed": true
+    "width": 378.5
   },
   "right": {
     "id": "f94baa4cb92838bd",
@@ -208,10 +207,22 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "fc915ef1dc4fd631",
+  "active": "fcf3e62c17a1e118",
   "lastOpenFiles": [
+    "Blog/2025-Why-Double‑Network-Hydrogels-Dont-Shatter.md",
+    "Blog/2025-visual-pdes.md",
+    "Blog/2025-Thesis-Viscous-Free-Surface-Flows.md",
+    "Blog/2025-Stokes-waves-arbitary-order.md",
+    "Blog/2025-JFM-viscous-drop-impact.md",
+    "Blog/2025-JFM-Viscoelatic-Worthington-jets.md",
+    "Blog/2025-James-G-Oldroyd.md",
+    "Blog/2025-History-Worthington-jets-from-bursting-bubbles.md",
+    "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
     "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md",
     "Blog/2025-Emmy-Noether-Symmetry-Conservation.md",
+    "Blog/2025-Arrowheads-in-elastoinertial-turbulence.md",
+    "Code-Documentations/2025-Herschel–Bulkley-formulation.md",
+    "0_README.md",
     "Lecture-Notes/Intro-Soft-Matter/Lecture1-ComplementaryQuestions-Answers.md",
     "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
     "Lecture-Notes/Intro-Soft-Matter/0-README.md",
@@ -220,7 +231,6 @@
     "_Media/1-Intro-Soft-Matter-1761105367372.png",
     "Lecture-Notes/Basilisk101/1st-workingAssignment.md",
     "Lecture-Notes/Basilisk101/1-conduction-takeaways.md",
-    "Blog/2025-JFM-Viscoelatic-Worthington-jets.md",
     "_Media/1-Intro-Soft-Matter-1761103927376.png",
     "_Media/1-Intro-Soft-Matter-1761103886417.png",
     "_Media/1-Intro-Soft-Matter-1761103864489.png",
@@ -229,25 +239,14 @@
     "_Media/1-Intro-Soft-Matter-1761103784897.png",
     "Lecture-Notes/Basilisk101/0-README.md",
     "Lecture-Notes/Intro-Soft-Matter",
-    "Blog/2025-Arrowheads-in-elastoinertial-turbulence.md",
-    "Blog/2025-Why-Double‑Network-Hydrogels-Dont-Shatter.md",
     "Lecture-Notes/Surface-parameterization.md",
     "Lecture-Notes/Gauss-law-of-Electrostatics.md",
     "Lecture-Notes/Basilisk101/4th-workingAssignment.md",
     "Lecture-Notes/Basilisk101/3rd-workingAssignment.md",
     "Lecture-Notes/Basilisk101/2nd-workingAssignment.md",
     "Join-Us/Commonwealth-Split-site-PhD-Scholarships.md",
-    "Code-Documentations/2025-Herschel–Bulkley-formulation.md",
-    "Blog/2025-visual-pdes.md",
-    "Blog/2025-Thesis-Viscous-Free-Surface-Flows.md",
-    "Blog/2025-Stokes-waves-arbitary-order.md",
-    "Blog/2025-JFM-viscous-drop-impact.md",
-    "Blog/2025-James-G-Oldroyd.md",
-    "Blog/2025-History-Worthington-jets-from-bursting-bubbles.md",
-    "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
     "Code-Documentations/2025-Herschel–Bulkley-formulation.pdf",
     "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.pdf",
-    "0_README.md",
     "_Media/vpflow-abstract-1749493281374.png",
     "Talks/2025-06-30_Conference-VPflow-abstract.pdf",
     "Talks/vpflow-abstract.pdf",

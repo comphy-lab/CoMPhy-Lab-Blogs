@@ -1,5 +1,5 @@
 ---
-modified: 2025-10-07T07:08:46+01:00
+modified: 2025-10-25T20:05:48+01:00
 created: 2024-12-15T23:25:04+01:00
 website: https://blogs-comphy-lab.org/
 status: done ✅
@@ -16,14 +16,15 @@ See: [About us](https://comphy-lab.org/about)
 ### Blog posts:
 #### 2025
 
-##### Laser-droplet interactions:
-2025-10-06 [[2025-Curvature-Inversion-in-Laser‑Struck-Droplets]]: Understanding how laser-induced pressure impulses control droplet sheet curvature in EUV lithography - from raised-cosine impulses to forward-bending sheets in tin microdroplets.
-
 ##### Scientist profiles & history:
 2025-10-24 [[2025-Emmy-Noether-Symmetry-Conservation]]: Emmy Noether's revolutionary contributions to mathematics and physics - from overcoming gender barriers in academia to discovering the profound connection between symmetry and conservation laws that now underpins all of modern physics.
 
+##### Laser-droplet interactions:
+2025-10-06 [[2025-Curvature-Inversion-in-Laser‑Struck-Droplets]]: Understanding how laser-induced pressure impulses control droplet sheet curvature in EUV lithography - from raised-cosine impulses to forward-bending sheets in tin microdroplets.
+
 ##### Computational tools & visualization:
 2025-10-01 [[2025-visual-pdes]]: Interactive browser-based PDE simulator - exploring pattern formation, reaction-diffusion systems, and mathematical visualization through GPU-accelerated simulations. A "Desmos for PDEs" that runs in your browser.
+
 ##### Elastoinertial turbulence:
 2025-02-24 [[2025-Arrowheads-in-elastoinertial-turbulence]]: Critical review of arrowhead structures in elastoinertial turbulence, examining their existence in 3D flows and experimental observations.
 
