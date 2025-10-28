@@ -1,6 +1,6 @@
 ---
 created: 2025-10-14T10:00:00+01:00
-modified: 2025-10-22T16:38:27+01:00
+modified: 2025-10-28T23:36:23+00:00
 tags:
   - lecture
   - soft-matter
@@ -290,7 +290,7 @@ $$\text{Momentum method:} \quad v_f = \sqrt{\frac{2\gamma_{fa}}{\rho h_0}}$$
 **Question:** Where did the energy go?
 
 > [!question] **Think About It**
-> The resolution of this paradox requires careful accounting of energy dissipation and momentum conservation. We will resolve it in the next lecture, where we properly track kinetic energy, surface energy, and viscous dissipation.
+> The resolution of this paradox requires careful accounting of energy dissipation and momentum conservation. We will resolve it in [[1.5-Taylor-Culick-Paradox|Lecture 1.5]], where we properly track kinetic energy, surface energy, and dissipation mechanisms.
 
 ---
 

@@ -4,17 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "2105ab4465fd7510",
+        "id": "ab589ac559ffac4f",
         "type": "tabs",
         "children": [
           {
-            "id": "fcf3e62c17a1e118",
+            "id": "547e17effe6bc4b0",
             "type": "leaf",
             "state": {
-              "type": "home-tab-view",
-              "state": {},
-              "icon": "search",
-              "title": "Home tab"
+              "type": "markdown",
+              "state": {
+                "file": "Lecture-Notes/Intro-Soft-Matter/Lecture1-ComplementaryQuestions-Answers.md",
+                "mode": "preview",
+                "source": true,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Lecture1-ComplementaryQuestions-Answers"
             }
           }
         ]
@@ -100,12 +114,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Lecture-Notes/Intro-Soft-Matter/Lecture1-ComplementaryQuestions-Answers.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of Lecture1-ComplementaryQuestions-Answers"
             }
           },
           {
@@ -207,8 +222,25 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "fcf3e62c17a1e118",
+  "active": "547e17effe6bc4b0",
   "lastOpenFiles": [
+    "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
+    "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md",
+    "_Media/1.5-Taylor-Culick-08.png",
+    "_Media/1.5-Taylor-Culick-07.png",
+    "_Media/1.5-Taylor-Culick-06.png",
+    "_Media/1.5-Taylor-Culick-05.png",
+    "_Media/1.5-Taylor-Culick-04.png",
+    "_Media/1.5-Taylor-Culick-18.png",
+    "_Media/1.5-Taylor-Culick-17.png",
+    "_Media/1.5-Taylor-Culick-16.png",
+    "_Media/1.5-Taylor-Culick-15.png",
+    "_Media/1.5-Taylor-Culick-14.png",
+    "Lecture-Notes/Intro-Soft-Matter/Dupre-Rayleigh-paradox.pdf",
+    "Lecture-Notes/Intro-Soft-Matter/compressed_Lecture2-Taylor-Culick.pdf",
+    "Lecture-Notes/Intro-Soft-Matter/Lecture2-Taylor-Culick.pdf",
+    "Private-ToDo-Blog-public.md",
+    "0_ToDo-Blog-public.md",
     "Blog/2025-Why-Double‑Network-Hydrogels-Dont-Shatter.md",
     "Blog/2025-visual-pdes.md",
     "Blog/2025-Thesis-Viscous-Free-Surface-Flows.md",
@@ -224,37 +256,19 @@
     "Code-Documentations/2025-Herschel–Bulkley-formulation.md",
     "0_README.md",
     "Lecture-Notes/Intro-Soft-Matter/Lecture1-ComplementaryQuestions-Answers.md",
-    "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
     "Lecture-Notes/Intro-Soft-Matter/0-README.md",
-    "_Media/1-Intro-Soft-Matter-1761105451051.png",
-    "_Media/1-Intro-Soft-Matter-1761105418528.png",
-    "_Media/1-Intro-Soft-Matter-1761105367372.png",
     "Lecture-Notes/Basilisk101/1st-workingAssignment.md",
     "Lecture-Notes/Basilisk101/1-conduction-takeaways.md",
-    "_Media/1-Intro-Soft-Matter-1761103927376.png",
-    "_Media/1-Intro-Soft-Matter-1761103886417.png",
-    "_Media/1-Intro-Soft-Matter-1761103864489.png",
-    "_Media/1-Intro-Soft-Matter-1761103839157.png",
-    "_Media/1-Intro-Soft-Matter-1761103818495.png",
-    "_Media/1-Intro-Soft-Matter-1761103784897.png",
     "Lecture-Notes/Basilisk101/0-README.md",
     "Lecture-Notes/Intro-Soft-Matter",
     "Lecture-Notes/Surface-parameterization.md",
     "Lecture-Notes/Gauss-law-of-Electrostatics.md",
-    "Lecture-Notes/Basilisk101/4th-workingAssignment.md",
-    "Lecture-Notes/Basilisk101/3rd-workingAssignment.md",
-    "Lecture-Notes/Basilisk101/2nd-workingAssignment.md",
-    "Join-Us/Commonwealth-Split-site-PhD-Scholarships.md",
     "Code-Documentations/2025-Herschel–Bulkley-formulation.pdf",
     "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.pdf",
-    "_Media/vpflow-abstract-1749493281374.png",
     "Talks/2025-06-30_Conference-VPflow-abstract.pdf",
     "Talks/vpflow-abstract.pdf",
     "Join-Us",
     "Lecture-Notes/Basilisk101",
-    "Lecture-Notes/untitled folder",
-    "favicon.ico",
-    "Talks/Seminar-Durham-abstract.pdf",
     "Inbox/Untitled.canvas"
   ]
 }
