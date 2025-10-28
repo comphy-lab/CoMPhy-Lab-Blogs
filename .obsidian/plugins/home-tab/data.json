@@ -24,16 +24,24 @@
   "unresolvedLinks": true,
   "recentFilesStore": [
     {
-      "filepath": "Lecture-Notes/Intro-Soft-Matter/Lecture1-ComplementaryQuestions-Answers.md",
-      "timestamp": 1761695077587
+      "filepath": "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md",
+      "timestamp": 1761695450065
     },
     {
       "filepath": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
-      "timestamp": 1761695066582
+      "timestamp": 1761695438918
     },
     {
-      "filepath": "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md",
-      "timestamp": 1761695033297
+      "filepath": "Lecture-Notes/Intro-Soft-Matter/0-README.md",
+      "timestamp": 1761695432510
+    },
+    {
+      "filepath": "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
+      "timestamp": 1761695232864
+    },
+    {
+      "filepath": "Lecture-Notes/Intro-Soft-Matter/Lecture1-ComplementaryQuestions-Answers.md",
+      "timestamp": 1761695077587
     }
   ],
   "bookmarkedFileStore": [],

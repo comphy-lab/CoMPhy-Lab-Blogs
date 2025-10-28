@@ -110,5 +110,7 @@ Have questions? Come to office hours or send an email — I'm here to help!
 > - [CoMPhy Lab Website](https://comphy-lab.org/)
 > - [Research Group](https://comphy-lab.org/research)
 > - [GitHub](https://github.com/comphy-lab)
+>
+> 📝 [Edit this page on GitHub](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/blob/main/Lecture-Notes/Intro-Soft-Matter/0-README.md)
 
 **Last updated:** 2025-10-22
