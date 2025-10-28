@@ -1,6 +1,34 @@
 {
   "recentFiles": [
     {
+      "basename": "Lecture1-ComplementaryQuestions-Answers",
+      "path": "Lecture-Notes/Intro-Soft-Matter/Lecture1-ComplementaryQuestions-Answers.md"
+    },
+    {
+      "basename": "1-Intro-Soft-Matter",
+      "path": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md"
+    },
+    {
+      "basename": "1.5-Taylor-Culick-Paradox",
+      "path": "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md"
+    },
+    {
+      "basename": "1.5-Taylor-Culick-08",
+      "path": "_Media/1.5-Taylor-Culick-08.png"
+    },
+    {
+      "basename": "1.5-Taylor-Culick-05",
+      "path": "_Media/1.5-Taylor-Culick-05.png"
+    },
+    {
+      "basename": "Private-ToDo-Blog-public",
+      "path": "Private-ToDo-Blog-public.md"
+    },
+    {
+      "basename": "0_ToDo-Blog-public",
+      "path": "0_ToDo-Blog-public.md"
+    },
+    {
       "basename": "2025-Why-Double‑Network-Hydrogels-Dont-Shatter",
       "path": "Blog/2025-Why-Double‑Network-Hydrogels-Dont-Shatter.md"
     },
@@ -57,14 +85,6 @@
       "path": "0_README.md"
     },
     {
-      "basename": "Lecture1-ComplementaryQuestions-Answers",
-      "path": "Lecture-Notes/Intro-Soft-Matter/Lecture1-ComplementaryQuestions-Answers.md"
-    },
-    {
-      "basename": "1-Intro-Soft-Matter",
-      "path": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md"
-    },
-    {
       "basename": "0-README",
       "path": "Lecture-Notes/Intro-Soft-Matter/0-README.md"
     },
@@ -117,10 +137,6 @@
       "path": "Talks/2025-06-30_Conference-VPflow-abstract.md"
     },
     {
-      "basename": "0_ToDo-Blog-public",
-      "path": "0_ToDo-Blog-public.md"
-    },
-    {
       "basename": "README",
       "path": "README.md"
     },
@@ -135,10 +151,6 @@
     {
       "basename": "Seminar-Durham-abstract",
       "path": "Talks/Seminar-Durham-abstract.pdf"
-    },
-    {
-      "basename": "Private-ToDo-Blog-public",
-      "path": "Private-ToDo-Blog-public.md"
     },
     {
       "basename": "Seminar-UIUC-abstract",
@@ -175,30 +187,6 @@
     {
       "basename": "Herschel–Bulkley formulation_backup_20241231_201541",
       "path": "Z_Archive/Herschel–Bulkley formulation_backup_20241231_201541.md"
-    },
-    {
-      "basename": "Stokes wave - Wikipedia",
-      "path": "Resources-research/Stokes wave - Wikipedia.md"
-    },
-    {
-      "basename": "Equivalent viscosity",
-      "path": "_AtomicNotes/Equivalent viscosity.md"
-    },
-    {
-      "basename": "Effective Ohnesorge number",
-      "path": "_AtomicNotes/Effective Ohnesorge number.md"
-    },
-    {
-      "basename": "Viscoelastic Worthington jets & droplets produced by bursting bubbles",
-      "path": "_Inbox/Viscoelastic Worthington jets & droplets produced by bursting bubbles.md"
-    },
-    {
-      "basename": "Comparing dispersion relation",
-      "path": "_AtomicNotes/Comparing dispersion relation.md"
-    },
-    {
-      "basename": "Dispersion Relation and Higher Order Corrections",
-      "path": "_AtomicNotes/Dispersion Relation and Higher Order Corrections.md"
     }
   ],
   "omittedPaths": [],

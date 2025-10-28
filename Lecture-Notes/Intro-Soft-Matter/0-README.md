@@ -19,9 +19,10 @@ aliases:
 - **Engage critically** with publications and seminars (assessed in final presentations)
 - **Learn how to contribute to Open Source Science** (mid-course assignment)
 
-## Course Structure (8 Lectures)
+## Course Structure (8+ Lectures + Bridges)
 
 - **Lecture 1:** [[1-Intro-Soft-Matter|Different Faces of Soft Condensed Matter]] – What is soft matter, why is it soft, and how do we measure softness?
+- **Lecture 1.5:** [[1.5-Taylor-Culick-Paradox|The Taylor–Culick Paradox — Where Did the Energy Go?]] – Resolving a century-old paradox through proper energy accounting and momentum conservation
 - **Lecture 2:** Coarse-Grained Continuum Mechanics & Conservation Laws
 - **Lecture 3:** Soft Matter Instabilities
 - **Lecture 4:** Soft Matter Singularities
