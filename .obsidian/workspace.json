@@ -4,31 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "019283b1e9233965",
+        "id": "3da932bead8f6226",
         "type": "tabs",
         "children": [
           {
-            "id": "98e9991e3cd962db",
+            "id": "9dcc57305f04690b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "2-What-is-Viscosity"
+              "type": "home-tab-view",
+              "state": {},
+              "icon": "search",
+              "title": "Home tab"
             }
           }
         ]
@@ -98,8 +84,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 378.5,
-    "collapsed": true
+    "width": 378.5
   },
   "right": {
     "id": "f94baa4cb92838bd",
@@ -224,12 +209,23 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "98e9991e3cd962db",
+  "active": "9dcc57305f04690b",
   "lastOpenFiles": [
+    "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md",
+    "_AtomicNotes/Impulsively-started-plate.md",
+    "_Media/StokesFirstProblem.pdf",
+    "_Media/2-What-is-Viscosity-1761774965358.png",
+    "_Media/2-What-is-Viscosity-1761774820691.png",
+    "_Media/Impulsively-started-plate-1761774200063.png",
+    "_Media/Impulsively-started-plate-1761774189020.png",
+    "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
+    "Blog/2025-JFM-viscous-drop-impact.md",
+    "Blog/2025-JFM-Viscoelatic-Worthington-jets.md",
+    "Blog/2025-James-G-Oldroyd.md",
+    "Blog/2025-History-Worthington-jets-from-bursting-bubbles.md",
+    "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
     "_Media/2-What-is-Viscosity-1761767758968.png",
     "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md",
-    "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
-    "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md",
     "_Media/2-What-is-Viscosity-1761738310141.png",
     "_Media/2-What-is-Viscosity-1761738283101.png",
     "_Media/2-What-is-Viscosity-1761738244038.png",
@@ -238,14 +234,8 @@
     "Lecture-Notes/Intro-Soft-Matter/Dupre-Rayleigh-paradox.pdf",
     "Lecture-Notes/Intro-Soft-Matter/0-README.md",
     "Lecture-Notes/Intro-Soft-Matter/1-Complementary-Questions-Answers.md",
-    "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
     "Lecture-Notes/Intro-Soft-Matter/Lecture1-ComplementaryQuestions-Answers.md",
     "_Media/1.5-Taylor-Culick-08.png",
-    "_Media/1.5-Taylor-Culick-07.png",
-    "_Media/1.5-Taylor-Culick-06.png",
-    "_Media/1.5-Taylor-Culick-05.png",
-    "_Media/1.5-Taylor-Culick-04.png",
-    "_Media/1.5-Taylor-Culick-18.png",
     "Lecture-Notes/Intro-Soft-Matter/compressed_Lecture2-Taylor-Culick.pdf",
     "Lecture-Notes/Intro-Soft-Matter/Lecture2-Taylor-Culick.pdf",
     "Private-ToDo-Blog-public.md",
@@ -254,10 +244,6 @@
     "Blog/2025-visual-pdes.md",
     "Blog/2025-Thesis-Viscous-Free-Surface-Flows.md",
     "Blog/2025-Stokes-waves-arbitary-order.md",
-    "Blog/2025-JFM-viscous-drop-impact.md",
-    "Blog/2025-JFM-Viscoelatic-Worthington-jets.md",
-    "Blog/2025-James-G-Oldroyd.md",
-    "Blog/2025-History-Worthington-jets-from-bursting-bubbles.md",
     "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md",
     "Blog/2025-Emmy-Noether-Symmetry-Conservation.md",
     "Blog/2025-Arrowheads-in-elastoinertial-turbulence.md",
@@ -265,13 +251,11 @@
     "0_README.md",
     "Lecture-Notes/Basilisk101/1st-workingAssignment.md",
     "Lecture-Notes/Basilisk101/1-conduction-takeaways.md",
-    "Lecture-Notes/Basilisk101/0-README.md",
     "Lecture-Notes/Intro-Soft-Matter",
     "Code-Documentations/2025-Herschel–Bulkley-formulation.pdf",
     "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.pdf",
     "Talks/2025-06-30_Conference-VPflow-abstract.pdf",
     "Talks/vpflow-abstract.pdf",
-    "Join-Us",
     "Inbox/Untitled.canvas"
   ]
 }
