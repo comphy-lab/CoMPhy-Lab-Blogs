@@ -1,6 +1,6 @@
 ---
 created: 2025-10-29T00:00:00+00:00
-modified: 2025-10-29T19:36:02+00:00
+modified: 2025-10-29T19:57:21+00:00
 tags:
   - lecture
   - soft-matter
@@ -173,25 +173,13 @@ $$\nu = \frac{\eta}{\rho} \sim C \, \bar{c} \, \lambda$$
 
 ### The Wall Picture
 
-Draw on the board:
-
-```
-                     GAS INTERIOR (u_x varies with y)
-  =====================================================
-  incoming molecule    hits wall    re-emitted molecule
-  (carries tangential  (wall         (carries zero mean
-   momentum u_x,local) thermalizes   u_x in wall frame)
-                       tangential
-                       motion)
-  =====================================================
-                      WALL (stationary: u_wall = 0)
-```
-
+![](../../_Media/2-What-is-Viscosity-1761767758968.png)
 ### What's happening physically
 
-**[Emphasis 3: This is crucial]** "When a gas molecule collides with a stationary wall, the wall **randomizes** (thermalizes) its tangential velocity component. The molecule re-emits with **zero mean tangential velocity in the wall frame.** This is called **diffuse reflection with full tangential momentum accommodation.**"
+> [!summary] Important
+> When a gas molecule collides with a stationary wall, the wall randomizes (thermalizes) its tangential velocity component. The molecule re-emits with zero mean tangential velocity in the wall frame. This is called diffuse reflection with full tangential momentum accommodation.
 
-**Say:** "Think of the wall as a **sink of x-momentum.** Every molecule that hits the wall loses its tangential velocity. Just outside the wall, there's therefore a **deficit** in mean $u_x$ compared to the interior."
+Think of the wall as a sink of x-momentum. Every molecule that hits the wall loses its tangential velocity. Just outside the wall, there's therefore a deficit in mean $u_x$ compared to the interior.
 
 ---
 
