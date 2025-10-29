@@ -11,10 +11,24 @@
             "id": "98e9991e3cd962db",
             "type": "leaf",
             "state": {
-              "type": "home-tab-view",
-              "state": {},
-              "icon": "search",
-              "title": "Home tab"
+              "type": "markdown",
+              "state": {
+                "file": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "2-What-is-Viscosity"
             }
           }
         ]
@@ -84,7 +98,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 378.5
+    "width": 378.5,
+    "collapsed": true
   },
   "right": {
     "id": "f94baa4cb92838bd",
@@ -100,12 +115,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of 2-What-is-Viscosity"
             }
           },
           {
@@ -190,7 +206,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 440.5
+    "width": 440.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -209,7 +226,9 @@
   },
   "active": "98e9991e3cd962db",
   "lastOpenFiles": [
+    "_Media/2-What-is-Viscosity-1761767758968.png",
     "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md",
+    "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
     "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md",
     "_Media/2-What-is-Viscosity-1761738310141.png",
     "_Media/2-What-is-Viscosity-1761738283101.png",
@@ -219,7 +238,6 @@
     "Lecture-Notes/Intro-Soft-Matter/Dupre-Rayleigh-paradox.pdf",
     "Lecture-Notes/Intro-Soft-Matter/0-README.md",
     "Lecture-Notes/Intro-Soft-Matter/1-Complementary-Questions-Answers.md",
-    "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
     "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
     "Lecture-Notes/Intro-Soft-Matter/Lecture1-ComplementaryQuestions-Answers.md",
     "_Media/1.5-Taylor-Culick-08.png",
