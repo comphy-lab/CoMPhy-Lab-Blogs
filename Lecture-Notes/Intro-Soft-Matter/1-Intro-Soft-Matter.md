@@ -342,7 +342,7 @@ Researchers at Sorbonne Université studied bubble formation dynamics by varying
 > - Its **thermodynamic driver** (what energy is minimized?)
 > - One **engineering application** or **mitigation strategy** (e.g., in printing, mixing, coating)
 
-[[Lecture1-ComplementaryQuestions-Answers]]
+[[1-Complementary-Questions-Answers]]
 
 ---
 

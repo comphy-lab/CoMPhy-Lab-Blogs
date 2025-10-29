@@ -4,31 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "e7b9e7293da6991a",
+        "id": "019283b1e9233965",
         "type": "tabs",
         "children": [
           {
-            "id": "b4996b2077002a6d",
+            "id": "98e9991e3cd962db",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md",
-                "mode": "preview",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "1.5-Taylor-Culick-Paradox"
+              "type": "home-tab-view",
+              "state": {},
+              "icon": "search",
+              "title": "Home tab"
             }
           }
         ]
@@ -114,13 +100,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1.5-Taylor-Culick-Paradox"
+              "title": "Outline"
             }
           },
           {
@@ -222,11 +207,19 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "b4996b2077002a6d",
+  "active": "98e9991e3cd962db",
   "lastOpenFiles": [
-    "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
-    "Lecture-Notes/Intro-Soft-Matter/0-README.md",
     "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md",
+    "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md",
+    "_Media/2-What-is-Viscosity-1761738310141.png",
+    "_Media/2-What-is-Viscosity-1761738283101.png",
+    "_Media/2-What-is-Viscosity-1761738244038.png",
+    "_Media/2-What-is-Viscosity-1761738216814.png",
+    "Lecture-Notes/Intro-Soft-Matter/whatIsViscosity.pdf",
+    "Lecture-Notes/Intro-Soft-Matter/Dupre-Rayleigh-paradox.pdf",
+    "Lecture-Notes/Intro-Soft-Matter/0-README.md",
+    "Lecture-Notes/Intro-Soft-Matter/1-Complementary-Questions-Answers.md",
+    "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
     "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
     "Lecture-Notes/Intro-Soft-Matter/Lecture1-ComplementaryQuestions-Answers.md",
     "_Media/1.5-Taylor-Culick-08.png",
@@ -235,11 +228,6 @@
     "_Media/1.5-Taylor-Culick-05.png",
     "_Media/1.5-Taylor-Culick-04.png",
     "_Media/1.5-Taylor-Culick-18.png",
-    "_Media/1.5-Taylor-Culick-17.png",
-    "_Media/1.5-Taylor-Culick-16.png",
-    "_Media/1.5-Taylor-Culick-15.png",
-    "_Media/1.5-Taylor-Culick-14.png",
-    "Lecture-Notes/Intro-Soft-Matter/Dupre-Rayleigh-paradox.pdf",
     "Lecture-Notes/Intro-Soft-Matter/compressed_Lecture2-Taylor-Culick.pdf",
     "Lecture-Notes/Intro-Soft-Matter/Lecture2-Taylor-Culick.pdf",
     "Private-ToDo-Blog-public.md",
@@ -261,14 +249,11 @@
     "Lecture-Notes/Basilisk101/1-conduction-takeaways.md",
     "Lecture-Notes/Basilisk101/0-README.md",
     "Lecture-Notes/Intro-Soft-Matter",
-    "Lecture-Notes/Surface-parameterization.md",
-    "Lecture-Notes/Gauss-law-of-Electrostatics.md",
     "Code-Documentations/2025-Herschel–Bulkley-formulation.pdf",
     "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.pdf",
     "Talks/2025-06-30_Conference-VPflow-abstract.pdf",
     "Talks/vpflow-abstract.pdf",
     "Join-Us",
-    "Lecture-Notes/Basilisk101",
     "Inbox/Untitled.canvas"
   ]
 }
