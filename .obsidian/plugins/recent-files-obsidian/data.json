@@ -2,11 +2,11 @@
   "recentFiles": [
     {
       "basename": "1-Intro-Soft-Matter",
-      "path": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md"
+      "path": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.pdf"
     },
     {
-      "basename": "0-README",
-      "path": "Lecture-Notes/Intro-Soft-Matter/0-README.md"
+      "basename": "1-Intro-Soft-Matter",
+      "path": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md"
     },
     {
       "basename": "1.5-Taylor-Culick-Paradox",
@@ -14,7 +14,19 @@
     },
     {
       "basename": "1.75-Complementary-Questions-Answers",
+      "path": "Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.pdf"
+    },
+    {
+      "basename": "1.75-Complementary-Questions-Answers",
       "path": "Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.md"
+    },
+    {
+      "basename": "2-What-is-Viscosity",
+      "path": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md"
+    },
+    {
+      "basename": "2.5-Conservation-Laws",
+      "path": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.pdf"
     },
     {
       "basename": "2.5-Conservation-Laws",
@@ -22,7 +34,15 @@
     },
     {
       "basename": "2-What-is-Viscosity",
-      "path": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md"
+      "path": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.pdf"
+    },
+    {
+      "basename": "1.5-Taylor-Culick-Paradox",
+      "path": "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.pdf"
+    },
+    {
+      "basename": "0-README",
+      "path": "Lecture-Notes/Intro-Soft-Matter/0-README.md"
     },
     {
       "basename": "4th-workingAssignment",
@@ -179,26 +199,6 @@
     {
       "basename": "whatIsViscosity",
       "path": "Lecture-Notes/Intro-Soft-Matter/whatIsViscosity.pdf"
-    },
-    {
-      "basename": "Dupre-Rayleigh-paradox",
-      "path": "Lecture-Notes/Intro-Soft-Matter/Dupre-Rayleigh-paradox.pdf"
-    },
-    {
-      "basename": "1.5-Taylor-Culick-08",
-      "path": "_Media/1.5-Taylor-Culick-08.png"
-    },
-    {
-      "basename": "1.5-Taylor-Culick-05",
-      "path": "_Media/1.5-Taylor-Culick-05.png"
-    },
-    {
-      "basename": "Private-ToDo-Blog-public",
-      "path": "Private-ToDo-Blog-public.md"
-    },
-    {
-      "basename": "0_ToDo-Blog-public",
-      "path": "0_ToDo-Blog-public.md"
     }
   ],
   "omittedPaths": [],

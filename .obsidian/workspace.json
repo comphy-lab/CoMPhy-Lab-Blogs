@@ -4,31 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "d86d0b7ba420b1cc",
+        "id": "dae54acad6a31cf8",
         "type": "tabs",
         "children": [
           {
-            "id": "d3b1bcd188d3ccc1",
+            "id": "e59ab0a747bfc2b0",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
-                "mode": "preview",
-                "source": true,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "1-Intro-Soft-Matter"
+              "type": "home-tab-view",
+              "state": {},
+              "icon": "search",
+              "title": "Home tab"
             }
           }
         ]
@@ -114,13 +100,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 1-Intro-Soft-Matter"
+              "title": "Outline"
             }
           },
           {
@@ -220,17 +205,23 @@
       "callout-manager:Insert Callout": true,
       "obsidian-review-notes-plugin:View Recent Notes": false,
       "file-cleaner-redux:Clean files": false,
-      "workspaces:Manage workspace layouts": false
+      "workspaces:Manage workspace layouts": false,
+      "obsidian-shellcommands:Shell commands: Custom variables": false
     }
   },
-  "active": "d3b1bcd188d3ccc1",
+  "active": "e59ab0a747bfc2b0",
   "lastOpenFiles": [
-    "Lecture-Notes/Intro-Soft-Matter/0-README.md",
-    "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md",
+    "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.pdf",
     "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
+    "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md",
+    "Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.pdf",
     "Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.md",
-    "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md",
     "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md",
+    "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.pdf",
+    "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md",
+    "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.pdf",
+    "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.pdf",
+    "Lecture-Notes/Intro-Soft-Matter/0-README.md",
     "Lecture-Notes/Basilisk101/4th-workingAssignment.md",
     "Lecture-Notes/Basilisk101/3rd-workingAssignment.md",
     "Lecture-Notes/Basilisk101/2nd-workingAssignment.md",
@@ -250,7 +241,6 @@
     "Blog/2025-Emmy-Noether-Symmetry-Conservation.md",
     "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md",
     "Blog/2025-Arrowheads-in-elastoinertial-turbulence.md",
-    "_AtomicNotes/What-is-electric-field-flux?.md",
     "Code-Documentations/2025-Herschel–Bulkley-formulation.pdf",
     "_Media/2-Conservation-Laws-1761807318276.png",
     "_Media/StokesFirstProblem.pdf",
@@ -266,11 +256,6 @@
     "Lecture-Notes/Intro-Soft-Matter/whatIsViscosity.pdf",
     "Lecture-Notes/Intro-Soft-Matter/Dupre-Rayleigh-paradox.pdf",
     "Lecture-Notes/Intro-Soft-Matter/compressed_Lecture2-Taylor-Culick.pdf",
-    "Lecture-Notes/Intro-Soft-Matter/Lecture2-Taylor-Culick.pdf",
-    "Lecture-Notes/Intro-Soft-Matter",
-    "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.pdf",
-    "Talks/2025-06-30_Conference-VPflow-abstract.pdf",
-    "Talks/vpflow-abstract.pdf",
     "Inbox/Untitled.canvas"
   ]
 }
