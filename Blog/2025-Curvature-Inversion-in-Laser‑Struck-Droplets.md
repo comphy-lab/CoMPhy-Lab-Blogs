@@ -1,5 +1,5 @@
 ---
-modified: 2025-10-25T20:07:26+01:00
+modified: 2025-10-30T11:16:13+00:00
 created: 2025-10-06T19:47:13+01:00
 status: done ✅
 tags:
@@ -19,35 +19,35 @@ Extreme‑ultraviolet (EUV) nanolithography relies on shaping a liquid tin micro
 
 > [!summary] At a glance
 > 
-> - **Key idea:** The _kurtosis_ of the instantaneous pressure impulse controls the sign of the tin sheet’s curvature. Low‑kurtosis (raised‑cosine) impulses can bend the sheet forward; Gaussian impulses cannot.
+> - Key idea: The _kurtosis_ of the instantaneous pressure impulse controls the sign of the tin sheet’s curvature. Low‑kurtosis (raised‑cosine) impulses can bend the sheet forward; Gaussian impulses cannot.
 >     
-> - **Switching knob:** A dimensionless width (W) of the pressure impulse: curvature flips sign near ($W \approx 2$).
+> - Switching knob: A dimensionless width (W) of the pressure impulse: curvature flips sign near ($W \approx 2$).
 >     
-> - **Practical proxy:** ($W$) correlates with the beam‑to‑drop size ratio ($d/D_0$); curvature inversion occurs experimentally at ($d/D_0 \approx 0.55$).
+> - Practical proxy: ($W$) correlates with the beam‑to‑drop size ratio ($d/D_0$); curvature inversion occurs experimentally at ($d/D_0 \approx 0.55$).
 >     
 
 
 ## What’s new?
 
-**A one‑parameter impulse that explains both curvature regimes.** The authors propose a raised‑cosine surface‑pressure impulse ($f(\theta)$) (truncated by a Heaviside function), tuned by a width ($W$). Unlike a Gaussian, the raised cosine is _platykurtic_ (negative excess kurtosis, about ($-0.59$)), i.e., a broad peak with short tails. That shape places momentum where it matters—wide enough to avoid over‑focusing at the pole, but not so wide that the impulse wraps the entire sphere and stalls expansion. With this single control (W), the simulations produce both backward (negative) and forward (positive) curvature and predict a sign change at ($W \simeq 2$).
+A one‑parameter impulse that explains both curvature regimes. The authors propose a raised‑cosine surface‑pressure impulse ($f(\theta)$) (truncated by a Heaviside function), tuned by a width ($W$). Unlike a Gaussian, the raised cosine is _platykurtic_ (negative excess kurtosis, about ($-0.59$)), i.e., a broad peak with short tails. That shape places momentum where it matters—wide enough to avoid over‑focusing at the pole, but not so wide that the impulse wraps the entire sphere and stalls expansion. With this single control (W), the simulations produce both backward (negative) and forward (positive) curvature and predict a sign change at ($W \simeq 2$).
 
-**A predictive diagnostic from the initial velocity field.** By solving Laplace’s equation for the instantaneous pressure inside the drop and extracting the initial velocity via a Legendre‑series construction, the team shows that the _angle of maximum radial velocity_ ($\theta_\text{max}$) at ($t=0$) forecasts curvature: ($\theta_\text{max}<\pi/2$) → negative curvature; ($\theta_\text{max}>\pi/2$) → positive curvature. Gaussian impulses never push ($\theta_\text{max}$) beyond ($\pi/2$); raised‑cosine impulses do when ($W$) is large enough. This “early‑time” test lets practitioners vet a pressure impulse _without_ running a full DNS.
+A predictive diagnostic from the initial velocity field. By solving Laplace’s equation for the instantaneous pressure inside the drop and extracting the initial velocity via a Legendre‑series construction, the team shows that the _angle of maximum radial velocity_ ($\theta_\text{max}$) at ($t=0$) forecasts curvature: ($\theta_\text{max}<\pi/2$) → negative curvature; ($\theta_\text{max}>\pi/2$) → positive curvature. Gaussian impulses never push ($\theta_\text{max}$) beyond ($\pi/2$); raised‑cosine impulses do when ($W$) is large enough. This “early‑time” test lets practitioners vet a pressure impulse _without_ running a full DNS.
 
 
 ## How did they show it?
 
-**Direct numerical simulations with experimental anchoring.** Using a VOF solver ([Basilisk C](http://basilisk.fr)) at very high resolution (quadtree level 14; minimum cell ($\Delta = 0.0012 R_0$), i.e., $\approx 833$ cells per radius), the authors integrate the incompressible two‑phase Navier–Stokes equations with surface tension, initializing the droplet with the instantaneous velocity field implied by the chosen impulse. They keep effective Reynolds and Weber numbers large (based on the expansion velocity) to focus on inertial sheet formation; the surrounding gas is modeled at a small density/viscosity ratio for numerical stability. The simulated morphologies are compared side‑by‑side with stroboscopic shadowgraphs of tin droplets under vacuum, across a sweep of beam sizes.
+Direct numerical simulations with experimental anchoring. Using a VOF solver ([Basilisk C](http://basilisk.fr)) at very high resolution (quadtree level 14; minimum cell ($\Delta = 0.0012 R_0$), i.e., $\approx 833$ cells per radius), the authors integrate the incompressible two‑phase Navier–Stokes equations with surface tension, initializing the droplet with the instantaneous velocity field implied by the chosen impulse. They keep effective Reynolds and Weber numbers large (based on the expansion velocity) to focus on inertial sheet formation; the surrounding gas is modeled at a small density/viscosity ratio for numerical stability. The simulated morphologies are compared side‑by‑side with stroboscopic shadowgraphs of tin droplets under vacuum, across a sweep of beam sizes.
 
-**Mapping ($W$) to the lab’s beam‑to‑drop ratio.** To connect simulation to experiment, they correlate the impulse width with the optical focusing parameter. The sheet curvature measured in experiments varies monotonically with ($d/D_0$) and flips sign near ($d/D_0 \approx 0.575$). A simple linear map, ($W \approx 4.4(d/D_0) - 0.5$), aligns the numerical and experimental curvature trends over the tested range; within that map, the curvature sign change at ($W \approx 2$) corresponds to ($d/D_0 \approx 0.55$). 
+Mapping ($W$) to the lab’s beam‑to‑drop ratio. To connect simulation to experiment, they correlate the impulse width with the optical focusing parameter. The sheet curvature measured in experiments varies monotonically with ($d/D_0$) and flips sign near ($d/D_0 \approx 0.575$). A simple linear map, ($W \approx 4.4(d/D_0) - 0.5$), aligns the numerical and experimental curvature trends over the tested range; within that map, the curvature sign change at ($W \approx 2$) corresponds to ($d/D_0 \approx 0.55$). 
 
 
 ## Why does the raised cosine work?
 
 The curvature outcome is set by _where_ the impulse deposits momentum:
 
-- **Gaussian (mesokurtic)**: widening the peak also lengthens the tails; the pressure effectively “wraps” the drop, leaving the region of strongest radial push _behind_ the equator ($\theta_{\max}<\pi/2$). Sheets bend back toward the source.
+- Gaussian (mesokurtic): widening the peak also lengthens the tails; the pressure effectively “wraps” the drop, leaving the region of strongest radial push _behind_ the equator ($\theta_{\max}<\pi/2$). Sheets bend back toward the source.
     
-- **Raised cosine (platykurtic)**: broad peak, **short tails**. For sufficiently large ($W$), the direction of maximum radial expansion shifts _beyond_ the equator ($\theta_{\max}>\pi/2$), driving the rim forward and producing positive curvature. The sign flip emerges around ($W \approx 2$). (See table 1 and the ($\theta_{\max}$) analysis.)
+- Raised cosine (platykurtic): broad peak, short tails. For sufficiently large ($W$), the direction of maximum radial expansion shifts _beyond_ the equator ($\theta_{\max}>\pi/2$), driving the rim forward and producing positive curvature. The sign flip emerges around ($W \approx 2$). (See table 1 and the ($\theta_{\max}$) analysis.)
     
 
 > [!note] Kurtosis as a design heuristic  
@@ -56,9 +56,9 @@ The curvature outcome is set by _where_ the impulse deposits momentum:
 
 ## What does this mean for EUV source design?
 
-- **A controllable knob for sheet morphology.** Because ($W$) correlates with optical focusing, curvature can be selected via the beam diameter relative to the droplet, with the transition near ($d/D_0 \approx 0.55$). This provides a practical handle to realize forward‑bending sheets—beneficial for subsequent plasma shaping and possibly for more uniform ablation by the second pulse. (See the regime map and time‑lapse comparisons.)
+- A controllable knob for sheet morphology. Because ($W$) correlates with optical focusing, curvature can be selected via the beam diameter relative to the droplet, with the transition near ($d/D_0 \approx 0.55$). This provides a practical handle to realize forward‑bending sheets—beneficial for subsequent plasma shaping and possibly for more uniform ablation by the second pulse. (See the regime map and time‑lapse comparisons.)
     
-- **Thickness distribution matters.** Simulations indicate that larger ($W$) (unfocused, low‑kurtosis impulses) yield sheets with more uniform thickness across the span—attractive for even energy deposition. (Snapshots in figure 6 show this trend.)
+- Thickness distribution matters. Simulations indicate that larger ($W$) (unfocused, low‑kurtosis impulses) yield sheets with more uniform thickness across the span—attractive for even energy deposition. (Snapshots in figure 6 show this trend.)
     
 
 > [!tip] Quick‑design recipe (from the paper’s workflow)
@@ -77,9 +77,9 @@ The curvature outcome is set by _where_ the impulse deposits momentum:
 
 Despite the strong agreement on curvature, two gaps remain—useful pointers for future work:
 
-1. **Expansion vs. propulsion speed.** In the simulations, positive‑curvature cases (large (W)) systematically produce low expansion‑to‑propulsion ratios ($\dot{R}_0/U_z<1$), whereas experiments sometimes show fast expansion _and_ positive curvature. Closing this gap likely requires more faithful modeling of the laser–plasma drive (e.g., via radiation‑hydrodynamics) or impulse shapes beyond the pure raised cosine.
+1. Expansion vs. propulsion speed. In the simulations, positive‑curvature cases (large (W)) systematically produce low expansion‑to‑propulsion ratios ($\dot{R}_0/U_z<1$), whereas experiments sometimes show fast expansion _and_ positive curvature. Closing this gap likely requires more faithful modeling of the laser–plasma drive (e.g., via radiation‑hydrodynamics) or impulse shapes beyond the pure raised cosine.
     
-2. **Ambient medium and late‑time rims.** Numerically, the surrounding “vacuum” must be given a tiny but finite density (e.g., $10^{-4}\rho_d$), which introduces slight drag and affects rim formation at late times; sensitivity sweeps suggest curvature trends are robust, but detailed rim physics—and any 3D asymmetries—are outside the axisymmetric model.
+2. Ambient medium and late‑time rims. Numerically, the surrounding “vacuum” must be given a tiny but finite density (e.g., $10^{-4}\rho_d$), which introduces slight drag and affects rim formation at late times; sensitivity sweeps suggest curvature trends are robust, but detailed rim physics—and any 3D asymmetries—are outside the axisymmetric model.
     
 
 > [!warning] Outstanding physics to nail down

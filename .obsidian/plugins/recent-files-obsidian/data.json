@@ -1,16 +1,100 @@
 {
   "recentFiles": [
     {
+      "basename": "2.5-Conservation-Laws",
+      "path": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md"
+    },
+    {
       "basename": "2-What-is-Viscosity",
       "path": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md"
     },
     {
-      "basename": "Impulsively-started-plate",
-      "path": "_AtomicNotes/Impulsively-started-plate.md"
+      "basename": "1.75-Complementary-Questions-Answers",
+      "path": "Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.md"
+    },
+    {
+      "basename": "Coarse-graining-momentum-to-Cauchy",
+      "path": "_AtomicNotes/Coarse-graining-momentum-to-Cauchy.md"
+    },
+    {
+      "basename": "2025-Why-Double‑Network-Hydrogels-Dont-Shatter",
+      "path": "Blog/2025-Why-Double‑Network-Hydrogels-Dont-Shatter.md"
+    },
+    {
+      "basename": "2025-Herschel–Bulkley-formulation",
+      "path": "Code-Documentations/2025-Herschel–Bulkley-formulation.pdf"
+    },
+    {
+      "basename": "Seminar-UIUC-abstract",
+      "path": "Talks/Seminar-UIUC-abstract.md"
+    },
+    {
+      "basename": "Seminar-Durham-abstract",
+      "path": "Talks/Seminar-Durham-abstract.md"
+    },
+    {
+      "basename": "2025-06-30_Conference-VPflow-abstract",
+      "path": "Talks/2025-06-30_Conference-VPflow-abstract.md"
+    },
+    {
+      "basename": "Surface-parameterization",
+      "path": "Lecture-Notes/Surface-parameterization.md"
+    },
+    {
+      "basename": "Gauss-law-of-Electrostatics",
+      "path": "Lecture-Notes/Gauss-law-of-Electrostatics.md"
+    },
+    {
+      "basename": "1.5-Taylor-Culick-Paradox",
+      "path": "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md"
     },
     {
       "basename": "1-Intro-Soft-Matter",
       "path": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md"
+    },
+    {
+      "basename": "0-README",
+      "path": "Lecture-Notes/Intro-Soft-Matter/0-README.md"
+    },
+    {
+      "basename": "4th-workingAssignment",
+      "path": "Lecture-Notes/Basilisk101/4th-workingAssignment.md"
+    },
+    {
+      "basename": "3rd-workingAssignment",
+      "path": "Lecture-Notes/Basilisk101/3rd-workingAssignment.md"
+    },
+    {
+      "basename": "2nd-workingAssignment",
+      "path": "Lecture-Notes/Basilisk101/2nd-workingAssignment.md"
+    },
+    {
+      "basename": "1st-workingAssignment",
+      "path": "Lecture-Notes/Basilisk101/1st-workingAssignment.md"
+    },
+    {
+      "basename": "1-conduction-takeaways",
+      "path": "Lecture-Notes/Basilisk101/1-conduction-takeaways.md"
+    },
+    {
+      "basename": "0-README",
+      "path": "Lecture-Notes/Basilisk101/0-README.md"
+    },
+    {
+      "basename": "2025-Herschel–Bulkley-formulation",
+      "path": "Code-Documentations/2025-Herschel–Bulkley-formulation.md"
+    },
+    {
+      "basename": "2025-visual-pdes",
+      "path": "Blog/2025-visual-pdes.md"
+    },
+    {
+      "basename": "2025-Thesis-Viscous-Free-Surface-Flows",
+      "path": "Blog/2025-Thesis-Viscous-Free-Surface-Flows.md"
+    },
+    {
+      "basename": "2025-Stokes-waves-arbitary-order",
+      "path": "Blog/2025-Stokes-waves-arbitary-order.md"
     },
     {
       "basename": "2025-JFM-viscous-drop-impact",
@@ -33,8 +117,64 @@
       "path": "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md"
     },
     {
-      "basename": "1.5-Taylor-Culick-Paradox",
-      "path": "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md"
+      "basename": "2025-Curvature-Inversion-in-Laser‑Struck-Droplets",
+      "path": "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md"
+    },
+    {
+      "basename": "2025-Emmy-Noether-Symmetry-Conservation",
+      "path": "Blog/2025-Emmy-Noether-Symmetry-Conservation.md"
+    },
+    {
+      "basename": "2025-Arrowheads-in-elastoinertial-turbulence",
+      "path": "Blog/2025-Arrowheads-in-elastoinertial-turbulence.md"
+    },
+    {
+      "basename": "What-is-electric-field-flux?",
+      "path": "_AtomicNotes/What-is-electric-field-flux?.md"
+    },
+    {
+      "basename": "Virial-identity",
+      "path": "_AtomicNotes/Virial-identity.md"
+    },
+    {
+      "basename": "Relationship-between-rate-of-change-of-a-physical-quantity-and-its-divergence",
+      "path": "_AtomicNotes/Relationship-between-rate-of-change-of-a-physical-quantity-and-its-divergence.md"
+    },
+    {
+      "basename": "Principle-of-superposition-of-electric-fields",
+      "path": "_AtomicNotes/Principle-of-superposition-of-electric-fields.md"
+    },
+    {
+      "basename": "permittivity-of-free-space",
+      "path": "_AtomicNotes/permittivity-of-free-space.md"
+    },
+    {
+      "basename": "Moving-Delta-identity",
+      "path": "_AtomicNotes/Moving-Delta-identity.md"
+    },
+    {
+      "basename": "Impulsively-started-plate",
+      "path": "_AtomicNotes/Impulsively-started-plate.md"
+    },
+    {
+      "basename": "History-of-Gauss",
+      "path": "_AtomicNotes/History-of-Gauss.md"
+    },
+    {
+      "basename": "Geometric-description-of-electric-field",
+      "path": "_AtomicNotes/Geometric-description-of-electric-field.md"
+    },
+    {
+      "basename": "Gaussian-surface-is-very-similar-to-the-control-volume-in-fluid-mechanics",
+      "path": "_AtomicNotes/Gaussian-surface-is-very-similar-to-the-control-volume-in-fluid-mechanics.md"
+    },
+    {
+      "basename": "Dyadic-conversion",
+      "path": "_AtomicNotes/Dyadic-conversion.md"
+    },
+    {
+      "basename": "Continuum-Mechanics-Integral-Formulation",
+      "path": "_AtomicNotes/Continuum-Mechanics-Integral-Formulation.md"
     },
     {
       "basename": "whatIsViscosity",
@@ -43,10 +183,6 @@
     {
       "basename": "Dupre-Rayleigh-paradox",
       "path": "Lecture-Notes/Intro-Soft-Matter/Dupre-Rayleigh-paradox.pdf"
-    },
-    {
-      "basename": "0-README",
-      "path": "Lecture-Notes/Intro-Soft-Matter/0-README.md"
     },
     {
       "basename": "1.5-Taylor-Culick-08",
@@ -63,142 +199,6 @@
     {
       "basename": "0_ToDo-Blog-public",
       "path": "0_ToDo-Blog-public.md"
-    },
-    {
-      "basename": "2025-Why-Double‑Network-Hydrogels-Dont-Shatter",
-      "path": "Blog/2025-Why-Double‑Network-Hydrogels-Dont-Shatter.md"
-    },
-    {
-      "basename": "2025-visual-pdes",
-      "path": "Blog/2025-visual-pdes.md"
-    },
-    {
-      "basename": "2025-Thesis-Viscous-Free-Surface-Flows",
-      "path": "Blog/2025-Thesis-Viscous-Free-Surface-Flows.md"
-    },
-    {
-      "basename": "2025-Stokes-waves-arbitary-order",
-      "path": "Blog/2025-Stokes-waves-arbitary-order.md"
-    },
-    {
-      "basename": "2025-Curvature-Inversion-in-Laser‑Struck-Droplets",
-      "path": "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md"
-    },
-    {
-      "basename": "2025-Emmy-Noether-Symmetry-Conservation",
-      "path": "Blog/2025-Emmy-Noether-Symmetry-Conservation.md"
-    },
-    {
-      "basename": "2025-Arrowheads-in-elastoinertial-turbulence",
-      "path": "Blog/2025-Arrowheads-in-elastoinertial-turbulence.md"
-    },
-    {
-      "basename": "2025-Herschel–Bulkley-formulation",
-      "path": "Code-Documentations/2025-Herschel–Bulkley-formulation.md"
-    },
-    {
-      "basename": "0_README",
-      "path": "0_README.md"
-    },
-    {
-      "basename": "1st-workingAssignment",
-      "path": "Lecture-Notes/Basilisk101/1st-workingAssignment.md"
-    },
-    {
-      "basename": "1-conduction-takeaways",
-      "path": "Lecture-Notes/Basilisk101/1-conduction-takeaways.md"
-    },
-    {
-      "basename": "0-README",
-      "path": "Lecture-Notes/Basilisk101/0-README.md"
-    },
-    {
-      "basename": "Surface-parameterization",
-      "path": "Lecture-Notes/Surface-parameterization.md"
-    },
-    {
-      "basename": "Gauss-law-of-Electrostatics",
-      "path": "Lecture-Notes/Gauss-law-of-Electrostatics.md"
-    },
-    {
-      "basename": "4th-workingAssignment",
-      "path": "Lecture-Notes/Basilisk101/4th-workingAssignment.md"
-    },
-    {
-      "basename": "3rd-workingAssignment",
-      "path": "Lecture-Notes/Basilisk101/3rd-workingAssignment.md"
-    },
-    {
-      "basename": "2nd-workingAssignment",
-      "path": "Lecture-Notes/Basilisk101/2nd-workingAssignment.md"
-    },
-    {
-      "basename": "Commonwealth-Split-site-PhD-Scholarships",
-      "path": "Join-Us/Commonwealth-Split-site-PhD-Scholarships.md"
-    },
-    {
-      "basename": "2025-Herschel–Bulkley-formulation",
-      "path": "Code-Documentations/2025-Herschel–Bulkley-formulation.pdf"
-    },
-    {
-      "basename": "2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence",
-      "path": "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.pdf"
-    },
-    {
-      "basename": "2025-06-30_Conference-VPflow-abstract",
-      "path": "Talks/2025-06-30_Conference-VPflow-abstract.md"
-    },
-    {
-      "basename": "README",
-      "path": "README.md"
-    },
-    {
-      "basename": "Seminar-UIUC-abstract",
-      "path": "Talks/Seminar-UIUC-abstract.md"
-    },
-    {
-      "basename": "Seminar-Durham-abstract",
-      "path": "Talks/Seminar-Durham-abstract.md"
-    },
-    {
-      "basename": "Seminar-Durham-abstract",
-      "path": "Talks/Seminar-Durham-abstract.pdf"
-    },
-    {
-      "basename": "Seminar-UIUC-abstract",
-      "path": "Talks/Seminar-UIUC-abstract.pdf"
-    },
-    {
-      "basename": "Relationship between rate of change of a physical quantity and its divergence",
-      "path": "_AtomicNotes/Relationship between rate of change of a physical quantity and its divergence.md"
-    },
-    {
-      "basename": "Geometric description of electric field",
-      "path": "_AtomicNotes/Geometric description of electric field.md"
-    },
-    {
-      "basename": "Gauss-law-in-electrostatics",
-      "path": "Gauss-law-in-electrostatics.md"
-    },
-    {
-      "basename": "Herschel–Bulkley formulation",
-      "path": "_Inbox/Herschel–Bulkley formulation.md"
-    },
-    {
-      "basename": "Herschel–Bulkley formulation",
-      "path": "_Inbox/Herschel–Bulkley formulation.pdf"
-    },
-    {
-      "basename": "Herschel–Bulkley",
-      "path": "_AtomicNotes/Herschel–Bulkley.md"
-    },
-    {
-      "basename": "Herschel–Bulkley formulation",
-      "path": "_FileOrganizer2000/References/Herschel–Bulkley formulation.md"
-    },
-    {
-      "basename": "Herschel–Bulkley formulation_backup_20241231_201541",
-      "path": "Z_Archive/Herschel–Bulkley formulation_backup_20241231_201541.md"
     }
   ],
   "omittedPaths": [],

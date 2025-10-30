@@ -1,8 +1,7 @@
 ---
-modified: 2025-03-12T07:18:34+01:00
+modified: 2025-10-30T11:17:15+00:00
 created: 2025-03-12T02:24:38+01:00
 ---
-
 # Computational Multiphase Flows with Basilisk: From Champagne Bubbles to Drop Impact
 
 > [!tldr] TL;DR 
@@ -41,11 +40,11 @@ When a liquid drop impacts a pool of the same liquid, complex dynamics unfold in
 > [!tldr] Problem Statement 
 > Simulate the axisymmetric impact of a liquid drop onto a pool of the same liquid. Key dimensionless parameters include:
 > 
-> - **Froude number (Fr)**: $\text{Fr} = \frac{U^2}{gD}$ Ratio of inertial to gravitational forces
+> - Froude number (Fr): $\text{Fr} = \frac{U^2}{gD}$ Ratio of inertial to gravitational forces
 >     
-> - **Galilei number (Ga)**: $\text{Ga} = \frac{\rho g D^3}{\mu^2}$ Ratio of gravitational to viscous forces
+> - Galilei number (Ga): $\text{Ga} = \frac{\rho g D^3}{\mu^2}$ Ratio of gravitational to viscous forces
 >     
-> - **Bond number (Bo)**: $\text{Bo} = \frac{\rho g D^2}{\sigma}$ Ratio of gravitational to surface tension forces
+> - Bond number (Bo): $\text{Bo} = \frac{\rho g D^2}{\sigma}$ Ratio of gravitational to surface tension forces
 >     
 > 
 > Where $U$ is impact velocity, $D$ is drop diameter, $g$ is gravity, $\mu$ is viscosity, $\rho$ is density, and $\sigma$ is surface tension.
@@ -98,11 +97,11 @@ Drop impact on solid surfaces exhibits different dynamics compared to pool impac
 > [!tldr] Problem Statement 
 > Simulate the axisymmetric impact of a liquid drop on a solid surface. Key dimensionless parameters include:
 > 
-> - **Weber number (We)**: $\text{We} = \frac{\rho U^2 D}{\sigma}$ Ratio of inertial to surface tension forces
+> - Weber number (We): $\text{We} = \frac{\rho U^2 D}{\sigma}$ Ratio of inertial to surface tension forces
 >     
-> - **Ohnesorge number (Oh)**: $\text{Oh} = \frac{\mu}{\sqrt{\rho \sigma D}}$ Ratio of viscous forces to inertial and surface tension forces
+> - Ohnesorge number (Oh): $\text{Oh} = \frac{\mu}{\sqrt{\rho \sigma D}}$ Ratio of viscous forces to inertial and surface tension forces
 >     
-> - **Bond number (Bo)**: $\text{Bo} = \frac{\rho g D^2}{\sigma}$ Ratio of gravitational to surface tension forces
+> - Bond number (Bo): $\text{Bo} = \frac{\rho g D^2}{\sigma}$ Ratio of gravitational to surface tension forces
 >     
 
 The boundary conditions for the solid wall are implemented as:
@@ -222,9 +221,9 @@ When a bubble reaches a free surface, a thin film separates it from the surround
 
 > [!note] Key Physical Parameters Two dimensionless numbers primarily govern bubble bursting dynamics:
 > 
-> - **Ohnesorge number (Oh)**: $\text{Oh} = \frac{\mu}{\sqrt{\rho \sigma R}}$ Relates viscous forces to inertial and surface tension forces
+> - Ohnesorge number (Oh): $\text{Oh} = \frac{\mu}{\sqrt{\rho \sigma R}}$ Relates viscous forces to inertial and surface tension forces
 >     
-> - **Bond number (Bo)**: $\text{Bo} = \frac{\rho g R^2}{\sigma}$ Relates gravitational forces to surface tension forces
+> - Bond number (Bo): $\text{Bo} = \frac{\rho g R^2}{\sigma}$ Relates gravitational forces to surface tension forces
 >     
 > 
 > Where $\mu$ is viscosity, $\rho$ is density, $\sigma$ is surface tension, $R$ is bubble radius, and $g$ is gravitational acceleration.
@@ -454,31 +453,31 @@ Based on our exploration of these multiphase simulations, here are some key insi
 
 > [!tip] Multiphase Simulation Tips
 > 
-> 1. **Interface resolution**: Always ensure sufficient resolution near interfaces, especially in regions of high curvature. The `adapt_wavelet()` function with appropriate error thresholds is crucial.
+> 1. Interface resolution: Always ensure sufficient resolution near interfaces, especially in regions of high curvature. The `adapt_wavelet()` function with appropriate error thresholds is crucial.
 >     
-> 2. **Numerical stability**: For high-density and viscosity ratios (typical in air-water systems), use:
+> 2. Numerical stability: For high-density and viscosity ratios (typical in air-water systems), use:
 >     
 >     - The `FILTERED` option to smooth property jumps
 >     - The `navier-stokes/conserving.h` module for better momentum conservation
 >     - Appropriate timestep limitations (CFL < 0.5 is often necessary)
-> 3. **Boundary conditions**: Pay careful attention to boundary conditions, especially for solid surfaces. Use `dirichlet()` and `neumann()` appropriately.
+> 3. Boundary conditions: Pay careful attention to boundary conditions, especially for solid surfaces. Use `dirichlet()` and `neumann()` appropriately.
 >     
-> 4. **Initial conditions**: Start with a well-resolved and physically reasonable initial condition. For drop impact, position the drop slightly above the surface.
+> 4. Initial conditions: Start with a well-resolved and physically reasonable initial condition. For drop impact, position the drop slightly above the surface.
 >     
-> 5. **Convergence monitoring**: Track relevant physical quantities (kinetic energy, interface position) to determine when the simulation has reached a quasi-steady state.
+> 5. Convergence monitoring: Track relevant physical quantities (kinetic energy, interface position) to determine when the simulation has reached a quasi-steady state.
 >     
-> 6. **Parameter sensitivity**: Multiphase flows can be sensitive to small parameter changes. Conduct parameter sweeps to understand the system behavior.
+> 6. Parameter sensitivity: Multiphase flows can be sensitive to small parameter changes. Conduct parameter sweeps to understand the system behavior.
 >     
 
 > [!important] Dimensionless Parameters
 > 
 > Understanding the key dimensionless parameters is essential for characterizing multiphase flows:
 > 
-> - **Weber number (We)**: Inertia vs. surface tension
-> - **Ohnesorge number (Oh)**: Viscosity vs. inertia and surface tension
-> - **Bond number (Bo)**: Gravity vs. surface tension
-> - **Froude number (Fr)**: Inertia vs. gravity
-> - **Capillary number (Ca)**: Viscosity vs. surface tension
+> - Weber number (We): Inertia vs. surface tension
+> - Ohnesorge number (Oh): Viscosity vs. inertia and surface tension
+> - Bond number (Bo): Gravity vs. surface tension
+> - Froude number (Fr): Inertia vs. gravity
+> - Capillary number (Ca): Viscosity vs. surface tension
 > 
 > These parameters form a framework for classifying and predicting multiphase flow behavior across different scales and fluid properties.
 

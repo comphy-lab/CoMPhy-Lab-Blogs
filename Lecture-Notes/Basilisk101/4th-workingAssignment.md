@@ -1,5 +1,5 @@
 ---
-modified: 2025-03-12T17:14:03+01:00
+modified: 2025-10-30T11:17:18+00:00
 created: 2025-03-12T01:24:38+01:00
 ---
 # Non-Newtonian flows with Basilisk
@@ -45,11 +45,11 @@ where $\boldsymbol{\tau}$ is the stress tensor, $\mu$ is the viscosity, and $\do
 
 For non-Newtonian fluids, this relationship becomes more complex:
 
-1. **Viscoplastic fluids (e.g., Bingham plastics, Herschel-Bulkley fluids)** exhibit a yield stress $\tau_y$ that must be exceeded before flow occurs:
+1. Viscoplastic fluids (e.g., Bingham plastics, Herschel-Bulkley fluids) exhibit a yield stress $\tau_y$ that must be exceeded before flow occurs:
 
 $$\boldsymbol{\tau} = \begin{cases} \tau_{y}\frac{\dot{\boldsymbol{\gamma}}}{|\dot{\boldsymbol{\gamma}}|} + K|\dot{\boldsymbol{\gamma}}|^{n-1}\dot{\boldsymbol{\gamma}}, & \text{if } |\boldsymbol{\tau}| > \tau_y \ \dot{\boldsymbol{\gamma}} = 0, & \text{if } |\boldsymbol{\tau}| \leq \tau_y \end{cases} $$
 
-2. **Viscoelastic fluids** exhibit memory effects, with stress depending on the deformation history. A common model is the Oldroyd-B model:
+2. Viscoelastic fluids exhibit memory effects, with stress depending on the deformation history. A common model is the Oldroyd-B model:
 
 $$\boldsymbol{\tau} + \lambda \overset{\nabla}{\boldsymbol{\tau}} = \mu \left( \dot{\boldsymbol{\gamma}} + \lambda_r \overset{\nabla}{\dot{\boldsymbol{\gamma}}} \right)$$
 
@@ -59,15 +59,15 @@ where $\lambda$ is the relaxation time, $\lambda_r$ is the retardation time, and
 
 Several dimensionless parameters characterize the behavior of complex fluids:
 
-1. **Weissenberg number (Wi)**: Ratio of elastic to viscous forces $$\text{Wi} = \lambda \dot{\gamma}$$ where $\lambda$ is the relaxation time and $\dot{\gamma}$ is a characteristic strain rate
+1. Weissenberg number (Wi): Ratio of elastic to viscous forces $$\text{Wi} = \lambda \dot{\gamma}$$ where $\lambda$ is the relaxation time and $\dot{\gamma}$ is a characteristic strain rate
     
-2. **Deborah number (De)**: Ratio of material relaxation time to observation time $$\text{De} = \frac{\lambda}{t_{\text{obs}}}$$
+2. Deborah number (De): Ratio of material relaxation time to observation time $$\text{De} = \frac{\lambda}{t_{\text{obs}}}$$
     
-3. **Elasticity number (El)**: Ratio of elastic to inertial effects $$\text{El} = \frac{\text{Wi}}{\text{Re}} = \frac{\lambda \mu}{\rho L^2}$$
+3. Elasticity number (El): Ratio of elastic to inertial effects $$\text{El} = \frac{\text{Wi}}{\text{Re}} = \frac{\lambda \mu}{\rho L^2}$$
     
-4. **Ohnesorge number (Oh)**: Ratio of viscous forces to inertial and surface tension forces $$\text{Oh} = \frac{\mu}{\sqrt{\rho \sigma L}}$$
+4. Ohnesorge number (Oh): Ratio of viscous forces to inertial and surface tension forces $$\text{Oh} = \frac{\mu}{\sqrt{\rho \sigma L}}$$
     
-5. **Plasto-capillary number (J)**: Ratio of yield stress to capillary pressure $$\mathcal{J} = \frac{\tau_y R_0}{\sigma}$$
+5. Plasto-capillary number (J): Ratio of yield stress to capillary pressure $$\mathcal{J} = \frac{\tau_y R_0}{\sigma}$$
     
 
 > [!note] Numerical Challenge Simulating viscoelastic flows presents significant numerical challenges, particularly at high Weissenberg numbers (known as the "high Weissenberg number problem"). Traditional numerical methods often fail due to the loss of positive-definiteness of the conformation tensor. The log-conformation approach we'll use in these simulations addresses this issue by working with the logarithm of the conformation tensor, ensuring numerical stability.
@@ -103,10 +103,10 @@ In viscoelastic fluids, elastic stresses dramatically alter these dynamics, ofte
 
 > [!tldr] Problem Statement Simulate the bursting of a bubble at the interface between a viscoelastic fluid and air, examining how elasticity affects the jet dynamics and potential droplet formation. Key dimensionless parameters include:
 > 
-> - **Deborah number (De)**: Ratio of relaxation time to flow time scale
-> - **Elasto-capillary number (Ec)**: Ratio of elastic forces to surface tension
-> - **Ohnesorge number (Oh)**: Ratio of viscous forces to inertial and capillary forces
-> - **Bond number (Bond)**: Ratio of gravitational forces to surface tension
+> - Deborah number (De): Ratio of relaxation time to flow time scale
+> - Elasto-capillary number (Ec): Ratio of elastic forces to surface tension
+> - Ohnesorge number (Oh): Ratio of viscous forces to inertial and capillary forces
+> - Bond number (Bond): Ratio of gravitational forces to surface tension
 
 ### 2.2 Implementation Details
 
@@ -247,9 +247,9 @@ When a viscoplastic drop impacts a surface, its behavior differs significantly f
 
 > [!tldr] Problem Statement Simulate the axisymmetric impact of a viscoplastic drop onto a solid surface. Key dimensionless parameters include:
 > 
-> - **Weber number (We)**: $\text{We} = \frac{\rho U^2 D}{\sigma}$ Ratio of inertial to surface tension forces
-> - **Ohnesorge number (Oh)**: $\text{Oh} = \frac{\mu}{\sqrt{\rho \sigma D}}$ Ratio of viscous to inertial and surface tension forces
-> - **Plasto-capillary number (J)**: $\mathcal{J} = \frac{\tau_yR_0}{\sigma}$ Ratio of yield stress to capillary pressure
+> - Weber number (We): $\text{We} = \frac{\rho U^2 D}{\sigma}$ Ratio of inertial to surface tension forces
+> - Ohnesorge number (Oh): $\text{Oh} = \frac{\mu}{\sqrt{\rho \sigma D}}$ Ratio of viscous to inertial and surface tension forces
+> - Plasto-capillary number (J): $\mathcal{J} = \frac{\tau_yR_0}{\sigma}$ Ratio of yield stress to capillary pressure
 
 ### 3.2 Mathematical Formulation
 
@@ -340,9 +340,9 @@ event init (t = 0) {
 
 For viscoplastic drops, the impact dynamics depend strongly on the plasto-capillary number J:
 
-1. **Low J (J << 1)**: Behavior approaches Newtonian drops with nearly complete spreading
-2. **Moderate J (J ~ 0.1-1)**: Limited spreading with formation of unyielded regions
-3. **High J (J > 1)**: Minimal deformation, approaching solid-like behavior
+1. Low J (J << 1): Behavior approaches Newtonian drops with nearly complete spreading
+2. Moderate J (J ~ 0.1-1): Limited spreading with formation of unyielded regions
+3. High J (J > 1): Minimal deformation, approaching solid-like behavior
 
 A key feature to observe is the formation of unyielded regions where the stress falls below the yield stress. These regions behave as solid-like domains embedded within the flowing fluid.
 
@@ -376,11 +376,11 @@ When a viscoelastic drop impacts a surface, elastic stresses can lead to behavio
 
 > [!tldr] Problem Statement Simulate the impact of a viscoelastic drop on a solid surface, examining how elasticity affects the impact dynamics. Key dimensionless parameters include:
 > 
-> - **Weber number (We)**: Ratio of inertial to surface tension forces
-> - **Ohnesorge number (Oh)**: Ratio of viscous to inertial and surface tension forces
-> - **Weissenberg number (Wi)**: Ratio of elastic to viscous forces
-> - **Elasticity number (El)**: Ratio of elastic to inertial effects
-> - **Bond number (Bo)**: Ratio of gravitational to surface tension forces
+> - Weber number (We): Ratio of inertial to surface tension forces
+> - Ohnesorge number (Oh): Ratio of viscous to inertial and surface tension forces
+> - Weissenberg number (Wi): Ratio of elastic to viscous forces
+> - Elasticity number (El): Ratio of elastic to inertial effects
+> - Bond number (Bo): Ratio of gravitational to surface tension forces
 
 ### 4.2 Implementation Details
 
@@ -447,8 +447,8 @@ f.sigma = 1.0/We;
 
 > [!note] Scalar vs. Tensor Implementation The code provides two options for implementing viscoelasticity:
 > 
-> 1. **Tensor Implementation**: Full anisotropic stresses, physically accurate but computationally intensive
-> 2. **Scalar Implementation**: Simplified model, faster but less accurate for complex flows
+> 1. Tensor Implementation: Full anisotropic stresses, physically accurate but computationally intensive
+> 2. Scalar Implementation: Simplified model, faster but less accurate for complex flows
 > 
 > The tensor implementation tracks the full conformation tensor, while the scalar implementation uses a simplified approach that captures the main features while being computationally more efficient.
 
@@ -456,10 +456,10 @@ f.sigma = 1.0/We;
 
 Viscoelastic drop impact exhibits several distinctive behaviors compared to Newtonian impact:
 
-1. **Weissenberg = 0 (Newtonian)**: Standard impact dynamics with spreading, potential rebound depending on Oh and We
-2. **Low Weissenberg**: Enhanced rebound due to elastic recovery
-3. **Moderate Weissenberg**: Formation of extended filaments during rebound
-4. **High Weissenberg**: Dramatic enhancement of rebound with possible beads-on-a-string formation in filaments
+1. Weissenberg = 0 (Newtonian): Standard impact dynamics with spreading, potential rebound depending on Oh and We
+2. Low Weissenberg: Enhanced rebound due to elastic recovery
+3. Moderate Weissenberg: Formation of extended filaments during rebound
+4. High Weissenberg: Dramatic enhancement of rebound with possible beads-on-a-string formation in filaments
 
 > [!task] Exercise: Elasticity Effects on Impact
 > 
@@ -497,9 +497,9 @@ For viscoelastic fluids, the retraction dynamics are more complex due to elastic
 
 > [!tldr] Problem Statement Simulate the retraction of a viscoelastic fluid filament under capillary action, examining how elasticity affects the retraction dynamics. Key dimensionless parameters include:
 > 
-> - **Deborah number (De)**: Ratio of relaxation time to capillary time
-> - **Ohnesorge number (Oh)**: Ratio of viscous to inertial and capillary forces
-> - **Elasticity number (El)**: Ratio of elastic to inertial effects
+> - Deborah number (De): Ratio of relaxation time to capillary time
+> - Ohnesorge number (Oh): Ratio of viscous to inertial and capillary forces
+> - Elasticity number (El): Ratio of elastic to inertial effects
 
 ### 5.2 Implementation Details
 
@@ -548,13 +548,13 @@ event init(t = 0){
 
 The retraction dynamics of viscoelastic filaments show distinctive behaviors:
 
-1. **Newtonian (De = 0)**: Formation of a bulbous end with diameter approximately twice the filament thickness, constant retraction velocity
+1. Newtonian (De = 0): Formation of a bulbous end with diameter approximately twice the filament thickness, constant retraction velocity
     
-2. **Low Deborah Number**: Similar to Newtonian but with slightly modified bulbous end shape and retraction velocity
+2. Low Deborah Number: Similar to Newtonian but with slightly modified bulbous end shape and retraction velocity
     
-3. **Moderate Deborah Number**: Formation of a neck behind the bulbous end, potential development of beads-on-a-string morphology
+3. Moderate Deborah Number: Formation of a neck behind the bulbous end, potential development of beads-on-a-string morphology
     
-4. **High Deborah Number**: Dramatic modification of retraction dynamics, with strong elastic resistance to extensional deformation in the neck region
+4. High Deborah Number: Dramatic modification of retraction dynamics, with strong elastic resistance to extensional deformation in the neck region
     
 
 > [!task] Exercise: Viscoelastic Filament Retraction
@@ -593,10 +593,10 @@ The log-conformation approach addresses this by:
 
 Effective adaptive mesh refinement is critical for viscoelastic simulations. Key refinement criteria include:
 
-1. **Interface location**: Captured by volume fraction gradients
-2. **Velocity gradients**: Important for capturing flow features
-3. **Interface curvature**: Critical for surface tension effects
-4. **Conformation tensor gradients**: Essential for capturing elastic stress variations
+1. Interface location: Captured by volume fraction gradients
+2. Velocity gradients: Important for capturing flow features
+3. Interface curvature: Critical for surface tension effects
+4. Conformation tensor gradients: Essential for capturing elastic stress variations
 
 Balancing these criteria is important for efficiency and accuracy.
 
@@ -604,9 +604,9 @@ Balancing these criteria is important for efficiency and accuracy.
 
 For multiphase viscoelastic simulations, proper treatment of interfaces is crucial:
 
-1. **Filtered approach**: Smooths property jumps across interfaces for numerical stability
-2. **Conservative formulation**: Ensures momentum conservation during rapid interface deformation
-3. **Tension model**: Accurately captures surface tension forces
+1. Filtered approach: Smooths property jumps across interfaces for numerical stability
+2. Conservative formulation: Ensures momentum conservation during rapid interface deformation
+3. Tension model: Accurately captures surface tension forces
 
 ### 6.4 Stability Tips
 

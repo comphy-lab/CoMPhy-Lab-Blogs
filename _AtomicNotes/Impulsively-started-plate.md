@@ -1,5 +1,7 @@
 ---
-modified: 2025-10-29T21:57:22+00:00
+modified: 2025-10-30T11:15:13+00:00
+type: atomic note
+status: done ✅
 ---
 # Stokes' first problem
 
@@ -22,7 +24,7 @@ modified: 2025-10-29T21:57:22+00:00
 
 A semi-infinite fluid initially at rest. At $t=0$, a plate at $y=0$ suddenly moves with velocity $u_0$.
 
-**Initial and Boundary Conditions:**
+Initial and Boundary Conditions:
 $$\begin{align}
 \vec{u}(x,y,t=0) &= 0 \\
 \text{At } t = 0^{+}, \quad u(y=0) &= u_0
@@ -38,26 +40,26 @@ $$\boxed{\frac{\partial()}{\partial x} = 0}$$
 
 Ignoring any initial transients, this leads to:
 
-**From continuity equation:**
+From continuity equation:
 $$\frac{\partial v}{\partial y} = 0$$
 
-**Combined with no-slip at the plate:**
+Combined with no-slip at the plate:
 $$v(y=0) = 0 \quad \Rightarrow \quad v = 0 \quad \text{for all } y$$
 
 ---
 
 ## Governing Equations
 
-**$x$-momentum equation:**
+$x$-momentum equation:
 $$\rho \frac{\partial u}{\partial t} = - \frac{\partial p}{\partial x} + \mu \frac{\partial^2 u}{\partial y^2}$$
 
-**$y$-momentum equation:**
+$y$-momentum equation:
 $$\frac{\partial p}{\partial y} = 0$$
 
-**Pressure gradient:** For an open container with $(p,u,v) = 0$ far from the plate:
+Pressure gradient: For an open container with $(p,u,v) = 0$ far from the plate:
 $$\frac{\partial p}{\partial x} = 0$$
 
-**Simplified momentum equation:**
+Simplified momentum equation:
 $$\boxed{\rho \frac{\partial u}{\partial t} = \mu \frac{\partial^2 u}{\partial y^2}}$$
 
 or equivalently:
@@ -83,7 +85,7 @@ u(\infty,t) &= 0 \quad \text{(far-field BC)}
 
 ## Similarity Solution Approach
 
-Using **dimensional analysis**, we seek a solution of the form:
+Using dimensional analysis, we seek a solution of the form:
 
 $$u = \phi\left(u_0, y, t, \frac{\mu}{\rho} = \nu\right)$$
 
@@ -94,11 +96,11 @@ $$\frac{u}{u_0} = \phi\left(\frac{y}{\sqrt{\nu t}}\right)$$
 > [!important] Similarity Variable
 > The characteristic length scale grows as $\sqrt{\nu t}$, reflecting the diffusive nature of momentum transport.
 
-Define the **similarity variable**:
+Define the similarity variable:
 
 $$\boxed{\eta = \frac{y}{2\sqrt{\nu t}}}$$
 
-and the **dimensionless velocity**:
+and the dimensionless velocity:
 
 $$\boxed{\frac{u}{u_0} = F(\eta)}$$
 
@@ -132,7 +134,7 @@ Simplifying:
 
 $$\boxed{F'' + 2\eta F' = 0}$$
 
-This is an **ordinary differential equation** for $F(\eta)$.
+This is an ordinary differential equation for $F(\eta)$.
 
 ---
 
@@ -182,10 +184,10 @@ $$\boxed{F = A \int_0^{\eta} e^{-s^2} \, ds + B}$$
 
 ## Applying Boundary Conditions
 
-**At $\eta = 0$:** $F(0) = 1$
+At $\eta = 0$: $F(0) = 1$
 $$B = 1$$
 
-**As $\eta \to \infty$:** $F(\infty) = 0$
+As $\eta \to \infty$: $F(\infty) = 0$
 $$0 = A \int_0^{\infty} e^{-s^2} \, ds + 1$$
 
 Using the Gaussian integral:
@@ -204,14 +206,14 @@ $$\boxed{F(\eta) = 1 - \frac{2}{\sqrt{\pi}} \int_0^{\eta} e^{-s^2} \, ds}$$
 
 ### Error Function Representation
 
-The **error function** is defined as:
+The error function is defined as:
 $$\erf(\eta) = \frac{2}{\sqrt{\pi}} \int_0^{\eta} e^{-s^2} \, ds$$
 
 Therefore:
 
 $$\boxed{F(\eta) = 1 - \erf(\eta)}$$
 
-or equivalently, using the **complementary error function** $\erfc(\eta) = 1 - \erf(\eta)$:
+or equivalently, using the complementary error function $\erfc(\eta) = 1 - \erf(\eta)$:
 
 $$\boxed{\frac{u}{u_0} = \erfc\left(\frac{y}{2\sqrt{\nu t}}\right) = 1 - \erf\left(\frac{y}{2\sqrt{\nu t}}\right)}$$
 
@@ -221,15 +223,15 @@ $$\boxed{\frac{u}{u_0} = \erfc\left(\frac{y}{2\sqrt{\nu t}}\right) = 1 - \erf\le
 
 > [!summary] Key Results
 >
-> 1. **Diffusive spreading:** The velocity profile spreads into the fluid with a characteristic length scale $\delta(t) \sim \sqrt{\nu t}$
+> 1. Diffusive spreading: The velocity profile spreads into the fluid with a characteristic length scale $\delta(t) \sim \sqrt{\nu t}$
 >
-> 2. **Self-similar evolution:** At different times, the velocity profiles collapse onto a single curve when plotted against $\eta = y/(2\sqrt{\nu t})$
+> 2. Self-similar evolution: At different times, the velocity profiles collapse onto a single curve when plotted against $\eta = y/(2\sqrt{\nu t})$
 >
-> 3. **Momentum diffusion:** The kinematic viscosity $\nu$ acts as a diffusivity for momentum, exactly analogous to thermal or mass diffusion
+> 3. Momentum diffusion: The kinematic viscosity $\nu$ acts as a diffusivity for momentum, exactly analogous to thermal or mass diffusion
 >
-> 4. **Penetration depth:** At any given time, most of the velocity change occurs within $y \lesssim \sqrt{\nu t}$
+> 4. Penetration depth: At any given time, most of the velocity change occurs within $y \lesssim \sqrt{\nu t}$
 
-The solution demonstrates that **viscosity is fundamentally a diffusive process** for momentum transport, validating the kinetic theory picture developed in [[2-What-is-Viscosity|Lecture 2]].
+The solution demonstrates that viscosity is fundamentally a diffusive process for momentum transport, validating the kinetic theory picture developed in [[2-What-is-Viscosity|Lecture 2]].
 
 
 ![[StokesFirstProblem.pdf]]

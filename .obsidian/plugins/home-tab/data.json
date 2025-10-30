@@ -22,7 +22,28 @@
   "showShortcuts": true,
   "markdownOnly": false,
   "unresolvedLinks": true,
-  "recentFilesStore": [],
+  "recentFilesStore": [
+    {
+      "filepath": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md",
+      "timestamp": 1761823337729
+    },
+    {
+      "filepath": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md",
+      "timestamp": 1761823335592
+    },
+    {
+      "filepath": "Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.md",
+      "timestamp": 1761823235201
+    },
+    {
+      "filepath": "_AtomicNotes/Coarse-graining-momentum-to-Cauchy.md",
+      "timestamp": 1761823144873
+    },
+    {
+      "filepath": "Blog/2025-Why-Double‑Network-Hydrogels-Dont-Shatter.md",
+      "timestamp": 1761823081175
+    }
+  ],
   "bookmarkedFileStore": [],
   "searchDelay": 0,
   "replaceNewTabs": true,

@@ -13,6 +13,6 @@
   "translucency": true,
   "showViewHeader": true,
   "nativeMenus": true,
-  "showRibbon": true,
+  "showRibbon": false,
   "accentColor": "#68246d"
 }

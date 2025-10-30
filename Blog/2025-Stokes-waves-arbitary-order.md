@@ -1,5 +1,5 @@
 ---
-modified: 2025-10-07T06:05:52+01:00
+modified: 2025-10-30T11:16:42+00:00
 created: 2024-12-24T18:10:43+01:00
 tags:
   - stokeswaves
@@ -20,7 +20,7 @@ c_{n}
 = \frac{(2n - 1)!!}{2^{n-1}\,n!}.$$
 
 ```c
-/**
+/
 * @brief Calculates the Stokes coefficient for nth order wave
 * @param n Order of the wave
 * @return Coefficient value based on double factorial calculation
@@ -39,7 +39,7 @@ return double_factorial / (pow(2,(n-1)) * tgamma(n+1));
 
 }
 
-/**
+/
 * @brief Calculates the surface elevation for Stokes wave
 * @param x Horizontal position
 * @param a Wave amplitude
@@ -79,12 +79,12 @@ The primary focus is to address periodic standing waves and Stokes waves, which 
 Both employ polynomial and trigonometric expansions for solving boundary conditions and streamline the application of nonlinear theories in various wave contexts.
 
 ### Key Findings
-1. **Equation of Arbitrary Order Standing Waves**:
+1. Equation of Arbitrary Order Standing Waves:
    The governing expressions for surface elevation and velocity components leverage Fourier series expansions or hyperbolic functions, depending on the wave height and wavelength regime:
    - Standing wave elevation, $\eta(x, t)$, approximates multiple harmonics where coefficients stem from iterative numerical techniques.
    - Stokes coefficients for arbitrary-order expansions use factorial-based formulas for precise amplitude corrections.
 
-2. **Numerical Accuracy**:
+1. Numerical Accuracy:
    - Both methods demonstrate high accuracy when wave heights and wavelengths align with their regimes of validity, but overlap regions where neither theory performs optimally exist.
    - The fifth-order Stokes expansion offers excellent performance for waves with moderate wavelengths, while cnoidal approximations excel for shallow water waves.
 
@@ -94,7 +94,7 @@ The work advances computational methods to extend the precision of nonlinear wav
 - Improved models for wave propagation over complex seabeds.
 
 ### Recommendations
-One option is to use **mixed-order Stokes-cnoidal** expansions for transitional regimes and refine computational methods for boundary conditions in breaking wave scenarios.
+One option is to use mixed-order Stokes-cnoidal expansions for transitional regimes and refine computational methods for boundary conditions in breaking wave scenarios.
 
 ### Conclusion
 Both approaches present robust solutions for their respective regimes but highlight the need for further refinement in transitional wavelength-depth conditions.
@@ -103,14 +103,14 @@ Both approaches present robust solutions for their respective regimes but highli
 
 ## Key Takeaways
 
-- 🌊 **Stokes Theory Excellence**: Best for deep water waves where wavelength-depth ratios are small.
-- 🌍 **Cnoidal Theory for Shallow Water**: Ideal for long waves with large wavelength-depth ratios.
-- 🔗 **Overlap Regions**: Transitional wave conditions (e.g., intermediate wavelength-depth ratios) challenge accuracy for both theories.
-- 🧮 **Numerical Methods' Power**: Fourier approximations enhance precision across nonlinear wave calculations.
-- 📈 **Wave Breaking Limits**: Experiments suggest practical wave heights rarely approach theoretical maxima.
-- 👨 **Streamline Accuracy**: Velocity and pressure fields computed with Stokes and cnoidal methods align closely with Fourier-derived benchmarks.
+- 🌊 Stokes Theory Excellence: Best for deep water waves where wavelength-depth ratios are small.
+- 🌍 Cnoidal Theory for Shallow Water: Ideal for long waves with large wavelength-depth ratios.
+- 🔗 Overlap Regions: Transitional wave conditions (e.g., intermediate wavelength-depth ratios) challenge accuracy for both theories.
+- 🧮 Numerical Methods' Power: Fourier approximations enhance precision across nonlinear wave calculations.
+- 📈 Wave Breaking Limits: Experiments suggest practical wave heights rarely approach theoretical maxima.
+- 👨 Streamline Accuracy: Velocity and pressure fields computed with Stokes and cnoidal methods align closely with Fourier-derived benchmarks.
 
-**One-line summary**: High-order Stokes and cnoidal theories provide accurate tools for nonlinear wave modeling, but computational refinements remain necessary for transitional regimes.
+One-line summary: High-order Stokes and cnoidal theories provide accurate tools for nonlinear wave modeling, but computational refinements remain necessary for transitional regimes.
 
 ---
 
@@ -160,7 +160,7 @@ $$\frac{\omega}{\omega_0} = 1 + \tfrac12\epsilon^{2} + \tfrac38\epsilon^{4} + \t
 	- Stokes (1847), for the original perturbation approach [@stokes1847theory]
 	- Longuet-Higgins [@longuet-higginsNewIntegralRelations1984] and other related works. 
 	- Lamb (1932): See Chapter 9 (especially art. 246–250). Although Lamb typically writes out the celerity expansions $(c = \omega / k)$, the frequency version is equivalent. [@Lamb1932]
-	- **Most Importantly** 
+	- Most Importantly 
 
 $$c^2 = 1 + h^2 + \frac{4}{3}h^4 + \frac{17}{9}h^6 - \frac{22}{9}h^8 + \dots$$where $h = ak$ [[schwartzComputerExtensionAnalytic1974#^e59b15|page 11]] of [@schwartzComputerExtensionAnalytic1974]. 
 High‐order expansions of the Stokes dispersion relation up to ($\epsilon^8$) have been verified numerically by Schwartz (1974). 

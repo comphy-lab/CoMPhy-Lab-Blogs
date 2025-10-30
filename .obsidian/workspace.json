@@ -4,17 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "3da932bead8f6226",
+        "id": "d86d0b7ba420b1cc",
         "type": "tabs",
         "children": [
           {
-            "id": "9dcc57305f04690b",
+            "id": "d3b1bcd188d3ccc1",
             "type": "leaf",
             "state": {
-              "type": "home-tab-view",
-              "state": {},
-              "icon": "search",
-              "title": "Home tab"
+              "type": "markdown",
+              "state": {
+                "file": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md",
+                "mode": "preview",
+                "source": true,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "2.5-Conservation-Laws"
             }
           }
         ]
@@ -100,13 +114,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md",
+                "file": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2-What-is-Viscosity"
+              "title": "Outline of 2.5-Conservation-Laws"
             }
           },
           {
@@ -209,50 +223,51 @@
       "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "9dcc57305f04690b",
+  "active": "d3b1bcd188d3ccc1",
   "lastOpenFiles": [
     "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md",
-    "_AtomicNotes/Impulsively-started-plate.md",
+    "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md",
+    "Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.md",
+    "_AtomicNotes/Coarse-graining-momentum-to-Cauchy.md",
+    "Blog/2025-Why-Double‑Network-Hydrogels-Dont-Shatter.md",
+    "Code-Documentations/2025-Herschel–Bulkley-formulation.pdf",
+    "Talks/Seminar-UIUC-abstract.md",
+    "Talks/Seminar-Durham-abstract.md",
+    "Talks/2025-06-30_Conference-VPflow-abstract.md",
+    "Lecture-Notes/Surface-parameterization.md",
+    "Lecture-Notes/Gauss-law-of-Electrostatics.md",
+    "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md",
+    "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
+    "Lecture-Notes/Intro-Soft-Matter/0-README.md",
+    "Lecture-Notes/Basilisk101/4th-workingAssignment.md",
+    "Lecture-Notes/Basilisk101/3rd-workingAssignment.md",
+    "Lecture-Notes/Basilisk101/2nd-workingAssignment.md",
+    "Lecture-Notes/Basilisk101/1st-workingAssignment.md",
+    "Lecture-Notes/Basilisk101/1-conduction-takeaways.md",
+    "Lecture-Notes/Basilisk101/0-README.md",
+    "Code-Documentations/2025-Herschel–Bulkley-formulation.md",
+    "Blog/2025-visual-pdes.md",
+    "Blog/2025-Thesis-Viscous-Free-Surface-Flows.md",
+    "Blog/2025-Stokes-waves-arbitary-order.md",
+    "Blog/2025-JFM-viscous-drop-impact.md",
+    "Blog/2025-JFM-Viscoelatic-Worthington-jets.md",
+    "Blog/2025-James-G-Oldroyd.md",
+    "_Media/2-Conservation-Laws-1761807318276.png",
     "_Media/StokesFirstProblem.pdf",
     "_Media/2-What-is-Viscosity-1761774965358.png",
     "_Media/2-What-is-Viscosity-1761774820691.png",
     "_Media/Impulsively-started-plate-1761774200063.png",
     "_Media/Impulsively-started-plate-1761774189020.png",
-    "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
-    "Blog/2025-JFM-viscous-drop-impact.md",
-    "Blog/2025-JFM-Viscoelatic-Worthington-jets.md",
-    "Blog/2025-James-G-Oldroyd.md",
-    "Blog/2025-History-Worthington-jets-from-bursting-bubbles.md",
-    "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
     "_Media/2-What-is-Viscosity-1761767758968.png",
-    "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md",
     "_Media/2-What-is-Viscosity-1761738310141.png",
     "_Media/2-What-is-Viscosity-1761738283101.png",
     "_Media/2-What-is-Viscosity-1761738244038.png",
     "_Media/2-What-is-Viscosity-1761738216814.png",
     "Lecture-Notes/Intro-Soft-Matter/whatIsViscosity.pdf",
     "Lecture-Notes/Intro-Soft-Matter/Dupre-Rayleigh-paradox.pdf",
-    "Lecture-Notes/Intro-Soft-Matter/0-README.md",
-    "Lecture-Notes/Intro-Soft-Matter/1-Complementary-Questions-Answers.md",
-    "Lecture-Notes/Intro-Soft-Matter/Lecture1-ComplementaryQuestions-Answers.md",
-    "_Media/1.5-Taylor-Culick-08.png",
     "Lecture-Notes/Intro-Soft-Matter/compressed_Lecture2-Taylor-Culick.pdf",
     "Lecture-Notes/Intro-Soft-Matter/Lecture2-Taylor-Culick.pdf",
-    "Private-ToDo-Blog-public.md",
-    "0_ToDo-Blog-public.md",
-    "Blog/2025-Why-Double‑Network-Hydrogels-Dont-Shatter.md",
-    "Blog/2025-visual-pdes.md",
-    "Blog/2025-Thesis-Viscous-Free-Surface-Flows.md",
-    "Blog/2025-Stokes-waves-arbitary-order.md",
-    "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md",
-    "Blog/2025-Emmy-Noether-Symmetry-Conservation.md",
-    "Blog/2025-Arrowheads-in-elastoinertial-turbulence.md",
-    "Code-Documentations/2025-Herschel–Bulkley-formulation.md",
-    "0_README.md",
-    "Lecture-Notes/Basilisk101/1st-workingAssignment.md",
-    "Lecture-Notes/Basilisk101/1-conduction-takeaways.md",
     "Lecture-Notes/Intro-Soft-Matter",
-    "Code-Documentations/2025-Herschel–Bulkley-formulation.pdf",
     "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.pdf",
     "Talks/2025-06-30_Conference-VPflow-abstract.pdf",
     "Talks/vpflow-abstract.pdf",

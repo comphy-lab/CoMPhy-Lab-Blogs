@@ -93,8 +93,8 @@
       "filename": "2025-Herschel–Bulkley-formulation"
     },
     {
-      "path": "_AtomicNotes/Gaussian surface is very similar to the control volume in fluid mechanics.md",
-      "filename": "Gaussian surface is very similar to the control volume in fluid mechanics"
+      "path": "_AtomicNotes/Gaussian-surface-is-very-similar-to-the-control-volume-in-fluid-mechanics.md",
+      "filename": "Gaussian-surface-is-very-similar-to-the-control-volume-in-fluid-mechanics"
     },
     {
       "path": "Lecture-Notes/Gauss-law-of-Electrostatics.md",
@@ -215,6 +215,58 @@
     {
       "path": "_AtomicNotes/Impulsively-started-plate.md",
       "filename": "Impulsively-started-plate"
+    },
+    {
+      "path": "_AtomicNotes/Moving-Delta-identity.md",
+      "filename": "Moving-Delta-identity"
+    },
+    {
+      "path": "_AtomicNotes/Dyadic-conversion.md",
+      "filename": "Dyadic-conversion"
+    },
+    {
+      "path": "_AtomicNotes/Virial-identity.md",
+      "filename": "Virial-identity"
+    },
+    {
+      "path": "_AtomicNotes/Relationship-between-rate-of-change-of-a-physical-quantity-and-its-divergence.md",
+      "filename": "Relationship-between-rate-of-change-of-a-physical-quantity-and-its-divergence"
+    },
+    {
+      "path": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md",
+      "filename": "2.5-Conservation-Laws"
+    },
+    {
+      "path": "_AtomicNotes/Continuum-Mechanics-Integral-Formulation.md",
+      "filename": "Continuum-Mechanics-Integral-Formulation"
+    },
+    {
+      "path": "_AtomicNotes/permittivity-of-free-space.md",
+      "filename": "permittivity-of-free-space"
+    },
+    {
+      "path": "_AtomicNotes/Coarse-graining-momentum-to-Cauchy.md",
+      "filename": "Coarse-graining-momentum-to-Cauchy"
+    },
+    {
+      "path": "_AtomicNotes/Geometric-description-of-electric-field.md",
+      "filename": "Geometric-description-of-electric-field"
+    },
+    {
+      "path": "_AtomicNotes/History-of-Gauss.md",
+      "filename": "History-of-Gauss"
+    },
+    {
+      "path": "Lecture-Notes/Basilisk101/1-conduction-takeaways.md",
+      "filename": "1-conduction-takeaways"
+    },
+    {
+      "path": "Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.md",
+      "filename": "1.75-Complementary-Questions-Answers"
+    },
+    {
+      "path": "Talks/Seminar-UIUC-abstract.md",
+      "filename": "Seminar-UIUC-abstract"
     }
   ]
 }

@@ -1,21 +1,21 @@
 ---
-modified: 2025-02-21T06:56:37+01:00
+modified: 2025-10-30T11:17:49+00:00
 created: 2025-01-18T14:48:32+01:00
 status: done ✅
 aliases:
   - Gauss law of Electrostatics
-  - "Lecture-Notes/Gauss-law-of-Electrostatics"
-  - "Lecture-Notes/Gauss law of Electrostatics"
+  - Lecture-Notes/Gauss-law-of-Electrostatics
+  - Lecture-Notes/Gauss law of Electrostatics
 ---
 # Gauss law of electrostatics
 > [!important]- Pre-requisites 
 > I assume a working knowledge of 
 > * Electric field $\vec{E}$.
-> * [[Geometric description of electric field]]
-> * [[What is electric field flux?]]
+> * [[Geometric-description-of-electric-field]]
+> * [[What-is-electric-field-flux?]]
 > * What is the electric field created by a point change $q$? 
 > $E = q/(4\pi\varepsilon_0r^2)$
-> * [[Principle of superposition of electric fields]]
+> * [[Principle-of-superposition-of-electric-fields]]
 
 > [!tldr] TL;DR
 > Gauss’ law states that the net electric flux through any closed surface is proportional to the total charge enclosed inside it. Its integral form, $\oint \vec{E} \cdot d\vec{A} = q_{\text{in}}/\varepsilon_0$, is most practically used with high‐symmetry geometries (spherical, cylindrical, planar). Even though it might seem universal, using it directly for complex geometries often requires additional methods. The differential form, $\vec{\nabla} \cdot \vec{E} = \rho/\varepsilon_0$, underpins charge‐field relationships in Maxwell’s equations. Key insights include: _flux remains invariant if charges stay within the boundary_, and _external charges yield zero net flux through a given surface_. Applications to spherical shells, infinite planes, and wires highlight its computational utility. However, without symmetry, one typically reverts to direct integration or other approaches.
@@ -33,7 +33,7 @@ Fig. A cone, a sphere, and a batman symbol (enclose it in the front and the back
 ## General form of Gauss' law
 
 > [!tldr] Main statement of Gauss' law
-> The flux of electric field $\vec{E}$ though a closed surface (known as the Gaussian surface) is equal to the amount of change enclosed by that surface. $\int_A\vec{E}\cdot\vec{n}dA = q_{\text{in}}/\varepsilon_0$, $\vec{E}$ is the electric field, $n$ is the normal vector to the area element $dA$, $q_{\text{in}}$ is the change enclosed inside the Gaussian surface and $\varepsilon_0$ is the [[permittivity of free space]].
+> The flux of electric field $\vec{E}$ though a closed surface (known as the Gaussian surface) is equal to the amount of change enclosed by that surface. $\int_A\vec{E}\cdot\vec{n}dA = q_{\text{in}}/\varepsilon_0$, $\vec{E}$ is the electric field, $n$ is the normal vector to the area element $dA$, $q_{\text{in}}$ is the change enclosed inside the Gaussian surface and $\varepsilon_0$ is the [[permittivity-of-free-space]].
 > * In the differential form, it is identical to:
 > $\vec{\nabla}\cdot\vec{E} = \rho/\varepsilon_0$, where $\rho$ is the local electric changed density. 
 
@@ -111,7 +111,7 @@ $$
 > [!danger] Displace the charge all you want, it won’t change the flux
 > The flux of $\vec{E}$ only depends on the amount of charge contained inside a Gaussian surface and not on whether or not the charge is moving inside the space enclosed by this Gaussian surface.
 
-**Remarkable property:** If charges are moved around **but do not cross** the boundary of $A$, the flux of $E$ through $A$ remains **unchanged**. Despite this unchanging flux, the field $E$ itself can undergo substantial modifications everywhere else. Conversely, if charges **do** cross the boundary of $A$, the flux through $A$ will generally change.
+Remarkable property: If charges are moved around but do not cross the boundary of $A$, the flux of $E$ through $A$ remains unchanged. Despite this unchanging flux, the field $E$ itself can undergo substantial modifications everywhere else. Conversely, if charges do cross the boundary of $A$, the flux through $A$ will generally change.
 
 > [!danger] A charge outside the Gaussian surface imparts net zero flux in that control surface
 > It is easier to see by construction that electric field lines coming out of a charge outside a Gaussian surface will pass straight through without creating any global flux. 
@@ -150,7 +150,7 @@ Hence, an infinite charged plane produces a constant electric field whose magnit
 
 ![[plates.png]]
 
-When **two** parallel sheets carry equal and opposite surface‐charge densities $+\sigma$ and $-\sigma$, superposition implies that the fields from each sheet **add** in the region between them and **cancel** outside.  Specifically, in the space between the plates, each sheet contributes $\sigma/(2\,\varepsilon_0)$ in the **same** direction, giving a total
+When two parallel sheets carry equal and opposite surface‐charge densities $+\sigma$ and $-\sigma$, superposition implies that the fields from each sheet add in the region between them and cancel outside.  Specifically, in the space between the plates, each sheet contributes $\sigma/(2\,\varepsilon_0)$ in the same direction, giving a total
 
 $$
 E_{\text{between}}
@@ -254,10 +254,10 @@ For configurations lacking these symmetries—such as a uniformly charged disk o
 Gauss' law is agnostic to the number of dimensions in the problem. In this note, we mainly looked at cases in 3D. Now, think about living in a 2D space. Answer the following: 
 
 1. How does the Coulomb's law change in 2D?
-2. Adapt Gauss’s law to a 2D problem, where **flux** becomes a line integral around a closed loop. Consider a point charge qqq in a 2D plane. Choose a circle of radius $r$ around the charge as the "Gaussian" boundary. Compute the total radial component of $\vec{E}$ along this circle and show that it is proportional to $q/\varepsilon_0$ (with an appropriate constant reflecting 2D geometry).
-3. For a hypothetical "4D" space, the electric field of a point charge might scale differently with distance. Use dimensional analysis to argue how Gauss’s law might look there, and what the "closed surface” would mean in 4D. **Hint:** Highlight the dimension-agnostic idea that flux = enclosed charge/$\varepsilon_0$​ remains structurally the same, although radius-dependencies of $\vec{E}$ and definitions of "surface" change with dimension.
+2. Adapt Gauss’s law to a 2D problem, where flux becomes a line integral around a closed loop. Consider a point charge qqq in a 2D plane. Choose a circle of radius $r$ around the charge as the "Gaussian" boundary. Compute the total radial component of $\vec{E}$ along this circle and show that it is proportional to $q/\varepsilon_0$ (with an appropriate constant reflecting 2D geometry).
+3. For a hypothetical "4D" space, the electric field of a point charge might scale differently with distance. Use dimensional analysis to argue how Gauss’s law might look there, and what the "closed surface” would mean in 4D. Hint: Highlight the dimension-agnostic idea that flux = enclosed charge/$\varepsilon_0$​ remains structurally the same, although radius-dependencies of $\vec{E}$ and definitions of "surface" change with dimension.
 
-**Note:** To submit answers to the questions above or in case you find a mistake in this note, please feel free to open a pull request at the repository: [link to repository](https://github.com/comphy-lab/CoMPhy-Lab-Blogs).
+Note: To submit answers to the questions above or in case you find a mistake in this note, please feel free to open a pull request at the repository: [link to repository](https://github.com/comphy-lab/CoMPhy-Lab-Blogs).
 
 
 ## Derivation of Gauss law in differential form
@@ -292,7 +292,7 @@ $$
 > [!signifigance] Gauss' divergence therorem
 > This is yet another significant contribution from Gauss. It relates volume integrals to fluxes at the boundaries. This theorem is more generally used throughout the Physics literature. For example, simplifying integrals in Rayleigh$-$Bénard convection or in Taylor$-$Culick retractions. 
 > $$ \oint_A\boldsymbol{F\cdot}d\boldsymbol{A} = \int_{V}\boldsymbol{\nabla\cdot F}\;dV $$
-> **Rate of change of a physical quantity** (see [[Relationship between rate of change of a physical quantity and its divergence]]) in a volume is tied directly to its net flux across the boundary of that volume. More generally, in fluid mechanics, this principle underpins conservation laws such as mass, momentum, or energy.
+> Rate of change of a physical quantity (see [[Relationship-between-rate-of-change-of-a-physical-quantity-and-its-divergence]]) in a volume is tied directly to its net flux across the boundary of that volume. More generally, in fluid mechanics, this principle underpins conservation laws such as mass, momentum, or energy.
 	 
 Thus, 
 
@@ -308,7 +308,7 @@ $$
 \vec{\nabla} \cdot \vec{E} \;=\; \frac{\rho}{\epsilon_0}.
 $$
 
-This is Gauss’s law in **differential form**. It states that the divergence of the electric field at a point is proportional to the local charge density at that point.
+This is Gauss’s law in differential form. It states that the divergence of the electric field at a point is proportional to the local charge density at that point.
 
 ## Significance to Maxwell's laws of electromagnetism 
 
@@ -377,7 +377,7 @@ $$
 ---
 > [!testy] Some side notes:
 > * To explore some history, see: [[History-of-Gauss]]
-> * Here, we discuss a lot about Gaussian surfaces. The fluid dynamicist in me cannot help but point out that a [[Gaussian surface is very similar to the control volume in fluid mechanics]]. 💡
+> * Here, we discuss a lot about Gaussian surfaces. The fluid dynamicist in me cannot help but point out that a [[Gaussian-surface-is-very-similar-to-the-control-volume-in-fluid-mechanics]]. 💡
 ---
 
 > [!significance]- Metadata

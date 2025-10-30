@@ -1,5 +1,5 @@
 ---
-modified: 2025-10-25T20:06:39+01:00
+modified: 2025-10-30T11:16:56+00:00
 created: 2024-12-31T12:12:38+01:00
 tags:
   - non-Newtonian
@@ -13,7 +13,7 @@ status: done ✅
 ---
 # Herschel–Bulkley formulation for non-Newtonian flows
 > [!tldr] TL;DR
-> The **Herschel–Bulkley** model unifies Newtonian, Bingham, and power-law fluids via a yield stress and a strain-rate-dependent viscosity. An ￼$\epsilon$-regularization ensures stable computations and recovers simpler models (Newtonian, Bingham) by tuning model parameters. Dimensionless groups (e.g., the plasto-capillary number ￼ and the effective Ohnesorge) capture the interplay of fluid rheology, capillarity, and flow scales. Implementation details are provided, along with references, open-source code, and demonstrations of bubble-burst simulations in viscoplastic media.
+> The Herschel–Bulkley model unifies Newtonian, Bingham, and power-law fluids via a yield stress and a strain-rate-dependent viscosity. An ￼$\epsilon$-regularization ensures stable computations and recovers simpler models (Newtonian, Bingham) by tuning model parameters. Dimensionless groups (e.g., the plasto-capillary number ￼ and the effective Ohnesorge) capture the interplay of fluid rheology, capillarity, and flow scales. Implementation details are provided, along with references, open-source code, and demonstrations of bubble-burst simulations in viscoplastic media.
 ## Features:
 * Yield stress $\tau_y$
 * Power law dependance on the strain rate
@@ -66,7 +66,7 @@ The second invariant is $\mathcal{D}_2=\sqrt{\mathcal{D}_{ij}\mathcal{D}_{ij}}$ 
 
 $$\mathcal{D}_2^2= \mathcal{D}_{ij}\mathcal{D}_{ij}= \mathcal{D}_{11}\mathcal{D}_{11} + \mathcal{D}_{22}\mathcal{D}_{22} + \mathcal{D}_{13}\mathcal{D}_{31} + \mathcal{D}_{31}\mathcal{D}_{13} + \mathcal{D}_{33}\mathcal{D}_{33}$$
 
-**Note:** $\|\mathcal{D}\| = D_2/\sqrt{2}$.<br/>
+Note: $\|\mathcal{D}\| = D_2/\sqrt{2}$.<br/>
 
 We use the formulation as given in [Balmforth et al. (2013)](https://www.annualreviews.org/doi/pdf/10.1146/annurev-fluid-010313-141424) [1], who use the strain rate tensor $\boldsymbol{\dot{\mathcal{S}}}$ which and its norm $\sqrt{\frac{1}{2}\dot{\mathcal{S}_{ij}}\dot{\mathcal{S}_{ij}}}$. Of course, given $\dot{\mathcal{S}}_{ij}=2 D_{ij}$.
 
@@ -82,7 +82,7 @@ In this formulation, $\varepsilon$ is a small number to ensure numerical stabili
 The term $$\frac{\tau_y}{\varepsilon} + ...$$is equivalent to the $\mu_{max}$ of the previous (v1.0, see: [GitHub](https://github.com/VatsalSy/Bursting-Bubble-In-a-Viscoplastic-Medium)) formulation [2].
 
   
-**Note:** The fluid flows always, it is not a solid, but a very viscous fluid.
+Note: The fluid flows always, it is not a solid, but a very viscous fluid.
  
 
 Reproduced from: [P.-Y. Lagrée's Sandbox](http://basilisk.fr/sandbox/M1EMN/Exemples/bingham_simple.c). Here, we use a face implementation of the regularisation method, described [here](http://basilisk.fr/sandbox/vatsal/GenaralizedNewtonian/Couette_NonNewtonian.c).
