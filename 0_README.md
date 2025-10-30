@@ -39,15 +39,35 @@ See: [About us](https://comphy-lab.org/about)
 ##### H-B formulation:
 2024-12-31 [[2025-Herschel–Bulkley-formulation]]: Mathematical formulation of the Herschel-Bulkley model for non-Newtonian flows, with emphasis on yield stress fluids.
 
-### Lecture notes:
-#### 2025
-##### Gauss' Law:
+### Lecture Notes:
+#### Basilisk101
+[Basilisk101](Lecture-Notes/Basilisk101/0-README.md): Comprehensive course on computational fluid dynamics using the Basilisk C framework. Topics include:
+- Conservation laws and numerical solutions of Navier-Stokes equations
+- Transport equations and interface tracking methods
+- Non-Newtonian flows and viscoelasticity
+- Multi-phase flows and contact line dynamics
+- Hands-on coding assignments with practical implementations
+
+#### Introduction to Soft Matter
+[Intro-Soft-Matter](Lecture-Notes/Intro-Soft-Matter/0-README.md): Graduate-level course exploring soft condensed matter physics. Course structure includes:
+- Fundamental concepts: What makes materials "soft"?
+- Viscosity and momentum diffusion from kinetic theory
+- Soft matter instabilities and singularities
+- Rheology and viscoelastic behavior
+- Weekly lectures with self-assessed homework and student presentations
+
+#### Individual Lecture Notes:
 2025-01-21 [[Gauss-law-of-Electrostatics]]: Analysis of electric field flux through different surfaces using Gauss's law, with visual demonstrations.
 
-### Seminar talks/resources:
+### Talks:
 #### 2025
-##### Seminar-UIUC
-2025-01-19 [[Seminar-UIUC-abstract]]: UIUC fluid seminar abstract exploring polymeric flows as a tunable testbed for unsteady, nonlinear continuum mechanics.
+##### Conference Presentations:
+2025-06-30 [[2025-06-30_Conference-VPflow-abstract]]: VPflow conference abstract on taming singularities through yield-stress regularization in bubble-bursting, exploring how viscoplasticity suppresses Worthington jetting.
+
+##### Seminar Presentations:
+2025-02-21 [[Seminar-Durham-abstract]]: Durham University seminar exploring polymeric flows as a tunable testbed for unsteady, nonlinear continuum mechanics.
+
+2025-01-19 [[Seminar-UIUC-abstract]]: UIUC fluid seminar investigating how polymers modify classical hydrodynamic singularities in free-surface flows.
 
 ## Connect With Us
 
@@ -65,7 +85,7 @@ We welcome contributions from researchers, students, and collaborators. Here's h
    - [📚 Request documentation](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/issues/new?template=documentation_request.md&labels=documentation)
    - [🔍 Report content correction](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/issues/new?template=content_correction.md&labels=correction)
 
-2. **Pull Requests**: Want to contribute directly? 
+2. **Pull Requests**: Want to contribute directly?
    - Fork the repository
    - Make your changes (it can simply be correcting grammar or making a new post - simply write in plain text or markdown format and add it to the root folder).
    - Submit a pull request with a clear description of your changes

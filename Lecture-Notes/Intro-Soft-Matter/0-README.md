@@ -26,7 +26,7 @@ Course Overview. A journey through soft materials—from everyday foams and gels
   - [[1.75-Complementary-Questions-Answers|Homework Solutions: Lecture 1]] – Self-assessed questions with model answers
 - Lecture 2: [[2-What-is-Viscosity|Viscosity and Momentum Diffusion]] – Viscosity as an emergent property from kinetic theory; the no-slip condition; continuum momentum transport
   - [[2.5-Conservation-Laws|Bridge 2.5: From Newton's Laws to Conservation Equations]] – Microscopic particle dynamics to continuum momentum balance and Cauchy stress
-- Lecture 3: Soft Matter Instabilities
+- Lecture 3: [[3-Soft-Matter-Instabilities|Soft Matter Instabilities]] – Pattern formation through instability mechanisms: Rayleigh–Plateau, Kelvin–Helmholtz, Rayleigh–Taylor, Faraday waves, Rayleigh–Bénard–Marangoni, Saffman–Taylor fingering, and viscous coiling. Understanding how competing forces select characteristic length scales and how to harness instabilities for fabrication.
 - Lecture 4: Soft Matter Singularities
 - Lecture 5: Elastic vs Viscous vs Viscoelastic Behavior
 - Lecture 6: Rheology – Measuring "Softness" and Time-Dependent Response

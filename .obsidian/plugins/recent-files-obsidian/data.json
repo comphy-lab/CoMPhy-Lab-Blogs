@@ -1,12 +1,40 @@
 {
   "recentFiles": [
     {
-      "basename": "1-Intro-Soft-Matter",
-      "path": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.pdf"
+      "basename": "0-README",
+      "path": "Lecture-Notes/Intro-Soft-Matter/0-README.md"
+    },
+    {
+      "basename": "0_README",
+      "path": "0_README.md"
+    },
+    {
+      "basename": "3-Soft-Matter-Instabilities",
+      "path": "Lecture-Notes/Intro-Soft-Matter/3-Soft-Matter-Instabilities.md"
+    },
+    {
+      "basename": "3-Soft-Matter-Instabilities",
+      "path": "Lecture-Notes/Intro-Soft-Matter/3-Soft-Matter-Instabilities.pdf"
+    },
+    {
+      "basename": "2.5-Conservation-Laws",
+      "path": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md"
+    },
+    {
+      "basename": "2.5-Conservation-Laws",
+      "path": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.pdf"
+    },
+    {
+      "basename": "2-What-is-Viscosity",
+      "path": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md"
     },
     {
       "basename": "1-Intro-Soft-Matter",
       "path": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md"
+    },
+    {
+      "basename": "1-Intro-Soft-Matter",
+      "path": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.pdf"
     },
     {
       "basename": "1.5-Taylor-Culick-Paradox",
@@ -22,27 +50,11 @@
     },
     {
       "basename": "2-What-is-Viscosity",
-      "path": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md"
-    },
-    {
-      "basename": "2.5-Conservation-Laws",
-      "path": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.pdf"
-    },
-    {
-      "basename": "2.5-Conservation-Laws",
-      "path": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md"
-    },
-    {
-      "basename": "2-What-is-Viscosity",
       "path": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.pdf"
     },
     {
       "basename": "1.5-Taylor-Culick-Paradox",
       "path": "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.pdf"
-    },
-    {
-      "basename": "0-README",
-      "path": "Lecture-Notes/Intro-Soft-Matter/0-README.md"
     },
     {
       "basename": "4th-workingAssignment",
@@ -187,18 +199,6 @@
     {
       "basename": "2025-06-30_Conference-VPflow-abstract",
       "path": "Talks/2025-06-30_Conference-VPflow-abstract.md"
-    },
-    {
-      "basename": "Surface-parameterization",
-      "path": "Lecture-Notes/Surface-parameterization.md"
-    },
-    {
-      "basename": "Gauss-law-of-Electrostatics",
-      "path": "Lecture-Notes/Gauss-law-of-Electrostatics.md"
-    },
-    {
-      "basename": "whatIsViscosity",
-      "path": "Lecture-Notes/Intro-Soft-Matter/whatIsViscosity.pdf"
     }
   ],
   "omittedPaths": [],

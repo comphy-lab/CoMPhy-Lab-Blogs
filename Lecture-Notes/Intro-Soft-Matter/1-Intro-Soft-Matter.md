@@ -1,6 +1,6 @@
 ---
 created: 2025-10-14T10:00:00+01:00
-modified: 2025-10-30T15:30:17+00:00
+modified: 2025-10-30T20:55:17+00:00
 tags:
   - lecture
   - soft-matter
@@ -204,7 +204,7 @@ Without gravity, a water droplet maintains a sphere. When two droplets collide:
     </iframe>
 </div>
 
-Mud is a viscoelastic soft material:
+Mud is a elastoviscoplastic soft material:
 
 - Behaves as solid over short times (can support surface bumps and cones)
 - Flows like liquid over long times (material spreads slowly)
