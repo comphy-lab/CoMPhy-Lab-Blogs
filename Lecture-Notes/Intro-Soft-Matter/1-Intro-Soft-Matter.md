@@ -1,6 +1,6 @@
 ---
 created: 2025-10-14T10:00:00+01:00
-modified: 2025-10-30T11:17:33+00:00
+modified: 2025-10-30T15:30:17+00:00
 tags:
   - lecture
   - soft-matter
@@ -11,6 +11,12 @@ date: 2025-10-15
 status: done ✅
 publish: true
 ---
+
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!info] 📄 PDF Version
+> [Download PDF](./1-Intro-Soft-Matter.pdf)
+<!-- PDF-EXPORT-IGNORE-END -->
+
 # Lecture 1: Different Faces of Soft Condensed Matter
 
 An introduction to soft materials, why they're soft, and how we measure softness. See [[0-README|course overview and structure]] for context.
@@ -48,6 +54,7 @@ The gel feels solid (can hold shape), yet wobbles easily when pushed—a hallmar
 #### Beer Foam (Foam 🍺)
 
 ![](../../_Media/1-Intro-Soft-Matter-1761103818495.png)
+
 Good foam (left): Stable bubble structure with clear thin walls
 Bad foam (right): Bubbles coalesce and collapse
 
@@ -59,6 +66,7 @@ Foams are gas bubbles trapped in liquid with surfactants stabilizing the interfa
 - Evolve over time via coalescence and coarsening
 
 ![](../../_Media/1-Intro-Soft-Matter-1761103864489.png)
+
 *Reference:* P. S. Stewart & S. Hilgenfeldt, *Annu. Rev. Fluid Mech.*, 55:1, 323–350 (2023)
 
 #### Shaving Cream
@@ -243,18 +251,23 @@ References:
 
 > 179. *SOME APPLICATIONS OF PHOTOGRAPHY.*
 > [*Proc. Roy. Inst.* XIII. pp. 261–272, Feb. 1891; *Nature*, XLIV. pp. 249–254, 1891.]
+
+
 ![](../../_Media/1-Intro-Soft-Matter-1761105367372.png)
 
 John William Strutt, 2nd Baron Rayleigh, one of the 19th century's greatest physicists, used instantaneous photography to capture:
 
 - Falling jets breaking into droplets (Rayleigh–Plateau instability)
+
 ![](../../_Media/1-Intro-Soft-Matter-1761105418528.png)
+
 - Liquid stream dynamics and surface tension effects
 - Capillary flows driven by interfacial forces
 
 His 1891 paper essentially pioneered the study of liquid dynamics—a cornerstone of soft matter physics.
 
 ### Taylor–Culick Retraction: The Dupré–Rayleigh Paradox
+
 
 ![](../../_Media/1-Intro-Soft-Matter-1761105451051.png)
 
