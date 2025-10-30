@@ -24,24 +24,24 @@
   "unresolvedLinks": true,
   "recentFilesStore": [
     {
-      "filepath": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md",
-      "timestamp": 1761823337729
+      "filepath": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
+      "timestamp": 1761824586217
     },
     {
-      "filepath": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md",
-      "timestamp": 1761823335592
+      "filepath": "Lecture-Notes/Intro-Soft-Matter/0-README.md",
+      "timestamp": 1761824539370
+    },
+    {
+      "filepath": "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md",
+      "timestamp": 1761824514024
     },
     {
       "filepath": "Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.md",
-      "timestamp": 1761823235201
+      "timestamp": 1761824489018
     },
     {
-      "filepath": "_AtomicNotes/Coarse-graining-momentum-to-Cauchy.md",
-      "timestamp": 1761823144873
-    },
-    {
-      "filepath": "Blog/2025-Why-Double‑Network-Hydrogels-Dont-Shatter.md",
-      "timestamp": 1761823081175
+      "filepath": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md",
+      "timestamp": 1761824355275
     }
   ],
   "bookmarkedFileStore": [],
