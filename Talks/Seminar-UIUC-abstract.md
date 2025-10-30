@@ -1,5 +1,5 @@
 ---
-modified: 2025-02-22T00:04:42+01:00
+modified: 2025-10-30T11:18:05+00:00
 created: 2025-01-19T18:50:50+00:00
 aliases:
   - Seminar-UIUC-abstract
@@ -11,7 +11,7 @@ status: Working 🏗️
 > Speaker:: [Vatsal Sanjay](https://vatsalsanjay.com) ([CoMPhy Lab](https://comphy-lab.org))
 > Seminar:: Fluid seminar, University of Illinois Urbana-Champaign (UIUC)
 > 
-> When:: Thu. January 30, 2025 at **1600h CST (2300h AMS time)**.<br>
+> When:: Thu. January 30, 2025 at 1600h CST (2300h AMS time).<br>
 > How to attend:: Online, please email Vatsal ([vatsalsanjay@gmail.com](mailto:vatsalsanjay@gmail.com))
 
 

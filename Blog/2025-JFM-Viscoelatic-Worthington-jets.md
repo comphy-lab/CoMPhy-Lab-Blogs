@@ -1,5 +1,5 @@
 ---
-modified: 2025-05-31T21:41:03+02:00
+modified: 2025-10-30T11:16:35+00:00
 created: 2025-05-06T11:33:34+02:00
 status: Working 🏗️
 tags:
@@ -13,7 +13,7 @@ tags:
 
 Have you ever watched a bubble pop at the surface of your sparkling water or champagne? This seemingly simple event $-$ a bubble bursting $-$ conceals rich physics that connects to remarkably diverse phenomena, from ocean spray formation to pathogen transmission in respiratory droplets.
 
-As a fluid dynamicist studying interfacial phenomena, I've long been fascinated by what happens in the fleeting moments after a bubble bursts. When a bubble at a liquid–air interface bursts, it often shoots out a thin, fast jet of liquid – a striking phenomenon known as a _Worthington jet_. This process isn’t just a neat visual; it plays a role in everything from ocean spray to the fizz in a glass of champagne. In a typical **Newtonian** fluid like water (where the liquid’s viscosity is constant), a bursting bubble leads to an upward jet driven by surface tension. As the jet rises, it can break up into one or multiple tiny droplets due to the Rayleigh–Plateau instability (the same mechanism that causes a stream of water to form droplets). This is the classic picture that decades of research established for bursting bubbles in simple liquids. But what happens if the liquid is not so simple – say it contains a bit of polymer or has elastic properties? It turns out the story of bubble bursting gets a lot more interesting, which is what our study explores.
+As a fluid dynamicist studying interfacial phenomena, I've long been fascinated by what happens in the fleeting moments after a bubble bursts. When a bubble at a liquid–air interface bursts, it often shoots out a thin, fast jet of liquid – a striking phenomenon known as a _Worthington jet_. This process isn’t just a neat visual; it plays a role in everything from ocean spray to the fizz in a glass of champagne. In a typical Newtonian fluid like water (where the liquid’s viscosity is constant), a bursting bubble leads to an upward jet driven by surface tension. As the jet rises, it can break up into one or multiple tiny droplets due to the Rayleigh–Plateau instability (the same mechanism that causes a stream of water to form droplets). This is the classic picture that decades of research established for bursting bubbles in simple liquids. But what happens if the liquid is not so simple – say it contains a bit of polymer or has elastic properties? It turns out the story of bubble bursting gets a lot more interesting, which is what our study explores.
 
 ## The Phenomenon: More Than Just a Pop
 
@@ -34,9 +34,9 @@ While this process is relatively well-understood for simple liquids like water (
 
 The addition of polymers introduces two key parameters beyond the conventional Ohnesorge number (which relates viscous forces to inertial and surface tension forces):
 
-1. **Elastocapillary number** $Ec$: The ratio of elastic modulus to Laplace pressure, measuring the strength of elastic effects.
+1. Elastocapillary number $Ec$: The ratio of elastic modulus to Laplace pressure, measuring the strength of elastic effects.
    $$Ec = \frac{GR_0}{\gamma} $$
-2. **Deborah number** $De$: The ratio of relaxation time to process time, measuring the fluid's "memory".
+2. Deborah number $De$: The ratio of relaxation time to process time, measuring the fluid's "memory".
    $$De = \frac{\lambda}{\sqrt{\rho R_0^3/\gamma}}$$
 
 > [!note] Note:
@@ -49,9 +49,9 @@ Our most fascinating finding was the emergence of three distinct regimes:
 
 > [!important] The Three Regimes
 > 
-> 1. **Jets forming droplets**: At low elasticity or fast relaxation times, similar to Newtonian behavior but with modified dynamics
-> 2. **Jets without droplet formation**: At intermediate elasticity, where polymeric stresses suppress droplet breakup
-> 3. **Complete jet suppression**: At high elasticity, where polymer stresses prevent jet formation entirely
+> 1. Jets forming droplets: At low elasticity or fast relaxation times, similar to Newtonian behavior but with modified dynamics
+> 2. Jets without droplet formation: At intermediate elasticity, where polymeric stresses suppress droplet breakup
+> 3. Complete jet suppression: At high elasticity, where polymer stresses prevent jet formation entirely
 
 What's particularly interesting is how these regimes depend on the Deborah number. For high De (approaching infinity), the viscoelastic medium preserves memory of deformations, and transitions occur at sharp Ec thresholds. For low De (approaching zero), the system behaves more like a Newtonian fluid with enhanced effective viscosity.
 
@@ -71,9 +71,9 @@ To conduct these simulations, we developed a framework we call "ElastoFlow" for 
 
 This research has implications across several domains:
 
-- **Oceanic aerosol formation**: Understanding how polymers in seawater affect bubble bursting could improve climate models
-- **Biomedical applications**: Insights into how biological fluids produce droplets could help control pathogen transmission
-- **Industrial processes**: Better design of polymer-containing sprays and foams
+- Oceanic aerosol formation: Understanding how polymers in seawater affect bubble bursting could improve climate models
+- Biomedical applications: Insights into how biological fluids produce droplets could help control pathogen transmission
+- Industrial processes: Better design of polymer-containing sprays and foams
 
 The ability to predict and potentially control droplet formation by adjusting polymer properties opens new avenues for engineering applications.
 

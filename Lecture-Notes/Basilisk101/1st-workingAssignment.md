@@ -1,5 +1,5 @@
 ---
-modified: 2025-03-11T00:58:48+01:00
+modified: 2025-10-30T11:17:06+00:00
 created: 2025-03-10T00:00:51+01:00
 ---
 # Heat Conduction Simulation: From Vanilla C to Basilisk C
@@ -287,7 +287,7 @@ int main() {
   run();
 }
 
-/**
+/
  * Initialize temperature field
  * 
  * Sets up a "Dirac delta" approximated by a thin rectangle
@@ -298,7 +298,7 @@ event init (t = 0) {
     T[] = (fabs(x) < EPS) ? 1.0/EPS/2.0 : 0.0; 
 }
 
-/**
+/
  * Time integration using explicit finite volume method
  */
 event integration (i++) {
@@ -323,7 +323,7 @@ event integration (i++) {
     T[] += dt*dT[];
 }
 
-/**
+/
  * Save snapshots at regular intervals
  */
 event writingFiles (t += tsnap; t < tmax+tsnap) {
@@ -337,7 +337,7 @@ event writingFiles (t += tsnap; t < tmax+tsnap) {
   fclose(fp);
 }
 
-/**
+/
  * Save final results and comparison with analytical solution
  */
 event end (t = end) {
@@ -401,7 +401,7 @@ int main() {
   run();
 }
 
-/**
+/
  * Initialize temperature field
  */
 event init (t = 0) {
@@ -409,7 +409,7 @@ event init (t = 0) {
     T[] = (fabs(x) < EPS) ? 1.0/EPS/2.0 : 0.0; 
 }
 
-/**
+/
  * Time integration using implicit diffusion solver
  */
 event integration (i++) {
@@ -423,12 +423,12 @@ event integration (i++) {
 
 > [!important] Advantages of Using diffusion.h
 > 
-> - **Implicit time stepping** allows for much larger timesteps
-> - **Unconditional stability** removes the CFL restriction
-> - **Higher accuracy** due to careful implementation of boundary conditions
-> - **Multigrid acceleration** for faster convergence
-> - **Adaptive mesh refinement** compatible
-> - **Handles complex geometries** through embedded boundaries
+> - Implicit time stepping allows for much larger timesteps
+> - Unconditional stability removes the CFL restriction
+> - Higher accuracy due to careful implementation of boundary conditions
+> - Multigrid acceleration for faster convergence
+> - Adaptive mesh refinement compatible
+> - Handles complex geometries through embedded boundaries
 
 ## Part 5: Advanced Heat Conduction Problems
 
@@ -656,7 +656,7 @@ int main(int a, char const *arguments[])
   len = list_len(list);
   
   // Allocate memory for field data
-  double ** field = (double **) matrix_new (nx, ny+1, len*sizeof(double));
+  double  field = (double ) matrix_new (nx, ny+1, len*sizeof(double));
   
   // Extract data through interpolation
   for (int i = 0; i < nx; i++) {

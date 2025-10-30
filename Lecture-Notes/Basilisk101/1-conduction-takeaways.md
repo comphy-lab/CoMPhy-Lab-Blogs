@@ -1,27 +1,30 @@
+---
+modified: 2025-10-30T11:17:03+00:00
+---
 # Advantages of Basilisk Over Vanilla C for Computational Fluid Dynamics
 
 After examining the implementation of heat conduction problems in both vanilla C and Basilisk, several significant advantages of using Basilisk become apparent. This document outlines these benefits to help new users understand why Basilisk is a powerful tool for computational fluid dynamics (CFD) simulations.
 
 ## 1. Simplified Domain and Grid Management
 
-**Vanilla C:**
+Vanilla C:
 - Requires manual definition of grid points, cell spacings, and domain extents
 - Needs explicit calculation of physical coordinates for each point
 - Requires manual array allocation and deallocation
 
-**Basilisk:**
+Basilisk:
 - Simple declaration of domain parameters (`L0`, `X0`, `N`)
 - Automatic grid generation and management
 - No need for explicit memory allocation/deallocation for grid points
 
 ## 2. Declarative Boundary Conditions
 
-**Vanilla C:**
+Vanilla C:
 - Requires explicit functions to apply boundary conditions
 - Boundary conditions must be repeatedly applied during solution
 - Error-prone due to manual indexing
 
-**Basilisk:**
+Basilisk:
 - Declarative boundary conditions using a simple, intuitive syntax:
   ```c
   T[left] = dirichlet(0.0);
@@ -31,12 +34,12 @@ After examining the implementation of heat conduction problems in both vanilla C
 
 ## 3. Event-Based Programming Model
 
-**Vanilla C:**
+Vanilla C:
 - Procedural, sequential code execution
 - Complex control flow for time-stepping, initialization, and output
 - Difficult to separate logical components
 
-**Basilisk:**
+Basilisk:
 - Event-based programming model that separates concerns:
   - `event init` for initialization
   - `event integration/marching` for time stepping
@@ -46,72 +49,72 @@ After examining the implementation of heat conduction problems in both vanilla C
 
 ## 4. Automatic Time Step Management
 
-**Vanilla C:**
+Vanilla C:
 - Manual implementation of time step calculations
 - Explicit checks to ensure numerical stability (CFL condition)
 - Manual logic to hit specific output times exactly
 
-**Basilisk:**
+Basilisk:
 - Automatic time step management with `dtnext(DT)`
 - Built-in tools for maintaining numerical stability
 - Events can be scheduled at specific times with `t += tsnap`
 
 ## 5. Stencil Operations and Spatial Discretization
 
-**Vanilla C:**
+Vanilla C:
 - Explicit array indexing for neighbor access
 - Manual implementation of finite difference/volume stencils
 - Error-prone due to index arithmetic
 
-**Basilisk:**
+Basilisk:
 - Intuitive stencil notation: `T[1]`, `T[-1]` for neighbors
 - `foreach()` iterator for grid traversal without manual indexing
 - Automatic handling of boundary conditions during stencil operations
 
 ## 6. Reduced Boilerplate Code
 
-**Vanilla C:**
+Vanilla C:
 - Lengthy implementations even for simple problems
 - Requires explicit implementations of utility functions
 - Verbose memory management
 
-**Basilisk:**
+Basilisk:
 - Significantly shorter code for equivalent functionality
 - Built-in functions for common operations
 - Less cognitive load due to reduced complexity
 
 ## 7. Scalar Field Declaration and Management
 
-**Vanilla C:**
+Vanilla C:
 - Manual array allocation for each field
 - Explicit memory management to prevent leaks
 - No standard methods for field operations
 
-**Basilisk:**
+Basilisk:
 - Simple scalar field declaration: `scalar T[]`
 - Automatic memory management
 - Built-in methods for field operations
 
 ## 8. Flux Computation and Conservative Formulation
 
-**Vanilla C:**
+Vanilla C:
 - Manual flux computation at interfaces
 - Error-prone implementation of conservation laws
 - Complex indexing for interface values
 
-**Basilisk:**
+Basilisk:
 - Simplified flux computation with stencil notation
 - Natural expression of conservation laws
 - Automatic handling of flux boundary conditions
 
 ## 9. Extensibility and Library Integration
 
-**Vanilla C:**
+Vanilla C:
 - Limited reusability of code components
 - Need to reimplement common algorithms
 - Difficult to extend to more complex problems
 
-**Basilisk:**
+Basilisk:
 - Modular design allows easy extension
 - Rich library of pre-implemented physics modules
 - Natural pathway to more complex simulations

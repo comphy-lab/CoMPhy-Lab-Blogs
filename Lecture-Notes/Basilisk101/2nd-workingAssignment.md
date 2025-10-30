@@ -1,5 +1,5 @@
 ---
-modified: 2025-03-11T18:02:20+01:00
+modified: 2025-10-30T11:17:09+00:00
 created: 2025-03-11T01:00:35+01:00
 ---
 # Computational Fluid Dynamics with Basilisk: From Poiseuille Flow to Rayleigh-Bénard Convection
@@ -365,20 +365,20 @@ Throughout these simulations, you'll notice some common patterns in Basilisk cod
 
 > [!note] Common Basilisk Patterns
 > 
-> 1. **Grid initialization**:
+> 1. Grid initialization:
 >     
 >     ```c
 >     init_grid(1<<LEVEL);  // Powers of 2 for efficiency
 >     ```
 >     
-> 2. **Boundary conditions**:
+> 2. Boundary conditions:
 >     
 >     ```c
 >     u.t[top] = dirichlet(1);     // Tangential velocity
 >     u.n[bottom] = dirichlet(0);  // Normal velocity
 >     ```
 >     
-> 3. **Events for different stages**:
+> 1. Events for different stages:
 >     
 >     ```c
 >     event init(t = 0) { ... }                 // Initialization
@@ -387,7 +387,7 @@ Throughout these simulations, you'll notice some common patterns in Basilisk cod
 >     event logfile(i += 100) { ... }          // Logging
 >     ```
 >     
-> 4. **Grid traversal with foreach()**:
+> 2. Grid traversal with foreach():
 >     
 >     ```c
 >     foreach() {
@@ -398,7 +398,7 @@ Throughout these simulations, you'll notice some common patterns in Basilisk cod
 >     }
 >     ```
 >     
-> 5. **Convergence monitoring**:
+> 3. Convergence monitoring:
 >     
 >     ```c
 >     double du = change(u.x, un);
@@ -412,19 +412,19 @@ Here are some tips to help you succeed with these simulations:
 
 > [!tip] Simulation Tips
 > 
-> - **Timestep selection**: For explicit schemes, ensure the timestep satisfies the relevant stability criterion (e.g., CFL condition)
+> - Timestep selection: For explicit schemes, ensure the timestep satisfies the relevant stability criterion (e.g., CFL condition)
 >     
-> - **Convergence monitoring**: Always check convergence by tracking changes in key variables
+> - Convergence monitoring: Always check convergence by tracking changes in key variables
 >     
-> - **Grid resolution**: Start with a coarse grid for quick tests, then refine for accuracy
+> - Grid resolution: Start with a coarse grid for quick tests, then refine for accuracy
 >     
-> - **Boundary conditions**: Double-check that boundary conditions are correctly implemented
+> - Boundary conditions: Double-check that boundary conditions are correctly implemented
 >     
-> - **Regularization parameters**: For non-Newtonian fluids, choose appropriate regularization parameters to balance accuracy and stability
+> - Regularization parameters: For non-Newtonian fluids, choose appropriate regularization parameters to balance accuracy and stability
 >     
-> - **Initial conditions**: Use appropriate initial conditions to avoid unnecessary transients
+> - Initial conditions: Use appropriate initial conditions to avoid unnecessary transients
 >     
-> - **Output frequency**: Balance output frequency with computational resources and storage needs
+> - Output frequency: Balance output frequency with computational resources and storage needs
 >     
 
 ## Conclusion

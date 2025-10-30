@@ -1,5 +1,5 @@
 ---
-modified: 2025-10-07T09:12:47+01:00
+modified: 2025-10-30T11:16:21+00:00
 created: 2025-01-11T13:58:29+00:00
 tags:
   - bubbles
@@ -11,20 +11,20 @@ status: done ✅
 ---
 # Features of capillary waves during asymmetric bubble coalescence
 > [!tldr] TL;DR
-> During the coalescence of bubbles with different sizes, the **speed** of the ensuing capillary waves remains almost unchanged and scales with the inertio‐capillary velocity. However, the strength (or curvature) of these waves depends on the bubble size ratio. In the equal‐sized case, the wave curvature diminishes and then plateaus, whereas for highly asymmetric (large vs. tiny) bubbles, the curvature initially decreases but then rebounds sharply due to the changing geometry. Two **approximate** scaling laws emerge for the strongest wave curvature: ￼ in the low‐viscosity limit and ￼ in the moderate‐to‐higher viscosity regime. Experimental data diverge somewhat from these simple power laws, indicating a need for refined models to explain the distinct curvature behavior at low Ohnesorge numbers.
+> During the coalescence of bubbles with different sizes, the speed of the ensuing capillary waves remains almost unchanged and scales with the inertio‐capillary velocity. However, the strength (or curvature) of these waves depends on the bubble size ratio. In the equal‐sized case, the wave curvature diminishes and then plateaus, whereas for highly asymmetric (large vs. tiny) bubbles, the curvature initially decreases but then rebounds sharply due to the changing geometry. Two approximate scaling laws emerge for the strongest wave curvature: ￼ in the low‐viscosity limit and ￼ in the moderate‐to‐higher viscosity regime. Experimental data diverge somewhat from these simple power laws, indicating a need for refined models to explain the distinct curvature behavior at low Ohnesorge numbers.
 
 ![Fig-1_schematic](_Media/20250112214056729_Features-of-capillary-waves-during-asymmetric-bubble-coalescence.png)
 Figure 1. Schematic of asymmetric coalescence of bubbles. Following the coalescnece, train of capillary waves travel on the surface of both bubbles. 
 
 ### Control parameters
 
-**Ohnesorge number** (ratio of the inertio-capillary and inertio-viscous timescales)
+Ohnesorge number (ratio of the inertio-capillary and inertio-viscous timescales)
 
 $$
 Oh = \frac{\eta_l}{\sqrt{\rho_l\gamma R_0}}
 $$
 
-**Asymmetry parameter** (ratio of the radii of the two bubbles)
+Asymmetry parameter (ratio of the radii of the two bubbles)
 
 $$
 \chi = \frac{R}{r}
@@ -100,7 +100,7 @@ $$
 \frac{d}{d\tau}\int_{\Omega_\kappa}\frac{\rho V^2}{2}d\Omega_\kappa \sim 2\eta\int_{\Omega_\eta}\left(\boldsymbol{\mathcal{D}:\mathcal{D}}\right)d\Omega_\eta
 $$
 
-**Note:** Here, we balance the kinetic energy of the capillary waves (across volume $\Omega_\kappa$) with viscous dissipation across the bulk volume $\Omega_\eta$ where velocity gradients are non-zero. 
+Note: Here, we balance the kinetic energy of the capillary waves (across volume $\Omega_\kappa$) with viscous dissipation across the bulk volume $\Omega_\eta$ where velocity gradients are non-zero. 
 
 Consequently, the volume scale associated with the kinetic energy carried by the waves is $\Omega_\kappa \sim R\kappa^{-2}$ and the dissipation volume scales as $\Omega_\eta \sim R\delta_\eta^2$ where $\delta_\eta$ is the viscous boundary layer attached to the free-surface where velocity gradients are highest (see the videos above, the dark regions in visocus dissipation function characterize $\Omega_\eta$ and high velocity regions indicate $\Omega_\kappa$)
 
@@ -142,7 +142,7 @@ $$
 $$
 \delta \sim \sqrt{\frac{\eta}{\rho}t} = \sqrt{\frac{\eta}{\rho}\left(\frac{\rho\kappa^{-3}}{\gamma}\right)^{1/2}}
 $$
-**Rearranging the expression and filling in the general equation relating $\kappa$ and $\delta$ gives** 
+Rearranging the expression and filling in the general equation relating $\kappa$ and $\delta$ gives 
 
 $$
 \tilde{\kappa}^{5/2} \sim \frac{\rho\gamma R}{\eta^2}
@@ -159,7 +159,7 @@ Figure 6. Minumum curvature of the strongest capillary wave as a function of the
 > [!cite] Note:
 > The scaling laws developed here are also described in detail in [2]
 
-So, why does the radii ratio influence the curvature strongly but not the wave speed? **Unfortunately,** this is still an open question. The hand-wavy argument is given in this document (including the geometric and asymmetry arguments) but the scaling laws developed here only work approximately and clearly the data for $Oh \to 0$ shows deviation in curvature. #foodForThought 
+So, why does the radii ratio influence the curvature strongly but not the wave speed? Unfortunately, this is still an open question. The hand-wavy argument is given in this document (including the geometric and asymmetry arguments) but the scaling laws developed here only work approximately and clearly the data for $Oh \to 0$ shows deviation in curvature. #foodForThought 
 
 
 ### More resources

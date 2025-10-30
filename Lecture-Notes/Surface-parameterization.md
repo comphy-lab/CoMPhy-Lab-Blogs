@@ -1,5 +1,5 @@
 ---
-modified: 2025-03-12T13:51:05+01:00
+modified: 2025-10-30T11:17:54+00:00
 created: 2025-03-11T13:58:29+00:00
 tags:
   - fluid-interfaces
@@ -41,8 +41,8 @@ Here, $u$ and $v$ are parameters that serve as coordinates on the surface, much 
 
 When we hold one parameter constant while varying the other, we trace curves on the surface known as iso-parameter curves:
 
-- **Iso-$u$ curves**: Created by keeping $u$ constant and varying $v$
-- **Iso-$v$ curves**: Created by keeping $v$ constant and varying $u$
+- Iso-$u$ curves: Created by keeping $u$ constant and varying $v$
+- Iso-$v$ curves: Created by keeping $v$ constant and varying $u$
 
 These curves form a coordinate grid on the surface, as illustrated in Figure 2.
 
@@ -133,9 +133,9 @@ These classifications help us understand the geometric behavior of interfaces in
 
 When implementing surface parameterization in computational fluid dynamics, several approaches are commonly used:
 
-1. **Finite Element Method**: Elements are defined on the parameter space and mapped to the physical surface
-2. **Level Set Method**: Implicit representation of the interface as a level set of a function
-3. **Front Tracking Method**: Explicit tracking of interface points with dynamic remeshing
+1. Finite Element Method: Elements are defined on the parameter space and mapped to the physical surface
+2. Level Set Method: Implicit representation of the interface as a level set of a function
+3. Front Tracking Method: Explicit tracking of interface points with dynamic remeshing
 
 > [!important] Numerical Stability
 > The choice of parameterization can significantly impact numerical stability. Orthogonal parameterizations often provide better conditioning for numerical solvers.
@@ -143,7 +143,7 @@ When implementing surface parameterization in computational fluid dynamics, seve
 Code snippets utilize these concepts for calculating surface properties:
 
 ```c
-/**
+/
 * @brief Calculates surface curvature from parametric representation
 * @param xu First tangent vector
 * @param xv Second tangent vector
