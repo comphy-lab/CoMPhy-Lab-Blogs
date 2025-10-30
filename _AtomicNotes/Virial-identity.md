@@ -1,7 +1,8 @@
 ---
-modified: 2025-10-30T11:15:33+00:00
+modified: 2025-10-30T11:37:51+00:00
 type: atomic note
 status: done ✅
+publish: true
 ---
 # The Virial Identity: Pairwise Forces → Divergence of Stress
 

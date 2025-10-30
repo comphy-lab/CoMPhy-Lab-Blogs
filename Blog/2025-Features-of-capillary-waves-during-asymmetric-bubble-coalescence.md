@@ -1,5 +1,5 @@
 ---
-modified: 2025-10-30T11:16:21+00:00
+modified: 2025-10-30T11:38:15+00:00
 created: 2025-01-11T13:58:29+00:00
 tags:
   - bubbles
@@ -8,6 +8,7 @@ aliases:
   - Features-of-capillary-waves-during-asymmetric-bubble-coalescence
   - Blog/Features-of-capillary-waves-during-asymmetric-bubble-coalescence
 status: done ✅
+publish: true
 ---
 # Features of capillary waves during asymmetric bubble coalescence
 > [!tldr] TL;DR

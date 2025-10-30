@@ -1,7 +1,8 @@
 ---
-modified: 2025-10-30T11:15:13+00:00
+modified: 2025-10-30T11:37:33+00:00
 type: atomic note
 status: done ✅
+publish: true
 ---
 # Stokes' first problem
 

@@ -1,5 +1,5 @@
 ---
-modified: 2025-10-30T11:16:56+00:00
+modified: 2025-10-30T11:38:50+00:00
 created: 2024-12-31T12:12:38+01:00
 tags:
   - non-Newtonian
@@ -10,6 +10,7 @@ aliases:
   - Code-Documentations/Herschel–Bulkley formulation
   - Herschel–Bulkley
 status: done ✅
+publish: true
 ---
 # Herschel–Bulkley formulation for non-Newtonian flows
 > [!tldr] TL;DR

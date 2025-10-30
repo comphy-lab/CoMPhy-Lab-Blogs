@@ -1,7 +1,8 @@
 ---
-modified: 2025-10-30T11:15:18+00:00
+modified: 2025-10-30T11:37:37+00:00
 type: atomic note
 status: done ✅
+publish: true
 ---
 # The Moving Delta Identity
 

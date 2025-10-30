@@ -1,5 +1,7 @@
 ---
-modified: 2025-10-30T11:17:03+00:00
+modified: 2025-10-30T11:38:58+00:00
+status: done ✅
+publish: true
 ---
 # Advantages of Basilisk Over Vanilla C for Computational Fluid Dynamics
 
