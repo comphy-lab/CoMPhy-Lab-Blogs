@@ -1,6 +1,8 @@
 ---
-modified: 2025-10-30T11:17:18+00:00
+modified: 2025-10-30T11:39:10+00:00
 created: 2025-03-12T01:24:38+01:00
+status: done ✅
+publish: true
 ---
 # Non-Newtonian flows with Basilisk
 

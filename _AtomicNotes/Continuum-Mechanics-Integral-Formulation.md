@@ -1,5 +1,7 @@
 ---
-modified: 2025-10-30T11:14:42+00:00
+modified: 2025-10-30T11:37:10+00:00
+status: done ✅
+publish: true
 ---
 # Coarse-Grained Continuum Mechanics – Conservation Laws
 

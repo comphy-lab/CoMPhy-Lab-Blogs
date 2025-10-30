@@ -1,7 +1,8 @@
 ---
 created: 2025-10-24T12:00:00+01:00
-modified: 2025-10-30T11:16:10+00:00
+modified: 2025-10-30T11:38:10+00:00
 status: done ✅
+publish: true
 website: https://blogs-comphy-lab.org/emmy-noether-symmetry
 tags:
   - mathematics

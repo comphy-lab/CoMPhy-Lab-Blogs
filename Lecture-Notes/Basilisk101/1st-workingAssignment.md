@@ -1,6 +1,8 @@
 ---
-modified: 2025-10-30T11:17:06+00:00
+modified: 2025-10-30T11:39:01+00:00
 created: 2025-03-10T00:00:51+01:00
+status: done ✅
+publish: true
 ---
 # Heat Conduction Simulation: From Vanilla C to Basilisk C
 
