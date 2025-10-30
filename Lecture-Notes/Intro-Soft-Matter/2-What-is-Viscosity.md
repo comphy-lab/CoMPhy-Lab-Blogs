@@ -387,9 +387,7 @@ Understanding why momentum diffusion acts as a dissipative force (damping) is ce
 > [!significance]- Metadata
 > Author:: [Vatsal Sanjay](https://vatsalsanjay.com)<br>
 > Date published:: Oct 29, 2025<br>
-> Date modified:: Oct 29, 2025
->
-> Lecture note on viscosity as momentum diffusion, connecting kinetic theory to continuum mechanics and soft matter flows.
+> Date modified:: Oct 30, 2025
 
 > [!link] Back to main website
 > [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
