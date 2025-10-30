@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "dae54acad6a31cf8",
+        "id": "075b0e82aa7c7351",
         "type": "tabs",
         "children": [
           {
-            "id": "e59ab0a747bfc2b0",
+            "id": "9b7a03bb2595dad6",
             "type": "leaf",
             "state": {
               "type": "home-tab-view",
@@ -209,7 +209,7 @@
       "obsidian-shellcommands:Shell commands: Custom variables": false
     }
   },
-  "active": "e59ab0a747bfc2b0",
+  "active": "9b7a03bb2595dad6",
   "lastOpenFiles": [
     "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.pdf",
     "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
