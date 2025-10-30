@@ -11,6 +11,16 @@ aliases:
 
 Course Overview. A journey through soft materials—from everyday foams and gels to polymer networks and interfacial dynamics. We develop the conceptual and mathematical foundations to understand why soft matter behaves so differently from hard solids and liquids.
 
+> [!significance]- Metadata
+> Author:: [Vatsal Sanjay](https://vatsalsanjay.com)<br>
+> Date published:: Oct 14, 2025<br>
+> Date modified:: Oct 30, 2025
+
+> [!link] Back to main website
+> [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
+>
+> 📝 [Edit this page on GitHub](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/blob/main/Lecture-Notes/Intro-Soft-Matter/0-README.md)
+
 ## Course Goals
 
 - Develop a basic understanding of key concepts in Soft Condensed Matter
@@ -21,8 +31,10 @@ Course Overview. A journey through soft materials—from everyday foams and gels
 ## Course Structure (8+ Lectures + Bridges)
 
 - Lecture 1: [[1-Intro-Soft-Matter|Different Faces of Soft Condensed Matter]] – What is soft matter, why is it soft, and how do we measure softness?
-- Lecture 1.5: [[1.5-Taylor-Culick-Paradox|The Taylor–Culick Paradox — Where Did the Energy Go?]] – Resolving a century-old paradox through proper energy accounting and momentum conservation
+  - [[1.5-Taylor-Culick-Paradox|Bridge 1.5: The Taylor–Culick Paradox]] – Resolving a century-old paradox through proper energy accounting and momentum conservation
+  - [[1.75-Complementary-Questions-Answers|Homework Solutions: Lecture 1]] – Self-assessed questions with model answers
 - Lecture 2: [[2-What-is-Viscosity|Viscosity and Momentum Diffusion]] – Viscosity as an emergent property from kinetic theory; the no-slip condition; continuum momentum transport
+  - [[2.5-Conservation-Laws|Bridge 2.5: From Newton's Laws to Conservation Equations]] – Microscopic particle dynamics to continuum momentum balance and Cauchy stress
 - Lecture 3: Soft Matter Instabilities
 - Lecture 4: Soft Matter Singularities
 - Lecture 5: Elastic vs Viscous vs Viscoelastic Behavior
@@ -104,12 +116,3 @@ Office Hours: Thu 14:00–16:00 (Ph255)
 Have questions? Come to office hours or send an email — I'm here to help!
 
 ---
-
-> [!link] More Resources
-> - [CoMPhy Lab Website](https://comphy-lab.org/)
-> - [Research Group](https://comphy-lab.org/research)
-> - [GitHub](https://github.com/comphy-lab)
->
-> 📝 [Edit this page on GitHub](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/blob/main/Lecture-Notes/Intro-Soft-Matter/0-README.md)
-
-Last updated: 2025-10-22

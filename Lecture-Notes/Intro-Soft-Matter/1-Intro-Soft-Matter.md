@@ -451,8 +451,8 @@ See the next lecture for a rigorous treatment of the Taylor–Culick paradox and
 
 > [!significance]- Metadata
 > Author:: [Vatsal Sanjay](https://vatsalsanjay.com)<br>
-> Date published:: Oct 22, 2025<br>
-> Date modified:: Oct 22, 2025
+> Date published:: Oct 14, 2025<br>
+> Date modified:: Oct 30, 2025
 
 > [!link] Back to main website
 > [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
