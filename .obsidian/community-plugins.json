@@ -38,5 +38,6 @@
   "obsidian-pandoc-reference-list",
   "obsidian-zotero-desktop-connector",
   "obsidian-tidy-footnotes",
-  "frontmatter-modified-date"
+  "frontmatter-modified-date",
+  "obsidian-shellcommands"
 ]
