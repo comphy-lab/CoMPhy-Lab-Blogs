@@ -1,60 +1,28 @@
 {
   "recentFiles": [
     {
-      "basename": "2.5-Conservation-Laws",
-      "path": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md"
-    },
-    {
-      "basename": "2-What-is-Viscosity",
-      "path": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md"
-    },
-    {
-      "basename": "1.75-Complementary-Questions-Answers",
-      "path": "Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.md"
-    },
-    {
-      "basename": "Coarse-graining-momentum-to-Cauchy",
-      "path": "_AtomicNotes/Coarse-graining-momentum-to-Cauchy.md"
-    },
-    {
-      "basename": "2025-Why-Double‑Network-Hydrogels-Dont-Shatter",
-      "path": "Blog/2025-Why-Double‑Network-Hydrogels-Dont-Shatter.md"
-    },
-    {
-      "basename": "2025-Herschel–Bulkley-formulation",
-      "path": "Code-Documentations/2025-Herschel–Bulkley-formulation.pdf"
-    },
-    {
-      "basename": "Seminar-UIUC-abstract",
-      "path": "Talks/Seminar-UIUC-abstract.md"
-    },
-    {
-      "basename": "Seminar-Durham-abstract",
-      "path": "Talks/Seminar-Durham-abstract.md"
-    },
-    {
-      "basename": "2025-06-30_Conference-VPflow-abstract",
-      "path": "Talks/2025-06-30_Conference-VPflow-abstract.md"
-    },
-    {
-      "basename": "Surface-parameterization",
-      "path": "Lecture-Notes/Surface-parameterization.md"
-    },
-    {
-      "basename": "Gauss-law-of-Electrostatics",
-      "path": "Lecture-Notes/Gauss-law-of-Electrostatics.md"
-    },
-    {
-      "basename": "1.5-Taylor-Culick-Paradox",
-      "path": "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md"
-    },
-    {
       "basename": "1-Intro-Soft-Matter",
       "path": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md"
     },
     {
       "basename": "0-README",
       "path": "Lecture-Notes/Intro-Soft-Matter/0-README.md"
+    },
+    {
+      "basename": "1.5-Taylor-Culick-Paradox",
+      "path": "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md"
+    },
+    {
+      "basename": "1.75-Complementary-Questions-Answers",
+      "path": "Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.md"
+    },
+    {
+      "basename": "2.5-Conservation-Laws",
+      "path": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md"
+    },
+    {
+      "basename": "2-What-is-Viscosity",
+      "path": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md"
     },
     {
       "basename": "4th-workingAssignment",
@@ -83,6 +51,10 @@
     {
       "basename": "2025-Herschel–Bulkley-formulation",
       "path": "Code-Documentations/2025-Herschel–Bulkley-formulation.md"
+    },
+    {
+      "basename": "2025-Why-Double‑Network-Hydrogels-Dont-Shatter",
+      "path": "Blog/2025-Why-Double‑Network-Hydrogels-Dont-Shatter.md"
     },
     {
       "basename": "2025-visual-pdes",
@@ -117,12 +89,12 @@
       "path": "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md"
     },
     {
-      "basename": "2025-Curvature-Inversion-in-Laser‑Struck-Droplets",
-      "path": "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md"
-    },
-    {
       "basename": "2025-Emmy-Noether-Symmetry-Conservation",
       "path": "Blog/2025-Emmy-Noether-Symmetry-Conservation.md"
+    },
+    {
+      "basename": "2025-Curvature-Inversion-in-Laser‑Struck-Droplets",
+      "path": "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md"
     },
     {
       "basename": "2025-Arrowheads-in-elastoinertial-turbulence",
@@ -175,6 +147,34 @@
     {
       "basename": "Continuum-Mechanics-Integral-Formulation",
       "path": "_AtomicNotes/Continuum-Mechanics-Integral-Formulation.md"
+    },
+    {
+      "basename": "Coarse-graining-momentum-to-Cauchy",
+      "path": "_AtomicNotes/Coarse-graining-momentum-to-Cauchy.md"
+    },
+    {
+      "basename": "2025-Herschel–Bulkley-formulation",
+      "path": "Code-Documentations/2025-Herschel–Bulkley-formulation.pdf"
+    },
+    {
+      "basename": "Seminar-UIUC-abstract",
+      "path": "Talks/Seminar-UIUC-abstract.md"
+    },
+    {
+      "basename": "Seminar-Durham-abstract",
+      "path": "Talks/Seminar-Durham-abstract.md"
+    },
+    {
+      "basename": "2025-06-30_Conference-VPflow-abstract",
+      "path": "Talks/2025-06-30_Conference-VPflow-abstract.md"
+    },
+    {
+      "basename": "Surface-parameterization",
+      "path": "Lecture-Notes/Surface-parameterization.md"
+    },
+    {
+      "basename": "Gauss-law-of-Electrostatics",
+      "path": "Lecture-Notes/Gauss-law-of-Electrostatics.md"
     },
     {
       "basename": "whatIsViscosity",

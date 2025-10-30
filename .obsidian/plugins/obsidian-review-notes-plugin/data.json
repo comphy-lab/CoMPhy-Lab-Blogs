@@ -267,6 +267,14 @@
     {
       "path": "Talks/Seminar-UIUC-abstract.md",
       "filename": "Seminar-UIUC-abstract"
+    },
+    {
+      "path": "_AtomicNotes/Principle-of-superposition-of-electric-fields.md",
+      "filename": "Principle-of-superposition-of-electric-fields"
+    },
+    {
+      "path": "_AtomicNotes/What-is-electric-field-flux?.md",
+      "filename": "What-is-electric-field-flux?"
     }
   ]
 }
