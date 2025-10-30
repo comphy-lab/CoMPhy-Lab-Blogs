@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "271a2394ecf8cc08",
+        "id": "adb32c83d807cca9",
         "type": "tabs",
         "children": [
           {
-            "id": "e9eb9647fab343c3",
+            "id": "597e720a8d0f1208",
             "type": "leaf",
             "state": {
               "type": "home-tab-view",
@@ -208,11 +208,11 @@
       "obsidian-shellcommands:Shell commands: Custom variables": false
     }
   },
-  "active": "e9eb9647fab343c3",
+  "active": "597e720a8d0f1208",
   "lastOpenFiles": [
+    "Lecture-Notes/Intro-Soft-Matter/3-Soft-Matter-Instabilities.md",
     "Lecture-Notes/Intro-Soft-Matter/0-README.md",
     "0_README.md",
-    "Lecture-Notes/Intro-Soft-Matter/3-Soft-Matter-Instabilities.md",
     "_Media/3-Soft-Matter-Instabilities-1761860668972.png",
     "Lecture-Notes/Intro-Soft-Matter/3-Soft-Matter-Instabilities.pdf",
     "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md",
