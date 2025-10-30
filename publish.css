@@ -6,7 +6,7 @@
 /** ----- TABLE OF CONTENTS ----- */
 
 /** 1. Theme Variables and Root Settings
-    1.1 Color Palette 
+    1.1 Color Palette
     1.2 Custom Font Variables
     1.3 Custom Folder Colors
     1.4 Purple Accent Colors
@@ -17,7 +17,7 @@
     2.2 Light Theme Colors
     2.3 Code Formatting */
 
-/** 3. Typography 
+/** 3. Typography
     3.1 Base Font Settings
     3.2 Headers and Strong Text
     3.3 Links and Emphasis
@@ -37,7 +37,7 @@
     5.3 Images and Media
     5.4 Resize Handles */
 
-/** 6. Custom File Navigation 
+/** 6. Custom File Navigation
     6.1 Bullet Points and Relationship Lines
     6.2 Custom File/Folder Icons
     6.3 File Type Icons
@@ -76,7 +76,7 @@
 :root {
   /* 1.1 Color Palette */
   /* ------------- */
-  
+
   /* Main background colors */
   --dark0-hard: #141414;
   --dark0: #1a1a1a;
@@ -86,46 +86,46 @@
   --dark4: #6d6d6d;
 
   /* Main content colors */
-  --gray: #CCCCCC99;
+  --gray: #cccccc99;
   --light0-hard: #f5f5f0;
   --light0: #f0f0eb;
   --light1: #eaeae5;
   --light2: #e0e0db;
-  --light3: #FFFFFF;
-  --light4: #FFFFFF99;
+  --light3: #ffffff;
+  --light4: #ffffff99;
 
   /* Bright colors */
-  --bright-red: #FB4834;
-  --bright-green: #A3BE8C;
-  --bright-yellow: #EBCB8B;
-  --bright-blue: #88C0D0;
-  --bright-purple: #B347BF; /* Updated to match the new durham-purple for consistency */
-  --bright-aqua: #81D2CE;
-  --bright-orange: #FE8018;
+  --bright-red: #fb4834;
+  --bright-green: #a3be8c;
+  --bright-yellow: #ebcb8b;
+  --bright-blue: #88c0d0;
+  --bright-purple: #b347bf; /* Updated to match the new durham-purple for consistency */
+  --bright-aqua: #81d2ce;
+  --bright-orange: #fe8018;
 
   /* Neutral colors */
-  --durham-purple: #B347BF; /* Changed from #68246D to a brighter purple with better contrast */
-  --durham-purpleDark: #68236D; /* Changed from #68246D to a brighter purple with better contrast */
-  --neutral-green: #A3BE8C;
-  --neutral-yellow: #EBCB8B;
+  --durham-purple: #b347bf; /* Changed from #68246D to a brighter purple with better contrast */
+  --durham-purpleDark: #68236d; /* Changed from #68246D to a brighter purple with better contrast */
+  --neutral-green: #a3be8c;
+  --neutral-yellow: #ebcb8b;
   --neutral-blue: #87c3ff;
-  --neutral-purple: #B347BF; /* Updated to match the new durham-purple */
-  --neutral-aqua: #81D2CE;
-  --neutral-orange: #FE8018;
-  
+  --neutral-purple: #b347bf; /* Updated to match the new durham-purple */
+  --neutral-aqua: #81d2ce;
+  --neutral-orange: #fe8018;
+
   /* Light theme specific colors */
   --light-yellow: #d79921;
   --light-green: #588157;
   --light-code: #2e7c8a;
 
   /* Faded colors */
-  --faded-red: #BF616A99;
+  --faded-red: #bf616a99;
   --faded-green: #a8cc7c99;
   --faded-yellow: #f8c76299;
   --faded-blue: #87c3ff99;
-  --faded-purple: #B347BF99; /* Updated to match the new durham-purple */
+  --faded-purple: #b347bf99; /* Updated to match the new durham-purple */
   --faded-aqua: #82d2ce99;
-  --faded-orange: #FE801899;
+  --faded-orange: #fe801899;
 
   /* RGB colors for bullet lines */
   --rgb-faded-red: 191, 97, 106;
@@ -136,11 +136,11 @@
   --rgb-faded-aqua: 130, 210, 206;
   --alpha-ad: 0.68;
   --alpha-65: 0.4;
-  
+
   /* 1.2 Custom Font Variables */
   /* -------------------- */
   --custom-font: "Hack";
-  
+
   /* 1.3 Custom folder colors */
   /* -------------------- */
   --soft-blue: var(--bright-blue);
@@ -151,12 +151,12 @@
   --muted-green: var(--neutral-green);
   --muted-orange: var(--neutral-yellow);
   --soft-orange: var(--neutral-orange);
-  
+
   /* 1.4 Purple Accent Colors */
   /* -------------------- */
-  --accent-purple: #B347BF; /* Updated to match the new durham-purple */
-  --accent-purple-light: #C75DD3; /* Adjusted to be lighter than the new durham-purple */
-  --accent-purple-dark: #9A3AA5; /* Adjusted to be darker than the new durham-purple */
+  --accent-purple: #b347bf; /* Updated to match the new durham-purple */
+  --accent-purple-light: #c75dd3; /* Adjusted to be lighter than the new durham-purple */
+  --accent-purple-dark: #9a3aa5; /* Adjusted to be darker than the new durham-purple */
 
   /* 1.5 Font weights for consistency */
   /* ---------------------------- */
@@ -198,8 +198,12 @@
 }
 
 .theme-light {
-  --background-primary: var(--light1);       /* Changed from var(--light0-hard) to var(--light1) */
-  --background-primary-alt: var(--light1);   /* Changed from var(--light0) to var(--light1) */
+  --background-primary: var(
+    --light1
+  ); /* Changed from var(--light0-hard) to var(--light1) */
+  --background-primary-alt: var(
+    --light1
+  ); /* Changed from var(--light0) to var(--light1) */
   --background-secondary: var(--light1);
   --background-secondary-alt: var(--light2);
   --text-normal: var(--dark0-hard);
@@ -357,7 +361,7 @@ thead {
 }
 
 /* .HyperMD-table-row-0 { */
-  /* padding-top: 4px !important; */
+/* padding-top: 4px !important; */
 /* } */
 
 .CodeMirror-foldgutter-folded,
@@ -394,12 +398,12 @@ img {
 .CodeMirror-linenumber,
 .cm-formatting {
   font-family: var(--font-monospace) !important;
-  font-size: 1.0em;
+  font-size: 1em;
 }
 
 .markdown-preview-section pre code,
 .markdown-preview-section code {
-  font-size: 1.0em !important;
+  font-size: 1em !important;
   background-color: var(--pre-code) !important;
 }
 
@@ -709,346 +713,450 @@ ul ul ul li:not(.task-list-item)::before {
 }
 /** ______ 2.2.2 Custom icons differing files and folders: https://discordapp.com/channels/686053708261228577/702656734631821413/755293685046050896 */
 /* Emoji */
-.nav-file-title-content::before { content: "📝️ "; }
-.nav-folder-title-content::before { content: '📂 '; }
-.nav-file-title-content[data-link-data-href="Flows"]::before { content: '♻️ '; }
-.nav-file-title-content[data-link-data-href="Tasks"]::before { content: '✅️ '; }
-.nav-file-title-content[data-link-data-href="Readwise Items To Review"]::before { content: '🔁 '; }
-.nav-file-title-content[data-link-data-href="Timeline"]::before { content: '🕓️ '; }
-.nav-file-title-content[data-link-data-href="Research"]::before { content: '🖥️ '; }
-.nav-file-title-content[data-link-data-href="ZK Processing"]::before { content: '🖥️ '; }
-.nav-file-title-content[data-link-data-href="Top of Mind"]::before { content: '🧠️ '; }
-.nav-file-title-content[data-link-data-href="Patrons"]::before { content: '🧡️ '; }
-.nav-file-title-content[data-link-data-href="Tools"]::before { content: '🛠️ '; }
-.nav-file-title-content[data-link-data-href="Workbench"]::before { content: '✏️ '; }
-.nav-file-title-content[data-link-data-href="HOME"]::before { content: '🌎️ '; }
-.nav-file-title-content[data-link-data-href="2020 Goals"]::before { content: '🏆️ '; }
-.nav-file-title-content[data-link-data-href="2021 Goals"]::before { content: '🏆️ '; }
-.nav-file-title-content[data-link-data-href="2023 Goals"]::before { content: '🏆️ '; }
-.nav-file-title-content[data-link-data-href="Life Philosophy"]::before { content: '💭️ '; }
-.nav-file-title-content[data-link-data-href="Good Feels"]::before { content: '😊️ '; }
-.nav-file-title-content[data-link-tags*="#📥️/🐦️"]::before { content: '🐦️ '; }
-.nav-file-title-content[data-link-tags*="#📥️/📰️"]::before { content: '️📰️ '; }
-.nav-file-title-content[data-link-tags*="#📥️/📚️"]::before { content: '️📚️ '; }
-.nav-file-title-content[data-link-tags*="#📝️/👥️"]::before { content: '️👥️ '; }
-.nav-file-title-content[data-link-tags*="#📥️/📜️"]::before { content: '️📜️ '; }
-.nav-file-title-content[data-link-tags*="#📥️/🎧️"]::before { content: '️🎧️ '; }
-.nav-file-title-content[data-link-tags*="#📥️/🎥️"]::before { content: '️🎥️ '; }
-.nav-file-title-content[data-link-tags*="#📥️/💭️"]::before { content: '️💭️ '; }
-.nav-file-title-content[data-link-tags*="#📥️/🔖️"]::before { content: '️🔖️ '; }
+.nav-file-title-content::before {
+  content: "📝️ ";
+}
+.nav-folder-title-content::before {
+  content: "📂 ";
+}
+.nav-file-title-content[data-link-data-href="Flows"]::before {
+  content: "♻️ ";
+}
+.nav-file-title-content[data-link-data-href="Tasks"]::before {
+  content: "✅️ ";
+}
+.nav-file-title-content[data-link-data-href="Readwise Items To Review"]::before {
+  content: "🔁 ";
+}
+.nav-file-title-content[data-link-data-href="Timeline"]::before {
+  content: "🕓️ ";
+}
+.nav-file-title-content[data-link-data-href="Research"]::before {
+  content: "🖥️ ";
+}
+.nav-file-title-content[data-link-data-href="ZK Processing"]::before {
+  content: "🖥️ ";
+}
+.nav-file-title-content[data-link-data-href="Top of Mind"]::before {
+  content: "🧠️ ";
+}
+.nav-file-title-content[data-link-data-href="Patrons"]::before {
+  content: "🧡️ ";
+}
+.nav-file-title-content[data-link-data-href="Tools"]::before {
+  content: "🛠️ ";
+}
+.nav-file-title-content[data-link-data-href="Workbench"]::before {
+  content: "✏️ ";
+}
+.nav-file-title-content[data-link-data-href="HOME"]::before {
+  content: "🌎️ ";
+}
+.nav-file-title-content[data-link-data-href="2020 Goals"]::before {
+  content: "🏆️ ";
+}
+.nav-file-title-content[data-link-data-href="2021 Goals"]::before {
+  content: "🏆️ ";
+}
+.nav-file-title-content[data-link-data-href="2023 Goals"]::before {
+  content: "🏆️ ";
+}
+.nav-file-title-content[data-link-data-href="Life Philosophy"]::before {
+  content: "💭️ ";
+}
+.nav-file-title-content[data-link-data-href="Good Feels"]::before {
+  content: "😊️ ";
+}
+.nav-file-title-content[data-link-tags*="#📥️/🐦️"]::before {
+  content: "🐦️ ";
+}
+.nav-file-title-content[data-link-tags*="#📥️/📰️"]::before {
+  content: "️📰️ ";
+}
+.nav-file-title-content[data-link-tags*="#📥️/📚️"]::before {
+  content: "️📚️ ";
+}
+.nav-file-title-content[data-link-tags*="#📝️/👥️"]::before {
+  content: "️👥️ ";
+}
+.nav-file-title-content[data-link-tags*="#📥️/📜️"]::before {
+  content: "️📜️ ";
+}
+.nav-file-title-content[data-link-tags*="#📥️/🎧️"]::before {
+  content: "️🎧️ ";
+}
+.nav-file-title-content[data-link-tags*="#📥️/🎥️"]::before {
+  content: "️🎥️ ";
+}
+.nav-file-title-content[data-link-tags*="#📥️/💭️"]::before {
+  content: "️💭️ ";
+}
+.nav-file-title-content[data-link-tags*="#📥️/🔖️"]::before {
+  content: "️🔖️ ";
+}
 
 /* Flat font */
 /* Requires: https://icomoon.io/#icons-icomoon/liga-font */
 /* .nav-folder-children .nav-file-title-content:first-child::before { content: "\e924  "; font-family: "IcoMoon-Free"; }
 .nav-folder-children .nav-folder-title-content::before { content: "\e930  "; font-family: "IcoMoon-Free"; } */
 
-
 /** ________ 2.2.3 Top Level Folder Icons -- https://discord.com/channels/686053708261228577/702656734631821413/805318111917113354 */
-.nav-folder-title[data-path="Journal"] .nav-folder-title-content::before { content: "📅 "; font-size: 1.3em; }
-.nav-folder-title[data-path="otv"] .nav-folder-title-content::before { content: "💖️ "; font-size: 1.3em; }
-.nav-folder-title[data-path="Media"] .nav-folder-title-content::before { content: "🖼️ "; font-size: 1.3em; }
-.nav-folder-title[data-path="Templates"] .nav-folder-title-content::before { content: "⚙️ "; font-size: 1.3em; }
-.nav-folder-title[data-path="Utility"] .nav-folder-title-content::before { content: "🛠️ "; font-size: 1.3em; }
-.nav-folder-title[data-path="Projects"] .nav-folder-title-content::before { content: "📋 "; font-size: 1.3em; }
-.nav-folder-title[data-path="Inbox"] .nav-folder-title-content::before { content: "📥️ "; font-size: 1.3em; }
+.nav-folder-title[data-path="Journal"] .nav-folder-title-content::before {
+  content: "📅 ";
+  font-size: 1.3em;
+}
+.nav-folder-title[data-path="otv"] .nav-folder-title-content::before {
+  content: "💖️ ";
+  font-size: 1.3em;
+}
+.nav-folder-title[data-path="Media"] .nav-folder-title-content::before {
+  content: "🖼️ ";
+  font-size: 1.3em;
+}
+.nav-folder-title[data-path="Templates"] .nav-folder-title-content::before {
+  content: "⚙️ ";
+  font-size: 1.3em;
+}
+.nav-folder-title[data-path="Utility"] .nav-folder-title-content::before {
+  content: "🛠️ ";
+  font-size: 1.3em;
+}
+.nav-folder-title[data-path="Projects"] .nav-folder-title-content::before {
+  content: "📋 ";
+  font-size: 1.3em;
+}
+.nav-folder-title[data-path="Inbox"] .nav-folder-title-content::before {
+  content: "📥️ ";
+  font-size: 1.3em;
+}
 .nav-folder-title[data-path="Sources"] {
-  background-color: var(--bright-blue);  /* or --neutral-aqua or --faded-yellow */
+  background-color: var(
+    --bright-blue
+  ); /* or --neutral-aqua or --faded-yellow */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path="Sterkere"] .nav-folder-title-content::before { content: "💪🏻️ "; font-size: 1.3em; }
-.nav-folder-title[data-path="DevLog"] .nav-folder-title-content::before { content: "🖥️ "; font-size: 1.3em; }
-.nav-folder-title[data-path="Z"] .nav-folder-title-content::before { content: "🧠️ "; font-size: 1.3em; }
-.nav-folder-title[data-path="Readwise"] .nav-folder-title-content::before { content: "🖋️ "; font-size: 1.3em; }
-
+.nav-folder-title[data-path="Sterkere"] .nav-folder-title-content::before {
+  content: "💪🏻️ ";
+  font-size: 1.3em;
+}
+.nav-folder-title[data-path="DevLog"] .nav-folder-title-content::before {
+  content: "🖥️ ";
+  font-size: 1.3em;
+}
+.nav-folder-title[data-path="Z"] .nav-folder-title-content::before {
+  content: "🧠️ ";
+  font-size: 1.3em;
+}
+.nav-folder-title[data-path="Readwise"] .nav-folder-title-content::before {
+  content: "🖋️ ";
+  font-size: 1.3em;
+}
 
 /** Folder Colors and Emojis */
-.nav-folder-title[data-path^='_AtomicNotes'] {
-  background-color: #83a598;  /* soft blue */
+.nav-folder-title[data-path^="_AtomicNotes"] {
+  background-color: #83a598; /* soft blue */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_AtomicNotes'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_AtomicNotes"] .nav-folder-title-content::before {
   content: "📝 ";
 }
-.nav-folder-title[data-path^='_Inbox'] {
-  background-color: #928374;  /* soft gray */
+.nav-folder-title[data-path^="_Inbox"] {
+  background-color: #928374; /* soft gray */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_Inbox'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_Inbox"] .nav-folder-title-content::before {
   content: "📥 ";
 }
 
-.nav-folder-title[data-path^='_Media'] {
-  background-color: #d3869b;  /* soft pink */
+.nav-folder-title[data-path^="_Media"] {
+  background-color: #d3869b; /* soft pink */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_Media'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_Media"] .nav-folder-title-content::before {
   content: "📸 ";
 }
 
-.nav-folder-title[data-path^='_TODO'] {
-  background-color: #8ec07c;  /* soft green */
+.nav-folder-title[data-path^="_TODO"] {
+  background-color: #8ec07c; /* soft green */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_TODO'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_TODO"] .nav-folder-title-content::before {
   content: "✅ ";
 }
 
-.nav-folder-title[data-path^='Clippings'] {
-  background-color: #b8bb26;  /* soft yellow */
+.nav-folder-title[data-path^="Clippings"] {
+  background-color: #b8bb26; /* soft yellow */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Clippings'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Clippings"] .nav-folder-title-content::before {
   content: "✂️ ";
 }
 
-.nav-folder-title[data-path^='Projects'] {
-  background-color: #83a598;  /* soft blue */
+.nav-folder-title[data-path^="Projects"] {
+  background-color: #83a598; /* soft blue */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Projects'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Projects"] .nav-folder-title-content::before {
   content: "🎯 ";
 }
 
-.nav-folder-title[data-path^='Resources-Literature'] {
-  background-color: #d79921;  /* muted orange */
+.nav-folder-title[data-path^="Resources-Literature"] {
+  background-color: #d79921; /* muted orange */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Resources-Literature'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Resources-Literature"]
+  .nav-folder-title-content::before {
   content: "📚 ";
 }
 
-.nav-folder-title[data-path^='Resources-non-research'] {
-  background-color: #98971a;  /* muted green */
+.nav-folder-title[data-path^="Resources-non-research"] {
+  background-color: #98971a; /* muted green */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Resources-non-research'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Resources-non-research"]
+  .nav-folder-title-content::before {
   content: "📝 ";
 }
 
-.nav-folder-title[data-path^='Resources-research'] {
-  background-color: #689d6a;  /* aqua */
+.nav-folder-title[data-path^="Resources-research"] {
+  background-color: #689d6a; /* aqua */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Resources-research'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Resources-research"]
+  .nav-folder-title-content::before {
   content: "🔬 ";
 }
 
-.nav-folder-title[data-path^='Templates'] {
+.nav-folder-title[data-path^="Templates"] {
   background-color: var(--neutral-orange);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Templates'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Templates"] .nav-folder-title-content::before {
   content: "📋 ";
 }
 
-.nav-folder-title[data-path^='Z_Archive'] {
-  background-color: #7c6f64;  /* soft brown */
+.nav-folder-title[data-path^="Z_Archive"] {
+  background-color: #7c6f64; /* soft brown */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Z_Archive'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Z_Archive"] .nav-folder-title-content::before {
   content: "📦 ";
 }
 
 /* FileOrganizer2000 Main Folder */
-.nav-folder-title[data-path^='_FO2K'] {
-  background-color: #83a598;  /* soft blue */
+.nav-folder-title[data-path^="_FO2K"] {
+  background-color: #83a598; /* soft blue */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FO2K'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FO2K"] .nav-folder-title-content::before {
   content: "🗂️ ";
 }
 
-.nav-folder-title[data-path^='_FO2K/Inbox'] {
-  background-color: #d79921;  /* muted orange */
+.nav-folder-title[data-path^="_FO2K/Inbox"] {
+  background-color: #d79921; /* muted orange */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FO2K/Inbox'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FO2K/Inbox"] .nav-folder-title-content::before {
   content: "📥 ";
 }
 
-.nav-folder-title[data-path^='_FO2K/Media'] {
-  background-color: #d3869b;  /* soft pink */
+.nav-folder-title[data-path^="_FO2K/Media"] {
+  background-color: #d3869b; /* soft pink */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FO2K/Media'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FO2K/Media"] .nav-folder-title-content::before {
   content: "📸 ";
 }
 
-.nav-folder-title[data-path^='_FO2K/Processed'] {
-  background-color: #8ec07c;  /* soft green */
+.nav-folder-title[data-path^="_FO2K/Processed"] {
+  background-color: #8ec07c; /* soft green */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FO2K/Processed'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FO2K/Processed"]
+  .nav-folder-title-content::before {
   content: "✅ ";
 }
 
-.nav-folder-title[data-path^='_FO2K/Templates'] {
+.nav-folder-title[data-path^="_FO2K/Templates"] {
   background-color: var(--neutral-orange);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FO2K/Templates'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FO2K/Templates"]
+  .nav-folder-title-content::before {
   content: "📋 ";
 }
 
-.nav-folder-title[data-path^='_FO2K/Logs'] {
-  background-color: #928374;  /* soft gray */
+.nav-folder-title[data-path^="_FO2K/Logs"] {
+  background-color: #928374; /* soft gray */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FO2K/Logs'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FO2K/Logs"] .nav-folder-title-content::before {
   content: "📊 ";
 }
 
-.nav-folder-title[data-path^='_FO2K/Backups'] {
-  background-color: #7c6f64;  /* soft brown */
+.nav-folder-title[data-path^="_FO2K/Backups"] {
+  background-color: #7c6f64; /* soft brown */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FO2K/Backups'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FO2K/Backups"]
+  .nav-folder-title-content::before {
   content: "💾 ";
 }
 
-.nav-folder-title[data-path^='_FO2K/Fabric'] {
-  background-color: #98971a;  /* muted green */
+.nav-folder-title[data-path^="_FO2K/Fabric"] {
+  background-color: #98971a; /* muted green */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FO2K/Fabric'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FO2K/Fabric"] .nav-folder-title-content::before {
   content: "🧩 ";
 }
 
-.nav-folder-title[data-path^='_FO2K/Errors'] {
-  background-color: #d65d0e;  /* soft orange */
+.nav-folder-title[data-path^="_FO2K/Errors"] {
+  background-color: #d65d0e; /* soft orange */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FO2K/Errors'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FO2K/Errors"] .nav-folder-title-content::before {
   content: "⚠️ ";
 }
 
-.nav-folder-title[data-path^='_FileOrganizer2000'] {
-  background-color: #83a598;  /* soft blue */
+.nav-folder-title[data-path^="_FileOrganizer2000"] {
+  background-color: #83a598; /* soft blue */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FileOrganizer2000'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FileOrganizer2000"]
+  .nav-folder-title-content::before {
   content: "🗂️ ";
 }
 
-.nav-folder-title[data-path^='_FileOrganizer2000/Inbox'] {
-  background-color: #d79921;  /* muted orange */
+.nav-folder-title[data-path^="_FileOrganizer2000/Inbox"] {
+  background-color: #d79921; /* muted orange */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FileOrganizer2000/Inbox'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FileOrganizer2000/Inbox"]
+  .nav-folder-title-content::before {
   content: "📥 ";
 }
 
-.nav-folder-title[data-path^='_FileOrganizer2000/Media'] {
+.nav-folder-title[data-path^="_FileOrganizer2000/Media"] {
   background-color: var(--soft-pink);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FileOrganizer2000/Media'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FileOrganizer2000/Media"]
+  .nav-folder-title-content::before {
   content: "📸 ";
 }
 
-.nav-folder-title[data-path^='_FileOrganizer2000/Processed'] {
+.nav-folder-title[data-path^="_FileOrganizer2000/Processed"] {
   background-color: var(--soft-green);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FileOrganizer2000/Processed'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FileOrganizer2000/Processed"]
+  .nav-folder-title-content::before {
   content: "✅ ";
 }
 
-.nav-folder-title[data-path^='_FileOrganizer2000/Templates'] {
+.nav-folder-title[data-path^="_FileOrganizer2000/Templates"] {
   background-color: var(--neutral-orange);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FileOrganizer2000/Templates'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FileOrganizer2000/Templates"]
+  .nav-folder-title-content::before {
   content: "📋 ";
 }
 
-.nav-folder-title[data-path^='_FileOrganizer2000/Logs'] {
+.nav-folder-title[data-path^="_FileOrganizer2000/Logs"] {
   background-color: var(--soft-gray);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FileOrganizer2000/Logs'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FileOrganizer2000/Logs"]
+  .nav-folder-title-content::before {
   content: "📊 ";
 }
 
-.nav-folder-title[data-path^='_FileOrganizer2000/Backups'] {
+.nav-folder-title[data-path^="_FileOrganizer2000/Backups"] {
   background-color: var(--soft-brown);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FileOrganizer2000/Backups'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FileOrganizer2000/Backups"]
+  .nav-folder-title-content::before {
   content: "💾 ";
 }
 
-.nav-folder-title[data-path^='_FileOrganizer2000/Fabric'] {
+.nav-folder-title[data-path^="_FileOrganizer2000/Fabric"] {
   background-color: var(--muted-green);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FileOrganizer2000/Fabric'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FileOrganizer2000/Fabric"]
+  .nav-folder-title-content::before {
   content: "🧩 ";
 }
 
-.nav-folder-title[data-path^='_FileOrganizer2000/Errors'] {
+.nav-folder-title[data-path^="_FileOrganizer2000/Errors"] {
   background-color: var(--soft-orange);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FileOrganizer2000/Errors'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FileOrganizer2000/Errors"]
+  .nav-folder-title-content::before {
   content: "⚠️ ";
 }
 
 .hltr-aqua {
-    background-color: var(--neutral-aqua) !important;
+  background-color: var(--neutral-aqua) !important;
 }
 .hltr-green {
-    background-color: var(--neutral-green) !important;
+  background-color: var(--neutral-green) !important;
 }
 /* Add new classes while keeping old ones for compatibility */
 .hltr-olive {
-    background-color: var(--neutral-green) !important;
+  background-color: var(--neutral-green) !important;
 }
-.nav-folder-title[data-path^='comphy-lab.github.io'] {
-  background-color: #83a598;  /* soft blue for code/research */
+.nav-folder-title[data-path^="comphy-lab.github.io"] {
+  background-color: #83a598; /* soft blue for code/research */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='comphy-lab.github.io'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="comphy-lab.github.io"]
+  .nav-folder-title-content::before {
   content: "🔬 ";
 }
 
-.nav-folder-title[data-path^='Conference-club'] {
-  background-color: #8ec07c;  /* soft green for literature */
+.nav-folder-title[data-path^="Conference-club"] {
+  background-color: #8ec07c; /* soft green for literature */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Conference-club'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Conference-club"]
+  .nav-folder-title-content::before {
   content: "📚 ";
 }
 
-.nav-folder-title[data-path^='Journal-club'] {
-  background-color: #689d6a;  /* aqua - better contrast than red */
+.nav-folder-title[data-path^="Journal-club"] {
+  background-color: #689d6a; /* aqua - better contrast than red */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Journal-club'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Journal-club"] .nav-folder-title-content::before {
   content: "📝 ";
 }
 
-.nav-folder-title[data-path^='Templates'] {
-  background-color: #928374;  /* soft gray for templates */
+.nav-folder-title[data-path^="Templates"] {
+  background-color: #928374; /* soft gray for templates */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Templates'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Templates"] .nav-folder-title-content::before {
   content: "📋 ";
 }
 
-.nav-folder-title[data-path^='1-Projects'] {
-  background-color: #83a598;  /* soft blue */
+.nav-folder-title[data-path^="1-Projects"] {
+  background-color: #83a598; /* soft blue */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='1-Projects'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="1-Projects"] .nav-folder-title-content::before {
   content: "🎯 ";
 }
 
-.nav-folder-title[data-path^='2-Areas'] {
-  background-color: #8ec07c;  /* soft green */
+.nav-folder-title[data-path^="2-Areas"] {
+  background-color: #8ec07c; /* soft green */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='2-Areas'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="2-Areas"] .nav-folder-title-content::before {
   content: "📝 ";
 }
 
@@ -1111,18 +1219,42 @@ ul ul ul li:not(.task-list-item)::before {
   width: 2rem;
 }
 /** ________ 2.2.5 Image file navigation icon -- https://discord.com/channels/686053708261228577/702656734631821413/866399284437843978 */
-.nav-file-title[data-path$="jpg"] .nav-file-title-content:before { content: "🌄 "; }
-.nav-file-title[data-path$="pdf"] .nav-file-title-content:before { content: "📜️ "; }
-.nav-file-title[data-path$="docx"] .nav-file-title-content:before { content: "✏️ "; }
-.nav-file-title[data-path$="mp4"] .nav-file-title-content:before { content: "🎥️ "; }
-.nav-file-title[data-path$="webm"] .nav-file-title-content:before { content: "🎥️ "; }
-.nav-file-title[data-path$="mkv"] .nav-file-title-content:before { content: "🎥️ "; }
-.nav-file-title[data-path$="png"] .nav-file-title-content:before { content: "🎨 "; }
-.nav-file-title[data-path$="canvas"] .nav-file-title-content:before { content: "🎨 "; }
-.nav-file-title[data-path$="css"] .nav-file-title-content:before { content: "🎨 "; }
-.nav-file-title[data-path$="sty"] .nav-file-title-content:before { content: "⚙️ "; }
-.nav-file-title[data-path$="csv"] .nav-file-title-content:before { content: "📊️ "; }
-.nav-file-title[data-path$="ico"] .nav-file-title-content:before { content: "ℹ️ "; }
+.nav-file-title[data-path$="jpg"] .nav-file-title-content:before {
+  content: "🌄 ";
+}
+.nav-file-title[data-path$="pdf"] .nav-file-title-content:before {
+  content: "📜️ ";
+}
+.nav-file-title[data-path$="docx"] .nav-file-title-content:before {
+  content: "✏️ ";
+}
+.nav-file-title[data-path$="mp4"] .nav-file-title-content:before {
+  content: "🎥️ ";
+}
+.nav-file-title[data-path$="webm"] .nav-file-title-content:before {
+  content: "🎥️ ";
+}
+.nav-file-title[data-path$="mkv"] .nav-file-title-content:before {
+  content: "🎥️ ";
+}
+.nav-file-title[data-path$="png"] .nav-file-title-content:before {
+  content: "🎨 ";
+}
+.nav-file-title[data-path$="canvas"] .nav-file-title-content:before {
+  content: "🎨 ";
+}
+.nav-file-title[data-path$="css"] .nav-file-title-content:before {
+  content: "🎨 ";
+}
+.nav-file-title[data-path$="sty"] .nav-file-title-content:before {
+  content: "⚙️ ";
+}
+.nav-file-title[data-path$="csv"] .nav-file-title-content:before {
+  content: "📊️ ";
+}
+.nav-file-title[data-path$="ico"] .nav-file-title-content:before {
+  content: "ℹ️ ";
+}
 
 /** ____ 2.3 Clutter Free Mode */
 /** ______ 2.3.1 Make subtler folding gutter arrows -- https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/10 */
@@ -1241,7 +1373,9 @@ div:not(.CodeMirror-activeline)
 }
 /** ______ 2.4.3 Stylish Block Quotes -- https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/39 */
 blockquote:before {
-  font: 14px/20px italic Times, serif;
+  font:
+    14px/20px italic Times,
+    serif;
   content: "";
   color: var(--faded-purple);
   font-size: 3em;
@@ -1320,7 +1454,6 @@ sub {
   transform: scale(2);
 }
 
-
 /** ____ 2.9 [[Link]] Modification */
 /** ______ 2.9.1 Bigger Link Hover Popup Preview -- https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/175 */
 .popover.hover-popover {
@@ -1369,7 +1502,6 @@ sub {
 }
 #calendar-container .year {
   color: var(--bright-orange);
-
 }
 #calendar-container [data-emoji-tag]::after {
   content: attr(data-emoji-tag);
@@ -1526,6 +1658,43 @@ table tr td:last-child {
 #sponsors,
 #patrons {
   width: 50%;
+}
+
+/** ________ 2.14.3 Theme-Aware Table Styling for Better Contrast */
+/* Light theme table styling - override any inline styles */
+.theme-light table tr:nth-child(2n) {
+  background-color: #f5f5f0 !important; /* Light gray for alternating rows */
+}
+
+.theme-light table tr {
+  background-color: #ffffff !important; /* White for regular rows */
+}
+
+.theme-light table tr th,
+.theme-light table tr td {
+  background-color: transparent !important;
+  color: var(--text-normal) !important;
+  border: 1px solid #cccccc !important;
+}
+
+.theme-light table tr th {
+  font-weight: var(--bold-weight) !important;
+  background-color: #e8e8e8 !important; /* Slightly darker for headers */
+}
+
+/* Ensure dark theme keeps proper styling with !important to override inline styles */
+.theme-dark table tr:nth-child(2n) {
+  background-color: var(--dark1) !important;
+}
+
+.theme-dark table tr {
+  background-color: transparent !important;
+}
+
+.theme-dark table tr th,
+.theme-dark table tr td {
+  background-color: transparent !important;
+  color: var(--text-normal) !important;
 }
 /** ________ 2.14.3 Numbered Table Rows-- https://discord.com/channels/686053708261228577/707816848615407697/832558496892846080 */
 .table-view-table {
@@ -1711,7 +1880,9 @@ pre.language-git::before {
 /** ________ 2.15.5 Rounded Edges of Inline Code blocks https://discord.com/channels/686053708261228577/702656734631821413/822181163639767081 */
 /* set text and colour of codeblock */
 .cm-s-obsidian
-  span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(.obsidian-search-match-highlight) {
+  span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(
+    .obsidian-search-match-highlight
+  ) {
   color: inherit;
   background-color: var(--background-secondary);
   padding: 2px 4px;
@@ -1736,35 +1907,35 @@ span.cm-inline-code + span.cm-formatting.cm-formatting-code.cm-inline-code {
 }
 
 /** Folder colors Source: https://gist.github.com/Larandar/e025313d086b75ec1f9a2e6672836883 */
-.nav-folder-title[data-path^='Log'] {
+.nav-folder-title[data-path^="Log"] {
   background-color: var(--durham-purple);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Journal'] {
+.nav-folder-title[data-path^="Journal"] {
   background-color: var(--durham-purple);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Sterkere'] {
+.nav-folder-title[data-path^="Sterkere"] {
   background-color: var(--durham-purple);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Templates'] {
+.nav-folder-title[data-path^="Templates"] {
   background-color: var(--neutral-orange);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='DevLog'] {
+.nav-folder-title[data-path^="DevLog"] {
   background-color: var(--neutral-yellow);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='CRM'] {
+.nav-folder-title[data-path^="CRM"] {
   background-color: var(--neutral-green);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Inbox'] {
+.nav-folder-title[data-path^="Inbox"] {
   background-color: var(--neutral-aqua);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Z'] {
+.nav-folder-title[data-path^="Z"] {
   background-color: var(--neutral-aqua);
   color: var(--background-primary);
 }
@@ -1780,31 +1951,32 @@ span.cm-inline-code + span.cm-formatting.cm-formatting-code.cm-inline-code {
   background-color: var(--neutral-blue);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Media'] {
+.nav-folder-title[data-path^="Media"] {
   background-color: var(--neutral-blue);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Notes'] {
+.nav-folder-title[data-path^="Notes"] {
   background-color: var(--neutral-purple);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Readwise'] {
+.nav-folder-title[data-path^="Readwise"] {
   background-color: var(--neutral-purple);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Utility'] {
+.nav-folder-title[data-path^="Utility"] {
   background-color: var(--gray);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Projects'] {
-  background-color: var(--bright-blue);  /* or --neutral-aqua or --faded-yellow */
+.nav-folder-title[data-path^="Projects"] {
+  background-color: var(
+    --bright-blue
+  ); /* or --neutral-aqua or --faded-yellow */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='otv'] {
-  background-color: var(--b8bb26);  /* or --neutral-aqua or --faded-yellow */
+.nav-folder-title[data-path^="otv"] {
+  background-color: var(--b8bb26); /* or --neutral-aqua or --faded-yellow */
   color: var(--background-primary);
 }
-
 
 /** Alternative File Tree Styling */
 
@@ -1828,7 +2000,6 @@ div.oz-folder-contents {
   color: var(--interactive-accent) !important;
 }
 
-
 /** Make stars from Prominant Star Plugin Yellow */
 .lucide-bookmark {
   color: var(--neutral-blue);
@@ -1837,7 +2008,9 @@ div.oz-folder-contents {
 .lucide-hash {
   color: var(--neutral-orange);
 }
-.lucide-search, .lucide-git-fork, .lucide-file {
+.lucide-search,
+.lucide-git-fork,
+.lucide-file {
   color: var(--light1);
 }
 .lucide-folder-closed {
@@ -1850,12 +2023,13 @@ div.oz-folder-contents {
   color: var(--bright-red);
 }
 
-.svg-icon.sidebar-left, .svg-icon.sidebar-right  {
+.svg-icon.sidebar-left,
+.svg-icon.sidebar-right {
   color: var(--bright-aqua);
 }
 
 /* Apply consistent font weights to sidebar elements */
-.nav-file-title-content, 
+.nav-file-title-content,
 .nav-folder-title-content {
   font-size: 14px !important;
   font-family: var(--custom-font) !important;
@@ -1863,8 +2037,8 @@ div.oz-folder-contents {
 }
 
 /* Apply consistent font weights to settings and other UI elements */
-.setting-item, 
-.modal, 
+.setting-item,
+.modal,
 .suggestion-item,
 .menu,
 .dropdown,
@@ -1961,12 +2135,12 @@ a.tag:hover {
 }
 
 /* Special styling for important folders using accent color */
-.nav-folder-title[data-path^='Projects'] {
+.nav-folder-title[data-path^="Projects"] {
   background-color: var(--accent-purple);
   color: var(--background-primary);
 }
 
-.nav-folder-title[data-path^='Projects'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Projects"] .nav-folder-title-content::before {
   content: "🚀 ";
   font-size: 1.3em;
 }
@@ -2015,7 +2189,7 @@ blockquote {
 }
 
 /* Add additional styling for sidebar icons and buttons */
-.side-dock-ribbon-action, 
+.side-dock-ribbon-action,
 .view-action,
 .workspace-ribbon-collapse-btn,
 .workspace-tab-header-inner-icon,
@@ -2024,10 +2198,12 @@ blockquote {
 .nav-action-button,
 button.mod-refresh {
   color: var(--text-muted);
-  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transition:
+    color 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
 }
 
-.side-dock-ribbon-action:hover, 
+.side-dock-ribbon-action:hover,
 .view-action:hover,
 .workspace-ribbon-collapse-btn:hover,
 .workspace-tab-header-inner-icon:hover,
@@ -2189,61 +2365,75 @@ button.note-companion-button:hover,
  *---------------------------------*/
 
 /* Parent folder */
-.nav-folder-title[data-path^='conference-and-journal-club'] {
-  background-color: var(--gray);  /* soft gray */
+.nav-folder-title[data-path^="conference-and-journal-club"] {
+  background-color: var(--gray); /* soft gray */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='conference-and-journal-club'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="conference-and-journal-club"]
+  .nav-folder-title-content::before {
   content: "🎯 ";
 }
 
 /* Conference club subfolder */
-.nav-folder-title[data-path='conference-and-journal-club/conference-club'] {
-  background-color: #8ec07c !important;  /* bright-aqua */
+.nav-folder-title[data-path="conference-and-journal-club/conference-club"] {
+  background-color: #8ec07c !important; /* bright-aqua */
   color: var(--background-primary) !important;
 }
-.nav-folder-title[data-path^='conference-and-journal-club/conference-club'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="conference-and-journal-club/conference-club"]
+  .nav-folder-title-content::before {
   content: "🎤 ";
 }
 
 /* Conference club sub-folders - make them match the parent folder */
-.nav-folder-title[data-path^='conference-and-journal-club/conference-club/'] {
-  background-color: #8ec07c !important;  /* bright-aqua */
+.nav-folder-title[data-path^="conference-and-journal-club/conference-club/"] {
+  background-color: #8ec07c !important; /* bright-aqua */
   color: var(--background-primary) !important;
 }
-.nav-folder-title[data-path^='conference-and-journal-club/conference-club/'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="conference-and-journal-club/conference-club/"]
+  .nav-folder-title-content::before {
   content: "🎤 ";
 }
 
 /* Journal club subfolder */
-.nav-folder-title[data-path='conference-and-journal-club/journal-club'] {
-  background-color: #fe8019 !important;  /* bright-orange */
+.nav-folder-title[data-path="conference-and-journal-club/journal-club"] {
+  background-color: #fe8019 !important; /* bright-orange */
   color: var(--background-primary) !important;
 }
-.nav-folder-title[data-path^='conference-and-journal-club/journal-club'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="conference-and-journal-club/journal-club"]
+  .nav-folder-title-content::before {
   content: "📚 ";
 }
 
 /* Journal club sub-folders - make them match the parent folder */
-.nav-folder-title[data-path^='conference-and-journal-club/journal-club/'] {
-  background-color: #fe8019 !important;  /* bright-orange */
+.nav-folder-title[data-path^="conference-and-journal-club/journal-club/"] {
+  background-color: #fe8019 !important; /* bright-orange */
   color: var(--background-primary) !important;
 }
-.nav-folder-title[data-path^='conference-and-journal-club/journal-club/'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="conference-and-journal-club/journal-club/"]
+  .nav-folder-title-content::before {
   content: "📚 ";
 }
 
 /* Fix dropdown arrows for colored folders (especially green and orange) */
-.nav-folder-title[data-path^='conference-and-journal-club/conference-club'] .nav-folder-collapse-indicator svg path,
-.nav-folder-title[data-path^='conference-and-journal-club/journal-club'] .nav-folder-collapse-indicator svg path,
-.nav-folder-title[style*="background-color"] .nav-folder-collapse-indicator svg path {
+.nav-folder-title[data-path^="conference-and-journal-club/conference-club"]
+  .nav-folder-collapse-indicator
+  svg
+  path,
+.nav-folder-title[data-path^="conference-and-journal-club/journal-club"]
+  .nav-folder-collapse-indicator
+  svg
+  path,
+.nav-folder-title[style*="background-color"]
+  .nav-folder-collapse-indicator
+  svg
+  path {
   fill: var(--background-primary) !important;
   stroke: var(--background-primary) !important;
 }
 
 /* Default style for other subfolders */
-.nav-folder-title[data-path^='conference-and-journal-club/'] {
-  background-color: var(--gray);  /* soft gray */
+.nav-folder-title[data-path^="conference-and-journal-club/"] {
+  background-color: var(--gray); /* soft gray */
   color: var(--background-primary);
 }
 
@@ -2277,7 +2467,9 @@ div.oz-folder-contents {
 .lucide-hash {
   color: var(--neutral-orange);
 }
-.lucide-search, .lucide-git-fork, .lucide-file {
+.lucide-search,
+.lucide-git-fork,
+.lucide-file {
   color: var(--light1);
 }
 .lucide-folder-closed {
@@ -2290,389 +2482,417 @@ div.oz-folder-contents {
   color: var(--bright-red);
 }
 
-.svg-icon.sidebar-left, .svg-icon.sidebar-right  {
+.svg-icon.sidebar-left,
+.svg-icon.sidebar-right {
   color: var(--bright-aqua);
 }
 
 /** Folder Colors and Emojis */
-.nav-folder-title[data-path^='_AtomicNotes'] {
-  background-color: #83a598;  /* soft blue */
+.nav-folder-title[data-path^="_AtomicNotes"] {
+  background-color: #83a598; /* soft blue */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_AtomicNotes'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_AtomicNotes"] .nav-folder-title-content::before {
   content: "📝 ";
 }
-.nav-folder-title[data-path^='_Inbox'] {
-  background-color: #928374;  /* soft gray */
+.nav-folder-title[data-path^="_Inbox"] {
+  background-color: #928374; /* soft gray */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_Inbox'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_Inbox"] .nav-folder-title-content::before {
   content: "📥 ";
 }
 
-.nav-folder-title[data-path^='_Media'] {
-  background-color: #d3869b;  /* soft pink */
+.nav-folder-title[data-path^="_Media"] {
+  background-color: #d3869b; /* soft pink */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_Media'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_Media"] .nav-folder-title-content::before {
   content: "📸 ";
 }
 
-.nav-folder-title[data-path^='_TODO'] {
-  background-color: #8ec07c;  /* soft green */
+.nav-folder-title[data-path^="_TODO"] {
+  background-color: #8ec07c; /* soft green */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_TODO'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_TODO"] .nav-folder-title-content::before {
   content: "✅ ";
 }
 
-.nav-folder-title[data-path^='Clippings'] {
-  background-color: #b8bb26;  /* soft yellow */
+.nav-folder-title[data-path^="Clippings"] {
+  background-color: #b8bb26; /* soft yellow */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Clippings'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Clippings"] .nav-folder-title-content::before {
   content: "✂️ ";
 }
 
-.nav-folder-title[data-path^='Projects'] {
-  background-color: #83a598;  /* soft blue */
+.nav-folder-title[data-path^="Projects"] {
+  background-color: #83a598; /* soft blue */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Projects'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Projects"] .nav-folder-title-content::before {
   content: "🎯 ";
 }
 
-.nav-folder-title[data-path^='Resources-Literature'] {
-  background-color: #d79921;  /* muted orange */
+.nav-folder-title[data-path^="Resources-Literature"] {
+  background-color: #d79921; /* muted orange */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Resources-Literature'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Resources-Literature"]
+  .nav-folder-title-content::before {
   content: "📚 ";
 }
 
-.nav-folder-title[data-path^='Resources-non-research'] {
-  background-color: #98971a;  /* muted green */
+.nav-folder-title[data-path^="Resources-non-research"] {
+  background-color: #98971a; /* muted green */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Resources-non-research'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Resources-non-research"]
+  .nav-folder-title-content::before {
   content: "📝 ";
 }
 
-.nav-folder-title[data-path^='Resources-research'] {
-  background-color: #689d6a;  /* aqua */
+.nav-folder-title[data-path^="Resources-research"] {
+  background-color: #689d6a; /* aqua */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Resources-research'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Resources-research"]
+  .nav-folder-title-content::before {
   content: "🔬 ";
 }
 
-.nav-folder-title[data-path^='Templates'] {
+.nav-folder-title[data-path^="Templates"] {
   background-color: var(--neutral-orange);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Templates'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Templates"] .nav-folder-title-content::before {
   content: "📋 ";
 }
 
-.nav-folder-title[data-path^='Z_Archive'] {
-  background-color: #7c6f64;  /* soft brown */
+.nav-folder-title[data-path^="Z_Archive"] {
+  background-color: #7c6f64; /* soft brown */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Z_Archive'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Z_Archive"] .nav-folder-title-content::before {
   content: "📦 ";
 }
 
 /* FileOrganizer2000 Main Folder */
-.nav-folder-title[data-path^='_FO2K'] {
-  background-color: #83a598;  /* soft blue */
+.nav-folder-title[data-path^="_FO2K"] {
+  background-color: #83a598; /* soft blue */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FO2K'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FO2K"] .nav-folder-title-content::before {
   content: "🗂️ ";
 }
 
-.nav-folder-title[data-path^='_FO2K/Inbox'] {
-  background-color: #d79921;  /* muted orange */
+.nav-folder-title[data-path^="_FO2K/Inbox"] {
+  background-color: #d79921; /* muted orange */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FO2K/Inbox'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FO2K/Inbox"] .nav-folder-title-content::before {
   content: "📥 ";
 }
 
-.nav-folder-title[data-path^='_FO2K/Media'] {
-  background-color: #d3869b;  /* soft pink */
+.nav-folder-title[data-path^="_FO2K/Media"] {
+  background-color: #d3869b; /* soft pink */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FO2K/Media'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FO2K/Media"] .nav-folder-title-content::before {
   content: "📸 ";
 }
 
-.nav-folder-title[data-path^='_FO2K/Processed'] {
-  background-color: #8ec07c;  /* soft green */
+.nav-folder-title[data-path^="_FO2K/Processed"] {
+  background-color: #8ec07c; /* soft green */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FO2K/Processed'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FO2K/Processed"]
+  .nav-folder-title-content::before {
   content: "✅ ";
 }
 
-.nav-folder-title[data-path^='_FO2K/Templates'] {
+.nav-folder-title[data-path^="_FO2K/Templates"] {
   background-color: var(--neutral-orange);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FO2K/Templates'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FO2K/Templates"]
+  .nav-folder-title-content::before {
   content: "📋 ";
 }
 
-.nav-folder-title[data-path^='_FO2K/Logs'] {
-  background-color: #928374;  /* soft gray */
+.nav-folder-title[data-path^="_FO2K/Logs"] {
+  background-color: #928374; /* soft gray */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FO2K/Logs'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FO2K/Logs"] .nav-folder-title-content::before {
   content: "📊 ";
 }
 
-.nav-folder-title[data-path^='_FO2K/Backups'] {
-  background-color: #7c6f64;  /* soft brown */
+.nav-folder-title[data-path^="_FO2K/Backups"] {
+  background-color: #7c6f64; /* soft brown */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FO2K/Backups'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FO2K/Backups"]
+  .nav-folder-title-content::before {
   content: "💾 ";
 }
 
-.nav-folder-title[data-path^='_FO2K/Fabric'] {
-  background-color: #98971a;  /* muted green */
+.nav-folder-title[data-path^="_FO2K/Fabric"] {
+  background-color: #98971a; /* muted green */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FO2K/Fabric'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FO2K/Fabric"] .nav-folder-title-content::before {
   content: "🧩 ";
 }
 
-.nav-folder-title[data-path^='_FO2K/Errors'] {
-  background-color: #d65d0e;  /* soft orange */
+.nav-folder-title[data-path^="_FO2K/Errors"] {
+  background-color: #d65d0e; /* soft orange */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FO2K/Errors'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FO2K/Errors"] .nav-folder-title-content::before {
   content: "⚠️ ";
 }
 
-.nav-folder-title[data-path^='_FileOrganizer2000'] {
-  background-color: #83a598;  /* soft blue */
+.nav-folder-title[data-path^="_FileOrganizer2000"] {
+  background-color: #83a598; /* soft blue */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FileOrganizer2000'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FileOrganizer2000"]
+  .nav-folder-title-content::before {
   content: "🗂️ ";
 }
 
-.nav-folder-title[data-path^='_FileOrganizer2000/Inbox'] {
-  background-color: #d79921;  /* muted orange */
+.nav-folder-title[data-path^="_FileOrganizer2000/Inbox"] {
+  background-color: #d79921; /* muted orange */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FileOrganizer2000/Inbox'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FileOrganizer2000/Inbox"]
+  .nav-folder-title-content::before {
   content: "📥 ";
 }
 
-.nav-folder-title[data-path^='_FileOrganizer2000/Media'] {
+.nav-folder-title[data-path^="_FileOrganizer2000/Media"] {
   background-color: var(--soft-pink);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FileOrganizer2000/Media'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FileOrganizer2000/Media"]
+  .nav-folder-title-content::before {
   content: "📸 ";
 }
 
-.nav-folder-title[data-path^='_FileOrganizer2000/Processed'] {
+.nav-folder-title[data-path^="_FileOrganizer2000/Processed"] {
   background-color: var(--soft-green);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FileOrganizer2000/Processed'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FileOrganizer2000/Processed"]
+  .nav-folder-title-content::before {
   content: "✅ ";
 }
 
-.nav-folder-title[data-path^='_FileOrganizer2000/Templates'] {
+.nav-folder-title[data-path^="_FileOrganizer2000/Templates"] {
   background-color: var(--neutral-orange);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FileOrganizer2000/Templates'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FileOrganizer2000/Templates"]
+  .nav-folder-title-content::before {
   content: "📋 ";
 }
 
-.nav-folder-title[data-path^='_FileOrganizer2000/Logs'] {
+.nav-folder-title[data-path^="_FileOrganizer2000/Logs"] {
   background-color: var(--soft-gray);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FileOrganizer2000/Logs'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FileOrganizer2000/Logs"]
+  .nav-folder-title-content::before {
   content: "📊 ";
 }
 
-.nav-folder-title[data-path^='_FileOrganizer2000/Backups'] {
+.nav-folder-title[data-path^="_FileOrganizer2000/Backups"] {
   background-color: var(--soft-brown);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FileOrganizer2000/Backups'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FileOrganizer2000/Backups"]
+  .nav-folder-title-content::before {
   content: "💾 ";
 }
 
-.nav-folder-title[data-path^='_FileOrganizer2000/Fabric'] {
+.nav-folder-title[data-path^="_FileOrganizer2000/Fabric"] {
   background-color: var(--muted-green);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FileOrganizer2000/Fabric'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FileOrganizer2000/Fabric"]
+  .nav-folder-title-content::before {
   content: "🧩 ";
 }
 
-.nav-folder-title[data-path^='_FileOrganizer2000/Errors'] {
+.nav-folder-title[data-path^="_FileOrganizer2000/Errors"] {
   background-color: var(--soft-orange);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='_FileOrganizer2000/Errors'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="_FileOrganizer2000/Errors"]
+  .nav-folder-title-content::before {
   content: "⚠️ ";
 }
 
 .hltr-aqua {
-    background-color: var(--neutral-aqua) !important;
+  background-color: var(--neutral-aqua) !important;
 }
 .hltr-green {
-    background-color: var(--neutral-green) !important;
+  background-color: var(--neutral-green) !important;
 }
 /* Add new classes while keeping old ones for compatibility */
 .hltr-olive {
-    background-color: var(--neutral-green) !important;
+  background-color: var(--neutral-green) !important;
 }
-.nav-folder-title[data-path^='comphy-lab.github.io'] {
-  background-color: #83a598;  /* soft blue for code/research */
+.nav-folder-title[data-path^="comphy-lab.github.io"] {
+  background-color: #83a598; /* soft blue for code/research */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='comphy-lab.github.io'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="comphy-lab.github.io"]
+  .nav-folder-title-content::before {
   content: "🔬 ";
 }
 
-.nav-folder-title[data-path^='Conference-club'] {
-  background-color: #8ec07c;  /* soft green for literature */
+.nav-folder-title[data-path^="Conference-club"] {
+  background-color: #8ec07c; /* soft green for literature */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Conference-club'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Conference-club"]
+  .nav-folder-title-content::before {
   content: "📚 ";
 }
 
-.nav-folder-title[data-path^='Journal-club'] {
-  background-color: #689d6a;  /* aqua - better contrast than red */
+.nav-folder-title[data-path^="Journal-club"] {
+  background-color: #689d6a; /* aqua - better contrast than red */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Journal-club'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Journal-club"] .nav-folder-title-content::before {
   content: "📝 ";
 }
 
-.nav-folder-title[data-path^='Templates'] {
-  background-color: #928374;  /* soft gray for templates */
+.nav-folder-title[data-path^="Templates"] {
+  background-color: #928374; /* soft gray for templates */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Templates'] .nav-folder-title-content::before {
+.nav-folder-title[data-path^="Templates"] .nav-folder-title-content::before {
   content: "📋 ";
 }
 
 /** Folder colors Source: https://gist.github.com/Larandar/e025313d086b75ec1f9a2e6672836883 */
-.nav-folder-title[data-path^='Log'] {
+.nav-folder-title[data-path^="Log"] {
   background-color: var(--durham-purple);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Journal'] {
+.nav-folder-title[data-path^="Journal"] {
   background-color: var(--durham-purple);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Sterkere'] {
+.nav-folder-title[data-path^="Sterkere"] {
   background-color: var(--durham-purple);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Templates'] {
+.nav-folder-title[data-path^="Templates"] {
   background-color: var(--neutral-orange);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='DevLog'] {
+.nav-folder-title[data-path^="DevLog"] {
   background-color: var(--neutral-yellow);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='CRM'] {
+.nav-folder-title[data-path^="CRM"] {
   background-color: var(--neutral-green);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Inbox'] {
+.nav-folder-title[data-path^="Inbox"] {
   background-color: var(--neutral-aqua);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Z'] {
+.nav-folder-title[data-path^="Z"] {
   background-color: var(--neutral-aqua);
   color: var(--background-primary);
 }
 .nav-folder.mod-root
-    > .nav-folder-children
-    > .nav-folder
-    > .nav-folder-title[data-path^='People'] {
+  > .nav-folder-children
+  > .nav-folder
+  > .nav-folder-title[data-path^="People"] {
   background-color: var(--neutral-blue);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Media'] {
+.nav-folder-title[data-path^="Media"] {
   background-color: var(--neutral-blue);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Notes'] {
+.nav-folder-title[data-path^="Notes"] {
   background-color: var(--neutral-purple);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Readwise'] {
+.nav-folder-title[data-path^="Readwise"] {
   background-color: var(--neutral-purple);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Utility'] {
+.nav-folder-title[data-path^="Utility"] {
   background-color: var(--gray);
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='Projects'] {
-  background-color: var(--bright-blue);  /* or --neutral-aqua or --faded-yellow */
+.nav-folder-title[data-path^="Projects"] {
+  background-color: var(
+    --bright-blue
+  ); /* or --neutral-aqua or --faded-yellow */
   color: var(--background-primary);
 }
-.nav-folder-title[data-path^='otv'] {
-  background-color: var(--b8bb26);  /* or --neutral-aqua or --faded-yellow */
+.nav-folder-title[data-path^="otv"] {
+  background-color: var(--b8bb26); /* or --neutral-aqua or --faded-yellow */
   color: var(--background-primary);
 }
 
 /* Custom folder icons and colors for additional folders */
-.nav-folder-title[data-path^='_scripts'] {
+.nav-folder-title[data-path^="_scripts"] {
   color: #b8bb26;
 }
-.nav-folder-title[data-path^='_scripts'] .nav-folder-title-content::before {
-  content: "📜 "; font-size: 1.3em;
+.nav-folder-title[data-path^="_scripts"] .nav-folder-title-content::before {
+  content: "📜 ";
+  font-size: 1.3em;
 }
 
-.nav-folder-title[data-path^='Blog'] {
+.nav-folder-title[data-path^="Blog"] {
   color: #fabd2f;
 }
-.nav-folder-title[data-path^='Blog'] .nav-folder-title-content::before {
-  content: "✍️ "; font-size: 1.3em;
+.nav-folder-title[data-path^="Blog"] .nav-folder-title-content::before {
+  content: "✍️ ";
+  font-size: 1.3em;
 }
 
-.nav-folder-title[data-path^='Code-Documentation'] {
+.nav-folder-title[data-path^="Code-Documentation"] {
   color: #83a598;
 }
-.nav-folder-title[data-path^='Code-Documentation'] .nav-folder-title-content::before {
-  content: "📘 "; font-size: 1.3em;
+.nav-folder-title[data-path^="Code-Documentation"]
+  .nav-folder-title-content::before {
+  content: "📘 ";
+  font-size: 1.3em;
 }
 
-.nav-folder-title[data-path^='Lecture-Notes'] {
+.nav-folder-title[data-path^="Lecture-Notes"] {
   color: #d3869b;
 }
-.nav-folder-title[data-path^='Lecture-Notes'] .nav-folder-title-content::before {
-  content: "📝 "; font-size: 1.3em;
+.nav-folder-title[data-path^="Lecture-Notes"]
+  .nav-folder-title-content::before {
+  content: "📝 ";
+  font-size: 1.3em;
 }
 
-.nav-folder-title[data-path^='Talks'] {
+.nav-folder-title[data-path^="Talks"] {
   color: #fe8019;
 }
-.nav-folder-title[data-path^='Talks'] .nav-folder-title-content::before {
-  content: "🎤 "; font-size: 1.3em;
+.nav-folder-title[data-path^="Talks"] .nav-folder-title-content::before {
+  content: "🎤 ";
+  font-size: 1.3em;
 }
 
-.nav-folder-title[data-path^='Wish-List'] {
+.nav-folder-title[data-path^="Wish-List"] {
   color: #8ec07c;
 }
-.nav-folder-title[data-path^='Wish-List'] .nav-folder-title-content::before {
-  content: "✨ "; font-size: 1.3em;
+.nav-folder-title[data-path^="Wish-List"] .nav-folder-title-content::before {
+  content: "✨ ";
+  font-size: 1.3em;
 }
