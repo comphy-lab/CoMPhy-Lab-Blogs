@@ -1,8 +1,8 @@
 ---
 created: 2025-10-07T18:22:45+01:00
-modified: 2025-10-31T16:28:25+00:00
+modified: 2025-10-31T16:34:13+00:00
 publish: true
-status: Working 🏗️
+status: done ✅
 ---
 # Why Double-Network Hydrogels Don’t Shatter — and What That Teaches Us About Tough Design
 
