@@ -1,5 +1,5 @@
 ---
-modified: 2025-10-25T20:05:48+01:00
+modified: 2025-10-31T16:31:06+00:00
 created: 2024-12-15T23:25:04+01:00
 website: https://blogs-comphy-lab.org/
 status: done ✅
@@ -15,6 +15,9 @@ See: [About us](https://comphy-lab.org/about)
 
 ### Blog posts:
 #### 2025
+
+##### Double Network Hydroget:
+2025-10-31 [[2025-Why-Double-Network-Hydrogels-Dont-Shatter]]: Why double-network hydrogels combine stiffness and toughness without shattering - elastic screening mechanisms that prevent crack cascades by damping stress propagation between sacrificial bonds.
 
 ##### Scientist profiles & history:
 2025-10-24 [[2025-Emmy-Noether-Symmetry-Conservation]]: Emmy Noether's revolutionary contributions to mathematics and physics - from overcoming gender barriers in academia to discovering the profound connection between symmetry and conservation laws that now underpins all of modern physics.
