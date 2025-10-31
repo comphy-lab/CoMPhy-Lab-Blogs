@@ -140,6 +140,9 @@ where:
 - $\xi$ = mesh size of the network (typical strand spacing, 10–100 nm)
 - $k_B T$ = thermal energy (~$4.1 \times 10^{-21}\,\text{J}$ at room temperature)
 
+> [!note]
+> This relation applies specifically to semi-dilute polymer networks forming blob structures—see [[Polymer-Concentration-Regimes-and-Blob-Networks]] for details.
+
 ### Microscopic Origin: Stretching Reduces Configurations
 
 At the chain level:
