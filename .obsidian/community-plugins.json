@@ -13,7 +13,6 @@
   "darlal-switcher-plus",
   "obsidian-advanced-uri",
   "image-converter",
-  "obsidian-image-toolkit",
   "obsidian-hide-sidebars-when-narrow",
   "google-calendar",
   "obsidian-regex-replace",
@@ -39,5 +38,6 @@
   "obsidian-zotero-desktop-connector",
   "obsidian-tidy-footnotes",
   "frontmatter-modified-date",
-  "obsidian-shellcommands"
+  "obsidian-shellcommands",
+  "better-export-pdf"
 ]

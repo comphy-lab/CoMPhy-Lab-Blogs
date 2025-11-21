@@ -104,8 +104,8 @@
     },
     {
       "name": "to png",
-      "outputFormat": "ORIGINAL",
-      "quality": 85,
+      "outputFormat": "PNG",
+      "quality": 100,
       "colorDepth": 1,
       "resizeMode": "None",
       "desiredWidth": 800,
@@ -313,6 +313,7 @@
   "imageAlignment_cacheLocation": "plugin",
   "isDragResizeEnabled": true,
   "isScrollResizeEnabled": true,
+  "isDragAspectRatioLocked": false,
   "isResizeInReadingModeEnabled": false,
   "resizeSensitivity": 0.1,
   "scrollwheelModifier": "Shift",

@@ -1,6 +1,6 @@
 ---
 created: 2025-10-29T00:00:00+00:00
-modified: 2025-10-30T11:21:00+00:00
+modified: 2025-11-19T16:19:23+00:00
 tags:
   - lecture
   - soft-matter
@@ -82,10 +82,10 @@ Viscosity emerges because molecules carry momentum across planes during free fli
 ![](../../_Media/2-What-is-Viscosity-1761738283101.png)
 
 Consider a steady shear flow where:
-- Velocity varies linearly: $u_x(y) = \dot{\gamma} \cdot y$
-- Mean free path: $\lambda$
-- Mean molecular speed: $\bar{c} = \sqrt{8 k_B T / (\pi m)}$ (monatomic gas)
-- Number density: $n$
+1. Velocity varies linearly: $u_x(y) = \dot{\gamma} \cdot y$
+2. Mean free path: $\lambda$
+3. Mean molecular speed: $\bar{c} = \sqrt{8 k_B T / (\pi m)}$ (monatomic gas)
+4. Number density: $n$
 
 In this geometry, molecules at height $y$ have average $x$-velocity $u_x(y)$. But they only came to height $y$ after traveling a distance $\sim \lambda$ through the fluid. The $x$-momentum they carry reflects the conditions they saw $\sim \lambda$ away—this is where the velocity gradient matters.
 
@@ -98,8 +98,8 @@ For an isotropic gas, the number of molecules crossing a plane (per unit area pe
 $$\boxed{J = \frac{1}{4} n \bar{c}}$$
 
 This factor of 1/4 arises from two geometric considerations:
-- Half the molecules move upward and half downward (factor of 1/2)
-- Of those moving upward, the average normal component of velocity is $\bar{c}/2$ because the mean direction makes approximately a 60° angle to the normal
+1. Half the molecules move upward and half downward (factor of 1/2)
+2. Of those moving upward, the average normal component of velocity is $\bar{c}/2$ because the mean direction makes approximately a 60° angle to the normal
 
 Therefore: $\langle v_y^+ \rangle = (1/2) \times (1/2) \bar{c} = \bar{c}/4$, giving $J = n \bar{c}/4$.
 
@@ -284,13 +284,13 @@ Physical Insight: This equation is *exactly* analogous to heat diffusion or dye 
 ### Non-Newtonian Fluids
 
 The Newtonian law $\tau = \eta \dot{\gamma}$ works when:
-- The fluid has no internal structure that deforms under shear
-- Or the structure adapts quickly compared to the flow timescale
+1. The fluid has no internal structure that deforms under shear
+2. Or the structure adapts quickly compared to the flow timescale
 
 For polymer solutions, suspensions, or emulsions:
-- Microstructure (chains, particles) realigns under shear
-- Viscosity becomes a function of shear rate: $\eta(\dot{\gamma})$
-- This leads to phenomena like shear-thinning or shear-thickening
+1. Microstructure (chains, particles) realigns under shear
+2. Viscosity becomes a function of shear rate: $\eta(\dot{\gamma})$
+3. This leads to phenomena like shear-thinning or shear-thickening
 
 Today we derived why Newtonian behavior is natural for a dilute gas. Real soft-matter systems are more interesting because their microstructure evolves—that's where non-Newtonian rheology comes in.
 
@@ -300,13 +300,13 @@ Today we derived why Newtonian behavior is natural for a dilute gas. Real soft-m
 
 $$\boxed{\text{Re} = \frac{U L}{\nu}}$$
 
-- $U L$: characteristic scale of *advection* (inertial effects)
-- $\nu$: characteristic scale of *momentum diffusion* (viscous effects)
+1. $U L$: characteristic scale of *advection* (inertial effects)
+2. $\nu$: characteristic scale of *momentum diffusion* (viscous effects)
 
 Physical Interpretation:
-- High Re: Inertia dominates → turbulence, jets
-- Low Re: Viscosity dominates → creeping flow, microfluidics
-- The transition region is where rich physics emerges
+1. High Re: Inertia dominates → turbulence, jets
+2. Low Re: Viscosity dominates → creeping flow, microfluidics
+3. The transition region is where rich physics emerges
 
 ---
 

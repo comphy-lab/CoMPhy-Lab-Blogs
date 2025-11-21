@@ -1,10 +1,10 @@
 {
-  "cssTheme": "Durham gruvbox",
+  "cssTheme": "CoMPhy Gruvbox",
   "baseFontSizeAction": true,
-  "baseFontSize": 16,
-  "interfaceFontFamily": "Hack",
-  "textFontFamily": "Hack",
-  "monospaceFontFamily": "Hack",
+  "baseFontSize": 14,
+  "interfaceFontFamily": "Hack Nerd Font,CMU Serif,Hack",
+  "textFontFamily": "Hack Nerd Font,CMU Serif,Hack",
+  "monospaceFontFamily": "Hack Nerd Font,CMU Serif,Hack",
   "enabledCssSnippets": [
     "supercharged-links-gen",
     "custom-panel",

@@ -1,6 +1,66 @@
 {
   "recentFiles": [
     {
+      "basename": "2-What-is-Viscosity",
+      "path": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md"
+    },
+    {
+      "basename": "2.5-Conservation-Laws",
+      "path": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md"
+    },
+    {
+      "basename": "2.5-Conservation-Laws",
+      "path": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.pdf"
+    },
+    {
+      "basename": "2-What-is-Viscosity",
+      "path": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.pdf"
+    },
+    {
+      "basename": "2.75-Complementary-Questions-Answers",
+      "path": "Lecture-Notes/Intro-Soft-Matter/2.75-Complementary-Questions-Answers.md"
+    },
+    {
+      "basename": "2.75-Complementary-Questions-Answers",
+      "path": "Lecture-Notes/Intro-Soft-Matter/2.75-Complementary-Questions-Answers.pdf"
+    },
+    {
+      "basename": "3-Soft-Matter-Instabilities",
+      "path": "Lecture-Notes/Intro-Soft-Matter/3-Soft-Matter-Instabilities.md"
+    },
+    {
+      "basename": "4-Soft-Matter-Singularities",
+      "path": "Lecture-Notes/Intro-Soft-Matter/4-Soft-Matter-Singularities.md"
+    },
+    {
+      "basename": "1-Intro-Soft-Matter",
+      "path": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.pdf"
+    },
+    {
+      "basename": "1-Intro-Soft-Matter",
+      "path": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md"
+    },
+    {
+      "basename": "4-Soft-Matter-Singularities",
+      "path": "Lecture-Notes/Intro-Soft-Matter/4-Soft-Matter-Singularities.pdf"
+    },
+    {
+      "basename": "3-Soft-Matter-Instabilities",
+      "path": "Lecture-Notes/Intro-Soft-Matter/3-Soft-Matter-Instabilities.pdf"
+    },
+    {
+      "basename": "Dupre-Rayleigh-paradox",
+      "path": "Lecture-Notes/Intro-Soft-Matter/Dupre-Rayleigh-paradox.pdf"
+    },
+    {
+      "basename": "1.75-Complementary-Questions-Answers",
+      "path": "Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.md"
+    },
+    {
+      "basename": "1.5-Taylor-Culick-Paradox",
+      "path": "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md"
+    },
+    {
       "basename": "2025-Curvature-Inversion-in-Laser‑Struck-Droplets",
       "path": "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md"
     },
@@ -17,52 +77,12 @@
       "path": "_AtomicNotes/Polymer-Concentration-Regimes-and-Blob-Networks.md"
     },
     {
-      "basename": "1-Intro-Soft-Matter",
-      "path": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md"
-    },
-    {
-      "basename": "3-Soft-Matter-Instabilities",
-      "path": "Lecture-Notes/Intro-Soft-Matter/3-Soft-Matter-Instabilities.md"
-    },
-    {
       "basename": "0-README",
       "path": "Lecture-Notes/Intro-Soft-Matter/0-README.md"
     },
     {
-      "basename": "3-Soft-Matter-Instabilities",
-      "path": "Lecture-Notes/Intro-Soft-Matter/3-Soft-Matter-Instabilities.pdf"
-    },
-    {
-      "basename": "2.5-Conservation-Laws",
-      "path": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md"
-    },
-    {
-      "basename": "2.5-Conservation-Laws",
-      "path": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.pdf"
-    },
-    {
-      "basename": "2-What-is-Viscosity",
-      "path": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md"
-    },
-    {
-      "basename": "1-Intro-Soft-Matter",
-      "path": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.pdf"
-    },
-    {
-      "basename": "1.5-Taylor-Culick-Paradox",
-      "path": "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md"
-    },
-    {
       "basename": "1.75-Complementary-Questions-Answers",
       "path": "Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.pdf"
-    },
-    {
-      "basename": "1.75-Complementary-Questions-Answers",
-      "path": "Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.md"
-    },
-    {
-      "basename": "2-What-is-Viscosity",
-      "path": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.pdf"
     },
     {
       "basename": "1.5-Taylor-Culick-Paradox",
@@ -179,26 +199,6 @@
     {
       "basename": "Dyadic-conversion",
       "path": "_AtomicNotes/Dyadic-conversion.md"
-    },
-    {
-      "basename": "Continuum-Mechanics-Integral-Formulation",
-      "path": "_AtomicNotes/Continuum-Mechanics-Integral-Formulation.md"
-    },
-    {
-      "basename": "Coarse-graining-momentum-to-Cauchy",
-      "path": "_AtomicNotes/Coarse-graining-momentum-to-Cauchy.md"
-    },
-    {
-      "basename": "2025-Herschel–Bulkley-formulation",
-      "path": "Code-Documentations/2025-Herschel–Bulkley-formulation.pdf"
-    },
-    {
-      "basename": "Seminar-UIUC-abstract",
-      "path": "Talks/Seminar-UIUC-abstract.md"
-    },
-    {
-      "basename": "Seminar-Durham-abstract",
-      "path": "Talks/Seminar-Durham-abstract.md"
     }
   ],
   "omittedPaths": [],

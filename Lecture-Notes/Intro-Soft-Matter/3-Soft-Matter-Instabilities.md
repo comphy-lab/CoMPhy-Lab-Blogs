@@ -1,6 +1,6 @@
 ---
 created: 2025-10-14T10:00:00+01:00
-modified: 2025-10-30T22:39:00+00:00
+modified: 2025-11-19T15:57:39+00:00
 tags:
   - lecture
   - soft-matter
@@ -17,7 +17,8 @@ publish: true
 > [Download PDF](./3-Soft-Matter-Instabilities.pdf)
 <!-- PDF-EXPORT-IGNORE-END -->
 
-## Lecture 3 — Soft‑matter instabilities
+# Lecture 3 — 
+# Soft‑matter instabilities
 
 ### 0) Why talk about instability?
 
@@ -57,6 +58,7 @@ In words of James Clerk Maxwell
 
 ---
 
+##
 ### 3) Core examples you can recognize in the lab
 
 #### (i) Rayleigh–Plateau (cylindrical thread → droplets)
@@ -152,8 +154,8 @@ Mechanism. A falling viscous thread buckles and coils from a balance of gravity,
 ### 4) How to “predict” without doing heavy math
 
 
-- Force balance & scales. Ask which pair of effects compete: inertia vs capillarity (Weber number), viscous vs capillarity (capillary number), inertia vs viscosity (Reynolds number), gravity vs capillarity (Bond number), elasticity vs capillarity (elastocapillary mumber) or inertia in soft materials (elasticity number). These dimensionless groups flag likely instabilities and the direction of selection.
-- Dispersion‑curve picture (qualitative). Most interfacial problems have a “bell‑shaped” growth‑rate vs wavelength: short waves stabilized by surface tension/viscosity, long waves limited by the finite driving (e.g. pressure or gravity). The peak sets the emergent spacing observed in your videos/demos. (Keep this as a mental model.)
+1. Force balance & scales. Ask which pair of effects compete: inertia vs capillarity (Weber number), viscous vs capillarity (capillary number), inertia vs viscosity (Reynolds number), gravity vs capillarity (Bond number), elasticity vs capillarity (elastocapillary mumber) or inertia in soft materials (elasticity number). These dimensionless groups flag likely instabilities and the direction of selection.
+2. Dispersion‑curve picture (qualitative). Most interfacial problems have a “bell‑shaped” growth‑rate vs wavelength: short waves stabilized by surface tension/viscosity, long waves limited by the finite driving (e.g. pressure or gravity). The peak sets the emergent spacing observed in your videos/demos. (Keep this as a mental model.)
 
 ![](../../_Media/3-Soft-Matter-Instabilities-1761860668972.png)
 Sketch of the interfacial instabilities discussed in F. Gallaire & P-T. Brun, Philos. Trans. R. Soc. A, 375:2093, 20160155 (2017). DOI: [10.1098/rsta.2016.0155](https://doi.org/10.1098/rsta.2016.0155)
