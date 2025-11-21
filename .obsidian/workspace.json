@@ -4,17 +4,31 @@
     "type": "split",
     "children": [
       {
-        "id": "8199d4562eba6cd1",
+        "id": "4956204de29aae26",
         "type": "tabs",
         "children": [
           {
-            "id": "43463d45a8f8181f",
+            "id": "abfe06e716681d10",
             "type": "leaf",
             "state": {
-              "type": "home-tab-view",
-              "state": {},
-              "icon": "search",
-              "title": "Home tab"
+              "type": "markdown",
+              "state": {
+                "file": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md",
+                "mode": "source",
+                "source": true,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "2-What-is-Viscosity"
             }
           }
         ]
@@ -100,12 +114,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of 2-What-is-Viscosity"
             }
           },
           {
@@ -208,35 +223,42 @@
       "obsidian-shellcommands:Shell commands: Custom variables": false
     }
   },
-  "active": "43463d45a8f8181f",
+  "active": "abfe06e716681d10",
   "lastOpenFiles": [
+    "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md",
+    "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.pdf",
+    "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.pdf",
+    "Lecture-Notes/Intro-Soft-Matter/2.75-Complementary-Questions-Answers.md",
+    "Lecture-Notes/Intro-Soft-Matter/2.75-Complementary-Questions-Answers.pdf",
+    "Lecture-Notes/Intro-Soft-Matter/3-Soft-Matter-Instabilities.md",
+    "Lecture-Notes/Intro-Soft-Matter/4-Soft-Matter-Singularities.md",
+    "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.pdf",
+    "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
+    "Lecture-Notes/Intro-Soft-Matter/4-Soft-Matter-Singularities.pdf",
+    "Lecture-Notes/Intro-Soft-Matter/3-Soft-Matter-Instabilities.pdf",
+    "Lecture-Notes/Intro-Soft-Matter/4-Soft-Matter-Singularities.pdf.sb-61a4cf4e-bqXZNO",
+    "_Media/4-Soft-Matter-Singularities-1763535973289.png.tmp$$",
+    "_Media/4-Soft-Matter-Singularities-1762960099435.png.tmp$$",
+    "_Media/4-Soft-Matter-Singularities-1762960099435.ai",
+    "_Media/4-Soft-Matter-Singularities-1763559996509.png",
+    "_Media/4-Soft-Matter-Singularities-1763559996509.jpg",
+    "_Media/saliva-thread.jpg.md",
+    "_Media/4-Soft-Matter-Singularities-1763537416977.png",
+    "_Media/4-Soft-Matter-Singularities-1763537371241.png",
+    "_Media/4-Soft-Matter-Singularities-1763537342994.png",
+    "_Media/4-Soft-Matter-Singularities-1763535973289.png",
+    "_Media/4-Soft-Matter-Singularities-1762960099435.png",
+    "_Media/4-Soft-Matter-Singularities-1762960060765.png",
+    "_Media/4-Soft-Matter-Singularities-1762960047460.png",
+    "_Media/4-Soft-Matter-Singularities-1762960022513.png",
+    "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md",
+    "Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.md",
+    "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md",
     "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md",
     "Blog/2025-Why-Double‑Network-Hydrogels-Dont-Shatter.md",
     "0_README.md",
     "_AtomicNotes/Polymer-Concentration-Regimes-and-Blob-Networks.md",
-    "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
-    "Lecture-Notes/Intro-Soft-Matter/3-Soft-Matter-Instabilities.md",
     "Lecture-Notes/Intro-Soft-Matter/0-README.md",
-    "_Media/3-Soft-Matter-Instabilities-1761860668972.png",
-    "Lecture-Notes/Intro-Soft-Matter/3-Soft-Matter-Instabilities.pdf",
-    "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md",
-    "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.pdf",
-    "_Media/Lecture3-Instabilities-1761858867911.png",
-    "_Media/Lecture3-Instabilities-1761842898138.png",
-    "_Media/Lecture3-Instabilities-1761842685134.png",
-    "_Media/Lecture3-Instabilities-1761842644321.png",
-    "_Media/Lecture3-Instabilities-1761842604089.png",
-    "_Media/Lecture3-Instabilities-1761842080703.png",
-    "_Media/Lecture3-Instabilities-1761842034192.png",
-    "_Media/Lecture3-Instabilities-1761841962795.png",
-    "_Media/Lecture3-Instabilities-1761841931414.png",
-    "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md",
-    "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.pdf",
-    "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md",
-    "Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.pdf",
-    "Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.md",
-    "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.pdf",
-    "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.pdf",
     "Lecture-Notes/Basilisk101/4th-workingAssignment.md",
     "Lecture-Notes/Basilisk101/3rd-workingAssignment.md",
     "Lecture-Notes/Basilisk101/2nd-workingAssignment.md",
@@ -248,14 +270,6 @@
     "Blog/2025-Thesis-Viscous-Free-Surface-Flows.md",
     "Blog/2025-Stokes-waves-arbitary-order.md",
     "Blog/2025-JFM-viscous-drop-impact.md",
-    "Blog/2025-JFM-Viscoelatic-Worthington-jets.md",
-    "Blog/2025-James-G-Oldroyd.md",
-    "Blog/2025-History-Worthington-jets-from-bursting-bubbles.md",
-    "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md",
-    "Code-Documentations/2025-Herschel–Bulkley-formulation.pdf",
-    "_Media/StokesFirstProblem.pdf",
-    "Lecture-Notes/Intro-Soft-Matter/whatIsViscosity.pdf",
-    "Lecture-Notes/Intro-Soft-Matter/Dupre-Rayleigh-paradox.pdf",
     "Inbox/Untitled.canvas"
   ]
 }
