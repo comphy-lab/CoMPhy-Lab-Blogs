@@ -90,7 +90,45 @@ awk '/<div style="text-align: center;">$/{getline;if(/<iframe/)p=1;else print}/O
 sed -e '1{/^---$/!q;};1,/^---$/d' "$temp_dir/temp4.md" > "$temp_dir/temp5.md"
 
 # 7. Remove PDF export ignore blocks (PDF download links)
-sed '/<!-- PDF-EXPORT-IGNORE-START -->/,/<!-- PDF-EXPORT-IGNORE-END -->/d' "$temp_dir/temp5.md" > "$temp_dir/input.md"
+sed '/<!-- PDF-EXPORT-IGNORE-START -->/,/<!-- PDF-EXPORT-IGNORE-END -->/d' "$temp_dir/temp5.md" > "$temp_dir/temp6.md"
+
+# 8. Process Obsidian callouts
+# - Remove [!info]-, [!meta] callouts entirely (web-only content)
+# - Convert [!significance], [!note], [!tip], etc. to bold headers
+awk '
+BEGIN { in_remove = 0; in_keep = 0; title = "" }
+/^> \[!info\]/ || /^> \[!meta\]/ {
+    in_remove = 1
+    next
+}
+/^> \[!significance\]/ || /^> \[!note\]/ || /^> \[!tip\]/ || /^> \[!warning\]/ || /^> \[!important\]/ || /^> \[!tldr\]/ || /^> \[!abstract\]/ || /^> \[!summary\]/ || /^> \[!question\]/ || /^> \[!example\]/ || /^> \[!quote\]/ {
+    in_keep = 1
+    # Extract title: everything after ] and optional -
+    gsub(/^> \[![a-zA-Z]+\]-? */, "", $0)
+    title = $0
+    next
+}
+/^>/ {
+    if (in_remove) next
+    if (in_keep) {
+        content = $0
+        sub(/^> ?/, "", content)
+        if (title != "") {
+            print "**" title ":** " content
+            title = ""
+        } else {
+            print content
+        }
+        next
+    }
+}
+!/^>/ {
+    in_remove = 0
+    in_keep = 0
+    title = ""
+    print
+}
+' "$temp_dir/temp6.md" > "$temp_dir/input.md"
 
 # Change to temp directory for processing
 cd "$temp_dir"

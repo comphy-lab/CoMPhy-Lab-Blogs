@@ -68,7 +68,7 @@ See: [About us](https://comphy-lab.org/about)
 2025-06-30 [[2025-06-30_Conference-VPflow-abstract]]: VPflow conference abstract on taming singularities through yield-stress regularization in bubble-bursting, exploring how viscoplasticity suppresses Worthington jetting.
 
 ##### Seminar Presentations:
-2025-02-21 [[Seminar-Durham-abstract]]: Durham University seminar exploring polymeric flows as a tunable testbed for unsteady, nonlinear continuum mechanics.
+2025-02-21 [[Seminar-Drosophila-continuum-mechanics]]: Durham University seminar exploring polymeric flows as a tunable testbed for unsteady, nonlinear continuum mechanics.
 
 2025-01-19 [[Seminar-UIUC-abstract]]: UIUC fluid seminar investigating how polymers modify classical hydrodynamic singularities in free-surface flows.
 

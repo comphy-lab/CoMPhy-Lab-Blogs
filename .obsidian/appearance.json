@@ -1,10 +1,10 @@
 {
   "cssTheme": "CoMPhy Gruvbox",
   "baseFontSizeAction": true,
-  "baseFontSize": 14,
-  "interfaceFontFamily": "Hack Nerd Font,CMU Serif,Hack",
-  "textFontFamily": "Hack Nerd Font,CMU Serif,Hack",
-  "monospaceFontFamily": "Hack Nerd Font,CMU Serif,Hack",
+  "baseFontSize": 12,
+  "interfaceFontFamily": "CMU Serif,Hack Nerd Font,Hack",
+  "textFontFamily": "CMU Serif,Hack Nerd Font,Hack",
+  "monospaceFontFamily": "CMU Serif,Hack Nerd Font,Hack",
   "enabledCssSnippets": [
     "supercharged-links-gen",
     "custom-panel",
