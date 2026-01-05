@@ -1,16 +1,48 @@
 {
   "recentFiles": [
     {
-      "basename": "2-What-is-Viscosity",
-      "path": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md"
+      "basename": "Seminar-Singularities",
+      "path": "Talks/Seminar-Singularities.md"
+    },
+    {
+      "basename": "Seminar-Drosophila-continuum-mechanics",
+      "path": "Talks/Seminar-Drosophila-continuum-mechanics.md"
+    },
+    {
+      "basename": "Seminar-Drosophila-continuum-mechanics",
+      "path": "Talks/Seminar-Drosophila-continuum-mechanics.pdf"
+    },
+    {
+      "basename": "Seminar-Singularities",
+      "path": "Talks/Seminar-Singularities.pdf"
+    },
+    {
+      "basename": "Seminar-UIUC-abstract",
+      "path": "Talks/Seminar-UIUC-abstract.pdf"
+    },
+    {
+      "basename": "Seminar-Durham-abstract",
+      "path": "Talks/Seminar-Durham-abstract.pdf"
+    },
+    {
+      "basename": "2025-06-30_Conference-VPflow-abstract",
+      "path": "Talks/2025-06-30_Conference-VPflow-abstract.md"
+    },
+    {
+      "basename": "2.5-Conservation-Laws",
+      "path": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.pdf"
     },
     {
       "basename": "2.5-Conservation-Laws",
       "path": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md"
     },
     {
-      "basename": "2.5-Conservation-Laws",
-      "path": "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.pdf"
+      "basename": "2-What-is-Viscosity",
+      "path": "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md"
+    },
+    {
+      "basename": "1-Intro-Soft-Matter",
+      "path": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md"
     },
     {
       "basename": "2-What-is-Viscosity",
@@ -35,10 +67,6 @@
     {
       "basename": "1-Intro-Soft-Matter",
       "path": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.pdf"
-    },
-    {
-      "basename": "1-Intro-Soft-Matter",
-      "path": "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md"
     },
     {
       "basename": "4-Soft-Matter-Singularities",
@@ -171,34 +199,6 @@
     {
       "basename": "Principle-of-superposition-of-electric-fields",
       "path": "_AtomicNotes/Principle-of-superposition-of-electric-fields.md"
-    },
-    {
-      "basename": "permittivity-of-free-space",
-      "path": "_AtomicNotes/permittivity-of-free-space.md"
-    },
-    {
-      "basename": "Moving-Delta-identity",
-      "path": "_AtomicNotes/Moving-Delta-identity.md"
-    },
-    {
-      "basename": "Impulsively-started-plate",
-      "path": "_AtomicNotes/Impulsively-started-plate.md"
-    },
-    {
-      "basename": "History-of-Gauss",
-      "path": "_AtomicNotes/History-of-Gauss.md"
-    },
-    {
-      "basename": "Geometric-description-of-electric-field",
-      "path": "_AtomicNotes/Geometric-description-of-electric-field.md"
-    },
-    {
-      "basename": "Gaussian-surface-is-very-similar-to-the-control-volume-in-fluid-mechanics",
-      "path": "_AtomicNotes/Gaussian-surface-is-very-similar-to-the-control-volume-in-fluid-mechanics.md"
-    },
-    {
-      "basename": "Dyadic-conversion",
-      "path": "_AtomicNotes/Dyadic-conversion.md"
     }
   ],
   "omittedPaths": [],

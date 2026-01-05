@@ -1,5 +1,5 @@
 ---
-modified: 2025-10-07T06:44:10+01:00
+modified: 2026-01-05T17:55:43+00:00
 created: 2025-06-09T19:42:41+02:00
 ---
 # Taming singularities: yield-stress regularization in bubble-bursting 

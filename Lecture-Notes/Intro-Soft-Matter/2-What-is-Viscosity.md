@@ -1,6 +1,6 @@
 ---
 created: 2025-10-29T00:00:00+00:00
-modified: 2025-11-19T16:19:23+00:00
+modified: 2025-11-24T19:49:00-06:00
 tags:
   - lecture
   - soft-matter
