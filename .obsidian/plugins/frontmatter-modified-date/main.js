@@ -35,6 +35,7 @@ var DEFAULT_SETTINGS = {
   frontmatterProperty: "modified",
   createdDateProperty: "",
   momentFormat: "",
+  momentLocale: "",
   storeHistoryLog: false,
   historyNewestFirst: false,
   historyMaxItems: 0,
@@ -66,6 +67,14 @@ var FrontmatterModifiedSettingTab = class extends import_obsidian.PluginSettingT
     new import_obsidian.Setting(containerEl).setName("Date format").setDesc("This is in MomentJS format. Leave blank for the default ATOM format.").addText((text) => text.setPlaceholder("ATOM format").setValue(this.plugin.settings.momentFormat).onChange(async (value) => {
       this.plugin.settings.momentFormat = value;
       await this.plugin.saveSettings();
+    }));
+    new import_obsidian.Setting(containerEl).setName("Date locale").setDesc("Specify a locale format for MomentJS to use. Available locales are here: ").addText((text) => text.setPlaceholder("en").setValue(this.plugin.settings.momentLocale).onChange(async (value) => {
+      this.plugin.settings.momentLocale = value;
+      await this.plugin.saveSettings();
+      this.plugin.setLocale();
+    })).descEl.appendChild(createEl("a", {
+      text: "MomentJS locales",
+      href: "https://github.com/moment/moment/tree/develop/locale"
     }));
     new import_obsidian.Setting(containerEl).setName("Store history of all updates").setDesc(`Instead of storing only the last modified time, this will turn your "${this.plugin.settings.frontmatterProperty}" frontmatter property into a list of all of the dates/times you've edited this note.`).addToggle((toggle) => {
       toggle.setValue(this.plugin.settings.storeHistoryLog).onChange(async (value) => {
@@ -161,6 +170,7 @@ var FrontmatterModified = class extends import_obsidian3.Plugin {
   }
   async onload() {
     await this.loadSettings();
+    this.setLocale();
     this.registerEditorExtension(userChangeListenerExtension(this));
     if (!this.settings.useKeyupEvents) {
       this.registerEvent(this.app.workspace.on("editor-change", (_editor, info) => {
@@ -253,6 +263,15 @@ var FrontmatterModified = class extends import_obsidian3.Plugin {
       return output;
     }
   }
+  /**
+   * Set MomentJS locale if specified
+   */
+  setLocale() {
+    if (this.settings.momentLocale) {
+      try {
+        import_obsidian3.moment.locale(this.settings.momentLocale);
+      } catch (_) {
+      }
+    }
+  }
 };
-
-/* nosourcemap */

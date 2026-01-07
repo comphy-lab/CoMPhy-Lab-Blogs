@@ -22,16 +22,7 @@
   "showShortcuts": true,
   "markdownOnly": false,
   "unresolvedLinks": true,
-  "recentFilesStore": [
-    {
-      "filepath": "Talks/Seminar-Singularities.md",
-      "timestamp": 1767650098198
-    },
-    {
-      "filepath": "Talks/Seminar-Drosophila-continuum-mechanics.md",
-      "timestamp": 1767639932839
-    }
-  ],
+  "recentFilesStore": [],
   "bookmarkedFileStore": [],
   "searchDelay": 0,
   "replaceNewTabs": true,

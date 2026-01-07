@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "222a1df7a606a225",
+        "id": "d7bbdfe5bd0ff5b3",
         "type": "tabs",
         "children": [
           {
-            "id": "e602da0812685950",
+            "id": "3a860d7414b0cb24",
             "type": "leaf",
             "state": {
               "type": "home-tab-view",
@@ -84,7 +84,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 378.5
+    "width": 399.5
   },
   "right": {
     "id": "f94baa4cb92838bd",
@@ -208,8 +208,14 @@
       "obsidian-shellcommands:Shell commands: Custom variables": false
     }
   },
-  "active": "e602da0812685950",
+  "active": "3a860d7414b0cb24",
   "lastOpenFiles": [
+    "Talks/Seminar-Coalescence-with-Surfactants.md",
+    "Talks/Seminar-Coalescence-with-Surfactants.pdf",
+    "_Media/Seminar-Coalescence-with-Surfactants-1767795012556.png",
+    "_Media/Seminar-Coalescence-with-Surfactants-1767793883291.png",
+    "_Media/Seminar-Coalescence-with-Surfactants-1767790174851.png",
+    "_Media/Seminar-Coalescence-with-Surfactants-1767790083919.png",
     "Talks/Seminar-Singularities.md",
     "Talks/Seminar-Drosophila-continuum-mechanics.md",
     "Talks/Seminar-Drosophila-continuum-mechanics.pdf",
@@ -236,10 +242,6 @@
     "_Media/saliva-thread.jpg.md",
     "_Media/4-Soft-Matter-Singularities-1763537416977.png",
     "_Media/4-Soft-Matter-Singularities-1763537371241.png",
-    "_Media/4-Soft-Matter-Singularities-1763537342994.png",
-    "_Media/4-Soft-Matter-Singularities-1763535973289.png",
-    "_Media/4-Soft-Matter-Singularities-1762960099435.png",
-    "_Media/4-Soft-Matter-Singularities-1762960060765.png",
     "Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.md",
     "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md",
     "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md",
@@ -253,7 +255,6 @@
     "Lecture-Notes/Basilisk101/1st-workingAssignment.md",
     "Lecture-Notes/Basilisk101/1-conduction-takeaways.md",
     "Lecture-Notes/Basilisk101/0-README.md",
-    "Code-Documentations/2025-Herschel–Bulkley-formulation.md",
     "Inbox/Untitled.canvas"
   ]
 }
