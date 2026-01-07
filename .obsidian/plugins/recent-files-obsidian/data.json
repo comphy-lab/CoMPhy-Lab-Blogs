@@ -1,6 +1,14 @@
 {
   "recentFiles": [
     {
+      "basename": "Seminar-Coalescence-with-Surfactants",
+      "path": "Talks/Seminar-Coalescence-with-Surfactants.md"
+    },
+    {
+      "basename": "Seminar-Coalescence-with-Surfactants",
+      "path": "Talks/Seminar-Coalescence-with-Surfactants.pdf"
+    },
+    {
       "basename": "Seminar-Singularities",
       "path": "Talks/Seminar-Singularities.md"
     },
@@ -191,14 +199,6 @@
     {
       "basename": "Virial-identity",
       "path": "_AtomicNotes/Virial-identity.md"
-    },
-    {
-      "basename": "Relationship-between-rate-of-change-of-a-physical-quantity-and-its-divergence",
-      "path": "_AtomicNotes/Relationship-between-rate-of-change-of-a-physical-quantity-and-its-divergence.md"
-    },
-    {
-      "basename": "Principle-of-superposition-of-electric-fields",
-      "path": "_AtomicNotes/Principle-of-superposition-of-electric-fields.md"
     }
   ],
   "omittedPaths": [],
