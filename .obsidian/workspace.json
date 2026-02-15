@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "d7bbdfe5bd0ff5b3",
+        "id": "c7389fe9858c1c6e",
         "type": "tabs",
         "children": [
           {
-            "id": "3a860d7414b0cb24",
+            "id": "ef44069b87133468",
             "type": "leaf",
             "state": {
               "type": "home-tab-view",
@@ -84,7 +84,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 399.5
+    "width": 399.5,
+    "collapsed": true
   },
   "right": {
     "id": "f94baa4cb92838bd",
@@ -190,7 +191,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 440.5
+    "width": 440.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -208,8 +210,9 @@
       "obsidian-shellcommands:Shell commands: Custom variables": false
     }
   },
-  "active": "3a860d7414b0cb24",
+  "active": "ef44069b87133468",
   "lastOpenFiles": [
+    "Talks/2025-06-30_Conference-VPflow-abstract.md",
     "Talks/Seminar-Coalescence-with-Surfactants.md",
     "Talks/Seminar-Coalescence-with-Surfactants.pdf",
     "_Media/Seminar-Coalescence-with-Surfactants-1767795012556.png",
@@ -224,7 +227,6 @@
     "Talks/Seminar-UIUC-abstract.md",
     "Talks/Seminar-UIUC-abstract.pdf",
     "Talks/Seminar-Durham-abstract.pdf",
-    "Talks/2025-06-30_Conference-VPflow-abstract.md",
     "Lecture-Notes/Intro-Soft-Matter/Seminar-Singularities.pdf",
     "_Media/Seminar-Singularities-1767636732618.png",
     "_Media/Seminar-Singularities-1767636506475.png",

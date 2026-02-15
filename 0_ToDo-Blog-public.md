@@ -9,7 +9,7 @@ tags:
 
 Here is a list of things on our to-publish list:
 
-- [ ] Stokes waves and related topics 📅 2025-12-01   ^E1A6F85F-5E63-405E-9EF7-E8CC8662D3CC
+- [ ] Stokes waves and related topics 📅 2026-02-20   ^E1A6F85F-5E63-405E-9EF7-E8CC8662D3CC
 - [x] Showcase bubbles, waves: 📅 2025-01-12  ^0B681993-8C8A-49A5-93B6-83368684058E
 
 # To-Do: Blog Posts on Research Papers and Thesis
