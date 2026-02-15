@@ -22,7 +22,12 @@
   "showShortcuts": true,
   "markdownOnly": false,
   "unresolvedLinks": true,
-  "recentFilesStore": [],
+  "recentFilesStore": [
+    {
+      "filepath": "Talks/2025-06-30_Conference-VPflow-abstract.md",
+      "timestamp": 1768858415779
+    }
+  ],
   "bookmarkedFileStore": [],
   "searchDelay": 0,
   "replaceNewTabs": true,
