@@ -1,6 +1,22 @@
 {
   "recentFiles": [
     {
+      "basename": "slender-jets-VE-order-0",
+      "path": "Lecture-Notes/Slender-Jets/slender-jets-VE-order-0.md"
+    },
+    {
+      "basename": "continuity-slender-jet",
+      "path": "_AtomicNotes/continuity-slender-jet.md"
+    },
+    {
+      "basename": "Gauss-law-of-Electrostatics",
+      "path": "Lecture-Notes/Gauss-law-of-Electrostatics.md"
+    },
+    {
+      "basename": "Surface-parameterization",
+      "path": "Lecture-Notes/Surface-parameterization.md"
+    },
+    {
       "basename": "2025-06-30_Conference-VPflow-abstract",
       "path": "Talks/2025-06-30_Conference-VPflow-abstract.md"
     },
@@ -183,22 +199,6 @@
     {
       "basename": "2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence",
       "path": "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md"
-    },
-    {
-      "basename": "2025-Emmy-Noether-Symmetry-Conservation",
-      "path": "Blog/2025-Emmy-Noether-Symmetry-Conservation.md"
-    },
-    {
-      "basename": "2025-Arrowheads-in-elastoinertial-turbulence",
-      "path": "Blog/2025-Arrowheads-in-elastoinertial-turbulence.md"
-    },
-    {
-      "basename": "What-is-electric-field-flux?",
-      "path": "_AtomicNotes/What-is-electric-field-flux?.md"
-    },
-    {
-      "basename": "Virial-identity",
-      "path": "_AtomicNotes/Virial-identity.md"
     }
   ],
   "omittedPaths": [],
