@@ -1,5 +1,5 @@
 /*
- * CoMPhy Gruvbox Theme
+ * comphy-obsidian-theme
  * Generated file. Do not edit directly.
  * Source: src/theme/*.css
  */
@@ -8,7 +8,7 @@
 /* tokens.css */
 /* ========================================================================== */
 /*
- * CoMPhy Gruvbox 2.0
+ * comphy-obsidian-theme 2.0
  * Accent anchored to #68236D.
  */
 
@@ -28,7 +28,7 @@
   --accent-150: #e7d2ea;
   --accent-rgb: 104, 35, 109;
 
-  /* Supporting Gruvbox-adjacent accents */
+  /* Supporting accents */
   --support-aqua-600: #5d8f87;
   --support-aqua-500: #83a598;
   --support-aqua-400: #9bc4bf;
@@ -61,6 +61,7 @@
   --font-size-ui: 13px;
   --font-size-body: 16px;
   --font-size-code: 0.92em;
+  --math-render-scale: 1.2;
   --line-height-body: 1.6;
 
   --h1-size: 2.05rem;
@@ -587,8 +588,8 @@ a.external-link:hover {
   padding-bottom: calc(var(--space-1) + 1px);
 }
 
-.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end),
-.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end) {
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end),
+.markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-bg:not(.HyperMD-codeblock-begin, .HyperMD-codeblock-end) {
   padding-inline: var(--space-4);
 }
 
@@ -599,6 +600,14 @@ a.external-link:hover {
 
 .markdown-source-view.mod-cm6 .cm-line.HyperMD-codeblock-begin .cm-hmd-codeblock {
   color: color-mix(in srgb, var(--accent-200) 72%, var(--text-primary) 28%);
+}
+
+/* Scale rendered LaTeX math in reading and live preview views. */
+.markdown-rendered mjx-container,
+.markdown-rendered .math,
+.markdown-source-view.mod-cm6 mjx-container,
+.markdown-source-view.mod-cm6 .cm-embed-math mjx-container {
+  font-size: calc(1em * var(--math-render-scale));
 }
 
 .cm-s-obsidian span.cm-keyword,
@@ -756,6 +765,7 @@ select,
   font-variant-ligatures: none;
 }
 
+/* Keep native dropdown rendering to avoid cross-platform custom select artifacts. */
 select {
   -webkit-appearance: menulist;
   appearance: auto;
@@ -1395,6 +1405,7 @@ textarea:focus-visible {
 .workspace .mod-root .workspace-leaf.mod-active .view-content {
   --tab-outline-color: transparent;
   --tab-outline-width: 0px;
+
   border-color: transparent !important;
   outline: none !important;
   box-shadow: none !important;
@@ -1404,6 +1415,20 @@ textarea:focus-visible {
 .workspace .mod-root .workspace-leaf.mod-active:focus-visible {
   outline: none !important;
   box-shadow: none !important;
+}
+
+/* Restore subtle keyboard focus cues for pane content and editor surfaces. */
+.workspace .mod-root .workspace-leaf .workspace-leaf-content:focus-visible,
+.workspace .mod-root .workspace-leaf .markdown-reading-view:focus-visible,
+.workspace .mod-root .workspace-leaf .markdown-preview-view:focus-visible,
+.workspace .mod-root .workspace-leaf .cm-editor:focus-visible,
+.workspace .mod-root .workspace-leaf.mod-active .workspace-leaf-content:focus-visible,
+.workspace .mod-root .workspace-leaf.mod-active .markdown-reading-view:focus-visible,
+.workspace .mod-root .workspace-leaf.mod-active .markdown-preview-view:focus-visible,
+.workspace .mod-root .workspace-leaf.mod-active .cm-editor:focus-visible {
+  outline: 1px solid color-mix(in srgb, var(--focus-ring) 60%, var(--background-modifier-border) 40%) !important;
+  outline-offset: -1px;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--focus-ring) 22%, transparent) !important;
 }
 
 .nav-file-title.is-active,

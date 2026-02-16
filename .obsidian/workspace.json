@@ -4,20 +4,45 @@
     "type": "split",
     "children": [
       {
-        "id": "c7389fe9858c1c6e",
+        "id": "fc2bfef9a2499620",
         "type": "tabs",
         "children": [
           {
-            "id": "ef44069b87133468",
+            "id": "f7f018a8cca35ffb",
             "type": "leaf",
             "state": {
-              "type": "home-tab-view",
+              "type": "markdown",
+              "state": {
+                "file": "Lecture-Notes/Slender-Jets/slender-jets-VE-order-0.md",
+                "mode": "preview",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "slender-jets-VE-order-0"
+            }
+          },
+          {
+            "id": "e1a56736094c373b",
+            "type": "leaf",
+            "state": {
+              "type": "swar8080/AVAILABLE_PLUGIN_UPDATES",
               "state": {},
-              "icon": "search",
-              "title": "Home tab"
+              "icon": "lucide-file",
+              "title": "Plugin Updates"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -84,8 +109,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 399.5,
-    "collapsed": true
+    "width": 313.5
   },
   "right": {
     "id": "f94baa4cb92838bd",
@@ -101,12 +125,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Lecture-Notes/Slender-Jets/slender-jets-VE-order-0.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of slender-jets-VE-order-0"
             }
           },
           {
@@ -191,8 +216,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 440.5,
-    "collapsed": true
+    "width": 440.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -210,8 +234,19 @@
       "obsidian-shellcommands:Shell commands: Custom variables": false
     }
   },
-  "active": "ef44069b87133468",
+  "active": "e1a56736094c373b",
   "lastOpenFiles": [
+    "_AtomicNotes/continuity-slender-jet.md",
+    "Lecture-Notes/Slender-Jets/slender-jets-VE-order-0.md",
+    "_AtomicNotes/polymeric-stress-regularity-slender-jet.md",
+    "_AtomicNotes/LHS-slender-jet.md",
+    "_AtomicNotes/Laplacian-in-axisymmetric-slender-jet.md",
+    "_AtomicNotes/dynamic-BC-slender-jet.md",
+    "_AtomicNotes/r-2-parity.md",
+    "Lecture-Notes/Slender-Jets",
+    "Lecture-Notes/untitled folder",
+    "Lecture-Notes/Gauss-law-of-Electrostatics.md",
+    "Lecture-Notes/Surface-parameterization.md",
     "Talks/2025-06-30_Conference-VPflow-abstract.md",
     "Talks/Seminar-Coalescence-with-Surfactants.md",
     "Talks/Seminar-Coalescence-with-Surfactants.pdf",
@@ -234,9 +269,7 @@
     "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md",
     "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md",
     "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
-    "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.pdf",
     "Lecture-Notes/Intro-Soft-Matter/2.75-Complementary-Questions-Answers.md",
-    "Lecture-Notes/Intro-Soft-Matter/2.75-Complementary-Questions-Answers.pdf",
     "Lecture-Notes/Intro-Soft-Matter/3-Soft-Matter-Instabilities.md",
     "Lecture-Notes/Intro-Soft-Matter/4-Soft-Matter-Singularities.md",
     "_Media/4-Soft-Matter-Singularities-1763559996509.png",
@@ -249,14 +282,6 @@
     "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md",
     "Blog/2025-Why-Double‑Network-Hydrogels-Dont-Shatter.md",
     "0_README.md",
-    "_AtomicNotes/Polymer-Concentration-Regimes-and-Blob-Networks.md",
-    "Lecture-Notes/Intro-Soft-Matter/0-README.md",
-    "Lecture-Notes/Basilisk101/4th-workingAssignment.md",
-    "Lecture-Notes/Basilisk101/3rd-workingAssignment.md",
-    "Lecture-Notes/Basilisk101/2nd-workingAssignment.md",
-    "Lecture-Notes/Basilisk101/1st-workingAssignment.md",
-    "Lecture-Notes/Basilisk101/1-conduction-takeaways.md",
-    "Lecture-Notes/Basilisk101/0-README.md",
     "Inbox/Untitled.canvas"
   ]
 }
