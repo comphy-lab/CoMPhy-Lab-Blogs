@@ -1,1169 +1,920 @@
-/*===========================
- *  DURHAM GRUVBOX THEME
- *  VATSAL OBSIDIAN CSS
- *===========================*/
+/*==========================================================================
+ *  CoMPhy Lab — Obsidian Publish Stylesheet
+ *  Academic editorial aesthetic · Peter-inspired palette · Monospace body
+ *
+ *  1. Google Fonts Import + Reset
+ *  2. Design Token System
+ *  3. Dark Theme
+ *  4. Light Theme
+ *  5. Typography
+ *  6. Layout & Content Width
+ *  7. Content Components
+ *  8. Code Blocks
+ *  9. Math / LaTeX
+ * 10. Obsidian Publish UI
+ * 11. Responsive Design
+ * 12. Print + Accessibility
+ *==========================================================================*/
 
-/** ----- TABLE OF CONTENTS ----- */
 
-/** 1. Theme Variables and Root Settings
-    1.1 Color Palette
-    1.2 Custom Font Variables
-    1.3 Custom Folder Colors
-    1.4 Purple Accent Colors
-    1.5 Font Weights */
+/* ==========================================================================
+   1. Google Fonts Import + Reset
+   ========================================================================== */
 
-/** 2. Theme Base
-    2.1 Dark Theme Colors
-    2.2 Light Theme Colors
-    2.3 Code Formatting */
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap");
 
-/** 3. Typography
-    3.1 Base Font Settings
-    3.2 Headers and Strong Text
-    3.3 Links and Emphasis
-    3.4 Code and Inline Code
-    3.5 Font Consistency and Weights */
-
-/** 4. UI Elements
-    4.1 Workspace Elements
-    4.2 Buttons and Controls
-    4.3 Checkboxes
-    4.4 Selection Highlighting
-    4.5 Icons and SVG Styling */
-
-/** 5. Layout Elements
-    5.1 Workspace and Panels
-    5.2 Tables
-    5.3 Images and Media
-    5.4 Resize Handles */
-
-/** 6. Custom File Navigation
-    6.1 Bullet Points and Relationship Lines
-    6.2 Custom File/Folder Icons
-    6.3 File Type Icons
-    6.4 Folder-specific Styling
-    6.5 Conference and Journal Club Folders
-    6.6 Color-coded Project Folders
-    6.7 Alternative File Tree Styling */
-
-/** 7. Content Formatting
-    7.1 Outlines
-    7.2 Clutter-Free Mode
-    7.3 Callouts and Blockquotes
-    7.4 Custom Highlights
-    7.5 Block Reference Styling */
-
-/** 8. Interactive Elements
-    8.1 Graph View
-    8.2 Link Popover Previews
-    8.3 Calendar Plugin
-    8.4 Horizontal Rules and Page Breaks */
-
-/** 9. Custom HTML Elements
-    9.1 Asides
-    9.2 Buttons
-    9.3 Definition Lists
-    9.4 Code Language Fences */
-
-/** 10. Theme Enhancements
-    10.1 Font Formatting
-    10.2 Accent Color Integration
-    10.3 Icon Styling
-    10.4 Button Styling
-    10.5 Custom Tags */
-
-/** 1. Default Theme */
-:root {
-  /* 1.1 Color Palette */
-  /* ------------- */
-
-  /* Main background colors */
-  --dark0-hard: #141414;
-  --dark0: #1a1a1a;
-  --dark1: #292929;
-  --dark2: #404040;
-  --dark3: #505050;
-  --dark4: #6d6d6d;
-
-  /* Main content colors */
-  --gray: #cccccc99;
-  --light0-hard: #f5f5f0;
-  --light0: #f0f0eb;
-  --light1: #eaeae5;
-  --light2: #e0e0db;
-  --light3: #ffffff;
-  --light4: #ffffff99;
-
-  /* Bright colors */
-  --bright-red: #fb4834;
-  --bright-green: #a3be8c;
-  --bright-yellow: #ebcb8b;
-  --bright-blue: #88c0d0;
-  --bright-purple: #b347bf; /* Updated to match the new durham-purple for consistency */
-  --bright-aqua: #81d2ce;
-  --bright-orange: #fe8018;
-
-  /* Neutral colors */
-  --durham-purple: #b347bf; /* Changed from #68246D to a brighter purple with better contrast */
-  --durham-purpleDark: #68236d; /* Changed from #68246D to a brighter purple with better contrast */
-  --neutral-green: #a3be8c;
-  --neutral-yellow: #ebcb8b;
-  --neutral-blue: #87c3ff;
-  --neutral-purple: #b347bf; /* Updated to match the new durham-purple */
-  --neutral-aqua: #81d2ce;
-  --neutral-orange: #fe8018;
-
-  /* Light theme specific colors */
-  --light-yellow: #d79921;
-  --light-green: #588157;
-  --light-code: #2e7c8a;
-
-  /* Faded colors */
-  --faded-red: #bf616a99;
-  --faded-green: #a8cc7c99;
-  --faded-yellow: #f8c76299;
-  --faded-blue: #87c3ff99;
-  --faded-purple: #b347bf99; /* Updated to match the new durham-purple */
-  --faded-aqua: #82d2ce99;
-  --faded-orange: #fe801899;
-
-  /* RGB colors for bullet lines */
-  --rgb-faded-red: 191, 97, 106;
-  --rgb-faded-green: 168, 204, 124;
-  --rgb-faded-yellow: 248, 199, 98;
-  --rgb-faded-blue: 135, 195, 255;
-  --rgb-faded-purple: 179, 71, 191; /* Updated to match the new durham-purple */
-  --rgb-faded-aqua: 130, 210, 206;
-  --alpha-ad: 0.68;
-  --alpha-65: 0.4;
-
-  /* 1.2 Custom Font Variables */
-  /* -------------------- */
-  --custom-font: "Hack";
-
-  /* 1.3 Custom folder colors */
-  /* -------------------- */
-  --soft-blue: var(--bright-blue);
-  --soft-green: var(--bright-aqua);
-  --soft-brown: var(--dark4);
-  --soft-pink: var(--bright-purple);
-  --soft-gray: var(--gray);
-  --muted-green: var(--neutral-green);
-  --muted-orange: var(--neutral-yellow);
-  --soft-orange: var(--neutral-orange);
-
-  /* 1.4 Purple Accent Colors */
-  /* -------------------- */
-  --accent-purple: #b347bf; /* Updated to match the new durham-purple */
-  --accent-purple-light: #c75dd3; /* Adjusted to be lighter than the new durham-purple */
-  --accent-purple-dark: #9a3aa5; /* Adjusted to be darker than the new durham-purple */
-
-  /* 1.5 Font weights for consistency */
-  /* ---------------------------- */
-  --normal-weight: 400;
-  --bold-weight: 600;
-  --heading-weight: 700;
-  --ui-weight: 500;
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+
+/* ==========================================================================
+   2. Design Token System
+   ========================================================================== */
+
+:root {
+  /* Peter-inspired anchor colors */
+  --steipete-dark-bg: #212737;
+  --steipete-dark-panel: #273148;
+  --steipete-dark-panel-2: #2f3a54;
+  --steipete-light-bg: #fdfdfd;
+  --steipete-light-panel: #f5f7fb;
+  --steipete-light-panel-2: #edf1f8;
+  --steipete-orange: #ff6b01;
+  --steipete-blue: #006cac;
+  --steipete-blue-bright: #7db8ff;
+
+  /* Accent family (theme-specific overrides below) */
+  --accent-700: #4f1d00;
+  --accent-650: #632500;
+  --accent-600: #7a2f00;
+  --accent-550: #933a00;
+  --accent-500: #ff6b01;
+  --accent-450: #ff7000;
+  --accent-400: #ff7a00;
+  --accent-350: #ff8a12;
+  --accent-300: #ffa23a;
+  --accent-250: #ffba6a;
+  --accent-200: #ffd5a5;
+  --accent-150: #ffead1;
+  --accent-rgb: 255, 107, 1;
+
+  /* Supporting accents */
+  --support-aqua-500: #8fd8d1;
+  --support-green-500: #91d39d;
+  --support-olive-500: #b8cf58;
+  --support-yellow-500: #ffcf5c;
+  --support-orange-500: #ff6b01;
+  --support-blue-500: #7db8ff;
+  --support-red-500: #ff7a66;
+
+  /* Neutral ramps */
+  --dark-0: #151a27;
+  --dark-1: #1b2132;
+  --dark-2: #212737;
+  --dark-3: #273148;
+  --dark-4: #2f3a54;
+  --dark-5: #374460;
+  --light-0: #fdfdfd;
+  --light-1: #f8f9fb;
+  --light-2: #f2f4f8;
+  --light-3: #e6ebf4;
+  --light-4: #c8d2e1;
+  --light-5: #9daac0;
+
+  /* Typography */
+  --font-text: "IBM Plex Mono", "JetBrains Mono", "Hack", monospace;
+  --font-display: "Atkinson Hyperlegible", "Alegreya Sans", "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", "JetBrains Mono", "Hack", monospace;
+
+  --font-size-body: 16px;
+  --font-size-code: 0.92em;
+  --line-height-body: 1.68;
+  --math-scale: 1.2;
+
+  --h1-size: 2.05rem;
+  --h2-size: 1.68rem;
+  --h3-size: 1.44rem;
+  --h4-size: 1.28rem;
+  --h5-size: 1.12rem;
+  --h6-size: 1rem;
+
+  --weight-regular: 430;
+  --weight-medium: 520;
+  --weight-semibold: 620;
+  --weight-bold: 720;
+
+  /* Layout */
+  --content-width: 960px;
+
+  --radius-xs: 4px;
+  --radius-sm: 7px;
+  --radius-md: 11px;
+  --radius-lg: 14px;
+  --radius-pill: 999px;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+
+  --shadow-soft: 0 4px 14px rgba(0, 0, 0, 0.18);
+  --shadow-mid: 0 10px 28px rgba(0, 0, 0, 0.28);
+
+  --motion-fast: 140ms;
+  --motion-medium: 220ms;
+  --easing-standard: cubic-bezier(0.2, 0, 0.2, 1);
+}
+
+
+/* ==========================================================================
+   3. Dark Theme
+   ========================================================================== */
 
 .theme-dark {
-  --font-monospace: "Hack", "Source Code Pro", monospace;
-  --background-primary: var(--dark0);
-  --background-primary-alt: var(--dark0);
-  --background-secondary: var(--dark0-hard);
-  --background-secondary-alt: var(--dark1);
-  --text-normal: var(--light0);
-  --text-faint: var(--gray);
-  --text-title-h1: var(--durham-purple);
-  --text-title-h2: var(--neutral-orange);
-  --text-title-h3: var(--neutral-yellow);
-  --text-title-h4: var(--neutral-green);
-  --text-title-h5: var(--neutral-aqua);
-  --text-title-h6: var(--neutral-blue);
-  --text-link: var(--neutral-blue);
-  --text-a: var(--neutral-orange);
-  --text-a-hover: var(--bright-blue);
-  --text-mark: var(--neutral-yellow);
-  --pre-code: var(--dark1);
-  --text-highlight-bg: var(--faded-aqua);
-  --interactive-accent: var(--accent-purple);
-  --interactive-before: var(--dark4);
-  --background-modifier-border: var(--dark2);
-  --text-accent: var(--accent-purple);
-  --interactive-accent-rgb: var(--accent-purple);
-  --inline-code: var(--neutral-aqua);
-  --code-block: var(--neutral-aqua);
-  --vim-cursor: var(--bright-yellow);
-  --text-selection: rgba(64, 64, 64, 0.6);
+  --accent-700: #4f1d00;
+  --accent-650: #632500;
+  --accent-600: #7a2f00;
+  --accent-550: #933a00;
+  --accent-500: #ff6b01;
+  --accent-450: #ff7000;
+  --accent-400: #ff7a00;
+  --accent-350: #ff8a12;
+  --accent-300: #ffa23a;
+  --accent-250: #ffba6a;
+  --accent-200: #ffd5a5;
+  --accent-150: #ffead1;
+  --accent-rgb: 255, 107, 1;
+
+  --background-primary: var(--steipete-dark-bg);
+  --background-primary-alt: #1e2639;
+  --background-secondary: var(--steipete-dark-panel);
+  --background-secondary-alt: var(--steipete-dark-panel-2);
+
+  --text-normal: #eaedf3;
+  --text-secondary: #cfd7e7;
+  --text-muted: #acb8cf;
+  --text-faint: #8e9ab2;
+
+  --border-subtle: rgba(171, 75, 8, 0.34);
+  --border-strong: rgba(255, 107, 1, 0.56);
+  --background-modifier-border: var(--border-subtle);
+
+  --link-color: var(--steipete-blue-bright);
+  --link-hover: #a9d4ff;
+  --link-external: #88d6c9;
+
+  --heading-1: #d7a7ff;
+  --heading-2: #ff931f;
+  --heading-3: #ffab33;
+  --heading-4: #9bd8ff;
+  --heading-5: #99e6dc;
+  --heading-6: #b8c9ff;
+
+  --tag-text: #fff6ed;
+  --selection-bg: rgba(var(--accent-rgb), 0.28);
+  --focus-ring: #ff9d52;
+
+  --text-accent: #ffd3ad;
+  --interactive-accent: var(--accent-500);
+
+  --pre-code: #1b2438;
+  --code-normal: #e4ebf7;
+  --code-comment: #8a97b1;
+  --code-function: #90e2d9;
+  --code-keyword: #ffb57c;
+  --code-string: #c1dc80;
+  --code-number: #ffd17b;
+  --code-operator: #ff9e6b;
+  --code-type: #8bc6ff;
+  --code-property: #d7a7ff;
+
+  --blockquote-border: rgba(var(--accent-rgb), 0.76);
+  --blockquote-bg: rgba(var(--accent-rgb), 0.12);
+
+  --highlight-bg: rgba(255, 207, 92, 0.34);
+  --strong-color: #ffd7b8;
+  --em-color: #a9d39d;
 }
+
+
+/* ==========================================================================
+   4. Light Theme
+   ========================================================================== */
 
 .theme-light {
-  --background-primary: var(
-    --light1
-  ); /* Changed from var(--light0-hard) to var(--light1) */
-  --background-primary-alt: var(
-    --light1
-  ); /* Changed from var(--light0) to var(--light1) */
-  --background-secondary: var(--light1);
-  --background-secondary-alt: var(--light2);
-  --text-normal: var(--dark0-hard);
-  --text-faint: var(--dark3);
-  --text-title-h1: var(--durham-purpleDark);
-  --text-title-h2: var(--neutral-orange);
-  --text-title-h3: var(--light-yellow);
-  --text-title-h4: var(--light-green);
-  --text-title-h5: var(--neutral-aqua);
-  --text-title-h6: var(--neutral-blue);
-  --text-link: var(--neutral-blue);
-  --text-a: var(--neutral-orange);
-  --text-a-hover: var(--neutral-blue);
-  --text-mark: var(--neutral-yellow);
-  --pre-code: var(--light1);
-  --text-highlight-bg: rgba(129, 210, 206, 0.3);
-  --interactive-accent: var(--accent-purple);
-  --interactive-before: var(--dark4);
-  --background-modifier-border: var(--gray);
-  --text-accent: var(--accent-purple);
-  --interactive-accent-rgb: var(--accent-purple);
-  --inline-code: var(--light-code);
-  --code-block: var(--light-code);
-  --vim-cursor: var(--bright-yellow);
-  --text-selection: rgba(64, 64, 64, 0.2);
+  --accent-700: #003b5d;
+  --accent-650: #004a74;
+  --accent-600: #00588a;
+  --accent-550: #00609a;
+  --accent-500: #006cac;
+  --accent-450: #1f7fc0;
+  --accent-400: #3a90d1;
+  --accent-350: #5ba4df;
+  --accent-300: #7ab9eb;
+  --accent-250: #9ecef5;
+  --accent-200: #c3e2fb;
+  --accent-150: #e0f1ff;
+  --accent-rgb: 0, 108, 172;
+
+  --background-primary: var(--steipete-light-bg);
+  --background-primary-alt: #f8f9fb;
+  --background-secondary: var(--steipete-light-panel);
+  --background-secondary-alt: var(--steipete-light-panel-2);
+
+  --text-normal: #282728;
+  --text-secondary: #40424a;
+  --text-muted: #5f6574;
+  --text-faint: #798195;
+
+  --border-subtle: rgba(236, 233, 233, 0.95);
+  --border-strong: rgba(0, 108, 172, 0.28);
+  --background-modifier-border: var(--border-subtle);
+
+  --link-color: var(--steipete-blue);
+  --link-hover: #005891;
+  --link-external: #0b7e9a;
+
+  --heading-1: #543b8f;
+  --heading-2: #a45d19;
+  --heading-3: #8c6826;
+  --heading-4: #1b6f88;
+  --heading-5: #2e6f63;
+  --heading-6: #425d9d;
+
+  --tag-text: #f5fbff;
+  --selection-bg: rgba(var(--accent-rgb), 0.2);
+  --focus-ring: var(--steipete-blue);
+
+  --text-accent: #005c92;
+  --interactive-accent: var(--accent-450);
+
+  --pre-code: #eef3fb;
+  --code-normal: #24334a;
+  --code-comment: #6b7a96;
+  --code-function: #0b6f8d;
+  --code-keyword: #005b8f;
+  --code-string: #4f7a00;
+  --code-number: #8a6200;
+  --code-operator: #a14f00;
+  --code-type: #0f6e8a;
+  --code-property: #3a5c99;
+
+  --blockquote-border: rgba(var(--accent-rgb), 0.62);
+  --blockquote-bg: rgba(var(--accent-rgb), 0.08);
+
+  --highlight-bg: rgba(var(--accent-rgb), 0.17);
+  --strong-color: #17456c;
+  --em-color: #2d6d47;
 }
 
-/* Improve contrast for italicized text in light theme */
-.theme-light i,
-.theme-light em,
-.theme-light span.cm-em {
-  color: #3c6e38 !important; /* Darker green with better contrast than bright-green */
-}
 
-/* Improve contrast for graph/grid view in light theme */
-.theme-light .graph-view.color-fill {
-  color: #d0d0d0 !important; /* Darker background for better visibility */
-}
-
-.theme-light .graph-view.color-line {
-  color: #666666 !important; /* Darker lines for better contrast */
-}
-
-.theme-light .graph-view.color-text {
-  color: #000000 !important; /* Black text for maximum readability */
-}
-
-.theme-dark code[class*="language-"],
-.theme-dark pre[class*="language-"],
-.theme-light code[class*="language-"],
-.theme-light pre[class*="language-"] {
-  text-shadow: none !important;
-  background-color: var(--pre-code) !important;
-}
-
-.graph-view.color-circle,
-.graph-view.color-fill-highlight,
-.graph-view.color-line-highlight {
-  color: var(--interactive-accent-rgb) !important;
-}
-.graph-view.color-text {
-  color: var(--text-a-hover) !important;
-}
-/*
-.graph-view.color-fill
-{
-    color: var(--background-secondary);
-}
-.graph-view.color-line
-{
-  color: var(--background-modifier-border);
-}
-*/
+/* ==========================================================================
+   5. Typography
+   ========================================================================== */
 
 html,
 body {
-  font-size: 16px !important;
-  font-family: var(--font-monospace);
-  font-weight: var(--normal-weight);
-
-  --custom-font: "Hack Nerd Font";
-  --custom-H1-font-size: 36px;
-  --custom-H2-font-size: 32px;
-  --custom-H3-font-size: 28px;
-  --custom-H4-font-size: 24px;
-  --custom-H5-font-size: 20px;
-  --custom-H6-font-size: 16px;
+  font-family: var(--font-text);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--text-normal);
+  font-weight: var(--weight-regular);
 }
 
-strong {
-  font-weight: var(--bold-weight) !important;
+body {
+  background: var(--background-primary);
 }
 
-a,
-.cm-hmd-internal-link {
-  color: var(--text-a) !important;
-  text-decoration: none !important;
-  font-weight: var(--normal-weight) !important;
+/* --- Headings --- */
+
+h1, h2, h3, h4, h5, h6,
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
 }
 
-a:hover,
-.cm-hmd-internal-link:hover,
-.cm-url {
-  color: var(--text-a-hover) !important;
-  text-decoration: none !important;
+h1, .markdown-preview-view h1 {
+  color: var(--heading-1);
+  font-size: var(--h1-size);
+  font-weight: var(--weight-bold);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--heading-1);
 }
+
+.theme-dark h1,
+.theme-dark .markdown-preview-view h1 {
+  border-bottom-color: rgba(var(--accent-rgb), 0.34);
+}
+
+.theme-light h1,
+.theme-light .markdown-preview-view h1 {
+  border-bottom-color: rgba(var(--accent-rgb), 0.34);
+}
+
+h2, .markdown-preview-view h2 {
+  color: var(--heading-2);
+  font-size: var(--h2-size);
+  font-weight: var(--weight-semibold);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+}
+
+h3, .markdown-preview-view h3 {
+  color: var(--heading-3);
+  font-size: var(--h3-size);
+  font-weight: var(--weight-semibold);
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-2);
+}
+
+h4, .markdown-preview-view h4 {
+  color: var(--heading-4);
+  font-size: var(--h4-size);
+  font-weight: var(--weight-semibold);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
+h5, .markdown-preview-view h5 {
+  color: var(--heading-5);
+  font-size: var(--h5-size);
+  font-weight: var(--weight-medium);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-1);
+}
+
+h6, .markdown-preview-view h6 {
+  color: var(--heading-6);
+  font-size: var(--h6-size);
+  font-weight: var(--weight-medium);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-1);
+}
+
+/* --- Inline emphasis --- */
+
+strong,
+b {
+  color: var(--strong-color);
+  font-weight: var(--weight-semibold);
+}
+
+em,
+i {
+  color: var(--em-color);
+}
+
+u {
+  color: var(--accent-300);
+}
+
+del {
+  color: var(--text-muted);
+}
+
+sup,
+sub {
+  color: var(--support-yellow-500);
+}
+
+/* --- Links --- */
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  text-underline-offset: 0.18em;
+  transition: color var(--motion-fast) var(--easing-standard);
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+  text-decoration-color: var(--link-hover);
+}
+
+a.external-link {
+  color: var(--link-external);
+  background-image: none;
+  padding-right: 0;
+}
+
+a.external-link:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* --- Highlights --- */
 
 mark {
-  background-color: var(--text-mark) !important;
-  color: var(--dark0) !important;
-  font-weight: var(--normal-weight) !important;
-}
-
-.view-actions a {
-  color: var(--text-normal) !important;
-  font-weight: var(--normal-weight) !important;
-}
-
-.view-actions a:hover {
-  color: var(--text-a) !important;
-}
-
-.HyperMD-codeblock-bg {
-  background-color: var(--pre-code) !important;
-}
-
-.HyperMD-codeblock {
-  line-height: 1.4em !important;
-  color: var(--code-block) !important;
-}
-
-.HyperMD-codeblock-begin {
-  border-top-left-radius: 4px !important;
-  border-top-right-radius: 4px !important;
-}
-
-.HyperMD-codeblock-end {
-  border-bottom-left-radius: 4px !important;
-  border-bottom-right-radius: 4px !important;
-}
-
-th {
-  font-weight: var(--bold-weight) !important;
-}
-
-thead {
-  border-bottom: 2px solid var(--background-modifier-border) !important;
-}
-
-.HyperMD-table-row {
-  line-height: normal !important;
-  padding-left: 4px !important;
-  padding-right: 4px !important;
-  background-color: var(--pre-code) !important;
-}
-
-/* .HyperMD-table-row-0 { */
-/* padding-top: 4px !important; */
-/* } */
-
-.CodeMirror-foldgutter-folded,
-.is-collapsed .nav-folder-collapse-indicator {
-  color: var(--text-a) !important;
-}
-
-.nav-file-tag {
-  color: var(--text-a) !important;
-}
-
-.is-active .nav-file-title {
-  color: var(--text-a) !important;
-  background-color: var(--background-primary-alt) !important;
-}
-
-.nav-file-title {
-  border-bottom-left-radius: 0 !important;
-  border-bottom-right-radius: 0 !important;
-  border-top-left-radius: 0 !important;
-  border-top-right-radius: 0 !important;
-}
-
-img {
-  display: block !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-.HyperMD-list-line {
-  padding-top: 0 !important;
-}
-.CodeMirror-code,
-.CodeMirror-linenumber,
-.cm-formatting {
-  font-family: var(--font-monospace) !important;
-  font-size: 1em;
-}
-
-.markdown-preview-section pre code,
-.markdown-preview-section code {
-  font-size: 1em !important;
-  background-color: var(--pre-code) !important;
-}
-
-.markdown-preview-section pre code {
-  padding: 4px !important;
-  line-height: 1.4em !important;
-  display: block !important;
-  color: var(--code-block) !important;
-}
-
-.markdown-preview-section code {
-  color: var(--inline-code) !important;
-}
-
-.cm-s-obsidian,
-.cm-inline-code {
-  -webkit-font-smoothing: auto !important;
-}
-
-.cm-inline-code {
-  color: var(--inline-code) !important;
-  background-color: var(--pre-code) !important;
-  padding: 1px !important;
-}
-
-.workspace-leaf-header-title {
-  font-weight: var(--ui-weight) !important;
-}
-
-.side-dock-title {
-  font-weight: var(--ui-weight) !important;
-}
-
-.side-dock-ribbon-tab:hover,
-.side-dock-ribbon-action:hover,
-.side-dock-ribbon-action.is-active:hover,
-.nav-action-button:hover,
-.side-dock-collapse-btn:hover {
+  background: var(--highlight-bg);
   color: var(--text-normal);
-  background-color: var(--dark2);
+  border-radius: var(--radius-xs);
+  padding: 0 0.2em;
 }
 
-.side-dock {
-  border-right: 0 !important;
-  background-color: var(--dark0-hard);
+/* --- Selection --- */
+
+::selection {
+  background: var(--selection-bg);
 }
 
-.cm-s-obsidian,
+
+/* ==========================================================================
+   6. Layout & Content Width
+   ========================================================================== */
+
+body {
+  --file-line-width: 960px;
+  --line-width: 960px;
+  --max-width: 960px;
+  background: var(--background-primary);
+}
+
+.theme-dark body,
+body.theme-dark {
+  background:
+    radial-gradient(1200px 600px at 6% -5%, rgba(125, 184, 255, 0.12), transparent 60%),
+    radial-gradient(1000px 580px at 92% 0%, rgba(255, 107, 1, 0.1), transparent 55%),
+    var(--background-primary);
+}
+
+.theme-light body,
+body.theme-light {
+  background: var(--background-primary);
+}
+
 .markdown-preview-view {
-  --background-primary: var(--dark0);
-  --background-secondary: var(--dark0-hard);
   color: var(--text-normal);
-  /* padding-left: 10px !important; */
-  padding-right: 10px !important;
 }
 
-/* vertical resize-handle */
-.workspace-split.mod-vertical > * > .workspace-leaf-resize-handle,
-.workspace-split.mod-left-split > .workspace-leaf-resize-handle,
-.workspace-split.mod-right-split > .workspace-leaf-resize-handle {
-  width: 1px !important;
-  background-color: var(--background-secondary-alt);
+.markdown-preview-view p {
+  margin-block: var(--space-2);
 }
 
-/* horizontal resize-handle */
-.workspace-split.mod-horizontal > * > .workspace-leaf-resize-handle {
-  height: 1px !important;
-  background-color: var(--background-secondary-alt);
+
+/* ==========================================================================
+   7. Content Components
+   ========================================================================== */
+
+/* --- Lists --- */
+
+.markdown-preview-view ul,
+.markdown-preview-view ol {
+  margin-block: var(--space-2);
+  padding-inline-start: 1.45rem;
 }
 
-/* Remove vertical split padding */
-.workspace-split.mod-root .workspace-split.mod-vertical .workspace-leaf-content,
-.workspace-split.mod-vertical > .workspace-split,
-.workspace-split.mod-vertical > .workspace-leaf,
-.workspace-tabs {
-  padding-right: 0px;
+.markdown-preview-view ul > li::marker {
+  color: var(--accent-350);
+}
+
+.markdown-preview-view ol > li::marker {
+  color: var(--support-orange-500);
+  font-weight: var(--weight-medium);
+}
+
+/* --- Blockquotes --- */
+
+blockquote,
+.markdown-preview-view blockquote {
+  border-left: 4px solid var(--blockquote-border);
+  background: linear-gradient(95deg, var(--blockquote-bg), transparent 70%);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: var(--space-2) var(--space-4);
+  margin-inline: 0;
+}
+
+/* --- Callouts --- */
+
+.callout {
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(var(--accent-rgb), 0.3);
+  background: linear-gradient(160deg, rgba(var(--accent-rgb), 0.08), transparent 60%);
+}
+
+.callout .callout-title {
+  font-weight: var(--weight-semibold);
+}
+
+.theme-dark .callout .callout-title {
+  color: var(--accent-250);
+}
+
+.theme-light .callout .callout-title {
+  color: var(--accent-600);
+}
+
+/* Callout type color overrides */
+.callout[data-callout="note"] {
+  border-color: rgba(125, 168, 216, 0.4);
+  background: linear-gradient(160deg, rgba(125, 168, 216, 0.08), transparent 60%);
+}
+
+.callout[data-callout="tip"] {
+  border-color: rgba(142, 192, 124, 0.4);
+  background: linear-gradient(160deg, rgba(142, 192, 124, 0.08), transparent 60%);
+}
+
+.callout[data-callout="warning"],
+.callout[data-callout="caution"] {
+  border-color: rgba(254, 128, 25, 0.4);
+  background: linear-gradient(160deg, rgba(254, 128, 25, 0.08), transparent 60%);
+}
+
+.callout[data-callout="important"],
+.callout[data-callout="danger"] {
+  border-color: rgba(251, 73, 52, 0.4);
+  background: linear-gradient(160deg, rgba(251, 73, 52, 0.08), transparent 60%);
+}
+
+/* --- Tables --- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  word-break: initial;
+}
+
+table th,
+table td {
+  border: 1px solid var(--background-modifier-border);
+  padding: 0.5rem 0.8rem;
+  text-align: left;
+}
+
+table th {
+  font-weight: var(--weight-semibold);
+}
+
+.theme-dark table th {
+  background: rgba(var(--accent-rgb), 0.16);
+}
+
+.theme-light table th {
+  background: rgba(var(--accent-rgb), 0.08);
+}
+
+.theme-dark table tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.theme-light table tr:nth-child(even) td {
+  background: rgba(var(--accent-rgb), 0.03);
+}
+
+/* Responsive table wrapper */
+.markdown-preview-view .table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* --- Images --- */
+
+img,
+.markdown-preview-view img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--motion-medium) var(--easing-standard);
+}
+
+.markdown-preview-view img:hover {
+  transform: scale(1.02);
+}
+
+/* --- Horizontal Rule --- */
+
+.markdown-preview-view hr {
+  margin-block-start: 4em;
+  margin-block-end: 4em;
+  border: none;
+  height: 2px;
+  max-width: min(75%, calc(100% - 280px));
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(var(--accent-rgb), 0.3) 16%,
+    rgba(var(--accent-rgb), 0.5) 50%,
+    rgba(var(--accent-rgb), 0.3) 84%,
+    transparent 100%
+  );
+}
+
+.markdown-preview-view hr::after {
+  content: "ᛟ";
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: 50% 50%;
+  padding: 0.5rem;
+  color: var(--support-aqua-500);
+  background-color: var(--background-primary);
+}
+
+/* --- Tags --- */
+
+a.tag {
+  background: linear-gradient(120deg, var(--accent-400), var(--accent-500));
+  color: var(--tag-text) !important;
+  border-radius: var(--radius-pill);
+  padding: 0.13em 0.6em;
+  border: 1px solid rgba(var(--accent-rgb), 0.28);
+  font-size: 0.85em;
+  font-weight: var(--weight-medium);
+  text-decoration: none !important;
+  transition: filter var(--motion-fast) var(--easing-standard);
+}
+
+a.tag:hover {
+  filter: brightness(1.06) saturate(1.02);
+  text-decoration: none !important;
+}
+
+/* --- Checkboxes --- */
+
+input[type="checkbox"] {
+  border: 1px solid rgba(var(--accent-rgb), 0.36);
+  border-radius: var(--radius-xs);
+}
+
+input[type="checkbox"]:checked {
+  background: linear-gradient(145deg, var(--accent-400), var(--accent-500));
+  border-color: var(--accent-350);
+}
+
+/* --- Definition lists --- */
+
+dt {
+  font-weight: var(--weight-semibold);
+}
+
+dd {
+  font-weight: var(--weight-regular);
+}
+
+/* --- Aside elements --- */
+
+aside {
+  width: 40%;
+  padding-left: 0.5rem;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  float: right;
+  box-shadow: inset 5px 0 5px -5px rgba(125, 168, 216, 0.6);
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+aside > p {
+  margin: 0.5rem;
+}
+
+/* --- Embeds --- */
+
+.markdown-embed {
+  border-left: 2px solid rgba(var(--accent-rgb), 0.46);
+  border-right: 0;
+  border-top: 0;
+  border-bottom: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .markdown-embed-title {
-  font-weight: 600 !important;
+  font-weight: var(--weight-semibold);
 }
 
-.markdown-embed {
-  padding-left: 10px !important;
-  padding-right: 10px !important;
-  margin-left: 10px !important;
-  margin-right: 10px !important;
+
+/* ==========================================================================
+   8. Code Blocks
+   ========================================================================== */
+
+/* --- Inline code --- */
+
+.markdown-preview-view code {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-code);
+  color: var(--code-normal);
+  background: var(--pre-code);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-xs);
+  padding: 0.08em 0.38em;
 }
 
-.mermaid .note {
-  fill: var(--dark3) !important;
+/* --- Code blocks --- */
+
+.markdown-preview-view pre {
+  background: linear-gradient(170deg, var(--pre-code), var(--pre-code));
+  color: var(--code-normal);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-4);
+  overflow-x: auto;
 }
 
-.cm-header-1,
-.HyperMD-header-1,
-.markdown-preview-view h1 {
-  color: var(--text-title-h1);
-  font-weight: var(--bold-weight) !important;
-  font-size: var(--custom-H1-font-size);
-}
-
-.cm-header-2,
-.HyperMD-header-2,
-.markdown-preview-view h2 {
-  color: var(--text-title-h2);
-  font-weight: 500;
-  font-size: var(--custom-H2-font-size);
-}
-
-.cm-header-3,
-.HyperMD-header-3,
-.markdown-preview-view h3 {
-  color: var(--text-title-h3);
-  font-weight: 500;
-  font-size: var(--custom-H3-font-size);
-}
-
-.cm-header-4,
-.HyperMD-header-4,
-.markdown-preview-view h4 {
-  color: var(--text-title-h4);
-  font-weight: 500;
-  font-size: var(--custom-H4-font-size);
-}
-
-.cm-header-5,
-.HyperMD-header-5,
-.markdown-preview-view h5 {
-  color: var(--text-title-h5);
-  font-weight: 500;
-  font-size: var(--custom-H5-font-size);
-}
-
-.cm-header-6,
-.HyperMD-header-6,
-.markdown-preview-view h6 {
-  color: var(--text-title-h6);
-  font-weight: 500;
-  font-size: var(--custom-H6-font-size);
-}
-
-.suggestion-item.is-selected {
-  background-color: var(--background-secondary);
-}
-
-.empty-state-container:hover {
-  background-color: var(--background-secondary-alt);
-  border: 5px solid var(--interactive-accent) !important;
-}
-
-.checkbox-container {
-  background-color: var(--interactive-before);
-}
-
-.checkbox-container:after {
-  background-color: var(--background-secondary-alt);
-}
-
-.mod-cta {
-  color: var(--background-secondary-alt) !important;
-  font-weight: 600 !important;
-}
-
-.mod-cta:hover {
-  background-color: var(--interactive-before) !important;
-  font-weight: 600 !important;
-}
-
-.CodeMirror-cursor {
-  background-color: transparent !important;
-  border-left: 2px solid var(--light3) !important;
-  width: 0 !important;
-}
-
-/* Checkboxes */
-input.task-list-item-checkbox {
-  border: 1px solid var(--text-faint);
-  background-color: var(--dark0);
-  width: 16px;
-  height: 16px;
-  margin-right: 4px;
-  position: relative;
-  top: 6px;
-}
-
-input.task-list-item-checkbox:checked {
-  background-color: var(--accent-purple) !important;
-  border-color: var(--accent-purple) !important;
-}
-
-::selection {
-  background-color: var(--dark2) !important;
-  color: var(--light3) !important;
-}
-
-/** .. 2. Custom CSS Section */
-/** ____ 2.1 Bullet Points */
-/** ______ 2.1.1 Bullet Point Relationship Lines -- https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/2 */
-.cm-hmd-list-indent .cm-tab,
-ul ul {
-  position: relative;
-}
-.cm-hmd-list-indent .cm-tab::before,
-ul ul::before {
-  content: "";
-  border-left: 1px solid var(--bright-aqua);
-  position: absolute;
-}
-.cm-hmd-list-indent .cm-tab::before {
-  left: 5px;
-  top: -5px;
-  bottom: -4px;
-}
-ul ul::before {
-  left: -16px;
-  top: 0;
-  bottom: 0;
-}
-.cm-hmd-list-indent .cm-tab,
-ol ol {
-  position: relative;
-}
-.cm-hmd-list-indent .cm-tab::before,
-ol ol::before {
-  content: "";
-  border-left: 1px solid var(--bright-aqua);
-  position: absolute;
-}
-.cm-hmd-list-indent .cm-tab::before {
-  left: 5px;
-  top: -5px;
-  bottom: -4px;
-}
-ol ol::before {
-  left: -16px;
-  top: 0;
-  bottom: 0;
-}
-/** ______ 2.1.2 tasklist (preview) indentation lines correction -- https://forum.obsidian.md/t/bullet-lines-in-css-for-checkboxes/6262/3 */
-.contains-task-list::before {
-  left: 10px;
-}
-/** ______ 2.1.3 Better Bullet Points In Edit Mode https://forum.obsidian.md/t/clutter-free-edit-mode/6791/30 */
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-formatting-list-ul {
-  color: transparent;
-  position: relative;
-}
-div:not(.CodeMirror-activeline)
-  > .CodeMirror-line
-  span.cm-formatting-list-ul:after {
-  content: "•";
-  position: absolute;
-  top: -6px;
-  left: 4px;
-  color: var(--bright-aqua);
-  font-family: sans-serif;
-  font-size: 20px;
-}
-/** ______ 2.1.4 Bullet points in preview -- https://discord.com/channels/686053708261228577/702656734631821413/772094128832905226 */
-ul,
-ul ul,
-ol ul,
-ul ul ul,
-ol ul ul {
-  list-style: none;
-}
-li > p {
-  display: inline-block;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-ul li:not(.task-list-item)::before {
-  content: "•";
-  color: var(--bright-aqua);
-  display: inline-block;
-  width: 1em;
-  margin-left: -1.15em;
+.markdown-preview-view pre code {
+  font-size: var(--font-size-code);
+  line-height: 1.4;
+  display: block;
+  background: transparent;
+  border: none;
   padding: 0;
-  font-weight: bold;
-  text-shadow: 0 0 0.5em var(--bright-aqua);
-}
-ul ul li:not(.task-list-item)::before {
-  content: "•";
-}
-ul ul ul li:not(.task-list-item)::before {
-  content: "•";
+  color: inherit;
 }
 
-.outline .collapsible-item-children {
-  margin-left: 20px;
-  border-left: 1px solid var(--faded-aqua);
-  border-radius: 4px;
-  transition: all 0.5s ease-in-out;
-}
-.outline .collapsible-item-children:hover {
-  border-left-color: var(--faded-aqua);
-}
-.nav-folder-children .nav-folder-children {
-  margin-left: 20px;
-  padding-left: 0;
-  border-left: 1px solid var(--faded-aqua);
-  border-radius: 4px;
-  transition: all 0.5s ease-in-out;
-}
-.nav-folder-children .nav-folder-children:hover {
-  border-left-color: var(--faded-aqua);
-}
-/** ______ 2.2.2 Custom icons differing files and folders: https://discordapp.com/channels/686053708261228577/702656734631821413/755293685046050896 */
-/* Emoji */
-.nav-file-title-content::before {
-  content: "📝️ ";
-}
-.nav-folder-title-content::before {
-  content: "📂 ";
-}
-.nav-file-title-content[data-link-data-href="Flows"]::before {
-  content: "♻️ ";
-}
-.nav-file-title-content[data-link-data-href="Tasks"]::before {
-  content: "✅️ ";
-}
-.nav-file-title-content[data-link-data-href="Readwise Items To Review"]::before {
-  content: "🔁 ";
-}
-.nav-file-title-content[data-link-data-href="Timeline"]::before {
-  content: "🕓️ ";
-}
-.nav-file-title-content[data-link-data-href="Research"]::before {
-  content: "🖥️ ";
-}
-.nav-file-title-content[data-link-data-href="ZK Processing"]::before {
-  content: "🖥️ ";
-}
-.nav-file-title-content[data-link-data-href="Top of Mind"]::before {
-  content: "🧠️ ";
-}
-.nav-file-title-content[data-link-data-href="Patrons"]::before {
-  content: "🧡️ ";
-}
-.nav-file-title-content[data-link-data-href="Tools"]::before {
-  content: "🛠️ ";
-}
-.nav-file-title-content[data-link-data-href="Workbench"]::before {
-  content: "✏️ ";
-}
-.nav-file-title-content[data-link-data-href="HOME"]::before {
-  content: "🌎️ ";
-}
-.nav-file-title-content[data-link-data-href="2020 Goals"]::before {
-  content: "🏆️ ";
-}
-.nav-file-title-content[data-link-data-href="2021 Goals"]::before {
-  content: "🏆️ ";
-}
-.nav-file-title-content[data-link-data-href="2023 Goals"]::before {
-  content: "🏆️ ";
-}
-.nav-file-title-content[data-link-data-href="Life Philosophy"]::before {
-  content: "💭️ ";
-}
-.nav-file-title-content[data-link-data-href="Good Feels"]::before {
-  content: "😊️ ";
-}
-.nav-file-title-content[data-link-tags*="#📥️/🐦️"]::before {
-  content: "🐦️ ";
-}
-.nav-file-title-content[data-link-tags*="#📥️/📰️"]::before {
-  content: "️📰️ ";
-}
-.nav-file-title-content[data-link-tags*="#📥️/📚️"]::before {
-  content: "️📚️ ";
-}
-.nav-file-title-content[data-link-tags*="#📝️/👥️"]::before {
-  content: "️👥️ ";
-}
-.nav-file-title-content[data-link-tags*="#📥️/📜️"]::before {
-  content: "️📜️ ";
-}
-.nav-file-title-content[data-link-tags*="#📥️/🎧️"]::before {
-  content: "️🎧️ ";
-}
-.nav-file-title-content[data-link-tags*="#📥️/🎥️"]::before {
-  content: "️🎥️ ";
-}
-.nav-file-title-content[data-link-tags*="#📥️/💭️"]::before {
-  content: "️💭️ ";
-}
-.nav-file-title-content[data-link-tags*="#📥️/🔖️"]::before {
-  content: "️🔖️ ";
+/* --- Syntax highlighting --- */
+
+.token.keyword { color: var(--code-keyword); }
+.token.function { color: var(--code-function); }
+.token.comment { color: var(--code-comment); }
+.token.string { color: var(--code-string); }
+.token.number,
+.token.boolean { color: var(--code-number); }
+.token.operator,
+.token.punctuation { color: var(--code-operator); }
+.token.class-name,
+.token.builtin { color: var(--code-type); }
+.token.property,
+.token.attr-name { color: var(--code-property); }
+
+/* --- Language labels --- */
+
+pre[class*="language-"] {
+  padding-top: 1.6rem;
+  position: relative;
 }
 
-/* Flat font */
-/* Requires: https://icomoon.io/#icons-icomoon/liga-font */
-/* .nav-folder-children .nav-file-title-content:first-child::before { content: "\e924  "; font-family: "IcoMoon-Free"; }
-.nav-folder-children .nav-folder-title-content::before { content: "\e930  "; font-family: "IcoMoon-Free"; } */
-
-/** ________ 2.2.3 Top Level Folder Icons -- https://discord.com/channels/686053708261228577/702656734631821413/805318111917113354 */
-.nav-folder-title[data-path="Journal"] .nav-folder-title-content::before {
-  content: "📅 ";
-  font-size: 1.3em;
-}
-.nav-folder-title[data-path="otv"] .nav-folder-title-content::before {
-  content: "💖️ ";
-  font-size: 1.3em;
-}
-.nav-folder-title[data-path="Media"] .nav-folder-title-content::before {
-  content: "🖼️ ";
-  font-size: 1.3em;
-}
-.nav-folder-title[data-path="Templates"] .nav-folder-title-content::before {
-  content: "⚙️ ";
-  font-size: 1.3em;
-}
-.nav-folder-title[data-path="Utility"] .nav-folder-title-content::before {
-  content: "🛠️ ";
-  font-size: 1.3em;
-}
-.nav-folder-title[data-path="Projects"] .nav-folder-title-content::before {
-  content: "📋 ";
-  font-size: 1.3em;
-}
-.nav-folder-title[data-path="Inbox"] .nav-folder-title-content::before {
-  content: "📥️ ";
-  font-size: 1.3em;
-}
-.nav-folder-title[data-path="Sources"] {
-  background-color: var(
-    --bright-blue
-  ); /* or --neutral-aqua or --faded-yellow */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path="Sterkere"] .nav-folder-title-content::before {
-  content: "💪🏻️ ";
-  font-size: 1.3em;
-}
-.nav-folder-title[data-path="DevLog"] .nav-folder-title-content::before {
-  content: "🖥️ ";
-  font-size: 1.3em;
-}
-.nav-folder-title[data-path="Z"] .nav-folder-title-content::before {
-  content: "🧠️ ";
-  font-size: 1.3em;
-}
-.nav-folder-title[data-path="Readwise"] .nav-folder-title-content::before {
-  content: "🖋️ ";
-  font-size: 1.3em;
+pre.language-javascript::before,
+pre.language-js::before,
+pre.language-typescript::before,
+pre.language-ts::before,
+pre.language-python::before,
+pre.language-py::before,
+pre.language-css::before,
+pre.language-html::before,
+pre.language-bash::before,
+pre.language-shell::before,
+pre.language-c::before,
+pre.language-cpp::before,
+pre.language-latex::before,
+pre.language-tex::before,
+pre.language-matlab::before,
+pre.language-r::before,
+pre.language-julia::before,
+pre.language-yaml::before,
+pre.language-json::before,
+pre.language-markdown::before,
+pre.language-md::before,
+pre.language-info::before {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.65rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-200);
+  opacity: 0.9;
 }
 
-/** Folder Colors and Emojis */
-.nav-folder-title[data-path^="_AtomicNotes"] {
-  background-color: #83a598; /* soft blue */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_AtomicNotes"] .nav-folder-title-content::before {
-  content: "📝 ";
-}
-.nav-folder-title[data-path^="_Inbox"] {
-  background-color: #928374; /* soft gray */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_Inbox"] .nav-folder-title-content::before {
-  content: "📥 ";
+pre.language-javascript::before,
+pre.language-js::before { content: "JavaScript"; }
+pre.language-typescript::before,
+pre.language-ts::before { content: "TypeScript"; }
+pre.language-python::before,
+pre.language-py::before { content: "Python"; }
+pre.language-css::before { content: "CSS"; }
+pre.language-html::before { content: "HTML"; }
+pre.language-bash::before,
+pre.language-shell::before { content: "Shell"; }
+pre.language-c::before { content: "C"; }
+pre.language-cpp::before { content: "C++"; }
+pre.language-latex::before,
+pre.language-tex::before { content: "LaTeX"; }
+pre.language-matlab::before { content: "MATLAB"; }
+pre.language-r::before { content: "R"; }
+pre.language-julia::before { content: "Julia"; }
+pre.language-yaml::before { content: "YAML"; }
+pre.language-json::before { content: "JSON"; }
+pre.language-markdown::before,
+pre.language-md::before { content: "Markdown"; }
+pre.language-info::before { content: "Info"; }
+
+
+/* ==========================================================================
+   9. Math / LaTeX
+   ========================================================================== */
+
+.MJX-TEX,
+mjx-container,
+.math {
+  font-size: calc(1em * var(--math-scale));
 }
 
-.nav-folder-title[data-path^="_Media"] {
-  background-color: #d3869b; /* soft pink */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_Media"] .nav-folder-title-content::before {
-  content: "📸 ";
-}
-
-.nav-folder-title[data-path^="_TODO"] {
-  background-color: #8ec07c; /* soft green */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_TODO"] .nav-folder-title-content::before {
-  content: "✅ ";
+mjx-container[display="true"],
+.math-block {
+  margin-block: var(--space-4);
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
-.nav-folder-title[data-path^="Clippings"] {
-  background-color: #b8bb26; /* soft yellow */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Clippings"] .nav-folder-title-content::before {
-  content: "✂️ ";
+
+/* ==========================================================================
+   10. Obsidian Publish UI
+   ========================================================================== */
+
+.site-header,
+.site-footer,
+.site-body-left-column,
+.site-body-center-column,
+.site-body-right-column {
+  background: var(--background-secondary);
 }
 
-.nav-folder-title[data-path^="Projects"] {
-  background-color: #83a598; /* soft blue */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Projects"] .nav-folder-title-content::before {
-  content: "🎯 ";
+.site-header {
+  border-bottom: 1px solid var(--border-subtle);
 }
 
-.nav-folder-title[data-path^="Resources-Literature"] {
-  background-color: #d79921; /* muted orange */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Resources-Literature"]
-  .nav-folder-title-content::before {
-  content: "📚 ";
+.site-footer {
+  border-top: 1px solid var(--border-subtle);
 }
 
-.nav-folder-title[data-path^="Resources-non-research"] {
-  background-color: #98971a; /* muted green */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Resources-non-research"]
-  .nav-folder-title-content::before {
-  content: "📝 ";
+.site-body-left-column,
+.site-body-center-column {
+  border-right: 1px solid var(--border-subtle);
 }
 
-.nav-folder-title[data-path^="Resources-research"] {
-  background-color: #689d6a; /* aqua */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Resources-research"]
-  .nav-folder-title-content::before {
-  content: "🔬 ";
+.site-body-right-column {
+  border-left: 1px solid var(--border-subtle);
 }
 
-.nav-folder-title[data-path^="Templates"] {
-  background-color: var(--neutral-orange);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Templates"] .nav-folder-title-content::before {
-  content: "📋 ";
-}
-
-.nav-folder-title[data-path^="Z_Archive"] {
-  background-color: #7c6f64; /* soft brown */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Z_Archive"] .nav-folder-title-content::before {
-  content: "📦 ";
+.search-input-container input,
+.search-input,
+input[type="search"] {
+  background: var(--background-primary-alt);
+  border: 1px solid var(--background-modifier-border);
+  color: var(--text-normal);
+  border-radius: var(--radius-sm);
 }
 
-/* FileOrganizer2000 Main Folder */
-.nav-folder-title[data-path^="_FO2K"] {
-  background-color: #83a598; /* soft blue */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FO2K"] .nav-folder-title-content::before {
-  content: "🗂️ ";
+.search-input-container input::placeholder,
+.search-input::placeholder {
+  color: var(--text-faint);
 }
 
-.nav-folder-title[data-path^="_FO2K/Inbox"] {
-  background-color: #d79921; /* muted orange */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FO2K/Inbox"] .nav-folder-title-content::before {
-  content: "📥 ";
+/* --- Sidebar navigation --- */
+
+.nav-file-title,
+.nav-folder-title {
+  font-family: var(--font-display);
+  border-radius: var(--radius-sm);
+  transition: background var(--motion-fast) var(--easing-standard);
 }
 
-.nav-folder-title[data-path^="_FO2K/Media"] {
-  background-color: #d3869b; /* soft pink */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FO2K/Media"] .nav-folder-title-content::before {
-  content: "📸 ";
+.nav-file-title:hover,
+.nav-folder-title:hover {
+  background: rgba(var(--accent-rgb), 0.12);
 }
 
-.nav-folder-title[data-path^="_FO2K/Processed"] {
-  background-color: #8ec07c; /* soft green */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FO2K/Processed"]
-  .nav-folder-title-content::before {
-  content: "✅ ";
+.nav-file-title.is-active {
+  background: linear-gradient(120deg, rgba(var(--accent-rgb), 0.55), rgba(var(--accent-rgb), 0.45));
+  color: var(--tag-text);
 }
 
-.nav-folder-title[data-path^="_FO2K/Templates"] {
-  background-color: var(--neutral-orange);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FO2K/Templates"]
-  .nav-folder-title-content::before {
-  content: "📋 ";
-}
+/* --- Table of Contents / Outline --- */
 
-.nav-folder-title[data-path^="_FO2K/Logs"] {
-  background-color: #928374; /* soft gray */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FO2K/Logs"] .nav-folder-title-content::before {
-  content: "📊 ";
-}
-
-.nav-folder-title[data-path^="_FO2K/Backups"] {
-  background-color: #7c6f64; /* soft brown */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FO2K/Backups"]
-  .nav-folder-title-content::before {
-  content: "💾 ";
-}
-
-.nav-folder-title[data-path^="_FO2K/Fabric"] {
-  background-color: #98971a; /* muted green */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FO2K/Fabric"] .nav-folder-title-content::before {
-  content: "🧩 ";
-}
-
-.nav-folder-title[data-path^="_FO2K/Errors"] {
-  background-color: #d65d0e; /* soft orange */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FO2K/Errors"] .nav-folder-title-content::before {
-  content: "⚠️ ";
-}
-
-.nav-folder-title[data-path^="_FileOrganizer2000"] {
-  background-color: #83a598; /* soft blue */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FileOrganizer2000"]
-  .nav-folder-title-content::before {
-  content: "🗂️ ";
-}
-
-.nav-folder-title[data-path^="_FileOrganizer2000/Inbox"] {
-  background-color: #d79921; /* muted orange */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FileOrganizer2000/Inbox"]
-  .nav-folder-title-content::before {
-  content: "📥 ";
-}
-
-.nav-folder-title[data-path^="_FileOrganizer2000/Media"] {
-  background-color: var(--soft-pink);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FileOrganizer2000/Media"]
-  .nav-folder-title-content::before {
-  content: "📸 ";
-}
-
-.nav-folder-title[data-path^="_FileOrganizer2000/Processed"] {
-  background-color: var(--soft-green);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FileOrganizer2000/Processed"]
-  .nav-folder-title-content::before {
-  content: "✅ ";
-}
-
-.nav-folder-title[data-path^="_FileOrganizer2000/Templates"] {
-  background-color: var(--neutral-orange);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FileOrganizer2000/Templates"]
-  .nav-folder-title-content::before {
-  content: "📋 ";
-}
-
-.nav-folder-title[data-path^="_FileOrganizer2000/Logs"] {
-  background-color: var(--soft-gray);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FileOrganizer2000/Logs"]
-  .nav-folder-title-content::before {
-  content: "📊 ";
-}
-
-.nav-folder-title[data-path^="_FileOrganizer2000/Backups"] {
-  background-color: var(--soft-brown);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FileOrganizer2000/Backups"]
-  .nav-folder-title-content::before {
-  content: "💾 ";
-}
-
-.nav-folder-title[data-path^="_FileOrganizer2000/Fabric"] {
-  background-color: var(--muted-green);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FileOrganizer2000/Fabric"]
-  .nav-folder-title-content::before {
-  content: "🧩 ";
-}
-
-.nav-folder-title[data-path^="_FileOrganizer2000/Errors"] {
-  background-color: var(--soft-orange);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FileOrganizer2000/Errors"]
-  .nav-folder-title-content::before {
-  content: "⚠️ ";
-}
-
-.hltr-aqua {
-  background-color: var(--neutral-aqua) !important;
-}
-.hltr-green {
-  background-color: var(--neutral-green) !important;
-}
-/* Add new classes while keeping old ones for compatibility */
-.hltr-olive {
-  background-color: var(--neutral-green) !important;
-}
-.nav-folder-title[data-path^="comphy-lab.github.io"] {
-  background-color: #83a598; /* soft blue for code/research */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="comphy-lab.github.io"]
-  .nav-folder-title-content::before {
-  content: "🔬 ";
-}
-
-.nav-folder-title[data-path^="Conference-club"] {
-  background-color: #8ec07c; /* soft green for literature */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Conference-club"]
-  .nav-folder-title-content::before {
-  content: "📚 ";
-}
-
-.nav-folder-title[data-path^="Journal-club"] {
-  background-color: #689d6a; /* aqua - better contrast than red */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Journal-club"] .nav-folder-title-content::before {
-  content: "📝 ";
-}
-
-.nav-folder-title[data-path^="Templates"] {
-  background-color: #928374; /* soft gray for templates */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Templates"] .nav-folder-title-content::before {
-  content: "📋 ";
-}
-
-.nav-folder-title[data-path^="1-Projects"] {
-  background-color: #83a598; /* soft blue */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="1-Projects"] .nav-folder-title-content::before {
-  content: "🎯 ";
-}
-
-.nav-folder-title[data-path^="2-Areas"] {
-  background-color: #8ec07c; /* soft green */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="2-Areas"] .nav-folder-title-content::before {
-  content: "📝 ";
-}
-
-/** ________ 2.2.4 Outline Relationship lines -- https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/357 */
 .outline {
-  font-size: 1.3rem;
-  font-weight: var(--normal-weight);
+  font-size: 0.92rem;
+  font-weight: var(--weight-regular);
+  font-family: var(--font-display);
 }
 
 .outline .tree-item {
@@ -1171,417 +922,193 @@ ul ul ul li:not(.task-list-item)::before {
 }
 
 .outline .tree-item-self {
-  padding-top: 0.2rem;
-  padding-bottom: 0.1rem;
-  padding-left: 0.5rem;
-  padding-right: 0.3rem;
+  padding: 0.2rem 0.3rem 0.1rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--motion-fast) var(--easing-standard);
 }
 
-.outline .tree-item-collapse {
-  left: 0.1rem;
+.outline .tree-item-self:hover {
+  background: rgba(var(--accent-rgb), 0.12);
 }
 
 .outline .tree-item-inner {
-  position: relative;
-  padding-top: 0.2rem;
-  /* padding-left: 1rem; */
-  padding-left: 1.7em;
-  text-indent: -0.8em;
-  margin-left: 0.2rem;
-  /* font-size: 0.9em; */
+  font-weight: var(--weight-regular);
 }
 
 .outline .tree-item-children {
   margin-left: 0.7rem;
   padding-left: 0.5rem;
-  margin-top: -0.3rem;
-  padding-top: 0.3rem;
-  border-left: 1px solid var(--neutral-aqua, var(--background-modifier-border));
-  border-radius: 4px;
-  transition: all 0.5s ease-in-out;
+  border-left: 1px solid var(--accent-350);
+  border-radius: var(--radius-xs);
+  transition: border-color var(--motion-medium) var(--easing-standard);
 }
 
 .outline .tree-item-children:hover {
-  border-left-color: var(--sidebar-marks-hover, var(--background-secondary));
+  border-left-color: var(--accent-250);
 }
 
-.outline .collapse-icon + .tree-item-inner {
-  font-weight: 400;
-  padding-left: 0.2rem;
-  /* margin-left: 0rem; */
-  /* font-size: 1em; */
+/* --- Graph view --- */
+
+.graph-view.color-circle,
+.graph-view.color-fill-highlight,
+.graph-view.color-line-highlight {
+  color: var(--support-aqua-500) !important;
 }
 
-.outline .collapse-icon {
-  margin-top: 0.2rem;
-  margin-left: -0.4rem;
-  margin-right: -0.4rem;
-  width: 2rem;
-}
-/** ________ 2.2.5 Image file navigation icon -- https://discord.com/channels/686053708261228577/702656734631821413/866399284437843978 */
-.nav-file-title[data-path$="jpg"] .nav-file-title-content:before {
-  content: "🌄 ";
-}
-.nav-file-title[data-path$="pdf"] .nav-file-title-content:before {
-  content: "📜️ ";
-}
-.nav-file-title[data-path$="docx"] .nav-file-title-content:before {
-  content: "✏️ ";
-}
-.nav-file-title[data-path$="mp4"] .nav-file-title-content:before {
-  content: "🎥️ ";
-}
-.nav-file-title[data-path$="webm"] .nav-file-title-content:before {
-  content: "🎥️ ";
-}
-.nav-file-title[data-path$="mkv"] .nav-file-title-content:before {
-  content: "🎥️ ";
-}
-.nav-file-title[data-path$="png"] .nav-file-title-content:before {
-  content: "🎨 ";
-}
-.nav-file-title[data-path$="canvas"] .nav-file-title-content:before {
-  content: "🎨 ";
-}
-.nav-file-title[data-path$="css"] .nav-file-title-content:before {
-  content: "🎨 ";
-}
-.nav-file-title[data-path$="sty"] .nav-file-title-content:before {
-  content: "⚙️ ";
-}
-.nav-file-title[data-path$="csv"] .nav-file-title-content:before {
-  content: "📊️ ";
-}
-.nav-file-title[data-path$="ico"] .nav-file-title-content:before {
-  content: "ℹ️ ";
+.graph-view.color-fill-focused {
+  color: var(--accent-350) !important;
 }
 
-/** ____ 2.3 Clutter Free Mode */
-/** ______ 2.3.1 Make subtler folding gutter arrows -- https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/10 */
-.CodeMirror-foldgutter-folded:after,
-.CodeMirror-foldgutter-open:after {
-  opacity: 0.5;
-  font-size: 60%;
-  color: var(--bright-aqua);
+.graph-view.color-text {
+  color: var(--text-secondary) !important;
 }
-.CodeMirror-foldgutter-folded:hover:after,
-.CodeMirror-foldgutter-open:hover:after {
-  opacity: 1;
+
+.graph-view.color-fill-tag {
+  color: var(--support-yellow-500) !important;
 }
-.CodeMirror-foldgutter-folded:after {
-  content: "\25BA";
+
+.graph-view.color-fill-unresolved {
+  color: var(--support-red-500) !important;
 }
-.CodeMirror-foldgutter-open:after {
-  content: "\25BC";
+
+.graph-view.color-fill-attachment {
+  color: var(--support-blue-500) !important;
 }
-/** ______ 2.3.2 Hide Block Reference ID's -- https://discord.com/channels/686053708261228577/716028884885307432/769267134114037871 */
-div:not(.CodeMirror-activeline) > .CodeMirror-line span.cm-blockid {
-  visibility: hidden;
+
+/* --- Search --- */
+
+.search-result-file-title {
+  font-family: var(--font-display);
+  font-weight: var(--weight-medium);
+  color: var(--accent-300);
 }
-.cm-blockid::first-letter {
-  visibility: visible;
-  font-weight: 800;
-}
-/** ______ 2.3.3 Shortened Url Links -- https://forum.obsidian.md/t/hide-or-truncate-urls-in-editor-using-css/359/3 */
-div:not(.CodeMirror-activeline)
-  > .CodeMirror-line
-  .cm-string.cm-url:not(.cm-formatting) {
-  font-size: 0;
-}
-div:not(.CodeMirror-activeline)
-  > .CodeMirror-line
-  .cm-string.cm-url:not(.cm-formatting)::after {
-  content: "🔗";
-  font-size: 1rem;
-}
-/** ______ 2.3.4 highlight (==) not visible anymore if not active line -- https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/221 */
-div:not(.CodeMirror-activeline)
-  > .CodeMirror-line
-  .cm-formatting-highlight.cm-highlight {
-  font-size: 1em;
-  color: transparent;
-}
-/** ______ 2.3.5 Make code blocks wrap in preview mode too */
-.theme-dark code[class*="language-"],
-.theme-dark pre[class*="language-"],
-.theme-light code[class*="language-"],
-.theme-light pre[class*="language-"] {
-  word-wrap: break-word !important;
-  white-space: pre-wrap !important;
-}
-/** ________ 2.3.6 Hide search query title and stop highlighting found element -- https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/307 */
-.markdown-preview-view .internal-query.is-embed .internal-query-header {
-  display: none;
+
+.search-result-file-matches {
+  color: var(--text-secondary);
 }
 
 .search-result-file-matched-text {
-  color: inherit;
-  background-color: inherit;
-}
-/** ________ 2.3.7 vertically centre line numbers in large paragraphs -- https://discord.com/channels/686053708261228577/702656734631821413/822257712825237524 */
-/* .CodeMirror-gutter-wrapper { height:100%; }
-.CodeMirror-gutter-elt { top:0; }
-.cm-s-obsidian .CodeMirror-linenumber{ height: 100%; }
-.cm-s-obsidian .CodeMirror-linenumber::before {
-  content: "";
-  height: calc(50% - 1em);
-  display: block;
-} */
-/** ________ 2.3.8 Fix padding of transcluded blocks in lists */
-.markdown-preview-view .markdown-embed-content > .markdown-preview-view {
-  max-height: 800px;
-  padding-left: 25px;
-}
-/** ________ 2.3.9 Custom Highlight Colors based on templater */
-.hltr-red {
-  background-color: var(--bright-red) !important;
-}
-.hltr-orange {
-  background-color: var(--bright-orange) !important;
-}
-.hltr-yellow {
-  background-color: var(--bright-yellow) !important;
-}
-.hltr-aqua {
-  background-color: var(--bright-aqua) !important;
-}
-.hltr-green {
-  background-color: var(--bright-green) !important;
-}
-.hltr-blue {
-  background-color: var(--bright-blue) !important;
-}
-.hltr-purple {
-  background-color: var(--bright-purple) !important;
-}
-.hltr-magenta {
-  background-color: var(--bright-purple) !important;
-}
-.hltr-grey {
-  background-color: var(--gray) !important;
-}
-/** ____ 2.4 Font Formatting */
-/** ______ 2.4.1 Make Mathjax Font Larger */
-.MJX-TEX {
-  font-size: 150%;
-}
-/** ______ 2.4.2 Hyphenation & Justification     https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/25 */
-.cm-s-obsidian,
-.markdown-preview-view {
-  text-align: justify;
-  hyphens: auto;
-}
-/** ______ 2.4.3 Stylish Block Quotes -- https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/39 */
-blockquote:before {
-  font:
-    14px/20px italic Times,
-    serif;
-  content: "";
-  color: var(--faded-purple);
-  font-size: 3em;
-  line-height: 0.1em;
-  vertical-align: -0.4em;
-}
-blockquote p {
-  display: inline;
-}
-/** ______ 2.4.4 General Font Formatting */
-b,
-strong,
-.cm-s-obsidian .cm-strong {
-  color: var(--bright-red) !important;
-}
-i,
-em,
-span.cm-em {
-  color: var(--bright-green) !important;
-}
-u {
-  color: var(--bright-purple) !important;
-}
-del {
-  color: var(--gray);
-}
-sup,
-sub {
-  color: var(--neutral-yellow);
-}
-/** ______ 2.4.5 Stylish Signatures -- https://discord.com/channels/686053708261228577/702656734631821413/784210155923177552 */
-.signature {
-  font-family: Ananda; /* Font that had to be downloaded from dafont.com */
-  text-align: left;
-  padding-left: 0px;
-  padding-top: 10px;
-  color: var(--bright-purple);
-}
-/** ____ 2.5 Graph Formatting */
-/** ______ 2.5.1 Graph View CSS -- https://discordapp.com/channels/686053708261228577/702656734631821413/760488978691784705 */
-.theme-dark .graph-view.color-arrow {
-  color: var(--bright-aqua);
-}
-.theme-dark .graph-view.color-fill-tag {
-  color: var(--bright-yellow);
-}
-.theme-dark .graph-view.color-fill-attachment {
-  color: var(--neutral-blue);
-}
-.theme-dark .graph-view.color-fill-unresolved {
-  color: var(--bright-red);
-}
-.graph-view.color-fill-focused {
-  color: var(--faded-red);
-}
-.graph-view.color-fill {
-  color: var(--light1);
-}
-/* .graph-view.color-line {
-  color: var(--gray);
-}*/
-/** ____ 2.6 Image Manipulation */
-/** ______ 2.6.1 Image Hover Grow -- https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/29 */
-.markdown-preview-view img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-  transition: transform 0.25s ease;
-}
-/*   margin-top: 20pt;
-  margin-bottom: 20pt; */
-
-.markdown-preview-view img:hover {
-  -webkit-transform: scale(1.8);
-  transform: scale(2);
+  background: var(--highlight-bg);
 }
 
-/** ____ 2.9 [[Link]] Modification */
-/** ______ 2.9.1 Bigger Link Hover Popup Preview -- https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/175 */
-.popover.hover-popover {
-  transform: scale(0.8); /* makes the content smaller */
-  max-height: 800px;
-  min-height: 50px;
-  width: 700px;
-  overflow: overlay; /* new added */
-}
-.popover.hover-popover .markdown-embed {
-  height: 100%;
-}
-.popover.hover-popover.is-loaded
-  .markdown-embed
-  .markdown-embed-content
-  .markdown-preview-view {
-  padding: 10px 10px 10px 16px; /*16px  two pop magin */
-}
-/** ________ 2.9.2 The modal popups from link hovers */
-.popover {
-  border: 2px solid var(--bright-aqua);
+/* --- Site header/footer --- */
+
+.site-header,
+.site-footer,
+.published-section-header {
+  font-family: var(--font-display);
 }
 
-/** ______ 2.10.1 Calendar Plugin CSS */
-#calendar-container {
-  --color-background-heading: transparent;
-  --color-background-weeknum: transparent;
-  --color-background-weekend: transparent;
-  --color-background-day: transparent;
-  --color-background-day-empty: var(--background-secondary-alt);
-  --color-background-day-active: var(--interactive-accent);
-  --color-background-day-hover: var(--interactive-hover);
+/* --- Publish site name --- */
 
-  --color-dot: var(--bright-aqua);
-
-  --color-text-weeknum: var(--bright-aqua);
-  --color-text-title: var(--text-normal);
-  --color-text-heading: var(--text-normal);
-  --color-text-day: var(--text-normal);
-  --color-text-today: var(--text-accent);
-  --color-arrow: var(--bright-aqua);
-  --color-button: var(--text-muted);
-}
-#calendar-container > table > tbody > tr > td {
-  padding: 0px !important;
-}
-#calendar-container .year {
-  color: var(--bright-orange);
-}
-#calendar-container [data-emoji-tag]::after {
-  content: attr(data-emoji-tag);
-  position: absolute;
-  top: -4px;
-  right: 4px;
-  height: 8px;
-  width: 8px;
+.publish-site-name {
+  font-family: var(--font-display);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.02em;
 }
 
-/** ______ 2.11.2 Emoji Orientation in Andy Mode Headers -- https://discord.com/channels/686053708261228577/702656734631821413/775900471406624768 */
-body.plugin-sliding-panes-rotate-header .workspace > .mod-root .view-header {
-  text-orientation: sideways;
-}
-/** ________ 2.11.3 Heading Horizontal Lines -- https://forum.obsidian.md/t/meta-post-common-css-hacks/1978/288?u=tallguyjenks */
-/* h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  display: flex;
-  width: 100%;
-  align-items: center;
-}
-h1:before,
-h1:after,
-h2:before,
-h2:after,
-h3:before,
-h3:after,
-h4:before,
-h4:after,
-h5:before,
-h5:after,
-h6:before,
-h6:after {
-  content: "";
-  background: var(--bright-aqua);
-  height: 0.1em;
-  margin: 0.2em;
-  flex: 1;
-} */
-/** ____ 2.12 Horizontal Rule Formatting */
-/** ______ 2.12.1 Aesthetic Horizontal Rule -- https://github.com/TriDiamond/Obsidian-Obsidianite */
 
-.markdown-preview-view hr {
-  margin-block-start: 4em;
-  margin-block-end: 4em;
-  border: none;
-  height: 1px;
-  /* Width constraint to prevent collision with TOC sidebar at all viewport sizes */
-  max-width: min(75%, calc(100% - 280px));
-  margin-left: auto;
-  margin-right: auto;
-  padding-right: 20px;
-  background-image: linear-gradient(
-    to right,
-    var(--background-primary),
-    var(--text-accent),
-    var(--background-primary)
-  );
+/* ==========================================================================
+   11. Responsive Design
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  h1, .markdown-preview-view h1 { font-size: 1.7rem; }
+  h2, .markdown-preview-view h2 { font-size: 1.4rem; }
+  h3, .markdown-preview-view h3 { font-size: 1.25rem; }
+  h4, .markdown-preview-view h4 { font-size: 1.12rem; }
+
+  .markdown-preview-view hr {
+    max-width: 90%;
+    margin-block-start: 2.5em;
+    margin-block-end: 2.5em;
+  }
+
+  aside {
+    width: 100%;
+    float: none;
+    margin-left: 0;
+  }
 }
 
-.markdown-preview-view hr::after {
-  /* content: '§'; */
-  content: "ᛟ";
-  display: inline-block;
-  position: absolute;
-  left: 50%;
-  /* transform: translate(-50%, -50%) rotate(60deg); */
-  transform: translate(-50%, -50%) rotate(0deg);
-  transform-origin: 50% 50%;
-  padding: 0.5rem;
-  color: var(--bright-aqua);
-  background-color: var(--background-primary);
+@media (max-width: 480px) {
+  h1, .markdown-preview-view h1 { font-size: 1.5rem; }
+  h2, .markdown-preview-view h2 { font-size: 1.3rem; }
+  h3, .markdown-preview-view h3 { font-size: 1.15rem; }
+  h4, .markdown-preview-view h4 { font-size: 1.05rem; }
+
+  .markdown-preview-view img:hover {
+    transform: none;
+  }
+
+  table {
+    font-size: 0.9em;
+  }
 }
-/** ______ 2.13.1 Page Break -- https://gist.github.com/liamcain/81679412643690a7cdd13dff4dc909ce */
+
+
+/* ==========================================================================
+   12. Print + Accessibility
+   ========================================================================== */
+
 @media print {
-  /* pagebreak before all ## headings */
+  :root,
+  .theme-dark,
+  .theme-light {
+    --background-primary: #ffffff;
+    --background-primary-alt: #ffffff;
+    --background-secondary: #ffffff;
+    --background-secondary-alt: #f4f4f4;
+    --text-normal: #000000;
+    --text-secondary: #111111;
+    --text-muted: #333333;
+    --text-faint: #555555;
+    --background-modifier-border: #cccccc;
+    --border-subtle: #cccccc;
+    --border-strong: #999999;
+    --link-color: #000000;
+    --link-hover: #000000;
+    --link-external: #000000;
+    --heading-1: #000000;
+    --heading-2: #111111;
+    --heading-3: #222222;
+    --heading-4: #222222;
+    --heading-5: #333333;
+    --heading-6: #333333;
+    --pre-code: #f4f4f4;
+    --code-normal: #000000;
+    --code-comment: #555555;
+    --code-function: #000000;
+    --code-keyword: #000000;
+    --code-string: #333333;
+    --code-number: #333333;
+    --code-operator: #000000;
+    --code-type: #000000;
+    --code-property: #000000;
+    --blockquote-border: #999999;
+    --blockquote-bg: transparent;
+    --highlight-bg: #ffffcc;
+    --strong-color: #000000;
+    --em-color: #000000;
+    --selection-bg: transparent;
+    --tag-text: #000000;
+  }
+
+  body,
+  .markdown-preview-view {
+    background: #ffffff !important;
+    color: #000000 !important;
+    max-width: 100% !important;
+  }
+
+  .site-header,
+  .site-footer,
+  .outline,
+  .graph-view-container,
+  nav {
+    display: none !important;
+  }
+
   h2 {
     page-break-before: always;
   }
@@ -1592,11 +1119,12 @@ h6:after {
   }
 
   pre,
-  blockquote {
+  blockquote,
+  table {
     page-break-inside: avoid;
   }
 
-  /* use double <hr> ('---') to indicate a page break */
+  /* Double hr for manual page breaks */
   hr + hr {
     page-break-before: always;
     visibility: hidden;
@@ -1610,1289 +1138,56 @@ h6:after {
     border-top: 1px solid black;
     padding-top: 2em;
   }
-}
-/** ______ 2.14.1 Banded Table Rows -- https://discord.com/channels/686053708261228577/702656734631821413/777106171948564500 */
-table {
-  padding: 0;
-  word-break: initial;
-}
-
-table tr {
-  border-top: 1px solid #cccccc;
-  margin: 0;
-  padding: 0;
-}
-
-table tr:nth-child(2n) {
-  background-color: var(--dark1);
-}
-
-table tr th {
-  font-weight: bold;
-  border: 1px solid #cccccc;
-  text-align: left;
-  margin: 0;
-  padding: 6px 13px;
-}
-
-table tr td {
-  border: 1px solid #cccccc;
-  text-align: left;
-  margin: 0;
-  padding: 6px 13px;
-}
-
-table tr th:first-child,
-table tr td:first-child {
-  margin-top: 0;
-}
-
-table tr th:last-child,
-table tr td:last-child {
-  margin-bottom: 0;
-}
-/** ________ 2.14.2 Full Width Tables */
-.markdown-preview-view table {
-  width: 100%;
-}
-#sponsors,
-#patrons {
-  width: 50%;
-}
-
-/** ________ 2.14.3 Theme-Aware Table Styling for Better Contrast */
-/* Light theme table styling - override any inline styles */
-.theme-light table tr:nth-child(2n) {
-  background-color: #f5f5f0 !important; /* Light gray for alternating rows */
-}
-
-.theme-light table tr {
-  background-color: #ffffff !important; /* White for regular rows */
-}
-
-.theme-light table tr th,
-.theme-light table tr td {
-  background-color: transparent !important;
-  color: var(--text-normal) !important;
-  border: 1px solid #cccccc !important;
-}
-
-.theme-light table tr th {
-  font-weight: var(--bold-weight) !important;
-  background-color: #e8e8e8 !important; /* Slightly darker for headers */
-}
-
-/* Ensure dark theme keeps proper styling with !important to override inline styles */
-.theme-dark table tr:nth-child(2n) {
-  background-color: var(--dark1) !important;
-}
-
-.theme-dark table tr {
-  background-color: transparent !important;
-}
-
-.theme-dark table tr th,
-.theme-dark table tr td {
-  background-color: transparent !important;
-  color: var(--text-normal) !important;
-}
-/** ________ 2.14.3 Numbered Table Rows-- https://discord.com/channels/686053708261228577/707816848615407697/832558496892846080 */
-.table-view-table {
-  counter-reset: section;
-}
-
-.table-view-table > tbody > tr > td:first-child::before {
-  counter-increment: section;
-  content: counter(section) ". ";
-}
-/** ____ 2.15 Custom HTML Elements */
-/** ______ 2.15.1 aside format -- https://discord.com/channels/686053708261228577/707816848615407697/784964375806083124 */
-aside {
-  width: 40%;
-  padding-left: 0.5rem;
-  margin-left: 1rem;
-  margin-top: 0.5rem;
-  float: right;
-  box-shadow: inset 5px 0 5px -5px var(--faded-blue);
-  font-style: italic;
-  color: var(--faded-blue);
-}
-
-aside > p {
-  margin: 0.5rem;
-}
-/** ______ 2.15.2 Buttons -- https://discord.com/channels/686053708261228577/744933215063638183/784289179328708648 */
-.date_button_today {
-  background-color: var(--neutral-aqua);
-  font-weight: bold;
-  margin-right: 0%;
-}
-.date_button_today:hover {
-  background-color: var(--faded-aqua);
-}
-.date_button {
-  background-color: var(--dark1);
-}
-.date_button:hover {
-  background-color: var(--dark3);
-}
-/** ________ 2.15.3 Definition Lists */
-dt {
-  color: var(--neutral-yellow);
-  font-weight: bold;
-}
-dd {
-  color: var(--faded-yellow);
-  font-style: italic;
-}
-dd::before {
-  content: "├── ";
-  margin-left: -1.5em;
-  color: var(--neutral-orange);
-  font-style: normal;
-}
-dd:last-child::before {
-  content: "└── ";
-  margin-left: -1.5em;
-  color: var(--neutral-orange);
-  font-style: normal;
-}
-/** ________ 2.15.4 Code Language Fences -- https://discord.com/channels/686053708261228577/702656734631821413/822915125522202654 */
-
-/* Informational Code Fences */
-.theme-dark /*replace with dark if needed*/ div pre.language-info {
-  /*replace info with anything you like*/
-  background-color: var(
-    --background-primary
-  ); /*you can replace with any colour you want here*/
-  border-left: 1em solid var(--neutral-blue); /*replace this colour with anything you like*/
-  padding-top: 0;
-}
-
-pre.language-info::before {
-  /*replace info with anything you like*/
-  margin-bottom: 0.9em;
-  margin-left: -1em; /*based on default padding of obsidian, you may need to adjust depending on the theme you use*/
-  margin-right: -1em;
-  position: static;
-  display: block;
-  background-color: var(
-    --background-secondary
-  ); /*replace this colour with anything you like*/
-  content: "  ℹ️ Info"; /*replace this content with anything you like*/
-}
-
-/* JavaScript */
-.theme-dark /*replace with dark if needed*/ div pre.language-javascript {
-  /*replace info with anything you like*/
-  background-color: var(
-    --background-primary
-  ); /*you can replace with any colour you want here*/
-  padding-top: 0;
-}
-
-pre.language-javascript::before {
-  /*replace info with anything you like*/
-  margin-bottom: 0.9em;
-  margin-left: -1em; /*based on default padding of obsidian, you may need to adjust depending on the theme you use*/
-  margin-right: -1em;
-  position: static;
-  display: block;
-  background-color: var(
-    --neutral-yellow
-  ); /*replace this colour with anything you like*/
-  content: "    JavaScript"; /*replace this content with anything you like*/
-  color: var(--background-secondary);
-  font-weight: bold;
-}
-
-/* HTML */
-.theme-dark /*replace with dark if needed*/ div pre.language-html {
-  /*replace info with anything you like*/
-  background-color: var(
-    --background-primary
-  ); /*you can replace with any colour you want here*/
-  padding-top: 0;
-}
-
-pre.language-html::before {
-  /*replace info with anything you like*/
-  margin-bottom: 0.9em;
-  margin-left: -1em; /*based on default padding of obsidian, you may need to adjust depending on the theme you use*/
-  margin-right: -1em;
-  position: static;
-  display: block;
-  background-color: var(
-    --neutral-orange
-  ); /*replace this colour with anything you like*/
-  content: "    HTML"; /*replace this content with anything you like*/
-  color: var(--background-secondary);
-  font-weight: bold;
-}
-
-/* CSS */
-.theme-dark /*replace with dark if needed*/ div pre.language-css {
-  /*replace info with anything you like*/
-  background-color: var(
-    --background-primary
-  ); /*you can replace with any colour you want here*/
-  padding-top: 0;
-}
-
-pre.language-css::before {
-  /*replace info with anything you like*/
-  margin-bottom: 0.9em;
-  margin-left: -3em; /*based on default padding of obsidian, you may need to adjust depending on the theme you use*/
-  margin-right: -1em;
-  position: static;
-  display: block;
-  background-color: var(
-    --neutral-blue
-  ); /*replace this colour with anything you like*/
-  content: "    CSS"; /*replace this content with anything you like*/
-  color: var(--background-secondary);
-  font-weight: bold;
-}
-
-/* Git repurposed for pro/con */
-.theme-dark /*replace with dark if needed*/ div pre.language-git {
-  /*replace info with anything you like*/
-  background-color: var(
-    --background-primary
-  ); /*you can replace with any colour you want here*/
-  padding-top: 0;
-}
-
-pre.language-git::before {
-  /*replace info with anything you like*/
-  margin-bottom: 0.9em;
-  margin-left: -1em; /*based on default padding of obsidian, you may need to adjust depending on the theme you use*/
-  margin-right: -1em;
-  position: static;
-  display: block;
-  background-color: var(
-    --faded-green
-  ); /*replace this colour with anything you like*/
-  content: "    Pro / Con"; /*replace this content with anything you like*/
-  color: var(--background-secondary);
-  font-weight: bold;
-}
-/** ________ 2.15.5 Rounded Edges of Inline Code blocks https://discord.com/channels/686053708261228577/702656734631821413/822181163639767081 */
-/* set text and colour of codeblock */
-.cm-s-obsidian
-  span.cm-inline-code:not(.cm-formatting):not(.cm-hmd-indented-code):not(
-    .obsidian-search-match-highlight
-  ) {
-  color: inherit;
-  background-color: var(--background-secondary);
-  padding: 2px 4px;
-}
-
-/* give rounded left edge to codeblock formatting*/
-span.cm-formatting.cm-formatting-code.cm-inline-code {
-  border-radius: 4px 0px 0px 4px;
-  background-color: var(--background-secondary);
-  color: inherit;
-  padding: 2px 4px;
-}
-
-/* give rounded right edge to codeblock formatting */
-span.cm-inline-code + span.cm-formatting.cm-formatting-code.cm-inline-code {
-  border-radius: 0px 4px 4px 0px;
-}
-/** ____ 2.16 Quick Switcher */
-/** ________ 2.16.1 Fix the quick switcher highligher after background color change */
-.suggestion-item.is-selected {
-  background-color: var(--faded-aqua);
-}
-
-/** Folder colors Source: https://gist.github.com/Larandar/e025313d086b75ec1f9a2e6672836883 */
-.nav-folder-title[data-path^="Log"] {
-  background-color: var(--durham-purple);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Journal"] {
-  background-color: var(--durham-purple);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Sterkere"] {
-  background-color: var(--durham-purple);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Templates"] {
-  background-color: var(--neutral-orange);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="DevLog"] {
-  background-color: var(--neutral-yellow);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="CRM"] {
-  background-color: var(--neutral-green);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Inbox"] {
-  background-color: var(--neutral-aqua);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Z"] {
-  background-color: var(--neutral-aqua);
-  color: var(--background-primary);
-}
-.nav-folder.mod-root
-    > .nav-folder-children
-    > .nav-folder
-    > .nav-folder-title[data-path^='People']
-/* .nav-folder.mod-root
-    > .nav-folder-children
-    > .nav-folder
-    > .nav-folder-title[data-path^='readwise']
-    + .nav-folder-children  */ {
-  background-color: var(--neutral-blue);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Media"] {
-  background-color: var(--neutral-blue);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Notes"] {
-  background-color: var(--neutral-purple);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Readwise"] {
-  background-color: var(--neutral-purple);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Utility"] {
-  background-color: var(--gray);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Projects"] {
-  background-color: var(
-    --bright-blue
-  ); /* or --neutral-aqua or --faded-yellow */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="otv"] {
-  background-color: var(--b8bb26); /* or --neutral-aqua or --faded-yellow */
-  color: var(--background-primary);
-}
-
-/** Alternative File Tree Styling */
-
-.oz-folder-toggle > g > path {
-  fill: var(--neutral-aqua);
-}
-div.oz-folder-contents {
-  border-left: 1px solid var(--faded-aqua);
-}
-
-/** Block reference counter plugin styling */
-.block-ref-count {
-  /* border: var(--dark2) solid 2px; */
-  border: var(--neutral-aqua) solid 2px;
-  color: var(--neutral-aqua) !important;
-  font-weight: bold;
-  /* color: var(--interactive-accent) !important; */
-  background-color: var(--dark0-hard) !important;
-}
-.block-ref-count:hover {
-  color: var(--interactive-accent) !important;
-}
-
-/** Make stars from Prominant Star Plugin Yellow */
-.lucide-bookmark {
-  color: var(--neutral-blue);
-  fill: var(--neutral-blue);
-}
-.lucide-hash {
-  color: var(--neutral-orange);
-}
-.lucide-search,
-.lucide-git-fork,
-.lucide-file {
-  color: var(--light1);
-}
-.lucide-folder-closed {
-  color: var(--neutral-yellow);
-}
-.lucide-clock {
-  color: var(--neutral-aqua);
-}
-.lucide-calendar-check {
-  color: var(--bright-red);
-}
-
-.svg-icon.sidebar-left,
-.svg-icon.sidebar-right {
-  color: var(--bright-aqua);
-}
-
-/* Apply consistent font weights to sidebar elements */
-.nav-file-title-content,
-.nav-folder-title-content {
-  font-size: 14px !important;
-  font-family: var(--custom-font) !important;
-  font-weight: var(--normal-weight) !important;
-}
-
-/* Apply consistent font weights to settings and other UI elements */
-.setting-item,
-.modal,
-.suggestion-item,
-.menu,
-.dropdown,
-.notice,
-.status-bar,
-.workspace-tab-header-container,
-.workspace-leaf-content {
-  font-family: var(--custom-font) !important;
-  font-weight: var(--normal-weight) !important;
-}
-
-/* Table headers properly weighted */
-th {
-  font-weight: var(--bold-weight) !important;
-}
-
-/* Definition lists */
-dt {
-  font-weight: var(--bold-weight) !important;
-}
-
-dd {
-  font-weight: var(--normal-weight) !important;
-}
-
-/* Outline with readable weights */
-.outline {
-  font-size: 1.3rem;
-  font-weight: var(--normal-weight);
-}
-
-.outline .tree-item-inner {
-  font-weight: var(--normal-weight);
-}
-
-/* Code blocks with readable weight */
-.HyperMD-codeblock {
-  font-weight: var(--normal-weight) !important;
-}
-
-/* Blockquotes with readable weight */
-blockquote p {
-  font-weight: var(--normal-weight) !important;
-}
-
-/* Inline code with appropriate weight */
-.cm-inline-code {
-  font-weight: var(--normal-weight) !important;
-}
-
-/* Update specific UI elements to use the accent color */
-.suggestion-item.is-selected {
-  background-color: var(--accent-purple-dark) !important;
-  color: var(--light0) !important;
-}
-
-.checkbox-container.is-enabled {
-  background-color: var(--accent-purple) !important;
-}
-
-.workspace-leaf.mod-active .workspace-leaf-header-title {
-  color: var(--accent-purple-light) !important;
-}
-
-/* Make tags stand out with the accent color */
-a.tag {
-  background-color: var(--accent-purple) !important;
-  color: white !important;
-  border: none !important;
-  padding: 2px 8px !important;
-  margin: 0 4px !important;
-  border-radius: 4px !important;
-  font-size: 0.85em !important;
-  font-weight: var(--normal-weight) !important;
-  text-decoration: none !important;
-  transition: all 0.2s ease !important;
-}
-
-a.tag:hover {
-  background-color: var(--accent-purple-light) !important;
-  color: white !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2) !important;
-}
-
-.mod-cta {
-  background-color: var(--accent-purple) !important;
-  color: var(--text-on-accent) !important;
-}
-
-.mod-cta:hover {
-  background-color: var(--accent-purple-light) !important;
-  color: var(--text-on-accent) !important;
-}
-
-/* Special styling for important folders using accent color */
-.nav-folder-title[data-path^="Projects"] {
-  background-color: var(--accent-purple);
-  color: var(--background-primary);
-}
-
-.nav-folder-title[data-path^="Projects"] .nav-folder-title-content::before {
-  content: "🚀 ";
-  font-size: 1.3em;
-}
-
-/* Style checkboxes with accent color */
-input.task-list-item-checkbox:checked {
-  background-color: var(--accent-purple) !important;
-  border-color: var(--accent-purple) !important;
-}
-
-/* Graph view with accent color */
-.theme-dark .graph-view.color-arrow {
-  color: var(--accent-purple);
-}
-
-.graph-view.color-fill-focused {
-  fill: var(--accent-purple-light);
-}
-
-/* Link hover popover with accent styling */
-.popover.hover-popover {
-  border: 1px solid var(--accent-purple-dark);
-  box-shadow: 0 2px 8px var(--accent-purple-dark);
-}
-
-/* Block quote with accent color */
-blockquote {
-  border-left: 4px solid var(--accent-purple) !important;
-}
-
-/* Active line number with accent color */
-.CodeMirror-activeline-gutter {
-  background-color: var(--accent-purple-dark);
-}
-
-/* Selection highlight */
-::selection {
-  background-color: var(--accent-purple-dark) !important;
-  color: var(--light0) !important;
-}
-
-/* Improve sidebar active item highlighting */
-.nav-file-title.is-active {
-  background-color: var(--accent-purple-dark) !important;
-  color: var(--light0) !important;
-}
-
-/* Add additional styling for sidebar icons and buttons */
-.side-dock-ribbon-action,
-.view-action,
-.workspace-ribbon-collapse-btn,
-.workspace-tab-header-inner-icon,
-.clickable-icon,
-.view-header-icon,
-.nav-action-button,
-button.mod-refresh {
-  color: var(--text-muted);
-  transition:
-    color 0.2s ease-in-out,
-    transform 0.2s ease-in-out;
-}
-
-.side-dock-ribbon-action:hover,
-.view-action:hover,
-.workspace-ribbon-collapse-btn:hover,
-.workspace-tab-header-inner-icon:hover,
-.clickable-icon:hover,
-.view-header-icon:hover,
-.nav-action-button:hover,
-button.mod-refresh:hover {
-  color: var(--accent-purple);
-  transform: scale(1.1);
-}
-
-/* Ensure active state for icons is clearly visible */
-.side-dock-ribbon-action.is-active,
-.view-action.is-active,
-.clickable-icon.is-active,
-.nav-action-button.is-active {
-  color: var(--accent-purple);
-}
-
-/* Style specific buttons like refresh */
-button.clickable-icon,
-button.mod-refresh {
-  background-color: transparent;
-  color: var(--text-muted);
-  border: 1px solid var(--background-modifier-border);
-  border-radius: 4px;
-  padding: 4px 8px;
-  transition: all 0.2s ease;
-}
-
-button.clickable-icon:hover,
-button.mod-refresh:hover {
-  background-color: var(--accent-purple);
-  color: var(--text-on-accent);
-  border-color: var(--accent-purple);
-}
-
-/* Match all CTA buttons with consistent styling */
-button.mod-cta,
-.mod-cta {
-  background-color: var(--accent-purple) !important;
-  color: var(--text-on-accent) !important;
-  border: 1px solid var(--accent-purple) !important;
-  border-radius: 4px;
-  padding: 4px 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s ease;
-}
-
-button.mod-cta:hover,
-.mod-cta:hover {
-  background-color: var(--accent-purple-light) !important;
-  border-color: var(--accent-purple-light) !important;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Target specific refresh buttons in the sidebar */
-.nav-buttons-container button,
-.workspace-ribbon-collapse-btn,
-.side-dock-actions button,
-.workspace-tab-header-container-inner button,
-.workspace-leaf-content button[aria-label*="refresh"],
-.workspace-leaf-content button[data-tooltip-position*="refresh"],
-button.nav-action-button[aria-label*="Refresh"],
-[data-type="search"] .search-input-container button,
-.search-result-container button.mod-refresh,
-.workspace-leaf-content button.refresh-comp-button {
-  background-color: transparent;
-  color: var(--text-muted);
-  border: 1px solid var(--background-modifier-border);
-  border-radius: 4px;
-  padding: 4px 8px;
-  transition: all 0.2s ease;
-}
-
-.nav-buttons-container button:hover,
-.workspace-ribbon-collapse-btn:hover,
-.side-dock-actions button:hover,
-.workspace-tab-header-container-inner button:hover,
-.workspace-leaf-content button[aria-label*="refresh"]:hover,
-.workspace-leaf-content button[data-tooltip-position*="refresh"]:hover,
-button.nav-action-button[aria-label*="Refresh"]:hover,
-[data-type="search"] .search-input-container button:hover,
-.search-result-container button.mod-refresh:hover,
-.workspace-leaf-content button.refresh-comp-button:hover {
-  background-color: var(--accent-purple);
-  color: var(--text-on-accent);
-  border-color: var(--accent-purple);
-}
-
-/* Add styling for icons within these buttons */
-.nav-buttons-container button svg,
-.workspace-ribbon-collapse-btn svg,
-.side-dock-actions button svg,
-.workspace-tab-header-container-inner button svg,
-.workspace-leaf-content button[aria-label*="refresh"] svg,
-.workspace-leaf-content button[data-tooltip-position*="refresh"] svg,
-button.nav-action-button[aria-label*="Refresh"] svg,
-[data-type="search"] .search-input-container button svg,
-.search-result-container button.mod-refresh svg,
-.workspace-leaf-content button.refresh-comp-button svg {
-  color: inherit;
-}
-
-/* Style all SVG icons consistently */
-svg.svg-icon {
-  color: var(--text-muted);
-  transition: color 0.2s ease;
-}
 
-svg.svg-icon:hover {
-  color: var(--accent-purple);
-}
-
-/* Style active SVG icons */
-.is-active svg.svg-icon {
-  color: var(--accent-purple);
-}
-
-/* Target Note Companion plugin refresh button specifically */
-.view-content button.refresh-button,
-button[aria-label*="refresh"],
-button[aria-label*="Refresh"],
-.note-companion-refresh-button,
-button.file-organizer-refresh-button,
-button.note-companion-button,
-.dropdown button,
-.nav-buttons-container button.clickable-icon,
-[data-type="note-companion-view"] button,
-.note-companion-content button,
-.FileOrganizer2000 button {
-  background-color: transparent !important;
-  color: var(--text-muted) !important;
-  border: 1px solid var(--background-modifier-border) !important;
-  border-radius: 4px !important;
-  padding: 4px 8px !important;
-  transition: all 0.2s ease !important;
-}
-
-.view-content button.refresh-button:hover,
-button[aria-label*="refresh"]:hover,
-button[aria-label*="Refresh"]:hover,
-.note-companion-refresh-button:hover,
-button.file-organizer-refresh-button:hover,
-button.note-companion-button:hover,
-.dropdown button:hover,
-.nav-buttons-container button.clickable-icon:hover,
-[data-type="note-companion-view"] button:hover,
-.note-companion-content button:hover,
-.FileOrganizer2000 button:hover {
-  background-color: var(--accent-purple) !important;
-  color: white !important;
-  border-color: var(--accent-purple) !important;
-}
-
-/*---------------------------------
- * CONFERENCE AND JOURNAL CLUB FOLDERS
- *---------------------------------*/
-
-/* Parent folder */
-.nav-folder-title[data-path^="conference-and-journal-club"] {
-  background-color: var(--gray); /* soft gray */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="conference-and-journal-club"]
-  .nav-folder-title-content::before {
-  content: "🎯 ";
-}
-
-/* Conference club subfolder */
-.nav-folder-title[data-path="conference-and-journal-club/conference-club"] {
-  background-color: #8ec07c !important; /* bright-aqua */
-  color: var(--background-primary) !important;
-}
-.nav-folder-title[data-path^="conference-and-journal-club/conference-club"]
-  .nav-folder-title-content::before {
-  content: "🎤 ";
-}
-
-/* Conference club sub-folders - make them match the parent folder */
-.nav-folder-title[data-path^="conference-and-journal-club/conference-club/"] {
-  background-color: #8ec07c !important; /* bright-aqua */
-  color: var(--background-primary) !important;
-}
-.nav-folder-title[data-path^="conference-and-journal-club/conference-club/"]
-  .nav-folder-title-content::before {
-  content: "🎤 ";
-}
-
-/* Journal club subfolder */
-.nav-folder-title[data-path="conference-and-journal-club/journal-club"] {
-  background-color: #fe8019 !important; /* bright-orange */
-  color: var(--background-primary) !important;
-}
-.nav-folder-title[data-path^="conference-and-journal-club/journal-club"]
-  .nav-folder-title-content::before {
-  content: "📚 ";
-}
-
-/* Journal club sub-folders - make them match the parent folder */
-.nav-folder-title[data-path^="conference-and-journal-club/journal-club/"] {
-  background-color: #fe8019 !important; /* bright-orange */
-  color: var(--background-primary) !important;
-}
-.nav-folder-title[data-path^="conference-and-journal-club/journal-club/"]
-  .nav-folder-title-content::before {
-  content: "📚 ";
-}
-
-/* Fix dropdown arrows for colored folders (especially green and orange) */
-.nav-folder-title[data-path^="conference-and-journal-club/conference-club"]
-  .nav-folder-collapse-indicator
-  svg
-  path,
-.nav-folder-title[data-path^="conference-and-journal-club/journal-club"]
-  .nav-folder-collapse-indicator
-  svg
-  path,
-.nav-folder-title[style*="background-color"]
-  .nav-folder-collapse-indicator
-  svg
-  path {
-  fill: var(--background-primary) !important;
-  stroke: var(--background-primary) !important;
-}
-
-/* Default style for other subfolders */
-.nav-folder-title[data-path^="conference-and-journal-club/"] {
-  background-color: var(--gray); /* soft gray */
-  color: var(--background-primary);
-}
-
-/** Alternative File Tree Styling */
-
-.oz-folder-toggle > g > path {
-  fill: var(--neutral-aqua);
-}
-div.oz-folder-contents {
-  border-left: 1px solid var(--faded-aqua);
-}
-
-/** Block reference counter plugin styling */
-.block-ref-count {
-  /* border: var(--dark2) solid 2px; */
-  border: var(--neutral-aqua) solid 2px;
-  color: var(--neutral-aqua) !important;
-  font-weight: bold;
-  /* color: var(--interactive-accent) !important; */
-  background-color: var(--dark0-hard) !important;
-}
-.block-ref-count:hover {
-  color: var(--interactive-accent) !important;
-}
-
-/** Make stars from Prominant Star Plugin Yellow */
-.lucide-bookmark {
-  color: var(--neutral-blue);
-  fill: var(--neutral-blue);
-}
-.lucide-hash {
-  color: var(--neutral-orange);
-}
-.lucide-search,
-.lucide-git-fork,
-.lucide-file {
-  color: var(--light1);
-}
-.lucide-folder-closed {
-  color: var(--neutral-yellow);
-}
-.lucide-clock {
-  color: var(--neutral-aqua);
-}
-.lucide-calendar-check {
-  color: var(--bright-red);
-}
-
-.svg-icon.sidebar-left,
-.svg-icon.sidebar-right {
-  color: var(--bright-aqua);
-}
-
-/** Folder Colors and Emojis */
-.nav-folder-title[data-path^="_AtomicNotes"] {
-  background-color: #83a598; /* soft blue */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_AtomicNotes"] .nav-folder-title-content::before {
-  content: "📝 ";
-}
-.nav-folder-title[data-path^="_Inbox"] {
-  background-color: #928374; /* soft gray */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_Inbox"] .nav-folder-title-content::before {
-  content: "📥 ";
-}
-
-.nav-folder-title[data-path^="_Media"] {
-  background-color: #d3869b; /* soft pink */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_Media"] .nav-folder-title-content::before {
-  content: "📸 ";
-}
-
-.nav-folder-title[data-path^="_TODO"] {
-  background-color: #8ec07c; /* soft green */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_TODO"] .nav-folder-title-content::before {
-  content: "✅ ";
-}
-
-.nav-folder-title[data-path^="Clippings"] {
-  background-color: #b8bb26; /* soft yellow */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Clippings"] .nav-folder-title-content::before {
-  content: "✂️ ";
-}
-
-.nav-folder-title[data-path^="Projects"] {
-  background-color: #83a598; /* soft blue */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Projects"] .nav-folder-title-content::before {
-  content: "🎯 ";
-}
-
-.nav-folder-title[data-path^="Resources-Literature"] {
-  background-color: #d79921; /* muted orange */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Resources-Literature"]
-  .nav-folder-title-content::before {
-  content: "📚 ";
-}
-
-.nav-folder-title[data-path^="Resources-non-research"] {
-  background-color: #98971a; /* muted green */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Resources-non-research"]
-  .nav-folder-title-content::before {
-  content: "📝 ";
-}
-
-.nav-folder-title[data-path^="Resources-research"] {
-  background-color: #689d6a; /* aqua */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Resources-research"]
-  .nav-folder-title-content::before {
-  content: "🔬 ";
-}
-
-.nav-folder-title[data-path^="Templates"] {
-  background-color: var(--neutral-orange);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Templates"] .nav-folder-title-content::before {
-  content: "📋 ";
-}
-
-.nav-folder-title[data-path^="Z_Archive"] {
-  background-color: #7c6f64; /* soft brown */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Z_Archive"] .nav-folder-title-content::before {
-  content: "📦 ";
-}
-
-/* FileOrganizer2000 Main Folder */
-.nav-folder-title[data-path^="_FO2K"] {
-  background-color: #83a598; /* soft blue */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FO2K"] .nav-folder-title-content::before {
-  content: "🗂️ ";
-}
-
-.nav-folder-title[data-path^="_FO2K/Inbox"] {
-  background-color: #d79921; /* muted orange */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FO2K/Inbox"] .nav-folder-title-content::before {
-  content: "📥 ";
-}
-
-.nav-folder-title[data-path^="_FO2K/Media"] {
-  background-color: #d3869b; /* soft pink */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FO2K/Media"] .nav-folder-title-content::before {
-  content: "📸 ";
-}
-
-.nav-folder-title[data-path^="_FO2K/Processed"] {
-  background-color: #8ec07c; /* soft green */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FO2K/Processed"]
-  .nav-folder-title-content::before {
-  content: "✅ ";
-}
-
-.nav-folder-title[data-path^="_FO2K/Templates"] {
-  background-color: var(--neutral-orange);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FO2K/Templates"]
-  .nav-folder-title-content::before {
-  content: "📋 ";
-}
-
-.nav-folder-title[data-path^="_FO2K/Logs"] {
-  background-color: #928374; /* soft gray */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FO2K/Logs"] .nav-folder-title-content::before {
-  content: "📊 ";
-}
-
-.nav-folder-title[data-path^="_FO2K/Backups"] {
-  background-color: #7c6f64; /* soft brown */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FO2K/Backups"]
-  .nav-folder-title-content::before {
-  content: "💾 ";
-}
-
-.nav-folder-title[data-path^="_FO2K/Fabric"] {
-  background-color: #98971a; /* muted green */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FO2K/Fabric"] .nav-folder-title-content::before {
-  content: "🧩 ";
-}
-
-.nav-folder-title[data-path^="_FO2K/Errors"] {
-  background-color: #d65d0e; /* soft orange */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FO2K/Errors"] .nav-folder-title-content::before {
-  content: "⚠️ ";
-}
-
-.nav-folder-title[data-path^="_FileOrganizer2000"] {
-  background-color: #83a598; /* soft blue */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FileOrganizer2000"]
-  .nav-folder-title-content::before {
-  content: "🗂️ ";
-}
-
-.nav-folder-title[data-path^="_FileOrganizer2000/Inbox"] {
-  background-color: #d79921; /* muted orange */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FileOrganizer2000/Inbox"]
-  .nav-folder-title-content::before {
-  content: "📥 ";
-}
-
-.nav-folder-title[data-path^="_FileOrganizer2000/Media"] {
-  background-color: var(--soft-pink);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FileOrganizer2000/Media"]
-  .nav-folder-title-content::before {
-  content: "📸 ";
-}
-
-.nav-folder-title[data-path^="_FileOrganizer2000/Processed"] {
-  background-color: var(--soft-green);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FileOrganizer2000/Processed"]
-  .nav-folder-title-content::before {
-  content: "✅ ";
-}
-
-.nav-folder-title[data-path^="_FileOrganizer2000/Templates"] {
-  background-color: var(--neutral-orange);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FileOrganizer2000/Templates"]
-  .nav-folder-title-content::before {
-  content: "📋 ";
-}
-
-.nav-folder-title[data-path^="_FileOrganizer2000/Logs"] {
-  background-color: var(--soft-gray);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FileOrganizer2000/Logs"]
-  .nav-folder-title-content::before {
-  content: "📊 ";
-}
-
-.nav-folder-title[data-path^="_FileOrganizer2000/Backups"] {
-  background-color: var(--soft-brown);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FileOrganizer2000/Backups"]
-  .nav-folder-title-content::before {
-  content: "💾 ";
-}
-
-.nav-folder-title[data-path^="_FileOrganizer2000/Fabric"] {
-  background-color: var(--muted-green);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FileOrganizer2000/Fabric"]
-  .nav-folder-title-content::before {
-  content: "🧩 ";
-}
-
-.nav-folder-title[data-path^="_FileOrganizer2000/Errors"] {
-  background-color: var(--soft-orange);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="_FileOrganizer2000/Errors"]
-  .nav-folder-title-content::before {
-  content: "⚠️ ";
-}
-
-.hltr-aqua {
-  background-color: var(--neutral-aqua) !important;
-}
-.hltr-green {
-  background-color: var(--neutral-green) !important;
-}
-/* Add new classes while keeping old ones for compatibility */
-.hltr-olive {
-  background-color: var(--neutral-green) !important;
-}
-.nav-folder-title[data-path^="comphy-lab.github.io"] {
-  background-color: #83a598; /* soft blue for code/research */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="comphy-lab.github.io"]
-  .nav-folder-title-content::before {
-  content: "🔬 ";
-}
-
-.nav-folder-title[data-path^="Conference-club"] {
-  background-color: #8ec07c; /* soft green for literature */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Conference-club"]
-  .nav-folder-title-content::before {
-  content: "📚 ";
-}
-
-.nav-folder-title[data-path^="Journal-club"] {
-  background-color: #689d6a; /* aqua - better contrast than red */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Journal-club"] .nav-folder-title-content::before {
-  content: "📝 ";
-}
-
-.nav-folder-title[data-path^="Templates"] {
-  background-color: #928374; /* soft gray for templates */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Templates"] .nav-folder-title-content::before {
-  content: "📋 ";
-}
-
-/** Folder colors Source: https://gist.github.com/Larandar/e025313d086b75ec1f9a2e6672836883 */
-.nav-folder-title[data-path^="Log"] {
-  background-color: var(--durham-purple);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Journal"] {
-  background-color: var(--durham-purple);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Sterkere"] {
-  background-color: var(--durham-purple);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Templates"] {
-  background-color: var(--neutral-orange);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="DevLog"] {
-  background-color: var(--neutral-yellow);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="CRM"] {
-  background-color: var(--neutral-green);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Inbox"] {
-  background-color: var(--neutral-aqua);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Z"] {
-  background-color: var(--neutral-aqua);
-  color: var(--background-primary);
-}
-.nav-folder.mod-root
-  > .nav-folder-children
-  > .nav-folder
-  > .nav-folder-title[data-path^="People"] {
-  background-color: var(--neutral-blue);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Media"] {
-  background-color: var(--neutral-blue);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Notes"] {
-  background-color: var(--neutral-purple);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Readwise"] {
-  background-color: var(--neutral-purple);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Utility"] {
-  background-color: var(--gray);
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="Projects"] {
-  background-color: var(
-    --bright-blue
-  ); /* or --neutral-aqua or --faded-yellow */
-  color: var(--background-primary);
-}
-.nav-folder-title[data-path^="otv"] {
-  background-color: var(--b8bb26); /* or --neutral-aqua or --faded-yellow */
-  color: var(--background-primary);
-}
-
-/* Custom folder icons and colors for additional folders */
-.nav-folder-title[data-path^="_scripts"] {
-  color: #b8bb26;
-}
-.nav-folder-title[data-path^="_scripts"] .nav-folder-title-content::before {
-  content: "📜 ";
-  font-size: 1.3em;
-}
-
-.nav-folder-title[data-path^="Blog"] {
-  color: #fabd2f;
-}
-.nav-folder-title[data-path^="Blog"] .nav-folder-title-content::before {
-  content: "✍️ ";
-  font-size: 1.3em;
-}
-
-.nav-folder-title[data-path^="Code-Documentation"] {
-  color: #83a598;
-}
-.nav-folder-title[data-path^="Code-Documentation"]
-  .nav-folder-title-content::before {
-  content: "📘 ";
-  font-size: 1.3em;
-}
-
-.nav-folder-title[data-path^="Lecture-Notes"] {
-  color: #d3869b;
-}
-.nav-folder-title[data-path^="Lecture-Notes"]
-  .nav-folder-title-content::before {
-  content: "📝 ";
-  font-size: 1.3em;
-}
-
-.nav-folder-title[data-path^="Talks"] {
-  color: #fe8019;
-}
-.nav-folder-title[data-path^="Talks"] .nav-folder-title-content::before {
-  content: "🎤 ";
-  font-size: 1.3em;
-}
-
-.nav-folder-title[data-path^="Wish-List"] {
-  color: #8ec07c;
-}
-.nav-folder-title[data-path^="Wish-List"] .nav-folder-title-content::before {
-  content: "✨ ";
-  font-size: 1.3em;
-}
+  img {
+    max-width: 80% !important;
+    box-shadow: none !important;
+  }
+
+  a {
+    color: #000000 !important;
+    text-decoration: underline !important;
+  }
+
+  a.tag {
+    background: none !important;
+    color: #000000 !important;
+    border: 1px solid #cccccc !important;
+  }
+}
+
+/* --- Reduced motion --- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --- Focus visible --- */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.24);
+}
+
+/* --- Highlight classes (for Highlightr plugin compatibility) --- */
+
+.hltr-red { background-color: var(--support-red-500) !important; }
+.hltr-orange { background-color: var(--support-orange-500) !important; }
+.hltr-yellow { background-color: var(--support-yellow-500) !important; }
+.hltr-green { background-color: var(--support-green-500) !important; }
+.hltr-aqua { background-color: var(--support-aqua-500) !important; }
+.hltr-blue { background-color: var(--support-blue-500) !important; }
+.hltr-purple { background-color: var(--accent-400) !important; }
+.hltr-magenta { background-color: var(--accent-400) !important; }
+.hltr-grey { background-color: var(--light-5) !important; }
