@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "Lecture-Notes/Slender-Jets/slender-jets-VE-order-0.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false,
                 "backlinks": true,
                 "backlinkOpts": {
@@ -30,19 +30,8 @@
               "icon": "lucide-file",
               "title": "slender-jets-VE-order-0"
             }
-          },
-          {
-            "id": "e1a56736094c373b",
-            "type": "leaf",
-            "state": {
-              "type": "swar8080/AVAILABLE_PLUGIN_UPDATES",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin Updates"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -234,14 +223,15 @@
       "obsidian-shellcommands:Shell commands: Custom variables": false
     }
   },
-  "active": "e1a56736094c373b",
+  "active": "f7f018a8cca35ffb",
   "lastOpenFiles": [
-    "_AtomicNotes/continuity-slender-jet.md",
+    "_AtomicNotes/dynamic-BC-slender-jet.md",
+    "Lecture-Notes/11311-1065271+Formenti.pdf",
     "Lecture-Notes/Slender-Jets/slender-jets-VE-order-0.md",
+    "_AtomicNotes/continuity-slender-jet.md",
     "_AtomicNotes/polymeric-stress-regularity-slender-jet.md",
     "_AtomicNotes/LHS-slender-jet.md",
     "_AtomicNotes/Laplacian-in-axisymmetric-slender-jet.md",
-    "_AtomicNotes/dynamic-BC-slender-jet.md",
     "_AtomicNotes/r-2-parity.md",
     "Lecture-Notes/Slender-Jets",
     "Lecture-Notes/untitled folder",
@@ -265,7 +255,6 @@
     "Lecture-Notes/Intro-Soft-Matter/Seminar-Singularities.pdf",
     "_Media/Seminar-Singularities-1767636732618.png",
     "_Media/Seminar-Singularities-1767636506475.png",
-    "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.pdf",
     "Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.md",
     "Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md",
     "Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md",
@@ -281,7 +270,6 @@
     "Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.md",
     "Blog/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.md",
     "Blog/2025-Why-Double‑Network-Hydrogels-Dont-Shatter.md",
-    "0_README.md",
     "Inbox/Untitled.canvas"
   ]
 }
