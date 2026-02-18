@@ -5,6 +5,10 @@
       "path": "Lecture-Notes/Slender-Jets/slender-jets-VE-order-0.md"
     },
     {
+      "basename": "dynamic-BC-slender-jet",
+      "path": "_AtomicNotes/dynamic-BC-slender-jet.md"
+    },
+    {
       "basename": "continuity-slender-jet",
       "path": "_AtomicNotes/continuity-slender-jet.md"
     },
@@ -195,10 +199,6 @@
     {
       "basename": "2025-History-Worthington-jets-from-bursting-bubbles",
       "path": "Blog/2025-History-Worthington-jets-from-bursting-bubbles.md"
-    },
-    {
-      "basename": "2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence",
-      "path": "Blog/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.md"
     }
   ],
   "omittedPaths": [],
