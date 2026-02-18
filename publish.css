@@ -21,6 +21,9 @@
    1. Google Fonts Import + Reset
    ========================================================================== */
 
+/* NOTE: Google Fonts @import is render-blocking but necessary for Obsidian Publish
+   (no <head> access for <link> tags, no file hosting for @font-face).
+   display=swap mitigates blocking by showing fallback fonts during load. */
 @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap");
 
 html {
@@ -438,9 +441,9 @@ mark {
    ========================================================================== */
 
 body {
-  --file-line-width: 960px;
-  --line-width: 960px;
-  --max-width: 960px;
+  --file-line-width: var(--content-width);
+  --line-width: var(--content-width);
+  --max-width: var(--content-width);
   background: var(--background-primary);
 }
 
@@ -610,6 +613,7 @@ img,
   margin-block-start: 4em;
   margin-block-end: 4em;
   border: none;
+  position: relative;
   height: 2px;
   max-width: min(75%, calc(100% - 280px));
   margin-left: auto;
@@ -827,6 +831,10 @@ pre.language-json::before { content: "JSON"; }
 pre.language-markdown::before,
 pre.language-md::before { content: "Markdown"; }
 pre.language-info::before { content: "Info"; }
+
+.theme-light pre[class*="language-"]::before {
+  color: var(--accent-600);
+}
 
 
 /* ==========================================================================
