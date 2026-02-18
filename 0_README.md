@@ -1,5 +1,5 @@
 ---
-modified: 2025-10-31T16:34:02+00:00
+modified: 2026-02-18T00:00:00+00:00
 created: 2024-12-15T23:25:04+01:00
 website: https://blogs-comphy-lab.org/
 status: done ✅
@@ -16,7 +16,7 @@ See: [About us](https://comphy-lab.org/about)
 ### Blog posts:
 #### 2025
 
-##### Double Network Hydroget:
+##### Double Network Hydrogel:
 2025-10-31 [[2025-Why-Double‑Network-Hydrogels-Dont-Shatter]]: Why double-network hydrogels combine stiffness and toughness without shattering - elastic screening mechanisms that prevent crack cascades by damping stress propagation between sacrificial bonds.
 
 ##### Scientist profiles & history:
@@ -60,17 +60,15 @@ See: [About us](https://comphy-lab.org/about)
 - Weekly lectures with self-assessed homework and student presentations
 
 #### Individual Lecture Notes:
-2025-01-21 [[Gauss-law-of-Electrostatics]]: Analysis of electric field flux through different surfaces using Gauss's law, with visual demonstrations.
+2025-11-05 [[4-Soft-Matter-Singularities]]: Lecture on finite-time singularities in soft matter, covering pinch-off, contact-line singularities, and scaling behavior across inertial, viscous, and viscoelastic regimes.
 
 ### Talks:
-#### 2025
-##### Conference Presentations:
-2025-06-30 [[2025-06-30_Conference-VPflow-abstract]]: VPflow conference abstract on taming singularities through yield-stress regularization in bubble-bursting, exploring how viscoplasticity suppresses Worthington jetting.
+#### 2026
 
 ##### Seminar Presentations:
-2025-02-21 [[Seminar-Drosophila-continuum-mechanics]]: Durham University seminar exploring polymeric flows as a tunable testbed for unsteady, nonlinear continuum mechanics.
+2026-01-07 [[Seminar-Coalescence-with-Surfactants]]: Seminar on asymmetric sessile-drop coalescence showing how insoluble surfactants can bias bridge growth, induce Marangoni-driven drift, and select merge-versus-non-merge outcomes.
 
-2025-01-19 [[Seminar-UIUC-abstract]]: UIUC fluid seminar investigating how polymers modify classical hydrodynamic singularities in free-surface flows.
+2026-01-05 [[Seminar-Singularities]]: Seminar on hydrodynamic singularities in soft matter, connecting drop impact, bubble bursting, and retracting films through experiments, simulations, and theory.
 
 ## Connect With Us
 
