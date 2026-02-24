@@ -1,6 +1,4 @@
 ---
-modified: 2026-02-18T00:00:00+00:00
-created: 2024-12-15T23:25:04+01:00
 website: https://blogs-comphy-lab.org/
 status: done ✅
 ---

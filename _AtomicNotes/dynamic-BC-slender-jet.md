@@ -1,7 +1,3 @@
----
-modified: 2026-02-16T20:29:41+00:00
-created: 2026-02-16T19:07:08+00:00
----
 # Leading-Order Dynamic BC in a Slender Jet
 
 Leading-order free-surface stress balances (normal and tangential) used in [[polymeric-stress-regularity-slender-jet|Slender jet momentum equations]].

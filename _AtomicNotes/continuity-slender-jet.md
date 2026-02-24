@@ -1,7 +1,3 @@
----
-modified: 2026-02-16T18:42:10+00:00
-created: 2026-02-16T18:36:59+00:00
----
 # Continuity in the Slender-Jet Expansion
 
 

@@ -1,6 +1,4 @@
 ---
-modified: 2025-10-30T11:37:47+00:00
-created: 2025-01-26T11:17:08+01:00
 aliases:
   - Relationship between rate of change of a physical quantity and its divergence
 type: atomic note

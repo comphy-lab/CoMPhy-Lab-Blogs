@@ -1,7 +1,3 @@
----
-modified: 2026-02-16T20:36:34+00:00
-created: 2026-02-16T19:54:28+00:00
----
 # Polymeric Stress Regularity in a Slender Jet
 
 Axis-regularity constraints on $\boldsymbol{\sigma}_p$ used in [[polymeric-stress-regularity-slender-jet|Slender jet momentum equations]].

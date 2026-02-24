@@ -1,6 +1,4 @@
 ---
-modified: 2026-01-05T19:05:01+00:00
-created: 2025-01-19T18:50:50+00:00
 aliases:
   - Seminar-Durham-abstract
   - Talks/Seminar-Durham-abstract

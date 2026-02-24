@@ -1,6 +1,4 @@
 ---
-modified: 2026-01-07T17:31:25+00:00
-created: 2026-01-07T11:31:22+00:00
 aliases:
   - Seminar-Coalescence-with-Surfactants
   - to-merge-or-not-to-merge

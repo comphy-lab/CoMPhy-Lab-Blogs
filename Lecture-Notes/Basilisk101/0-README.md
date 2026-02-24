@@ -1,6 +1,4 @@
 ---
-modified: 2025-10-30T11:38:54+00:00
-created: 2025-03-10T00:07:36+01:00
 status: done ✅
 publish: true
 aliases:

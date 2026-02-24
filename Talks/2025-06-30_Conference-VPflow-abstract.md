@@ -1,7 +1,3 @@
----
-modified: 2026-01-19T21:33:45+00:00
-created: 2025-06-09T19:42:41+02:00
----
 # Taming singularities: yield-stress regularization in bubble-bursting 
 
 > [!significance] Speaker

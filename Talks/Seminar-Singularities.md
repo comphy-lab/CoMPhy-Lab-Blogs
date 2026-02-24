@@ -1,6 +1,4 @@
 ---
-modified: 2026-01-05T19:04:30+00:00
-created: 2026-01-05T18:12:22+00:00
 aliases:
   - Seminar-Singularities
 status: done ✅

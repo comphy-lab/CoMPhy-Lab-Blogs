@@ -1,6 +1,4 @@
 ---
-modified: 2025-10-30T11:38:15+00:00
-created: 2025-01-11T13:58:29+00:00
 tags:
   - bubbles
   - capillary-waves

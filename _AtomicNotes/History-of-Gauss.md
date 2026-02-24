@@ -1,6 +1,4 @@
 ---
-modified: 2025-10-30T11:37:28+00:00
-created: 2025-01-21T00:56:59+00:00
 type: atomic note
 status: done ✅
 publish: true
