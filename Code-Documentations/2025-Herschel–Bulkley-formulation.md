@@ -1,6 +1,4 @@
 ---
-modified: 2025-10-30T11:38:50+00:00
-created: 2024-12-31T12:12:38+01:00
 tags:
   - non-Newtonian
   - Herschel-Bulkley-model

@@ -1,6 +1,4 @@
 ---
-modified: 2025-10-30T11:38:02+00:00
-created: 2025-02-23T13:33:34+01:00
 tags:
   - arrowhead
   - narwhal

@@ -1,7 +1,3 @@
----
-modified: 2026-02-16T18:45:05+00:00
-created: 2026-02-16T18:23:00+00:00
----
 # Viscous stress in the Slender-Jet Axial Equation
 
 

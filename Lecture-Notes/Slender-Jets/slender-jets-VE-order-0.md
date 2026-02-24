@@ -1,7 +1,3 @@
----
-modified: 2026-02-18T07:19:00+00:00
-created: 2026-02-12T22:58:58+00:00
----
 # Viscoelastic Slender Jets
 
 ### Parity argument (axis regularity + axisymmetry): 

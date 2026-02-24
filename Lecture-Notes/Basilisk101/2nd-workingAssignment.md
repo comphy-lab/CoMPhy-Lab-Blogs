@@ -1,6 +1,4 @@
 ---
-modified: 2025-10-30T11:39:04+00:00
-created: 2025-03-11T01:00:35+01:00
 status: done ✅
 publish: true
 ---

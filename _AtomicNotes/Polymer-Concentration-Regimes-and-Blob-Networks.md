@@ -1,5 +1,4 @@
 ---
-modified: 2025-10-31T00:00:00+00:00
 date: 2025-10-31
 status: done ✅
 publish: true

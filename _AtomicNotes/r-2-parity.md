@@ -1,7 +1,3 @@
----
-modified: 2026-02-16T20:43:07+00:00
-created: 2026-02-16T20:36:27+00:00
----
 # Why $\sigma_{rr}-\sigma_{\theta\theta}=O(r^2)$
 
 Goal: show the tensor-parity refinement used in [[polymeric-stress-regularity-slender-jet|slender-jet regularity arguments]].

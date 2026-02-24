@@ -1,7 +1,3 @@
----
-modified: 2026-02-16T18:46:35+00:00
-created: 2026-02-16T18:27:06+00:00
----
 # LHS of the Slender-Jet Axial Equation
 
 

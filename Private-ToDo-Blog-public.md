@@ -1,6 +1,4 @@
 ---
-modified: 2025-10-27T12:46:16+00:00
-created: 2025-01-02T00:26:54+01:00
 priority: good to have 🍀
 status: Working 🏗️
 tags:
