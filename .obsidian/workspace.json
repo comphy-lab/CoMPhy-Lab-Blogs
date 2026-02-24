@@ -4,31 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "fc2bfef9a2499620",
+        "id": "3aee7602c39344ba",
         "type": "tabs",
         "children": [
           {
-            "id": "f7f018a8cca35ffb",
+            "id": "2560268e8dbd1249",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Lecture-Notes/Slender-Jets/slender-jets-VE-order-0.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "slender-jets-VE-order-0"
+              "type": "home-tab-view",
+              "state": {},
+              "icon": "search",
+              "title": "Home tab"
             }
           }
         ]
@@ -114,13 +100,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lecture-Notes/Slender-Jets/slender-jets-VE-order-0.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of slender-jets-VE-order-0"
+              "title": "Outline"
             }
           },
           {
@@ -223,11 +208,11 @@
       "obsidian-shellcommands:Shell commands: Custom variables": false
     }
   },
-  "active": "f7f018a8cca35ffb",
+  "active": "2560268e8dbd1249",
   "lastOpenFiles": [
+    "Lecture-Notes/Slender-Jets/slender-jets-VE-order-0.md",
     "_AtomicNotes/dynamic-BC-slender-jet.md",
     "Lecture-Notes/11311-1065271+Formenti.pdf",
-    "Lecture-Notes/Slender-Jets/slender-jets-VE-order-0.md",
     "_AtomicNotes/continuity-slender-jet.md",
     "_AtomicNotes/polymeric-stress-regularity-slender-jet.md",
     "_AtomicNotes/LHS-slender-jet.md",
