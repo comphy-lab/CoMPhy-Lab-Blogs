@@ -7,7 +7,7 @@ tags:
 
 Here is a list of things on our to-publish list:
 
-- [ ] Stokes waves and related topics 📅 2026-03-01 #overdue   ^E1A6F85F-5E63-405E-9EF7-E8CC8662D3CC
+- [x] Stokes waves and related topics 📅 2026-03-01 #overdue   ^E1A6F85F-5E63-405E-9EF7-E8CC8662D3CC
 - [x] Showcase bubbles, waves: 📅 2025-01-12  ^0B681993-8C8A-49A5-93B6-83368684058E
 
 # To-Do: Blog Posts on Research Papers and Thesis
@@ -26,16 +26,16 @@ Below is a list of all the papers and the thesis requiring a dedicated blog post
 - [x] **Unifying theory of scaling in drop impact: Forces & maximum spreading diameter**  
   Link: [arXiv:2408.12714](https://arxiv.org/abs/2408.12714)
 
-- [ ] **Electrolyte spraying within H₂ bubbles during water electrolysis**  
+- [x] **Electrolyte spraying within H₂ bubbles during water electrolysis**  
   Link: [arXiv:2409.00515](https://arxiv.org/abs/2409.00515)
 
 ---
 
 ## 2025
-- [ ] **The role of viscosity on drop impact forces on non-wetting surfaces**  
+- [x] **The role of viscosity on drop impact forces on non-wetting surfaces**  
   Link: [arXiv:2311.03012](https://arxiv.org/abs/2311.03012)
 
-- [ ] **Focusing of concentric free-surface waves**  
+- [x] **Focusing of concentric free-surface waves**  
   Link: [arXiv:2406.05416](https://arxiv.org/abs/2406.05416)
 
 ---
@@ -57,7 +57,7 @@ Below is a list of all the papers and the thesis requiring a dedicated blog post
 ---
 
 ## 2022
-- [ ] **Ph.D. Thesis: Viscous free-surface flows**  
+- [x] **Ph.D. Thesis: Viscous free-surface flows**  
   Links: [Thesis Info](https://www.vatsalsanjay.com/phd-thesis), [DOI](https://doi.org/10.3990/1.9789036554077), move here from old website
 
 - [x] **Impact forces of water drops falling on superhydrophobic surfaces**  
@@ -73,19 +73,19 @@ Below is a list of all the papers and the thesis requiring a dedicated blog post
 ---
 
 ## 2020
-- [ ] **Lifting a sessile oil drop from a superamphiphobic surface with an impacting one**  
+- [x] **Lifting a sessile oil drop from a superamphiphobic surface with an impacting one**  
   Link: [DOI](https://doi.org/10.1126/sciadv.aba4330)
 
 ---
 
 ## 2019
-- [ ] **Consequences of inclined and dual jet impingement in stagnant liquid and stratified layers**  
+- [x] **Consequences of inclined and dual jet impingement in stagnant liquid and stratified layers**  
   Link: [DOI](https://doi.org/10.1002/aic.16373)
 
 ---
 
 ## 2018
-- [ ] **Formation of fluid structures due to jet-jet and jet-sheet interactions**  
+- [x] **Formation of fluid structures due to jet-jet and jet-sheet interactions**  
   Link: [DOI](https://doi.org/10.1016/j.ces.2018.06.055)
 
 - [x] **Numerical assessment of hazard in compartmental fire having steady heat release rate from the source**  
@@ -97,7 +97,7 @@ Below is a list of all the papers and the thesis requiring a dedicated blog post
 - [x] **Formation of liquid chain by collision of two laminar jets**  
   Link: [DOI](https://doi.org/10.1063/1.4998288)
 
-- [ ] **On air entrainment in a water pool by impingement of a jet**  
+- [x] **On air entrainment in a water pool by impingement of a jet**  
   Link: [DOI](https://doi.org/10.1002/aic.15828)
 
 ---
