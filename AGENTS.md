@@ -6,6 +6,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a research blog repository for the Computational Multiphase Physics (CoMPhy) Lab, containing academic content in Markdown format. The site is published at [blogs-comphy-lab.org](https://blogs-comphy-lab.org/).
 
+## Privacy Boundary
+
+Treat this repository as public and publishable. Do not add personal admin notes, medical records, GP/NHS material, appointment details, identifiers, addresses, travel documents, finance paperwork, or private tasks here.
+
+`Private-ToDo-Blog-public.md` may be read as an input surface for public-safe blog work, but automation must not write private/admin/medical material into it or normalise private notes inside this repo. Route medical documents to iCloud `MedicalStuff`; route private notes/tasks to Vatsal's private Obsidian vault.
+
 ## Content Structure
 
 - `Blog/` - Research blog posts and updates
