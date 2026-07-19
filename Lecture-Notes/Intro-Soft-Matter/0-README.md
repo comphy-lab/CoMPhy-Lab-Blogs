@@ -25,22 +25,22 @@ Course Overview. A journey through soft materials—from everyday foams and gels
 - Lecture 2: [[2-What-is-Viscosity|Viscosity and Momentum Diffusion]] – Viscosity as an emergent property from kinetic theory; the no-slip condition; continuum momentum transport
   - [[2.5-Conservation-Laws|Bridge 2.5: From Newton's Laws to Conservation Equations]] – Microscopic particle dynamics to continuum momentum balance and Cauchy stress
 - Lecture 3: [[3-Soft-Matter-Instabilities|Soft Matter Instabilities]] – Pattern formation through instability mechanisms: Rayleigh–Plateau, Kelvin–Helmholtz, Rayleigh–Taylor, Faraday waves, Rayleigh–Bénard–Marangoni, Saffman–Taylor fingering, and viscous coiling. Understanding how competing forces select characteristic length scales and how to harness instabilities for fabrication.
-- Lecture 4: Soft Matter Singularities
-- Lecture 5: Elastic vs Viscous vs Viscoelastic Behavior
-- Lecture 6: Rheology – Measuring "Softness" and Time-Dependent Response
-- Lecture 7: Advanced Topics & Research Frontiers
-- Lecture 8: Presentations (10:00–12:00)
+- Lecture 4: [[4-Soft-Matter-Singularities|Soft Matter Singularities]] – Finite-time singularities, contact lines, and the mid-course open-science assignment
+- Lecture 5: [[5-Viscoelasticity|Elastic, Viscous, and Viscoelastic Behaviour]] – Constitutive response, mechanical analogues, and relaxation times
+- Lecture 6: [[6-Rheology|Rheology]] – Measuring softness and interpreting time-dependent response
+- Lectures 7–8: [[7-8-Student-Presentations|Student Presentations]] – Paper-led synthesis and discussion
+  - [[7.5-Presentation-Paper-Topics|Presentation Paper Topics]] – Paper choices, preparation process, and assessment criteria
 
 ## Administrative Information
 
 > [!info] Course Details
-> - Format: 8 weekly lectures (2 hours each)
+> - Format: Six one-hour lectures plus one two-hour presentation session (8 contact hours)
 > - Homework: Short self-assessed questions at the end of each lecture (model solutions provided)
-> - Office Hours: Thursdays 14:00–16:00 (Ph255) or email [vatsal.sanjay@durham.ac.uk](mailto:vatsal.sanjay@durham.ac.uk)
+> - Office Hours: Announced at the start of each course run, or by appointment via [vatsal.sanjay@durham.ac.uk](mailto:vatsal.sanjay@durham.ac.uk)
 > - Assessments:
->   - Mid-course: Open Source Science contribution (Week 5)
->   - Final: Student presentations (Week 8, 10:00–12:00)
-> - Grading: Participation (20%), take-home assignment (30%), final presentation (50%)
+>   - Mid-course: Open Source Science contribution (40%, after Lecture 4), with feedback before the final assessment
+>   - Final: Student presentation (60%, final course session)
+> - Grading: Mid-course assignment (40%), final presentation (60%)
 
 ## Key Learning Outcomes
 
@@ -100,7 +100,7 @@ This list will be populated as we go through the course
 
 Instructor: Vatsal Sanjay
 Email: [vatsal.sanjay@durham.ac.uk](mailto:vatsal.sanjay@durham.ac.uk)
-Office Hours: Thu 14:00–16:00 (Ph255)
+Office Hours: Announced at the start of each course run, or by appointment.
 
 Have questions? Come to office hours or send an email — I'm here to help!
 
@@ -109,7 +109,7 @@ Have questions? Come to office hours or send an email — I'm here to help!
 > [!significance]- Metadata
 > Author:: [Vatsal Sanjay](https://vatsalsanjay.com)<br>
 > Date published:: Oct 14, 2025<br>
-> Date modified:: Oct 30, 2025
+> Date modified:: Jul 19, 2026
 
 > [!link] Back to main website
 > [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)

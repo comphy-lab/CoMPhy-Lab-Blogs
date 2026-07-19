@@ -185,7 +185,7 @@ In our lectures, this connects back to [[2-What-is-Viscosity|Lecture 2]]: the no
 >
 > **Objectives**: This assignment isn't just about solving the equation, but also about experiencing AI-assisted coding and iterative refinement: you'll prompt an LLM to generate an initial code, test and debug it, and improve the solution until it meets the specs. Along the way, think about how the boundary condition at infinity can be handled in a finite numerical domain (hint: you'll likely impose $h''$ approaches 0 at a large but finite $x$).
 >
-> **Instructions**: Use the class GitHub repository **Intro-Soft-Matter-2025** – fork it, add your code (we suggest Python or MATLAB for ODE solving), and submit a pull request as described in the README.[^github-readme] The README's "Contact Line Singularity" section provides the exact steps and an example prompt to get you started. This will be a graded exercise focusing not only on the correct physics solution but also on your use of computational tools and interpretation of the results. Good luck, and have fun seeing how a singular problem can be tamed numerically!
+> **Instructions**: Use the class GitHub repository **Intro-Soft-Matter-2025** – fork it, add your code (we suggest Python or MATLAB for ODE solving), and submit a pull request as described in the README.[^github-readme] The README's "Contact Line Singularity" section provides the exact steps and an example prompt to get you started. This mid-course assignment contributes **40% of the course grade**, and you will receive feedback before the final presentation. The assessment focuses on the physics solution, use of computational tools, and interpretation of the results.
 
 
 
@@ -204,7 +204,7 @@ In our lectures, this connects back to [[2-What-is-Viscosity|Lecture 2]]: the no
 
 [^kansal2024]: M. Kansal, C. Datt, V. Bertin & J. H. Snoeijer, Viscoelastic wetting: Cox–Voinov theory with normal stress effects, J. Fluid Mech., 985, A17 (2024). DOI: [10.1017/jfm.2024.296](https://doi.org/10.1017/jfm.2024.296).
 
-[^github-readme]: Course GitHub repository: [Intro-Soft-Matter-2025](https://github.com/comphy-lab/Intro-Soft-Matter-2025/blob/fb7fdb9beb90b278b360830478d8be97cbe17113/README.md).
+[^github-readme]: Course GitHub repository: [Intro-Soft-Matter-2025](https://github.com/comphy-lab/Intro-Soft-Matter-2025/blob/main/README.md).
 
 [^1]: M. Tjahjadi, H. A. Stone & J. M. Ottino, Satellite and subsatellite formation in capillary breakup, J. Fluid Mech., 243, 297-317 (1992). DOI: [10.1017/S0022112092002738](https://doi.org/10.1017/S0022112092002738).
 
