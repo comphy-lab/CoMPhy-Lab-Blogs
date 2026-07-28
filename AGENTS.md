@@ -80,7 +80,17 @@ The script handles:
 
 Content is managed through:
 1. Obsidian vault for local editing
-2. Git version control for collaboration
-3. Website deployment at blogs-comphy-lab.org
+2. Headless Obsidian Sync to Worthington
+3. Obsidian Publish at blogs.comphy-lab.org
+4. Git version control as a secondary backup
+
+### Automated PDF copies
+
+- Every published file under `Blog/` carries a managed `PDF version` callout immediately below its H1. The target is `_Media/PDF/<Markdown-filename>.pdf`.
+- Worthington LaunchAgent `non-ai.comphy.obsidian-publish-blogs` runs `_scripts/blog-pdf/publish-with-pdfs.sh` every 15 minutes.
+- The wrapper publishes current HTML, renders changed live pages with headless Chrome, verifies PDF tagging and text extraction, writes the result to `_Media/PDF/`, and performs a second ordinary publish pass.
+- The renderer fingerprints each source, referenced local media and `publish.css`; unchanged pages are not rebuilt.
+- Do not edit generated PDFs manually. Fix the Markdown, media or print CSS and let the publisher rebuild them.
+- `_Media` must remain in the Obsidian Publish include list. Never substitute `ob publish --all`.
 
 The repository supports both individual researchers and collaborative editing through GitHub's issue templates and pull request workflow.

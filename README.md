@@ -63,6 +63,12 @@ We have templates for different types of issues:
 4. Make your changes
 5. Submit a PR
 
+### PDF versions
+
+Published research posts provide a `Download this page as PDF` link below the title. Worthington generates these tagged, text-extractable PDFs from the live Obsidian Publish page and stores them under `_Media/PDF/`. The HTML page remains the canonical accessible version; the PDF is an alternative format for offline reading and printing.
+
+The tracked implementation is in `_scripts/blog-pdf/`. Generated PDFs should not be edited by hand.
+
 For more detailed information about our blog and documentation structure, see [0_README.md](0_README.md).
 
 ### Note
