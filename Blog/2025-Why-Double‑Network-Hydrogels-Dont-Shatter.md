@@ -4,6 +4,13 @@ status: done ✅
 ---
 # Why Double-Network Hydrogels Don’t Shatter — and What That Teaches Us About Tough Design
 
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/2025-Why-Double‑Network-Hydrogels-Dont-Shatter.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 > [!summary] TL;DR
 > A minimal *mesoscale* model shows why double-network (DN) hydrogels are both stiff and hard to break: the soft matrix *screens* stress released by broken sacrificial bonds, halting the crack-propagating cascade that plagues single networks. Screening $\neq$ dissipation: dissipation is the *cost* when a bond breaks; screening is the *redistribution* that stops one break from triggering the next. The model also maps a practical trade-off: more (or stiffer) matrix boosts failure strain but erodes stiffness—revealing a sweet spot. 
 

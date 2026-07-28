@@ -15,6 +15,13 @@ aliases:
 
 # Why Dilute Polymers Arrest a Pinching Drop but Not a Bubble
 
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/2026-Why-Polymers-Arrest-Drops-but-Not-Bubbles.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 Add a minute amount of long polymer to water and a pinching drop stops behaving like water. The liquid neck refuses to snap, leaving a thin filament that can survive long enough to form the familiar beads-on-a-string structure. A dilute bubble neck looks like the same problem with air and liquid exchanged, yet it still collapses almost as if the polymers were absent.
 
 Our recent paper with Coen Verschuur, Alexandros Oratis and Jacco Snoeijer, [*How elasticity affects bubble pinch-off*](https://link.aps.org/doi/10.1103/5sp3-k5l2) [(OA)](https://arxiv.org/abs/2511.20075v1) uses experiments, Basilisk simulations and theory to show that when polymers are stretched in different directions around a drop and a bubble, the resulting elastic stresses diverge at different rates.

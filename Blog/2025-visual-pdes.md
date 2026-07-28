@@ -10,6 +10,13 @@ tags:
 ---
 # Visual PDE: Where mathematics becomes art you can paint with your fingers
 
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/2025-visual-pdes.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 VisualPDE lets anyone—students, teachers, and researchers—simulate rich partial differential equation (PDE) models directly in the browser, in real time, no coding or installs. Under the hood it turns your device’s GPU into a math engine, so patterns bloom and waves ripple as fast as you can drag a slider or draw with your finger. It’s “Desmos for PDEs,” except the plots are alive.
 
 > [!summary] TL;DR  

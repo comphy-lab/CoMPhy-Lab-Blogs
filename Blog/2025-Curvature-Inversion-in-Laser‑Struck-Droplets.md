@@ -9,6 +9,13 @@ tags:
 ---
 # Curvature Inversion in Laser‑Struck Droplets
 
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/2025-Curvature-Inversion-in-Laser‑Struck-Droplets.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 > [!cite] 
 > H. França, H. Schubert, O. Versolato & M. Jalaal, Laser-Induced Droplet Deformation: Curvature Inversion Explained from Instantaneous Pressure Impulse, J. Fluid Mech., 1020, A21 (2025). [DOI (OA): 10.1017/jfm.2025.10665](https://doi.org/10.1017/jfm.2025.10665)
 

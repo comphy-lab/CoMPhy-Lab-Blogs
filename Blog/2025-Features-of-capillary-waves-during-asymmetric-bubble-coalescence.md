@@ -9,6 +9,14 @@ status: done ✅
 publish: true
 ---
 # Features of capillary waves during asymmetric bubble coalescence
+
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/2025-Features-of-capillary-waves-during-asymmetric-bubble-coalescence.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 > [!tldr] TL;DR
 > During the coalescence of bubbles with different sizes, the speed of the ensuing capillary waves remains almost unchanged and scales with the inertio‐capillary velocity. However, the strength (or curvature) of these waves depends on the bubble size ratio. In the equal‐sized case, the wave curvature diminishes and then plateaus, whereas for highly asymmetric (large vs. tiny) bubbles, the curvature initially decreases but then rebounds sharply due to the changing geometry. Two approximate scaling laws emerge for the strongest wave curvature: ￼ in the low‐viscosity limit and ￼ in the moderate‐to‐higher viscosity regime. Experimental data diverge somewhat from these simple power laws, indicating a need for refined models to explain the distinct curvature behavior at low Ohnesorge numbers.
 

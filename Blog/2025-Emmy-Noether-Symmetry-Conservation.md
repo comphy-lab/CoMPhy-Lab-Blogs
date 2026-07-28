@@ -18,6 +18,13 @@ aliases:
 
 # What Did Emmy Noether Reveal About the Universe?
 
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/2025-Emmy-Noether-Symmetry-Conservation.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 ## Executive Summary
 
 - Trailblazer in Mathematics: Emmy Noether (1882–1935) overcame early 20th-century gender barriers in academia to become one of the first women awarded a PhD in mathematics

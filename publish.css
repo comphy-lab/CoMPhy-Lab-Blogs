@@ -544,6 +544,12 @@ blockquote,
   background: linear-gradient(160deg, rgba(251, 73, 52, 0.08), transparent 60%);
 }
 
+.callout[data-callout="pdf"] {
+  --callout-icon: lucide-file-down;
+  border-color: rgba(0, 108, 172, 0.36);
+  background: linear-gradient(160deg, rgba(0, 108, 172, 0.09), transparent 60%);
+}
+
 /* --- Tables --- */
 
 table {
@@ -1100,27 +1106,52 @@ input[type="search"] {
     --em-color: #000000;
     --selection-bg: transparent;
     --tag-text: #000000;
+    --font-text: "Atkinson Hyperlegible", "Alegreya Sans", sans-serif;
+    --font-display: "Atkinson Hyperlegible", "Alegreya Sans", sans-serif;
   }
 
+  html,
   body,
+  .published-container,
+  .site-body,
+  .site-body-center-column,
+  .render-container,
+  .render-container-inner,
+  .publish-renderer,
+  .markdown-preview-sizer,
   .markdown-preview-view {
     background: #ffffff !important;
     color: #000000 !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    margin-bottom: 0 !important;
     max-width: 100% !important;
+    overflow: visible !important;
+    padding-bottom: 0 !important;
+    position: static !important;
+  }
+
+  .published-container,
+  .site-body,
+  .site-body-center-column,
+  .render-container,
+  .render-container-inner,
+  .publish-renderer {
+    display: block !important;
   }
 
   .site-header,
   .site-footer,
   .outline,
   .graph-view-container,
+  .mod-footer.mod-ui,
+  .callout[data-callout="pdf"],
   nav {
     display: none !important;
   }
 
-  h2 {
-    page-break-before: always;
-  }
-
+  h2,
   h3,
   h4 {
     page-break-after: avoid;

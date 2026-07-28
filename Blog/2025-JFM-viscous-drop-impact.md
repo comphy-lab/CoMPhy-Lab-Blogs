@@ -8,6 +8,13 @@ tags:
 ---
 # The role of viscosity on drop impact forces on non-wetting surfaces: From Raindrops to Inkjet Printing
 
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/2025-JFM-viscous-drop-impact.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 When a liquid drop hits a surface, the impact creates fascinating fluid dynamics that are crucial for applications ranging from inkjet printing to agricultural sprays. In this work, we uncover how a liquid's viscosity dramatically affects the forces generated during these impacts. Let's explore the key findings.
 
 ![[_Media/JFM-viscous-drop-impact-blog-1740211822831.png]]
