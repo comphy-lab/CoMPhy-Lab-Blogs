@@ -19,6 +19,13 @@ publish: true
 
 # Lecture 5: Elastic vs Viscous vs Viscoelastic Behavior
 
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/Lecture-Notes/Intro-Soft-Matter/5-Viscoelasticity.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 ## Key Topics
 
 ### How Materials Deform

@@ -7,6 +7,13 @@ aliases:
 ---
 # Soft Condensed Matter: An Introduction
 
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/Lecture-Notes/Intro-Soft-Matter/0-README.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 Course Overview. A journey through soft materials—from everyday foams and gels to polymer networks and interfacial dynamics. We develop the conceptual and mathematical foundations to understand why soft matter behaves so differently from hard solids and liquids.
 
 

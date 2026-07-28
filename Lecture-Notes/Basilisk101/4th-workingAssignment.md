@@ -4,6 +4,13 @@ publish: true
 ---
 # Non-Newtonian flows with Basilisk
 
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/Lecture-Notes/Basilisk101/4th-workingAssignment.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 > [!tldr] TL;DR 
 > This assignment explores computational approaches to viscoelastic fluid dynamics using Basilisk. We investigate four advanced multiphase flow phenomena involving complex rheology: bursting bubbles in polymer solutions, viscoplastic drop impact, soft material impacts, and Taylor-Culick retraction of viscoelastic filaments. Each simulation incorporates non-Newtonian behavior characterized by dimensionless parameters including Weissenberg, Deborah, Ohnesorge, and elasto-capillary numbers. Through these simulations, we develop practical skills in implementing log-conformation formulations for numerical stability, handling complex interfaces with adaptive mesh refinement, and visualizing rheologically complex flows. This assignment represents the culmination of our computational fluid dynamics progression, building on earlier work with heat conduction, single-phase flows, and simple multiphase systems.
 

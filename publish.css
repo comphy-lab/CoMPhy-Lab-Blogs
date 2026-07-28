@@ -96,7 +96,7 @@ html {
   --font-size-body: 16px;
   --font-size-code: 0.92em;
   --line-height-body: 1.68;
-  --math-scale: 1.2;
+  --math-scale: 1.1;
 
   --h1-size: 2.05rem;
   --h2-size: 1.68rem;
@@ -847,9 +847,7 @@ pre.language-info::before { content: "Info"; }
    9. Math / LaTeX
    ========================================================================== */
 
-.MJX-TEX,
-mjx-container,
-.math {
+mjx-container {
   font-size: calc(1em * var(--math-scale));
 }
 

@@ -7,6 +7,13 @@ publish: true
 ---
 # To merge or not to merge?
 
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/Talks/Seminar-Coalescence-with-Surfactants.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 > [!significance] Authors
 > Jnandeep Talukdar, Duarte Rocha, Christian Diddens, Jacco Snoeijer, Detlef Lohse, and [Vatsal Sanjay*](https://comphy-lab.org)
 

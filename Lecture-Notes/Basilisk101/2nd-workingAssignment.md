@@ -4,6 +4,13 @@ publish: true
 ---
 # Computational Fluid Dynamics with Basilisk: From Poiseuille Flow to Rayleigh-Bénard Convection
 
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/Lecture-Notes/Basilisk101/2nd-workingAssignment.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 > [!tldr] TL;DR 
 > This assignment explores fundamental fluid dynamics problems using Basilisk, progressing from simple Poiseuille flow to complex Rayleigh-Bénard convection. We study both Newtonian and non-Newtonian (Bingham) fluids, examine lid-driven cavity flow with flow visualization, and conclude with thermal convection simulation. The hands-on exercises with incrementally complex implementations help develop practical CFD skills while exploring rich physical phenomena, all through Basilisk's efficient simulation framework.
 

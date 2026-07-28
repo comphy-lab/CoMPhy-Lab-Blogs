@@ -17,6 +17,13 @@ publish: true
 
 # Lecture 1: Different Faces of Soft Condensed Matter
 
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 An introduction to soft materials, why they're soft, and how we measure softness. See [[0-README|course overview and structure]] for context.
 
 ---

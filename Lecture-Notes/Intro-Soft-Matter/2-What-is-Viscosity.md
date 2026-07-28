@@ -22,6 +22,13 @@ publish: true
 
 # Lecture 2: Viscosity and Momentum Diffusion
 
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 Understanding viscosity as an emergent property arising from molecular collisions and free flights—the diffusion of tangential momentum through a fluid. This lecture bridges [[1.5-Taylor-Culick-Paradox|Lecture 1.5]]'s resolution of the Taylor–Culick paradox with the continuum mechanics framework needed to model soft matter flows.
 
 ---

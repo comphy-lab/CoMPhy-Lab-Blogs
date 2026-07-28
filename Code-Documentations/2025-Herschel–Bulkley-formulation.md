@@ -11,6 +11,14 @@ status: done ✅
 publish: true
 ---
 # Herschel–Bulkley formulation for non-Newtonian flows
+
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/Code-Documentations/2025-Herschel–Bulkley-formulation.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 > [!tldr] TL;DR
 > The Herschel–Bulkley model unifies Newtonian, Bingham, and power-law fluids via a yield stress and a strain-rate-dependent viscosity. An ￼$\epsilon$-regularization ensures stable computations and recovers simpler models (Newtonian, Bingham) by tuning model parameters. Dimensionless groups (e.g., the plasto-capillary number ￼ and the effective Ohnesorge) capture the interplay of fluid rheology, capillarity, and flow scales. Implementation details are provided, along with references, open-source code, and demonstrations of bubble-burst simulations in viscoplastic media.
 ## Features:

@@ -4,6 +4,14 @@ publish: true
 aliases:
   - Basilisk101
 ---
+
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/Lecture-Notes/Basilisk101/0-README.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 ## Think before you compute
 - Conservation laws and the numerical solution of the Navier–Stokes equations
 - Transport equations

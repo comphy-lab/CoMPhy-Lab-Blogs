@@ -19,6 +19,13 @@ publish: true
 
 # Lecture 6: Rheology – Measuring "Softness" and Time-Dependent Response
 
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/Lecture-Notes/Intro-Soft-Matter/6-Rheology.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 ## Key Topics
 
 ### What is Rheology?

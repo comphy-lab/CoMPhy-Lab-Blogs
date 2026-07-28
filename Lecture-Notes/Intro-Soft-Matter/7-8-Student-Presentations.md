@@ -19,6 +19,13 @@ publish: true
 
 # Lectures 7-8: Student Presentations of Foundational and Recent Papers
 
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/Lecture-Notes/Intro-Soft-Matter/7-8-Student-Presentations.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 ## Session Format
 
 ### Mini-Seminars

@@ -4,6 +4,13 @@ publish: true
 ---
 # Heat Conduction Simulation: From Vanilla C to Basilisk C
 
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/Lecture-Notes/Basilisk101/1st-workingAssignment.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 ## GitHub repository
 
 [Click here](https://github.com/comphy-lab/Basilisk-101)

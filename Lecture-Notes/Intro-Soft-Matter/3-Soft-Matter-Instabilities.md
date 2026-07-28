@@ -15,7 +15,15 @@ publish: true
 > [Download PDF](./3-Soft-Matter-Instabilities.pdf)
 <!-- PDF-EXPORT-IGNORE-END -->
 
-# Lecture 3 — 
+# Lecture 3 —
+
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/Lecture-Notes/Intro-Soft-Matter/3-Soft-Matter-Instabilities.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 # Soft‑matter instabilities
 
 ### 0) Why talk about instability?

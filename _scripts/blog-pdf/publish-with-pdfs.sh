@@ -24,4 +24,8 @@ echo "$(date -u '+%Y-%m-%dT%H:%M:%SZ') publish started"
 # Upload newly generated PDFs from the already-included _Media directory.
 /opt/homebrew/bin/node /opt/homebrew/bin/ob publish --yes --path "$vault"
 
+# The first pass can add a link before its PDF target exists. Verify every live
+# link after the PDF upload, allowing a bounded window for Publish propagation.
+/opt/homebrew/bin/node "$builder" --no-write-links --verify-links-only
+
 echo "$(date -u '+%Y-%m-%dT%H:%M:%SZ') publish completed"

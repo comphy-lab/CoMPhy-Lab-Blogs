@@ -13,7 +13,15 @@ publish: true
 > [!info] 📄 PDF Version
 > [Download PDF](./4-Soft-Matter-Singularities.pdf)
 <!-- PDF-EXPORT-IGNORE-END -->
-# Lecture 4 — 
+# Lecture 4 —
+
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/Lecture-Notes/Intro-Soft-Matter/4-Soft-Matter-Singularities.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 # Soft Matter Singularities
 
 > [!tldr] TL;DR

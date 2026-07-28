@@ -4,6 +4,13 @@ publish: true
 ---
 # Computational Multiphase Flows with Basilisk: From Champagne Bubbles to Drop Impact
 
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/Lecture-Notes/Basilisk101/3rd-workingAssignment.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 > [!tldr] TL;DR 
 > This tutorial explores computational approaches to multiphase flow phenomena using Basilisk's axisymmetric framework. We examine five progressively complex simulations: bubble bursting, drop impact on pools, drop impact on solid surfaces, liquid lens equilibrium, and heated drop impact. Each simulation incorporates different physical aspects – surface tension, inertia, viscosity, thermal effects – characterized by dimensionless parameters including Ohnesorge, Bond, Weber, and Froude numbers. Through these simulations, we develop practical skills in handling complex interfaces, implementing boundary conditions, and visualizing flow features using adaptive mesh refinement techniques specifically designed for multiphase problems.
 

@@ -4,6 +4,13 @@ publish: true
 ---
 # Advantages of Basilisk Over Vanilla C for Computational Fluid Dynamics
 
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/Lecture-Notes/Basilisk101/1-conduction-takeaways.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 After examining the implementation of heat conduction problems in both vanilla C and Basilisk, several significant advantages of using Basilisk become apparent. This document outlines these benefits to help new users understand why Basilisk is a powerful tool for computational fluid dynamics (CFD) simulations.
 
 ## 1. Simplified Domain and Grid Management

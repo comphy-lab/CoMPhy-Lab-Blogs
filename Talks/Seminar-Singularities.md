@@ -7,6 +7,13 @@ pdf: "[[Talks/Seminar-Singularities.pdf|Seminar-Singularities]]"
 ---
 # Singularities in soft matter systems
 
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/Talks/Seminar-Singularities.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 > [!significance] Speaker
 > [Vatsal Sanjay](https://vatsalsanjay.com) ([CoMPhy Lab](https://comphy-lab.org))
 
