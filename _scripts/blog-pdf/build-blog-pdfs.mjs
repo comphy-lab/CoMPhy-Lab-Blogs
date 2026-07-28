@@ -384,22 +384,24 @@ async function renderPost(browser, post, fingerprintValue) {
           `page: waiting for Publish propagation (${post.pagePath}, attempt ${attempt}/12)`,
         );
         await page.waitForTimeout(5_000);
-        const retryResponse = await page.goto(
-          `${url}&content-check=${attempt}-${Date.now()}`,
-          {
-            waitUntil: "domcontentloaded",
-            timeout: 60_000,
-          },
-        );
-        if (!retryResponse?.ok()) {
-          throw new Error(
-            `Published page returned HTTP ${retryResponse?.status() ?? "unknown"}`,
+        if (attempt % 3 === 0) {
+          const retryResponse = await page.goto(
+            `${url}&content-check=${attempt}-${Date.now()}`,
+            {
+              waitUntil: "domcontentloaded",
+              timeout: 60_000,
+            },
+          );
+          if (!retryResponse?.ok()) {
+            throw new Error(
+              `Published page returned HTTP ${retryResponse?.status() ?? "unknown"}`,
+            );
+          }
+          await page.waitForSelector(
+            ".markdown-preview-view, .markdown-rendered, article",
+            { timeout: 30_000 },
           );
         }
-        await page.waitForSelector(
-          ".markdown-preview-view, .markdown-rendered, article",
-          { timeout: 30_000 },
-        );
       }
     }
     await page.evaluate(async () => {

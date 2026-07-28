@@ -1,11 +1,20 @@
 ---
 status: done ✅
+publish: true
 aliases:
   - Gauss law of Electrostatics
   - Lecture-Notes/Gauss-law-of-Electrostatics
   - Lecture-Notes/Gauss law of Electrostatics
 ---
 # Gauss law of electrostatics
+
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/Lecture-Notes/Gauss-law-of-Electrostatics.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
+
 > [!important]- Pre-requisites 
 > I assume a working knowledge of 
 > * Electric field $\vec{E}$.

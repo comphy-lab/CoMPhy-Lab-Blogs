@@ -1,4 +1,15 @@
+---
+status: done ✅
+publish: true
+---
 # Viscoelastic Slender Jets
+
+<!-- BLOG-PDF-LINK-START -->
+<!-- PDF-EXPORT-IGNORE-START -->
+> [!pdf] PDF version
+> [[_Media/PDF/Lecture-Notes/Slender-Jets/slender-jets-VE-order-0.pdf|Download this page as PDF]]
+<!-- PDF-EXPORT-IGNORE-END -->
+<!-- BLOG-PDF-LINK-END -->
 
 ### Parity argument (axis regularity + axisymmetry): 
 
