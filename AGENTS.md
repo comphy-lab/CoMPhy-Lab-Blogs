@@ -10,7 +10,10 @@ This is a research blog repository for the Computational Multiphase Physics (CoM
 
 Treat this repository as public and publishable. Do not add personal admin notes, medical records, GP/NHS material, appointment details, identifiers, addresses, travel documents, finance paperwork, or private tasks here.
 
-`Private-ToDo-Blog-public.md` may be read as an input surface for public-safe blog work, but automation must not write private/admin/medical material into it or normalise private notes inside this repo. Route medical documents to iCloud `MedicalStuff`; route private notes/tasks to Vatsal's private Obsidian vault.
+Automation may read designated public-safe inputs, but it must not write or
+normalise private, administrative, or medical material inside this repository.
+Route private material only to approved private storage, and do not name
+private files, vaults, services, or paths in this public repository.
 
 ## Content Structure
 
