@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-vault="/Users/vatsal/.openclaw/workspace-archiver/CoMPhy-Lab-Blogs"
+vault="/Users/vatsal/.openclaw/workspace/CoMPhy-Lab-Blogs"
 builder="$vault/_scripts/blog-pdf/build-blog-pdfs.mjs"
 lock_dir="/tmp/non-ai.comphy.obsidian-publish-blogs.lock"
 
