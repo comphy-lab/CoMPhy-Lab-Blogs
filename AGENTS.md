@@ -1,10 +1,10 @@
-# CLAUDE.md
+# CoMPhy Lab Blogs
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides repository guidance for content and publishing work.
 
 ## Repository Overview
 
-This is a research blog repository for the Computational Multiphase Physics (CoMPhy) Lab, containing academic content in Markdown format. The site is published at [blogs-comphy-lab.org](https://blogs-comphy-lab.org/).
+This is a research blog repository for the Computational Multiphase Physics (CoMPhy) Lab, containing academic content in Markdown format. The canonical site is [blogs.comphy-lab.org](https://blogs.comphy-lab.org/); the old hostname redirects there.
 
 ## Privacy Boundary
 
@@ -34,7 +34,7 @@ All content uses Markdown with YAML frontmatter:
 created: YYYY-MM-DDThh:mm:ss+01:00
 modified: YYYY-MM-DDThh:mm:ss+01:00
 status: [Published/Working/Draft/done ✅]
-website: https://blogs-comphy-lab.org/your-post-url
+website: https://blogs.comphy-lab.org/your-post-url
 ---
 ```
 
@@ -81,17 +81,23 @@ The script handles:
 
 ## Publishing Workflow
 
-Content is managed through:
-1. Obsidian vault for local editing
-2. Headless Obsidian Sync to Worthington
-3. Obsidian Publish at blogs.comphy-lab.org
-4. Git version control as a secondary backup
+Content is managed through tracked public-safe Markdown and media, Obsidian
+Publish at `blogs.comphy-lab.org`, and Git collaboration. The `publish`
+property controls publication; Markdown task lists are not a private operations
+tracker.
+
+Obsidian Publish owns the application shell and baseline browser policy. This
+repository owns content, local media, `publish.css`, and any deliberately added
+root `publish.js`. Cloudflare response-header overlays are separate live
+configuration. Do not claim that a repository edit changes either provider
+boundary. Follow [`docs/browser-security.md`](docs/browser-security.md) before
+proposing browser-header changes.
 
 ### Automated PDF copies
 
 - Every `publish: true` Markdown file under `Blog/`, `Code-Documentations/`, `Lecture-Notes/` and `Talks/` carries a managed `PDF version` callout below its H1 (or below frontmatter when no H1 exists).
 - Blog PDF paths remain `_Media/PDF/<Markdown-filename>.pdf` for compatibility. Other sections mirror their vault path under `_Media/PDF/`, preventing collisions between nested pages with the same filename.
-- Worthington LaunchAgent `non-ai.comphy.obsidian-publish-blogs` runs `_scripts/blog-pdf/publish-with-pdfs.sh` every 15 minutes.
+- The managed publisher runs `_scripts/blog-pdf/publish-with-pdfs.sh` every 15 minutes.
 - The wrapper publishes current HTML, renders changed live pages with headless Chrome, verifies PDF tagging and text extraction, writes the result to `_Media/PDF/`, performs a second ordinary publish pass, then verifies every live download link.
 - The renderer fingerprints each source, referenced local media and `publish.css`; unchanged pages are not rebuilt.
 - Do not edit generated PDFs manually. Fix the Markdown, media or print CSS and let the publisher rebuild them.

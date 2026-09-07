@@ -1,12 +1,12 @@
 ---
-website: https://blogs-comphy-lab.org/
+website: https://blogs.comphy-lab.org/
 publish: false
 status: done
 ---
 
 # CoMPhy Lab Blog Repository
 
-Welcome to the Computational Multiphase Physics (CoMPhy) Lab's blog repository! This repository hosts our research blog posts, code documentation, lecture notes, and talks. Visit our published content at [blogs-comphy-lab.org](https://blogs-comphy-lab.org/).
+Welcome to the Computational Multiphase Physics (CoMPhy) Lab's blog repository! This repository hosts our research blog posts, code documentation, lecture notes, and talks. Visit our published content at [blogs.comphy-lab.org](https://blogs.comphy-lab.org/).
 
 ## Repository Structure
 
@@ -35,7 +35,7 @@ We welcome contributions from the CoMPhy lab members and collaborators! Here's h
    created: YYYY-MM-DDThh:mm:ss+01:00
    modified: YYYY-MM-DDThh:mm:ss+01:00
    status: [Published/Working/Draft]
-   website: https://blogs-comphy-lab.org/your-post-url
+   website: https://blogs.comphy-lab.org/your-post-url
    ---
    ```
 4. Write your content using Markdown
@@ -69,13 +69,27 @@ Every `publish: true` page in `Blog/`, `Code-Documentations/`, `Lecture-Notes/` 
 
 The tracked implementation is in `_scripts/blog-pdf/`. Generated PDFs should not be edited by hand.
 
+### Browser security
+
+Obsidian Publish serves the application shell and its baseline Content Security
+Policy. This repository owns published content, local media and `publish.css`;
+Cloudflare may apply separately managed response-header rules. The current
+boundary, observed limitations and staged compatibility checks required before
+hardening are documented in [Browser security](docs/browser-security.md).
+GitHub Issue [#3](https://github.com/comphy-lab/comphy-lab-blogs/issues/3)
+remains open; this documentation does not change production headers.
+
+Publication is controlled by the `publish` property and Obsidian Publish, not
+by a Markdown task list. Keep private tasks and operational notes out of this
+public repository.
+
 For more detailed information about our blog and documentation structure, see [0_README.md](0_README.md).
 
 ### Note
 - [[favicon.ico]] is the favicon for the website blog.
 ## License
 
-Content is licensed under [appropriate license - please specify]
+This repository does not currently declare a repository-wide content licence.
 
 ## Questions?
 
