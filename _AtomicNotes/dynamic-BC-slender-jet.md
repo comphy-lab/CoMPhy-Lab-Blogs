@@ -1,131 +1,166 @@
 # Leading-Order Dynamic BC in a Slender Jet
 
-Leading-order free-surface stress balances (normal and tangential) used in [[polymeric-stress-regularity-slender-jet|Slender jet momentum equations]].
+The free surface determines both the pressure and the first radial correction to axial velocity. Normal traction gives the pressure at leading order. Tangential traction determines $v_2$, including the effect of polymer shear and the projection of polymer normal stress onto a tilted interface.
 
-Use cylindrical coordinates $(r,z)$, axisymmetry, no swirl, interface $r=h(z,t)$.
+Consider an axisymmetric, swirl-free liquid with surface $r=h(z,t)$. We use dimensional coordinates, with primes denoting $\partial_z$. The solvent viscosity $\eta$ and surface tension $\gamma$ are constant. The surrounding gas exerts a uniform pressure $p_a$ and negligible viscous stress. We use the meridional polymer-stress symmetry specified in [[polymeric-stress-regularity-slender-jet|the regularity note]].
 
-Total liquid stress:
-$$
-\boldsymbol{\sigma}=-p\,\boldsymbol{I}+2\eta\,\boldsymbol{D}+\boldsymbol{\sigma}_p.
-$$
+## 1. Fix the stress and curvature signs
 
-With passive gas outside, $\boldsymbol{\sigma}^{\mathrm{out}}=-p_a\boldsymbol{I}$, and constant surface tension $\gamma$,
-$$
-(\boldsymbol{\sigma}-\boldsymbol{\sigma}^{\mathrm{out}})\cdot\boldsymbol{n}=-\gamma\kappa\,\boldsymbol{n}.
-$$
+Write the absolute liquid pressure as $P$. The liquid and gas stresses are
 
-#### Projections:
 $$
-\boldsymbol{n}\cdot\boldsymbol{\sigma}\cdot\boldsymbol{n}=-p_a-\gamma\kappa,
+\boldsymbol\sigma=-P\boldsymbol I+2\eta\boldsymbol D+\boldsymbol\sigma_p,
 \qquad
-\boldsymbol{t}\cdot\boldsymbol{\sigma}\cdot\boldsymbol{n}=0.
+\boldsymbol\sigma^{\mathrm{out}}=-p_a\boldsymbol I,
 $$
 
-#### Geometry:
+where $\boldsymbol D=[\nabla\boldsymbol v+(\nabla\boldsymbol v)^{\mathsf T}]/2$. With the unit normal pointing out of the liquid,
+
 $$
-\boldsymbol{n}=\frac{\boldsymbol{e}_r-h_z\boldsymbol{e}_z}{\sqrt{1+h_z^2}},
+(\boldsymbol\sigma-\boldsymbol\sigma^{\mathrm{out}})\cdot\boldsymbol n
+=-\gamma\kappa\boldsymbol n.
+$$
+
+The normal and tangential projections are therefore
+
+$$
+\boldsymbol n\cdot\boldsymbol\sigma\cdot\boldsymbol n=-p_a-\gamma\kappa,
 \qquad
-\boldsymbol{t}=\frac{h_z\boldsymbol{e}_r+\boldsymbol{e}_z}{\sqrt{1+h_z^2}},
+\boldsymbol t\cdot\boldsymbol\sigma\cdot\boldsymbol n=0.
+$$
+
+For $r=h(z,t)$, the exact geometry is
+
+$$
+\boldsymbol n=\frac{\boldsymbol e_r-h'\boldsymbol e_z}{\sqrt{1+h'^2}},
 \qquad
-\kappa=\frac{1}{h}+O(\varepsilon^2),
+\boldsymbol t=\frac{h'\boldsymbol e_r+\boldsymbol e_z}{\sqrt{1+h'^2}},
+$$
+
+$$
+\kappa=\frac{1}{h\sqrt{1+h'^2}}-\frac{h''}{(1+h'^2)^{3/2}}.
+$$
+
+A cylindrical surface has $\kappa=1/h$, and a sphere of radius $a$ has $\kappa=2/a$. These limits fix the curvature sign in the normal balance.
+
+Let $\ell_r/L=\varepsilon\ll1$. With $h'=O(\varepsilon)$ and $Lh''=O(\varepsilon)$, the expansion is
+
+$$
+\kappa=\frac{1}{h}-h''-\frac{h'^2}{2h}+\cdots.
+$$
+
+The last two terms are relative $O(\varepsilon^2)$ corrections to $1/h$. We retain only the leading curvature in the calculation below.
+
+## 2. Evaluate the velocity gradients at the surface
+
+Use the dimensional radial expansion and its [[continuity-slender-jet|continuity constraint]],
+
+$$
+v_z=v_0+r^2v_2+\cdots,
 \qquad
-h_z=O(\varepsilon).
+v_r=-\frac{r}{2}v_0'-\frac{r^3}{4}v_2'+\cdots.
 $$
 
-#### Long-wave fields:
+The required surface gradients are
 
 $$
-v_z(r,z,t)=v_0(z,t)+\varepsilon^2 r^2 v_2(z,t)+\cdots,
-$$
-$$
-v_r(r,z,t)=-\frac{1}{2}v_0'(z,t)\,r-\frac{1}{4}\varepsilon^2 v_2'(z,t)\,r^3+\cdots,
-$$
-See: [[continuity-slender-jet|Continuity equation in slender jet]]
-
-$$
-\sigma_{p,rr}=\Sigma_{rr}(z,t)+O(\varepsilon^2 r^2),
-\quad
-\sigma_{p,zz}=\Sigma_{zz}(z,t)+O(\varepsilon^2 r^2),
-\quad
-\sigma_{p,rz}=r\,S(z,t)+O(\varepsilon^2 r^3).
-$$
-
-See: [[polymeric-stress-regularity-slender-jet|Polymeric stress in slender jet]]
-
-Needed derivatives at $r=h$:
-$$
-\partial_r v_r=-\frac{1}{2}v_0'+O(\varepsilon^2),
+\left.\partial_rv_r\right|_h=-\frac{1}{2}v_0'-\frac{3h^2}{4}v_2'+\cdots,
 \qquad
-\partial_z v_z=v_0'+O(\varepsilon^2),
-$$
-$$
-\partial_r v_z+\partial_z v_r=-\frac{1}{2}h\,v_0''+2h\,v_2+O(\varepsilon^2).
-$$
-
-## 1) Leading-order normal stress balance
-
-At small slope, $\boldsymbol{n}\approx\boldsymbol{e}_r$, so
-$$
-\boldsymbol{n}\cdot\boldsymbol{\sigma}\cdot\boldsymbol{n}
-=-p+2\eta\,\partial_r v_r+\sigma_{p,rr}+O(\varepsilon^2).
-$$
-
-Using $\boldsymbol{n}\cdot\boldsymbol{\sigma}\cdot\boldsymbol{n}=-p_a-\gamma\kappa$:
-$$
-p=p_a+\gamma\kappa+2\eta\,\partial_r v_r+\sigma_{p,rr}+O(\varepsilon^2).
-$$
-
-Therefore
-$$
-p_0(z,t)=p_a+\frac{\gamma}{h}-\eta v_0'+\Sigma_{rr}+O(\varepsilon^2).
-$$
-
-If pressure is gauged by $p_a=0$:
-$$
-\boxed{p_0=\frac{\gamma}{h}-\eta v_0'+\Sigma_{rr}+O(\varepsilon^2).}
-$$
-
-## 2) Leading-order tangential stress balance
-
-At small slope, expand $\boldsymbol{t}\cdot\boldsymbol{\sigma}\cdot\boldsymbol{n}=0$ to first nontrivial order:
-$$
-\eta\left[(\partial_r v_z+\partial_z v_r)+2h_z(\partial_r v_r-\partial_z v_z)\right]
-+\boldsymbol{t}\cdot\boldsymbol{\sigma}_p\cdot\boldsymbol{n}
-=O(\varepsilon^2).
-$$
-
-Newtonian contribution:
-$$
-\partial_r v_z+\partial_z v_r=-\frac{1}{2}h v_0''+2h v_2+O(\varepsilon^2),
+\left.\partial_zv_z\right|_h=v_0'+h^2v_2'+\cdots,
 $$
 
 $$
-2h_z(\partial_r v_r-\partial_z v_z)=-3v_0'h'+O(\varepsilon^2),
-$$
-so
-$$
-\eta\left(-3v_0'h'-\frac{1}{2}h v_0''+2h v_2\right)+\boldsymbol{t}\cdot\boldsymbol{\sigma}_p\cdot\boldsymbol{n}
-=O(\varepsilon^2).
+\left.(\partial_rv_z+\partial_zv_r)\right|_h
+=2hv_2-\frac{h}{2}v_0''+\cdots.
 $$
 
-Polymer projection at small slope:
+Derivatives are taken at fixed coordinates before evaluating at $r=h$. In the normal gradients, the displayed $h^2v_2'$ terms are second-order corrections. In the shear gradient, both displayed terms contribute at the first nonzero order. The polymer stresses at this accuracy are
+
 $$
-\boldsymbol{t}\cdot\boldsymbol{\sigma}_p\cdot\boldsymbol{n}
-=\sigma_{p,rz}(h)+h'\big(\Sigma_{rr}-\Sigma_{zz}\big)+O(\varepsilon^2).
+\sigma_{p,rr}(h)=\Sigma_{rr}+\cdots,
+\qquad
+\sigma_{p,zz}(h)=\Sigma_{zz}+\cdots,
+\qquad
+\sigma_{p,rz}(h)=hS+\cdots.
 $$
 
-Hence
+## 3. Use normal traction to determine the pressure
+
+The exact normal projection gives
+
 $$
-\eta\left(-3v_0'h'-\frac{1}{2}h v_0''+2h v_2\right)
-+\sigma_{p,rz}(h)
-+h'\big(\Sigma_{rr}-\Sigma_{zz}\big)
-=O(\varepsilon^2).
+P=p_a+\gamma\kappa+2\eta\,\boldsymbol n\cdot\boldsymbol D\cdot\boldsymbol n
++\boldsymbol n\cdot\boldsymbol\sigma_p\cdot\boldsymbol n.
 $$
 
-Define $\Delta\Sigma\equiv\Sigma_{zz}-\Sigma_{rr}$, then equivalently
+At leading order, $\boldsymbol n\simeq\boldsymbol e_r$, $\kappa\simeq1/h$ and the pressure is uniform across the section. Thus,
+
 $$
-\eta\left(-3v_0'h'-\frac{1}{2}h v_0''+2h v_2\right)
-+\sigma_{p,rz}(h)-\Delta\Sigma\,h'
-=O(\varepsilon^2).
+P_0=p_a+\frac{\gamma}{h}-\eta v_0'+\Sigma_{rr}.
 $$
 
+Defining the pressure relative to the gas as $p=P-p_a$, we obtain the convention used in the main notes:
+
+$$
+\boxed{p_0=\frac{\gamma}{h}-\eta v_0'+\Sigma_{rr}.}
+$$
+
+At second order, the surface and centreline pressures differ by $h^2p_2$, so this leading expression cannot be used unchanged at that accuracy.
+
+## 4. Use tangential traction to determine $v_2$
+
+The exact tangential projection is
+
+$$
+\boldsymbol t\cdot\boldsymbol\sigma\cdot\boldsymbol n
+=\frac{h'(\sigma_{rr}-\sigma_{zz})+(1-h'^2)\sigma_{rz}}{1+h'^2}.
+$$
+
+Pressure cancels from $\sigma_{rr}-\sigma_{zz}$. At the first nonzero order, the solvent contribution is therefore
+
+$$
+\eta\left[(\partial_rv_z+\partial_zv_r)
++2h'(\partial_rv_r-\partial_zv_z)\right]_h.
+$$
+
+The first bracketed term supplies $2hv_2-hv_0''/2$. The second gives
+
+$$
+2h'\left(-\frac{1}{2}v_0'-v_0'\right)=-3h'v_0'.
+$$
+
+The polymer projection contributes
+
+$$
+\sigma_{p,rz}(h)+h'(\Sigma_{rr}-\Sigma_{zz})
+=hS-\Delta\Sigma h',
+\qquad
+\Delta\Sigma=\Sigma_{zz}-\Sigma_{rr}.
+$$
+
+Combining these terms gives the leading tangential condition,
+
+$$
+\boxed{\eta\left(-3h'v_0'-\frac{h}{2}v_0''+2hv_2\right)
++hS-\Delta\Sigma h'=0.}
+$$
+
+For $\eta>0$, we can rearrange it as
+
+$$
+2\eta hv_2=3\eta h'v_0'+\frac{\eta h}{2}v_0''-hS+\Delta\Sigma h'.
+$$
+
+The tilted interface projects normal stress into the tangential direction. Consequently, $hS$ and $\Delta\Sigma h'$ must both be retained; a shear-free surface does not require the polymer shear stress itself to vanish.
+
+## 5. Keep track of the accuracy
+
+The leading normal condition neglects relative $O(\varepsilon^2)$ corrections. The first tangential balance is itself $O(\varepsilon)$ on the characteristic stress scale, and its next contribution is $O(\varepsilon^3)$ on that scale.
+
+In the notation of [[slender-jets-VE-order-2|the second-order derivation]], the full retained tangential condition is $\mathcal T_0+\mathcal T_2=0$. Using only $\mathcal T_0=0$ is sufficient for [[slender-jets-VE-order-0|leading-order momentum]], but loses the correction $-2\mathcal T_2/h$ at the next order. Together with the normal-traction correction $\mathcal B$, the second-order axial equation therefore contains
+
+$$
+-\partial_z\mathcal B-\frac{2\mathcal T_2}{h}.
+$$
+
+The full expressions for these corrections, including the radial polymer-stress coefficients, are given in the main second-order note.

@@ -1,79 +1,83 @@
 # Why $\sigma_{rr}-\sigma_{\theta\theta}=O(r^2)$
 
-Goal: show the tensor-parity refinement used in [[polymeric-stress-regularity-slender-jet|slender-jet regularity arguments]].
+A smooth stress tensor has a unique value at the axis, even though the radial and azimuthal basis vectors depend on the direction of approach. Rotational symmetry therefore makes the radial and hoop stresses equal at $r=0$. Smoothness also determines how quickly their difference can grow away from the axis.
 
-## 1) Scalar/velocity parity reminder
+We assume a smooth, symmetric stress tensor whose Cartesian components admit a Taylor expansion near the axis. The field is axisymmetric: rotating the position about $z$ rotates its vector and tensor components accordingly. All powers of $r$ below are dimensional Taylor powers.
 
-For smooth axisymmetric fields near the axis (also see [[continuity-slender-jet|Continuity equation in slender jet]]),
+## 1. Establish parity on a line through the axis
+
+Take the line $y=0$ and rotate it by $\pi$ about $z$. This maps $x$ to $-x$. A scalar and an axial vector component are unchanged by this rotation, whereas a transverse vector component changes sign. Thus, for an axisymmetric velocity and pressure,
+
 $$
-v_z(r,z,t),\;p(r,z,t)\;\text{are even in }r,
+v_z=v_0+r^2v_2+\cdots,
 \qquad
-v_r(r,z,t)\;\text{is odd in }r.
-$$
-So
-$$
-v_z=v_0+v_2 r^2+\cdots,
+p=p_0+r^2p_2+\cdots,
 \qquad
-p=p_0+p_2 r^2+\cdots,
-\qquad
-v_r=u_1 r+u_3 r^3+\cdots.
+v_r=ru_1+r^3u_3+\cdots.
 $$
 
-## 2) Axis regularity for transverse stress
+Here, even and odd parity refer to smooth continuation along a signed transverse coordinate through the axis; the cylindrical radius itself is nonnegative. [[continuity-slender-jet|Continuity]] then relates the radial-velocity coefficients to axial derivatives, giving $u_1=-v_0'/2$ and $u_3=-v_2'/4$.
 
-At $r=0$, there is no preferred direction in the $(x,y)$ plane. For a smooth rank-2 tensor this implies transverse isotropy at the axis:
+## 2. Use rotational symmetry at the axis
+
+At $r=0$, a symmetric transverse stress tensor invariant under every rotation must be proportional to the identity. Hence
+
 $$
-\sigma_{xx}(0)=\sigma_{yy}(0),
-\qquad
-\sigma_{xy}(0)=0.
+\sigma_{xx}(0)=\sigma_{yy}(0),\qquad \sigma_{xy}(0)=0,
 $$
-In cylindrical components,
+
+or, in cylindrical components,
+
 $$
 \sigma_{rr}(0)=\sigma_{\theta\theta}(0).
 $$
 
-## 3) Cartesian-cylindrical relation that enforces $r^2$
+The mixed transverse-axial components also vanish at the axis because no nonzero transverse vector is invariant under all rotations.
 
-For axisymmetric stress with no $r\theta$ component in the local $(\mathbf e_r,\mathbf e_\theta)$ basis,
-$$
-\boldsymbol\sigma
-=\sigma_{rr}\,\mathbf e_r\otimes\mathbf e_r
-+\sigma_{\theta\theta}\,\mathbf e_\theta\otimes\mathbf e_\theta.
-$$
+## 3. Determine the first allowed difference
 
-Using
+On the positive $x$-axis, $\sigma_{rr}=\sigma_{xx}$ and $\sigma_{\theta\theta}=\sigma_{yy}$. A rotation by $\pi$ changes the sign of each transverse basis vector, so the two signs cancel in a transverse rank-two tensor component. Both $\sigma_{xx}(x,0)$ and $\sigma_{yy}(x,0)$ are therefore even functions of $x$.
+
+Their Taylor series have equal constant terms and no linear terms. We can write
+
 $$
-\mathbf e_r=(\cos\theta,\sin\theta),
+\sigma_{rr}=\Sigma_0+\Sigma_2r^2+\Sigma_4r^4+\cdots,
 \qquad
-\mathbf e_\theta=(-\sin\theta,\cos\theta),
+\sigma_{\theta\theta}=\Sigma_0+\Theta_2r^2+\Theta_4r^4+\cdots.
 $$
-one gets
+
+Subtracting gives
+
+$$
+\boxed{\sigma_{rr}-\sigma_{\theta\theta}=(\Sigma_2-\Theta_2)r^2+O(r^4).}
+$$
+
+The difference may vanish faster, but it cannot start at $O(1)$ or $O(r)$ under these smoothness assumptions. Continuity at the axis alone would not establish the quadratic ordering.
+
+## 4. Check the Cartesian representation
+
+For the meridionally reflection-symmetric stress used in the slender-jet model, $\sigma_{r\theta}=\sigma_{\theta z}=0$. Its transverse block is
+
+$$
+\boldsymbol\sigma_\perp
+=\sigma_{rr}\boldsymbol e_r\otimes\boldsymbol e_r
++\sigma_{\theta\theta}\boldsymbol e_\theta\otimes\boldsymbol e_\theta,
+$$
+
+where $\boldsymbol e_r=(\cos\theta,\sin\theta)$ and $\boldsymbol e_\theta=(-\sin\theta,\cos\theta)$. Therefore,
+
 $$
 \sigma_{xy}
 =(\sigma_{rr}-\sigma_{\theta\theta})\sin\theta\cos\theta
-=(\sigma_{rr}-\sigma_{\theta\theta})\frac{xy}{x^2+y^2}.
+=(\sigma_{rr}-\sigma_{\theta\theta})\frac{xy}{r^2}.
 $$
 
-Now require $\sigma_{xy}(x,y)$ to be smooth at $(0,0)$. Since
+Substituting the quadratic difference gives
+
 $$
-\frac{xy}{x^2+y^2}=O(1)
-$$
-but depends on direction, smoothness at the origin forces the prefactor to vanish at least as $x^2+y^2=r^2$:
-$$
-\sigma_{rr}-\sigma_{\theta\theta}=O(r^2).
+\sigma_{xy}=(\Sigma_2-\Theta_2)xy+O(r^4),
 $$
 
-So the difference cannot start at $O(1)$ or $O(r)$; it starts at even order $r^2$.
+which is smooth at the origin. The directional factor $xy/r^2$ is thus cancelled by the radial dependence established in step 3.
 
-## 4) Equivalent expansion form
-
-Write
-$$
-\sigma_{rr}=\Sigma_0+\Sigma_2 r^2+\Sigma_4 r^4+\cdots,
-\qquad
-\sigma_{\theta\theta}=\Sigma_0+\Theta_2 r^2+\Theta_4 r^4+\cdots,
-$$
-then
-$$
-\sigma_{rr}-\sigma_{\theta\theta}=(\Sigma_2-\Theta_2)r^2+O(r^4)=O(r^2).
-$$
+The reflection assumption removes azimuthal shear away from the axis. Axisymmetry and a swirl-free velocity alone do not impose that condition on an arbitrary prescribed polymer stress. The regularity of the remaining polymer components, and their contribution to momentum, are developed in [[polymeric-stress-regularity-slender-jet|the polymer-stress note]].

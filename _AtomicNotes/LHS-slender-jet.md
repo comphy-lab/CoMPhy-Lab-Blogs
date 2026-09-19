@@ -1,57 +1,73 @@
 # LHS of the Slender-Jet Axial Equation
 
+The axial velocity of a slender jet is nearly uniform across each section. Radial advection is therefore small at leading order, but it contributes at the same order as the first correction to axial advection. We calculate both terms before truncating the acceleration.
 
-The full axial momentum inertia terms in axisymmetric cylindrical coordinates:
-$$
-\partial_t v_z+v_r\,\partial_r v_z+v_z\,\partial_z v_z.
-$$
+Use dimensional $r$ and $z$, with primes denoting $\partial_z$. The expansions from [[continuity-slender-jet|continuity]] are
 
-Use the long-wave expansions (see: [[continuity-slender-jet|Continuity equation in slender jet]])
 $$
-v_z(r,z,t)=v_0(z,t)+\varepsilon^2 r^2 v_2(z,t)+O(\varepsilon^4 r^4),
-$$
-$$
-v_r(r,z,t)=-\frac{1}{2}v_0'(z,t)\,r+O(\varepsilon^2 r^3).
+v_z=v_0+r^2v_2+O(r^4),
+\qquad
+v_r=-\frac{r}{2}v_0'-\frac{r^3}{4}v_2'+O(r^5).
 $$
 
-Compute each inertia contribution.
+Here, $O(r^n)$ denotes the omitted Taylor powers with their dimensional coefficients. Under the slender ordering $r/L=O(\varepsilon)$ and slow axial variation, $r^2v_2$ is a relative $O(\varepsilon^2)$ velocity correction.
 
-Time derivative:
-$$
-\partial_t v_z=\partial_t v_0+\varepsilon^2 r^2\partial_t v_2+O(\varepsilon^4)
-=\partial_t v_0+O(\varepsilon^2).
-$$
+## 1. Calculate the local acceleration
 
-Axial advection:
+Differentiating at fixed position gives
+
 $$
-\partial_z v_z=v_0'+\varepsilon^2 r^2 v_2'+O(\varepsilon^4),
-$$
-$$
-v_z\,\partial_z v_z
-=\left(v_0+\varepsilon^2 r^2 v_2+O(\varepsilon^4)\right)
-\left(v_0'+\varepsilon^2 r^2 v_2'+O(\varepsilon^4)\right)
-=v_0 v_0'+O(\varepsilon^2).
+\partial_tv_z=\partial_tv_0+r^2\partial_tv_2+O(r^4).
 $$
 
-Radial advection:
+No steady-flow assumption has been made. Both time derivatives remain in their respective coefficient equations.
+
+## 2. Calculate axial advection
+
+Since
+
 $$
-\partial_r v_z=2\varepsilon^2 r v_2+O(\varepsilon^4 r^3),
-$$
-$$
-v_r\,\partial_r v_z
-=\left(-\frac{1}{2}v_0'\,r+O(\varepsilon^2 r^3)\right)
-\left(2\varepsilon^2 r v_2+O(\varepsilon^4 r^3)\right)
-=-\varepsilon^2 r^2 v_0'v_2+O(\varepsilon^4)
-=O(\varepsilon^2).
+\partial_zv_z=v_0'+r^2v_2'+O(r^4),
 $$
 
-Therefore, at leading order,
+the axial advective term is
+
 $$
-\partial_t v_z+v_r\,\partial_r v_z+v_z\,\partial_z v_z
-=\partial_t v_0+v_0 v_0'+O(\varepsilon^2).
+v_z\partial_zv_z
+=v_0v_0'+r^2\left(v_0v_2'+v_2v_0'\right)+O(r^4).
 $$
 
-So the $O(1)$ LHS in the slender-jet axial equation is
+The second-order coefficient contains both the advection of $v_2$ by $v_0$ and the product $v_2v_0'$.
+
+## 3. Calculate radial advection
+
+The radial gradient of axial velocity is
+
 $$
-\partial_t v_0+v_0 v_0'.
+\partial_rv_z=2rv_2+O(r^3).
 $$
+
+Multiplying by the radial velocity gives
+
+$$
+v_r\partial_rv_z
+=\left(-\frac{r}{2}v_0'+O(r^3)\right)
+\left(2rv_2+O(r^3)\right)
+=-r^2v_0'v_2+O(r^4).
+$$
+
+This cancels the $r^2v_2v_0'$ term from axial advection.
+
+## 4. Collect the acceleration
+
+Adding the three contributions gives
+
+$$
+\boxed{
+\partial_tv_z+v_r\partial_rv_z+v_z\partial_zv_z
+=\partial_tv_0+v_0v_0'
++r^2\left(\partial_tv_2+v_0v_2'\right)+O(r^4).
+}
+$$
+
+Multiplying by the density $\rho$ gives the inertial terms in the momentum equation. The $r^0$ coefficient is $\rho(\partial_tv_0+v_0v_0')$, as used in [[slender-jets-VE-order-0|the leading-order model]]. The $r^2$ coefficient is $\rho(\partial_tv_2+v_0v_2')$, as used in (M2) of [[slender-jets-VE-order-2|the second-order hierarchy]]. Dropping radial advection before collecting this coefficient would leave a spurious $v_2v_0'$ term.

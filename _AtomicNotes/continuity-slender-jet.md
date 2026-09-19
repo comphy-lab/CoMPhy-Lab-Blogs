@@ -1,62 +1,92 @@
 # Continuity in the Slender-Jet Expansion
 
+Consider an incompressible, axisymmetric jet with surface $r=h(z,t)$. Once the axial velocity is specified, continuity determines the radial velocity. Requiring regularity at the axis removes the integration constant, and the surface kinematics then give conservation of cross-sectional area.
 
-Axisymmetric incompressibility:
-$$
-\frac{1}{r}\partial_r(r v_r)+\partial_z v_z=0.
-$$
+We use dimensional coordinates, as in [[slender-jets-VE-order-0|the leading-order derivation]]. Primes denote $\partial_z$. If $\ell_r/L=\varepsilon\ll1$, the dimensional powers of $r$ carry the slender ordering; no additional powers of $\varepsilon$ multiply them.
 
-Use the long-wave expansion for axial velocity:
-$$
-v_z(r,z,t)=v_0(z,t)+\varepsilon^2 r^2 v_2(z,t)+O(\varepsilon^4 r^4).
-$$
+## 1. Integrate continuity from the axis
 
-Differentiate in $z$:
+Axisymmetric incompressibility requires
+
 $$
-\partial_z v_z=v_0'(z,t)+\varepsilon^2 r^2 v_2'(z,t)+O(\varepsilon^4 r^4).
+\frac{1}{r}\partial_r(rv_r)+\partial_zv_z=0.
 $$
 
-Substitute into continuity:
+Expand the axial velocity as
+
 $$
-\partial_r(r v_r)
-=-r\left[v_0'(z,t)+\varepsilon^2 r^2 v_2'(z,t)+O(\varepsilon^4 r^4)\right].
+v_z=v_0+r^2v_2+r^4v_4+\cdots,
 $$
 
-Integrate in $r$:
+where the coefficients depend on $z$ and $t$. Substitution into continuity gives
+
 $$
-r v_r=-\frac{1}{2}v_0' r^2-\frac{1}{4}\varepsilon^2 v_2' r^4+C(z,t)+O(\varepsilon^4 r^6).
+\partial_r(rv_r)=-rv_0'-r^3v_2'-r^5v_4'+\cdots.
 $$
 
-Axis regularity requires $v_r(0,z,t)=0$, so $C(z,t)=0$. Divide by $r$:
+Integrating with respect to $r$,
+
 $$
-v_r(r,z,t)=-\frac{1}{2}v_0'(z,t)\,r-\frac{1}{4}\varepsilon^2 v_2'(z,t)\,r^3+O(\varepsilon^4 r^5).
+rv_r=-\frac{r^2}{2}v_0'-\frac{r^4}{4}v_2'-\frac{r^6}{6}v_4'+C(z,t).
 $$
 
-This is the odd-in-$r$ velocity expansion used in the slender-jet reduction.
+A nonzero $C$ would give a singular velocity $C/r$ at the axis. Regularity therefore requires $C=0$, giving
 
-Now apply the kinematic free-surface condition at $r=h(z,t)$:
 $$
-h_t+v_z(h,z,t)\,h_z=v_r(h,z,t).
-$$
-
-At leading order, $v_z(h,z,t)=v_0+O(\varepsilon^2)$ and
-$$
-v_r(h,z,t)=-\frac{1}{2}h\,v_0'+O(\varepsilon^2).
+\boxed{v_r=-\frac{r}{2}v_0'-\frac{r^3}{4}v_2'-\frac{r^5}{6}v_4'+\cdots.}
 $$
 
-Hence
+The radial velocity is odd in $r$, as required by [[r-2-parity|axis regularity]]. In particular, a positive axial strain rate $v_0'$ produces an inward radial velocity.
+
+## 2. Apply the surface kinematics
+
+The surface moves with the liquid, so
+
 $$
-h_t+v_0 h_z=-\frac{1}{2}h v_0'+O(\varepsilon^2).
+\partial_th+v_z(h,z,t)h'=v_r(h,z,t).
 $$
 
-Multiply by $2h$:
+At leading order this becomes
+
 $$
-\partial_t(h^2)+\partial_z(h^2 v_0)=O(\varepsilon^2).
+\partial_th+v_0h'=-\frac{h}{2}v_0'.
 $$
 
-Leading-order 1D continuity equation:
+Multiplying by $2h$ and collecting the axial derivative gives
+
 $$
-\partial_t(h^2)+\partial_z(h^2 v_0)=0.
+\boxed{\partial_t(h^2)+\partial_z(h^2v_0)=0.}
 $$
 
-This is the continuity relation used in [[slender-jets-VE-order-0| VE order 0 slender jet]].
+This is the leading continuity equation used in [[slender-jets-VE-order-0|the slender-jet model]].
+
+## 3. Retain the first correction to the flux
+
+Keeping the $r^2$ axial-velocity correction gives
+
+$$
+\partial_th+(v_0+h^2v_2)h'
+=-\frac{h}{2}v_0'-\frac{h^3}{4}v_2'.
+$$
+
+Multiplication by $2h$ now yields
+
+$$
+\boxed{\partial_t(h^2)+\partial_z\left(h^2v_0+\frac{h^4}{2}v_2\right)=0.}
+$$
+
+We can check the coefficient by integrating the axial velocity over a section. The exact volume flux is
+
+$$
+Q=2\pi\int_0^h v_zr\,\mathrm dr,
+$$
+
+so its expansion is
+
+$$
+Q=\pi\left(h^2v_0+\frac{h^4}{2}v_2+\frac{h^6}{3}v_4+\cdots\right).
+$$
+
+The exact area balance is $\partial_t(\pi h^2)+\partial_zQ=0$. Truncating this flux after $v_2$ recovers the second-order equation above. Under the regular slender ordering, the $v_2$ contribution is a relative $O(\varepsilon^2)$ correction, while the $v_4$ contribution is relative $O(\varepsilon^4)$. Consequently, the centreline velocity $v_0$ and the mean velocity $Q/(\pi h^2)$ agree only at leading order.
+
+The corresponding momentum and traction corrections are given in [[slender-jets-VE-order-2|the second-order derivation]].
