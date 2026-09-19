@@ -24,10 +24,28 @@ const MANIFEST_PATH = path.join(STATE_DIR, "manifest.json");
 const SITE_ORIGIN = (
   process.env.BLOG_PDF_SITE_ORIGIN ?? "https://blogs.comphy-lab.org"
 ).replace(/\/+$/, "");
-const CHROME_PATH =
-  process.env.BLOG_PDF_CHROME ??
-  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+const CHROME_PATH = process.env.BLOG_PDF_CHROME || null;
 const RENDERER_VERSION = "3";
+
+async function launchBrowser() {
+  const { chromium } = await import("playwright");
+  const candidate = CHROME_PATH || chromium.executablePath();
+  try {
+    const st = await fs.stat(candidate);
+    if (st.size < 1_000_000) {
+      throw new Error(`browser binary too small (${st.size} bytes)`);
+    }
+  } catch (error) {
+    throw new Error(
+      `Playwright Chromium is not usable at ${candidate}: ${error.message}. Install with: playwright install chromium`,
+    );
+  }
+  return chromium.launch({
+    headless: true,
+    timeout: 60000,
+    executablePath: candidate,
+  });
+}
 const LINK_START = "<!-- BLOG-PDF-LINK-START -->";
 const LINK_END = "<!-- BLOG-PDF-LINK-END -->";
 
@@ -581,11 +599,7 @@ async function main() {
   }
   if (options.ensureLinksOnly) return;
   if (options.verifyLinksOnly) {
-    const { chromium } = await import("playwright");
-    const browser = await chromium.launch({
-      executablePath: CHROME_PATH,
-      headless: true,
-    });
+    const browser = await launchBrowser();
     try {
       await verifyPublishedLinks(browser, posts);
     } finally {
@@ -625,11 +639,7 @@ async function main() {
     return;
   }
 
-  const { chromium } = await import("playwright");
-  const browser = await chromium.launch({
-    executablePath: CHROME_PATH,
-    headless: true,
-  });
+  const browser = await launchBrowser();
   const failures = [];
   try {
     for (const item of work) {
