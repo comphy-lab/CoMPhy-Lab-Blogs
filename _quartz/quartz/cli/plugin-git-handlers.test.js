@@ -113,3 +113,86 @@ test("restore checks nested conditional export targets", () => {
     prebuilt: true,
   })
 })
+
+test("restore joins successful builds before reporting a sibling failure", () => {
+  const workspace = fs.mkdtempSync(path.join(os.tmpdir(), "quartz-plugin-failure-"))
+  const pluginsDir = path.join(workspace, ".quartz", "plugins")
+
+  function createPlugin(name, succeeds) {
+    const pluginDir = path.join(pluginsDir, name)
+    fs.mkdirSync(pluginDir, { recursive: true })
+    fs.writeFileSync(
+      path.join(pluginDir, "package.json"),
+      JSON.stringify({
+        name: `@quartz-community/${name}`,
+        version: "1.0.0",
+        exports: { ".": { import: "./dist/index.js", types: "./dist/index.d.ts" } },
+        scripts: { prepare: "node build.cjs", build: "node build.cjs" },
+      }),
+    )
+    fs.writeFileSync(
+      path.join(pluginDir, "build.cjs"),
+      succeeds
+        ? "const fs = require('node:fs'); setTimeout(() => { fs.mkdirSync('dist', { recursive: true }); fs.writeFileSync('dist/index.js', 'export const Good = true'); fs.writeFileSync('dist/index.d.ts', 'declare const Good: true; export { Good }') }, 120)\n"
+        : "process.exitCode = 1\n",
+    )
+    execFileSync(
+      "npm",
+      ["install", "--package-lock-only", "--ignore-scripts", "--no-audit", "--no-fund"],
+      { cwd: pluginDir, stdio: "ignore" },
+    )
+    execFileSync("git", ["init", "-q"], { cwd: pluginDir })
+    execFileSync("git", ["add", "."], { cwd: pluginDir })
+    execFileSync(
+      "git",
+      ["-c", "user.name=Quartz Test", "-c", "user.email=quartz-test@example.invalid", "commit", "-qm", "Add fixture"],
+      { cwd: pluginDir },
+    )
+    return execFileSync("git", ["rev-parse", "HEAD"], {
+      cwd: pluginDir,
+      encoding: "utf8",
+    }).trim()
+  }
+
+  try {
+    const goodCommit = createPlugin("good", true)
+    const badCommit = createPlugin("bad", false)
+    fs.writeFileSync(
+      path.join(workspace, "quartz.lock.json"),
+      JSON.stringify({
+        version: "1.0.0",
+        plugins: {
+          good: { commit: goodCommit, resolved: "unused" },
+          bad: { commit: badCommit, resolved: "unused" },
+        },
+      }),
+    )
+    const handlerPath = pathToFileURL(
+      path.join(path.dirname(fileURLToPath(import.meta.url)), "plugin-git-handlers.js"),
+    ).href
+    assert.throws(
+      () =>
+        execFileSync(
+          process.execPath,
+          ["--input-type=module", "-e", `import { handlePluginRestore } from ${JSON.stringify(handlerPath)}; await handlePluginRestore()`],
+          {
+            cwd: workspace,
+            env: { ...process.env, QUARTZ_PLUGIN_BUILD_CONCURRENCY: "2" },
+            encoding: "utf8",
+            stdio: "pipe",
+          },
+        ),
+      (error) => {
+        assert.equal(error.status, 1)
+        assert.match(error.stdout, /Restored 1 plugin\(s\), 1 failed/)
+        return true
+      },
+    )
+    assert.ok(fs.existsSync(path.join(pluginsDir, "good", "dist", "index.d.ts")))
+    const barrel = fs.readFileSync(path.join(pluginsDir, "index.ts"), "utf8")
+    assert.match(barrel, /from "\.\/good"/)
+    assert.doesNotMatch(barrel, /from "\.\/bad"/)
+  } finally {
+    fs.rmSync(workspace, { recursive: true, force: true })
+  }
+})

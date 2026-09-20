@@ -37,6 +37,11 @@ its own preview process in a `finally` block. Any failed step exits nonzero,
 preventing Workers Builds from publishing that artifact. The script never
 calls `wrangler deploy`.
 
+Plugin restoration builds at most three independent plugins at once, then
+checks all results before generating the plugin index. Set
+`QUARTZ_PLUGIN_BUILD_CONCURRENCY` to an integer from 1 to 4 to tune a build
+environment without changing the pinned versions or dropping validation.
+
 The separate native deploy command is `npm run deploy`. Before invoking the
 pinned Wrangler CLI, it requires `public/build-info.json` to name local HEAD
 and to report `dirty: false`, checks that the local worktree is still clean,

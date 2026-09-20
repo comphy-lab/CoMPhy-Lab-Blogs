@@ -2,6 +2,7 @@ import fs from "fs"
 import path from "path"
 import { execSync, execFileSync } from "child_process"
 import { styleText } from "util"
+import { buildPluginsInParallel, pluginBuildConcurrency } from "./plugin-build-pool.js"
 import {
   readPluginsJson,
   writePluginsJson,
@@ -18,7 +19,7 @@ import {
 
 const INTERNAL_EXPORTS = new Set(["manifest", "default"])
 
-function buildPlugin(pluginDir, name) {
+export function buildPlugin(pluginDir, name) {
   try {
     console.log(styleText("cyan", `  → ${name}: installing dependencies...`))
     const installCommand = fs.existsSync(path.join(pluginDir, "package-lock.json"))
@@ -799,6 +800,7 @@ export async function handlePluginRestore() {
     console.log("Run 'npx quartz plugin add <repo>' to install plugins from scratch.")
     throw new Error("Plugin restore requires quartz.lock.json")
   }
+  const buildConcurrency = pluginBuildConcurrency()
 
   console.log(styleText("cyan", "→ Restoring plugins from lockfile..."))
   console.log()
@@ -877,8 +879,20 @@ export async function handlePluginRestore() {
   if (restoredPlugins.length > 0) {
     console.log()
     console.log(styleText("cyan", "→ Building restored plugins..."))
-    for (const { name, pluginDir } of restoredPlugins) {
-      if (!buildPlugin(pluginDir, name)) {
+    const buildResults = await buildPluginsInParallel(restoredPlugins, {
+      concurrency: buildConcurrency,
+      onResult(result) {
+        if (result.stdout) process.stdout.write(result.stdout)
+        if (result.stderr) process.stderr.write(result.stderr)
+      },
+    })
+    for (let i = 0; i < restoredPlugins.length; i++) {
+      const { name } = restoredPlugins[i]
+      const result = buildResults[i]
+      if (!result.success) {
+        if (!result.stdout.includes("build failed")) {
+          console.log(styleText("red", `  ✗ ${name}: build worker failed`))
+        }
         failed++
         installed--
       } else {
