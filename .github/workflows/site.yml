@@ -30,7 +30,7 @@ jobs:
           cache-dependency-path: _quartz/package-lock.json
       - run: npm ci
       - run: npm run plugins:restore
-      - run: npx tsc --noEmit
+      - run: npx tsc --noEmit --incremental false
       - run: npm test
       - run: npm run build
       - run: npx playwright install --with-deps chromium

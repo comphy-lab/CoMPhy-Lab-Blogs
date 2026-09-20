@@ -116,7 +116,7 @@ const fontMimeMap: Record<string, string> = {
 
 export async function processGoogleFonts(
   stylesheet: string,
-  baseUrl: string,
+  _baseUrl: string,
 ): Promise<{
   processedStylesheet: string
   fontFiles: GoogleFontFile[]
