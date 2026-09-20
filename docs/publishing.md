@@ -29,8 +29,12 @@ to work.
 `build:cloudflare` installs Playwright Chromium and verifies it can launch before
 restoring the plugins pinned in `quartz.lock.json`, running an uncached
 TypeScript check and unit tests, and building Quartz. Workers Builds uses an
-unprivileged build user, so the script does not attempt system package
-installation there. GitHub Actions explicitly sets
+unprivileged build user. On its Ubuntu 24.04 x64 image, the script uses APT's
+signed package indexes and dependency resolver to download missing Chromium
+runtime packages into `.quartz-cache/browser-runtime`, then extracts them
+without installing packages or changing the system. Only browser processes
+receive the resulting library and font configuration paths. Unsupported build
+images fail before compilation. GitHub Actions explicitly sets
 `PLAYWRIGHT_INSTALL_SYSTEM_DEPS=1` to install system dependencies on its runner.
 It starts the pinned local
 Wrangler preview on a free loopback port, renders PDFs from that preview into

@@ -7,6 +7,7 @@ import { createServer } from "node:net"
 import { resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import { setTimeout as sleep } from "node:timers/promises"
+import { prepareBrowserRuntime } from "./install-browser-deps.mjs"
 
 const quartzRoot = resolve(fileURLToPath(new URL("..", import.meta.url)))
 const repoRoot = resolve(quartzRoot, "..")
@@ -168,16 +169,31 @@ try {
     if (!existsSync(bin(tool))) throw new Error(`Missing ${tool}; run npm ci in _quartz first`)
   }
 
-  await run("install Playwright Chromium", bin("playwright"), [
-    "install",
-    ...(process.env.PLAYWRIGHT_INSTALL_SYSTEM_DEPS === "1" ? ["--with-deps"] : []),
-    "chromium",
-  ])
-  await run("verify Chromium can launch before compiling plugins", process.execPath, [
-    "--input-type=module",
-    "-e",
-    'import { chromium } from "playwright"; const browser = await chromium.launch({ headless: true }); await browser.close();',
-  ])
+  const browserEnv = { ...process.env }
+  if (process.env.WORKERS_CI) {
+    console.log("\n[build:cloudflare] prepare isolated Chromium system libraries")
+    Object.assign(browserEnv, await prepareBrowserRuntime())
+  }
+  await run(
+    "install Playwright Chromium",
+    bin("playwright"),
+    [
+      "install",
+      ...(process.env.PLAYWRIGHT_INSTALL_SYSTEM_DEPS === "1" ? ["--with-deps"] : []),
+      "chromium",
+    ],
+    browserEnv,
+  )
+  await run(
+    "verify Chromium can launch before compiling plugins",
+    process.execPath,
+    [
+      "--input-type=module",
+      "-e",
+      'import { chromium } from "playwright"; const browser = await chromium.launch({ headless: true }); await browser.close();',
+    ],
+    browserEnv,
+  )
   await run("restore locked Quartz plugins", npm, ["run", "plugins:restore"])
   await run("check TypeScript without incremental cache", bin("tsc"), [
     "--noEmit",
@@ -197,7 +213,7 @@ try {
       npm,
       ["run", "build:pdfs", "--", "--inject-links"],
       {
-        ...process.env,
+        ...browserEnv,
         E2E_BASE_URL: baseUrl,
       },
     )
@@ -205,7 +221,7 @@ try {
     await waitForPortRelease(port)
     await startPreview(port)
     await run("verify every route and interaction", npm, ["run", "test:e2e"], {
-      ...process.env,
+      ...browserEnv,
       E2E_BASE_URL: baseUrl,
     })
   } catch (error) {
