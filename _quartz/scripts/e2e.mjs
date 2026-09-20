@@ -325,8 +325,14 @@ try {
   report.interactions.graphResize = true
   const beforeGraph = page.url()
   const canvas = localGraph.locator("canvas")
-  const box = await canvas.boundingBox()
-  assert(box)
+  // The graph redraws on resize and theme change, replacing its canvas; wait
+  // for a laid-out canvas rather than measuring during a redraw.
+  let box = null
+  for (let attempt = 0; attempt < 50 && !box; attempt++) {
+    box = await canvas.boundingBox().catch(() => null)
+    if (!box) await page.waitForTimeout(100)
+  }
+  assert(box, "local graph canvas never became measurable")
   graphHit: for (let y = 8; y < box.height; y += 8) {
     for (let x = 8; x < box.width; x += 8) {
       await page.mouse.move(box.x + x, box.y + y)

@@ -207,7 +207,8 @@ ul.toc-content.overflow {
     border: 1px solid var(--c-border-strong);
     border-radius: var(--r-sm);
     background: var(--c-surface-strong);
-    height: 220px;
+    // The graph script draws at least 250 px tall; match it so nothing is clipped.
+    height: 250px;
     margin: 0.6rem 0 0;
 
     & > .global-graph-icon {
