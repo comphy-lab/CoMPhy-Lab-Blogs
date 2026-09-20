@@ -1,0 +1,13 @@
+{
+  // Assets-only Worker: no entry script, files only.
+  // Local preview: npx wrangler dev --ip 127.0.0.1 --port 8790
+  // Deploy (later, after review): npx wrangler deploy
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "comphy-blogs",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}
