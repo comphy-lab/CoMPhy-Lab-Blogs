@@ -155,17 +155,19 @@ plugins:
     layout:
       position: left
       priority: 50
+    options:
+      folderDefaultState: open
   - source: github:quartz-community/graph
     enabled: true
     options:
       localGraph:
         drag: true
         zoom: true
-        depth: 1
-        scale: 1.1
-        repelForce: 0.5
+        depth: 2
+        scale: 1
+        repelForce: 0.7
         centerForce: 0.3
-        linkDistance: 30
+        linkDistance: 40
         fontSize: 0.6
         opacityScale: 1
         removeTags: []

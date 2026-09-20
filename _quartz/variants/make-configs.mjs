@@ -10,6 +10,20 @@ function pluginName(source) {
   return source.split("/").at(-1)
 }
 
+// Merge a variant's plugin option patch into the plugin's existing options,
+// recursing into nested objects so a patch such as { localGraph: { depth: 2 } }
+// keeps the other localGraph settings.
+function deepMerge(target, patch) {
+  for (const [key, value] of Object.entries(patch)) {
+    if (value && typeof value === "object" && !Array.isArray(value)) {
+      target[key] = deepMerge(target[key] ?? {}, value)
+    } else {
+      target[key] = value
+    }
+  }
+  return target
+}
+
 for (const variant of VARIANTS) {
   const doc = base.clone()
   const cfg = doc.toJS()
@@ -21,6 +35,8 @@ for (const variant of VARIANTS) {
     const name = pluginName(plugin.source)
     const position = variant.positions[name]
     if (position && plugin.layout) plugin.layout.position = position
+    if (variant.options?.[name])
+      plugin.options = deepMerge(plugin.options ?? {}, variant.options[name])
     // TOC in the header block keeps the same priority ordering after tags.
     if (name === "table-of-contents" && position === "beforeBody") plugin.layout.priority = 40
     if (name === "graph" && position === "afterBody") plugin.layout.priority = 10

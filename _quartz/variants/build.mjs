@@ -6,7 +6,9 @@ import { VARIANTS, RETIRED, REVIEW_HOST } from "./variants.mjs"
 
 const root = path.resolve(import.meta.dirname, "..")
 const wanted = process.argv.slice(2)
-const selected = wanted.length ? VARIANTS.filter((v) => wanted.includes(v.key)) : VARIANTS
+// Retired round-1 variants can still be built by name; they are never built by default.
+const all = [...VARIANTS, ...RETIRED.map((v, i) => ({ ...v, name: "retired", port: 8900 + i }))]
+const selected = wanted.length ? all.filter((v) => wanted.includes(v.key)) : VARIANTS
 if (wanted.length && selected.length !== wanted.length) {
   console.error(`Unknown variant among: ${wanted.join(", ")}`)
   process.exit(1)

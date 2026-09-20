@@ -18,6 +18,7 @@ const current = fs.readFileSync(path.join(root, "quartz.config.yaml"), "utf8")
 const header = current
   .split("\n")
   .filter((line, i, all) => all.slice(0, i + 1).every((l) => l.startsWith("#")))
+  .filter((line) => !line.startsWith("# Theme: design variant"))
   .join("\n")
 fs.writeFileSync(
   path.join(root, "quartz.config.yaml"),
