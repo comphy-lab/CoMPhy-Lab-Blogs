@@ -1,3 +1,6 @@
+---
+publish: true
+---
 # Leading-Order Dynamic BC in a Slender Jet
 
 The free surface determines both the pressure and the first radial correction to axial velocity. Normal traction gives the pressure at leading order. Tangential traction determines $v_2$, including the effect of polymer shear and the projection of polymer normal stress onto a tilted interface.

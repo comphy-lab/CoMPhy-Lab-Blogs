@@ -1,3 +1,6 @@
+---
+publish: true
+---
 # Polymeric Stress Regularity in a Slender Jet
 
 The cylindrical basis is undefined at the axis, but the physical polymer stress must remain smooth there. This constrains both its radial dependence and the equality of its transverse components. We derive the expansion used in [[slender-jets-VE-order-0|the leading-order momentum balance]] and identify the additional coefficients needed at second order.

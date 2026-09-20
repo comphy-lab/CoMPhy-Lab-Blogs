@@ -103,7 +103,7 @@ The answer: Because $\partial_t(\boldsymbol{r} - \boldsymbol{r}_i) = -\dot{\bold
 
 The question: When you write $\partial_t \delta_i = -\boldsymbol{v}_i \cdot \nabla \delta_i$, why doesn't the gradient hit the velocity?
 
-The answer: $\nabla$ is the Eulerian gradient—it differentiates w.r.t. the field coordinate $\boldsymbol{r}$, not w.r.t. the particle position $\boldsymbol{r}_i$. The velocity $\boldsymbol{v}_i = \dot{\boldsymbol{r}}_i(t)$ is a *Lagrangian* quantity (it depends on $t$ and the particle index $i$, not on the field point $\boldsymbol{r}$). So $\nabla_{\boldsymbol{r}} \boldsymbol{v}_i = 0$. See [[Lecture2-DyadicConversion|the dyadic note]] for more on this distinction.
+The answer: $\nabla$ is the Eulerian gradient—it differentiates w.r.t. the field coordinate $\boldsymbol{r}$, not w.r.t. the particle position $\boldsymbol{r}_i$. The velocity $\boldsymbol{v}_i = \dot{\boldsymbol{r}}_i(t)$ is a *Lagrangian* quantity (it depends on $t$ and the particle index $i$, not on the field point $\boldsymbol{r}$). So $\nabla_{\boldsymbol{r}} \boldsymbol{v}_i = 0$. See [[Dyadic-conversion|the dyadic note]] for more on this distinction.
 
 ---
 

@@ -1,3 +1,6 @@
+---
+publish: true
+---
 # Continuity in the Slender-Jet Expansion
 
 Consider an incompressible, axisymmetric jet with surface $r=h(z,t)$. Once the axial velocity is specified, continuity determines the radial velocity. Requiring regularity at the axis removes the integration constant, and the surface kinematics then give conservation of cross-sectional area.

@@ -1,0 +1,139 @@
+@use "./base.scss";
+
+article iframe {
+  max-width: 100%;
+}
+
+// Keep long equations readable without widening the article or mobile page.
+article mjx-container.MathJax {
+  // MathJax places an inline min-width on aligned equations.
+  min-width: 0 !important;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &:not([display="true"]) {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  > svg {
+    flex-shrink: 0;
+  }
+}
+
+// CoMPhy Lab blog customisations.
+//
+// The vault uses four callout types that Obsidian does not ship with.
+// Quartz falls back to the "note" style for unknown types; the rules below
+// give each its own colour and icon, following the palette in publish.css.
+
+.callout {
+  // Key physical result or take-home message.
+  &[data-callout="significance"] {
+    --color: #a45d19;
+    --border: #a45d1944;
+    --bg: #a45d1910;
+    --callout-icon: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>');
+  }
+
+  // Download link for the PDF copy of a page.
+  &[data-callout="pdf"] {
+    --color: #006cac;
+    --border: #006cac5c;
+    --bg: #006cac17;
+    --callout-icon: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M12 18v-6"></path><path d="m9 15 3 3 3-3"></path></svg>');
+  }
+
+  // External reference or related resource.
+  &[data-callout="link"] {
+    --color: #0b7e9a;
+    --border: #0b7e9a44;
+    --bg: #0b7e9a10;
+    --callout-icon: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>');
+  }
+
+  // Exercise or task for the reader (lecture notes).
+  &[data-callout="task"] {
+    --color: #2e6f63;
+    --border: #2e6f6344;
+    --bg: #2e6f6310;
+    --callout-icon: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="6" height="6" rx="1"></rect><path d="m3 17 2 2 4-4"></path><path d="M13 6h8"></path><path d="M13 12h8"></path><path d="M13 18h8"></path></svg>');
+  }
+
+  // Method or derivation route.
+  &[data-callout="method"] {
+    --color: #425d9d;
+    --border: #425d9d44;
+    --bg: #425d9d10;
+    --callout-icon: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6v5l5 9a2 2 0 0 1-1.7 3H5.7A2 2 0 0 1 4 17l5-9z"></path><path d="M9 3h6"></path><path d="M7 14h10"></path></svg>');
+  }
+
+  // Definition of a term or quantity.
+  &[data-callout="definition"] {
+    --color: #543b8f;
+    --border: #543b8f44;
+    --bg: #543b8f10;
+    --callout-icon: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path><path d="M9 7h7"></path><path d="M9 11h5"></path></svg>');
+  }
+
+  // Idea, conjecture or thought experiment.
+  &[data-callout="idea"] {
+    --color: #8c6826;
+    --border: #8c682644;
+    --bg: #8c682610;
+    --callout-icon: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"></path><path d="M10 22h4"></path><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"></path></svg>');
+  }
+
+  // Key point to carry forward.
+  &[data-callout="key-point"] {
+    --color: #1b6f88;
+    --border: #1b6f8844;
+    --bg: #1b6f8810;
+    --callout-icon: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="5.5"></circle><path d="m21 2-9.6 9.6"></path><path d="m15.5 7.5 3 3L22 7l-3-3"></path></svg>');
+  }
+
+  // Page metadata: authorship, dates, provenance.
+  &[data-callout="meta"] {
+    --color: #5f6574;
+    --border: #5f657444;
+    --bg: #5f657410;
+    --callout-icon: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7h-3a2 2 0 0 1-2-2V2"></path><path d="M9 18a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7l5 5v9a2 2 0 0 1-2 2Z"></path><path d="M3 7.6v12.8A1.6 1.6 0 0 0 4.6 22h9.8"></path></svg>');
+  }
+}
+
+// The landing page (index.md) transcludes 0_README.md. Quartz prefixes a
+// transclusion with the embedded page's title; the README has its own H1, so
+// hide the duplicate and the quotation border on that one embed.
+.transclude[data-url="0_README"] {
+  border-left: none;
+  padding-left: 0;
+  margin-left: 0;
+
+  & > h1:first-child {
+    display: none;
+  }
+}
+
+// Dark mode keeps the same hues; raise the background alpha slightly so the
+// tint remains visible against the dark panel colour.
+:root[saved-theme="dark"] .callout {
+  &[data-callout="significance"] {
+    --bg: #a45d1922;
+  }
+  &[data-callout="pdf"] {
+    --bg: #3a90d122;
+    --color: #7db8ff;
+    --border: #7db8ff55;
+  }
+  &[data-callout="link"] {
+    --bg: #0b7e9a22;
+    --color: #8fd8d1;
+    --border: #8fd8d155;
+  }
+  &[data-callout="meta"] {
+    --bg: #8e9ab222;
+    --color: #acb8cf;
+    --border: #acb8cf55;
+  }
+}

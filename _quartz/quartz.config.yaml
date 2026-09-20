@@ -1,0 +1,314 @@
+# yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
+#
+# Quartz configuration for blogs.comphy-lab.org.
+# Content root is the repository root (the Obsidian vault); run builds from
+# this folder with `npx quartz build -d ..` so wikilinks, embeds and the
+# `publish: true` flag are read from the vault as-is.
+configuration:
+  pageTitle: CoMPhy Lab blogs
+  pageTitleSuffix: ""
+  enableSPA: true
+  enablePopovers: true
+  analytics: null
+  locale: en-GB
+  baseUrl: blogs.comphy-lab.org
+  ignorePatterns:
+    # Site tooling and repository plumbing, never content.
+    - _quartz
+    - _quartz/**
+    - _scripts
+    - _scripts/**
+    - docs
+    - docs/**
+    - .github
+    - .github/**
+    - .pandoc
+    - .pandoc/**
+    - .obsidian
+    - .trash
+    - private
+    - templates
+    # Root files that are repository metadata rather than published pages.
+    - README.md
+    - AGENTS.md
+    - CLAUDE.md
+    - Private-ToDo-Blog-public.md
+    - publish.css
+    - .Rhistory
+    - .dbxignore
+    - .gitattributes
+    - .gitignore
+  defaultDateType: created
+  theme:
+    fontOrigin: googleFonts
+    # Download fonts at build time so the site serves them itself.
+    cdnCaching: false
+    typography:
+      header: Atkinson Hyperlegible
+      body: Atkinson Hyperlegible
+      code: IBM Plex Mono
+    colors:
+      # Derived from the repository's publish.css light and dark palettes.
+      lightMode:
+        light: "#fdfdfd"
+        lightgray: "#e6e9f0"
+        gray: "#aeb7c8"
+        darkgray: "#282728"
+        dark: "#1c1c1e"
+        secondary: "#006cac"
+        tertiary: "#3a90d1"
+        highlight: rgba(0, 108, 172, 0.12)
+        textHighlight: "#ffcf5c88"
+      darkMode:
+        light: "#212737"
+        lightgray: "#2f3a54"
+        gray: "#6b7891"
+        darkgray: "#eaedf3"
+        dark: "#ffffff"
+        secondary: "#ff8a12"
+        tertiary: "#ffba6a"
+        highlight: rgba(255, 107, 1, 0.16)
+        textHighlight: "#ffcf5c55"
+plugins:
+  - source: github:quartz-community/created-modified-date
+    enabled: true
+    options:
+      priority:
+        - frontmatter
+        - git
+        - filesystem
+    order: 10
+  - source: github:quartz-community/syntax-highlighting
+    enabled: true
+    options:
+      theme:
+        light: github-light
+        dark: github-dark
+      keepBackground: false
+    order: 20
+  - source: github:quartz-community/obsidian-flavored-markdown
+    enabled: true
+    options:
+      enableInHtmlEmbed: false
+      enableCheckbox: true
+    order: 30
+  - source: github:quartz-community/github-flavored-markdown
+    enabled: true
+    order: 40
+  - source: github:quartz-community/table-of-contents
+    enabled: true
+    order: 50
+  - source: github:quartz-community/crawl-links
+    enabled: true
+    options:
+      # Obsidian's default link resolution.
+      markdownLinkResolution: shortest
+    order: 60
+  - source: github:quartz-community/description
+    enabled: true
+    order: 70
+  - source: github:quartz-community/latex
+    enabled: true
+    options:
+      # Obsidian renders with MathJax; matching it keeps equations stable.
+      renderEngine: mathjax
+    order: 80
+  - source: github:quartz-community/citations
+    enabled: false
+    order: 85
+  - source: github:quartz-community/hard-line-breaks
+    enabled: false
+    order: 90
+  - source: github:quartz-community/ox-hugo
+    enabled: false
+    order: 91
+  - source: github:quartz-community/roam
+    enabled: false
+    order: 92
+  # Only pages with `publish: true` are built, matching the vault convention.
+  - source: github:quartz-community/remove-draft
+    enabled: false
+  - source: github:quartz-community/explicit-publish
+    enabled: true
+  - source: github:quartz-community/alias-redirects
+    enabled: true
+  - source: github:quartz-community/content-index
+    enabled: true
+    options:
+      enableSiteMap: true
+      enableRSS: true
+  - source: github:quartz-community/favicon
+    enabled: true
+  - source: github:quartz-community/og-image
+    enabled: false
+  - source: github:quartz-community/cname
+    enabled: false
+  - source: github:quartz-community/canvas-page
+    enabled: false
+  - source: github:quartz-community/content-page
+    enabled: true
+  - source: github:quartz-community/folder-page
+    enabled: true
+  - source: github:quartz-community/tag-page
+    enabled: true
+  - source: github:quartz-community/explorer
+    enabled: true
+    layout:
+      position: left
+      priority: 50
+  - source: github:quartz-community/graph
+    enabled: true
+    options:
+      localGraph:
+        drag: true
+        zoom: true
+        depth: 1
+        scale: 1.1
+        repelForce: 0.5
+        centerForce: 0.3
+        linkDistance: 30
+        fontSize: 0.6
+        opacityScale: 1
+        removeTags: []
+        showTags: true
+        enableRadial: false
+      globalGraph:
+        drag: true
+        zoom: true
+        depth: -1
+        scale: 0.9
+        repelForce: 0.5
+        centerForce: 0.3
+        linkDistance: 30
+        fontSize: 0.6
+        opacityScale: 1
+        removeTags: []
+        showTags: true
+        focusOnHover: true
+        enableRadial: true
+    layout:
+      position: right
+      priority: 10
+  - source: github:quartz-community/search
+    enabled: true
+    layout:
+      position: left
+      priority: 20
+      group: toolbar
+      groupOptions:
+        grow: true
+  - source: github:quartz-community/backlinks
+    enabled: true
+    layout:
+      position: right
+      priority: 30
+  - source: github:quartz-community/article-title
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 10
+  - source: github:quartz-community/content-meta
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 20
+  - source: github:quartz-community/tag-list
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 30
+  - source: github:quartz-community/page-title
+    enabled: true
+    layout:
+      position: left
+      priority: 10
+  - source: github:quartz-community/darkmode
+    enabled: true
+    layout:
+      position: left
+      priority: 30
+      group: toolbar
+  - source: github:quartz-community/reader-mode
+    enabled: true
+    layout:
+      position: left
+      priority: 35
+      group: toolbar
+  - source: github:quartz-community/breadcrumbs
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 5
+      condition: not-index
+  - source: github:quartz-community/comments
+    enabled: false
+    options:
+      provider: giscus
+      options: {}
+    layout:
+      position: afterBody
+      priority: 10
+  - source: github:quartz-community/footer
+    enabled: true
+    options:
+      links:
+        CoMPhy Lab: https://comphy-lab.org
+        GitHub: https://github.com/comphy-lab/CoMPhy-Lab-Blogs
+  - source: github:quartz-community/recent-notes
+    enabled: false
+  - source: github:quartz-community/spacer
+    enabled: true
+    options: {}
+    order: 25
+    layout:
+      position: left
+      priority: 25
+      display: mobile-only
+  - source: github:quartz-community/bases-page
+    enabled: false
+  - source: github:quartz-community/note-properties
+    enabled: true
+    options:
+      includeAll: false
+      includedProperties:
+        - description
+        - tags
+        - aliases
+      excludedProperties: []
+      hidePropertiesView: false
+      delimiters: ---
+      language: yaml
+    order: 5
+    layout:
+      position: beforeBody
+      priority: 15
+      display: all
+  - source: github:quartz-community/encrypted-pages
+    enabled: false
+  - source: github:quartz-community/stacked-pages
+    enabled: false
+layout:
+  groups:
+    toolbar:
+      priority: 35
+      direction: row
+      gap: 0.5rem
+  byPageType:
+    "404":
+      positions:
+        beforeBody: []
+        left: []
+        right: []
+    content: {}
+    folder:
+      exclude:
+        - reader-mode
+      positions:
+        right: []
+    tag:
+      exclude:
+        - reader-mode
+      positions:
+        right: []
+    canvas: {}
+    bases: {}

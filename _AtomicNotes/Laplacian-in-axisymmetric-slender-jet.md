@@ -1,3 +1,6 @@
+---
+publish: true
+---
 # Viscous stress in the Slender-Jet Axial Equation
 
 The first radial correction to axial velocity is small, but its viscous contribution need not be. Two radial derivatives of $r^2v_2$ leave the finite term $4v_2$. We derive this term and the next coefficient using the same dimensional coordinates as [[slender-jets-VE-order-0|the leading-order slender-jet equation]].

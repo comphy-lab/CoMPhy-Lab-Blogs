@@ -1,3 +1,6 @@
+---
+publish: true
+---
 # Why $\sigma_{rr}-\sigma_{\theta\theta}=O(r^2)$
 
 A smooth stress tensor has a unique value at the axis, even though the radial and azimuthal basis vectors depend on the direction of approach. Rotational symmetry therefore makes the radial and hoop stresses equal at $r=0$. Smoothness also determines how quickly their difference can grow away from the axis.

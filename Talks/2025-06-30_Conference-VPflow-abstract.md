@@ -1,3 +1,6 @@
+---
+publish: true
+---
 # Taming singularities: yield-stress regularization in bubble-bursting 
 
 > [!significance] Speaker
