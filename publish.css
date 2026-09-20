@@ -1,8 +1,8 @@
 /*==========================================================================
  *  CoMPhy Lab — Obsidian Publish Stylesheet
- *  Academic editorial aesthetic · Peter-inspired palette · Monospace body
+ *  Academic editorial aesthetic · Peter-inspired palette
  *
- *  1. Google Fonts Import + Reset
+ *  1. Reset (fonts: self-hosted brand pack for Quartz; no Google CDN here)
  *  2. Design Token System
  *  3. Dark Theme
  *  4. Light Theme
@@ -18,13 +18,11 @@
 
 
 /* ==========================================================================
-   1. Google Fonts Import + Reset
+   1. Reset
    ========================================================================== */
 
-/* NOTE: Google Fonts @import is render-blocking but necessary for Obsidian Publish
-   (no <head> access for <link> tags, no file hosting for @font-face).
-   display=swap mitigates blocking by showing fallback fonts during load. */
-@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap");
+/* Quartz serves the CoMPhy brand webfont pack from _quartz/quartz/static/fonts.
+   Do not @import fonts.googleapis.com / fonts.gstatic.com from this sheet. */
 
 html {
   scroll-behavior: smooth;
@@ -88,9 +86,9 @@ html {
   --light-4: #c8d2e1;
   --light-5: #9daac0;
 
-  /* Typography */
-  --font-text: "IBM Plex Mono", "JetBrains Mono", "Hack", monospace;
-  --font-display: "Atkinson Hyperlegible", "Alegreya Sans", "IBM Plex Sans", sans-serif;
+  /* Typography — CoMPhy brand pack (Fraunces / Cormorant / IBM Plex) */
+  --font-text: "IBM Plex Sans", "Alegreya Sans", sans-serif;
+  --font-display: "Fraunces", "Cormorant Garamond", "Alegreya Sans", sans-serif;
   --font-mono: "IBM Plex Mono", "JetBrains Mono", "Hack", monospace;
 
   --font-size-body: 16px;
@@ -1104,8 +1102,8 @@ input[type="search"] {
     --em-color: #000000;
     --selection-bg: transparent;
     --tag-text: #000000;
-    --font-text: "Atkinson Hyperlegible", "Alegreya Sans", sans-serif;
-    --font-display: "Atkinson Hyperlegible", "Alegreya Sans", sans-serif;
+    --font-text: "IBM Plex Sans", "Alegreya Sans", sans-serif;
+    --font-display: "Fraunces", "Cormorant Garamond", "Alegreya Sans", sans-serif;
   }
 
   html,

@@ -40,6 +40,9 @@ export default (() => {
       <head>
         <title>{title}</title>
         <meta charSet="utf-8" />
+        {cfg.theme.fontOrigin === "local" && (
+          <link rel="stylesheet" href={joinSegments(baseDir, "static/fonts/fonts.css")} />
+        )}
         {cfg.theme.cdnCaching && cfg.theme.fontOrigin === "googleFonts" && (
           <>
             <link rel="preconnect" href="https://fonts.googleapis.com" />
