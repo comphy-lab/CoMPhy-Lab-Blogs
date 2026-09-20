@@ -396,10 +396,6 @@ article mjx-container.MathJax {
   border-left: none;
   padding-left: 0;
   margin-left: 0;
-
-  & > h1:first-child {
-    display: none;
-  }
 }
 
 // Dark mode keeps the same hues; raise the background alpha slightly so the

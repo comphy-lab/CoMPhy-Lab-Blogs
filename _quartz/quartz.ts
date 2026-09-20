@@ -1,21 +1,32 @@
-import { loadQuartzConfig } from "./quartz/plugins/loader/config-loader"
-import { VaultLinks, SafeAliasRedirects } from "./quartz/plugins/site-links"
-import { configureSiteNavigation } from "./quartz/plugins/site-navigation"
-import { GraphAssets } from "./quartz/plugins/site-graph-assets"
+import { loadQuartzConfig } from "./quartz/plugins/loader/config-loader";
+import { VaultLinks, SafeAliasRedirects } from "./quartz/plugins/site-links";
+import { configureSiteNavigation } from "./quartz/plugins/site-navigation";
+import { GraphAssets } from "./quartz/plugins/site-graph-assets";
+import { frameRegistry } from "./quartz/components/frames/registry";
+import { TopbarFrame } from "./quartz/components/frames/SiteFrames";
+
+// Site frames are selectable from quartz.config.yaml via layout.byPageType.<type>.template.
+frameRegistry.register(TopbarFrame.name, TopbarFrame, "site-frames");
 
 // QUARTZ_BASE_URL lets a preview build (on a custom host) emit
 // absolute metadata URLs for that host instead of the production hostname in
 // quartz.config.yaml. Production builds leave it unset.
-const baseUrlOverride = process.env.QUARTZ_BASE_URL?.trim()
-const config = await loadQuartzConfig(baseUrlOverride ? { baseUrl: baseUrlOverride } : undefined)
+const baseUrlOverride = process.env.QUARTZ_BASE_URL?.trim();
+const config = await loadQuartzConfig(
+  baseUrlOverride ? { baseUrl: baseUrlOverride } : undefined,
+);
 const crawlIndex = config.plugins.transformers.findIndex(
   (plugin) => plugin.name === "LinkProcessing",
-)
-if (crawlIndex < 0) throw new Error("CrawlLinks is required for vault link resolution")
-config.plugins.transformers.splice(crawlIndex, 0, VaultLinks())
-const aliasIndex = config.plugins.emitters.findIndex((plugin) => plugin.name === "AliasRedirects")
-if (aliasIndex < 0) throw new Error("AliasRedirects is required for safe alias routing")
-config.plugins.emitters[aliasIndex] = SafeAliasRedirects()
-config.plugins.emitters.push(GraphAssets())
-export const layout = await configureSiteNavigation(config)
-export default config
+);
+if (crawlIndex < 0)
+  throw new Error("CrawlLinks is required for vault link resolution");
+config.plugins.transformers.splice(crawlIndex, 0, VaultLinks());
+const aliasIndex = config.plugins.emitters.findIndex(
+  (plugin) => plugin.name === "AliasRedirects",
+);
+if (aliasIndex < 0)
+  throw new Error("AliasRedirects is required for safe alias routing");
+config.plugins.emitters[aliasIndex] = SafeAliasRedirects();
+config.plugins.emitters.push(GraphAssets());
+export const layout = await configureSiteNavigation(config);
+export default config;

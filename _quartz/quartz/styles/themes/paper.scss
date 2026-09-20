@@ -1,0 +1,238 @@
+// Variant "paper" — Paper & Ink.
+// The CoMPhy Lab design system applied to the existing three-column garden
+// layout: warm paper surface with the 32 px grid, deep teal as the single
+// interactive accent, Fraunces headings, IBM Plex Sans body, 28 px panels.
+@use "../custom.scss";
+@use "./shared";
+
+body {
+  font-size: 17px;
+  background: var(--c-paper);
+  color: var(--fg-1);
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(to right, rgba(15, 12, 8, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 12, 8, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+:root[saved-theme="dark"] body::before {
+  background-image:
+    linear-gradient(to right, rgba(248, 244, 236, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(248, 244, 236, 0.04) 1px, transparent 1px);
+}
+
+.page {
+  max-width: 1440px;
+  position: relative;
+  z-index: 1;
+}
+
+.page > #quartz-body {
+  column-gap: 2.5rem;
+  @media (min-width: 1201px) {
+    grid-template-columns: 250px minmax(0, 1fr) 280px;
+  }
+  & .sidebar {
+    padding: 2.5rem 0 2rem;
+  }
+  & .sidebar.left {
+    padding-left: 1.5rem;
+  }
+  & .sidebar.right {
+    padding-right: 1.5rem;
+  }
+}
+
+// Site title: the one place the four-stop brand gradient clips into type.
+.page-title {
+  font-family: var(--headerFont);
+  font-weight: 500;
+  font-style: italic;
+  font-size: 1.6rem;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  & a {
+    background: linear-gradient(
+      90deg,
+      var(--hero-grad-1) 0%,
+      var(--hero-grad-2) 45%,
+      var(--hero-grad-3) 55%,
+      var(--hero-grad-4) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
+:root[saved-theme="dark"] .page-title a {
+  background: linear-gradient(
+    90deg,
+    #ff8f8f 0%,
+    #c58bca 45%,
+    #8fa5ff 55%,
+    #b1a5f0 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+// The reading surface sits on a translucent panel, per the design system.
+.center {
+  background: var(--c-surface-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-soft);
+  padding: 0 clamp(1.5rem, 3vw, 3rem) 2rem;
+  margin-block: 2.5rem 2rem;
+  & .page-header {
+    margin-top: 2.25rem !important;
+  }
+  @media (max-width: 800px) {
+    padding: 0 1.25rem 1.5rem;
+    margin-block: 1rem 1.5rem;
+    border-radius: var(--r-md);
+  }
+}
+
+article {
+  color: var(--fg-1);
+  line-height: 1.7;
+  font-size: 1.0625rem;
+  & p,
+  & li {
+    line-height: 1.7;
+  }
+  & h1,
+  & h2,
+  & h3,
+  & h4 {
+    font-family: var(--headerFont);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--fg-strong);
+    font-variation-settings: "opsz" 48;
+    line-height: 1.2;
+  }
+  & h2 {
+    font-size: 1.65rem;
+    margin-top: 2.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--c-border);
+  }
+  & h3 {
+    font-size: 1.25rem;
+  }
+  & p > strong {
+    color: var(--c-accent-coral);
+    font-weight: 600;
+  }
+  & img {
+    border-radius: var(--r-sm);
+    border: 1px solid var(--c-border);
+    background: var(--c-surface-strong);
+  }
+  & pre {
+    background: var(--c-surface-strong);
+    border-color: var(--c-border-strong);
+    border-radius: var(--r-sm);
+    padding: 0.25rem 0.75rem;
+  }
+  & blockquote {
+    border-left-color: var(--c-accent-teal);
+    color: var(--fg-2);
+  }
+  & .table-container > table {
+    margin: 1rem 0;
+    & th {
+      font-family: var(--bodyFont);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--fg-2);
+      border-bottom-color: var(--c-border-strong);
+    }
+  }
+}
+
+.article-title {
+  font-family: var(--headerFont);
+  font-weight: 500;
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  color: var(--fg-strong);
+  margin: 0.5rem 0 0.75rem;
+}
+
+code {
+  background: color-mix(in srgb, var(--c-brand-purple) 7%, transparent);
+  color: var(--fg-strong);
+}
+:root[saved-theme="dark"] code {
+  background: color-mix(in srgb, var(--c-brand-purple) 22%, transparent);
+  color: #f1dcf4;
+}
+
+a.internal:not(.tag-link):not(:has(> img)) {
+  background: transparent;
+  padding: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--secondary) 35%, transparent);
+  border-radius: 0;
+  &:hover {
+    border-bottom-color: var(--secondary);
+  }
+}
+
+// Folder and tag listings as cards.
+ul.section-ul {
+  display: grid;
+  gap: 1rem;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+li.section-li {
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  background: var(--c-surface-strong);
+  padding: 1.1rem 1.35rem;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--dur-fast) var(--ease),
+    box-shadow var(--dur-fast) var(--ease);
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+  & > .section {
+    & .meta {
+      @extend %eyebrow;
+      color: var(--fg-3);
+      margin: 0;
+    }
+    & h3 {
+      font-family: var(--headerFont);
+      font-size: 1.2rem;
+      font-weight: 600;
+      & a {
+        color: var(--fg-strong);
+        background: transparent;
+        border: none;
+      }
+    }
+  }
+}
+
+footer {
+  margin-bottom: 2rem;
+}

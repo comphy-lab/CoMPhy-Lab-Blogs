@@ -1,0 +1,566 @@
+// Shared layer for the design-variant themes.
+//
+// 1. CoMPhy Lab design tokens (github.com/comphy-lab/comphy-design-system,
+//    tokens.css) exposed as CSS custom properties. Quartz's own palette
+//    variables (--light, --secondary, ...) are set per variant in its
+//    quartz.config.yaml; these tokens carry everything else.
+// 2. Readability fixes for the side rails (table of contents, backlinks,
+//    graph, explorer) that every variant shares.
+// 3. Grid for the "topbar" page frame.
+
+:root {
+  --c-brand-purple: #68236d;
+  --c-brand-blue: #0056b3;
+  --c-accent-coral: #cf4900;
+  --c-accent-violet: #4c6ef5;
+  --c-accent-teal: #254c4a;
+  --c-accent-teal-fg: #ffffff;
+  --c-accent-teal-hover: #1d3c3a;
+  --hero-grad-1: #ff6b6b;
+  --hero-grad-2: #68236d;
+  --hero-grad-3: #4c6ef5;
+  --hero-grad-4: #2d1b69;
+
+  --c-paper: #f3efe8;
+  --c-paper-tint: #ebe5da;
+  --c-surface-strong: #fffdf9;
+  --c-surface-glass: rgba(255, 253, 249, 0.72);
+  --fg-strong: #0f0c08;
+  --fg-1: #1f1a15;
+  --fg-2: #625648;
+  --fg-3: #857867;
+  --c-border: rgba(15, 12, 8, 0.09);
+  --c-border-strong: rgba(15, 12, 8, 0.18);
+  --glass-header: rgba(104, 35, 109, 0.08);
+  --c-eyebrow: #68236d;
+  --c-link: #0056b3;
+
+  --r-xs: 6px;
+  --r-sm: 12px;
+  --r-md: 18px;
+  --r-lg: 28px;
+  --r-pill: 999px;
+  --shadow-sm: 0 1px 2px rgba(15, 12, 8, 0.04), 0 1px 3px rgba(15, 12, 8, 0.06);
+  --shadow-md:
+    0 4px 10px rgba(15, 12, 8, 0.06), 0 2px 4px rgba(15, 12, 8, 0.04);
+  --shadow-soft:
+    0 12px 40px rgba(15, 12, 8, 0.06), 0 4px 12px rgba(15, 12, 8, 0.04);
+  --t-track-wide: 0.08em;
+  --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --dur-fast: 160ms;
+  --dur: 220ms;
+}
+
+:root[saved-theme="dark"] {
+  --c-paper: #12100d;
+  --c-paper-tint: #1a1713;
+  --c-surface-strong: #1c1915;
+  --c-surface-glass: rgba(28, 25, 21, 0.72);
+  --fg-strong: #f8f4ec;
+  --fg-1: #e6dfd0;
+  --fg-2: #9a8e7d;
+  --fg-3: #6e6455;
+  --c-border: rgba(248, 244, 236, 0.08);
+  --c-border-strong: rgba(248, 244, 236, 0.16);
+  --glass-header: rgba(104, 35, 109, 0.22);
+  --c-accent-teal: #6ac2bd;
+  --c-accent-teal-fg: #0f1c1b;
+  --c-accent-teal-hover: #88d2ce;
+  --c-eyebrow: #c09bc4;
+  --c-link: #8fb8ff;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.45);
+  --shadow-soft: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+// ---------------------------------------------------------------------------
+// Eyebrow: the design system's uppercase, tracked, purple section label.
+// ---------------------------------------------------------------------------
+%eyebrow {
+  font-family: var(--bodyFont);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: var(--t-track-wide);
+  text-transform: uppercase;
+  color: var(--c-eyebrow);
+  margin: 0 0 0.5rem;
+  line-height: 1.4;
+}
+
+// ---------------------------------------------------------------------------
+// Side rails: table of contents, backlinks, graph, explorer.
+// The deployed site renders these at body size inside a 240 px column, so
+// every entry wraps two or three times. Give them a small, quiet type scale
+// with a clear active indicator.
+// ---------------------------------------------------------------------------
+.sidebar {
+  font-size: 0.875rem;
+}
+
+button.toc-header h3,
+.backlinks > h3,
+.graph > h3,
+.explorer button.desktop-explorer h2,
+.explorer button.mobile-explorer h2 {
+  @extend %eyebrow;
+  margin: 0;
+}
+
+button.toc-header,
+.explorer button.desktop-explorer {
+  gap: 0.35rem;
+  & .fold {
+    width: 14px;
+    height: 14px;
+    margin-left: 0.25rem;
+    color: var(--fg-3);
+  }
+}
+
+.toc {
+  flex: 0 1 auto;
+  min-height: 0;
+}
+
+ul.toc-content.overflow {
+  margin: 0.6rem 0 0;
+  border-left: 1px solid var(--c-border-strong);
+
+  & > li {
+    margin: 0;
+  }
+
+  & > li > a {
+    display: block;
+    padding: 0.28rem 0.75rem 0.28rem 0.85rem;
+    margin-left: -1px;
+    border-left: 2px solid transparent;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    font-weight: 400;
+    color: var(--fg-2);
+    opacity: 1;
+    text-wrap: pretty;
+    transition:
+      color var(--dur-fast) var(--ease),
+      border-color var(--dur-fast) var(--ease);
+
+    &:hover {
+      color: var(--fg-strong);
+    }
+
+    &.in-view {
+      color: var(--secondary);
+      border-left-color: var(--secondary);
+      opacity: 1;
+      font-weight: 500;
+    }
+  }
+
+  @for $i from 0 through 6 {
+    & .depth-#{$i} > a {
+      padding-left: calc(0.85rem + 0.75rem * #{$i});
+    }
+  }
+}
+
+.backlinks {
+  & > ul.overflow {
+    margin: 0.6rem 0 0;
+    & > li {
+      margin: 0;
+      & > a {
+        display: block;
+        padding: 0.28rem 0;
+        font-size: 0.85rem;
+        line-height: 1.4;
+        font-weight: 400;
+        color: var(--fg-2);
+        background: transparent;
+        &:hover {
+          color: var(--secondary);
+        }
+      }
+    }
+  }
+}
+
+.graph {
+  & > .graph-outer {
+    border: 1px solid var(--c-border-strong);
+    border-radius: var(--r-sm);
+    background: var(--c-surface-strong);
+    height: 220px;
+    margin: 0.6rem 0 0;
+
+    & > .global-graph-icon {
+      color: var(--fg-2);
+      opacity: 0.8;
+      &:hover {
+        background-color: var(--c-paper-tint);
+      }
+    }
+  }
+  & > .global-graph-outer > .global-graph-container {
+    border-radius: var(--r-md);
+    border-color: var(--c-border-strong);
+    box-shadow: var(--shadow-soft);
+  }
+}
+
+.explorer-content {
+  & ul li > a {
+    display: block;
+    padding: 0.3rem 0.5rem 0.3rem 0.6rem;
+    margin-left: -0.6rem;
+    border-radius: var(--r-xs);
+    font-size: 0.875rem;
+    line-height: 1.4;
+    font-weight: 400;
+    color: var(--fg-2);
+    opacity: 1;
+
+    &:hover {
+      color: var(--fg-strong);
+      background: var(--c-paper-tint);
+    }
+
+    &.active {
+      color: var(--secondary);
+      font-weight: 600;
+      background: var(--highlight);
+    }
+  }
+
+  & .folder-outer > ul {
+    border-left-color: var(--c-border-strong);
+  }
+}
+
+.folder-container {
+  padding-block: 0.25rem;
+  & div > a,
+  & div > button span {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--fg-strong);
+  }
+}
+
+// Search button: quieter, pill-shaped.
+.search > .search-button {
+  border: 1px solid var(--c-border-strong);
+  border-radius: var(--r-pill);
+  background: var(--c-surface-strong);
+  height: 2.1rem;
+  & > p {
+    color: var(--fg-3);
+    font-size: 0.875rem;
+  }
+}
+
+.darkmode,
+.readermode {
+  color: var(--fg-2);
+}
+
+// ---------------------------------------------------------------------------
+// Article chrome shared by the variants.
+// ---------------------------------------------------------------------------
+.breadcrumb-container {
+  @extend %eyebrow;
+  gap: 0.35rem;
+  & .breadcrumb-element {
+    & a {
+      color: var(--c-eyebrow);
+      font-weight: 600;
+    }
+    & p {
+      margin: 0 0.15rem 0 0.35rem;
+      color: var(--fg-3);
+    }
+  }
+}
+
+.content-meta {
+  font-size: 0.875rem;
+  color: var(--fg-2);
+  opacity: 1;
+  margin-top: 0.75rem;
+}
+
+.tags {
+  gap: 0.4rem;
+  & > li > a.tag-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.15rem 0.65rem;
+    border-radius: var(--r-pill);
+    background: color-mix(in srgb, var(--c-brand-purple) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--c-brand-purple) 22%, transparent);
+    color: var(--c-eyebrow);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    &::before {
+      content: "#";
+      opacity: 0.6;
+      margin-right: 0.1em;
+    }
+  }
+}
+
+// The PDF callout becomes a compact ghost button row.
+article .callout[data-callout="pdf"] {
+  border: 1px solid var(--c-border-strong);
+  background: transparent;
+  border-radius: var(--r-pill);
+  padding: 0.4rem 1rem;
+  width: fit-content;
+  & .callout-title {
+    color: var(--fg-2);
+  }
+  & .callout-content a {
+    font-weight: 600;
+    background: transparent;
+    padding: 0;
+  }
+}
+
+// Callouts: the design-system radius and border.
+article .callout {
+  border-radius: var(--r-sm);
+  border-width: 1px;
+}
+
+// Popover previews follow the surface colour.
+.popover > .popover-inner {
+  background: var(--c-surface-strong);
+  border-color: var(--c-border-strong);
+  border-radius: var(--r-sm);
+  box-shadow: var(--shadow-soft);
+}
+
+// Footer.
+footer {
+  color: var(--fg-3);
+  font-size: 0.8rem;
+  & a {
+    color: var(--fg-2);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// "topbar" page frame grid.
+// ---------------------------------------------------------------------------
+.page[data-frame="topbar"] {
+  --topbar-h: 3.5rem;
+  --rail-left: 260px;
+  --rail-right: 260px;
+  --gutter: 2rem;
+  max-width: none;
+
+  & > #quartz-body {
+    grid-template-columns: var(--rail-left) minmax(0, 1fr) var(--rail-right);
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      "topbar topbar topbar"
+      "left center right"
+      "left footer right";
+    column-gap: var(--gutter);
+    row-gap: 0;
+    padding: 0 var(--gutter) 0 0;
+
+    // A rail whose components all rendered nothing (an index page without a
+    // table of contents, say) collapses like a rail with no components.
+    &:has(> .left.sidebar:is(.empty, :empty)) {
+      grid-template-columns: minmax(0, 1fr) var(--rail-right);
+      grid-template-areas:
+        "topbar topbar"
+        "center right"
+        "footer right";
+      padding-left: var(--gutter);
+    }
+    &:has(> .right.sidebar:is(.empty, :empty)) {
+      grid-template-columns: var(--rail-left) minmax(0, 1fr);
+      grid-template-areas:
+        "topbar topbar"
+        "left center"
+        "left footer";
+    }
+    &:has(> .left.sidebar:is(.empty, :empty)):has(
+        > .right.sidebar:is(.empty, :empty)
+      ) {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas:
+        "topbar"
+        "center"
+        "footer";
+    }
+
+    & > .site-topbar {
+      grid-area: topbar;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      margin: 0 calc(-1 * var(--gutter)) 0 0;
+      background: color-mix(in srgb, var(--light) 88%, transparent);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--c-border);
+
+      & .site-topbar-inner {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        min-height: var(--topbar-h);
+        padding: 0 var(--gutter);
+      }
+
+      & .page-title {
+        font-size: 1.05rem;
+        margin: 0 auto 0 0;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        & a {
+          color: var(--fg-strong);
+        }
+      }
+
+      & .flex-component {
+        gap: 0.5rem !important;
+      }
+      & .search {
+        max-width: 18rem;
+      }
+      & .spacer {
+        display: none;
+      }
+    }
+
+    & > .center {
+      grid-area: center;
+      min-width: 0;
+      width: 100%;
+    }
+    & > footer {
+      grid-area: footer;
+      margin-left: 0;
+    }
+
+    & > .sidebar {
+      top: var(--topbar-h);
+      height: calc(100vh - var(--topbar-h));
+      padding: 1.75rem 0 2rem;
+      gap: 1.5rem;
+      &.empty,
+      &:empty {
+        display: none;
+      }
+    }
+    & > .sidebar.left {
+      grid-area: left;
+      padding-left: var(--gutter);
+      z-index: 1;
+    }
+    & > .sidebar.right {
+      grid-area: right;
+    }
+
+    & .page-header {
+      margin-top: 2.25rem;
+    }
+  }
+
+  @media all and (max-width: 1200px) and (min-width: 801px) {
+    --rail-right: 220px;
+    & > #quartz-body {
+      grid-template-columns: var(--rail-left) minmax(0, 1fr);
+      grid-template-areas:
+        "topbar topbar"
+        "left center"
+        "left right"
+        "left footer";
+      padding-right: var(--gutter);
+      &:has(> .left.sidebar.empty) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+          "topbar"
+          "center"
+          "right"
+          "footer";
+      }
+      & > .sidebar.right {
+        position: static;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        & > * {
+          flex: 1 1 16rem;
+          max-height: 24rem;
+        }
+        & > .toc {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: 800px) {
+    --gutter: 1.25rem;
+    & > #quartz-body {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas:
+        "topbar"
+        "left"
+        "center"
+        "right"
+        "footer";
+      padding: 0 var(--gutter);
+      &:has(> .left.sidebar:is(.empty, :empty)),
+      &:has(> .right.sidebar:is(.empty, :empty)),
+      &:has(> .left.sidebar:is(.empty, :empty)):has(
+          > .right.sidebar:is(.empty, :empty)
+        ) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+          "topbar"
+          "left"
+          "center"
+          "right"
+          "footer";
+        padding: 0 var(--gutter);
+      }
+      & > .site-topbar {
+        margin: 0 calc(-1 * var(--gutter));
+        & .site-topbar-inner {
+          flex-wrap: wrap;
+          padding: 0.5rem var(--gutter);
+          gap: 0.5rem;
+        }
+        & .search {
+          max-width: none;
+          flex: 1 1 100%;
+          order: 5;
+        }
+      }
+      & > .sidebar {
+        position: static;
+        height: auto;
+        padding: 0.5rem 0;
+      }
+      & > .sidebar.left {
+        flex-direction: row;
+        padding-left: 0;
+      }
+      & > .sidebar.right {
+        flex-direction: column;
+        padding: 1.5rem 0;
+      }
+      & .page-header {
+        margin-top: 1rem;
+      }
+    }
+  }
+}

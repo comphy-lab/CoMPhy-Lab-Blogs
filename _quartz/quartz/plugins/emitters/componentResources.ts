@@ -1,98 +1,121 @@
-import { FullSlug, joinSegments } from "../../util/path"
-import { QuartzEmitterPlugin } from "../types"
+import { FullSlug, joinSegments } from "../../util/path";
+import { QuartzEmitterPlugin } from "../types";
 
 // @ts-ignore
-import spaRouterScript from "../../components/scripts/spa.inline"
+import spaRouterScript from "../../components/scripts/spa.inline";
 // @ts-ignore
-import popoverScript from "../../components/scripts/popover.inline"
-import styles from "../../styles/custom.scss"
-import popoverStyle from "../../components/styles/popover.scss"
-import { BuildCtx } from "../../util/ctx"
-import { QuartzComponent } from "../../components/types"
-import { componentRegistry } from "../../components/registry"
+import popoverScript from "../../components/scripts/popover.inline";
+import styles from "../../styles/custom.scss";
+import popoverStyle from "../../components/styles/popover.scss";
+import { BuildCtx } from "../../util/ctx";
+import { QuartzComponent } from "../../components/types";
+import { componentRegistry } from "../../components/registry";
 import {
   googleFontHref,
   googleFontSubsetHref,
   joinStyles,
   processGoogleFonts,
-} from "../../util/theme"
-import { Features, transform } from "lightningcss"
-import { transform as transpile } from "esbuild"
-import { write } from "./helpers"
+} from "../../util/theme";
+import { Features, transform } from "lightningcss";
+import { transform as transpile } from "esbuild";
+import { write } from "./helpers";
 
 type ComponentResources = {
-  css: string[]
-  beforeDOMLoaded: string[]
-  afterDOMLoaded: string[]
+  css: string[];
+  beforeDOMLoaded: string[];
+  afterDOMLoaded: string[];
+};
+
+// The Explorer scrolls its active entry into view on load. With the default
+// block alignment the browser also scrolls the document, so every article
+// opens with its header pushed off screen. Confine that scroll to the nearest
+// scrollable ancestor. Applied to the compiled plugin script because the
+// component is instantiated under several registry aliases.
+function keepSidebarScrollLocal(script: string): string {
+  return script.replaceAll(
+    'scrollIntoView({behavior:"smooth"})',
+    'scrollIntoView({behavior:"smooth",block:"nearest"})',
+  );
 }
 
 function getComponentResources(ctx: BuildCtx): ComponentResources {
-  const allComponents: Set<QuartzComponent> = new Set()
+  const allComponents: Set<QuartzComponent> = new Set();
 
   for (const emitter of ctx.cfg.plugins.emitters) {
-    const components = emitter.getQuartzComponents?.(ctx) ?? []
+    const components = emitter.getQuartzComponents?.(ctx) ?? [];
     for (const component of components) {
-      allComponents.add(component)
+      allComponents.add(component);
     }
   }
 
   for (const component of componentRegistry.getAllComponents()) {
-    allComponents.add(component)
+    allComponents.add(component);
   }
 
   const componentResources = {
     css: new Set<string>(),
     beforeDOMLoaded: new Set<string>(),
     afterDOMLoaded: new Set<string>(),
-  }
+  };
 
-  function normalizeResource(resource: string | string[] | undefined): string[] {
-    if (!resource) return []
-    if (Array.isArray(resource)) return resource
-    return [resource]
+  function normalizeResource(
+    resource: string | string[] | undefined,
+  ): string[] {
+    if (!resource) return [];
+    if (Array.isArray(resource)) return resource;
+    return [resource];
   }
 
   for (const component of allComponents) {
-    const { css, beforeDOMLoaded, afterDOMLoaded } = component
-    const normalizedCss = normalizeResource(css)
-    const normalizedBeforeDOMLoaded = normalizeResource(beforeDOMLoaded)
-    const normalizedAfterDOMLoaded = normalizeResource(afterDOMLoaded)
+    const { css, beforeDOMLoaded, afterDOMLoaded } = component;
+    const normalizedCss = normalizeResource(css);
+    const normalizedBeforeDOMLoaded = normalizeResource(beforeDOMLoaded);
+    const normalizedAfterDOMLoaded = normalizeResource(afterDOMLoaded);
 
-    normalizedCss.forEach((c) => componentResources.css.add(c))
-    normalizedBeforeDOMLoaded.forEach((b) => componentResources.beforeDOMLoaded.add(b))
-    normalizedAfterDOMLoaded.forEach((a) => componentResources.afterDOMLoaded.add(a))
+    normalizedCss.forEach((c) => componentResources.css.add(c));
+    normalizedBeforeDOMLoaded.forEach((b) =>
+      componentResources.beforeDOMLoaded.add(b),
+    );
+    normalizedAfterDOMLoaded.forEach((a) =>
+      componentResources.afterDOMLoaded.add(keepSidebarScrollLocal(a)),
+    );
   }
 
   return {
     css: [...componentResources.css],
     beforeDOMLoaded: [...componentResources.beforeDOMLoaded],
     afterDOMLoaded: [...componentResources.afterDOMLoaded],
-  }
+  };
 }
 
 async function joinScripts(scripts: string[]): Promise<string> {
   // wrap with iife to prevent scope collision
-  const script = scripts.map((script) => `(function () {${script}})();`).join("\n")
+  const script = scripts
+    .map((script) => `(function () {${script}})();`)
+    .join("\n");
 
   // minify with esbuild
   const res = await transpile(script, {
     minify: true,
-  })
+  });
 
-  return res.code
+  return res.code;
 }
 
-function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentResources) {
-  const cfg = ctx.cfg.configuration
+function addGlobalPageResources(
+  ctx: BuildCtx,
+  componentResources: ComponentResources,
+) {
+  const cfg = ctx.cfg.configuration;
 
   // popovers
   if (cfg.enablePopovers) {
-    componentResources.afterDOMLoaded.push(popoverScript)
-    componentResources.css.push(popoverStyle)
+    componentResources.afterDOMLoaded.push(popoverScript);
+    componentResources.css.push(popoverStyle);
   }
 
   if (cfg.analytics?.provider === "google") {
-    const tagId = cfg.analytics.tagId
+    const tagId = cfg.analytics.tagId;
     componentResources.afterDOMLoaded.push(`
       const gtagScript = document.createElement('script');
       gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=${tagId}';
@@ -111,9 +134,9 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
       };
 
       document.head.appendChild(gtagScript);
-    `)
+    `);
   } else if (cfg.analytics?.provider === "plausible") {
-    const plausibleHost = cfg.analytics.host ?? "https://plausible.io"
+    const plausibleHost = cfg.analytics.host ?? "https://plausible.io";
     componentResources.afterDOMLoaded.push(`
       const plausibleScript = document.createElement('script');
       plausibleScript.src = '${plausibleHost}/js/script.manual.js';
@@ -128,7 +151,7 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
       };
 
       document.head.appendChild(plausibleScript);
-    `)
+    `);
   } else if (cfg.analytics?.provider === "umami") {
     componentResources.afterDOMLoaded.push(`
       const umamiScript = document.createElement("script");
@@ -138,7 +161,7 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
       umamiScript.defer = true;
 
       document.head.appendChild(umamiScript);
-    `)
+    `);
   } else if (cfg.analytics?.provider === "goatcounter") {
     componentResources.afterDOMLoaded.push(`
       const goatcounterScriptPre = document.createElement('script');
@@ -161,7 +184,7 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
       };
 
       document.head.appendChild(goatcounterScript);
-    `)
+    `);
   } else if (cfg.analytics?.provider === "posthog") {
     componentResources.afterDOMLoaded.push(`
       const posthogScript = document.createElement("script");
@@ -175,9 +198,9 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
       })\`
 
       document.head.appendChild(posthogScript);
-    `)
+    `);
   } else if (cfg.analytics?.provider === "tinylytics") {
-    const siteId = cfg.analytics.siteId
+    const siteId = cfg.analytics.siteId;
     componentResources.afterDOMLoaded.push(`
       const tinylyticsScript = document.createElement('script');
       tinylyticsScript.src = 'https://tinylytics.app/embed/${siteId}.js?spa';
@@ -190,14 +213,14 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
       };
 
       document.head.appendChild(tinylyticsScript);
-    `)
+    `);
   } else if (cfg.analytics?.provider === "cabin") {
     componentResources.afterDOMLoaded.push(`
       const cabinScript = document.createElement("script")
       cabinScript.src = "${cfg.analytics.host ?? "https://scripts.withcabin.com"}/hello.js"
       cabinScript.defer = true
       document.head.appendChild(cabinScript)
-    `)
+    `);
   } else if (cfg.analytics?.provider === "clarity") {
     componentResources.afterDOMLoaded.push(`
       const clarityScript = document.createElement("script")
@@ -206,7 +229,7 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "${cfg.analytics.projectId}");\`
       document.head.appendChild(clarityScript)
-    `)
+    `);
   } else if (cfg.analytics?.provider === "matomo") {
     componentResources.afterDOMLoaded.push(`
       const matomoScript = document.createElement("script");
@@ -233,20 +256,20 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
       })();
       \`
       document.head.appendChild(matomoScript);
-    `)
+    `);
   } else if (cfg.analytics?.provider === "vercel") {
     /**
      * script from {@link https://vercel.com/docs/analytics/quickstart?framework=html#add-the-script-tag-to-your-site|Vercel Docs}
      */
     componentResources.beforeDOMLoaded.push(`
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-    `)
+    `);
     componentResources.afterDOMLoaded.push(`
       const vercelInsightsScript = document.createElement("script")
       vercelInsightsScript.src = "/_vercel/insights/script.js"
       vercelInsightsScript.defer = true
       document.head.appendChild(vercelInsightsScript)
-    `)
+    `);
   } else if (cfg.analytics?.provider === "rybbit") {
     componentResources.afterDOMLoaded.push(`
       const rybbitScript = document.createElement("script");
@@ -256,18 +279,18 @@ function addGlobalPageResources(ctx: BuildCtx, componentResources: ComponentReso
       rybbitScript.defer = true;
 
       document.head.appendChild(rybbitScript);
-    `)
+    `);
   }
 
   if (cfg.enableSPA) {
-    componentResources.afterDOMLoaded.push(spaRouterScript)
+    componentResources.afterDOMLoaded.push(spaRouterScript);
   } else {
     componentResources.afterDOMLoaded.push(`
       window.spaNavigate = (url, _) => window.location.assign(url)
       window.addCleanup = () => {}
       const event = new CustomEvent("nav", { detail: { url: document.body.dataset.slug } })
       document.dispatchEvent(event)
-    `)
+    `);
   }
 }
 
@@ -277,69 +300,76 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
   return {
     name: "ComponentResources",
     async *emit(ctx, _content, _resources) {
-      const cfg = ctx.cfg.configuration
+      const cfg = ctx.cfg.configuration;
       // component specific scripts and styles
-      const componentResources = getComponentResources(ctx)
-      let googleFontsStyleSheet = ""
+      const componentResources = getComponentResources(ctx);
+      let googleFontsStyleSheet = "";
       if (cfg.theme.fontOrigin === "local") {
         // let the user do it themselves in css
-      } else if (cfg.theme.fontOrigin === "googleFonts" && !cfg.theme.cdnCaching) {
+      } else if (
+        cfg.theme.fontOrigin === "googleFonts" &&
+        !cfg.theme.cdnCaching
+      ) {
         // when cdnCaching is true, we link to google fonts in Head.tsx
-        const theme = ctx.cfg.configuration.theme
-        const response = await fetch(googleFontHref(theme))
-        googleFontsStyleSheet = await response.text()
+        const theme = ctx.cfg.configuration.theme;
+        const response = await fetch(googleFontHref(theme));
+        googleFontsStyleSheet = await response.text();
 
         if (theme.typography.title) {
-          const title = ctx.cfg.configuration.pageTitle
-          const response = await fetch(googleFontSubsetHref(theme, title))
-          googleFontsStyleSheet += `\n${await response.text()}`
+          const title = ctx.cfg.configuration.pageTitle;
+          const response = await fetch(googleFontSubsetHref(theme, title));
+          googleFontsStyleSheet += `\n${await response.text()}`;
         }
 
         if (!cfg.baseUrl) {
           throw new Error(
             "baseUrl must be defined when using Google Fonts without cfg.theme.cdnCaching",
-          )
+          );
         }
 
         const { processedStylesheet, fontFiles } = await processGoogleFonts(
           googleFontsStyleSheet,
           cfg.baseUrl,
-        )
-        googleFontsStyleSheet = processedStylesheet
+        );
+        googleFontsStyleSheet = processedStylesheet;
 
         // Download and save font files
         for (const fontFile of fontFiles) {
-          const res = await fetch(fontFile.url)
+          const res = await fetch(fontFile.url);
           if (!res.ok) {
-            throw new Error(`Failed to fetch font ${fontFile.filename}`)
+            throw new Error(`Failed to fetch font ${fontFile.filename}`);
           }
 
-          const buf = await res.arrayBuffer()
+          const buf = await res.arrayBuffer();
           yield write({
             ctx,
-            slug: joinSegments("static", "fonts", fontFile.filename) as FullSlug,
+            slug: joinSegments(
+              "static",
+              "fonts",
+              fontFile.filename,
+            ) as FullSlug,
             ext: `.${fontFile.extension}`,
             content: Buffer.from(buf),
-          })
+          });
         }
       }
 
       // important that this goes *after* component scripts
       // as the "nav" event gets triggered here and we should make sure
       // that everyone else had the chance to register a listener for it
-      addGlobalPageResources(ctx, componentResources)
+      addGlobalPageResources(ctx, componentResources);
 
       const stylesheet = joinStyles(
         ctx.cfg.configuration.theme,
         googleFontsStyleSheet,
         ...componentResources.css,
         styles,
-      )
+      );
 
       const [prescript, postscript] = await Promise.all([
         joinScripts(componentResources.beforeDOMLoaded),
         joinScripts(componentResources.afterDOMLoaded),
-      ])
+      ]);
 
       yield write({
         ctx,
@@ -358,22 +388,22 @@ export const ComponentResources: QuartzEmitterPlugin = () => {
           },
           include: Features.MediaQueries,
         }).code.toString(),
-      })
+      });
 
       yield write({
         ctx,
         slug: "prescript" as FullSlug,
         ext: ".js",
         content: prescript,
-      })
+      });
 
       yield write({
         ctx,
         slug: "postscript" as FullSlug,
         ext: ".js",
         content: postscript,
-      })
+      });
     },
     async *partialEmit() {},
-  }
-}
+  };
+};

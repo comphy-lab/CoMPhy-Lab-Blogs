@@ -1,0 +1,316 @@
+// Variant "editorial" — Editorial.
+// Magazine reading page after Quanta / Works in Progress: masthead across
+// the top, one centred serif column (Source Serif 4), Fraunces titles, a slim
+// table of contents at the right, graph and backlinks moved below the text.
+@use "../custom.scss";
+@use "./shared";
+
+body {
+  font-size: 18px;
+  background: var(--c-paper);
+  color: var(--fg-1);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page[data-frame="topbar"] {
+  --rail-right: 220px;
+  --gutter: clamp(1.25rem, 4vw, 4rem);
+  --measure: 44rem;
+  --bleed: 0rem;
+  @media (min-width: 1400px) {
+    --bleed: 5rem;
+  }
+
+  & > #quartz-body {
+    &:has(> .left.sidebar.empty) {
+      grid-template-columns: minmax(0, 1fr) var(--rail-right);
+      column-gap: clamp(2rem, 4vw, 5rem);
+    }
+    & > .site-topbar {
+      background: color-mix(in srgb, var(--c-paper) 92%, transparent);
+      border-bottom: 1px solid var(--c-border-strong);
+      & .site-topbar-inner {
+        min-height: 3.75rem;
+      }
+      & .page-title {
+        font-family: var(--headerFont);
+        font-style: italic;
+        font-weight: 500;
+        font-size: 1.35rem;
+        letter-spacing: -0.01em;
+        & a {
+          color: var(--c-brand-purple);
+        }
+      }
+    }
+    & > .center {
+      max-width: calc(var(--measure) + 2 * var(--bleed));
+      margin: 0 auto;
+      justify-self: center;
+      padding: 0 var(--bleed);
+    }
+    & > .sidebar.right {
+      padding-top: 5.5rem;
+    }
+  }
+}
+:root[saved-theme="dark"] .site-topbar .page-title a {
+  color: #d99adc !important;
+}
+
+// Article header block.
+.page-header {
+  & .breadcrumb-container {
+    margin-top: 0;
+  }
+}
+.article-title {
+  font-family: var(--headerFont);
+  font-weight: 500;
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: var(--fg-strong);
+  margin: 0.75rem 0 1rem;
+  font-variation-settings:
+    "opsz" 144,
+    "SOFT" 30;
+}
+.content-meta {
+  font-family: var(--codeFont);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--fg-2);
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--c-border-strong);
+  margin-bottom: 0.75rem;
+}
+.tags {
+  margin-top: 0.75rem;
+}
+
+article {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  & p,
+  & li,
+  & blockquote {
+    line-height: 1.65;
+  }
+  & p {
+    margin-block: 1.35em;
+  }
+  & > p:first-of-type {
+    font-size: 1.25rem;
+    line-height: 1.55;
+    color: var(--fg-1);
+  }
+  & h1,
+  & h2,
+  & h3,
+  & h4 {
+    font-family: var(--headerFont);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--fg-strong);
+    font-variation-settings: "opsz" 48;
+  }
+  & h2 {
+    font-size: 1.85rem;
+    margin-top: 3rem;
+    line-height: 1.15;
+  }
+  & h3 {
+    font-size: 1.35rem;
+    margin-top: 2rem;
+  }
+  & p > strong {
+    color: var(--c-accent-coral);
+  }
+  & a:not(.tag-link):not(:has(> img)) {
+    color: var(--fg-strong);
+    font-weight: inherit;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    text-decoration: underline;
+    text-decoration-color: color-mix(
+      in srgb,
+      var(--secondary) 55%,
+      transparent
+    );
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+    &:hover {
+      color: var(--secondary);
+      text-decoration-color: var(--secondary);
+    }
+  }
+  & blockquote:not(.transclude) {
+    border-left: 2px solid var(--c-brand-purple);
+    font-style: italic;
+    color: var(--fg-2);
+    padding-left: 1.25rem;
+  }
+  & img,
+  & video,
+  & .external-embed,
+  & .table-container {
+    width: calc(100% + 2 * var(--bleed));
+    max-width: calc(100% + 2 * var(--bleed));
+    margin-left: calc(-1 * var(--bleed));
+  }
+  & img {
+    border-radius: var(--r-xs);
+    margin-block: 1.5rem;
+  }
+  & p > img + em {
+    font-family: var(--bodyFont);
+    font-size: 0.9rem;
+    color: var(--fg-2);
+    transform: none;
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+  }
+  & .table-container > table {
+    margin: 1.25rem 0;
+    font-size: 0.95rem;
+    & th {
+      font-family: var(--codeFont);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      color: var(--fg-2);
+      border-bottom: 1px solid var(--fg-strong);
+    }
+  }
+  & pre {
+    background: var(--c-surface-strong);
+    border-color: var(--c-border-strong);
+    border-radius: var(--r-xs);
+    font-size: 0.9rem;
+    padding: 0.25rem 0.75rem;
+  }
+  & .callout {
+    border-radius: var(--r-xs);
+    font-size: 1rem;
+    & .callout-title {
+      font-family: var(--bodyFont);
+    }
+  }
+  & hr {
+    width: 4rem;
+    margin: 3rem auto;
+    background: var(--fg-3);
+  }
+  & .footnotes {
+    font-size: 0.95rem;
+    color: var(--fg-2);
+  }
+}
+
+// Table of contents: quiet rail, no border, small sans.
+.sidebar.right {
+  & button.toc-header h3 {
+    color: var(--fg-3);
+  }
+  & ul.toc-content.overflow {
+    border-left: none;
+    font-family: var(--codeFont);
+    & > li > a {
+      font-size: 0.78rem;
+      line-height: 1.45;
+      padding-left: 0;
+      border-left: none;
+      color: var(--fg-3);
+      &.in-view {
+        color: var(--fg-strong);
+        font-weight: 500;
+      }
+    }
+    @for $i from 0 through 6 {
+      & .depth-#{$i} > a {
+        padding-left: calc(0.75rem * #{$i});
+      }
+    }
+  }
+}
+
+// Below the article: graph and backlinks side by side.
+.page-footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem 3rem;
+  padding-top: 0.5rem;
+  & .graph,
+  & .backlinks {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  & .graph > .graph-outer {
+    height: 260px;
+  }
+  & .backlinks > ul.overflow {
+    max-height: 260px;
+  }
+  @media (max-width: 800px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.center > hr {
+  margin: 3rem 0 2rem;
+}
+
+// Section index pages: a magazine list.
+ul.section-ul {
+  padding: 0;
+  margin-top: 1rem;
+  border-top: 1px solid var(--fg-strong);
+}
+li.section-li {
+  padding-block: 1.5rem;
+  border-bottom: 1px solid var(--c-border-strong);
+  & > .section {
+    gap: 0.5rem;
+    & .meta {
+      font-family: var(--codeFont);
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--fg-3);
+      margin: 0;
+      opacity: 1;
+    }
+    & h3 {
+      font-family: var(--headerFont);
+      font-weight: 500;
+      font-size: 1.6rem;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      & a {
+        color: var(--fg-strong);
+        background: transparent;
+        text-decoration: none;
+        border: none;
+        &:hover {
+          color: var(--c-brand-purple);
+        }
+      }
+    }
+  }
+}
+
+code {
+  font-size: 0.85em;
+  background: var(--c-paper-tint);
+  color: var(--fg-strong);
+}
+
+footer {
+  border-top: 1px solid var(--c-border);
+  padding-top: 1rem;
+  margin: 1rem 0 2rem;
+}

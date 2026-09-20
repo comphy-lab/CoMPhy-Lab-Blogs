@@ -1,0 +1,285 @@
+// Variant "docs" — Wide Docs.
+// Developer-documentation chrome after developers.openai.com, Linear and
+// Raycast: sticky top bar, left navigation, wide reading column that follows
+// the viewport, "On this page" rail at the right. IBM Plex Sans throughout.
+@use "../custom.scss";
+@use "./shared";
+
+body {
+  font-size: 16px;
+  background: var(--c-paper);
+  color: var(--fg-1);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page[data-frame="topbar"] {
+  --rail-left: 272px;
+  --rail-right: 248px;
+  --gutter: clamp(1.25rem, 2.5vw, 2.5rem);
+
+  & > #quartz-body {
+    column-gap: clamp(2rem, 3vw, 4rem);
+
+    & > .site-topbar {
+      background: color-mix(in srgb, var(--c-paper) 90%, transparent);
+      & .site-topbar-inner {
+        min-height: 3.5rem;
+      }
+      & .page-title {
+        font-size: 1rem;
+        font-weight: 600;
+        & a {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.6rem;
+          &::before {
+            content: "";
+            width: 0.7rem;
+            height: 0.7rem;
+            border-radius: 50%;
+            background: linear-gradient(
+              135deg,
+              var(--hero-grad-1),
+              var(--hero-grad-2) 50%,
+              var(--hero-grad-3)
+            );
+          }
+        }
+      }
+      & .search {
+        max-width: 24rem;
+        & > .search-button {
+          border-radius: var(--r-xs);
+          height: 2rem;
+          background: var(--c-paper-tint);
+          border-color: transparent;
+          & > p::after {
+            content: "⌘K";
+            font-family: var(--codeFont);
+            font-size: 0.7rem;
+            margin-left: 0.75rem;
+            padding: 0.05rem 0.35rem;
+            border: 1px solid var(--c-border-strong);
+            border-radius: 4px;
+            color: var(--fg-3);
+          }
+        }
+      }
+      & .darkmode,
+      & .readermode {
+        border-radius: var(--r-xs);
+        &:hover {
+          background: var(--c-paper-tint);
+        }
+      }
+    }
+
+    & > .sidebar.left {
+      border-right: 1px solid var(--c-border);
+      padding-right: 1rem;
+      padding-top: 1.5rem;
+    }
+    & > .sidebar.right {
+      padding-top: 2.5rem;
+    }
+    & > .center {
+      padding: 0 0 2rem;
+    }
+    & .page-header {
+      margin-top: 2rem;
+    }
+  }
+}
+
+// Left navigation: docs style with section headers and pill rows.
+.explorer {
+  & button.desktop-explorer {
+    display: none;
+  }
+}
+.explorer-content {
+  margin-top: 0;
+  & .folder-container {
+    margin-top: 0.85rem;
+    & div > a,
+    & div > button span {
+      @extend %eyebrow;
+      color: var(--fg-2);
+      font-size: 0.7rem;
+      margin: 0;
+    }
+  }
+  & .folder-outer > ul {
+    border-left: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  & ul li > a {
+    padding: 0.32rem 0.6rem;
+    margin-left: 0;
+    border-radius: var(--r-xs);
+    color: var(--fg-2);
+    font-size: 0.875rem;
+    &.active {
+      background: color-mix(in srgb, var(--secondary) 12%, transparent);
+      color: var(--secondary);
+      font-weight: 500;
+    }
+  }
+}
+
+// Article: wide, tight, flat.
+article {
+  max-width: 110ch;
+  font-size: 1rem;
+  line-height: 1.7;
+  & p {
+    margin-block: 1.1em;
+  }
+  & h1,
+  & h2,
+  & h3,
+  & h4 {
+    font-family: var(--headerFont);
+    letter-spacing: -0.02em;
+    color: var(--fg-strong);
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  & h2 {
+    font-size: 1.5rem;
+    margin-top: 2.75rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--c-border);
+  }
+  & h3 {
+    font-size: 1.15rem;
+    margin-top: 2rem;
+  }
+  & img,
+  & video {
+    border-radius: var(--r-sm);
+    border: 1px solid var(--c-border);
+    margin-block: 1.5rem;
+  }
+  & pre {
+    background: var(--c-surface-strong);
+    border-color: var(--c-border-strong);
+    border-radius: var(--r-sm);
+    padding: 0.4rem 0.9rem;
+    font-size: 0.875rem;
+  }
+  & .callout {
+    border-radius: var(--r-sm);
+    border: 1px solid var(--c-border);
+    border-left: 3px solid var(--color);
+    background: var(--c-surface-strong);
+    padding: 0.9rem 1.15rem;
+  }
+  & .table-container > table {
+    margin: 1.25rem 0;
+    font-size: 0.9375rem;
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-xs);
+    overflow: hidden;
+    & th {
+      background: var(--c-paper-tint);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--fg-2);
+      border-bottom: 1px solid var(--c-border-strong);
+    }
+  }
+  & a.internal:not(.tag-link):not(:has(> img)) {
+    background: transparent;
+    padding: 0;
+    border-bottom: 1px solid
+      color-mix(in srgb, var(--secondary) 40%, transparent);
+    border-radius: 0;
+    &:hover {
+      border-bottom-color: var(--secondary);
+    }
+  }
+}
+
+.article-title {
+  font-family: var(--headerFont);
+  font-weight: 600;
+  font-size: clamp(1.9rem, 2.8vw, 2.5rem);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--fg-strong);
+  margin: 0.5rem 0 0.5rem;
+}
+.content-meta {
+  margin-top: 0.25rem;
+}
+.page-header .popover-hint {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--c-border);
+}
+
+// Right rail: On this page.
+.sidebar.right button.toc-header h3 {
+  font-size: 0;
+  &::before {
+    content: "On this page";
+    font-size: 0.72rem;
+  }
+}
+
+// Below the article: graph as a "Related" block.
+.page-footer {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 2rem;
+  & .graph > .graph-outer {
+    height: 240px;
+  }
+  @media (max-width: 800px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+// Folder listings as a two-column card grid on wide screens.
+ul.section-ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 1rem;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+li.section-li {
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-sm);
+  background: var(--c-surface-strong);
+  padding: 1rem 1.2rem;
+  transition: border-color var(--dur-fast) var(--ease);
+  &:hover {
+    border-color: var(--c-border-strong);
+  }
+  & > .section {
+    & .meta {
+      font-size: 0.78rem;
+      color: var(--fg-3);
+      margin: 0;
+    }
+    & h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      & a {
+        color: var(--fg-strong);
+        background: transparent;
+        border: none;
+      }
+    }
+  }
+}
+
+code {
+  background: var(--c-paper-tint);
+  color: var(--fg-strong);
+  border: 1px solid var(--c-border);
+  font-size: 0.85em;
+}

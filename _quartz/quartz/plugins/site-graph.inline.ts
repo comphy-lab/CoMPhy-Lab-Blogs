@@ -201,6 +201,24 @@ import {
         nodeMap.set(url, node)
       })
 
+      // The page the graph was opened from: pinned at the centre of the
+      // global graph, drawn larger with a ring, and labelled permanently.
+      var isGlobal = depth < 0
+      var currentNode = nodeMap.get(slug) || null
+      var currentNeighbours = new Set()
+      if (currentNode && isGlobal) {
+        currentNode.x = 0
+        currentNode.y = 0
+        currentNode.fx = 0
+        currentNode.fy = 0
+      }
+      if (currentNode) {
+        for (var ci = 0; ci < links.length; ci++) {
+          if (links[ci].source === slug) currentNeighbours.add(links[ci].target)
+          if (links[ci].target === slug) currentNeighbours.add(links[ci].source)
+        }
+      }
+
       var graphLinks = []
       for (var i = 0; i < links.length; i++) {
         var link = links[i]
@@ -294,7 +312,7 @@ import {
               numLinks++
             }
           }
-          return 2 + Math.sqrt(numLinks)
+          return 2 + Math.sqrt(numLinks) + (d.id === slug ? 2.5 : 0)
         }
 
         function nodeColor(d) {
@@ -353,7 +371,10 @@ import {
               alpha = linkData.active ? 1 : 0.2
             }
             linkData.alpha = alpha
-            linkData.color = linkData.active ? gray : lightgray
+            var sim = linkData.simulationData
+            var touchesCurrent = sim.source.id === slug || sim.target.id === slug
+            linkData.color = linkData.active ? gray : touchesCurrent ? secondary : lightgray
+            if (touchesCurrent && hoveredNodeId === null) linkData.alpha = 0.9
           }
         }
 
@@ -366,6 +387,9 @@ import {
             if (hoveredNodeId === nodeData.simulationData.id) {
               nodeData.label.alpha = 1
               nodeData.label.scale.set(activeScale)
+            } else if (isGlobal && nodeData.simulationData.id === slug) {
+              nodeData.label.alpha = 1
+              nodeData.label.scale.set(defaultScale)
             } else {
               nodeData.label.scale.set(defaultScale)
             }
@@ -396,17 +420,19 @@ import {
           var radius = nodeRadius(node)
           var color = nodeColor(node)
 
+          var isCurrentNode = nodeId === slug
           var label = new PIXI.Text({
             text: node.text,
             style: {
-              fontSize: fontSize * 15,
+              fontSize: fontSize * 15 * (isCurrentNode ? 1.15 : 1),
               fill: dark,
               fontFamily: bodyFont,
+              fontWeight: isCurrentNode ? "600" : "normal",
             },
             resolution: window.devicePixelRatio * 4,
           })
-          label.anchor.set(0.5, 1.2)
-          label.alpha = 0
+          label.anchor.set(0.5, isCurrentNode ? 1.6 : 1.2)
+          label.alpha = isCurrentNode && isGlobal ? 1 : 0
           label.scale.set(1 / scale)
           labelsContainer.addChild(label)
 
@@ -415,6 +441,10 @@ import {
           gfx.fill({ color: isTagNode ? light : color })
           if (isTagNode) {
             gfx.stroke({ width: 2, color: tertiary })
+          }
+          if (isCurrentNode) {
+            gfx.circle(0, 0, radius + 4)
+            gfx.stroke({ width: 1.5, color: secondary, alpha: 0.6 })
           }
 
           gfx.eventMode = "static"
@@ -562,6 +592,11 @@ import {
                 label.alpha = scaleOpacity
               }
             }
+            if (currentLabel && isGlobal) currentLabel.alpha = 1
+          }
+          var currentLabel = null
+          for (var i = 0; i < nodeRenderData.length; i++) {
+            if (nodeRenderData[i].simulationData.id === slug) currentLabel = nodeRenderData[i].label
           }
 
           var zoom = d3
@@ -574,6 +609,17 @@ import {
             .on("zoom", zoomed)
 
           d3.select(app.canvas).call(zoom)
+
+          if (isGlobal && currentNode) {
+            // Open the global graph centred and zoomed on the current page.
+            var k = 1.6
+            var cx = width / 2
+            var cy = height / 2
+            d3.select(app.canvas).call(
+              zoom.transform,
+              d3.zoomIdentity.translate(cx - k * cx, cy - k * cy).scale(k),
+            )
+          }
         }
 
         function animate() {

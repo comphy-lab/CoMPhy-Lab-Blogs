@@ -13,3 +13,4 @@ replit.nix
 quartz/cli/tui/dist/
 .wrangler/
 output/
+public-variants/

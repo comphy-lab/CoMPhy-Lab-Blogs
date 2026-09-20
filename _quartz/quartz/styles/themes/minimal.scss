@@ -1,0 +1,259 @@
+// Variant "minimal" — Minimal.
+// Personal-blog reading page in the steipete.me manner: one centred sans
+// column, a short header bar, contents folded at the top of the article,
+// graph and backlinks as end matter. No rails at all.
+@use "../custom.scss";
+@use "./shared";
+
+body {
+  font-size: 17px;
+  background: var(--c-paper);
+  color: var(--fg-1);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page[data-frame="topbar"] {
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --measure: 42rem;
+
+  & > #quartz-body {
+    & > .site-topbar {
+      background: color-mix(in srgb, var(--c-paper) 92%, transparent);
+      border-bottom: 1px solid var(--c-border);
+      & .site-topbar-inner {
+        max-width: calc(var(--measure) + 2rem);
+        margin: 0 auto;
+        padding: 0 1rem;
+        min-height: 3.5rem;
+      }
+      & .page-title {
+        font-size: 1.05rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+      & .search {
+        max-width: 12rem;
+        & > .search-button {
+          border-radius: var(--r-xs);
+          background: transparent;
+          border-color: var(--c-border-strong);
+          height: 2rem;
+        }
+      }
+    }
+    & > .center {
+      max-width: var(--measure);
+      margin: 0 auto;
+      width: 100%;
+      justify-self: center;
+    }
+    & .page-header {
+      margin-top: 3rem;
+    }
+  }
+}
+
+.article-title {
+  font-family: var(--headerFont);
+  font-weight: 700;
+  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  color: var(--fg-strong);
+  margin: 0.5rem 0 0.75rem;
+}
+.content-meta {
+  font-size: 0.9rem;
+  color: var(--fg-3);
+}
+.breadcrumb-container {
+  color: var(--fg-3);
+  & .breadcrumb-element a {
+    color: var(--fg-3);
+  }
+}
+
+// Contents folded at the top of the article.
+.page-header .toc {
+  margin-top: 1.5rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-sm);
+  background: var(--c-surface-strong);
+  padding: 0.75rem 1rem;
+  overflow: visible;
+  & button.toc-header h3 {
+    color: var(--fg-2);
+  }
+  & ul.toc-content.overflow {
+    border-left: none;
+    max-height: none;
+    columns: 2;
+    column-gap: 2rem;
+    margin-top: 0.5rem;
+    @media (max-width: 800px) {
+      columns: 1;
+    }
+    & > li > a {
+      padding: 0.2rem 0;
+      border-left: none;
+      color: var(--fg-2);
+      font-size: 0.85rem;
+      &.in-view {
+        color: var(--secondary);
+      }
+    }
+    @for $i from 0 through 6 {
+      & .depth-#{$i} > a {
+        padding-left: calc(0.85rem * #{$i});
+      }
+    }
+    & > li.overflow-end {
+      display: none;
+    }
+    &.gradient-active {
+      mask-image: none;
+    }
+  }
+  & ul.toc-content.collapsed {
+    display: none;
+  }
+}
+
+article {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  & p {
+    margin-block: 1.2em;
+  }
+  & h1,
+  & h2,
+  & h3,
+  & h4 {
+    font-family: var(--headerFont);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--fg-strong);
+    line-height: 1.25;
+  }
+  & h2 {
+    font-size: 1.5rem;
+    margin-top: 2.75rem;
+  }
+  & h3 {
+    font-size: 1.2rem;
+  }
+  & a:not(.tag-link):not(:has(> img)) {
+    color: var(--secondary);
+    font-weight: 500;
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    text-decoration: underline;
+    text-decoration-color: color-mix(
+      in srgb,
+      var(--secondary) 40%,
+      transparent
+    );
+    text-underline-offset: 0.16em;
+    &:hover {
+      text-decoration-color: var(--secondary);
+    }
+  }
+  & img,
+  & video {
+    border-radius: var(--r-sm);
+    margin-block: 1.5rem;
+  }
+  & pre {
+    background: var(--c-surface-strong);
+    border-color: var(--c-border-strong);
+    border-radius: var(--r-sm);
+    padding: 0.4rem 0.9rem;
+    font-size: 0.875rem;
+  }
+  & .callout {
+    border-radius: var(--r-sm);
+  }
+  & blockquote {
+    border-left: 3px solid var(--c-border-strong);
+    color: var(--fg-2);
+  }
+  & .table-container > table {
+    margin: 1.25rem 0;
+    font-size: 0.95rem;
+    & th {
+      font-size: 0.8rem;
+      color: var(--fg-2);
+      border-bottom: 1px solid var(--c-border-strong);
+    }
+  }
+}
+
+.page-footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 2rem;
+  & .graph > .graph-outer {
+    height: 220px;
+  }
+  @media (max-width: 800px) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+// Post list: date on the left, title on the right.
+ul.section-ul {
+  padding: 0;
+  margin-top: 1rem;
+}
+li.section-li {
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--c-border);
+  & > .section {
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+    gap: 0.25rem 1.25rem;
+    align-items: baseline;
+    & .meta {
+      font-family: var(--codeFont);
+      font-size: 0.78rem;
+      color: var(--fg-3);
+      margin: 0;
+      opacity: 1;
+    }
+    & h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      & a {
+        color: var(--fg-strong);
+        background: transparent;
+        text-decoration: none;
+        border: none;
+        &:hover {
+          color: var(--secondary);
+        }
+      }
+    }
+    & > .tags {
+      grid-column: 2;
+    }
+    @media (max-width: 800px) {
+      grid-template-columns: minmax(0, 1fr);
+      & > .tags {
+        grid-column: 1;
+      }
+    }
+  }
+}
+
+code {
+  background: var(--c-paper-tint);
+  color: var(--fg-strong);
+  font-size: 0.85em;
+}
+
+footer {
+  max-width: var(--measure);
+  margin: 1rem auto 2rem;
+  justify-self: center;
+}
