@@ -107,7 +107,7 @@ async function emitPage(
  * populating both the ProcessedContent tree and vfile.data.htmlAst so that
  * transclusion (e.g. ![[file.canvas]]) can inline the virtual page's content.
  */
-function populateVirtualPageHtmlAst(
+export function populateVirtualPageHtmlAst(
   virtualEntries: Array<{
     tree: ProcessedContent[0]
     vfile: ProcessedContent[1]
@@ -134,13 +134,28 @@ function populateVirtualPageHtmlAst(
     try {
       const htmlString = render(BodyComponent(componentData))
       const htmlAst = fromHtml(htmlString, { fragment: true }) as HtmlRoot
-      ve.tree.children = htmlAst.children
       ve.vfile.data.htmlAst = htmlAst
     } catch {
       // Body rendering failed — leave htmlAst empty so transclusion falls
       // back to the default title-only display.
     }
   }
+}
+
+export function refreshTrieWithVirtualPages(
+  ctx: BuildCtx,
+  allFiles: ProcessedContent[1]["data"][],
+  virtualEntries: Array<{ vfile: ProcessedContent[1]; vpSlug: FullSlug }>,
+) {
+  ctx.trie = trieFromAllFiles([
+    ...allFiles,
+    ...virtualEntries
+      .filter((entry) => entry.vpSlug !== "404")
+      .map((entry) => ({
+        ...entry.vfile.data,
+        filePath: entry.vfile.data.filePath ?? entry.vfile.data.relativePath,
+      })),
+  ])
 }
 
 export const PageTypeDispatcher: QuartzEmitterPlugin<Partial<DispatcherOptions>> = (userOpts) => {
@@ -193,6 +208,9 @@ export const PageTypeDispatcher: QuartzEmitterPlugin<Partial<DispatcherOptions>>
           virtualEntries.push({ tree, vfile, layout, vpSlug })
         }
       }
+
+      // Include generated folder index titles before any folder body renders.
+      refreshTrieWithVirtualPages(ctx, allFiles, virtualEntries)
 
       // Render Body components to populate htmlAst for transclusion
       populateVirtualPageHtmlAst(virtualEntries, ctx, allFiles, resources)
@@ -283,6 +301,9 @@ export const PageTypeDispatcher: QuartzEmitterPlugin<Partial<DispatcherOptions>>
           virtualEntries.push({ tree, vfile, layout, vpSlug })
         }
       }
+
+      // Include generated folder index titles before any folder body renders.
+      refreshTrieWithVirtualPages(ctx, allFiles, virtualEntries)
 
       // Render Body components to populate htmlAst for transclusion
       populateVirtualPageHtmlAst(virtualEntries, ctx, allFiles, resources)

@@ -11,6 +11,8 @@ const base = (process.env.E2E_BASE_URL ?? "http://127.0.0.1:8790").replace(/\/$/
 const publicDir = resolve(process.env.E2E_PUBLIC_DIR ?? "public")
 const output = resolve("output/playwright")
 mkdirSync(output, { recursive: true })
+const capturePages = process.env.E2E_CAPTURE_PAGES === "true"
+if (capturePages) mkdirSync(join(output, "pages"), { recursive: true })
 const walk = (dir) =>
   readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
     e.isDirectory() ? walk(join(dir, e.name)) : [relative(publicDir, join(dir, e.name))],
@@ -53,6 +55,12 @@ const inventory = () => ({
   heading: document.querySelector("h1")?.textContent,
   article: document.querySelector("article")?.textContent?.trim().length ?? 0,
   overflow: document.documentElement.scrollWidth > innerWidth + 1,
+  listingCount: document.querySelectorAll(".page-listing").length,
+  bodyFontSize: parseFloat(getComputedStyle(document.body).fontSize),
+  navigation: [...document.querySelectorAll(".explorer-content a")].map((a) => ({
+    text: a.textContent,
+    href: a.getAttribute("href"),
+  })),
   ids: [...document.querySelectorAll("[id]")].map((el) => el.id),
   refs: [
     ...document.querySelectorAll(
@@ -115,12 +123,31 @@ async function sweep(width) {
           const data = await page.evaluate(inventory)
           assert(data.heading && data.heading !== "404", "missing article or 404")
           assert(!data.overflow, "horizontal page overflow")
+          if (data.slug?.endsWith("/index") && !data.slug.startsWith("tags/")) {
+            assert.equal(data.listingCount, 1, "folder listing rendered more than once")
+          }
+          assert(data.navigation.length > 0, "primary navigation is empty")
+          assert(data.bodyFontSize >= 18, "body text is too small")
+          assert(!/^Folder:/.test(data.heading), "folder heading has a redundant prefix")
+          assert(
+            !data.navigation.some((a) => /_AtomicNotes/.test(a.href ?? "")),
+            "atomic notes leaked into primary navigation",
+          )
+          assert(
+            !data.navigation.some((a) => /^Folder:/.test(a.text ?? "")),
+            "folder navigation has a redundant prefix",
+          )
           const expected = Object.keys(index).find((slug) => route(slug + ".html") === route(file))
           if (expected) assert.equal(data.slug, expected, "canonical page overwritten by alias")
           if (expected && !expected.startsWith("tags/") && !expected.endsWith("/index")) {
             assert(data.article > 30, "article body missing")
           }
           if (width === 1280) collect(data, page.url())
+          if (capturePages) {
+            await page.screenshot({
+              path: join(output, "pages", `${width}-${file.replaceAll("/", "__")}.png`),
+            })
+          }
           report.browserVisits++
         } catch (e) {
           fail(`${width} ${file}`, e)
@@ -185,38 +212,41 @@ try {
   await page.goto(base + "/Blog/2025-JFM-viscous-drop-impact", {
     waitUntil: "networkidle",
   })
-  await page.locator(".graph .global-graph-icon").first().click()
-  await page.locator(".global-graph-container canvas").waitFor()
-  await page.waitForTimeout(1000)
-  await page.screenshot({ path: join(output, "global-graph.png") })
-  await page.keyboard.press("Escape")
-  report.interactions.globalGraph = true
-  const beforeGraph = page.url()
-  const box = await page.locator(".graph-container canvas").first().boundingBox()
-  assert(box)
-  await page.waitForTimeout(1000)
-  const canvas = page.locator(".graph-container canvas").first()
-  graphHit: for (let y = 8; y < box.height; y += 8) {
-    for (let x = 8; x < box.width; x += 8) {
-      await page.mouse.move(box.x + x, box.y + y)
-      if ((await canvas.evaluate((el) => getComputedStyle(el).cursor)) !== "pointer") continue
-      await page.mouse.click(box.x + x, box.y + y)
-      await page.waitForTimeout(300)
-      if (page.url() !== beforeGraph) break graphHit
-    }
-  }
-  assert.notEqual(page.url(), beforeGraph, "graph node click did not navigate")
-  assert.notEqual(await page.locator("h1").first().textContent(), "404")
-  report.interactions.graphNodeNavigation = true
+  const tocLink = page.locator(".toc a").first()
+  await tocLink.waitFor()
+  const sectionHref = await tocLink.getAttribute("href")
+  await tocLink.click()
+  assert.equal(new URL(page.url()).hash, new URL(sectionHref, page.url()).hash)
+  assert.equal(await page.locator(".graph").count(), 0)
+  report.interactions.tableOfContents = true
   await page.goto(base + "/0_README", { waitUntil: "networkidle" })
   await page.locator('article a.internal[href*="2025-JFM-viscous-drop-impact"]').first().hover()
   await page.locator(".popover.active-popover").waitFor()
   report.interactions.popover = true
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto(base, { waitUntil: "networkidle" })
-  await page.locator(".explorer button").first().click()
+  await page.getByRole("button", { name: "Open navigation", exact: true }).click()
+  await page.waitForFunction(
+    () => !document.querySelector(".explorer").classList.contains("collapsed"),
+  )
+  await page.locator(".explorer-content").waitFor({ state: "visible" })
+  assert.equal(await page.locator('.explorer-content a[href*="_AtomicNotes"]').count(), 0)
   await page.screenshot({ path: join(output, "mobile.png") })
+  await page.keyboard.press("Escape")
+  await page.waitForFunction(() =>
+    document.querySelector(".explorer").classList.contains("collapsed"),
+  )
   report.interactions.mobileExplorer = true
+  await page.goto(base + "/_AtomicNotes/Moving-Delta-identity", { waitUntil: "networkidle" })
+  const wideEquation = page.locator('article mjx-container[tabindex="0"]').first()
+  await wideEquation.waitFor()
+  await wideEquation.focus()
+  await page.keyboard.press("ArrowRight")
+  await page.waitForFunction(() => {
+    const equation = document.querySelector('article mjx-container[tabindex="0"]')
+    return equation && equation.scrollLeft > 0
+  })
+  report.interactions.keyboardEquationScroll = true
   await page.close()
 } catch (e) {
   fail("interaction suite", e)

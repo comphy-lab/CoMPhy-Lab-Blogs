@@ -97,7 +97,12 @@ plugins:
     order: 40
   - source: github:quartz-community/table-of-contents
     enabled: true
+    options:
+      maxDepth: 2
     order: 50
+    layout:
+      position: right
+      priority: 10
   - source: github:quartz-community/crawl-links
     enabled: true
     options:
@@ -157,7 +162,7 @@ plugins:
       position: left
       priority: 50
   - source: github:quartz-community/graph
-    enabled: true
+    enabled: false
     options:
       localGraph:
         drag: true
@@ -189,6 +194,7 @@ plugins:
     layout:
       position: right
       priority: 10
+      condition: not-index
   - source: github:quartz-community/search
     enabled: true
     layout:
@@ -207,16 +213,19 @@ plugins:
     layout:
       position: beforeBody
       priority: 10
+      condition: not-index
   - source: github:quartz-community/content-meta
     enabled: true
     layout:
       position: beforeBody
       priority: 20
+      condition: not-index
   - source: github:quartz-community/tag-list
     enabled: true
     layout:
       position: beforeBody
       priority: 30
+      condition: not-index
   - source: github:quartz-community/page-title
     enabled: true
     layout:
@@ -236,6 +245,8 @@ plugins:
       group: toolbar
   - source: github:quartz-community/breadcrumbs
     enabled: true
+    options:
+      showCurrentPage: false
     layout:
       position: beforeBody
       priority: 5
@@ -275,14 +286,10 @@ plugins:
         - tags
         - aliases
       excludedProperties: []
-      hidePropertiesView: false
+      hidePropertiesView: true
       delimiters: ---
       language: yaml
     order: 5
-    layout:
-      position: beforeBody
-      priority: 15
-      display: all
   - source: github:quartz-community/encrypted-pages
     enabled: false
   - source: github:quartz-community/stacked-pages

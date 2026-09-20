@@ -1,5 +1,277 @@
 @use "./base.scss";
 
+// A reading-first layout: keep a useful measure before adding a second sidebar.
+body {
+  font-size: 18px;
+}
+
+.page {
+  max-width: 1360px;
+}
+
+.page > #quartz-body {
+  column-gap: 2rem;
+
+  & .sidebar {
+    padding: 3rem 1.25rem 2rem;
+    gap: 1.5rem;
+  }
+
+  & .page-header {
+    margin-top: 3rem;
+  }
+
+  & .center,
+  & .page-header {
+    min-width: 0;
+    width: 100%;
+  }
+
+  @media (min-width: 1201px) {
+    grid-template-columns: 260px minmax(0, 1fr) 240px;
+  }
+
+  @media (min-width: 801px) and (max-width: 1200px) {
+    grid-template-columns: 240px minmax(0, 1fr);
+    column-gap: 1.5rem;
+  }
+
+  @media (max-width: 800px) {
+    padding-inline: 1.25rem;
+
+    & .sidebar.left {
+      gap: 0.5rem;
+      padding: 1rem 0;
+      flex-wrap: wrap;
+
+      & > .flex-component {
+        flex-basis: 100%;
+        align-items: center;
+        gap: 0.75rem !important;
+      }
+    }
+
+    & .sidebar.right {
+      padding: 2rem 0;
+      flex-direction: column;
+    }
+
+    & .page-header {
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+article {
+  line-height: 1.75;
+
+  p,
+  li,
+  blockquote {
+    line-height: 1.75;
+  }
+
+  p {
+    margin-block: 1.2em;
+  }
+
+  li + li {
+    margin-top: 0.45em;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1.3;
+    text-wrap: balance;
+  }
+
+  h2 {
+    margin-top: 2.5rem;
+  }
+
+  .callout {
+    margin-block: 1.5rem;
+    padding: 1rem 1.25rem;
+
+    & .callout-title-inner > p {
+      color: var(--darkgray);
+    }
+  }
+
+  .callout[data-callout="pdf"] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem 1rem;
+    padding: 0.65rem 1rem;
+
+    & .callout-title {
+      font-size: 0.9rem;
+    }
+
+    & .callout-content > p {
+      margin: 0;
+    }
+  }
+}
+
+.article-title {
+  font-size: clamp(1.8rem, 2.6vw, 2.5rem);
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.content-meta {
+  color: var(--darkgray);
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+.search > .search-button > p {
+  color: var(--darkgray);
+}
+
+.explorer-content {
+  & ul li > a {
+    display: block;
+    padding-block: 0.35rem;
+    line-height: 1.45;
+    opacity: 1;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  & ul li > a.active {
+    color: var(--secondary);
+    font-weight: 700;
+    background: var(--highlight);
+    border-radius: 4px;
+  }
+}
+
+.folder-container {
+  padding-block: 0.3rem;
+
+  & div > a,
+  & div > button span {
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+}
+
+ul.toc-content.overflow > li > a {
+  display: block;
+  padding-block: 0.25rem;
+  line-height: 1.45;
+  opacity: 0.8;
+  font-weight: 400;
+
+  &.in-view {
+    opacity: 1;
+    color: var(--secondary);
+  }
+}
+
+.equation-scroll-hint {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--darkgray);
+  margin-block: 0.25rem 0.75rem;
+}
+
+li.section-li {
+  margin-bottom: 0;
+  padding-block: 1.1rem;
+  border-bottom: 1px solid var(--lightgray);
+
+  & > .section {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.35rem;
+
+    & .meta {
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+
+    & h3 {
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    & > .tags {
+      justify-content: flex-start;
+      margin: 0.25rem 0 0;
+      gap: 0.5rem;
+
+      & a {
+        color: var(--darkgray);
+        font-size: 0.85rem;
+        font-weight: 400;
+        background: transparent;
+        padding: 0;
+      }
+    }
+  }
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 4px;
+}
+
+@media (max-width: 800px) {
+  .explorer .explorer-content {
+    padding: 4.5rem 1.25rem 2rem;
+    overflow-y: auto;
+  }
+
+  .page-title {
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+  .sidebar.left .search {
+    max-width: none;
+    flex-grow: 1;
+  }
+
+  .search > .search-button,
+  .darkmode,
+  .readermode,
+  .explorer .mobile-explorer {
+    min-height: 44px;
+  }
+
+  .darkmode,
+  .readermode,
+  .explorer .mobile-explorer {
+    min-width: 44px;
+  }
+
+  .folder-container {
+    min-height: 44px;
+  }
+
+  .explorer-content ul li > a {
+    padding-block: 0.65rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 article iframe {
   max-width: 100%;
 }
