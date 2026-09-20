@@ -3,9 +3,9 @@
 // stylesheet in quartz/styles/themes/<key>.scss. Nothing here touches the
 // production build, which reads quartz.config.yaml and custom.scss.
 
-export const REVIEW_HOST = "comphy-mac.wisent-alhena.ts.net";
-export const INDEX_PORT = 8800;
-export const CURRENT_PORT = 8790;
+export const REVIEW_HOST = "comphy-mac.wisent-alhena.ts.net"
+export const INDEX_PORT = 8800
+export const CURRENT_PORT = 8790
 
 const light = {
   light: "#f3efe8",
@@ -17,7 +17,7 @@ const light = {
   tertiary: "#0056b3",
   highlight: "rgba(37, 76, 74, 0.10)",
   textHighlight: "#ffcf5c88",
-};
+}
 const dark = {
   light: "#12100d",
   lightgray: "#2a251f",
@@ -28,94 +28,149 @@ const dark = {
   tertiary: "#8fb8ff",
   highlight: "rgba(106, 194, 189, 0.14)",
   textHighlight: "#ffcf5c55",
-};
+}
 
+const paperFonts = {
+  header: { name: "Fraunces", weights: [400, 600, 700] },
+  body: "IBM Plex Sans",
+  code: "IBM Plex Mono",
+}
+
+// Round 2 (2026-09-20, evening): Vatsal chose A · Paper & Ink. Three
+// derivatives of it plus one deliberately different option.
 export const VARIANTS = [
   {
     key: "paper",
     port: 8801,
     name: "A · Paper & Ink",
     summary:
-      "The CoMPhy design system on a full-width three-column layout: 300 px explorer, reading panel that fills the viewport (prose capped at 92 characters, figures full width), 320 px rail for contents, graph and backlinks. Warm paper with the 32 px grid, teal accent, Fraunces headings, IBM Plex Sans body, 28 px panel.",
+      "The base. Full-width three columns: 300 px explorer, reading panel filling the viewport (prose capped at 92 characters, figures full width), 320 px rail for contents, graph and backlinks. Warm paper with the 32 px grid, teal accent, Fraunces headings, IBM Plex Sans body, 28 px panel.",
+    fonts: paperFonts,
+    frame: "default",
+    positions: {},
+    exclude: {},
+    options: {},
+  },
+  {
+    key: "paper-masthead",
+    port: 8802,
+    name: "A2 · Paper & Ink — Masthead",
+    summary:
+      "Same panel, tokens and type, but the site chrome (title, search, theme and reader toggles) moves to a sticky top bar. The left rail becomes pure navigation and starts at the top of the page; the right rail keeps contents, graph and backlinks.",
+    fonts: paperFonts,
+    frame: "topbar",
+    positions: {},
+    exclude: {},
+    options: {},
+  },
+  {
+    key: "paper-serif",
+    port: 8803,
+    name: "A3 · Paper & Ink — Serif",
+    summary:
+      "Paper & Ink with a Source Serif 4 reading face and no card: the article sits directly on the paper with hairline rules, Fraunces titles, a numbered contents outline and a wider 80-character measure. Graph and backlinks stay in the rail.",
     fonts: {
       header: { name: "Fraunces", weights: [400, 600, 700] },
-      body: "IBM Plex Sans",
+      body: "Source Serif 4",
       code: "IBM Plex Mono",
     },
     frame: "default",
     positions: {},
     exclude: {},
+    options: {},
   },
   {
-    key: "editorial",
-    port: 8802,
-    name: "B · Editorial",
+    key: "paper-atlas",
+    port: 8804,
+    name: "A4 · Paper & Ink — Atlas",
     summary:
-      "Magazine reading page after Quanta and Works in Progress. Masthead across the top, one centred Source Serif column, large Fraunces titles, a slim contents rail at the right, figures allowed to bleed past the text on wide screens. Graph and backlinks move below the article; the explorer appears only on section pages.",
+      "Paper & Ink that leads with the knowledge graph: a tall two-hop local graph at the top of the right rail, backlinks as cards, contents beneath; the explorer opens every folder so the whole vault is one glance away. Grid overlay off, panel kept.",
+    fonts: paperFonts,
+    frame: "default",
+    positions: {},
+    exclude: {},
+    options: {
+      graph: {
+        localGraph: { depth: 2, linkDistance: 40, repelForce: 0.7, scale: 1 },
+      },
+      explorer: { folderDefaultState: "open" },
+    },
+  },
+  {
+    key: "aurora",
+    port: 8805,
+    name: "S · Aurora (the surprise)",
+    summary:
+      "Not a Paper & Ink derivative. A masthead band in the lab's four-stop gradient (coral → purple → violet → indigo, as on comphy-lab.org), glass panels for the article and both rails floating over soft gradient washes, Fraunces + Plex Sans, dark-first. Same rails, graph and contents fixes underneath.",
+    fonts: paperFonts,
+    frame: "topbar",
+    positions: {},
+    exclude: {},
+    options: {},
+  },
+]
+
+// Round 1 options (B–E), kept buildable but no longer served:
+//   node variants/build.mjs editorial docs explainer minimal
+export const RETIRED = [
+  {
+    key: "editorial",
+    frame: "topbar",
     fonts: {
       header: "Fraunces",
       body: "Source Serif 4",
       code: "IBM Plex Mono",
     },
-    frame: "topbar",
     positions: { graph: "afterBody", backlinks: "afterBody" },
     exclude: { content: ["explorer"] },
+    options: {},
   },
   {
     key: "docs",
-    port: 8803,
-    name: "C · Wide Docs",
-    summary:
-      "Developer-documentation chrome after developers.openai.com, Linear and Raycast. Sticky top bar with search, docs-style left navigation, a reading column that follows the viewport up to about 110 characters, an 'On this page' rail at the right. IBM Plex Sans throughout; graph as a related block under the text.",
+    frame: "topbar",
     fonts: {
       header: "IBM Plex Sans",
       body: "IBM Plex Sans",
       code: "IBM Plex Mono",
     },
-    frame: "topbar",
     positions: { graph: "afterBody" },
     exclude: {},
+    options: {},
   },
   {
     key: "explainer",
-    port: 8804,
-    name: "D · Explainer",
-    summary:
-      "Distill-style article page. Hairline top bar, sans chrome with a Source Serif body, a numbered outline in the left margin, and a 42 rem text column that lets figures, tables, code and displayed equations run out to 64 rem. Graph and backlinks as end matter.",
+    frame: "topbar",
     fonts: {
       header: "IBM Plex Sans",
       body: "Source Serif 4",
       code: "IBM Plex Mono",
     },
-    frame: "topbar",
     positions: {
       "table-of-contents": "left",
       graph: "afterBody",
       backlinks: "afterBody",
     },
     exclude: { content: ["explorer"] },
+    options: {},
   },
   {
     key: "minimal",
-    port: 8805,
-    name: "E · Minimal",
-    summary:
-      "Personal-blog page in the steipete.me manner. One centred sans column, a short header bar, contents folded at the top of the article, graph and backlinks as end matter, no side rails at all. The quietest option and the closest to the current site's inspiration.",
+    frame: "topbar",
     fonts: {
       header: "IBM Plex Sans",
       body: "IBM Plex Sans",
       code: "IBM Plex Mono",
     },
-    frame: "topbar",
     positions: {
       "table-of-contents": "beforeBody",
       graph: "afterBody",
       backlinks: "afterBody",
     },
     exclude: { content: ["explorer"] },
+    options: {},
   },
-];
+]
 
 export function paletteFor(key) {
-  return { lightMode: { ...light }, darkMode: { ...dark } };
+  return { lightMode: { ...light }, darkMode: { ...dark } }
 }

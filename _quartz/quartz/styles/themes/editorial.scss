@@ -135,11 +135,7 @@ article {
     padding: 0;
     border-radius: 0;
     text-decoration: underline;
-    text-decoration-color: color-mix(
-      in srgb,
-      var(--secondary) 55%,
-      transparent
-    );
+    text-decoration-color: color-mix(in srgb, var(--secondary) 55%, transparent);
     text-decoration-thickness: 1px;
     text-underline-offset: 0.18em;
     &:hover {

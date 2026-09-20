@@ -194,8 +194,7 @@ article {
   & a.internal:not(.tag-link):not(:has(> img)) {
     background: transparent;
     padding: 0;
-    border-bottom: 1px solid
-      color-mix(in srgb, var(--secondary) 40%, transparent);
+    border-bottom: 1px solid color-mix(in srgb, var(--secondary) 40%, transparent);
     border-radius: 0;
     &:hover {
       border-bottom-color: var(--secondary);

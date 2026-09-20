@@ -107,6 +107,13 @@ export interface GoogleFontFile {
   extension: string
 }
 
+// Google Fonts serves subsetted woff2 only to a browser user agent; without
+// one it returns whole-family TrueType files (about 1.3 MB for three families).
+export const FONT_FETCH_HEADERS = {
+  "user-agent":
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+}
+
 const fontMimeMap: Record<string, string> = {
   truetype: "ttf",
   woff: "woff",

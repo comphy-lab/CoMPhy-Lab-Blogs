@@ -1,0 +1,71 @@
+// Variant "paper-atlas" — A4 · Paper & Ink that leads with the graph.
+@use "./shared";
+@use "./paper";
+
+// No grid overlay: the graph is the texture.
+body::before {
+  display: none;
+}
+
+.page {
+  --rail-right: 360px;
+}
+
+// Right rail order: graph, backlinks, contents.
+.sidebar.right {
+  & > .graph {
+    order: 1;
+  }
+  & > .backlinks {
+    order: 2;
+  }
+  & > .toc {
+    order: 3;
+  }
+  & > .graph > .graph-outer {
+    height: 380px;
+    border-radius: var(--r-md);
+    background: radial-gradient(
+      ellipse at center,
+      color-mix(in srgb, var(--c-surface-strong) 100%, transparent) 0%,
+      var(--c-paper-tint) 100%
+    );
+  }
+}
+
+// Backlinks as cards.
+.backlinks > ul.overflow {
+  display: grid;
+  gap: 0.5rem;
+  & > li > a {
+    display: block;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--c-border);
+    border-radius: var(--r-xs);
+    background: var(--c-surface-strong);
+    color: var(--fg-1);
+    font-weight: 500;
+    &:hover {
+      border-color: var(--secondary);
+      color: var(--secondary);
+    }
+  }
+}
+
+// Explorer: every folder open, so make rows tighter.
+.explorer-content {
+  & ul li > a {
+    padding-block: 0.22rem;
+    font-size: 0.85rem;
+  }
+  & .folder-container {
+    margin-top: 0.4rem;
+  }
+}
+
+// Tags appear as graph nodes; make the tag chips echo the node ring.
+.tags > li > a.tag-link {
+  background: transparent;
+  border-color: var(--tertiary);
+  color: var(--tertiary);
+}

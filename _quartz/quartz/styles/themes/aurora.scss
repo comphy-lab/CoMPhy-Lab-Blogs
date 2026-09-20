@@ -1,0 +1,278 @@
+// Variant "aurora" — S · the surprise. The lab's four-stop gradient as a
+// masthead band, glass panels floating over soft gradient washes.
+@use "../custom.scss";
+@use "./shared";
+
+body {
+  font-size: 17px;
+  background: var(--c-paper);
+  color: var(--fg-1);
+  -webkit-font-smoothing: antialiased;
+}
+
+// Soft washes in the brand hues behind everything.
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      60rem 40rem at 8% 0%,
+      color-mix(in srgb, var(--hero-grad-1) 16%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      50rem 36rem at 92% 10%,
+      color-mix(in srgb, var(--hero-grad-3) 16%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      70rem 50rem at 50% 110%,
+      color-mix(in srgb, var(--hero-grad-2) 14%, transparent),
+      transparent 60%
+    );
+}
+:root[saved-theme="dark"] body::before {
+  background:
+    radial-gradient(
+      60rem 40rem at 8% 0%,
+      color-mix(in srgb, var(--hero-grad-1) 22%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      50rem 36rem at 92% 10%,
+      color-mix(in srgb, var(--hero-grad-3) 22%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      70rem 50rem at 50% 110%,
+      color-mix(in srgb, var(--hero-grad-4) 30%, transparent),
+      transparent 60%
+    );
+}
+
+.page[data-frame="topbar"] {
+  --rail-left: 300px;
+  --rail-right: 320px;
+  --gutter: clamp(1.5rem, 2.5vw, 3rem);
+  --topbar-h: 4rem;
+  position: relative;
+  z-index: 1;
+
+  & > #quartz-body {
+    column-gap: clamp(2rem, 3vw, 4rem);
+    padding-right: var(--gutter);
+
+    // The masthead: the four-stop gradient, white type, glass controls.
+    & > .site-topbar {
+      background: linear-gradient(
+        90deg,
+        var(--hero-grad-1) 0%,
+        var(--hero-grad-2) 40%,
+        var(--hero-grad-3) 70%,
+        var(--hero-grad-4) 100%
+      );
+      border-bottom: none;
+      backdrop-filter: none;
+      margin: 0 calc(-1 * var(--gutter)) 0 0;
+      box-shadow: var(--shadow-md);
+      & .site-topbar-inner {
+        padding: 0 var(--gutter);
+        min-height: var(--topbar-h);
+        gap: 1rem;
+      }
+      & .page-title {
+        font-family: var(--headerFont);
+        font-weight: 600;
+        font-size: 1.4rem;
+        letter-spacing: -0.015em;
+        white-space: nowrap;
+        margin-right: auto;
+        & a {
+          color: #fff;
+        }
+      }
+      & .search {
+        max-width: 22rem;
+        & > .search-button {
+          background: rgba(255, 255, 255, 0.14);
+          border-color: rgba(255, 255, 255, 0.35);
+          & > p {
+            color: rgba(255, 255, 255, 0.85);
+          }
+          & svg .search-path {
+            stroke: #fff;
+          }
+        }
+      }
+      & .darkmode,
+      & .readermode {
+        color: #fff;
+        & svg {
+          fill: #fff;
+        }
+      }
+    }
+
+    & > .center {
+      margin-top: 2rem;
+    }
+    & > .sidebar {
+      padding-top: 2rem;
+    }
+    & > .sidebar.left {
+      padding-left: var(--gutter);
+    }
+  }
+}
+
+// Glass panels: the article and both rails.
+.center,
+.sidebar.left > .explorer,
+.sidebar.right > .toc,
+.sidebar.right > .graph,
+.sidebar.right > .backlinks {
+  box-sizing: border-box;
+  background: var(--c-surface-glass);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-soft);
+}
+.center {
+  padding: 0 clamp(2rem, 3.5vw, 4.5rem) 2.5rem;
+  margin-bottom: 2rem;
+  & .page-header {
+    margin-top: 2.25rem !important;
+    max-width: 92ch;
+  }
+  &
+    article
+    > *:not(img):not(p:has(> img)):not(.table-container):not(pre):not(figure):not(video):not(
+      .external-embed
+    ):not(mjx-container[display="true"]) {
+    max-width: 92ch;
+  }
+}
+.sidebar.left > .explorer,
+.sidebar.right > .toc,
+.sidebar.right > .graph,
+.sidebar.right > .backlinks {
+  padding: 1rem 1.15rem;
+  border-radius: var(--r-md);
+}
+.sidebar.right > .graph > .graph-outer {
+  border: none;
+  background: transparent;
+  height: 240px;
+}
+
+// Type, following the design system.
+article {
+  color: var(--fg-1);
+  line-height: 1.7;
+  font-size: 1.0625rem;
+  & h1,
+  & h2,
+  & h3,
+  & h4 {
+    font-family: var(--headerFont);
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: var(--fg-strong);
+    line-height: 1.2;
+  }
+  & h2 {
+    font-size: 1.65rem;
+    margin-top: 2.75rem;
+  }
+  & h2::before {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 3px;
+    border-radius: 2px;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, var(--hero-grad-1), var(--hero-grad-2), var(--hero-grad-3));
+  }
+  & h3 {
+    font-size: 1.25rem;
+  }
+  & p > strong {
+    color: var(--c-accent-coral);
+  }
+  & img {
+    border-radius: var(--r-sm);
+    border: 1px solid var(--c-border);
+  }
+  & pre {
+    background: var(--c-surface-strong);
+    border-color: var(--c-border-strong);
+    border-radius: var(--r-sm);
+    padding: 0.25rem 0.75rem;
+  }
+  & .callout {
+    border-radius: var(--r-sm);
+  }
+}
+.article-title {
+  font-family: var(--headerFont);
+  font-weight: 500;
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+  color: var(--fg-strong);
+  margin: 0.5rem 0 0.75rem;
+}
+a.internal:not(.tag-link):not(:has(> img)) {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--secondary) 35%, transparent);
+  &:hover {
+    border-bottom-color: var(--secondary);
+  }
+}
+.tags > li > a.tag-link {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--hero-grad-1) 14%, transparent),
+    color-mix(in srgb, var(--hero-grad-3) 14%, transparent)
+  );
+  border-color: transparent;
+}
+code {
+  background: color-mix(in srgb, var(--c-brand-purple) 8%, transparent);
+  color: var(--fg-strong);
+}
+
+ul.section-ul {
+  display: grid;
+  gap: 1rem;
+  padding: 0;
+  margin-top: 1.5rem;
+}
+li.section-li {
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  background: var(--c-surface-strong);
+  padding: 1.1rem 1.35rem;
+  box-shadow: var(--shadow-sm);
+  & > .section .meta {
+    @extend %eyebrow;
+    color: var(--fg-3);
+    margin: 0;
+  }
+  & > .section h3 {
+    font-family: var(--headerFont);
+    font-size: 1.2rem;
+    & a {
+      color: var(--fg-strong);
+      background: transparent;
+      border: none;
+    }
+  }
+}

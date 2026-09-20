@@ -41,10 +41,8 @@
   --r-lg: 28px;
   --r-pill: 999px;
   --shadow-sm: 0 1px 2px rgba(15, 12, 8, 0.04), 0 1px 3px rgba(15, 12, 8, 0.06);
-  --shadow-md:
-    0 4px 10px rgba(15, 12, 8, 0.06), 0 2px 4px rgba(15, 12, 8, 0.04);
-  --shadow-soft:
-    0 12px 40px rgba(15, 12, 8, 0.06), 0 4px 12px rgba(15, 12, 8, 0.04);
+  --shadow-md: 0 4px 10px rgba(15, 12, 8, 0.06), 0 2px 4px rgba(15, 12, 8, 0.04);
+  --shadow-soft: 0 12px 40px rgba(15, 12, 8, 0.06), 0 4px 12px rgba(15, 12, 8, 0.04);
   --t-track-wide: 0.08em;
   --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
   --dur-fast: 160ms;
@@ -389,9 +387,7 @@ footer {
         "left center"
         "left footer";
     }
-    &:has(> .left.sidebar:is(.empty, :empty)):has(
-        > .right.sidebar:is(.empty, :empty)
-      ) {
+    &:has(> .left.sidebar:is(.empty, :empty)):has(> .right.sidebar:is(.empty, :empty)) {
       grid-template-columns: minmax(0, 1fr);
       grid-template-areas:
         "topbar"
@@ -520,9 +516,7 @@ footer {
       padding: 0 var(--gutter);
       &:has(> .left.sidebar:is(.empty, :empty)),
       &:has(> .right.sidebar:is(.empty, :empty)),
-      &:has(> .left.sidebar:is(.empty, :empty)):has(
-          > .right.sidebar:is(.empty, :empty)
-        ) {
+      &:has(> .left.sidebar:is(.empty, :empty)):has(> .right.sidebar:is(.empty, :empty)) {
         grid-template-columns: minmax(0, 1fr);
         grid-template-areas:
           "topbar"
@@ -562,5 +556,26 @@ footer {
         margin-top: 1rem;
       }
     }
+  }
+}
+
+// The explorer tree and the graph are drawn by the page script a moment after
+// first paint. Fade them in instead of popping.
+@keyframes site-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.explorer-content ul.explorer-ul,
+.graph-container canvas {
+  animation: site-fade-in 260ms var(--ease) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .explorer-content ul.explorer-ul,
+  .graph-container canvas {
+    animation: none;
   }
 }

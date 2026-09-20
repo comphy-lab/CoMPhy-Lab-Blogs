@@ -90,13 +90,7 @@ body::before {
   }
 }
 :root[saved-theme="dark"] .page-title a {
-  background: linear-gradient(
-    90deg,
-    #ff8f8f 0%,
-    #c58bca 45%,
-    #8fa5ff 55%,
-    #b1a5f0 100%
-  );
+  background: linear-gradient(90deg, #ff8f8f 0%, #c58bca 45%, #8fa5ff 55%, #b1a5f0 100%);
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -116,9 +110,9 @@ body::before {
   // equations may use the full panel width.
   &
     article
-    > *:not(img):not(p:has(> img)):not(.table-container):not(pre):not(
-      figure
-    ):not(video):not(.external-embed):not(mjx-container[display="true"]) {
+    > *:not(img):not(p:has(> img)):not(.table-container):not(pre):not(figure):not(video):not(
+      .external-embed
+    ):not(mjx-container[display="true"]) {
     max-width: 92ch;
   }
   & .page-header {

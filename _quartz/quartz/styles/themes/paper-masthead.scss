@@ -1,0 +1,50 @@
+// Variant "paper-masthead" — A2 · Paper & Ink with the site chrome in a
+// sticky top bar. Everything else inherits from the Paper & Ink theme.
+@use "./shared";
+@use "./paper";
+
+.page[data-frame="topbar"] {
+  --rail-left: 300px;
+  --rail-right: 320px;
+  --gutter: clamp(1.5rem, 2.5vw, 3rem);
+  --topbar-h: 3.75rem;
+
+  & > #quartz-body {
+    column-gap: clamp(2rem, 3vw, 4rem);
+    padding-right: var(--gutter);
+
+    & > .site-topbar {
+      background: color-mix(in srgb, var(--c-paper) 82%, transparent);
+      border-bottom: 1px solid var(--c-border-strong);
+      margin: 0 calc(-1 * var(--gutter)) 0 0;
+      & .site-topbar-inner {
+        padding: 0 var(--gutter);
+        min-height: var(--topbar-h);
+        gap: 1rem;
+      }
+      & .search {
+        max-width: 22rem;
+      }
+    }
+
+    // The panel starts level with the rails.
+    & > .center {
+      margin-top: 2rem;
+    }
+    & > .sidebar {
+      padding-top: 2rem;
+    }
+    & > .sidebar.left {
+      padding-left: var(--gutter);
+    }
+    & .explorer button.desktop-explorer {
+      margin-top: 0.25rem;
+    }
+  }
+}
+
+// The gradient site title lives in the bar now; keep it a touch smaller.
+.site-topbar .page-title {
+  font-size: 1.35rem;
+  margin-right: auto;
+}

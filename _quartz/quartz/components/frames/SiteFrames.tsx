@@ -1,21 +1,16 @@
-import { PageFrame, PageFrameProps } from "./types";
-import { QuartzComponent } from "../types";
-import HeaderConstructor from "../Header";
+import { PageFrame, PageFrameProps } from "./types"
+import { QuartzComponent } from "../types"
+import HeaderConstructor from "../Header"
 
-const Header = HeaderConstructor();
+const Header = HeaderConstructor()
 
 // Components that belong in a side rail rather than the top bar. The site
 // navigation layer tags these instances with a stable displayName because the
 // compiled plugin function names are minified.
-const RAIL_COMPONENTS = new Set([
-  "Explorer",
-  "TableOfContents",
-  "Graph",
-  "Backlinks",
-]);
+const RAIL_COMPONENTS = new Set(["Explorer", "TableOfContents", "Graph", "Backlinks"])
 
 function isRail(component: QuartzComponent): boolean {
-  return RAIL_COMPONENTS.has(component.displayName ?? "");
+  return RAIL_COMPONENTS.has(component.displayName ?? "")
 }
 
 /**
@@ -36,12 +31,10 @@ export const TopbarFrame: PageFrame = {
     right,
     footer: Footer,
   }: PageFrameProps) {
-    const bar = left.filter((component) => !isRail(component));
-    const leftRail = left.filter(isRail);
-    const rightClass =
-      right.length === 0 ? "right sidebar empty" : "right sidebar";
-    const leftClass =
-      leftRail.length === 0 ? "left sidebar empty" : "left sidebar";
+    const bar = left.filter((component) => !isRail(component))
+    const leftRail = left.filter(isRail)
+    const rightClass = right.length === 0 ? "right sidebar empty" : "right sidebar"
+    const leftClass = leftRail.length === 0 ? "left sidebar empty" : "left sidebar"
     return (
       <>
         <div class="site-topbar">
@@ -84,6 +77,6 @@ export const TopbarFrame: PageFrame = {
         </div>
         <Footer {...componentData} />
       </>
-    );
+    )
   },
-};
+}
