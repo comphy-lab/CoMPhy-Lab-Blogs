@@ -1,4 +1,5 @@
 Vendored CoMPhy brand webfont pack.
-Source: https://github.com/comphy-lab/comphy-design-system/tree/rayleigh-cloud/self-host-webfont-sot-eeb6/fonts
+Source: https://github.com/comphy-lab/comphy-design-system/tree/12112c58ba441f4b72c27a2b4af2702f35570ea4/fonts
+Branch: rayleigh-cloud/self-host-webfont-sot-eeb6 @ 12112c58ba441f4b72c27a2b4af2702f35570ea4
 Contents: fonts.css, 14 woff2 faces, OFL.txt
 Do not fetch fonts.googleapis.com / fonts.gstatic.com.

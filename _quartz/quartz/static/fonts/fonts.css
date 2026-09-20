@@ -1,6 +1,8 @@
 /* CoMPhy Lab Design System — self-hosted webfont pack (canonical SoT).
    Vendored from comphy-lab/club `assets/css/fonts.css` + `assets/fonts/*.woff2`
    (fuller pack). Licence text from comphy-lab/qr-codes `site/assets/fonts/OFL.txt`.
+   IBM Plex Sans 400/500/600 latin(+ext) replaced with distinct static-weight
+   subsets (club dump shipped identical variable-font blobs for all three).
 
    Families (do not rename / do not switch to system-ui):
      - Cormorant Garamond — hero / display (italic 500 + normal 600)
@@ -70,7 +72,7 @@
 
 /* latin-ext */
 @font-face {
-  font-family: "Fraunces";
+  font-family: Fraunces;
   font-style: normal;
   font-weight: 600;
   font-display: swap;
@@ -83,7 +85,7 @@
 
 /* latin */
 @font-face {
-  font-family: "Fraunces";
+  font-family: Fraunces;
   font-style: normal;
   font-weight: 600;
   font-display: swap;
