@@ -16,6 +16,16 @@ directory `_quartz`, dependency installation `npm ci`, build command
 and its domain are Cloudflare configuration; repository changes alone do not
 prove a deployment or domain cutover.
 
+### Canonical domain and redirects
+
+`https://blogs.comphy-lab.org` is a custom domain of the `comphy-blogs` Worker,
+declared in `_quartz/wrangler.jsonc`. Cloudflare manages its DNS record; do not
+restore the former Obsidian CNAME or add a second origin for this hostname.
+The legacy `https://blogs-comphy-lab.org` hostname retains a permanent redirect
+to the canonical hostname, preserving paths and query strings. Keep that
+redirect when changing build or deployment settings so existing links continue
+to work.
+
 `build:cloudflare` restores the plugins pinned in `quartz.lock.json`, runs an
 uncached TypeScript check and unit tests, builds Quartz, and installs Playwright
 Chromium (with system dependencies on Linux). It starts the pinned local
