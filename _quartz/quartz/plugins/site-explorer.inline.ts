@@ -26,6 +26,12 @@ if (!explorerWindow.comphyExplorerControlsReady) {
     syncExplorer(explorer)
   }
 
+  window.matchMedia("(max-width: 800px)").addEventListener("change", (event) => {
+    document.querySelectorAll<HTMLElement>(".explorer").forEach((explorer) => {
+      setExplorerOpen(explorer, !event.matches)
+    })
+  })
+
   function syncFolder(icon: HTMLElement) {
     const outer = icon.closest(".folder-container")?.nextElementSibling
     const open = outer?.classList.contains("open") ?? false

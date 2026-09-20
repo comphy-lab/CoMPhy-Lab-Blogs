@@ -5,7 +5,7 @@ import assert from "node:assert/strict"
 import matter from "gray-matter"
 import { globby } from "globby"
 import YAML from "yaml"
-import { slugifyFilePath } from "@quartz-community/utils"
+import { slugifyFilePath, simplifySlug } from "@quartz-community/utils"
 
 const base = (process.env.E2E_BASE_URL ?? "http://127.0.0.1:8790").replace(/\/$/, "")
 const publicDir = resolve(process.env.E2E_PUBLIC_DIR ?? "public")
@@ -18,6 +18,20 @@ const walk = (dir) =>
     e.isDirectory() ? walk(join(dir, e.name)) : [relative(publicDir, join(dir, e.name))],
   )
 const files = walk(publicDir)
+const graphScript = readFileSync(join(publicDir, "postscript.js"), "utf8")
+assert(
+  !graphScript.includes("cdn.jsdelivr.net/npm/d3"),
+  "unpatched CDN graph script is still bundled",
+)
+assert(
+  !graphScript.includes("cdn.jsdelivr.net/npm/pixi.js"),
+  "unpatched Pixi loader is still bundled",
+)
+assert.equal(
+  graphScript.split("/static/graph/d3.min.js").length - 1,
+  1,
+  "graph script must be bundled once",
+)
 const encodePath = (path) => path.split("/").map(encodeURIComponent).join("/")
 const route = (file) => "/" + encodePath(file.replace(/\.html$/, "").replace(/(^|\/)index$/, "$1"))
 const index = JSON.parse(readFileSync(join(publicDir, "static/contentIndex.json"), "utf8"))
@@ -47,7 +61,11 @@ const report = {
 const refs = new Map()
 const ids = new Map()
 let browser = await chromium.launch({ headless: true })
-const fail = (scope, error) => report.failures.push({ scope, error: String(error).slice(0, 600) })
+const fail = (scope, error) => {
+  const finding = { scope, error: (error?.stack ?? String(error)).slice(0, 1600) }
+  report.failures.push(finding)
+  console.error(JSON.stringify(finding))
+}
 const canonicalPath = (url) =>
   decodeURIComponent(new URL(url, base).pathname).replace(/\/$/, "") || "/"
 const inventory = () => ({
@@ -57,6 +75,14 @@ const inventory = () => ({
   overflow: document.documentElement.scrollWidth > innerWidth + 1,
   listingCount: document.querySelectorAll(".page-listing").length,
   bodyFontSize: parseFloat(getComputedStyle(document.body).fontSize),
+  pdfAlignment: [...document.querySelectorAll('article .callout[data-callout="pdf"]')].map((el) => {
+    const title = el.querySelector(".callout-title").getBoundingClientRect()
+    const link = el.querySelector(".callout-content").getBoundingClientRect()
+    return {
+      sameRow: Math.abs(title.top - link.top) < Math.min(title.height, link.height),
+      centreOffset: Math.abs(title.top + title.height / 2 - link.top - link.height / 2),
+    }
+  }),
   navigation: [...document.querySelectorAll(".explorer-content a")].map((a) => ({
     text: a.textContent,
     href: a.getAttribute("href"),
@@ -128,6 +154,10 @@ async function sweep(width) {
           }
           assert(data.navigation.length > 0, "primary navigation is empty")
           assert(data.bodyFontSize >= 18, "body text is too small")
+          assert(
+            data.pdfAlignment.every((row) => !row.sameRow || row.centreOffset <= 1),
+            "PDF label and link are not vertically aligned",
+          )
           assert(!/^Folder:/.test(data.heading), "folder heading has a redundant prefix")
           assert(
             !data.navigation.some((a) => /_AtomicNotes/.test(a.href ?? "")),
@@ -170,6 +200,11 @@ try {
     viewport: { width: 1280, height: 900 },
   })
   page.on("pageerror", (e) => fail("SPA", e))
+  page.on("console", (message) => {
+    if (message.type() === "error" && message.text().includes("[Graph]")) {
+      fail("graph lifecycle", message.text())
+    }
+  })
   await page.goto(base, { waitUntil: "networkidle" })
   for (const slug of Object.keys(index)) {
     try {
@@ -217,8 +252,86 @@ try {
   const sectionHref = await tocLink.getAttribute("href")
   await tocLink.click()
   assert.equal(new URL(page.url()).hash, new URL(sectionHref, page.url()).hash)
-  assert.equal(await page.locator(".graph").count(), 0)
+  assert.equal(await page.locator(".graph").count(), 1)
   report.interactions.tableOfContents = true
+
+  // Every push rebuilds the graph from the same published index verified above.
+  const graphPage = "Lecture-Notes/Slender-Jets/slender-jets-VE-order-0"
+  await page.goto(base + "/" + graphPage, { waitUntil: "networkidle" })
+  const localGraph = page.locator('.graph-container[data-graph-ready="true"]')
+  await localGraph.waitFor()
+  assert.equal(await localGraph.getAttribute("data-graph-slug"), graphPage)
+  assert(Number(await localGraph.getAttribute("data-graph-node-count")) > 1)
+  assert.equal(await localGraph.locator("canvas").count(), 1)
+  const expectedGraphIds = new Set(Object.keys(index).map(simplifySlug))
+  function checkGraphIds(ids) {
+    assert(ids.length > 1, "graph contains no connected content")
+    for (const id of ids)
+      assert(expectedGraphIds.has(id), `graph has an unpublished or stale node: ${id}`)
+  }
+  checkGraphIds(JSON.parse(await localGraph.getAttribute("data-graph-node-ids")))
+  const globalButton = page.getByRole("button", { name: "Global Graph", exact: true })
+  // Close while asynchronous setup may still be running, then reopen.
+  for (let attempt = 0; attempt < 3; attempt++) {
+    await globalButton.click()
+    await page.keyboard.press("Escape")
+  }
+  await globalButton.click()
+  const globalGraph = page.locator('.global-graph-container[data-graph-ready="true"]')
+  await globalGraph.waitFor()
+  const globalIds = JSON.parse(await globalGraph.getAttribute("data-graph-node-ids"))
+  checkGraphIds(globalIds)
+  assert.deepEqual(
+    new Set(globalIds),
+    expectedGraphIds,
+    "global graph is missing current published content",
+  )
+  assert.equal(await globalGraph.locator("canvas").count(), 1)
+  await page.screenshot({ path: join(output, "global-graph.png") })
+  await page.keyboard.press("Escape")
+  await page.waitForFunction(() => !document.querySelector(".global-graph-outer.active"))
+  report.interactions.globalGraphReopen = true
+
+  for (let attempt = 0; attempt < 2; attempt++) {
+    await page.locator(".darkmode").first().click()
+    await localGraph.waitFor()
+    assert.equal(await localGraph.locator("canvas").count(), 1)
+  }
+  report.interactions.graphThemeChange = true
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.waitForFunction(() => {
+    const graph = document.querySelector('.graph-container[data-graph-ready="true"]')
+    const canvas = graph?.querySelector("canvas")
+    return canvas && Math.abs(canvas.getBoundingClientRect().width - graph.clientWidth) <= 1
+  })
+  assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1))
+  await page.setViewportSize({ width: 1280, height: 900 })
+  await page.waitForFunction(() => {
+    const graph = document.querySelector('.graph-container[data-graph-ready="true"]')
+    const canvas = graph?.querySelector("canvas")
+    return canvas && Math.abs(canvas.getBoundingClientRect().width - graph.clientWidth) <= 1
+  })
+  report.interactions.graphResize = true
+  const beforeGraph = page.url()
+  const canvas = localGraph.locator("canvas")
+  const box = await canvas.boundingBox()
+  assert(box)
+  graphHit: for (let y = 8; y < box.height; y += 8) {
+    for (let x = 8; x < box.width; x += 8) {
+      await page.mouse.move(box.x + x, box.y + y)
+      if ((await canvas.evaluate((el) => getComputedStyle(el).cursor)) !== "pointer") continue
+      await page.mouse.click(box.x + x, box.y + y)
+      await page.waitForTimeout(200)
+      if (page.url() !== beforeGraph) break graphHit
+    }
+  }
+  assert.notEqual(page.url(), beforeGraph, "graph node click did not navigate")
+  await localGraph.waitFor()
+  assert.equal(
+    await localGraph.getAttribute("data-graph-slug"),
+    await page.locator("body").getAttribute("data-slug"),
+  )
+  report.interactions.graphNodeNavigation = true
   await page.goto(base + "/0_README", { waitUntil: "networkidle" })
   await page.locator('article a.internal[href*="2025-JFM-viscous-drop-impact"]').first().hover()
   await page.locator(".popover.active-popover").waitFor()

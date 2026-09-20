@@ -33,7 +33,7 @@ jobs:
       - run: npm test
       - run: npm run build
       - run: npx playwright install --with-deps chromium
-      - name: Test every page through Cloudflare routing
+      - name: Verify pages, graph lifecycle, and PDF alignment
         run: |
           set -euo pipefail
           npm run preview > /tmp/blog-preview.log 2>&1 &

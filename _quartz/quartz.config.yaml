@@ -102,7 +102,7 @@ plugins:
     order: 50
     layout:
       position: right
-      priority: 10
+      priority: 20
   - source: github:quartz-community/crawl-links
     enabled: true
     options:
@@ -162,7 +162,7 @@ plugins:
       position: left
       priority: 50
   - source: github:quartz-community/graph
-    enabled: false
+    enabled: true
     options:
       localGraph:
         drag: true
@@ -194,7 +194,6 @@ plugins:
     layout:
       position: right
       priority: 10
-      condition: not-index
   - source: github:quartz-community/search
     enabled: true
     layout:

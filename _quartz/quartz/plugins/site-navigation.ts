@@ -175,6 +175,24 @@ export async function configureSiteNavigation(config: QuartzConfig): Promise<{
     explorer.manifest,
   )
 
+  const graph = componentRegistry.get("graph")
+  if (graph) {
+    if (typeof graph.component !== "function") throw new Error("Quartz Graph is not a component")
+    const originalGraph = graph.component as QuartzComponentConstructor<Record<string, unknown>>
+    // @ts-expect-error Quartz's inline-script loader imports this browser module as text.
+    const { default: graphControls } = await import("./site-graph.inline.ts")
+    const wrappedGraph: QuartzComponentConstructor<Record<string, unknown>> = (options) => {
+      const component = originalGraph(options)
+      component.afterDOMLoaded = graphControls
+      return component
+    }
+    for (const [name, entry] of componentRegistry.getAll()) {
+      if (entry.component === graph.component) {
+        componentRegistry.register(name, wrappedGraph, entry.source, entry.manifest)
+      }
+    }
+  }
+
   const articleTitle = componentRegistry.get("article-title")
   if (!articleTitle || typeof articleTitle.component !== "function") {
     throw new Error("Required Quartz ArticleTitle component did not load")
