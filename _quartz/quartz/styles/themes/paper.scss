@@ -6,7 +6,8 @@
 @use "./shared";
 
 body {
-  font-size: 17px;
+  // The browser suite requires an 18 px base for readability.
+  font-size: 18px;
   background: var(--c-paper);
   color: var(--fg-1);
   -webkit-font-smoothing: antialiased;
@@ -131,7 +132,7 @@ body::before {
 article {
   color: var(--fg-1);
   line-height: 1.7;
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   & p,
   & li {
     line-height: 1.7;
