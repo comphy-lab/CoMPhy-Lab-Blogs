@@ -2,7 +2,7 @@
 // Developer-documentation chrome after developers.openai.com, Linear and
 // Raycast: sticky top bar, left navigation, wide reading column that follows
 // the viewport, "On this page" rail at the right. IBM Plex Sans throughout.
-@use "../custom.scss";
+@use "./site-base";
 @use "./shared";
 
 body {

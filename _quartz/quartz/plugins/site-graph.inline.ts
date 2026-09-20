@@ -38,6 +38,19 @@ import {
 
     var localStorageKey = "graph-visited"
 
+    // The URL path is percent-encoded (several vault filenames contain
+    // non-ASCII hyphens); the content index keys are not. Prefer the slug
+    // Quartz stamps on <body>, then fall back to the decoded path.
+    function currentPageSlug() {
+      var fromBody = document.body && document.body.dataset ? document.body.dataset.slug : ""
+      if (fromBody) return fromBody
+      try {
+        return decodeURIComponent(getFullSlugFromUrl())
+      } catch (e) {
+        return getFullSlugFromUrl()
+      }
+    }
+
     function getVisited() {
       return new Set(JSON.parse(localStorage.getItem(localStorageKey) || "[]"))
     }
@@ -729,7 +742,7 @@ import {
     function showGlobalGraph() {
       cleanupGlobal()
       var thisGeneration = globalRenderGeneration
-      var currentSlug = getFullSlugFromUrl()
+      var currentSlug = currentPageSlug()
       for (var i = 0; i < globalContainers.length; i++) {
         var container = globalContainers[i]
         container.classList.add("active")
@@ -770,7 +783,7 @@ import {
     }
 
     function renderLocal(force) {
-      var slug = getFullSlugFromUrl()
+      var slug = currentPageSlug()
       var localContainers = Array.from(document.querySelectorAll(".graph-container"))
       if (
         !force &&

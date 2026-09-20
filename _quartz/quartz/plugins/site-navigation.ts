@@ -5,6 +5,9 @@ import type { Root as MarkdownRoot } from "mdast"
 import type { Root as HtmlRoot } from "hast"
 import type { VFile } from "vfile"
 import matter from "gray-matter"
+import { h } from "preact"
+import { classNames } from "../util/lang"
+import { pathToRoot, joinSegments, type FullSlug } from "../util/path"
 import { toString } from "mdast-util-to-string"
 import { visit } from "unist-util-visit"
 
@@ -247,6 +250,44 @@ export async function configureSiteNavigation(config: QuartzConfig): Promise<{
         componentRegistry.register(name, tagged, registered.source, registered.manifest)
       }
     }
+  }
+
+  // Site title: the lab mark from comphy-lab.org beside the wordmark.
+  const pageTitle = componentRegistry.get("page-title")
+  if (pageTitle && typeof pageTitle.component === "function") {
+    const originalPageTitle = pageTitle.component as QuartzComponentConstructor
+    componentRegistry.register(
+      "page-title",
+      (options: undefined) => {
+        const source = originalPageTitle(options)
+        const component: QuartzComponent = (props) => {
+          const title = props.cfg.pageTitle
+          const baseDir = pathToRoot(props.fileData.slug as FullSlug)
+          return h(
+            "h2",
+            { class: classNames(props.displayClass, "page-title") },
+            h(
+              "a",
+              { href: baseDir },
+              h("img", {
+                class: "site-logo",
+                src: joinSegments(baseDir, "static/logo.png"),
+                alt: "",
+                width: 320,
+                height: 212,
+                decoding: "async",
+              }),
+              h("span", { class: "site-wordmark" }, title),
+            ),
+          )
+        }
+        component.css = source.css
+        component.displayName = "PageTitle"
+        return component
+      },
+      pageTitle.source,
+      pageTitle.manifest,
+    )
   }
 
   const articleTitle = componentRegistry.get("article-title")

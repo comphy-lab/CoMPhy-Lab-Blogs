@@ -2,7 +2,7 @@
 // The CoMPhy Lab design system applied to the existing three-column garden
 // layout: warm paper surface with the 32 px grid, deep teal as the single
 // interactive accent, Fraunces headings, IBM Plex Sans body, 28 px panels.
-@use "../custom.scss";
+@use "./site-base";
 @use "./shared";
 
 body {

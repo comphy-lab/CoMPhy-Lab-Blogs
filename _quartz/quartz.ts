@@ -2,7 +2,7 @@ import { loadQuartzConfig } from "./quartz/plugins/loader/config-loader"
 import { VaultLinks, SafeAliasRedirects } from "./quartz/plugins/site-links"
 import { configureSiteNavigation } from "./quartz/plugins/site-navigation"
 import { GraphAssets } from "./quartz/plugins/site-graph-assets"
-import { FontPreload, fontPreloads } from "./quartz/plugins/site-fonts"
+import { SiteHead, fontPreloads } from "./quartz/plugins/site-head"
 import { frameRegistry } from "./quartz/components/frames/registry"
 import { TopbarFrame } from "./quartz/components/frames/SiteFrames"
 
@@ -24,6 +24,6 @@ if (aliasIndex < 0) throw new Error("AliasRedirects is required for safe alias r
 config.plugins.emitters[aliasIndex] = SafeAliasRedirects()
 config.plugins.emitters.push(GraphAssets())
 // Preload the first-paint font faces so pages do not reflow when the webfonts arrive.
-config.plugins.emitters.push(FontPreload(await fontPreloads(config))())
+config.plugins.emitters.push(SiteHead(await fontPreloads(config))())
 export const layout = await configureSiteNavigation(config)
 export default config

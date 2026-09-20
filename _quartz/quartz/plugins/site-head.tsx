@@ -63,20 +63,28 @@ export async function fontPreloads(config: QuartzConfig): Promise<string[]> {
   return [...new Set(hrefs)]
 }
 
-export const FontPreload: (hrefs: string[]) => QuartzEmitterPlugin = (hrefs) => () => ({
-  name: "FontPreload",
+/**
+ * Head additions shared by every page: font preloads and the lab's favicon
+ * set (the same files comphy-lab.org serves; Quartz's own favicon plugin
+ * still writes /favicon.ico from static/icon.png).
+ */
+export const SiteHead: (fontHrefs: string[]) => QuartzEmitterPlugin = (fontHrefs) => () => ({
+  name: "SiteHead",
   async *emit() {},
   externalResources() {
     return {
-      additionalHead: hrefs.map((href) => (
-        <link
-          rel="preload"
-          href={href}
-          as="font"
-          type={href.endsWith(".woff2") ? "font/woff2" : "font/ttf"}
-          crossOrigin="anonymous"
-        />
-      )),
+      additionalHead: [
+        ...fontHrefs.map((href) => (
+          <link
+            rel="preload"
+            href={href}
+            as="font"
+            type={href.endsWith(".woff2") ? "font/woff2" : "font/ttf"}
+            crossOrigin="anonymous"
+          />
+        )),
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />,
+      ],
     }
   },
 })

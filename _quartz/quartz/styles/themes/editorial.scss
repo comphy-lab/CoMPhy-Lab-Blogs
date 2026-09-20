@@ -2,7 +2,7 @@
 // Magazine reading page after Quanta / Works in Progress: masthead across
 // the top, one centred serif column (Source Serif 4), Fraunces titles, a slim
 // table of contents at the right, graph and backlinks moved below the text.
-@use "../custom.scss";
+@use "./site-base";
 @use "./shared";
 
 body {

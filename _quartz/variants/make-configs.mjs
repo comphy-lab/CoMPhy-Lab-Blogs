@@ -31,6 +31,7 @@ for (const variant of VARIANTS) {
   for (const pageType of ["content", "folder", "tag"]) {
     byPageType[pageType] ??= {}
     if (variant.frame !== "default") byPageType[pageType].template = variant.frame
+    else delete byPageType[pageType].template
     const extra = variant.exclude[pageType] ?? []
     if (extra.length) {
       byPageType[pageType].exclude = [
@@ -40,9 +41,8 @@ for (const variant of VARIANTS) {
   }
   // Folder and tag pages keep the right rail empty in production; with graph
   // and backlinks moved under the article they should still show nothing there.
-  if (variant.frame !== "default") {
-    byPageType["404"].template = variant.frame
-  }
+  if (variant.frame !== "default") byPageType["404"].template = variant.frame
+  else delete byPageType["404"].template
 
   const outDir = path.join(root, "variants", variant.key)
   fs.mkdirSync(outDir, { recursive: true })

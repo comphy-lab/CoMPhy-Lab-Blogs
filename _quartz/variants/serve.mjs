@@ -96,10 +96,10 @@ const samplePaths = [
 ]
 const rows = [
   {
-    name: "0 · Current (as deployed)",
+    name: "P · Production candidate (local Wrangler preview of main)",
     port: CURRENT_PORT,
     summary:
-      "The Quartz garden layout now live at blogs.comphy-lab.org, unchanged, for side-by-side comparison. Atkinson Hyperlegible, orange-on-navy dark palette, explorer left, contents/graph/backlinks right.",
+      "The production build as it will deploy: A2 · Paper & Ink — Masthead promoted to quartz.config.yaml and custom.scss, with the lab logo and favicon. Served by the same Wrangler assets runtime Cloudflare uses.",
   },
   ...VARIANTS,
 ]
@@ -125,7 +125,7 @@ footer{margin-top:2rem;color:var(--muted);font-size:.85rem;border-top:1px solid 
 </style></head><body><main>
 <div class="eyebrow">CoMPhy Lab blogs · UI review</div>
 <h1>Design variants</h1>
-<p class="lede">Round 2. A · Paper & Ink is the chosen base; A2–A4 build on it and S is a deliberately different option. Variant 0 is the deployed site for reference. Every variant except 0 carries the readable rails, the graph that opens on the current page, hoisted titles, and subsetted preloaded fonts. Toggle dark mode with the moon icon inside each site.</p>
+<p class="lede">Round 3. A2 · Paper & Ink — Masthead is the chosen design and is now the production configuration (P). The round-2 alternatives stay up for comparison. Every variant except 0 carries the readable rails, the graph that opens on the current page, hoisted titles, and subsetted preloaded fonts. Toggle dark mode with the moon icon inside each site.</p>
 ${rows
   .map(
     (r) => `<article>

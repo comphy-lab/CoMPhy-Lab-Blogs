@@ -2,7 +2,7 @@
 // Personal-blog reading page in the steipete.me manner: one centred sans
 // column, a short header bar, contents folded at the top of the article,
 // graph and backlinks as end matter. No rails at all.
-@use "../custom.scss";
+@use "./site-base";
 @use "./shared";
 
 body {

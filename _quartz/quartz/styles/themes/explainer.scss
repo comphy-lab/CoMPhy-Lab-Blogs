@@ -3,7 +3,7 @@
 // body (Source Serif 4), a numbered outline in the left margin, and a text
 // column that lets figures, tables and displayed equations run wider than
 // the prose. Graph and backlinks live in an end-matter block.
-@use "../custom.scss";
+@use "./site-base";
 @use "./shared";
 
 body {
