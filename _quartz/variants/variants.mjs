@@ -30,11 +30,8 @@ const dark = {
   textHighlight: "#ffcf5c55",
 }
 
-const paperFonts = {
-  header: { name: "Fraunces", weights: [400, 600, 700] },
-  body: "IBM Plex Sans",
-  code: "IBM Plex Mono",
-}
+// Families from the self-hosted brand pack (quartz/static/fonts/fonts.css).
+const paperFonts = { header: "Fraunces", body: "IBM Plex Sans", code: "IBM Plex Mono" }
 
 // Round 2 (2026-09-20, evening): Vatsal chose A · Paper & Ink. Three
 // derivatives of it plus one deliberately different option.
@@ -69,11 +66,9 @@ export const VARIANTS = [
     name: "A3 · Paper & Ink — Serif",
     summary:
       "Paper & Ink with a Source Serif 4 reading face and no card: the article sits directly on the paper with hairline rules, Fraunces titles, a numbered contents outline and a wider 80-character measure. Graph and backlinks stay in the rail.",
-    fonts: {
-      header: { name: "Fraunces", weights: [400, 600, 700] },
-      body: "Source Serif 4",
-      code: "IBM Plex Mono",
-    },
+    // Source Serif 4 is not in the self-hosted pack; this variant falls back to
+    // the system serif until the pack gains it.
+    fonts: { header: "Fraunces", body: "Source Serif 4", code: "IBM Plex Mono" },
     frame: "default",
     positions: {},
     exclude: {},

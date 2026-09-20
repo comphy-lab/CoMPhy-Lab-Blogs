@@ -39,15 +39,11 @@ configuration:
     - .gitignore
   defaultDateType: created
   theme:
-    fontOrigin: googleFonts
+    # Self-hosted CoMPhy brand pack under quartz/static/fonts (no Google CDN).
+    fontOrigin: local
     cdnCaching: false
     typography:
-      header:
-        name: Fraunces
-        weights:
-          - 400
-          - 600
-          - 700
+      header: Fraunces
       body: IBM Plex Sans
       code: IBM Plex Mono
     colors:

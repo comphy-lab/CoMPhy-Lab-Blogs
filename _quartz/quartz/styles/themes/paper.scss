@@ -190,11 +190,12 @@ article {
 }
 
 .article-title {
-  font-family: var(--headerFont);
-  font-weight: 500;
-  font-size: clamp(2rem, 3.2vw, 2.75rem);
-  letter-spacing: -0.02em;
-  line-height: 1.12;
+  // Cormorant Garamond 600 from the brand pack (PR #5); Fraunces if it is missing.
+  font-family: "Cormorant Garamond", var(--headerFont);
+  font-weight: 600;
+  font-size: clamp(2.2rem, 3.4vw, 3rem);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
   color: var(--fg-strong);
   margin: 0.5rem 0 0.75rem;
 }

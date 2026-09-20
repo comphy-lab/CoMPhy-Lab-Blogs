@@ -34,7 +34,7 @@ configuration:
     - .gitignore
   defaultDateType: created
   theme:
-    fontOrigin: googleFonts
+    fontOrigin: local
     cdnCaching: false
     typography:
       header: Fraunces

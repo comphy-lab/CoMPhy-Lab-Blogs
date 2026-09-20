@@ -34,15 +34,10 @@ configuration:
     - .gitignore
   defaultDateType: created
   theme:
-    fontOrigin: googleFonts
+    fontOrigin: local
     cdnCaching: false
     typography:
-      header:
-        name: Fraunces
-        weights:
-          - 400
-          - 600
-          - 700
+      header: Fraunces
       body: IBM Plex Sans
       code: IBM Plex Mono
     colors:

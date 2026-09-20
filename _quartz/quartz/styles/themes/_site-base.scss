@@ -122,6 +122,8 @@ article {
 }
 
 .article-title {
+  font-family: "Cormorant Garamond", var(--headerFont);
+  font-weight: 600;
   font-size: clamp(1.8rem, 2.6vw, 2.5rem);
   line-height: 1.2;
   text-wrap: balance;

@@ -1,3 +1,5 @@
+import fs from "node:fs/promises"
+import path from "node:path"
 import type { QuartzEmitterPlugin } from "./types"
 import type { QuartzConfig } from "../cfg"
 import {
@@ -43,13 +45,23 @@ function parseFontFaces(stylesheet: string): FontFace[] {
  */
 export async function fontPreloads(config: QuartzConfig): Promise<string[]> {
   const theme = config.configuration.theme
-  if (theme.fontOrigin !== "googleFonts" || theme.cdnCaching) return []
-  const response = await fetch(googleFontHref(theme), {
-    headers: FONT_FETCH_HEADERS,
-  })
-  if (!response.ok) return []
-  const { processedStylesheet } = await processGoogleFonts(await response.text(), "")
-  const faces = parseFontFaces(processedStylesheet).filter((f) => f.latin && f.style === "normal")
+  let stylesheet: string
+  if (theme.fontOrigin === "local") {
+    // The self-hosted brand pack; its URLs are relative to its own folder.
+    try {
+      stylesheet = await fs.readFile(path.join("quartz", "static", "fonts", "fonts.css"), "utf8")
+    } catch {
+      return []
+    }
+    stylesheet = stylesheet.replace(/url\(\.\//g, "url(/static/fonts/")
+  } else if (theme.fontOrigin === "googleFonts" && !theme.cdnCaching) {
+    const response = await fetch(googleFontHref(theme), { headers: FONT_FETCH_HEADERS })
+    if (!response.ok) return []
+    stylesheet = (await processGoogleFonts(await response.text(), "")).processedStylesheet
+  } else {
+    return []
+  }
+  const faces = parseFontFaces(stylesheet).filter((f) => f.latin && f.style === "normal")
   const body = getFontSpecificationName(theme.typography.body)
   const header = getFontSpecificationName(theme.typography.header)
   const byFamily = (family: string) => faces.filter((f) => f.family === family)
@@ -59,7 +71,11 @@ export async function fontPreloads(config: QuartzConfig): Promise<string[]> {
     headerFaces.find((f) => f.weight === "600") ??
     headerFaces.find((f) => f.weight === "700") ??
     headerFaces[0]
-  const hrefs = [bodyFace, headerFace].filter((f): f is FontFace => !!f).map((f) => f.href)
+  // Article titles use Cormorant Garamond 600 when the pack provides it.
+  const titleFace = byFamily("Cormorant Garamond").find((f) => f.weight === "600")
+  const hrefs = [bodyFace, headerFace, titleFace]
+    .filter((f): f is FontFace => !!f)
+    .map((f) => f.href)
   return [...new Set(hrefs)]
 }
 
