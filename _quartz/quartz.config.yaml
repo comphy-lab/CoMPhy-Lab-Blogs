@@ -40,12 +40,12 @@ configuration:
     - .gitignore
   defaultDateType: created
   theme:
-    fontOrigin: googleFonts
-    # Download fonts at build time so the site serves them itself.
+    # Self-hosted CoMPhy brand pack under quartz/static/fonts (no Google CDN).
+    fontOrigin: local
     cdnCaching: false
     typography:
-      header: Atkinson Hyperlegible
-      body: Atkinson Hyperlegible
+      header: Fraunces
+      body: IBM Plex Sans
       code: IBM Plex Mono
     colors:
       # Derived from the repository's publish.css light and dark palettes.
