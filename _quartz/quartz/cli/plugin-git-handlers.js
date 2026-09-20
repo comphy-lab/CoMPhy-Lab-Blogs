@@ -1,6 +1,6 @@
 import fs from "fs"
 import path from "path"
-import { execSync } from "child_process"
+import { execSync, execFileSync } from "child_process"
 import { styleText } from "util"
 import {
   readPluginsJson,
@@ -788,9 +788,15 @@ export async function handlePluginRestore() {
       console.log(
         styleText("cyan", `→ ${name}: cloning ${entry.resolved}@${entry.commit.slice(0, 7)}...`),
       )
-      const branchArg = entry.ref ? ` --branch ${entry.ref}` : ""
-      execSync(`git clone${branchArg} ${entry.resolved} ${pluginDir}`, { stdio: "ignore" })
-      execSync(`git checkout ${entry.commit}`, { cwd: pluginDir, stdio: "ignore" })
+      const branchArgs = entry.ref ? ["--branch", entry.ref] : []
+      execFileSync("git", ["clone", ...branchArgs, "--", entry.resolved, pluginDir], {
+        stdio: "ignore",
+      })
+      if (!/^[a-f\d]{40}$/i.test(entry.commit)) throw new Error("Invalid locked plugin commit")
+      execFileSync("git", ["checkout", "--detach", entry.commit], {
+        cwd: pluginDir,
+        stdio: "ignore",
+      })
       console.log(styleText("green", `✓ ${name} restored`))
       restoredPlugins.push({ name, pluginDir })
       installed++

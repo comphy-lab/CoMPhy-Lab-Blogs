@@ -13,7 +13,13 @@ export function resolveVaultLink(source: string, target: string, slugs: Set<stri
   const hash = target.indexOf("#")
   const rawPath = hash < 0 ? target : target.slice(0, hash)
   const anchor = hash < 0 ? "" : target.slice(hash)
-  const decoded = decodeURI(rawPath)
+  let decoded: string
+  try {
+    decoded = decodeURI(rawPath)
+  } catch (error) {
+    if (!(error instanceof URIError)) throw error
+    decoded = rawPath
+  }
   const slug = slugifyFilePath(decoded as FilePath)
   const local = path.posix.normalize(path.posix.join(path.posix.dirname(source), slug))
   const root = slug.replace(/^\.?\//, "")

@@ -39,3 +39,15 @@ test("aliases cannot replace their own article or another canonical page", () =>
     ]),
   )
 })
+
+test("literal percent signs in vault filenames are not malformed URL failures", () => {
+  const slugs = new Set(["Lecture/100-percent-complete"])
+  assert.equal(
+    resolveVaultLink("Lecture/one", "100%-complete.md", slugs),
+    "Lecture/100-percent-complete",
+  )
+  assert.equal(
+    resolveVaultLink("Lecture/one", "100%25-complete.md", slugs),
+    "Lecture/100-percent-complete",
+  )
+})
