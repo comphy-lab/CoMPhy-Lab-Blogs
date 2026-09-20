@@ -741,7 +741,7 @@ export async function handlePluginRestore() {
     console.log(styleText("red", "✗ No quartz.lock.json found. Cannot restore."))
     console.log()
     console.log("Run 'npx quartz plugin add <repo>' to install plugins from scratch.")
-    return
+    throw new Error("Plugin restore requires quartz.lock.json")
   }
 
   console.log(styleText("cyan", "→ Restoring plugins from lockfile..."))
@@ -819,6 +819,7 @@ export async function handlePluginRestore() {
     console.log(styleText("green", `✓ Restored ${installed} plugin(s)`))
   } else {
     console.log(styleText("yellow", `⚠ Restored ${installed} plugin(s), ${failed} failed`))
+    throw new Error(`${failed} plugin(s) failed to restore`)
   }
 }
 

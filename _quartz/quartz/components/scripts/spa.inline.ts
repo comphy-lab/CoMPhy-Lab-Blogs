@@ -32,11 +32,16 @@ const getOpts = ({ target }: Event): { url: URL; scroll?: boolean } | undefined 
   if ("routerIgnore" in a.dataset) return
   const { href } = a
   if (!isLocalUrl(href)) return
-  return { url: new URL(href), scroll: "routerNoscroll" in a.dataset ? false : undefined }
+  return {
+    url: new URL(href),
+    scroll: "routerNoscroll" in a.dataset ? false : undefined,
+  }
 }
 
 function notifyNav(url: FullSlug) {
-  const event: CustomEventMap["nav"] = new CustomEvent("nav", { detail: { url } })
+  const event: CustomEventMap["nav"] = new CustomEvent("nav", {
+    detail: { url },
+  })
   document.dispatchEvent(event)
 }
 
@@ -66,6 +71,9 @@ async function _navigate(url: URL, isBack: boolean = false) {
     .then((res) => {
       const contentType = res.headers.get("content-type")
       if (contentType?.startsWith("text/html")) {
+        const resolved = new URL(res.url)
+        resolved.hash = url.hash
+        url = resolved
         return res.text()
       } else {
         window.location.assign(url)
@@ -78,7 +86,9 @@ async function _navigate(url: URL, isBack: boolean = false) {
   if (!contents) return
 
   // notify about to nav
-  const event: CustomEventMap["prenav"] = new CustomEvent("prenav", { detail: {} })
+  const event: CustomEventMap["prenav"] = new CustomEvent("prenav", {
+    detail: {},
+  })
   document.dispatchEvent(event)
 
   // cleanup old

@@ -230,7 +230,7 @@ So, the final result for uniformly charged sphere is
 ![|750](_Media/uniformly-charged-sphere.png)
 
 > [!note] Note
-> To play with the above plots, see: [[Gauss-law-of-electrostatics.ipynb]]
+> To play with the above plots, see: [Gauss-law-of-electrostatics.ipynb](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/blob/main/_scripts/Gauss-law-of-electrostatics.ipynb)
 
 ## A critique of the Gauss' law in the non-local form
 

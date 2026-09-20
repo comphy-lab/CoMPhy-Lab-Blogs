@@ -1,6 +1,6 @@
 {
   "name": "@jackyzha0/quartz",
-  "description": "🌱 publish your digital garden and notes as a website",
+  "description": "\ud83c\udf31 publish your digital garden and notes as a website",
   "private": true,
   "version": "5.0.0",
   "type": "module",
@@ -18,8 +18,11 @@
     "format": "npx prettier . --write",
     "test": "tsx --test",
     "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1",
-    "install-plugins": "npx tsx ./quartz/plugins/loader/install-plugins.ts",
-    "prebuild": "npm run install-plugins"
+    "build": "node quartz/bootstrap-cli.mjs build -d .. -o public",
+    "test:e2e": "node scripts/e2e.mjs",
+    "preview": "wrangler dev --ip 127.0.0.1 --port 8790",
+    "deploy": "wrangler deploy",
+    "plugins:restore": "node quartz/bootstrap-cli.mjs plugin restore"
   },
   "engines": {
     "npm": ">=10.9.2",
@@ -106,6 +109,7 @@
     "@types/ws": "^8.18.1",
     "@types/yargs": "^17.0.35",
     "esbuild": "^0.27.2",
+    "playwright": "1.63.0",
     "prettier": "^3.8.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",

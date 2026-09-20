@@ -34,7 +34,10 @@ async function mouseEnterHandler(
       const heading = popoverInner.querySelector(targetAnchor) as HTMLElement | null
       if (heading) {
         // leave ~12px of buffer when scrolling to a heading
-        popoverInner.scroll({ top: heading.offsetTop - 12, behavior: "instant" })
+        popoverInner.scroll({
+          top: heading.offsetTop - 12,
+          behavior: "instant",
+        })
       }
     }
   }
@@ -90,7 +93,7 @@ async function mouseEnterHandler(
     default:
       const contents = await response.text()
       const html = p.parseFromString(contents, "text/html")
-      normalizeRelativeURLs(html, targetUrl)
+      normalizeRelativeURLs(html, response.url)
       // prepend all IDs inside popovers to prevent duplicates
       html.querySelectorAll("[id]").forEach((el) => {
         const targetID = `popover-internal-${el.id}`

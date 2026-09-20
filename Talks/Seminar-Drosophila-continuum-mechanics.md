@@ -1,4 +1,5 @@
 ---
+publish: true
 aliases:
   - Seminar-Durham-abstract
   - Talks/Seminar-Durham-abstract

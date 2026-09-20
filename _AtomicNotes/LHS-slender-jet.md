@@ -1,3 +1,6 @@
+---
+publish: true
+---
 # LHS of the Slender-Jet Axial Equation
 
 The axial velocity of a slender jet is nearly uniform across each section. Radial advection is therefore small at leading order, but it contributes at the same order as the first correction to axial advection. We calculate both terms before truncating the acceleration.

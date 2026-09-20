@@ -33,7 +33,13 @@ export function removeAllChildren(node: HTMLElement) {
 const canonicalRegex = /<link rel="canonical" href="([^"]*)">/
 
 export async function fetchCanonical(url: URL): Promise<Response> {
-  const res = await fetch(`${url}`)
+  return fetchCanonicalRedirect(url, new Set())
+}
+
+async function fetchCanonicalRedirect(url: URL, visited: Set<string>): Promise<Response> {
+  if (visited.has(url.href) || visited.size >= 8) throw new Error("Alias redirect loop")
+  visited.add(url.href)
+  const res = await fetch(url)
   if (!res.headers.get("content-type")?.startsWith("text/html")) {
     return res
   }
@@ -42,5 +48,8 @@ export async function fetchCanonical(url: URL): Promise<Response> {
   // to allow the caller to read it if it's was not a redirect
   const text = await res.clone().text()
   const [_, redirect] = text.match(canonicalRegex) ?? []
-  return redirect ? fetch(`${new URL(redirect, url)}`) : res
+  if (!redirect || !/<meta http-equiv="refresh"/i.test(text)) return res
+  const target = new URL(redirect, res.url)
+  if (target.origin !== url.origin) throw new Error("Cross-origin alias redirect")
+  return fetchCanonicalRedirect(target, visited)
 }

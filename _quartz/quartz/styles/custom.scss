@@ -1,5 +1,23 @@
 @use "./base.scss";
 
+// Keep long equations readable without widening the article or mobile page.
+article mjx-container.MathJax {
+  // MathJax places an inline min-width on aligned equations.
+  min-width: 0 !important;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &:not([display="true"]) {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  > svg {
+    flex-shrink: 0;
+  }
+}
+
 // CoMPhy Lab blog customisations.
 //
 // The vault uses four callout types that Obsidian does not ship with.
@@ -96,8 +114,22 @@
 // Dark mode keeps the same hues; raise the background alpha slightly so the
 // tint remains visible against the dark panel colour.
 :root[saved-theme="dark"] .callout {
-  &[data-callout="significance"] { --bg: #a45d1922; }
-  &[data-callout="pdf"] { --bg: #3a90d122; --color: #7db8ff; --border: #7db8ff55; }
-  &[data-callout="link"] { --bg: #0b7e9a22; --color: #8fd8d1; --border: #8fd8d155; }
-  &[data-callout="meta"] { --bg: #8e9ab222; --color: #acb8cf; --border: #acb8cf55; }
+  &[data-callout="significance"] {
+    --bg: #a45d1922;
+  }
+  &[data-callout="pdf"] {
+    --bg: #3a90d122;
+    --color: #7db8ff;
+    --border: #7db8ff55;
+  }
+  &[data-callout="link"] {
+    --bg: #0b7e9a22;
+    --color: #8fd8d1;
+    --border: #8fd8d155;
+  }
+  &[data-callout="meta"] {
+    --bg: #8e9ab222;
+    --color: #acb8cf;
+    --border: #acb8cf55;
+  }
 }
