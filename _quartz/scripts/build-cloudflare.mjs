@@ -168,6 +168,16 @@ try {
     if (!existsSync(bin(tool))) throw new Error(`Missing ${tool}; run npm ci in _quartz first`)
   }
 
+  await run("install Playwright Chromium", bin("playwright"), [
+    "install",
+    ...(process.env.PLAYWRIGHT_INSTALL_SYSTEM_DEPS === "1" ? ["--with-deps"] : []),
+    "chromium",
+  ])
+  await run("verify Chromium can launch before compiling plugins", process.execPath, [
+    "--input-type=module",
+    "-e",
+    'import { chromium } from "playwright"; const browser = await chromium.launch({ headless: true }); await browser.close();',
+  ])
   await run("restore locked Quartz plugins", npm, ["run", "plugins:restore"])
   await run("check TypeScript without incremental cache", bin("tsc"), [
     "--noEmit",
@@ -177,11 +187,6 @@ try {
   await run("run unit tests", npm, ["test"])
   await run("build Quartz site", npm, ["run", "build"])
   await writeBuildInfo()
-  await run("install Playwright Chromium and system dependencies", bin("playwright"), [
-    "install",
-    ...(process.platform === "linux" ? ["--with-deps"] : []),
-    "chromium",
-  ])
 
   const port = await unusedPort()
   const baseUrl = `http://127.0.0.1:${port}`

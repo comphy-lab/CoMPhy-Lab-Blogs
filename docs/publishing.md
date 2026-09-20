@@ -26,9 +26,13 @@ to the canonical hostname, preserving paths and query strings. Keep that
 redirect when changing build or deployment settings so existing links continue
 to work.
 
-`build:cloudflare` restores the plugins pinned in `quartz.lock.json`, runs an
-uncached TypeScript check and unit tests, builds Quartz, and installs Playwright
-Chromium (with system dependencies on Linux). It starts the pinned local
+`build:cloudflare` installs Playwright Chromium and verifies it can launch before
+restoring the plugins pinned in `quartz.lock.json`, running an uncached
+TypeScript check and unit tests, and building Quartz. Workers Builds uses an
+unprivileged build user, so the script does not attempt system package
+installation there. GitHub Actions explicitly sets
+`PLAYWRIGHT_INSTALL_SYSTEM_DEPS=1` to install system dependencies on its runner.
+It starts the pinned local
 Wrangler preview on a free loopback port, renders PDFs from that preview into
 `public/_Media/PDF/`, and adds missing PDF links to generated HTML. It then
 stops and restarts Wrangler on the same port so its asset snapshot contains
@@ -48,7 +52,8 @@ and to report `dirty: false`, checks that the local worktree is still clean,
 and reads `origin/main` afresh with `git ls-remote`. It refuses to deploy an
 older queued build once `main` has moved. This is a stale-build guard, not an
 atomic compare-and-swap across the subsequent Wrangler API call. It suppresses
-Git and Wrangler error output that could expose credentials.
+Git error output that could expose credentials; Wrangler keeps its deployment
+diagnostics visible.
 
 After Quartz builds, the gate writes `public/build-info.json` with the full Git
 commit SHA, UTC generation time and a dirty-worktree flag. The browser suite
