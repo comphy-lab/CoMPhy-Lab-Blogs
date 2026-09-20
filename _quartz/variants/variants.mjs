@@ -36,8 +36,12 @@ export const VARIANTS = [
     port: 8801,
     name: "A · Paper & Ink",
     summary:
-      "The CoMPhy design system applied to the current three-column garden layout. Warm paper with the 32 px grid, teal accent, Fraunces headings, IBM Plex Sans body, the article on a 28 px panel. Explorer left; contents, graph and backlinks right.",
-    fonts: { header: "Fraunces", body: "IBM Plex Sans", code: "IBM Plex Mono" },
+      "The CoMPhy design system on a full-width three-column layout: 300 px explorer, reading panel that fills the viewport (prose capped at 92 characters, figures full width), 320 px rail for contents, graph and backlinks. Warm paper with the 32 px grid, teal accent, Fraunces headings, IBM Plex Sans body, 28 px panel.",
+    fonts: {
+      header: { name: "Fraunces", weights: [400, 600, 700] },
+      body: "IBM Plex Sans",
+      code: "IBM Plex Mono",
+    },
     frame: "default",
     positions: {},
     exclude: {},

@@ -29,36 +29,52 @@ body::before {
     linear-gradient(to bottom, rgba(248, 244, 236, 0.04) 1px, transparent 1px);
 }
 
+// Full-width, three comfortable columns. Rails have fixed, generous widths;
+// the reading panel takes everything else. Every grid child is border-box so
+// panel padding and borders never spill into the neighbouring column.
 .page {
-  max-width: 1440px;
+  max-width: none;
   position: relative;
   z-index: 1;
+  --rail-left: 300px;
+  --rail-right: 320px;
+  --gutter: clamp(1.5rem, 2.5vw, 3rem);
+  --gap: clamp(2rem, 3vw, 4rem);
 }
 
 .page > #quartz-body {
-  column-gap: 2.5rem;
+  column-gap: var(--gap);
+  padding: 0 var(--gutter);
+  & > * {
+    box-sizing: border-box;
+    min-width: 0;
+  }
   @media (min-width: 1201px) {
-    grid-template-columns: 250px minmax(0, 1fr) 280px;
+    grid-template-columns: var(--rail-left) minmax(0, 1fr) var(--rail-right);
+  }
+  @media (min-width: 801px) and (max-width: 1200px) {
+    grid-template-columns: 260px minmax(0, 1fr);
+    column-gap: 2rem;
   }
   & .sidebar {
     padding: 2.5rem 0 2rem;
   }
-  & .sidebar.left {
-    padding-left: 1.5rem;
-  }
-  & .sidebar.right {
-    padding-right: 1.5rem;
+  & .center,
+  & footer {
+    max-width: 100%;
+    min-width: 0;
   }
 }
 
 // Site title: the one place the four-stop brand gradient clips into type.
 .page-title {
   font-family: var(--headerFont);
-  font-weight: 500;
-  font-style: italic;
-  font-size: 1.6rem;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.5rem;
   line-height: 1.1;
   letter-spacing: -0.015em;
+  white-space: nowrap;
   & a {
     background: linear-gradient(
       90deg,
@@ -93,8 +109,21 @@ body::before {
   border: 1px solid var(--c-border);
   border-radius: var(--r-lg);
   box-shadow: var(--shadow-soft);
-  padding: 0 clamp(1.5rem, 3vw, 3rem) 2rem;
+  box-sizing: border-box;
+  padding: 0 clamp(2rem, 3.5vw, 4.5rem) 2.5rem;
   margin-block: 2.5rem 2rem;
+  // Prose stays at a readable measure; figures, tables, code and displayed
+  // equations may use the full panel width.
+  &
+    article
+    > *:not(img):not(p:has(> img)):not(.table-container):not(pre):not(
+      figure
+    ):not(video):not(.external-embed):not(mjx-container[display="true"]) {
+    max-width: 92ch;
+  }
+  & .page-header {
+    max-width: 92ch;
+  }
   & .page-header {
     margin-top: 2.25rem !important;
   }
