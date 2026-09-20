@@ -21,7 +21,16 @@ const INTERNAL_EXPORTS = new Set(["manifest", "default"])
 function buildPlugin(pluginDir, name) {
   try {
     console.log(styleText("cyan", `  → ${name}: installing dependencies...`))
-    execSync("npm install", { cwd: pluginDir, stdio: "ignore" })
+    const installCommand = fs.existsSync(path.join(pluginDir, "package-lock.json"))
+      ? "npm ci"
+      : "npm install"
+    // Git dependencies build their dist/ exports in prepare. Scope the override
+    // to this install so a host-level ignore-scripts setting does not skip them.
+    execSync(installCommand, {
+      cwd: pluginDir,
+      stdio: "ignore",
+      env: { ...process.env, npm_config_ignore_scripts: "false" },
+    })
     console.log(styleText("cyan", `  → ${name}: building...`))
     execSync("npm run build", { cwd: pluginDir, stdio: "ignore" })
     // Remove devDependencies after build — they are no longer needed and their
@@ -38,9 +47,56 @@ function buildPlugin(pluginDir, name) {
   }
 }
 
+function declaredExportTargets(value) {
+  if (typeof value === "string") return [value]
+  if (Array.isArray(value)) return value.flatMap(declaredExportTargets)
+  if (value && typeof value === "object") {
+    return Object.values(value).flatMap(declaredExportTargets)
+  }
+  return []
+}
+
+function hasDeclaredEntry(packageDir) {
+  const packagePath = path.join(packageDir, "package.json")
+  if (!fs.existsSync(packagePath)) return false
+
+  try {
+    const pkg = JSON.parse(fs.readFileSync(packagePath, "utf-8"))
+    let rootExport
+    if (typeof pkg.exports === "string" || Array.isArray(pkg.exports)) {
+      rootExport = pkg.exports
+    } else if (pkg.exports && typeof pkg.exports === "object") {
+      if (Object.hasOwn(pkg.exports, ".")) rootExport = pkg.exports["."]
+      else if (Object.keys(pkg.exports).every((key) => !key.startsWith(".")))
+        rootExport = pkg.exports
+      else return false
+    } else if (pkg.exports === null) {
+      return false
+    }
+    if (rootExport === null) return false
+
+    const entries =
+      rootExport === undefined
+        ? [pkg.main, pkg.types].filter(Boolean)
+        : [...declaredExportTargets(rootExport), pkg.types].filter(Boolean)
+    return (
+      entries.length > 0 && entries.every((entry) => fs.existsSync(path.join(packageDir, entry)))
+    )
+  } catch {
+    return false
+  }
+}
+
 function needsBuild(pluginDir) {
-  const distDir = path.join(pluginDir, "dist")
-  return !fs.existsSync(distDir)
+  if (!hasDeclaredEntry(pluginDir)) return true
+
+  const pkg = JSON.parse(fs.readFileSync(path.join(pluginDir, "package.json"), "utf-8"))
+  for (const [name, source] of Object.entries(pkg.dependencies ?? {})) {
+    if (!source.startsWith("github:") && !source.startsWith("git+")) continue
+    const dependencyDir = path.join(pluginDir, "node_modules", ...name.split("/"))
+    if (!hasDeclaredEntry(dependencyDir)) return true
+  }
+  return false
 }
 
 /**
@@ -760,6 +816,18 @@ export async function handlePluginRestore() {
     const pluginDir = path.join(pluginsDir, name)
 
     if (fs.existsSync(pluginDir)) {
+      try {
+        if (
+          entry.commit !== "local" &&
+          getGitCommit(pluginDir) === entry.commit &&
+          needsBuild(pluginDir)
+        ) {
+          console.log(styleText("cyan", `→ ${name}: repairing incomplete build...`))
+          restoredPlugins.push({ name, pluginDir })
+          installed++
+          continue
+        }
+      } catch {}
       console.log(styleText("yellow", `⚠ ${name}: directory exists, skipping`))
       continue
     }
