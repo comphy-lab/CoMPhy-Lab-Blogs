@@ -14,10 +14,11 @@ if (wanted.length && selected.length !== wanted.length) {
   process.exit(1)
 }
 
-spawnSync("node", ["variants/make-configs.mjs"], {
+const generation = spawnSync("node", ["variants/make-configs.mjs"], {
   cwd: root,
   stdio: "inherit",
 })
+if (generation.status !== 0) process.exit(generation.status ?? 1)
 
 for (const variant of selected) {
   console.log(`\n=== building ${variant.key} (${variant.name}) ===`)

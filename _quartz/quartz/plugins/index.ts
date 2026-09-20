@@ -63,6 +63,10 @@ declare module "vfile" {
     text: string
     // from crawl-links transformer
     links: SimpleSlug[]
+    // from site-navigation: title taken from the source H1, and whether that
+    // heading was moved into the page header
+    sourceHeadingTitle: boolean
+    hoistedHeading: boolean
     // from table-of-contents transformer
     toc: { depth: number; text: string; slug: string }[]
     collapseToc: boolean

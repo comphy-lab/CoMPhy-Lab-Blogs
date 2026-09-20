@@ -133,6 +133,17 @@ export const HoistLeadingHeading: QuartzTransformerPlugin = () => ({
         if (!file.data.sourceHeadingTitle) return
         const first = root.children.find((node) => node.type === "element")
         if (!first || first.type !== "element" || first.tagName !== "h1") return
+        // ArticleTitle renders the frontmatter title as plain text, so only a
+        // heading made of text (plus Quartz's anchor link) can move without
+        // losing rendered maths, code or emphasis.
+        const plain = first.children.every(
+          (child) =>
+            child.type === "text" ||
+            (child.type === "element" &&
+              child.tagName === "a" &&
+              child.children.every((grandchild) => grandchild.type === "text")),
+        )
+        if (!plain) return
         const index = root.children.indexOf(first)
         root.children.splice(index, 1)
         file.data.hoistedHeading = true
@@ -282,6 +293,8 @@ export async function configureSiteNavigation(config: QuartzConfig): Promise<{
           )
         }
         component.css = source.css
+        component.beforeDOMLoaded = source.beforeDOMLoaded
+        component.afterDOMLoaded = source.afterDOMLoaded
         component.displayName = "PageTitle"
         return component
       },

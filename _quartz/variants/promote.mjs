@@ -8,7 +8,8 @@ import { spawnSync } from "node:child_process"
 const root = path.resolve(import.meta.dirname, "..")
 const key = process.argv[2]
 if (!key) throw new Error("variant key required")
-spawnSync("node", ["variants/make-configs.mjs"], { cwd: root, stdio: "inherit" })
+const generation = spawnSync("node", ["variants/make-configs.mjs"], { cwd: root, stdio: "inherit" })
+if (generation.status !== 0) throw new Error("variant config generation failed; nothing promoted")
 const generated = fs.readFileSync(path.join(root, "variants", key, "quartz.config.yaml"), "utf8")
 const body = generated
   .split("\n")

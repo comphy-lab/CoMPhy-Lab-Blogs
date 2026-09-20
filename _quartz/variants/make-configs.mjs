@@ -24,7 +24,7 @@ function deepMerge(target, patch) {
   return target
 }
 
-for (const variant of VARIANTS) {
+for (const variant of [...VARIANTS, ...RETIRED]) {
   const doc = base.clone()
   const cfg = doc.toJS()
 

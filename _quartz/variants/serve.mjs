@@ -40,7 +40,13 @@ function send(res, status, file) {
 function serveDir(dir) {
   return (req, res) => {
     const url = new URL(req.url, "http://localhost")
-    let pathname = decodeURIComponent(url.pathname)
+    let pathname
+    try {
+      pathname = decodeURIComponent(url.pathname)
+    } catch {
+      res.writeHead(400).end()
+      return
+    }
     if (pathname.includes("..")) {
       res.writeHead(400).end()
       return
@@ -60,7 +66,7 @@ function serveDir(dir) {
     }
     // Folder page: redirect to trailing slash, as Cloudflare does.
     if (!pathname.endsWith("/") && fs.existsSync(path.join(dir, pathname, "index.html"))) {
-      res.writeHead(307, { location: `${pathname}/${url.search}` }).end()
+      res.writeHead(307, { location: `${url.pathname}/${url.search}` }).end()
       return
     }
     const notFound = path.join(dir, "404.html")

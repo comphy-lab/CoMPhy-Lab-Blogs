@@ -125,6 +125,7 @@ article {
   font-size: clamp(1.8rem, 2.6vw, 2.5rem);
   line-height: 1.2;
   text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 
 .content-meta {
@@ -294,7 +295,9 @@ article iframe {
 }
 
 // Keep long equations readable without widening the article or mobile page.
-article mjx-container.MathJax {
+// The page header carries the hoisted title, which may contain maths too.
+article mjx-container.MathJax,
+.page-header mjx-container.MathJax {
   // MathJax places an inline min-width on aligned equations.
   min-width: 0 !important;
   max-width: 100%;
