@@ -211,11 +211,16 @@ async function injectLink(pageInfo) {
     throw new Error(`Article not found in ${pageInfo.htmlPath}`)
   const article = html.slice(articleStart, articleEnd)
   if (article.includes("Download this page as PDF")) return false
+  // The page title is rendered in the page header, outside <article>, when the
+  // source opens with its own H1. Place the link after an in-article H1 when
+  // there is one, otherwise at the top of the article body.
   const headingEnd = article.indexOf("</h1>")
-  if (headingEnd < 0) throw new Error(`Article title not found in ${pageInfo.htmlPath}`)
+  const articleTagEnd = article.indexOf(">")
+  if (articleTagEnd < 0) throw new Error(`Article tag not closed in ${pageInfo.htmlPath}`)
+  const offset = headingEnd >= 0 ? headingEnd + "</h1>".length : articleTagEnd + 1
   const href = `/_Media/PDF/${pageInfo.pdfRelativePath.split("/").map(encodeURIComponent).join("/")}`
   const callout = `<blockquote class="callout pdf" data-callout="pdf"><div class="callout-title"><div class="callout-title-inner"><p>PDF version</p></div></div><div class="callout-content"><p><a href="${href}">Download this page as PDF</a></p></div></blockquote>`
-  const insertion = articleStart + headingEnd + "</h1>".length
+  const insertion = articleStart + offset
   await writeFile(
     pageInfo.htmlPath,
     `${html.slice(0, insertion)}${callout}${html.slice(insertion)}`,
