@@ -81,26 +81,35 @@ The script handles:
 
 ## Publishing Workflow
 
-Content is managed through tracked public-safe Markdown and media, Obsidian
-Publish at `blogs.comphy-lab.org`, and Git collaboration. The `publish`
-property controls publication; Markdown task lists are not a private operations
-tracker.
+Content is edited as public-safe Markdown in Obsidian and versioned in Git.
+Quartz builds the site from `publish: true` pages; Cloudflare Workers Builds is
+the only production publisher for `blogs.comphy-lab.org` after the cutover.
+GitHub Actions verifies pushes and pull requests but does not deploy. Follow
+[`docs/publishing.md`](docs/publishing.md) for the build and cutover contract.
+Markdown task lists are not a private operations tracker.
+The separate `npm run deploy` command refuses a dirty or stale build before
+calling Wrangler; it is not an atomic lock on remote `main`.
 
-Obsidian Publish owns the application shell and baseline browser policy. This
-repository owns content, local media, `publish.css`, and any deliberately added
-root `publish.js`. Cloudflare response-header overlays are separate live
-configuration. Do not claim that a repository edit changes either provider
-boundary. Follow [`docs/browser-security.md`](docs/browser-security.md) before
-proposing browser-header changes.
+This repository owns content, local media, Quartz configuration and styles.
+Cloudflare owns hosting and response-header configuration; a repository edit
+does not prove a live header change. Follow
+[`docs/browser-security.md`](docs/browser-security.md) before proposing
+browser-header changes.
 
-### Automated PDF copies
+### PDF copies
 
-- Every `publish: true` Markdown file under `Blog/`, `Code-Documentations/`, `Lecture-Notes/` and `Talks/` carries a managed `PDF version` callout below its H1 (or below frontmatter when no H1 exists).
-- Blog PDF paths remain `_Media/PDF/<Markdown-filename>.pdf` for compatibility. Other sections mirror their vault path under `_Media/PDF/`, preventing collisions between nested pages with the same filename.
-- The managed publisher runs `_scripts/blog-pdf/publish-with-pdfs.sh` every 15 minutes.
-- The wrapper publishes current HTML, renders changed live pages with headless Chrome, verifies PDF tagging and text extraction, writes the result to `_Media/PDF/`, performs a second ordinary publish pass, then verifies every live download link.
-- The renderer fingerprints each source, referenced local media and `publish.css`; unchanged pages are not rebuilt.
-- Do not edit generated PDFs manually. Fix the Markdown, media or print CSS and let the publisher rebuild them.
-- `_Media` must remain in the Obsidian Publish include list. Never substitute `ob publish --all`.
+- During `build:cloudflare`, `_quartz/scripts/build-pdfs.mjs` renders every
+  published page in `Blog/`, `Code-Documentations/`, `Lecture-Notes/` and
+  `Talks/` from the local Quartz preview into generated `public/_Media/PDF/`.
+  It adds a missing PDF download link to generated HTML only; source Markdown
+  is unchanged.
+- Blog PDF paths remain `_Media/PDF/<Markdown-filename>.pdf` for compatibility.
+  Other sections mirror their vault path under `_Media/PDF/`, preventing
+  collisions between nested pages with the same filename.
+- The build restarts Wrangler after PDF generation so the final browser gate
+  verifies refreshed HTML, PDF links and PDF bytes. Checked-in PDF copies are
+  retained as source assets, but the build output is the deployed version.
+- The former Obsidian Publish wrapper fails closed. Do not edit generated PDFs
+  manually or describe a PDF as refreshed without a passing build receipt.
 
 The repository supports both individual researchers and collaborative editing through GitHub's issue templates and pull request workflow.

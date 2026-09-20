@@ -16,6 +16,11 @@ npm run plugins:restore   # installs the pinned community plugins
 npm run build
 ```
 
+The production gate is `npm run build:cloudflare` after `npm ci`. It performs
+the plugin restore, type check, unit tests, site build, local-preview PDF
+generation, and full browser suite before returning an artifact to Workers
+Builds. See [publishing](../docs/publishing.md).
+
 Only pages with `publish: true` are emitted. Non-Markdown files under the
 vault (images, PDFs, favicon) are copied as-is, so existing media URLs keep
 working. Folders and files listed under `ignorePatterns` in
@@ -66,28 +71,20 @@ responses must contain PDF bytes. Search navigation, graph rendering, theme,
 previews, mobile navigation, browser history and the real 404 response are also
 checked. Results and screenshots are written to `output/playwright/`.
 
-The **Blog site** GitHub Actions workflow builds and tests every push and pull
-request, including feature branches. It uploads the generated site and browser
-report as workflow artifacts. A failing check prevents the deployment job.
+The **Blog site** GitHub Actions workflow verifies every push and pull request,
+including feature branches, and uploads the browser report and generated site
+as review artifacts. It does not deploy. Native Cloudflare Workers Builds is
+the sole production publisher from `main`; its build command is
+`npm run build:cloudflare`, with `_quartz` as root and `public` as the static
+asset directory. The domain is managed in Cloudflare rather than this file.
+The build command does not deploy directly.
+The separate `npm run deploy` command checks that the generated build receipt,
+clean checkout and freshly read `origin/main` all name the same commit before
+it invokes pinned Wrangler. See [publishing](../docs/publishing.md).
 
-Cloudflare Workers static assets is the hosting target. GitHub Actions is the
-single build/deploy owner; do not also enable Workers Builds for this Worker.
-To enable deployment after reviewing the migration:
-
-1. Add repository/environment secrets `CLOUDFLARE_API_TOKEN` (scoped to Workers
-   deployment in the target account) and `CLOUDFLARE_ACCOUNT_ID`.
-2. Configure the `production` GitHub environment and its desired approvals.
-3. Set repository variable `CLOUDFLARE_DEPLOY_ENABLED` to `true`. Subsequent
-   pushes to `main` deploy the exact artifact that passed the browser suite.
-4. Verify the Worker preview, then attach `blogs.comphy-lab.org` as its custom
-   domain in Cloudflare. Keep the current host available until this cutover is
-   verified, including the existing PDF publishing integration.
-
-The domain is deliberately absent from `wrangler.jsonc`: merging this PR alone
-must not move live traffic. Feature branches build and test but do not replace
-production. To suspend deployment, set the variable to `false`. Cloudflare
-Worker versions provide rollback to a previously verified deployment.
-
-The existing `_scripts/blog-pdf` publisher still targets Obsidian Publish.
-This change serves its checked-in PDFs and does not replace that publisher.
-Repointing PDF generation and retiring the old publisher remain cutover tasks.
+The existing checked-in `_Media/PDF/` files remain in the source repository.
+The build regenerates PDFs from local Quartz pages into `public/_Media/PDF/`,
+refreshes the preview, and checks links and PDF bytes in the browser suite.
+The former Obsidian Publish wrapper fails closed. See
+[publishing](../docs/publishing.md) for the current publication and PDF
+contract.

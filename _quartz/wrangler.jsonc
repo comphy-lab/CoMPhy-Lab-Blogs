@@ -1,9 +1,11 @@
 {
   // Assets-only Worker: no entry script, files only.
   // Local preview: npx wrangler dev --ip 127.0.0.1 --port 8790
-  // Deploy (later, after review): npx wrangler deploy
+  // Production deployments are made by the connected Cloudflare Workers Build.
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "comphy-blogs",
+  "account_id": "5b283a1192f0a78fde6b1f614d2e67fb",
+  "routes": [{ "pattern": "blogs.comphy-lab.org", "custom_domain": true }],
   "compatibility_date": "2026-09-01",
   "assets": {
     "directory": "./public",

@@ -65,23 +65,18 @@ We have templates for different types of issues:
 
 ### PDF versions
 
-Every `publish: true` page in `Blog/`, `Code-Documentations/`, `Lecture-Notes/` and `Talks/` provides a `Download this page as PDF` link near the title. Worthington generates these tagged, text-extractable PDFs from the live Obsidian Publish page and stores them under `_Media/PDF/`. Blog filenames retain their existing flat PDF URLs; the other sections mirror their vault paths beneath `_Media/PDF/`. The HTML page remains the canonical accessible version; the PDF is an alternative format for offline reading and printing.
-
-The tracked implementation is in `_scripts/blog-pdf/`. Generated PDFs should not be edited by hand.
+Published pages in `Blog/`, `Code-Documentations/`, `Lecture-Notes/` and `Talks/` have PDF copies rendered during the Cloudflare site build from the local Quartz HTML. Blog filenames retain their existing flat PDF URLs; other sections mirror their vault paths beneath `_Media/PDF/`. The build adds missing download links to generated HTML, then checks the PDF responses in the browser suite. Source Markdown remains unchanged. The HTML page remains the canonical accessible version; the PDF is an alternative format for offline reading and printing.
 
 ### Browser security
 
-Obsidian Publish serves the application shell and its baseline Content Security
-Policy. This repository owns published content, local media and `publish.css`;
-Cloudflare may apply separately managed response-header rules. The current
-boundary, observed limitations and staged compatibility checks required before
-hardening are documented in [Browser security](docs/browser-security.md).
-GitHub Issue [#3](https://github.com/comphy-lab/comphy-lab-blogs/issues/3)
-remains open; this documentation does not change production headers.
+Quartz builds the application shell from this repository; Cloudflare Workers
+serves it and owns live response headers. The boundary is documented in
+[Browser security](docs/browser-security.md). Repository documentation does not
+change production headers.
 
-Publication is controlled by the `publish` property and Obsidian Publish, not
-by a Markdown task list. Keep private tasks and operational notes out of this
-public repository.
+Publication is controlled by the `publish` property and the
+[Cloudflare build](docs/publishing.md), not by a Markdown task list. Keep
+private tasks and operational notes out of this public repository.
 
 For more detailed information about our blog and documentation structure, see [0_README.md](0_README.md).
 

@@ -19,9 +19,11 @@
     "test": "tsx --test",
     "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1",
     "build": "node quartz/bootstrap-cli.mjs build -d .. -o public",
+    "build:cloudflare": "node scripts/build-cloudflare.mjs",
+    "build:pdfs": "node scripts/build-pdfs.mjs",
     "test:e2e": "node scripts/e2e.mjs",
     "preview": "wrangler dev --ip 127.0.0.1 --port 8790",
-    "deploy": "wrangler deploy",
+    "deploy": "node scripts/deploy-cloudflare.mjs",
     "plugins:restore": "node quartz/bootstrap-cli.mjs plugin restore"
   },
   "engines": {

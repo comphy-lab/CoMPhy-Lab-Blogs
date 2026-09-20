@@ -145,6 +145,10 @@ async function sweep(width) {
           })
           await page.waitForSelector("body[data-slug]", { timeout: 15000 })
           await page.evaluate(() => document.fonts.ready)
+          await page.waitForSelector(".explorer-content a[href]", {
+            state: "attached",
+            timeout: 15000,
+          })
           await page.waitForTimeout(350)
           const data = await page.evaluate(inventory)
           assert(data.heading && data.heading !== "404", "missing article or 404")
@@ -237,7 +241,14 @@ try {
   await page.locator(".result-card").first().waitFor()
   await page.screenshot({ path: join(output, "search.png") })
   await page.locator(".result-card").first().click()
-  await page.waitForTimeout(500)
+  await page.waitForFunction(
+    () => {
+      const slug = document.body.dataset.slug
+      return slug && slug !== "index"
+    },
+    undefined,
+    { timeout: 15000 },
+  )
   assert(!["index", undefined].includes(await page.locator("body").getAttribute("data-slug")))
   report.interactions.searchNavigation = true
   const theme = await page.locator("html").getAttribute("saved-theme")
