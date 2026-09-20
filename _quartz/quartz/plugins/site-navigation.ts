@@ -136,12 +136,15 @@ export const HoistLeadingHeading: QuartzTransformerPlugin = () => ({
         // ArticleTitle renders the frontmatter title as plain text, so only a
         // heading made of text (plus Quartz's anchor link) can move without
         // losing rendered maths, code or emphasis.
+        // Quartz appends an anchor link (with an icon) to every heading; it is
+        // not content.
         const plain = first.children.every(
           (child) =>
             child.type === "text" ||
             (child.type === "element" &&
               child.tagName === "a" &&
-              child.children.every((grandchild) => grandchild.type === "text")),
+              (child.properties?.role === "anchor" ||
+                child.children.every((grandchild) => grandchild.type === "text"))),
         )
         if (!plain) return
         const index = root.children.indexOf(first)
