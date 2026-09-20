@@ -44,7 +44,7 @@ const report = {
 }
 const refs = new Map()
 const ids = new Map()
-const browser = await chromium.launch({ headless: true })
+let browser = await chromium.launch({ headless: true })
 const fail = (scope, error) => report.failures.push({ scope, error: String(error).slice(0, 600) })
 const canonicalPath = (url) =>
   decodeURIComponent(new URL(url, base).pathname).replace(/\/$/, "") || "/"
@@ -134,6 +134,8 @@ async function sweep(width) {
 }
 try {
   await sweep(1280)
+  await browser.close()
+  browser = await chromium.launch({ headless: true })
   await sweep(390)
   // Visit every canonical route through the live SPA, with the existing DOM and
   // history retained. Fresh-document checks alone miss rebasing regressions.
@@ -207,7 +209,7 @@ try {
   assert.notEqual(await page.locator("h1").first().textContent(), "404")
   report.interactions.graphNodeNavigation = true
   await page.goto(base + "/0_README", { waitUntil: "networkidle" })
-  await page.locator("article a.internal").first().hover()
+  await page.locator('article a.internal[href*="2025-JFM-viscous-drop-impact"]').first().hover()
   await page.locator(".popover.active-popover").waitFor()
   report.interactions.popover = true
   await page.setViewportSize({ width: 390, height: 844 })
@@ -273,7 +275,9 @@ try {
   assert.equal(missing.status, 404)
   assert((await missing.text()).includes("404"))
   report.interactions.real404 = true
-  const repaired = await fetch(base + "/Lecture-Notes/Lecture-Notes/Gauss-law-of-Electrostatics")
+  const repaired = await fetch(base + "/Lecture-Notes/Lecture-Notes/Gauss-law-of-Electrostatics", {
+    signal: AbortSignal.timeout(10000),
+  })
   assert.equal(repaired.status, 200)
   assert.equal(new URL(repaired.url).pathname, "/Lecture-Notes/Gauss-law-of-Electrostatics")
   assert((await repaired.text()).includes('data-slug="Lecture-Notes/Gauss-law-of-Electrostatics"'))

@@ -1,5 +1,9 @@
 @use "./base.scss";
 
+article iframe {
+  max-width: 100%;
+}
+
 // Keep long equations readable without widening the article or mobile page.
 article mjx-container.MathJax {
   // MathJax places an inline min-width on aligned equations.

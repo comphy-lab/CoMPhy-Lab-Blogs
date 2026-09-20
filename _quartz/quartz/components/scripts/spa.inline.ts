@@ -197,6 +197,8 @@ function createRouter() {
   })()
 }
 
+// Persisted head resources must retain their original base after SPA navigation.
+normalizeRelativeURLs(document, window.location.href)
 createRouter()
 notifyNav(getFullSlug(window))
 
