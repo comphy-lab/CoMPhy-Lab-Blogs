@@ -68,6 +68,8 @@ body::before {
 }
 
 // Site title: the one place the four-stop brand gradient clips into type.
+// Solid --hero-grad-2 is the fallback; clip and transparent fill apply only
+// when background-clip: text is supported (design-system PR #3).
 .page-title {
   font-family: var(--headerFont);
   font-weight: 600;
@@ -77,6 +79,16 @@ body::before {
   letter-spacing: -0.015em;
   white-space: nowrap;
   & a {
+    color: var(--hero-grad-2);
+  }
+}
+// Beat the shared topbar `color: var(--fg-strong)` so the solid fallback is
+// --hero-grad-2 when background-clip: text is missing.
+.page[data-frame="topbar"] > #quartz-body > .site-topbar .page-title a {
+  color: var(--hero-grad-2);
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .page-title a {
     background: linear-gradient(
       90deg,
       var(--hero-grad-1) 0%,
@@ -87,13 +99,7 @@ body::before {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: transparent;
   }
-}
-:root[saved-theme="dark"] .page-title a {
-  background: linear-gradient(90deg, #ff8f8f 0%, #c58bca 45%, #8fa5ff 55%, #b1a5f0 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
 }
 
 // The reading surface sits on a translucent panel, per the design system.
