@@ -69,6 +69,14 @@
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
   --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.45);
   --shadow-soft: 0 12px 40px rgba(0, 0, 0, 0.5);
+
+  // Hero gradient as type. Lift every stop so clipped display titles stay
+  // readable on --c-paper (#12100d). Light-theme --hero-grad-* are unchanged.
+  // Source: comphy-lab/comphy-design-system PR #3 (0d70847).
+  --hero-grad-1: #ff8a8a;
+  --hero-grad-2: #d99adc;
+  --hero-grad-3: #8aa0ff;
+  --hero-grad-4: #9b8cff;
 }
 
 // ---------------------------------------------------------------------------
