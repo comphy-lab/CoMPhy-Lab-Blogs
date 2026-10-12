@@ -1,10 +1,10 @@
 ---
+title: Computational Multiphase Physics (CoMPhy)
 website: https://blogs-comphy-lab.org/
 status: done ✅
 publish: true
 ---
-# Computational Multiphase Physics <br> (CoMPhy)
-Welcome to the CoMPhy Lab's documentation hub! We are based at the Physics of Fluids Department at the University of Twente, where we explore non-Newtonian free-surface flows and soft matter singularities.
+Welcome to the CoMPhy Lab's documentation hub! We are based at Durham University, UK, in the Condensed Matter Physics section of the Department of Physics, where we explore non-Newtonian free-surface flows and soft matter singularities.
 
 ## About Us
 
