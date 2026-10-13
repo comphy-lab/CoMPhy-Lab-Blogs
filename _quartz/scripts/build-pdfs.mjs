@@ -163,14 +163,23 @@ async function render(browser, pageInfo, options) {
       await document.fonts.ready
       await Promise.all(
         [...document.querySelectorAll("article img")].map(async (image) => {
-          if (!image.complete)
+          // Off-screen figures use loading=lazy. Print layout never scrolls
+          // them into view, so the request never starts and the wait times out.
+          const pending = new Promise((done) => {
+            image.addEventListener("load", done, { once: true })
+            image.addEventListener("error", done, { once: true })
+          })
+          image.loading = "eager"
+          const src = image.getAttribute("src")
+          if (src && !(image.complete && image.naturalWidth)) image.src = src
+          if (!(image.complete && image.naturalWidth))
             await Promise.race([
-              new Promise((done) => {
-                image.addEventListener("load", done, { once: true })
-                image.addEventListener("error", done, { once: true })
-              }),
+              pending,
               new Promise((_, fail) =>
-                setTimeout(() => fail(new Error(`Image timed out: ${image.src}`)), 15000),
+                setTimeout(
+                  () => fail(new Error(`Image timed out: ${image.currentSrc || image.src}`)),
+                  15000,
+                ),
               ),
             ])
           if (!image.naturalWidth) throw new Error(`Image failed to load: ${image.src}`)
