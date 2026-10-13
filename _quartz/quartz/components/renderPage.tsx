@@ -25,6 +25,33 @@ interface RenderComponents {
 }
 
 const headerRegex = new RegExp(/h[1-6]/)
+
+// A page transclude always wants one title. Quartz used to prepend the
+// frontmatter title and also keep a leading H1 from the note, which put two
+// H1s in a row on the home page. Skip the prefix when the note already opens
+// with an H1. Notes that only declare a title in frontmatter still get one.
+export function transcludeNeedsTitle(children: ElementContent[]): boolean {
+  for (const child of children) {
+    if (child.type === "text" && child.value.trim() === "") continue
+    if (child.type !== "element") return true
+    return child.tagName !== "h1"
+  }
+  return true
+}
+
+// The table-of-contents button names `toc-N` while OverflowList stamps `list-N`
+// onto the following list, so aria-controls points at nothing.
+export function alignTocControls(html: string): string {
+  return html.replace(
+    /<button\b[^>]*\btoc-header\b[^>]*>[\s\S]*?<\/button>\s*<ul\b[^>]*>/g,
+    (match) => {
+      const id = match.match(/<ul\b[^>]*\bid="([^"]+)"/)
+      if (!id) return match
+      if (!/\baria-controls="/.test(match)) return match
+      return match.replace(/aria-controls="[^"]*"/, `aria-controls="${id[1]}"`)
+    },
+  )
+}
 export function pageResources(
   baseDir: FullSlug | RelativeURL,
   staticResources: StaticResources,
@@ -192,25 +219,27 @@ function renderTranscludes(
           ]
         } else if (page.htmlAst) {
           // page transclude
+          const embedded = (page.htmlAst.children as ElementContent[]).map((child) =>
+            normalizeHastElement(child as Element, slug, transcludeTarget),
+          )
+          const title: ElementContent = {
+            type: "element",
+            tagName: "h1",
+            properties: {},
+            children: [
+              {
+                type: "text",
+                value:
+                  page.frontmatter?.title ??
+                  i18n(cfg.locale).components.transcludes.transcludeOf({
+                    targetSlug: page.slug!,
+                  }),
+              },
+            ],
+          }
           node.children = [
-            {
-              type: "element",
-              tagName: "h1",
-              properties: {},
-              children: [
-                {
-                  type: "text",
-                  value:
-                    page.frontmatter?.title ??
-                    i18n(cfg.locale).components.transcludes.transcludeOf({
-                      targetSlug: page.slug!,
-                    }),
-                },
-              ],
-            },
-            ...(page.htmlAst.children as ElementContent[]).map((child) =>
-              normalizeHastElement(child as Element, slug, transcludeTarget),
-            ),
+            ...(transcludeNeedsTitle(embedded) ? [title] : []),
+            ...embedded,
             {
               type: "element",
               tagName: "a",
@@ -295,5 +324,5 @@ export function renderPage(
     </html>
   )
 
-  return "<!DOCTYPE html>\n" + render(doc)
+  return alignTocControls("<!DOCTYPE html>\n" + render(doc))
 }

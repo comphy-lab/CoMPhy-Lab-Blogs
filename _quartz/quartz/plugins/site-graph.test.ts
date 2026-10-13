@@ -81,9 +81,10 @@ test("an async graph init that loses an SPA navigation is destroyed", async () =
       )
     },
     querySelectorAll(selector: string) {
-      if (selector === ".graph-container") return [graph]
-      if (selector === ".global-graph-outer") return []
-      if (selector === ".global-graph-icon") return []
+      if (selector === ".global-graph-outer" || selector === ".global-graph-icon") return []
+      if (selector === ".graph-container" || selector === ".graph-outer, .graph-container") {
+        return [graph]
+      }
       return []
     },
     documentElement: {},

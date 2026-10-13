@@ -13,9 +13,9 @@ export const MinimalFrame: PageFrame = {
   render({ componentData, pageBody: Content, footer: Footer }: PageFrameProps) {
     return (
       <>
-        <div class="center minimal">
+        <main class="center minimal">
           <Content {...componentData} />
-        </div>
+        </main>
         <Footer {...componentData} />
       </>
     )

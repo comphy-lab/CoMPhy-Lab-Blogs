@@ -184,7 +184,10 @@ ul.toc-content.overflow > li > a {
   display: block;
   padding-block: 0.25rem;
   line-height: 1.45;
-  opacity: 0.8;
+  // Opacity 0.8 on --fg-2 blends to #7f7568 (3.94:1). Full strength clears 4.5:1
+  // in both themes without changing the hue.
+  opacity: 1;
+  color: var(--fg-2);
   font-weight: 400;
 
   &.in-view {
@@ -396,9 +399,9 @@ article mjx-container.MathJax,
   }
 }
 
-// The landing page (index.md) transcludes 0_README.md. Quartz prefixes a
-// transclusion with the embedded page's title; the README has its own H1, so
-// hide the duplicate and the quotation border on that one embed.
+// The landing page (index.md) transcludes 0_README.md. Drop the quotation
+// border so the hub reads as the page itself. The prefixed title is omitted
+// in renderPage when the embedded page already opens with an H1.
 .transclude[data-url="0_README"] {
   border-left: none;
   padding-left: 0;
