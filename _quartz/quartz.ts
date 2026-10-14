@@ -2,6 +2,7 @@ import { loadQuartzConfig } from "./quartz/plugins/loader/config-loader"
 import { VaultLinks, SafeAliasRedirects } from "./quartz/plugins/site-links"
 import { configureSiteNavigation } from "./quartz/plugins/site-navigation"
 import { GraphAssets } from "./quartz/plugins/site-graph-assets"
+import { ContentImages, installMathLabels } from "./quartz/plugins/site-media"
 import { SiteHead, fontPreloads } from "./quartz/plugins/site-head"
 import { frameRegistry } from "./quartz/components/frames/registry"
 import { TopbarFrame } from "./quartz/components/frames/SiteFrames"
@@ -19,6 +20,8 @@ const crawlIndex = config.plugins.transformers.findIndex(
 )
 if (crawlIndex < 0) throw new Error("CrawlLinks is required for vault link resolution")
 config.plugins.transformers.splice(crawlIndex, 0, VaultLinks())
+installMathLabels(config.plugins.transformers)
+config.plugins.transformers.push(ContentImages())
 const aliasIndex = config.plugins.emitters.findIndex((plugin) => plugin.name === "AliasRedirects")
 if (aliasIndex < 0) throw new Error("AliasRedirects is required for safe alias routing")
 config.plugins.emitters[aliasIndex] = SafeAliasRedirects()

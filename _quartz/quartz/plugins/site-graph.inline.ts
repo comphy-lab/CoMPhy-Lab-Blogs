@@ -19,13 +19,54 @@ import {
     })
   }
 
-  Promise.all([loadScript("/static/graph/d3.min.js"), loadScript("/static/graph/pixi.min.js")])
-    .then(function () {
-      initGraph()
-    })
-    .catch(function (err) {
-      console.error("[Graph] Failed to load libraries:", err)
-    })
+  // Pixi and D3 are about a megabyte. Load them when a graph is on screen.
+  // Pages where the rail is below the article (mobile) then paint the title
+  // without parsing those libraries. Desktop rails are in view, so the graph
+  // still starts immediately. The libraries themselves stay; trimming their
+  // unused coverage would drop drag, zoom and hover code the audit never runs.
+  var librariesStarted = false
+  var graphObserver = null
+  function loadLibraries() {
+    if (librariesStarted) return
+    librariesStarted = true
+    if (graphObserver) {
+      graphObserver.disconnect()
+      graphObserver = null
+    }
+    Promise.all([loadScript("/static/graph/d3.min.js"), loadScript("/static/graph/pixi.min.js")])
+      .then(function () {
+        initGraph()
+      })
+      .catch(function (err) {
+        console.error("[Graph] Failed to load libraries:", err)
+      })
+  }
+  function watchGraphs() {
+    if (librariesStarted) return
+    var nodes = document.querySelectorAll(".graph-outer, .graph-container")
+    if (!nodes.length) return
+    if (typeof IntersectionObserver !== "function") {
+      loadLibraries()
+      return
+    }
+    if (!graphObserver) {
+      graphObserver = new IntersectionObserver(
+        function (entries) {
+          for (var i = 0; i < entries.length; i++) {
+            if (entries[i].isIntersecting) {
+              loadLibraries()
+              return
+            }
+          }
+        },
+        { rootMargin: "120px 0px" },
+      )
+    }
+    for (var i = 0; i < nodes.length; i++) graphObserver.observe(nodes[i])
+  }
+  watchGraphs()
+  document.addEventListener("nav", watchGraphs)
+  document.addEventListener("render", watchGraphs)
 
   function initGraph() {
     var d3 = window.d3

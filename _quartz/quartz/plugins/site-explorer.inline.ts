@@ -8,14 +8,32 @@ if (!explorerWindow.comphyExplorerControlsReady) {
 
   const isMobile = () => window.matchMedia("(max-width: 800px)").matches
 
+  function setExpanded(element: HTMLElement, expanded: boolean) {
+    const next = expanded ? "true" : "false"
+    // Setting the same value still notifies a MutationObserver in this browser
+    // and retriggers this sync. The page then never paints.
+    if (element.getAttribute("aria-expanded") !== next) {
+      element.setAttribute("aria-expanded", next)
+    }
+  }
+
+  function clearExpanded(element: Element | null) {
+    if (element?.hasAttribute("aria-expanded")) element.removeAttribute("aria-expanded")
+  }
+
   function syncExplorer(explorer: HTMLElement) {
     const expanded = !explorer.classList.contains("collapsed")
     const content = explorer.querySelector<HTMLElement>(".explorer-content")
-    content?.setAttribute("aria-expanded", String(expanded))
-    explorer.setAttribute("aria-expanded", String(expanded))
+    // The explorer root is a plain div. aria-expanded is only valid on the toggle button.
+    clearExpanded(explorer)
+    clearExpanded(content)
     explorer.querySelectorAll<HTMLButtonElement>(".explorer-toggle").forEach((button) => {
-      button.setAttribute("aria-expanded", String(expanded))
-      button.setAttribute("aria-label", expanded ? "Close navigation" : "Open navigation")
+      setExpanded(button, expanded)
+      // The desktop toggle already contains the visible word "Explorer".
+      // Replacing that name with "Close navigation" fails the accessible-name
+      // check. The icon-only mobile toggle still needs a name.
+      if (button.classList.contains("desktop-explorer")) button.removeAttribute("aria-label")
+      else button.setAttribute("aria-label", expanded ? "Close navigation" : "Open navigation")
       if (content?.id) button.setAttribute("aria-controls", content.id)
     })
   }
@@ -41,7 +59,7 @@ if (!explorerWindow.comphyExplorerControlsReady) {
       ?.textContent?.trim()
     icon.setAttribute("role", "button")
     icon.setAttribute("tabindex", "0")
-    icon.setAttribute("aria-expanded", String(open))
+    setExpanded(icon, open)
     icon.setAttribute("aria-label", `${open ? "Collapse" : "Expand"} ${title || "folder"}`)
   }
 
@@ -68,9 +86,18 @@ if (!explorerWindow.comphyExplorerControlsReady) {
     }
   }
 
+  function syncToc() {
+    document.querySelectorAll<HTMLButtonElement>("button.toc-header").forEach((button) => {
+      const list = button.parentElement?.querySelector("ul.toc-content")
+      if (list instanceof HTMLElement && list.id) button.setAttribute("aria-controls", list.id)
+      else button.removeAttribute("aria-controls")
+    })
+  }
+
   function annotateControls() {
     document.querySelectorAll<HTMLElement>(".explorer").forEach(syncExplorer)
     document.querySelectorAll<HTMLElement>(".explorer .folder-icon").forEach(syncFolder)
+    syncToc()
   }
 
   document.addEventListener(
@@ -119,8 +146,12 @@ if (!explorerWindow.comphyExplorerControlsReady) {
     subtree: true,
     childList: true,
     attributes: true,
-    attributeFilter: ["class"],
+    attributeFilter: ["class", "aria-expanded"],
   })
+  // Quartz's explorer script sets aria-expanded on the root div during nav,
+  // after our synchronous pass. Strip it on the next microtask.
+  document.addEventListener("nav", () => queueMicrotask(annotateControls))
+  document.addEventListener("render", () => queueMicrotask(annotateControls))
   annotateControls()
 
   // Keep wide equations at a readable size, with an explicit scroll affordance

@@ -368,9 +368,12 @@ article .callout {
   box-shadow: var(--shadow-soft);
 }
 
-// Footer.
+// Footer. The plugin fades the whole footer to 70% opacity, which blends
+// --fg-2 into #8e8478 on --c-paper (3.2:1). --fg-3 at full strength is still
+// 3.75:1. Solid --fg-2 is 6.2:1 in light and 5.9:1 in dark.
 footer {
-  color: var(--fg-3);
+  color: var(--fg-2);
+  opacity: 1;
   font-size: 0.8rem;
   & a {
     color: var(--fg-2);
