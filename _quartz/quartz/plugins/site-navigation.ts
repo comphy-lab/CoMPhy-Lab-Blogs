@@ -14,16 +14,98 @@ import { visit } from "unist-util-visit"
 interface ExplorerNode {
   slugSegment?: string
   slugSegments?: string[]
+  isFolder?: boolean
+  displayName?: string
+  data?: { slug?: string } | null
 }
 
 // The Explorer serialises this function into its browser script, so it must
-// contain no references to module variables or closures.
-export function showInExplorer(node: ExplorerNode): boolean {
+// contain no references to module variables or closures. `unlisted` holds the
+// slugs of published pages that are reached only through links.
+export function showInExplorer(node: ExplorerNode, unlisted: string[] = []): boolean {
   if (node.slugSegment === "tags") return false
+  if (node.data?.slug && unlisted.includes(node.data.slug)) return false
   return !(
     node.slugSegments?.length === 1 &&
     (node.slugSegment === "_AtomicNotes" || node.slugSegment === "0_README")
   )
+}
+
+// Lecture notes run in course order from their numeric filename prefix
+// (0-README, 1-…, 1.5-…, 2-…, 7-8-…), not alphabetically by title. Folders stay
+// first; everything outside Lecture-Notes keeps Quartz's title order.
+// Serialised into the browser like showInExplorer: keep it self-contained.
+export function sortExplorer(a: ExplorerNode, b: ExplorerNode): number {
+  if (Boolean(a.isFolder) !== Boolean(b.isFolder)) return a.isFolder ? -1 : 1
+  const aMatch =
+    !a.isFolder && a.slugSegments?.[0] === "Lecture-Notes"
+      ? /^(\d+(?:\.\d+)?)/.exec(a.slugSegment ?? "")
+      : null
+  const bMatch =
+    !b.isFolder && b.slugSegments?.[0] === "Lecture-Notes"
+      ? /^(\d+(?:\.\d+)?)/.exec(b.slugSegment ?? "")
+      : null
+  if (aMatch && !bMatch) return -1
+  if (!aMatch && bMatch) return 1
+  if (aMatch && bMatch && Number(aMatch[1]) !== Number(bMatch[1])) {
+    return Number(aMatch[1]) - Number(bMatch[1])
+  }
+  const aKey = aMatch ? (a.slugSegment ?? "") : (a.displayName ?? "")
+  const bKey = bMatch ? (b.slugSegment ?? "") : (b.displayName ?? "")
+  return aKey.localeCompare(bKey, undefined, { numeric: true, sensitivity: "base" })
+}
+
+// Browser source for the Explorer filter with the unlisted slugs inlined.
+export function explorerFilterSource(unlisted: string[]): string {
+  return `(node) => (${showInExplorer.toString()})(node, ${JSON.stringify(unlisted)})`
+}
+
+export function lectureNumber(slug: string | undefined): number | undefined {
+  const segments = (slug ?? "").split("/")
+  const name = segments.at(-1)
+  if (segments[0] !== "Lecture-Notes" || !name || name === "index") return undefined
+  const match = /^(\d+(?:\.\d+)?)/.exec(name)
+  return match ? Number(match[1]) : undefined
+}
+
+interface ListedPage {
+  slug?: string
+  frontmatter?: Record<string, unknown>
+}
+
+// Pages marked `unlisted: true` stay published and linkable but are left out
+// of the Explorer and folder listings (for example homework answers that the
+// lecture itself links to).
+export function isUnlisted(page: ListedPage | null | undefined): boolean {
+  return page?.frontmatter?.unlisted === true
+}
+
+export function unlistedSlugs(pages: readonly unknown[] | undefined): string[] {
+  return ((pages ?? []) as ListedPage[])
+    .filter((page) => isUnlisted(page) && typeof page.slug === "string")
+    .map((page) => page.slug!)
+    .sort()
+}
+
+// Folder listings: folders first, numbered lecture notes in course order, then
+// the remaining pages in `fallback` order.
+export function courseOrder<T extends ListedPage>(
+  fallback: (a: T, b: T) => number,
+): (a: T, b: T) => number {
+  return (a, b) => {
+    const aFolder = (a.slug ?? "").endsWith("/index")
+    const bFolder = (b.slug ?? "").endsWith("/index")
+    if (aFolder !== bFolder) return aFolder ? -1 : 1
+    const aNumber = lectureNumber(a.slug)
+    const bNumber = lectureNumber(b.slug)
+    if (aNumber !== undefined && bNumber === undefined) return -1
+    if (aNumber === undefined && bNumber !== undefined) return 1
+    if (aNumber !== undefined && bNumber !== undefined) {
+      if (aNumber !== bNumber) return aNumber - bNumber
+      return (a.slug ?? "").localeCompare(b.slug ?? "", undefined, { numeric: true })
+    }
+    return fallback(a, b)
+  }
 }
 
 export function folderTitle(slug: string): string {
@@ -62,6 +144,10 @@ export function matchTocToRenderedHeadings(
   const ids: string[] = []
   visit(root, "element", (node) => {
     if (!/^h[12]$/.test(node.tagName)) return
+    // GFM adds a screen-reader "Footnotes" heading that has no Markdown source.
+    const classes = node.properties?.className
+    const srOnly = Array.isArray(classes) && classes.includes("sr-only")
+    if (node.properties?.id === "footnote-label" && srOnly) return
     const id = node.properties?.id
     if (typeof id === "string") ids.push(id)
   })
@@ -164,6 +250,69 @@ export const HoistLeadingHeading: QuartzTransformerPlugin = () => ({
   },
 })
 
+interface DatedPage extends ListedPage {
+  dates?: Record<string, Date | undefined>
+}
+
+// Quartz's folder default: newest first, then title.
+export function byDateThenTitle(dateType: string): (a: DatedPage, b: DatedPage) => number {
+  return (a, b) => {
+    const aTime = a.dates?.[dateType]?.getTime()
+    const bTime = b.dates?.[dateType]?.getTime()
+    if (aTime !== undefined && bTime === undefined) return -1
+    if (aTime === undefined && bTime !== undefined) return 1
+    if (aTime !== undefined && bTime !== undefined && aTime !== bTime) return bTime - aTime
+    const aTitle = String(a.frontmatter?.title ?? "").toLowerCase()
+    const bTitle = String(b.frontmatter?.title ?? "").toLowerCase()
+    return aTitle.localeCompare(bTitle)
+  }
+}
+
+interface FolderTrie {
+  data: unknown
+  children: FolderTrie[]
+  findNode(path: string[]): FolderTrie | undefined
+}
+
+// The folder-page plugin sorts by date unless it is given a sort function,
+// which its YAML options cannot express. Rebuild its body from the same plugin
+// module with course order, and hide unlisted pages from the listing.
+async function courseFolderContent(dateType: string): Promise<QuartzComponentConstructor> {
+  const { getPluginEntryPoint, parsePluginSource, toFileUrl } = await import("./loader/gitLoader")
+  const spec = parsePluginSource("github:quartz-community/folder-page")
+  const module = (await import(toFileUrl(getPluginEntryPoint(spec.name, spec.subdir)))) as {
+    FolderContent?: QuartzComponentConstructor<{ sort?: (a: DatedPage, b: DatedPage) => number }>
+  }
+  const FolderContent = module.FolderContent
+  if (typeof FolderContent !== "function") {
+    throw new Error("Required Quartz FolderContent component did not load")
+  }
+  return () => {
+    const source = FolderContent({ sort: courseOrder(byDateThenTitle(dateType)) })
+    const component: QuartzComponent = (props) => {
+      const trie = (props.ctx as { trie?: FolderTrie }).trie
+      if (!trie) {
+        return source({ ...props, allFiles: props.allFiles.filter((file) => !isUnlisted(file)) })
+      }
+      const listed: Pick<FolderTrie, "findNode"> = {
+        findNode(path) {
+          const folder = trie.findNode(path)
+          if (!folder) return undefined
+          return {
+            ...folder,
+            children: folder.children.filter((child) => !isUnlisted(child.data as ListedPage)),
+          }
+        },
+      }
+      return source({ ...props, ctx: { ...props.ctx, trie: listed } as typeof props.ctx })
+    }
+    component.css = source.css
+    component.beforeDOMLoaded = source.beforeDOMLoaded
+    component.afterDOMLoaded = source.afterDOMLoaded
+    return component
+  }
+}
+
 export async function configureSiteNavigation(config: QuartzConfig): Promise<{
   defaults: Partial<FullPageLayout>
   byPageType: Record<string, Partial<FullPageLayout>>
@@ -183,6 +332,7 @@ export async function configureSiteNavigation(config: QuartzConfig): Promise<{
       ...page,
       title: folderTitle(page.slug),
     }))
+  folderPage.body = await courseFolderContent(config.configuration.defaultDateType ?? "created")
 
   const frontmatterIndex = config.plugins.transformers.findIndex(
     (transformer) => transformer.name === "NoteProperties",
@@ -204,18 +354,28 @@ export async function configureSiteNavigation(config: QuartzConfig): Promise<{
     throw new Error("Required Quartz Explorer component did not load")
   }
   const originalExplorer = explorer.component as QuartzComponentConstructor<{
-    filterFn?: typeof showInExplorer
+    filterFn?: (node: ExplorerNode) => boolean
+    sortFn?: typeof sortExplorer
   }>
   // @ts-expect-error Quartz's inline-script loader imports this browser module as text.
   const { default: explorerControls } = await import("./site-explorer.inline.ts")
   componentRegistry.register(
     "explorer",
-    (options: { filterFn?: typeof showInExplorer }) => {
-      const component = originalExplorer({
-        ...options,
-        filterFn: showInExplorer,
+    (options: { filterFn?: (node: ExplorerNode) => boolean; sortFn?: typeof sortExplorer }) => {
+      // The Explorer serialises filterFn with toString() while rendering, so
+      // the unlisted slugs of the page being rendered are inlined there.
+      let unlisted: string[] = []
+      const filterFn = Object.assign((node: ExplorerNode) => showInExplorer(node, unlisted), {
+        toString: () => explorerFilterSource(unlisted),
       })
-      component.afterDOMLoaded = [component.afterDOMLoaded, explorerControls]
+      const source = originalExplorer({ ...options, filterFn, sortFn: sortExplorer })
+      const component: QuartzComponent = (props) => {
+        unlisted = unlistedSlugs(props.allFiles)
+        return source(props)
+      }
+      component.css = source.css
+      component.beforeDOMLoaded = source.beforeDOMLoaded
+      component.afterDOMLoaded = [source.afterDOMLoaded, explorerControls]
         .flat()
         .filter((script): script is string => typeof script === "string")
       return component

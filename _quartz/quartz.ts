@@ -3,6 +3,7 @@ import { VaultLinks, SafeAliasRedirects } from "./quartz/plugins/site-links"
 import { configureSiteNavigation } from "./quartz/plugins/site-navigation"
 import { GraphAssets } from "./quartz/plugins/site-graph-assets"
 import { ContentImages, installMathLabels } from "./quartz/plugins/site-media"
+import { ObsidianMath } from "./quartz/plugins/site-math"
 import { SiteHead, fontPreloads } from "./quartz/plugins/site-head"
 import { frameRegistry } from "./quartz/components/frames/registry"
 import { TopbarFrame } from "./quartz/components/frames/SiteFrames"
@@ -22,6 +23,8 @@ if (crawlIndex < 0) throw new Error("CrawlLinks is required for vault link resol
 config.plugins.transformers.splice(crawlIndex, 0, VaultLinks())
 installMathLabels(config.plugins.transformers)
 config.plugins.transformers.push(ContentImages())
+// After Obsidian callouts are split, so equations inside callouts are promoted too.
+config.plugins.transformers.push(ObsidianMath())
 const aliasIndex = config.plugins.emitters.findIndex((plugin) => plugin.name === "AliasRedirects")
 if (aliasIndex < 0) throw new Error("AliasRedirects is required for safe alias routing")
 config.plugins.emitters[aliasIndex] = SafeAliasRedirects()

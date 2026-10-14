@@ -3,8 +3,11 @@
 The repository is the publication source. Obsidian remains a Markdown editor;
 Obsidian Publish is not the HTML host. Quartz reads this vault directly and
 emits only Markdown pages with `publish: true`. Linked `_AtomicNotes` pages keep
-their routes even though they are hidden from the primary navigation. Tracked
-media, including existing PDFs, is copied into the static site.
+their routes even though they are hidden from the primary navigation. A page
+with `unlisted: true` is likewise published but left out of the Explorer and
+folder listings. Lecture notes with a numeric filename prefix are listed in
+numeric course order (1, 1.5, 1.75, 2, …). Tracked media, including existing
+PDFs, is copied into the static site.
 
 ## Production build
 

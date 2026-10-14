@@ -160,6 +160,11 @@ article {
     padding-top: 1.25rem;
     border-top: 1px solid var(--c-border);
   }
+  // Section headings carry their own rule; a Markdown `---` just before one
+  // would draw a second line.
+  & hr:has(+ h2) {
+    display: none;
+  }
   & h3 {
     font-size: 1.25rem;
   }
@@ -248,7 +253,9 @@ li.section-li {
   & > .section {
     & .meta {
       @extend %eyebrow;
-      color: var(--fg-3);
+      // --fg-3 falls to about 2.4:1 on the dark card surface.
+      color: var(--fg-2);
+      opacity: 1;
       margin: 0;
     }
     & h3 {

@@ -100,6 +100,15 @@ article {
     & .callout-title-inner > p {
       color: var(--darkgray);
     }
+
+    // The content sits in a grid track; long addresses and lists must wrap
+    // inside it on phones instead of being clipped.
+    & .callout-content {
+      overflow-wrap: anywhere;
+      & > * {
+        min-width: 0;
+      }
+    }
   }
 
   .callout[data-callout="pdf"] {
@@ -297,6 +306,16 @@ input:focus-visible {
 
 article iframe {
   max-width: 100%;
+}
+
+// Pasted YouTube embeds carry width="560" height="315". Once max-width shrinks
+// them on a phone the fixed height letterboxes the player; keep 16:9 instead.
+article iframe[src*="youtube.com/embed"],
+article iframe[src*="youtube-nocookie.com/embed"] {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  aspect-ratio: 16 / 9;
 }
 
 // Keep long equations readable without widening the article or mobile page.

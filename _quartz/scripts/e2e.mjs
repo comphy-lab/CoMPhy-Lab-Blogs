@@ -40,10 +40,13 @@ const sourceFiles = await globby("**/*.md", {
   cwd: "..",
   ignore: config.configuration.ignorePatterns,
 })
+const unlisted = new Set()
 for (const file of sourceFiles) {
-  const published = matter(readFileSync(join("..", file), "utf8")).data.publish === true
+  const frontmatter = matter(readFileSync(join("..", file), "utf8")).data
+  const published = frontmatter.publish === true
   const slug = slugifyFilePath(file)
   assert.equal(Object.hasOwn(index, slug), published, `Publication inventory mismatch: ${file}`)
+  if (published && frontmatter.unlisted === true) unlisted.add("/" + slug)
 }
 const pages = files.filter((f) => f.endsWith(".html") && f !== "404.html")
 const report = {
@@ -83,6 +86,19 @@ const inventory = () => ({
       centreOffset: Math.abs(title.top + title.height / 2 - link.top - link.height / 2),
     }
   }),
+  // The content box (clientWidth/Height exclude the theme's image border) must
+  // keep the image's own aspect ratio; before it loads, the build's width and
+  // height attributes stand in for it.
+  distortedImages: [...document.querySelectorAll("article img[width][height]")]
+    .filter((img) => {
+      if (!img.clientWidth || !img.clientHeight) return false
+      const declared = img.naturalWidth
+        ? img.naturalWidth / img.naturalHeight
+        : Number(img.getAttribute("width")) / Number(img.getAttribute("height"))
+      const expected = img.clientWidth / declared
+      return Math.abs(img.clientHeight - expected) > Math.max(1.5, 0.02 * expected)
+    })
+    .map((img) => img.getAttribute("src")),
   navigation: [...document.querySelectorAll(".explorer-content a")].map((a) => ({
     text: a.textContent,
     href: a.getAttribute("href"),
@@ -171,6 +187,11 @@ async function sweep(width) {
             !data.navigation.some((a) => /^Folder:/.test(a.text ?? "")),
             "folder navigation has a redundant prefix",
           )
+          assert.deepEqual(data.distortedImages, [], "image aspect ratio distorted")
+          assert(
+            !data.navigation.some((a) => unlisted.has(a.href ?? "")),
+            "unlisted page leaked into primary navigation",
+          )
           const expected = Object.keys(index).find((slug) => route(slug + ".html") === route(file))
           if (expected) assert.equal(data.slug, expected, "canonical page overwritten by alias")
           if (expected && !expected.startsWith("tags/") && !expected.endsWith("/index")) {
@@ -234,6 +255,32 @@ try {
   await page.goBack({ waitUntil: "domcontentloaded" })
   await page.waitForFunction(() => document.body.dataset.slug === "Lecture-Notes/index")
   report.interactions.gaussAndHistory = true
+
+  // Lecture notes keep course order (1, 1.5, 2, 2.5, …) in the folder listing
+  // and in the Explorer, independent of titles and dates.
+  await page.goto(base + "/Lecture-Notes/Intro-Soft-Matter/", { waitUntil: "networkidle" })
+  await page.waitForSelector(".explorer-content a[href*='Intro-Soft-Matter/']", {
+    state: "attached",
+  })
+  const lectureOrder = await page.evaluate(() => {
+    const numbers = (selector) =>
+      [...document.querySelectorAll(selector)]
+        .map((a) => /Intro-Soft-Matter\/(\d+(?:\.\d+)?)[^/]*$/.exec(a.getAttribute("href") ?? ""))
+        .filter(Boolean)
+        .map((match) => Number(match[1]))
+    return {
+      listing: numbers(".page-listing .section-li h3 a.internal"),
+      explorer: numbers(".explorer-content a[href*='Intro-Soft-Matter/']"),
+    }
+  })
+  for (const [where, numbers] of Object.entries(lectureOrder)) {
+    assert(numbers.length > 5, `${where}: lecture links missing`)
+    assert(
+      numbers.every((n, i) => i === 0 || numbers[i - 1] <= n),
+      `${where}: lectures out of course order (${numbers.join(", ")})`,
+    )
+  }
+  report.interactions.lectureOrder = true
 
   await page.goto(base, { waitUntil: "networkidle" })
   await page.locator(".search button").first().click()

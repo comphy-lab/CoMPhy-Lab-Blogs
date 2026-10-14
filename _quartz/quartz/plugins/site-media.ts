@@ -54,6 +54,69 @@ function positiveInteger(value: unknown): boolean {
   return Number.isInteger(number) && number > 0
 }
 
+interface ImageSize {
+  width?: number
+  height?: number
+}
+
+// Obsidian sizes a Markdown image through its alt text: ![caption|750](x.png)
+// or ![|640x480](x.png). Split the size off so it is not announced as alt text.
+export function obsidianImageSize(alt: string): ImageSize & { alt: string } {
+  const match = /^(.*?)\s*\|\s*(\d+)(?:x(\d+))?\s*$/.exec(alt)
+  if (!match) return { alt }
+  const width = Number(match[2])
+  const height = match[3] ? Number(match[3]) : undefined
+  if (!positiveInteger(width)) return { alt }
+  return { alt: match[1]!, width, ...(height && positiveInteger(height) ? { height } : {}) }
+}
+
+// Keep the author's requested size and fill the missing dimension from the
+// intrinsic aspect ratio, so the reserved box never distorts the image. A
+// requested width and height together are a box the image fits inside.
+export function displaySize(
+  natural: { width: number; height: number },
+  requested: ImageSize,
+): { width: number; height: number } {
+  if (requested.width && requested.height) {
+    const scale = Math.min(requested.width / natural.width, requested.height / natural.height)
+    return {
+      width: Math.round(natural.width * scale),
+      height: Math.round(natural.height * scale),
+    }
+  }
+  if (requested.width) {
+    return {
+      width: requested.width,
+      height: Math.round((requested.width * natural.height) / natural.width),
+    }
+  }
+  if (requested.height) {
+    return {
+      width: Math.round((requested.height * natural.width) / natural.height),
+      height: requested.height,
+    }
+  }
+  return { width: natural.width, height: natural.height }
+}
+
+function requestedSize(element: Element): ImageSize {
+  const size: ImageSize = {}
+  const alt = element.properties?.alt
+  if (typeof alt === "string") {
+    const parsed = obsidianImageSize(alt)
+    if (parsed.width) {
+      element.properties = { ...element.properties, alt: parsed.alt }
+      size.width = parsed.width
+      if (parsed.height) size.height = parsed.height
+    }
+  }
+  const width = element.properties?.width
+  const height = element.properties?.height
+  if (positiveInteger(width)) size.width = Number(width)
+  if (positiveInteger(height)) size.height = Number(height)
+  return size
+}
+
 export function imagePresentation(index: number): {
   loading: "eager" | "lazy"
   decoding: "async"
@@ -169,11 +232,18 @@ export const ContentImages: QuartzTransformerPlugin = () => ({
           if (element.tagName !== "img") return
           const src = element.properties?.src
           if (typeof src !== "string") return
+          // Raw HTML that already declares both dimensions is left as written.
           if (
             positiveInteger(element.properties?.width) &&
             positiveInteger(element.properties?.height)
           ) {
             return
+          }
+          const requested = requestedSize(element)
+          if (requested.width)
+            element.properties = { ...element.properties, width: requested.width }
+          if (requested.height) {
+            element.properties = { ...element.properties, height: requested.height }
           }
           const vaultPath = contentImageVaultPath(slug, src)
           if (!vaultPath) return
@@ -188,11 +258,15 @@ export const ContentImages: QuartzTransformerPlugin = () => ({
                 if (!metadata.width || !metadata.height) return
                 const destination = path.join(output, webpSrc(vaultPath))
                 await ensureWebp(absolute, destination)
+                const size = displaySize(
+                  { width: metadata.width, height: metadata.height },
+                  requested,
+                )
                 element.properties = {
                   ...element.properties,
                   src: webpSrc(src),
-                  width: metadata.width,
-                  height: metadata.height,
+                  width: size.width,
+                  height: size.height,
                   loading: presentation.loading,
                   decoding: presentation.decoding,
                   ...(presentation.fetchPriority

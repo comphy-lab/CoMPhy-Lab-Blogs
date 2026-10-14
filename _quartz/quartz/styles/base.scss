@@ -602,6 +602,13 @@ img {
   content-visibility: auto;
 }
 
+// Width and height attributes reserve layout space; without this the attribute
+// height survives max-width shrinking and distorts the image. A height-only
+// image keeps its requested height.
+img[width] {
+  height: auto;
+}
+
 p > img + em {
   display: block;
   transform: translateY(-1rem);

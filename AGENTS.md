@@ -42,6 +42,12 @@ website: https://blogs.comphy-lab.org/your-post-url
 - Wiki-style links: `[[post-name]]` and `[[post-name|alias]]`
 - Image embedding: `![[_Media/filename.png]]`
 - Callouts: `> [!note]`, `> [!tldr]`, `> [!important]`
+- Image size: `![caption|750](path.png)` sets the display width; the height follows the image's aspect ratio
+- Display maths follows Obsidian: `$$…$$` always renders as display maths, and a fence sharing its line with TeX (`$$\begin{cases}` … `\end{cases}$$`) is split onto its own line at build time (`_quartz/quartz/plugins/site-math.ts`). Use single `$…$` for inline maths
+
+### Lecture notes
+- Files in `Lecture-Notes/` with a numeric filename prefix (`0-README`, `1-…`, `1.5-…`, `2-…`, `7-8-…`) are listed in that numeric order in the Explorer and folder pages
+- Add `unlisted: true` to a published page that should be reached only through links (for example homework answers); it stays published but is left out of the Explorer and folder listings. Link it from the lecture that uses it
 
 ## Development Commands
 

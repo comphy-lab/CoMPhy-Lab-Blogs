@@ -1,6 +1,13 @@
 import { test } from "node:test"
 import assert from "node:assert/strict"
-import { contentImageVaultPath, imagePresentation, labelRenderedMath, webpSrc } from "./site-media"
+import {
+  contentImageVaultPath,
+  displaySize,
+  imagePresentation,
+  labelRenderedMath,
+  obsidianImageSize,
+  webpSrc,
+} from "./site-media"
 import type { Root } from "hast"
 
 test("content images resolve from the article directory onto the vault", () => {
@@ -22,6 +29,22 @@ test("webp sources keep the same relative location", () => {
     webpSrc("../_Media/JFM-viscous-drop-impact-blog-1740211513533.jpg"),
     "../_Media/JFM-viscous-drop-impact-blog-1740211513533.webp",
   )
+})
+
+test("Obsidian alt-text sizes split from the caption", () => {
+  assert.deepEqual(obsidianImageSize("|750"), { alt: "", width: 750 })
+  assert.deepEqual(obsidianImageSize("Shell | 640x480"), { alt: "Shell", width: 640, height: 480 })
+  assert.deepEqual(obsidianImageSize("fig1"), { alt: "fig1" })
+  assert.deepEqual(obsidianImageSize("a|b"), { alt: "a|b" })
+})
+
+test("display sizes keep the intrinsic aspect ratio", () => {
+  const natural = { width: 2656, height: 1716 }
+  assert.deepEqual(displaySize(natural, {}), natural)
+  assert.deepEqual(displaySize(natural, { width: 750 }), { width: 750, height: 485 })
+  assert.deepEqual(displaySize(natural, { height: 429 }), { width: 664, height: 429 })
+  assert.deepEqual(displaySize(natural, { width: 100, height: 100 }), { width: 100, height: 65 })
+  assert.deepEqual(displaySize(natural, { width: 1000, height: 300 }), { width: 464, height: 300 })
 })
 
 test("only the first content image stays eager", () => {
