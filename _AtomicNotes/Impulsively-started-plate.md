@@ -25,10 +25,12 @@ publish: true
 A semi-infinite fluid initially at rest. At $t=0$, a plate at $y=0$ suddenly moves with velocity $u_0$.
 
 Initial and Boundary Conditions:
-$$\begin{align}
+$$
+\begin{align}
 \vec{u}(x,y,t=0) &= 0 \\
 \text{At } t = 0^{+}, \quad u(y=0) &= u_0
-\end{align}$$
+\end{align}
+$$
 
 ---
 
@@ -75,11 +77,13 @@ where $\nu = \mu/\rho$ is the kinematic viscosity.
 
 ## Boundary Conditions
 
-$$\begin{align}
+$$
+\begin{align}
 u(y,0) &= 0 \quad \text{(initially at rest)} \\
 u(0,t) &= u_0 \quad \text{(plate velocity)} \\
 u(\infty,t) &= 0 \quad \text{(far-field BC)}
-\end{align}$$
+\end{align}
+$$
 
 ---
 
@@ -144,19 +148,23 @@ This is an ordinary differential equation for $F(\eta)$.
 
 The original boundary conditions become:
 
-$$\begin{align}
+$$
+\begin{align}
 \eta = \frac{y}{2\sqrt{\nu t}} &\quad \Rightarrow \quad \begin{cases}
 t = 0: & \eta \to \infty \\
 y \to \infty: & \eta \to \infty \\
 y = 0: & \eta = 0
 \end{cases}
-\end{align}$$
+\end{align}
+$$
 
 Therefore:
-$$\begin{align}
+$$
+\begin{align}
 F(\eta \to \infty) &= 0 \\
 F(\eta = 0) &= 1
-\end{align}$$
+\end{align}
+$$
 
 ---
 
@@ -207,15 +215,15 @@ $$\boxed{F(\eta) = 1 - \frac{2}{\sqrt{\pi}} \int_0^{\eta} e^{-s^2} \, ds}$$
 ### Error Function Representation
 
 The error function is defined as:
-$$\erf(\eta) = \frac{2}{\sqrt{\pi}} \int_0^{\eta} e^{-s^2} \, ds$$
+$$\operatorname{erf}(\eta) = \frac{2}{\sqrt{\pi}} \int_0^{\eta} e^{-s^2} \, ds$$
 
 Therefore:
 
-$$\boxed{F(\eta) = 1 - \erf(\eta)}$$
+$$\boxed{F(\eta) = 1 - \operatorname{erf}(\eta)}$$
 
-or equivalently, using the complementary error function $\erfc(\eta) = 1 - \erf(\eta)$:
+or equivalently, using the complementary error function $\operatorname{erfc}(\eta) = 1 - \operatorname{erf}(\eta)$:
 
-$$\boxed{\frac{u}{u_0} = \erfc\left(\frac{y}{2\sqrt{\nu t}}\right) = 1 - \erf\left(\frac{y}{2\sqrt{\nu t}}\right)}$$
+$$\boxed{\frac{u}{u_0} = \operatorname{erfc}\left(\frac{y}{2\sqrt{\nu t}}\right) = 1 - \operatorname{erf}\left(\frac{y}{2\sqrt{\nu t}}\right)}$$
 
 ---
 

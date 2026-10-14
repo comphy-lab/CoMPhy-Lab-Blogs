@@ -10,12 +10,7 @@ status: done ✅
 publish: true
 ---
 
-<!-- PDF-EXPORT-IGNORE-START -->
-> [!info] 📄 PDF Version
-> [Download PDF](./3-Soft-Matter-Instabilities.pdf)
-<!-- PDF-EXPORT-IGNORE-END -->
-
-# Lecture 3 —
+# Lecture 3: Soft Matter Instabilities
 
 <!-- BLOG-PDF-LINK-START -->
 <!-- PDF-EXPORT-IGNORE-START -->
@@ -24,15 +19,13 @@ publish: true
 <!-- PDF-EXPORT-IGNORE-END -->
 <!-- BLOG-PDF-LINK-END -->
 
-# Soft‑matter instabilities
-
-### 0) Why talk about instability?
+## 0) Why talk about instability?
 
 Patterns are everywhere: dunes and ripples, icicle ribs, dew beads on spider webs, hexagonal cracks in drying mud. Their regularity—despite messy materials—signals robust mechanisms. In fluids (and soft solids), instabilities often set the pattern scale and shape by amplifying tiny disturbances into organized structures. Our goal today is to recognize those mechanisms and the forces that select length and time scales.
 
 ---
 
-### 1) Stability in one picture
+## 1) Stability in one picture
 
 Think of a bead in a landscape: at the bottom of a well (stable), on a flat shelf (neutral), or on a hilltop (unstable). 
 
@@ -47,7 +40,7 @@ Where do disturbances come from? Ambient vibrations, thermal fluctuations, surfa
 
 ---
 
-### 2) What to identify in any instability
+## 2) What to identify in any instability
 
 1. Base state: the simplest flow/interface we’d like to hold (a cylinder of liquid, a flat film, two fluids sliding past each other).
 2. Competing forces: inertia, viscosity, gravity, surface tension, and sometimes elasticity (soft matter).
@@ -64,10 +57,9 @@ In words of James Clerk Maxwell
 
 ---
 
-##
-### 3) Core examples you can recognize in the lab
+## 3) Core examples you can recognize in the lab
 
-#### (i) Rayleigh–Plateau (cylindrical thread → droplets)
+### (i) Rayleigh–Plateau (cylindrical thread → droplets)
 
 Mechanism. A small bulge on a liquid thread lowers capillary pressure locally; liquid is drawn from the necks toward the bulge, further enlarging it—positive feedback. Surface tension itself is the _driver_ (seeking to reduce area) yet also damps very short ripples, so a fastest‑growing wavelength emerges and sets droplet spacing. In inviscid limits, that spacing is order‑ten radii (qualitative memory worth keeping).
 
@@ -84,7 +76,7 @@ Cressey, D. 365 days: Images of the year. Nature 516, 304–309 (2014) - image t
     </iframe>
 </div>
 
-#### (ii) Kelvin–Helmholtz (shear across an interface → billows)
+### (ii) Kelvin–Helmholtz (shear across an interface → billows)
 
 Mechanism. Two fluids sliding past each other create a vorticity sheet at the interface. A ripple tilts that sheet and rolls it up into billows; shear feeding exceeds restoring forces. Surface tension and density contrast stabilize short waves and set a threshold for onset and a preferred scale.
 
@@ -93,7 +85,7 @@ What to look for. In counter‑flowing layers (or the “flag flapping” movie 
 ![](../../_Media/Lecture3-Instabilities-1761842604089.png)
 
 
-#### (iii) Rayleigh–Taylor (heavy‑over‑light → spikes & bubbles)
+### (iii) Rayleigh–Taylor (heavy‑over‑light → spikes & bubbles)
 
 Mechanism. Gravity pulls a heavy fluid down through a light one; a downward dent increases the hydrostatic pressure drop there and accelerates further—positive feedback. Surface tension stabilizes short waves; the competition picks a dominant wavelength. Thin‑film variants (heavy film above air) yield honeycomb/hexagonal hole patterns.
 
@@ -102,23 +94,17 @@ Image by Shengtai Li, Hui Li - "Parallel AMR Code for Compressible MHD or HD Equ
 
 
 
-#### (iv) Faraday waves (vertical vibration → subharmonic surface patterns)
+### (iv) Faraday waves (vertical vibration → subharmonic surface patterns)
 
 Mechanism. Parametric forcing periodically modulates the effective gravity; the flat surface becomes unstable to standing waves at half the drive frequency. Hexagons/stripes are common near onset. Use this as a canonical example of parametric (not spontaneous) instability and _pattern selection near threshold_.
 
-<div style="text-align: center;">
-    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0d_D6yvXAFo?si=oLZxGjb-EvhSI2Wi" 
-        title="YouTube video player" frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-    </iframe>
-</div>
+Video: [Run, Faraday, Run](https://www.youtube.com/watch?v=0d_D6yvXAFo) (American Physical Society, on YouTube).
 
-
-#### (v) Rayleigh–Bénard–Marangoni (heated film → rolls/hexagons)
+### (v) Rayleigh–Bénard–Marangoni (heated film → rolls/hexagons)
 
 Mechanism. Heating from below (buoyancy) or surface‑tension gradients along a free surface (Marangoni) drive cellular convection. Thin layers emphasize Marangoni; thicker ones emphasize buoyancy, flipping flow directions inside the cells. Amplitude/envelope equations near onset rationalize which planforms (rolls, hexagons) persist.
 
+<!-- Video 6sW5rWcWfkQ is private on YouTube (checked 2026-10-14); replace with a public Rayleigh–Bénard–Marangoni clip.
 <div style="text-align: center;">
     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6sW5rWcWfkQ?si=7IoOPp9aYS6_I2a8" 
         title="YouTube video player" frameborder="0" 
@@ -126,9 +112,10 @@ Mechanism. Heating from below (buoyancy) or surface‑tension gradients along a 
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
     </iframe>
 </div>
+-->
 
 
-#### (vi) Saffman–Taylor (viscous fingering in Hele‑Shaw cells)
+### (vi) Saffman–Taylor (viscous fingering in Hele‑Shaw cells)
 
 Mechanism. A less viscous fluid pushing a more viscous one creates a pressure‑gradient focusing at finger tips (“tip effect”). Any protrusion experiences larger local pressure gradient and advances faster—runaway growth—while surface tension blunts the tip and limits short waves. Capillary number ($Ca = \eta U/\gamma$) summarizes the competition; channel geometry further selects finger width and number. In radial injection, secondary instabilities (tip‑splitting/side‑branching) govern the branching morphology.
 
@@ -141,7 +128,7 @@ Mechanism. A less viscous fluid pushing a more viscous one creates a pressure‑
 </div>
 
 
-#### (vii) Viscous coiling & “fluid mechanical sewing machine”
+### (vii) Viscous coiling & “fluid mechanical sewing machine”
 
 Mechanism. A falling viscous thread buckles and coils from a balance of gravity, bending, stretching, and surface tension; on a moving belt the contact‑point dynamics introduce memory and rich states (coils, meanders, W‑patterns). Linear stability alone is insufficient—nonlinear, geometry‑driven dynamics dominate far from threshold.
 
@@ -157,7 +144,7 @@ Mechanism. A falling viscous thread buckles and coils from a balance of gravity,
 
 ---
 
-### 4) How to “predict” without doing heavy math
+## 4) How to “predict” without doing heavy math
 
 
 1. Force balance & scales. Ask which pair of effects compete: inertia vs capillarity (Weber number), viscous vs capillarity (capillary number), inertia vs viscosity (Reynolds number), gravity vs capillarity (Bond number), elasticity vs capillarity (elastocapillary mumber) or inertia in soft materials (elasticity number). These dimensionless groups flag likely instabilities and the direction of selection.
@@ -180,9 +167,15 @@ The dispersion relation, $\sigma$ is the growth rate and $k$ the wave vector, is
 
 ---
 
-### 5) From “avoid” to “use”: harnessing instabilities
+## 5) From “avoid” to “use”: harnessing instabilities
 
 Engineers used to fear instabilities as failure modes. Soft‑matter physics repurposes them as fabrication tools: microfluidic emulsification (controlled Rayleigh–Plateau), capillarity‑guided assembly of nanopillars (elastocapillary coalescence), and other self‑organization pathways. The mindset shift is to select initial/boundary conditions so the _natural_ instability builds the desired pattern. The inverse problem—choosing those conditions up‑front—is still an open research space. See: P-T. Brun, Shape formation in interfacial flows, Phys. Rev. Fluids, 9:11, 110501 (2024). [DOI: 10.1103/PhysRevFluids.9.110501](https://doi.org/10.1103/PhysRevFluids.9.110501)
+
+---
+
+**Previous Lecture:** [[2.5-Conservation-Laws|Lecture 2.5: From Newton's Laws to Conservation Equations]]<br>
+**Next Lecture:** [[4-Soft-Matter-Singularities|Lecture 4: Soft Matter Singularities]]<br>
+**Course Home:** [[0-README|Course Overview]]
 
 > [!significance]- Metadata
 > Author:: [Vatsal Sanjay](https://vatsalsanjay.com)<br>

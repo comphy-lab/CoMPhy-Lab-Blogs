@@ -15,11 +15,6 @@ status: done ✅
 publish: true
 ---
 
-<!-- PDF-EXPORT-IGNORE-START -->
-> [!info] 📄 PDF Version
-> [Download PDF](./2-What-is-Viscosity.pdf)
-<!-- PDF-EXPORT-IGNORE-END -->
-
 # Lecture 2: Viscosity and Momentum Diffusion
 
 <!-- BLOG-PDF-LINK-START -->
@@ -239,10 +234,11 @@ $$\boxed{b \approx C_{\text{acc}} \lambda, \quad C_{\text{acc}} \approx 1-2}$$
 
 ### Connecting Bulk Viscosity to Wall Shear
 
-Key Insight:
+Key Insight: The same $\eta$ that represents bulk momentum diffusion also sets the wall shear rate:
 
-$$\boxed{\text{The same } \eta \text{ that represents bulk momentum diffusion also sets the wall shear rate:}}$$
-$$\boxed{\tau_{\text{wall}} = \eta \frac{\partial u_x}{\partial y}\bigg|_{\text{wall}} = \text{rate at which wall removes x-momentum}}$$
+$$
+\boxed{\tau_{\text{wall}} = \eta \frac{\partial u_x}{\partial y}\bigg|_{\text{wall}} = \text{rate at which wall removes } x\text{-momentum}}
+$$
 
 ---
 
@@ -394,6 +390,10 @@ Understanding why momentum diffusion acts as a dissipative force (damping) is ce
 6. Continuum equation mirrors diffusion. The PDE $\partial u/\partial t = \nu \partial^2 u/\partial y^2$ is the Navier–Stokes momentum equation in its simplest form. Recognizing $\nu$ as a diffusivity (not just a material property) unifies understanding.
 
 ---
+
+**Previous Lecture:** [[1.5-Taylor-Culick-Paradox|Lecture 1.5: The Taylor–Culick Paradox]]<br>
+**Next Lecture:** [[2.5-Conservation-Laws|Lecture 2.5: From Newton's Laws to Conservation Equations]]<br>
+**Course Home:** [[0-README|Course Overview]]
 
 > [!significance]- Metadata
 > Author:: [Vatsal Sanjay](https://vatsalsanjay.com)<br>

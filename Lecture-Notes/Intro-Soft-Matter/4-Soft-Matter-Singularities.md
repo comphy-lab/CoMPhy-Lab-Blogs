@@ -9,11 +9,8 @@ date: 2025-11-05
 status: done ✅
 publish: true
 ---
-<!-- PDF-EXPORT-IGNORE-START -->
-> [!info] 📄 PDF Version
-> [Download PDF](./4-Soft-Matter-Singularities.pdf)
-<!-- PDF-EXPORT-IGNORE-END -->
-# Lecture 4 —
+
+# Lecture 4: Soft Matter Singularities
 
 <!-- BLOG-PDF-LINK-START -->
 <!-- PDF-EXPORT-IGNORE-START -->
@@ -22,26 +19,24 @@ publish: true
 <!-- PDF-EXPORT-IGNORE-END -->
 <!-- BLOG-PDF-LINK-END -->
 
-# Soft Matter Singularities
-
 > [!tldr] TL;DR
-> A singularity is when a smooth physical process “blows up” $—$ something finite becomes infinite in a finite time or at a finite place.
+> A singularity is when a smooth physical process “blows up” — something finite becomes infinite in a finite time or at a finite place.
 
 ![](../../_Media/4-Soft-Matter-Singularities-1762960099435.png)
 *A water droplet detaching from a faucet forms a thinning neck that will pinch off. Just before separation, the neck radius shrinks rapidly and the curvature (and capillary pressure) blows up. The pinch-off singularity produces one main drop and often a tiny satellite drop left behind.[^dripping-image]*
 
-### 0) What is a singularity in soft matter?
+## 0) What is a singularity in soft matter?
 
-A singularity is when a smooth physical process `blows up` $-$ some quantity that is normally finite becomes effectively infinite in a finite time or at a finite location. In soft matter flows, singularities often signal dramatic events: a droplet pinches off, a bubble collapses, or a moving contact line generates enormous stresses. These singular moments are fascinating because they mark the breakdown of our usual approximations (continuum equations, smooth interfaces), yet they often exhibit universal behavior (independent of initial details). Understanding singularities helps us see where and why our fluid or material model needs new physics (like microscopic cutoffs), and how nature resolves the apparent paradox of infinities in a real system.
+A singularity is when a smooth physical process “blows up” — some quantity that is normally finite becomes effectively infinite in a finite time or at a finite location. In soft matter flows, singularities often signal dramatic events: a droplet pinches off, a bubble collapses, or a moving contact line generates enormous stresses. These singular moments are fascinating because they mark the breakdown of our usual approximations (continuum equations, smooth interfaces), yet they often exhibit universal behavior (independent of initial details). Understanding singularities helps us see where and why our fluid or material model needs new physics (like microscopic cutoffs), and how nature resolves the apparent paradox of infinities in a real system.
 
-This lecture builds on earlier ones: the film rupture energy paradox in [[1.5-Taylor-Culick-Paradox|Bridge 1.5]] hinted that proper momentum accounting resolves infinities; the no-slip condition from [[2-What-is-Viscosity|Lecture 2]] will be central to our discussion of moving contact lines; and the instabilities in [[3-Soft-Matter-Instabilities|Lecture 3]] often end in singular pinch-off events. Now we zoom in on those finite-time, `life or death` moments of soft matter systems.
+This lecture builds on earlier ones: the film rupture energy paradox in [[1.5-Taylor-Culick-Paradox|Bridge 1.5]] hinted that proper momentum accounting resolves infinities; the no-slip condition from [[2-What-is-Viscosity|Lecture 2]] will be central to our discussion of moving contact lines; and the instabilities in [[3-Soft-Matter-Instabilities|Lecture 3]] often end in singular pinch-off events. Now we zoom in on those finite-time, “life or death” moments of soft matter systems.
 
-### 1) Pinch-off singularities: when a fluid thread breaks
+## 1) Pinch-off singularities: when a fluid thread breaks
 
 
 **Mechanism.** Imagine water dripping from a faucet. Surface tension pulls the droplet neck thinner and thinner until it ruptures, separating the drop (gravity-driven) from the remaining fluid. Just before breakup, the radius of the neck approaches zero, causing the curvature (and thus capillary pressure) to skyrocket. 
 
-In an `ideal mathematical description`, certain quantities (pressure, fluid velocity near the neck) tend toward infinity at the pinch point. This is a finite-time singularity $–$ the equations (like Navier–Stokes) themselves remain intact, but their solution develops a blow-up (the interface develops a sharp cusp and then detaches). Importantly, very close to breakup, the shape of the neck often becomes self-similar $–$ the fluid profile "zooms in" on a universal form regardless of the starting drop size.[^eggers1997] This means the pinch-off process has a kind of memory loss: everything but the local physics (inertia, viscosity, surface tension) washes out.
+In an “ideal mathematical description”, certain quantities (pressure, fluid velocity near the neck) tend toward infinity at the pinch point. This is a finite-time singularity — the equations (like Navier–Stokes) themselves remain intact, but their solution develops a blow-up (the interface develops a sharp cusp and then detaches). Importantly, very close to breakup, the shape of the neck often becomes self-similar — the fluid profile "zooms in" on a universal form regardless of the starting drop size.[^eggers1997] This means the pinch-off process has a kind of memory loss: everything but the local physics (inertia, viscosity, surface tension) washes out.
 
 ![](../../_Media/4-Soft-Matter-Singularities-1762960009091.png)
 
@@ -56,19 +51,19 @@ $$r \sim t$$
 
 In either case, as the thread radius becomes extremely small, eventually some microscopic cutoff intervenes: for a Newtonian fluid this might simply be that the continuum assumption breaks at nano-scales, or impurities trigger the final break. The "singularity" is thus avoided in reality, but just barely, and the laws of motion pass through that event by producing new droplets[^eggers1997] (the Navier–Stokes solution can sometimes be continued through the singular moment in an ideal scenario).
 
-**Satellites and universality.** Often, pinch-off leaves behind a tiny satellite drop in addition to the main drop. This satellite formation is part of a secondary break-up that can itself display self-similar behavior $–$ a cascade of singular events. Indeed, high-speed imaging and theory show that pinch-off can produce nested sequences of singularities where each subsequent thread break is a smaller copy of the last (a form of discrete scale invariance).[^eggers1997] Near the singularity, the governing equations simplify (certain terms dominate), and we can often find scaling laws and similarity solutions that describe the dynamics universally.
+**Satellites and universality.** Often, pinch-off leaves behind a tiny satellite drop in addition to the main drop. This satellite formation is part of a secondary break-up that can itself display self-similar behavior — a cascade of singular events. Indeed, high-speed imaging and theory show that pinch-off can produce nested sequences of singularities where each subsequent thread break is a smaller copy of the last (a form of discrete scale invariance).[^eggers1997] Near the singularity, the governing equations simplify (certain terms dominate), and we can often find scaling laws and similarity solutions that describe the dynamics universally.
 
 ![](../../_Media/4-Soft-Matter-Singularities-1763535973289.png)
 *Time evolution of a highly extended fluid suspended in another fluid. The viscosity ratio is 0.067, and the dimensionless wave number is 0.5. The times the snapshots were taken are shown in the middle.[^1]*
 
 > [!note] Finite-time singularities are "predictable" in form
-> A beautiful aspect of pinch-off events is that they forget the messy world around them. No matter if your drop comes from a pipette, faucet, or leaking roof, the final shape of the neck and the speed of breakup will tend to follow the same scaling laws (set by fluid properties like viscosity, density, surface tension). This universality means we can compare experiments, simulations, and theory on equal footing[^eggers1997] $–$ a triumph of the singularity analysis.
+> A beautiful aspect of pinch-off events is that they forget the messy world around them. No matter if your drop comes from a pipette, faucet, or leaking roof, the final shape of the neck and the speed of breakup will tend to follow the same scaling laws (set by fluid properties like viscosity, density, surface tension). This universality means we can compare experiments, simulations, and theory on equal footing[^eggers1997] — a triumph of the singularity analysis.
 
 ![](../../_Media/4-Soft-Matter-Singularities-1762960047460.png)
 
 ![](../../_Media/4-Soft-Matter-Singularities-1762960060765.png)
 
-**Bubble pinch-off and Worthington jet.** A closely related singular event occurs when a bubble of air pinches off underwater (for example, an underwater air bubble rising and detaching, or the cavity behind an object closing up). The physics is analogous to drop pinch-off $–$ the neck of the air cavity pinches to zero radius. In the case of a bubble pinch-off, however, the collapse can be so violent that the surrounding liquid rushes in along the symmetry axis and shoots upward as a fast Worthington jet. If you've seen a drop of water fall into a pool and a thin jet spike up $–$ that's the result of a singular cavity collapse focusing energy into a jet. Here the singularity manifests as a burst of kinetic energy: extremely high speeds and even shock-like features in the liquid. In fact, the pressures in such collapse events can be enormous (cavitation collapse near a solid can even pit metal). The formation of the Worthington jet is a reminder that singularities often transmit energy across scales $–$ focusing a large-scale motion into a very fine jet. (Interestingly, the jet itself can break into drops $–$ another pinch-off $–$ showing how one singularity can lead to another!)
+**Bubble pinch-off and Worthington jet.** A closely related singular event occurs when a bubble of air pinches off underwater (for example, an underwater air bubble rising and detaching, or the cavity behind an object closing up). The physics is analogous to drop pinch-off — the neck of the air cavity pinches to zero radius. In the case of a bubble pinch-off, however, the collapse can be so violent that the surrounding liquid rushes in along the symmetry axis and shoots upward as a fast Worthington jet. If you've seen a drop of water fall into a pool and a thin jet spike up — that's the result of a singular cavity collapse focusing energy into a jet. Here the singularity manifests as a burst of kinetic energy: extremely high speeds and even shock-like features in the liquid. In fact, the pressures in such collapse events can be enormous (cavitation collapse near a solid can even pit metal). The formation of the Worthington jet is a reminder that singularities often transmit energy across scales — focusing a large-scale motion into a very fine jet. (Interestingly, the jet itself can break into drops — another pinch-off — showing how one singularity can lead to another!)
 
 <div style="text-align: center;">
     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7HNv5cLObTY?si=kt1bMeC41jI9AHT-" 
@@ -95,14 +90,14 @@ In either case, as the thread radius becomes extremely small, eventually some mi
 </div>
 
 
-### 2) Moving contact line: the no-slip paradox and its resolution
+## 2) Moving contact line: the no-slip paradox and its resolution
 
 ![](../../_Media/4-Soft-Matter-Singularities-1763537416977.png)
 
-**The contact line singularity.** Consider a liquid spreading on a solid surface – for example, a drop of water advancing across glass plate. The contact line is the edge where solid, liquid, and gas meet. In equilibrium, this line sits still with a well-defined contact angle ([Young–Dupré angle](https://en.wikipedia.org/wiki/Wetting), set by surface tensions and surface chemistry). But what about a moving contact line, when the drop spreads? Classical fluid dynamics has a nasty prediction: if you assume a no-slip boundary condition (fluid at the solid sticks to it, as we learned in [[2-What-is-Viscosity|Lecture 2]]), a moving contact line would demand the fluid velocity go to zero right at the solid, but far away it's moving $–$ this creates a shearing in fluid all the way down to the molecular scale. The result is an integrable divergence in stress and an infinite energy dissipation rate in the vicinity of the contact line. 
+**The contact line singularity.** Consider a liquid spreading on a solid surface – for example, a drop of water advancing across glass plate. The contact line is the edge where solid, liquid, and gas meet. In equilibrium, this line sits still with a well-defined contact angle ([Young–Dupré angle](https://en.wikipedia.org/wiki/Wetting), set by surface tensions and surface chemistry). But what about a moving contact line, when the drop spreads? Classical fluid dynamics has a nasty prediction: if you assume a no-slip boundary condition (fluid at the solid sticks to it, as we learned in [[2-What-is-Viscosity|Lecture 2]]), a moving contact line would demand the fluid velocity go to zero right at the solid, but far away it's moving — this creates a shearing in fluid all the way down to the molecular scale. The result is an integrable divergence in stress and an infinite energy dissipation rate in the vicinity of the contact line. 
 
 > [!note] Note
-> A fluid with no-slip would need infinite force to move a contact line $–$ a nonsensical prediction known as the moving contact line paradox (first pointed out by Huh & Scriven in 1971[^2]).
+> A fluid with no-slip would need infinite force to move a contact line — a nonsensical prediction known as the moving contact line paradox (first pointed out by Huh & Scriven in 1971[^2]).
 
 
 
@@ -114,7 +109,7 @@ for a flow speed $U$ at distance $r$ from the contact line,
 
 $$\int \eta U^2 \frac{dr}{r}$$ 
 
-diverges as $r \to 0$ (and also as $r \to \infty$ if the disturbance extends far).[^degennes1985] Physically, the no-slip condition anchors the fluid at the wall, so any motion of the interface requires ever thinner layers of fluid shearing near the contact line $–$ leading to a blow-up in viscous stresses. The paradox is stark: with no-slip, a contact line cannot move (or requires infinite force to do so). Yet in reality, drops do slide and spread $–$ so what gives?
+diverges as $r \to 0$ (and also as $r \to \infty$ if the disturbance extends far).[^degennes1985] Physically, the no-slip condition anchors the fluid at the wall, so any motion of the interface requires ever thinner layers of fluid shearing near the contact line — leading to a blow-up in viscous stresses. The paradox is stark: with no-slip, a contact line cannot move (or requires infinite force to do so). Yet in reality, drops do slide and spread — so what gives?
 
 <div style="text-align: center;">
     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RGlF4fiSf5g?si=G19Fof3bv36Maq-b" 
@@ -129,11 +124,11 @@ diverges as $r \to 0$ (and also as $r \to \infty$ if the disturbance extends far
 
 **Regularization by microscopic physics.** The resolution is that no real system has an ideal no-slip all the way down to molecular scales. Something must give at small scales to cut off the singularity. There are two classic ways to regularize (allow finite energy dissipation):
 
-1. **Navier slip**: The fluid is allowed to slip past the solid within a tiny length $\lambda_s$ of the contact line. Essentially, replace no-slip with a boundary condition $u_{\text{fluid}} - u_{\text{solid}} = \beta \tau$ relating slip velocity to shear stress (Navier condition), or think of a molecular "slide" at the wall. This slip length $\lambda_s$ might be on the order of nanometers to microns, but it relieves the infinite shear at $r=0$ by not pinning the fluid completely.[^lecture4pdf] Viscous dissipation no longer diverges because very close to the contact line the fluid can move.
+1. **Navier slip**: The fluid is allowed to slip past the solid within a tiny length $\lambda_s$ of the contact line. Essentially, replace no-slip with a boundary condition $u_{\text{fluid}} - u_{\text{solid}} = \beta \tau$ relating slip velocity to shear stress (Navier condition), or think of a molecular "slide" at the wall. This slip length $\lambda_s$ might be on the order of nanometers to microns, but it relieves the infinite shear at $r=0$ by not pinning the fluid completely. Viscous dissipation no longer diverges because very close to the contact line the fluid can move.
 
 ![](../../_Media/4-Soft-Matter-Singularities-1763537371241.png)
 
-2. **Precursor film (or disjoining pressure)**: Ahead of the apparent contact line, imagine a thin film of liquid (maybe a few molecules thick) that "pre-wets" the solid. Then there is really no contact line at molecular scales $–$ the apparent contact line is just where the film thickness goes from nanometers to macroscopically zero. A disjoining pressure (from van der Waals forces, etc.) in that thin film can allow the contact angle to adjust without a singular wedge of fluid forming.[^precursor-diagram] Essentially, the moving interface rides on a lubricating wetting film, avoiding a sharp three-phase junction.
+2. **Precursor film (or disjoining pressure)**: Ahead of the apparent contact line, imagine a thin film of liquid (maybe a few molecules thick) that "pre-wets" the solid. Then there is really no contact line at molecular scales — the apparent contact line is just where the film thickness goes from nanometers to macroscopically zero. A disjoining pressure (from van der Waals forces, etc.) in that thin film can allow the contact angle to adjust without a singular wedge of fluid forming.[^precursor-diagram] Essentially, the moving interface rides on a lubricating wetting film, avoiding a sharp three-phase junction.
 
 > [!tip] Other cutoffs
 > In some cases, other physics can play a role. For instance, if the liquid is a polymer melt or has some shear-thinning behavior, the effective viscosity near the contact line might drop (reducing dissipation). Or if the liquid evaporates at the contact line, a microvapor layer could ease motion. Bottom line: something must break the continuum + no-slip + sharp interface assumptions at small scale. Soft matter often involves multiple scales, and the contact line singularity is a prime example where molecular-scale details (surface chemistry, slip, etc.) impact a macroscale behavior (spreading).
@@ -142,16 +137,16 @@ diverges as $r \to 0$ (and also as $r \to \infty$ if the disturbance extends far
 
 $$\theta^3 = \theta_{\rm eq}^3 + 9 \, (\eta U/\gamma)\ln(L/\ell_{\text{micro}})$$ 
 
-for a viscous wetting situation (here $\theta_{\rm eq}$ is the equilibrium angle, $\gamma$ is the surface tension coefficient and $\eta$ is the viscosity). Don't worry about the formula details, but note the $\theta^3$ dependence and the logarithm: the contact angle shifts with speed, and it does so slowly (logarithmically with the ratio of a macroscopic length $L$ to the microscopic cutoff $\ell_{\text{micro}}$). This law (derived by combining lubrication theory with either slip or precursor film models) was confirmed by experiments and simulations. It tells us that even though the true angle right at the contact line might always be $0^\circ$ for a perfectly wetting liquid (if we zoom to molecular scale, the interface is almost flat), the apparent macroscopic angle increases with speed $–$ a dynamic effect.
+for a viscous wetting situation (here $\theta_{\rm eq}$ is the equilibrium angle, $\gamma$ is the surface tension coefficient and $\eta$ is the viscosity). Don't worry about the formula details, but note the $\theta^3$ dependence and the logarithm: the contact angle shifts with speed, and it does so slowly (logarithmically with the ratio of a macroscopic length $L$ to the microscopic cutoff $\ell_{\text{micro}}$). This law (derived by combining lubrication theory with either slip or precursor film models) was confirmed by experiments and simulations. It tells us that even though the true angle right at the contact line might always be $0^\circ$ for a perfectly wetting liquid (if we zoom to molecular scale, the interface is almost flat), the apparent macroscopic angle increases with speed — a dynamic effect.
 
-In our lectures, this connects back to [[2-What-is-Viscosity|Lecture 2]]: the no-slip condition, a cornerstone of continuum viscous flow, fails dramatically at a moving contact line. Soft matter systems often live at the intersection of continuum and molecular physics; here we must invoke molecular length scales to repair continuum theory. As de Gennes famously discussed,[^degennes1985] each decade of length scale contributes equally to the dissipation $–$ so cutting off the last few decades ($\text{nm}$ to $\mu\text{m}$) spares us an infinite sum (but, is it physical?). Snoeijer & Andreotti (2013)[^snoeijer2013] provide a modern review of how different regimes of wetting (viscous, capillary, etc.) navigate this multiscale problem.
+In our lectures, this connects back to [[2-What-is-Viscosity|Lecture 2]]: the no-slip condition, a cornerstone of continuum viscous flow, fails dramatically at a moving contact line. Soft matter systems often live at the intersection of continuum and molecular physics; here we must invoke molecular length scales to repair continuum theory. As de Gennes famously discussed,[^degennes1985] each decade of length scale contributes equally to the dissipation — so cutting off the last few decades ($\text{nm}$ to $\mu\text{m}$) spares us an infinite sum (but, is it physical?). Snoeijer & Andreotti (2013)[^snoeijer2013] provide a modern review of how different regimes of wetting (viscous, capillary, etc.) navigate this multiscale problem.
 
 ![](../../_Media/4-Soft-Matter-Singularities-1763559996509.png)
 *A "beads-on-a-string" structure forming in a thinning saliva bridge, which is a viscoelastic fluid. Here, polymers in saliva (mucins) resist the capillary-driven singular pinch-off, causing a long thread to persist with droplets (beads) along it.[^saliva-image] In a Newtonian fluid like water, the thinning thread would break more quickly and cleanly. Viscoelasticity thus delays the singularity, spreading it out in time.* <a href="https://commons.wikimedia.org/wiki/File:Saliva_Thread.jpg">Bavand Keshavarz</a>, <a href="https://creativecommons.org/licenses/by/4.0">CC BY 4.0</a>, via Wikimedia Commons
 
-**Multiscale challenge and research frontiers.** The moving contact line remains an area of active research. In partial wetting cases (nonzero equilibrium angle), one avoids true divergences in pressure (the contact line can equilibrate by forming a small precursor foot of wetting). However, when driven far from equilibrium (very fast wetting or dewetting), one can observe phenomena like contact line hysteresis (the line sticks until a threshold force is exceeded) and complex interface shapes. Modern studies, such as viscoelastic wetting,[^kansal2024] ask how polymer stresses or other rheology modify the Cox–Voinov relation $–$ for instance, normal stresses in a non-Newtonian fluid can effectively change the microscopic contact angle and hence the spreading speed.[^kansal2024] The take-home message is that by introducing a microscopic length or physics, we remove the singularity and get finite, measurable behaviors $–$ but we also open up a richer parameter space to explore (e.g. slip length values, disjoining pressure isotherms, polymer relaxation times, etc.). Soft matter scientists turn this "bug" into a feature: by measuring how a contact line's dynamics deviate, we infer what's happening at the nano-scale. In Week 5's lab, for example, you will examine how adding a bit of polymer to a liquid (increasing its extensional viscosity) changes the shape of a spreading drop's rim $–$ a direct visual of singularity regularization in action.
+**Multiscale challenge and research frontiers.** The moving contact line remains an area of active research. In partial wetting cases (nonzero equilibrium angle), one avoids true divergences in pressure (the contact line can equilibrate by forming a small precursor foot of wetting). However, when driven far from equilibrium (very fast wetting or dewetting), one can observe phenomena like contact line hysteresis (the line sticks until a threshold force is exceeded) and complex interface shapes. Modern studies, such as viscoelastic wetting,[^kansal2024] ask how polymer stresses or other rheology modify the Cox–Voinov relation — for instance, normal stresses in a non-Newtonian fluid can effectively change the microscopic contact angle and hence the spreading speed.[^kansal2024] The take-home message is that by introducing a microscopic length or physics, we remove the singularity and get finite, measurable behaviors — but we also open up a richer parameter space to explore (e.g. slip length values, disjoining pressure isotherms, polymer relaxation times, etc.). Soft matter scientists turn this "bug" into a feature: by measuring how a contact line's dynamics deviate, we infer what's happening at the nano-scale. In Week 5's lab, for example, you will examine how adding a bit of polymer to a liquid (increasing its extensional viscosity) changes the shape of a spreading drop's rim — a direct visual of singularity regularization in action.
 
-### Summary of Lecture 4
+## Summary of Lecture 4
 
 1. **Singularities define extreme events**: Soft matter systems can develop finite-time singularities where a normally smooth evolution leads to blow-up (e.g. droplet pinch-off, cavity collapse, moving contact line paradox). These events often dominate the material's behavior (creating new surfaces, concentrating energy) and require special consideration beyond the standard theory.
 
@@ -159,13 +154,13 @@ In our lectures, this connects back to [[2-What-is-Viscosity|Lecture 2]]: the no
 
 3. **Bubble pinch-off and jets**: When air cavities pinch off in liquids, the collapse can focus energy into a fast Worthington jet. This illustrates how singularities can transfer energy across scales (from a large collapsing bubble to a tiny high-speed jet). Such jets and the pressures involved are important in phenomena like cavitation damage.
 
-4. **Moving contact line paradox**: A fluid with a no-slip boundary cannot advance a contact line without infinite force $–$ a classic singularity in hydrodynamics.[^degennes1985] This paradox highlights the breakdown of continuum assumptions at small scales. In reality, physics like slip at the wall or a precursor wetting film regularize the singularity, allowing finite energy dissipation and contact line motion.
+4. **Moving contact line paradox**: A fluid with a no-slip boundary cannot advance a contact line without infinite force — a classic singularity in hydrodynamics.[^degennes1985] This paradox highlights the breakdown of continuum assumptions at small scales. In reality, physics like slip at the wall or a precursor wetting film regularize the singularity, allowing finite energy dissipation and contact line motion.
 
 5. **Role of microscopic length scales**: The cure to a singularity often lies in acknowledging a small length scale. For moving contact lines, a slip length or molecular film provides a cutoff, yielding laws like the Cox–Voinov relation for dynamic contact angles. The lesson generalizes: whenever you see a mathematical singularity, look for a missing small-scale physics (be it molecular slip, a finite polymer chain length, atomic grain size in a solid, etc.).
 
 6. **Universal insights and design**: Studying singularities gives us universal scaling laws – e.g. how a neck radius shrinks or how a contact angle depends on speed. Engineers and scientists use these laws to predict outcomes (the size of satellite drops, the maximum recoil velocity of a jet, the critical speed before a drop starts entraining air, etc.). By harnessing singular behavior (or sometimes avoiding it), we can design better inkjet printers (controlled pinch-off), improve emulsification processes, or mitigate harmful cavitation in pumps.
 
-### Key References for Further Reading
+## Key References for Further Reading
 
 1. **J. Eggers**, Nonlinear dynamics and breakup of free-surface flows, Rev. Mod. Phys., 69, 865 (1997). – Comprehensive review of fluid pinch-off and singular jet dynamics. A bit advanced, but the go-to reference on drop breakup universality. [10.1103/RevModPhys.69.865](https://doi.org/10.1103/RevModPhys.69.865).
 
@@ -177,7 +172,7 @@ In our lectures, this connects back to [[2-What-is-Viscosity|Lecture 2]]: the no
 
 5. **M. Kansal, C. Datt, V. Bertin & J. H. Snoeijer**, Viscoelastic wetting: Cox–Voinov theory with normal stress effects, J. Fluid Mech., 985, A17 (2024). – A recent research paper extending contact line theory to polymeric (viscoelastic) liquids. Shows how adding elasticity modifies the classic wetting laws (for those curious about current research frontiers). DOI: [10.1017/jfm.2024.296](https://doi.org/10.1017/jfm.2024.296).
 
-### Take-Home Coding Assignment: Contact Line Singularity
+## Take-Home Coding Assignment: Contact Line Singularity
 
 > [!question] Coding Challenge – Contact Line Singularity ODE
 > As a practical exercise, you will investigate a simplified model of the contact line singularity by solving a high-order ODE that captures the essential physics. In this assignment (detailed on the course GitHub), we consider the third-order ordinary differential equation:
@@ -218,6 +213,11 @@ In our lectures, this connects back to [[2-What-is-Viscosity|Lecture 2]]: the no
 
 [^2]: C. Huh & L. E. Scriven, Hydrodynamic model of steady movement of a solid/liquid/fluid contact line, J. Colloid Interface Sci., 35:1, 85-101 (1971). DOI: [10.1016/0021-9797(71)90188-3](https://doi.org/10.1016/0021-9797(71)90188-3).
 
+---
+
+**Previous Lecture:** [[3-Soft-Matter-Instabilities|Lecture 3: Soft Matter Instabilities]]<br>
+**Next Lecture:** [[5-Viscoelasticity|Lecture 5: Elastic vs Viscous vs Viscoelastic]]<br>
+**Course Home:** [[0-README|Course Overview]]
 
 > [!significance]- Metadata
 > Author:: [Vatsal Sanjay](https://vatsalsanjay.com)<br>

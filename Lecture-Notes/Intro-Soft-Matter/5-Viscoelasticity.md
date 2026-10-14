@@ -12,11 +12,6 @@ status: done ✅
 publish: true
 ---
 
-<!-- PDF-EXPORT-IGNORE-START -->
-> [!info] 📄 PDF Version
-> [Download PDF](./5-Viscoelasticity.pdf)
-<!-- PDF-EXPORT-IGNORE-END -->
-
 # Lecture 5: Elastic vs Viscous vs Viscoelastic Behavior
 
 <!-- BLOG-PDF-LINK-START -->
@@ -186,7 +181,7 @@ $$\tau_K = \frac{\eta}{E}$$
 - **Elastic material:** Constant stress (no decay)
 - **Viscoelastic (Maxwell):** Stress decays exponentially
   $$\sigma(t) = \sigma_0 e^{-t/\tau_M}$$
-- **Time constant τ_M** = relaxation time
+- **Time constant $\tau_M$** = relaxation time
 
 ### Creep
 
@@ -307,7 +302,7 @@ Students will be able to:
    - Qualitatively describe behavior under load
 
 2. **Give examples of each type**
-   - Elastic: Steel, hard plastic below T_g, rubber (small strains)
+   - Elastic: Steel, hard plastic below $T_g$, rubber (small strains)
    - Viscous: Water, oil, glycerin
    - Viscoelastic: Silly putty, cartilage, polymer melt
    - Justify classifications
@@ -441,8 +436,8 @@ Consider:
 
 ---
 
-**Previous Lecture:** [[4-Soft-Matter-Singularities|Lecture 4: Finite-Time Singularities]]
-**Next Lecture:** [[6-Rheology|Lecture 6: Rheology]]
+**Previous Lecture:** [[4-Soft-Matter-Singularities|Lecture 4: Finite-Time Singularities]]<br>
+**Next Lecture:** [[6-Rheology|Lecture 6: Rheology]]<br>
 **Course Home:** [[0-README|Course Overview]]
 
 > [!significance]- Metadata

@@ -4,7 +4,9 @@ publish: true
 aliases:
   - Intro to Soft Matter
   - Soft Matter Course
+date: 2025-10-14
 ---
+
 # Soft Condensed Matter: An Introduction
 
 <!-- BLOG-PDF-LINK-START -->
@@ -31,6 +33,7 @@ Course Overview. A journey through soft materials—from everyday foams and gels
   - [[1.75-Complementary-Questions-Answers|Homework Solutions: Lecture 1]] – Self-assessed questions with model answers
 - Lecture 2: [[2-What-is-Viscosity|Viscosity and Momentum Diffusion]] – Viscosity as an emergent property from kinetic theory; the no-slip condition; continuum momentum transport
   - [[2.5-Conservation-Laws|Bridge 2.5: From Newton's Laws to Conservation Equations]] – Microscopic particle dynamics to continuum momentum balance and Cauchy stress
+  - [[2.75-Complementary-Questions-Answers|Homework Solutions: Lecture 2]] – Model answers to the conceptual questions in Bridge 2.5
 - Lecture 3: [[3-Soft-Matter-Instabilities|Soft Matter Instabilities]] – Pattern formation through instability mechanisms: Rayleigh–Plateau, Kelvin–Helmholtz, Rayleigh–Taylor, Faraday waves, Rayleigh–Bénard–Marangoni, Saffman–Taylor fingering, and viscous coiling. Understanding how competing forces select characteristic length scales and how to harness instabilities for fabrication.
 - Lecture 4: [[4-Soft-Matter-Singularities|Soft Matter Singularities]] – Finite-time singularities, contact lines, and the mid-course open-science assignment
 - Lecture 5: [[5-Viscoelasticity|Elastic, Viscous, and Viscoelastic Behaviour]] – Constitutive response, mechanical analogues, and relaxation times
@@ -105,8 +108,8 @@ This list will be populated as we go through the course
 
 ## Contact & Support
 
-Instructor: Vatsal Sanjay
-Email: [vatsal.sanjay@durham.ac.uk](mailto:vatsal.sanjay@durham.ac.uk)
+Instructor: Vatsal Sanjay<br>
+Email: [vatsal.sanjay@durham.ac.uk](mailto:vatsal.sanjay@durham.ac.uk)<br>
 Office Hours: Announced at the start of each course run, or by appointment.
 
 Have questions? Come to office hours or send an email — I'm here to help!

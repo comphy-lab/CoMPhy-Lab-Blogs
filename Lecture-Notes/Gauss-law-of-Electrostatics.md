@@ -179,7 +179,8 @@ E \,(2\pi r L)
 \frac{\lambda\,L}{\varepsilon_0}
 $$
 
-$$\quad\Longrightarrow\quad
+$$
+\quad\Longrightarrow\quad
 E \;=\; \frac{\lambda}{2\pi \varepsilon_0\,r}.
 $$
   
@@ -222,7 +223,8 @@ $$
 E(4\pi r^2) = \frac{qr^3}{a^3\varepsilon_0}
 $$
 
-$$\quad\Longrightarrow\quad 
+$$
+\quad\Longrightarrow\quad
 E = \frac{qr}{4\pi\varepsilon_0a^3}
 $$
 

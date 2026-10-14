@@ -12,11 +12,6 @@ status: done ✅
 publish: true
 ---
 
-<!-- PDF-EXPORT-IGNORE-START -->
-> [!info] 📄 PDF Version
-> [Download PDF](./7-8-Student-Presentations.pdf)
-<!-- PDF-EXPORT-IGNORE-END -->
-
 # Lectures 7-8: Student Presentations of Foundational and Recent Papers
 
 <!-- BLOG-PDF-LINK-START -->
@@ -394,16 +389,14 @@ This final presentation contributes **60% of the course grade**. The percentages
 - **Questions Asked (15%):** Thoughtful questions to peers
 - **Answers Given (15%):** Thoughtful responses to questions
 
-## Preparation Checklist
-
 ## References
 
 Full citations are provided in the [[7.5-Presentation-Paper-Topics|Student Presentation Topics]] document.
 
 ---
 
-**Previous Lecture:** [[6-Rheology|Lecture 6: Rheology]]
-**Course Home:** [[0-README|Course Overview]]
+**Previous Lecture:** [[6-Rheology|Lecture 6: Rheology]]<br>
+**Course Home:** [[0-README|Course Overview]]<br>
 **Paper Selection:** [[7.5-Presentation-Paper-Topics|Detailed Paper Topics]]
 
 > [!significance]- Metadata

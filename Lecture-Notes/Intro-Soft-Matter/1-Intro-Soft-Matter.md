@@ -10,11 +10,6 @@ status: done ✅
 publish: true
 ---
 
-<!-- PDF-EXPORT-IGNORE-START -->
-> [!info] 📄 PDF Version
-> [Download PDF](./1-Intro-Soft-Matter.pdf)
-<!-- PDF-EXPORT-IGNORE-END -->
-
 # Lecture 1: Different Faces of Soft Condensed Matter
 
 <!-- BLOG-PDF-LINK-START -->
@@ -60,7 +55,7 @@ The gel feels solid (can hold shape), yet wobbles easily when pushed—a hallmar
 
 ![](../../_Media/1-Intro-Soft-Matter-1761103818495.png)
 
-Good foam (left): Stable bubble structure with clear thin walls
+Good foam (left): Stable bubble structure with clear thin walls<br>
 Bad foam (right): Bubbles coalesce and collapse
 
 Foams are gas bubbles trapped in liquid with surfactants stabilizing the interfaces. They exemplify soft matter because:
@@ -170,11 +165,13 @@ $$E \approx 3G$$
 
 With $k_B T \approx 4.1 \times 10^{-21}\,\text{J}$ at room temperature:
 
-$$G \sim \frac{k_B T}{\xi^3} \quad \Rightarrow \quad
+$$
+G \sim \frac{k_B T}{\xi^3} \quad \Rightarrow \quad
 \begin{cases}
 \xi = 10\,\text{nm} & \Rightarrow G \approx 4\,\text{kPa} \\
 \xi = 1\,\text{nm} & \Rightarrow G \approx 4\,\text{MPa}
-\end{cases}$$
+\end{cases}
+$$
 
 Interpretation: Small changes in mesh size (network crosslink density) move the shear modulus from the kPa range (very soft, like a loose gel) to the MPa range (stiffer, more rubber-like), while the bulk modulus stays large (still hard to compress).
 
@@ -326,6 +323,7 @@ Researchers at Sorbonne Université studied bubble formation dynamics by varying
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
     </iframe>
 </div>
+
 Reference: D. Tammaro, R. Pasquino, M. M. Villone, G. D'Avino, V. Ferraro, E. Di Maio, A. Langella, N. Grizzuti & P. L. Maffettone, *Langmuir*, 34(19), 5646–5654 (2018)
 
 Key Observation:
@@ -469,6 +467,9 @@ A Newtonian liquid (water, simple oils) cannot support static shear stress, so:
 See the next lecture for a rigorous treatment of the Taylor–Culick paradox and momentum/energy conservation in soft matter flows.
 
 ---
+
+**Next Lecture:** [[1.5-Taylor-Culick-Paradox|Lecture 1.5: The Taylor–Culick Paradox]]<br>
+**Course Home:** [[0-README|Course Overview]]
 
 > [!significance]- Metadata
 > Author:: [Vatsal Sanjay](https://vatsalsanjay.com)<br>

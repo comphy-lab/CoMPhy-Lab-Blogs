@@ -12,11 +12,6 @@ status: done ✅
 publish: true
 ---
 
-<!-- PDF-EXPORT-IGNORE-START -->
-> [!info] 📄 PDF Version
-> [Download PDF](./6-Rheology.pdf)
-<!-- PDF-EXPORT-IGNORE-END -->
-
 # Lecture 6: Rheology – Measuring "Softness" and Time-Dependent Response
 
 <!-- BLOG-PDF-LINK-START -->
@@ -515,8 +510,8 @@ Next lectures: **Student Presentations** (Lectures 7-8, 2-hour session)
 
 ---
 
-**Previous Lecture:** [[5-Viscoelasticity|Lecture 5: Elastic vs Viscous vs Viscoelastic]]
-**Next Lecture:** [[7-8-Student-Presentations|Lectures 7-8: Student Presentations]]
+**Previous Lecture:** [[5-Viscoelasticity|Lecture 5: Elastic vs Viscous vs Viscoelastic]]<br>
+**Next Lecture:** [[7-8-Student-Presentations|Lectures 7-8: Student Presentations]]<br>
 **Course Home:** [[0-README|Course Overview]]
 
 > [!significance]- Metadata

@@ -8,12 +8,14 @@ publish: true
 ## Executive summary (one-page take-home)
 
 * Microscopic fields are "spiky." Mass and momentum live on particles. We introduce a coarse-graining (ensemble or local spatial average) to obtain differentiable fields.
-* Microscopic momentum flux: Write $\boldsymbol{\Pi} = \boldsymbol{K} + \boldsymbol{C}$, with kinetic/convective
-  $$K_{ij}(\boldsymbol{r},t) = \sum_n m_n v_{n,i}v_{n,j}\,\delta(\boldsymbol{r}-\boldsymbol{r}_n)$$ and configurational/force-transport
-  $$C_{ij}(\boldsymbol{r},t) = \tfrac{1}{2}\sum_{n\neq m} r_{nm,j}F_{nm,i}\int_0^1\delta[\boldsymbol{r}-(\boldsymbol{r}_n+s\boldsymbol{r}_{nm})]\,ds$$ components.
+* Microscopic momentum flux: Write $\boldsymbol{\Pi} = \boldsymbol{K} + \boldsymbol{C}$, with kinetic/convective and configurational/force-transport components
+  $$K_{ij}(\boldsymbol{r},t) = \sum_n m_n v_{n,i}v_{n,j}\,\delta(\boldsymbol{r}-\boldsymbol{r}_n),$$
+  $$C_{ij}(\boldsymbol{r},t) = \tfrac{1}{2}\sum_{n\neq m} r_{nm,j}F_{nm,i}\int_0^1\delta[\boldsymbol{r}-(\boldsymbol{r}_n+s\boldsymbol{r}_{nm})]\,ds.$$
 * Averaging and decomposition: After smoothing,
-  $$\overline{\boldsymbol{\Pi}} = \rho\,\boldsymbol{v}\boldsymbol{v} - \boldsymbol{\sigma},\qquad
-  \boldsymbol{\sigma} = \underbrace{-\rho\,\langle\boldsymbol{c}\,\boldsymbol{c}\rangle}_{\text{kinetic (fluctuation)}} + \underbrace{\boldsymbol{\sigma}_{\text{config}}}_{\text{from interparticle forces}},$$
+  $$
+  \overline{\boldsymbol{\Pi}} = \rho\,\boldsymbol{v}\boldsymbol{v} - \boldsymbol{\sigma},\qquad
+  \boldsymbol{\sigma} = \underbrace{-\rho\,\langle\boldsymbol{c}\,\boldsymbol{c}\rangle}_{\text{kinetic (fluctuation)}} + \underbrace{\boldsymbol{\sigma}_{\text{config}}}_{\text{from interparticle forces}},
+  $$
   where $\boldsymbol{v}$ is the mean velocity and $\boldsymbol{c}$ the peculiar fluctuation.
 
 * Meaning of $\langle\boldsymbol{K}\rangle = \rho\,\boldsymbol{v}\boldsymbol{v}$. This is not just a definition; it encodes a closure: macroscopic transport $= \rho\,\boldsymbol{v}\boldsymbol{v}$; microscopic agitation $\to$ stress. The fluctuation term $\rho\langle\boldsymbol{c}\boldsymbol{c}\rangle$ is absorbed into $\boldsymbol{\sigma}$.
@@ -21,17 +23,21 @@ publish: true
 * Meaning of $\boldsymbol{C}$: The line-integral representation is the minimal local encoding of Newton's third law, ensuring local momentum conservation, symmetry of stress, and correct torques. Upon averaging, $\langle\boldsymbol{C}\rangle = -\boldsymbol{\sigma}_{\text{config}}$.
 
 * Cauchy momentum equation. With continuity,
-  $$\partial_t(\rho\boldsymbol{v}) + \nabla\cdot(\rho\,\boldsymbol{v}\boldsymbol{v}-\boldsymbol{\sigma}) = \rho\,\boldsymbol{b}
+  $$
+  \partial_t(\rho\boldsymbol{v}) + \nabla\cdot(\rho\,\boldsymbol{v}\boldsymbol{v}-\boldsymbol{\sigma}) = \rho\,\boldsymbol{b}
   \quad\Longrightarrow\quad
-  \rho\,\frac{D\boldsymbol{v}}{Dt} = \nabla\cdot\boldsymbol{\sigma} + \rho\,\boldsymbol{b}.$$
+  \rho\,\frac{D\boldsymbol{v}}{Dt} = \nabla\cdot\boldsymbol{\sigma} + \rho\,\boldsymbol{b}.
+  $$
 
 ---
 
 ## 1. Why coarse-grain? From spiky to smooth fields
 
 Microscopic fields. For point particles $\{m_n,\boldsymbol{r}_n(t),\boldsymbol{v}_n(t)\}$,
-$$\rho_{\text{mic}}(\boldsymbol{r},t) = \sum_n m_n\,\delta(\boldsymbol{r}-\boldsymbol{r}_n),\qquad
-(\rho\boldsymbol{v})_{\text{mic}} = \sum_n m_n\boldsymbol{v}_n\,\delta(\boldsymbol{r}-\boldsymbol{r}_n).$$
+$$
+\rho_{\text{mic}}(\boldsymbol{r},t) = \sum_n m_n\,\delta(\boldsymbol{r}-\boldsymbol{r}_n),\qquad
+(\rho\boldsymbol{v})_{\text{mic}} = \sum_n m_n\boldsymbol{v}_n\,\delta(\boldsymbol{r}-\boldsymbol{r}_n).
+$$
 These are distributions—ill-suited to differentiation on continuum scales.
 
 Coarse-graining. Introduce either (i) ensemble averaging $\langle\cdot\rangle$ or (ii) spatial filtering with a smooth kernel $W_\ell(\boldsymbol{r})$ of width $\ell$ (the averaging cell):
@@ -57,8 +63,10 @@ This is the flux of $i$-momentum across a surface with normal $\boldsymbol{e}_j$
 
 ### 2.2 Configurational contribution $\boldsymbol{C}$
 
-$$C_{ij}(\boldsymbol{r},t) = \frac{1}{2}\sum_{n\ne m} r_{nm,j}F_{nm,i}\int_{0}^{1}
-\delta\left[\boldsymbol{r}-(\boldsymbol{r}_n+s\,\boldsymbol{r}_{nm})\right]ds,\qquad \boldsymbol{r}_{nm} = \boldsymbol{r}_m - \boldsymbol{r}_n.$$
+$$
+C_{ij}(\boldsymbol{r},t) = \frac{1}{2}\sum_{n\ne m} r_{nm,j}F_{nm,i}\int_{0}^{1}
+\delta\left[\boldsymbol{r}-(\boldsymbol{r}_n+s\,\boldsymbol{r}_{nm})\right]ds,\qquad \boldsymbol{r}_{nm} = \boldsymbol{r}_m - \boldsymbol{r}_n.
+$$
 This bond term attributes momentum transport to interparticle forces acting across an imaginary cut. The line integral distributes the pair's contribution locally along the segment joining the particles.
 
 Why this form?
@@ -110,8 +118,10 @@ The symmetry of $\boldsymbol{\sigma}$ follows from the pair symmetry in $\boldsy
 Insert $\overline{\boldsymbol{\Pi}} = \rho\,\boldsymbol{v}\boldsymbol{v} - \boldsymbol{\sigma}$ into the averaged conservation law:
 $$\partial_t(\rho\boldsymbol{v}) + \nabla\cdot(\rho\,\boldsymbol{v}\boldsymbol{v}-\boldsymbol{\sigma}) = \rho\,\boldsymbol{b}.$$
 Use the identity
-$$\partial_t(\rho\boldsymbol{v}) + \nabla\cdot(\rho\boldsymbol{v}\boldsymbol{v})
-= \rho\,\frac{D\boldsymbol{v}}{Dt} + \boldsymbol{v}\,[\partial_t\rho + \nabla\cdot(\rho\boldsymbol{v})]$$
+$$
+\partial_t(\rho\boldsymbol{v}) + \nabla\cdot(\rho\boldsymbol{v}\boldsymbol{v})
+= \rho\,\frac{D\boldsymbol{v}}{Dt} + \boldsymbol{v}\,[\partial_t\rho + \nabla\cdot(\rho\boldsymbol{v})]
+$$
 and the continuity equation $\partial_t\rho + \nabla\cdot(\rho\boldsymbol{v}) = 0$. We obtain the Cauchy momentum equation
 $$\boxed{\rho\,\frac{D\boldsymbol{v}}{Dt} = \nabla\cdot\boldsymbol{\sigma} + \rho\,\boldsymbol{b}.}$$
 Sign convention. Here $\nabla\cdot\boldsymbol{\sigma}$ is the internal force density on the material (e.g. for a Newtonian fluid, $\boldsymbol{\sigma} = -p\boldsymbol{I} + 2\mu\boldsymbol{D}$ so $\nabla\cdot\boldsymbol{\sigma} = -\nabla p + \nabla\cdot(2\mu\boldsymbol{D})$).
@@ -183,9 +193,11 @@ consistent with the configurational origin of capillary stresses in a molecular 
 
 ### Example A (ideal gas at equilibrium).
 
-$$\langle\boldsymbol{c}\boldsymbol{c}\rangle = \frac{\langle c^2\rangle}{3}\,\boldsymbol{I},\quad
+$$
+\langle\boldsymbol{c}\boldsymbol{c}\rangle = \frac{\langle c^2\rangle}{3}\,\boldsymbol{I},\quad
 p = \tfrac{1}{3}\rho\langle c^2\rangle,\quad
-\boldsymbol{\sigma} = -p\boldsymbol{I}.$$
+\boldsymbol{\sigma} = -p\boldsymbol{I}.
+$$
 Configurational part is negligible (no persistent forces).
 
 ### Example B (dense liquid).
@@ -201,7 +213,8 @@ Configurational part linked to the conformation tensor gives $\boldsymbol{\sigma
 
 ## 13. Summary box (to remember)
 
-$$\boxed{
+$$
+\boxed{
 \begin{aligned}
 &\text{Microscopic: } \boldsymbol{\Pi} = \boldsymbol{K} + \boldsymbol{C},\quad
 K_{ij} = \sum m v_i v_j \delta,\quad
@@ -213,7 +226,8 @@ C_{ij} = \tfrac{1}{2}\sum r_j F_i \int_0^1 \delta(\cdots)\, ds.\\[3pt]
 \rho\,\frac{D\boldsymbol{v}}{Dt} = \nabla\cdot\boldsymbol{\sigma} + \rho\,\boldsymbol{b}.\\[3pt]
 &\text{Philosophy: }\ \rho\,\boldsymbol{v}\boldsymbol{v} \ \text{(bulk transport)};\
 -\boldsymbol{\sigma} \ \text{(microscopic agitation + forces).}
-\end{aligned}}$$
+\end{aligned}}
+$$
 
 ---
 

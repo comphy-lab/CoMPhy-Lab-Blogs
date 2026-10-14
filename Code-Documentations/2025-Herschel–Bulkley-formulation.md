@@ -80,7 +80,8 @@ We use the formulation as given in [Balmforth et al. (2013)](https://www.annualr
 ### Calculate the equivalent viscosity
 
 Factorizing with $2 \mathcal{D}_{ij}$ to obtain an equivalent viscosity
-$$\eta_{\text{eff}} = \frac{\mathcal{J}}{2\|\boldsymbol{\tilde{\mathcal{D}}}\|+\varepsilon}\,\boldsymbol{\mathcal{I}}
+$$
+\eta_{\text{eff}} = \frac{\mathcal{J}}{2\|\boldsymbol{\tilde{\mathcal{D}}}\|+\varepsilon}\,\boldsymbol{\mathcal{I}}
 +
 Oh_K\,\bigl(2\|\boldsymbol{\tilde{\mathcal{D}}}\|+\epsilon\bigr)^{n-1}
 $$
