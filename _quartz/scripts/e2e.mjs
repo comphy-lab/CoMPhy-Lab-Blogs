@@ -6,6 +6,7 @@ import matter from "gray-matter"
 import { globby } from "globby"
 import YAML from "yaml"
 import { slugifyFilePath, simplifySlug } from "@quartz-community/utils"
+import { pdfPathFor, validPdf } from "./tex/manifest.mjs"
 
 const base = (process.env.E2E_BASE_URL ?? "http://127.0.0.1:8790").replace(/\/$/, "")
 const publicDir = resolve(process.env.E2E_PUBLIC_DIR ?? "public")
@@ -41,12 +42,15 @@ const sourceFiles = await globby("**/*.md", {
   ignore: config.configuration.ignorePatterns,
 })
 const unlisted = new Set()
+const lecturePdfs = new Map()
 for (const file of sourceFiles) {
   const frontmatter = matter(readFileSync(join("..", file), "utf8")).data
   const published = frontmatter.publish === true
   const slug = slugifyFilePath(file)
   assert.equal(Object.hasOwn(index, slug), published, `Publication inventory mismatch: ${file}`)
   if (published && frontmatter.unlisted === true) unlisted.add("/" + slug)
+  if (published && file.startsWith("Lecture-Notes/"))
+    lecturePdfs.set(slug, "/_Media/PDF/" + pdfPathFor(file.slice(0, -3)))
 }
 const pages = files.filter((f) => f.endsWith(".html") && f !== "404.html")
 const report = {
@@ -57,6 +61,7 @@ const report = {
   assets: 0,
   anchors: 0,
   pdfs: 0,
+  lecturePdfLinks: 0,
   failures: [],
   externalFailures: [],
   interactions: {},
@@ -86,6 +91,9 @@ const inventory = () => ({
       centreOffset: Math.abs(title.top + title.height / 2 - link.top - link.height / 2),
     }
   }),
+  pdfDownloads: [...document.querySelectorAll("article a[href]")]
+    .filter((el) => el.textContent.trim() === "Download this page as PDF")
+    .map((el) => decodeURIComponent(new URL(el.href).pathname)),
   // The content box (clientWidth/Height exclude the theme's image border) must
   // keep the image's own aspect ratio; before it loads, the build's width and
   // height attributes stand in for it.
@@ -194,6 +202,13 @@ async function sweep(width) {
           )
           const expected = Object.keys(index).find((slug) => route(slug + ".html") === route(file))
           if (expected) assert.equal(data.slug, expected, "canonical page overwritten by alias")
+          if (lecturePdfs.has(expected)) {
+            assert(
+              data.pdfDownloads.includes(lecturePdfs.get(expected)),
+              "lecture PDF link missing or points to a different page",
+            )
+            if (width === 1280) report.lecturePdfLinks++
+          }
           if (expected && !expected.startsWith("tags/") && !expected.endsWith("/index")) {
             assert(data.article > 30, "article body missing")
           }
@@ -294,14 +309,22 @@ try {
   assert(redirects.length > 40, "redirect rules missing from the build")
   for (const [from, to, status] of redirects) {
     assert.equal(status, "301", `redirect ${from} is not permanent`)
-    const response = await page.request.get(base + from, { maxRedirects: 0 })
-    const location = response.headers()["location"] ?? ""
-    assert(
-      response.status() === 301 && new URL(location, base).pathname === to,
-      `old URL ${from} gave ${response.status()} ${location}`,
-    )
-    const target = await page.request.get(base + to)
-    assert.equal(target.status(), 200, `redirect target ${to} for ${from}`)
+    const response = await page.request.head(base + from, { maxRedirects: 0 })
+    try {
+      const location = response.headers()["location"] ?? ""
+      assert(
+        response.status() === 301 && new URL(location, base).pathname === to,
+        `old URL ${from} gave ${response.status()} ${location}`,
+      )
+    } finally {
+      await response.dispose()
+    }
+    const target = await page.request.head(base + to)
+    try {
+      assert.equal(target.status(), 200, `redirect target ${to} for ${from}`)
+    } finally {
+      await target.dispose()
+    }
   }
   report.interactions.courseRedirects = true
 
@@ -478,7 +501,7 @@ try {
         }
         if (target.pathname.endsWith(".pdf")) {
           const bytes = Buffer.from(await response.arrayBuffer())
-          assert.equal(bytes.subarray(0, 5).toString(), "%PDF-", "not a PDF")
+          assert(validPdf(bytes), "invalid or empty PDF")
           report.pdfs++
         } else await response.body?.cancel()
         responses.set(target.href, result)

@@ -10,9 +10,10 @@ import type { QuartzEmitterPlugin, QuartzTransformerPlugin } from "./types"
 // with the same name exists in _Media/PDF.
 export function resolveVaultLink(source: string, target: string, slugs: Set<string>) {
   if (!target || /^(?:[a-z][a-z\d+.-]*:|\/\/|#)/i.test(target)) return target
-  const hash = target.indexOf("#")
-  const rawPath = hash < 0 ? target : target.slice(0, hash)
-  const anchor = hash < 0 ? "" : target.slice(hash)
+  const boundary = target.search(/[?#]/)
+  const rawPath = boundary < 0 ? target : target.slice(0, boundary)
+  const suffix = boundary < 0 ? "" : target.slice(boundary)
+  if (!rawPath) return target
   let decoded: string
   try {
     decoded = decodeURI(rawPath)
@@ -30,7 +31,7 @@ export function resolveVaultLink(source: string, target: string, slugs: Set<stri
     const matches = [...slugs].filter((candidate) => candidate.endsWith("/" + root))
     if (matches.length === 1) resolved = matches[0]
   }
-  return resolved ? resolved + anchor : target
+  return resolved ? resolved + suffix : target
 }
 
 export const VaultLinks: QuartzTransformerPlugin = () => ({

@@ -51,3 +51,17 @@ test("literal percent signs in vault filenames are not malformed URL failures", 
     "Lecture/100-percent-complete",
   )
 })
+
+test("queries and fragments are preserved outside vault pathname resolution", () => {
+  const slugs = new Set(["Lecture/A/note", "Lecture/B/note", "_AtomicNotes/unique"])
+  assert.equal(
+    resolveVaultLink("Lecture/A/one", "./note.md?x=1#Heading", slugs),
+    "Lecture/A/note?x=1#Heading",
+  )
+  assert.equal(
+    resolveVaultLink("Blog/post", "unique.md?x=%23#100%", slugs),
+    "_AtomicNotes/unique?x=%23#100%",
+  )
+  assert.equal(resolveVaultLink("Blog/post", "note.md?x=1#Heading", slugs), "note.md?x=1#Heading")
+  assert.equal(resolveVaultLink("Blog/post", "?x=1#Heading", slugs), "?x=1#Heading")
+})

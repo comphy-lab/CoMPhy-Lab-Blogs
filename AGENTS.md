@@ -28,7 +28,9 @@ private files, vaults, services, or paths in this public repository.
 ## Content Format
 
 ### Markdown Files
+
 All content uses Markdown with YAML frontmatter:
+
 ```yaml
 ---
 created: YYYY-MM-DDThh:mm:ss+01:00
@@ -39,6 +41,7 @@ website: https://blogs.comphy-lab.org/your-post-url
 ```
 
 ### Obsidian Features
+
 - Wiki-style links: `[[post-name]]` and `[[post-name|alias]]`
 - Image embedding: `![[_Media/filename.png]]`
 - Callouts: `> [!note]`, `> [!tldr]`, `> [!important]`
@@ -46,6 +49,7 @@ website: https://blogs.comphy-lab.org/your-post-url
 - Display maths follows Obsidian: `$$…$$` always renders as display maths, and a fence sharing its line with TeX (`$$\begin{cases}` … `\end{cases}$$`) is split onto its own line at build time (`_quartz/quartz/plugins/site-math.ts`). Use single `$…$` for inline maths
 
 ### Lecture notes
+
 - Files in `Lecture-Notes/` with a numeric filename prefix (`0-README`, `1-…`, `1.5-…`, `2-…`, `7-8-…`) are listed in that numeric order in the Explorer and folder pages
 - Add `unlisted: true` to a published page that should be reached only through links (for example homework answers); it stays published but is left out of the Explorer and folder listings. Link it from the lecture that uses it
 - A course that runs more than once keeps one folder per year (`Lecture-Notes/Intro-Soft-Matter/2025/`, `2026/`). A new year starts by linking to the previous year's notes and adds or revises lectures as they are taught; do not copy a whole year forward. When notes move, add a 301 rule for every old page and PDF URL to `_quartz/quartz/static/_redirects` (slides and old links point at them). Do not use `aliases:` for old paths: alias slugs join link resolution, so a bare `[[2-What-is-Viscosity]]` becomes ambiguous and breaks
@@ -53,18 +57,21 @@ website: https://blogs.comphy-lab.org/your-post-url
 ## Development Commands
 
 ### PDF Export
-Convert Markdown to PDF using the export script:
+
+Typeset published lecture notes locally with Pandoc 3.10 and TeX Live 2026:
+
 ```bash
-./.obsidian/scripts/export-pdf.sh "filename.md"
+cd _quartz
+npm run build:tex-pdfs
 ```
 
-The script handles:
-- Obsidian syntax conversion to standard Markdown
-- Image path processing
-- Bibliography integration via Pandoc
-- LaTeX/XeLaTeX PDF generation
+Review and commit `_quartz/tex-pdfs/manifest.json` and its PDFs together.
+Intermediate TeX/logs/images are ignored under `_quartz/.quartz-cache/tex-pdfs/`.
+Use `-- --only Lecture-Notes/path.md` for one page. Never hand-edit the manifest
+or generated PDFs. See `docs/publishing.md` for dependencies and freshness.
 
 ### Content Validation
+
 - Ensure all images exist in `_Media/` directory
 - Verify wiki links point to existing content
 - Check YAML frontmatter format
@@ -72,16 +79,19 @@ The script handles:
 ## Content Guidelines
 
 ### File Organization
+
 - Place new blog posts in `Blog/`
 - Store images in `_Media/` with descriptive names
 - Use atomic notes in `_AtomicNotes/` for reusable concepts
 
 ### Mathematical Content
+
 - Use LaTeX syntax for equations: `$$equation$$` or `$inline$`
 - Include Jupyter notebooks in `_scripts/` for computational examples
 - Save generated plots to `_Media/`
 
 ### Academic Standards
+
 - Include proper citations and references
 - Use descriptive filenames without spaces
 - Maintain consistent notation across related posts
@@ -105,9 +115,11 @@ browser-header changes.
 
 ### PDF copies
 
-- During `build:cloudflare`, `_quartz/scripts/build-pdfs.mjs` renders every
-  published page in `Blog/`, `Code-Documentations/`, `Lecture-Notes/` and
-  `Talks/` from the local Quartz preview into generated `public/_Media/PDF/`.
+- During `build:cloudflare`, `_quartz/scripts/build-pdfs.mjs` copies fresh,
+  integrity-checked lecture PDFs from `_quartz/tex-pdfs/` to generated
+  `public/_Media/PDF/`. Missing/stale TeX output warns and falls back to browser
+  rendering. Production never runs or downloads TeX. Blog, Talks and
+  Code-Documentations always retain browser rendering.
   It adds a missing PDF download link to generated HTML only; source Markdown
   is unchanged.
 - Blog PDF paths remain `_Media/PDF/<Markdown-filename>.pdf` for compatibility.
@@ -115,7 +127,9 @@ browser-header changes.
   collisions between nested pages with the same filename.
 - The build restarts Wrangler after PDF generation so the final browser gate
   verifies refreshed HTML, PDF links and PDF bytes. Checked-in PDF copies are
-  retained as source assets, but the build output is the deployed version.
+  retained as source assets, but the selected build output is deployed. Keep
+  TeX source PDFs separate from `_Media/PDF/` to avoid asset-copy collisions.
+  Every lecture depth is supported; do not hard-code course/year directories.
 - The former Obsidian Publish wrapper fails closed. Do not edit generated PDFs
   manually or describe a PDF as refreshed without a passing build receipt.
 

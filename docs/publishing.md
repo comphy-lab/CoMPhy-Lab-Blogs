@@ -87,13 +87,98 @@ previous Worker version available for rollback if a live check fails.
 
 ## PDFs
 
-The source repository retains its existing `_Media/PDF/` copies. Each
-`build:cloudflare` run regenerates PDFs for published pages in `Blog/`,
-`Code-Documentations/`, `Lecture-Notes/` and `Talks/` from the local Quartz
-HTML. Blog PDF URLs keep their flat paths; other sections mirror the source
-path. Rendering and any missing download-link injection change only generated
-`public/` output. The final browser suite checks each linked PDF response and
-the relevant page layout; source Markdown is unchanged. The former
+The source repository retains its existing `_Media/PDF/` copies. Lecture notes
+can use locally typeset PDFs; other sections keep browser PDFs. Both use the
+existing download URLs: Blog paths are flat, and other sections mirror the
+full source path at any depth under `_Media/PDF/`.
+
+### Typesetting lecture notes locally
+
+Install Pandoc 3.10, TeX Live 2026 (LuaLaTeX, latexmk, TeX Gyre, DejaVu and
+tcolorbox) and `rsvg-convert` on the authoring machine. Then run:
+
+```bash
+cd _quartz
+npm run build:tex-pdfs
+# Or regenerate one published page:
+npm run build:tex-pdfs -- --only Lecture-Notes/Basilisk101/1-conduction-takeaways.md
+```
+
+The command selects `publish: true` Markdown pages anywhere under
+`Lecture-Notes/`. It normalises Obsidian maths with Quartz's own helper,
+resolves vault links with Quartz's resolver, converts images locally and uses
+Pandoc plus the template/filter in `scripts/tex/` to produce LuaLaTeX PDFs.
+It preserves source Markdown. The title comes from the first H1, the date
+from frontmatter, and the course from the nearest ancestor `0-README.md` H1
+(with a folder-name fallback). Footnotes, numbered references, links, tables,
+code and callouts are typeset locally. Bibliography/CSL frontmatter and Pandoc
+citations use citeproc when provided. Remote images must first be saved in the
+vault; conversion failures use the browser fallback.
+
+Year folders use their own README title, including the year. The title-page
+course label retains the full H1; the running header shortens long titles at a
+word boundary, preserving a trailing year. Unicode maths uses bold italic
+Latin and Greek for `\boldsymbol`, `\bm` and `\mathbf`, and bold calligraphic
+letters for nested `\mathcal` tensors. To check the actual PDF glyphs locally,
+run `node scripts/tex/verify-maths.mjs` from `_quartz` (requires `pdftotext`
+from Poppler as well as Pandoc and LuaLaTeX).
+
+Review the PDFs, then commit `tex-pdfs/manifest.json` together with the relevant
+`tex-pdfs/Lecture-Notes/**/*.pdf` files. These tracked source assets deliberately
+live under `_quartz/`, which Quartz excludes from its ordinary asset copy.
+They cannot be overwritten by the browser exporter. Intermediate Markdown,
+Pandoc JSON, `.tex`, compilation logs and converted images stay in the ignored
+`.quartz-cache/tex-pdfs/` directory. The per-page summary is `summary.json` there.
+Individual conversion failures are reported and omitted from the manifest;
+missing tools and filesystem failures exit nonzero. TeX runs without shell
+escape, and this command never downloads a TeX distribution.
+
+Maths and raw TeX containing file access, execution or token/macro rewriting
+commands are refused with a browser-fallback reason. LuaLaTeX additionally uses
+paranoid file access (`openin_any=p`, `openout_any=p`) and no shell escape.
+SVGs must be self-contained: resource references may use only `#fragment` or
+`data:` URLs; external resources and declarations/escapes that hide them are
+refused.
+
+Print raster derivatives never upscale and retain their natural aspect ratio.
+Their width is capped at 1900 pixels times the displayed text-width fraction
+(approximately 300 dpi), reduced further when the template's height limit
+constrains the displayed width. PNG sources, diagrams and images with alpha stay
+lossless PNG. JPEG sources without alpha use JPEG quality 88 and 4:4:4 chroma
+when the derivative is at least 900 pixels wide; this deliberately conservative
+photograph heuristic avoids applying lossy compression to PNG line art.
+The derivative policy is included in freshness hashing; original media stay
+unchanged.
+
+Each page uses its source file's last Git commit time as `SOURCE_DATE_EPOCH`
+with `FORCE_SOURCE_DATE=1`, falling back to 1 January 2000 UTC without Git
+history. LuaLaTeX omits volatile PDF dates, source-path metadata and the
+automatic trailer ID. With identical inputs and toolchain, clean conversions
+produce identical PDF bytes.
+
+### Freshness and deployment
+
+The manifest binds each page to SHA-256 hashes of its Markdown, course README,
+referenced local images and bibliography/CSL files, the converter, shared
+helpers, template, Lua filter, dependency lock and Quartz configuration. A
+hash of the vault filename inventory also detects changes that affect shortest
+link resolution. PDF bytes have a separate integrity hash; toolchain versions
+are recorded for provenance. Deploys do not run TeX or verify a local TeX
+installation.
+
+During `build:cloudflare`, `build-pdfs.mjs` validates the manifest using Node.
+A fresh TeX PDF is copied to its public download path. Missing, stale or
+damaged TeX output produces a page-specific warning and a new browser PDF.
+Staleness never blocks publishing. The report is
+`output/tex-pdf-status.json`, with a non-blocking GitHub step summary in CI.
+Previously checked-in `_Media/PDF/` assets are replaced in generated `public/`
+by whichever exporter was selected, so an old copy cannot silently win.
+
+Rendering and missing download-link injection change only generated `public/`
+output. `PDF-EXPORT-IGNORE-START/END` and `BLOG-PDF-LINK-START/END` blocks are
+excluded from TeX input; the download callout stays on the website. The final
+browser suite checks every published lecture's download link, PDF response
+signature and trailer, alongside the existing page-layout checks. The former
 `_scripts/blog-pdf/publish-with-pdfs.sh` entrypoint fails closed and cannot
 publish HTML to the old service.
 

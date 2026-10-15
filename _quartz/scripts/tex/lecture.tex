@@ -1,0 +1,85 @@
+\documentclass[11pt,a4paper]{article}
+% Omit volatile dates, source paths and the automatic time/path-dependent ID.
+% SOURCE_DATE_EPOCH and FORCE_SOURCE_DATE also fix TeX's date primitives.
+\pdfvariable suppressoptionalinfo 767\relax
+\pdfvariable trailerid{}
+\usepackage[margin=23mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{fontspec,unicode-math}
+\directlua{luaotfload.add_fallback("lecturefallback", {"file:DejaVuSans.ttf:mode=node;"})}
+\setmainfont{TeX Gyre Pagella}[RawFeature={fallback=lecturefallback}]
+\setsansfont{TeX Gyre Heros}[RawFeature={fallback=lecturefallback}]
+\setmonofont{DejaVuSansMono.ttf}[Scale=0.8]
+\unimathsetup{bold-style=ISO}
+\setmathfont{TeX Gyre Pagella Math}
+% Use Unicode bold alphabets rather than amsmath's unavailable bold version.
+% Nested calligraphic tensors must select the bold calligraphic alphabet too.
+\newcommand{\lecturebold}[1]{\begingroup
+  \let\mathcal\symbfcal\let\mathscr\symbfscr
+  \symbf{#1}\endgroup}
+\AtBeginDocument{%
+  \RenewCommandCopy\boldsymbol\lecturebold
+  \DeclareCommandCopy\bm\lecturebold
+  \RenewCommandCopy\mathbf\lecturebold}
+\usepackage[british]{babel}
+\usepackage{graphicx,xcolor,booktabs,longtable,array,calc}
+\newcounter{none}
+\usepackage{footnotehyper}
+\makesavenoteenv{longtable}
+\usepackage{fancyvrb,fvextra}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{etoolbox}
+\definecolor{accent}{HTML}{254C4A}
+\usepackage[colorlinks=true,allcolors=accent,breaklinks=true]{hyperref}
+\usepackage{xurl}
+\usepackage{bookmark}
+\hypersetup{pdftitle={$title$},pdfauthor={Vatsal Sanjay}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\sffamily\parbox[b]{0.76\textwidth}{\raggedright $course-header$}}
+\fancyhead[R]{\small\sffamily CoMPhy Lab}
+\fancyfoot[L]{\small Vatsal Sanjay}
+\fancyfoot[R]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\newtcolorbox{lecturebox}[1]{enhanced,breakable,colback=accent!4,colframe=accent!55,
+  boxrule=0.4pt,arc=1mm,left=2mm,right=2mm,title={#1},fonttitle=\bfseries,
+  colbacktitle=accent!12,coltitle=black,before skip=9pt,after skip=9pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 1pt}
+\setlength{\emergencystretch}{3em}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\passthrough}[1]{#1}
+\providecommand{\pandocbounded}[1]{#1}
+\setcounter{secnumdepth}{0}
+\raggedbottom
+\interfootnotelinepenalty=10000
+$highlighting-macros$
+\fvset{breaklines=true,breakanywhere=true,fontsize=\small}
+$if(csl-refs)$
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{\begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+\let\@cite@ofmt\@firstofone
+\def\@biblabel#1{}
+\def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2]{\begin{list}{}{\setlength{\itemindent}{0pt}\setlength{\leftmargin}{0pt}\setlength{\parsep}{0pt}\ifodd #1\setlength{\leftmargin}{\cslhangindent}\setlength{\itemindent}{-\cslhangindent}\fi\setlength{\itemsep}{#2\baselineskip}}}{\end{list}}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth-\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+$endif$
+\begin{document}
+{\sffamily\small\color{accent}$course$\par}
+\vspace{3mm}
+{\LARGE\bfseries $title$\par}
+\vspace{3mm}
+{\large Vatsal Sanjay\par}
+$if(date)$$date$\par$endif$
+\smallskip\href{$web-url$}{Web version}\par
+\vspace{3mm}\hrule\vspace{4mm}
+$body$
+\end{document}

@@ -1,6 +1,6 @@
 {
   "name": "@jackyzha0/quartz",
-  "description": "\ud83c\udf31 publish your digital garden and notes as a website",
+  "description": "🌱 publish your digital garden and notes as a website",
   "private": true,
   "version": "5.0.0",
   "type": "module",
@@ -21,6 +21,7 @@
     "build": "node quartz/bootstrap-cli.mjs build -d .. -o public",
     "build:cloudflare": "node scripts/build-cloudflare.mjs",
     "build:pdfs": "node scripts/build-pdfs.mjs",
+    "build:tex-pdfs": "tsx scripts/build-tex-pdfs.ts",
     "test:e2e": "node scripts/e2e.mjs",
     "preview": "wrangler dev --ip 127.0.0.1 --port 8790",
     "deploy": "node scripts/deploy-cloudflare.mjs",

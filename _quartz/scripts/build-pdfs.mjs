@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 
 import { createHash } from "node:crypto"
-import { readFile, mkdir, rename, stat, writeFile } from "node:fs/promises"
+import { appendFile, readFile, mkdir, rename, stat, writeFile } from "node:fs/promises"
 import { resolve, dirname, join, posix, sep } from "node:path"
 import { fileURLToPath } from "node:url"
 import { chromium } from "playwright"
 import matter from "gray-matter"
+import { freshTexPdf, pdfPathFor, vaultFiles } from "./tex/manifest.mjs"
 
 const quartzRoot = resolve(fileURLToPath(new URL("..", import.meta.url)))
 const vaultRoot = resolve(quartzRoot, "..")
@@ -44,11 +45,6 @@ function safePath(root, relativePath) {
     throw new Error(`Path escapes output root: ${relativePath}`)
   }
   return absolute
-}
-
-function pdfPathFor(slug) {
-  const section = slug.split("/")[0]
-  return `${section === "Blog" ? slug.slice(5) : slug}.pdf`
 }
 
 async function publishedPages(only) {
@@ -219,7 +215,21 @@ async function injectLink(pageInfo) {
   if (articleStart < 0 || articleEnd < 0)
     throw new Error(`Article not found in ${pageInfo.htmlPath}`)
   const article = html.slice(articleStart, articleEnd)
-  if (article.includes("Download this page as PDF")) return false
+  const href = `/_Media/PDF/${pageInfo.pdfRelativePath.split("/").map(encodeURIComponent).join("/")}`
+  if (article.includes("Download this page as PDF")) {
+    // A source page may have moved into a new course/year folder while its
+    // handwritten download block still names the previous PDF path.
+    const updated = article.replace(/<a\b[^>]*>\s*Download this page as PDF\s*<\/a>/g, (link) =>
+      link.replace(/\bhref=(["']).*?\1/, `href="${href}"`),
+    )
+    if (updated !== article)
+      await writeFile(
+        pageInfo.htmlPath,
+        html.slice(0, articleStart) + updated + html.slice(articleEnd),
+        "utf8",
+      )
+    return false
+  }
   // The page title is rendered in the page header, outside <article>, when the
   // source opens with its own H1. Place the link after an in-article H1 when
   // there is one, otherwise at the top of the article body.
@@ -227,7 +237,6 @@ async function injectLink(pageInfo) {
   const articleTagEnd = article.indexOf(">")
   if (articleTagEnd < 0) throw new Error(`Article tag not closed in ${pageInfo.htmlPath}`)
   const offset = headingEnd >= 0 ? headingEnd + "</h1>".length : articleTagEnd + 1
-  const href = `/_Media/PDF/${pageInfo.pdfRelativePath.split("/").map(encodeURIComponent).join("/")}`
   const callout = `<blockquote class="callout pdf" data-callout="pdf"><div class="callout-title"><div class="callout-title-inner"><p>PDF version</p></div></div><div class="callout-content"><p><a href="${href}">Download this page as PDF</a></p></div></blockquote>`
   const insertion = articleStart + offset
   await writeFile(
@@ -244,8 +253,39 @@ async function main() {
   console.log(`[build-pdfs] rendering ${pages.length} published pages from ${options.baseUrl}`)
   const browser = await chromium.launch({ headless: true, timeout: 60000 })
   const results = []
+  const files = await vaultFiles(vaultRoot)
+  let manifest = null
+  try {
+    manifest = JSON.parse(await readFile(join(quartzRoot, "tex-pdfs", "manifest.json"), "utf8"))
+  } catch (error) {
+    // A missing manifest is normal before the first TeX export; a damaged one is
+    // not, but it must still fall back to browser PDFs rather than block a deploy.
+    if (error.code !== "ENOENT")
+      console.warn(
+        `[build-pdfs] TeX manifest unreadable (${error.message}); every lecture uses the browser PDF`,
+      )
+  }
+  const stale = []
+  let texCount = 0
   try {
     for (const pageInfo of pages) {
+      if (pageInfo.source.startsWith("Lecture-Notes/")) {
+        const tex = await freshTexPdf(vaultRoot, pageInfo.source, manifest, files)
+        if (tex.bytes) {
+          const destination = safePath(options.outputDir, pageInfo.pdfRelativePath)
+          await mkdir(dirname(destination), { recursive: true })
+          await writeFile(`${destination}.${process.pid}.tmp`, tex.bytes)
+          await rename(`${destination}.${process.pid}.tmp`, destination)
+          results.push({ slug: pageInfo.slug, bytes: tex.bytes.length })
+          texCount++
+          console.log(`[build-pdfs] TeX ${pageInfo.slug}: ${tex.bytes.length} bytes`)
+          continue
+        }
+        stale.push({ source: pageInfo.source, reason: tex.reason })
+        console.warn(
+          `[build-pdfs] TeX unavailable: ${pageInfo.source} (${tex.reason}); using browser PDF. Regenerate locally: cd _quartz && npm run build:tex-pdfs`,
+        )
+      }
       const result = await render(browser, pageInfo, options)
       results.push(result)
       console.log(`[build-pdfs] ${result.slug}: ${result.bytes} bytes`)
@@ -253,12 +293,32 @@ async function main() {
   } finally {
     await browser.close()
   }
+  await mkdir(join(quartzRoot, "output"), { recursive: true })
+  await writeFile(
+    join(quartzRoot, "output", "tex-pdf-status.json"),
+    JSON.stringify({ tex: texCount, browser: pages.length - texCount, stale }, null, 2) + "\n",
+  )
+  if (process.env.GITHUB_STEP_SUMMARY) {
+    const text = [
+      `### Lecture-note PDFs`,
+      `${texCount} fresh TeX PDFs; ${stale.length} browser fallbacks.`,
+      ...stale.map(({ source, reason }) => `- ${source}: ${reason}`),
+      "Regenerate locally with `cd _quartz && npm run build:tex-pdfs`.",
+    ]
+    try {
+      await appendFile(process.env.GITHUB_STEP_SUMMARY, text.join("\n") + "\n")
+    } catch (error) {
+      console.warn(`[build-pdfs] Could not write GitHub step summary: ${error.message}`)
+    }
+  }
   if (options.injectLinks) {
     let added = 0
     for (const pageInfo of pages) if (await injectLink(pageInfo)) added++
     console.log(`[build-pdfs] inserted ${added} generated HTML download links`)
   }
-  console.log(`[build-pdfs] rendered ${results.length}/${pages.length} PDFs`)
+  console.log(
+    `[build-pdfs] rendered ${results.length}/${pages.length} PDFs (${texCount} TeX, ${pages.length - texCount} browser)`,
+  )
 }
 
 main().catch((error) => {
