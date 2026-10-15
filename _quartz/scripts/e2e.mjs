@@ -284,22 +284,24 @@ try {
   }
   report.interactions.lectureOrder = true
 
-  // The 2025 notes moved into a year folder; old URLs, including those printed
-  // on the 2025 slides, must keep working.
-  for (const [from, to] of [
-    ["/Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity", "/2025/2-What-is-Viscosity"],
-    ["/Lecture-Notes/Intro-Soft-Matter/2-Conservation-Laws", "/2025/2.5-Conservation-Laws"],
-    [
-      "/_Media/PDF/Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.pdf",
-      "/2025/1-Intro-Soft-Matter.pdf",
-    ],
-  ]) {
+  // Moved notes keep their old URLs, including those printed on the 2025
+  // slides: every rule must answer 301 and land on a page or file that exists.
+  const redirects = readFileSync(join(publicDir, "_redirects"), "utf8")
+    .split("\n")
+    .map((line) => line.trim())
+    .filter((line) => line && !line.startsWith("#"))
+    .map((line) => line.split(/\s+/))
+  assert(redirects.length > 40, "redirect rules missing from the build")
+  for (const [from, to, status] of redirects) {
+    assert.equal(status, "301", `redirect ${from} is not permanent`)
     const response = await page.request.get(base + from, { maxRedirects: 0 })
     const location = response.headers()["location"] ?? ""
     assert(
-      response.status() === 301 && location.endsWith(to),
-      `old course URL ${from} gave ${response.status()} ${location}`,
+      response.status() === 301 && new URL(location, base).pathname === to,
+      `old URL ${from} gave ${response.status()} ${location}`,
     )
+    const target = await page.request.get(base + to)
+    assert.equal(target.status(), 200, `redirect target ${to} for ${from}`)
   }
   report.interactions.courseRedirects = true
 

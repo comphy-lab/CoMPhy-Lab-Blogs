@@ -24,7 +24,7 @@ publish: true
 > [!tldr] TL;DR
 > [[5-Viscoelasticity|Lecture 5]] gave us one constitutive model, the Oldroyd-B family, whose limits are a viscous liquid, an elastic solid and a Kelvin–Voigt solid. This lecture puts it to work on three free-surface flows from current research: a retracting liquid sheet, a bursting bubble and an impacting drop. We compare material memory and stiffness through the Deborah number $De$ (how long the material remembers its deformation, compared with how fast the flow is) and the elastocapillary number $Ec$ (how stiff the material is, compared with surface tension), while the solvent Ohnesorge number $Oh_s$ measures viscous effects. Drop impact adds the Weber number $We$, which compares the incoming inertia with surface tension. The recurring question is which stress wins: capillary, viscous or elastic.
 
-![](../../../_Media/6-Sheets-Bubbles-Drops-1.png)
+![Simulation snapshots of a retracting sheet, a bursting bubble with a Worthington jet, and a drop spreading on a wall](../../../_Media/6-Sheets-Bubbles-Drops-1.png)
 *The three examples of this lecture, from direct numerical simulations: a liquid sheet retracting into a rim, a bursting bubble launching a Worthington jet, and a drop spreading on a surface.*
 
 ## 0) Recap: one model, three limits
@@ -110,7 +110,7 @@ The question is not new. Cheny & Walters (1996) compared the Worthington jets th
 
 Direct numerical simulations of bursting bubbles in an Oldroyd-B liquid (Dixit, Oratis, Zinelis, Lohse & Sanjay 2025) map out when a jet forms. Here $\mathcal{L} = R_0$, the bubble radius, and $\rho_s$ is the liquid density (for a dilute solution, that of the solvent).
 
-![](../../../_Media/6-Sheets-Bubbles-Drops-2.png)
+![Two log-log maps of jet versus no jet for a bursting bubble, against the Deborah number, in terms of the elastocapillary number and the polymeric Ohnesorge number](../../../_Media/6-Sheets-Bubbles-Drops-2.png)
 *Jet versus no jet for a bursting bubble in a viscoelastic liquid. Left: in the plane of the Deborah number $De$ and the elastocapillary number $Ec$. Right: the same boundary in terms of the polymeric Ohnesorge number $Oh_p = G\lambda/\sqrt{\rho_s\gamma R_0}$. Squares mark the simulated boundary; the shaded regions are the jet (blue) and no-jet (pink) regimes. Adapted from Dixit et al. (2025).*
 
 The two panels show the same boundary, because
@@ -140,7 +140,7 @@ $$V_j \sim We_j\,\frac{\gamma}{\eta_{\mathrm{eff}}} \propto \frac{\gamma}{\eta_{
 
 A constant $We_j$ is an extra scaling assumption, not something the balance itself guarantees.
 
-![](../../../_Media/6-Sheets-Bubbles-Drops-3.png)
+![Log-log plot of jet speed against effective Ohnesorge number for three small Deborah numbers, with a dashed inverse-viscosity line](../../../_Media/6-Sheets-Bubbles-Drops-3.png)
 *Jet speed $V_{\mathrm{jet}}$ (in units of $\sqrt{\gamma/\rho_s R_0}$) against an effective Ohnesorge number, for three small Deborah numbers, from the simulations of §2.2. As plotted in the lecture, $Oh_{\mathrm{eff}} = (3\eta_s + 2G\lambda)/\sqrt{\rho_s\gamma R_0}$, which keeps only the axial polymer stress; the full result above, $3(\eta_s + G\lambda)$, differs only in the polymer weighting. At $De = 10^{-4}$ and $10^{-3}$ the data follow the inverse-viscosity trend (dashed line) over much of the range; at $De = 10^{-2}$ they fall clearly below it.*
 
 ### 2.4 Intermezzo: yield stress
@@ -181,7 +181,7 @@ A water drop in space bounces off a hydrophobic paddle almost like a ball ([liqu
 
 Force measurements on drops hitting a superhydrophobic surface show two peaks: one at impact and one when the drop jumps off, as a Worthington jet forms inside it (Zhang, Sanjay *et al.* 2022). The first peak follows inertial scaling:
 
-![](../../../_Media/6-Sheets-Bubbles-Drops-4.png)
+![Log-log plot of the first impact force peak against Weber number for experiments and simulations at several Ohnesorge numbers](../../../_Media/6-Sheets-Bubbles-Drops-4.png)
 *First force peak $F_1$, scaled by $\rho_d V_0^2 D_0^2$, against the Weber number $We = \rho_d V_0^2 D_0/\gamma$, where $\rho_d = \rho$ is the drop density and $D_0 = 2R_0$ the drop diameter. Experiments and simulations span $Oh = \eta/\sqrt{\rho_d\gamma D_0} = 0.0025$ (water) to $0.2$. The data approximately collapse onto $\tilde F_1 \approx 0.81 + 1.6/We$, with modest viscosity-dependent departures (Zhang, Sanjay et al. 2022; Sanjay et al. 2025).*
 
 The first peak barely depends on viscosity: it stays the same for liquids up to about a hundred times more viscous than water (Sanjay, Zhang, Lv & Lohse 2025). Only for much more viscous drops does dissipation take over. In terms of the radius, which we use from here on, the peak force is $F_{\max}/(\rho V_0^2R_0^2) \approx 3.24 + 3.2/We$ with $We = \rho V_0^2R_0/\gamma$. At large $We$ this tends to the Wagner value $3.24$; at small $We$ capillarity adds to it. A unified scaling theory for both the impact force and the maximum spreading diameter is given by Sanjay & Lohse (2025).
@@ -190,7 +190,7 @@ The first peak barely depends on viscosity: it stays the same for liquids up to 
 
 Now give the drop an elastic modulus $G$. For impact the natural memory number is the Weissenberg number $Wi = \lambda/\tau_i = \lambda V_0/R_0$, related to the capillary-time Deborah number by $Wi = De\sqrt{We}$ (with $We = \rho V_0^2R_0/\gamma$). In the infinite-memory limit $Wi \to \infty$, and at fixed solvent Ohnesorge number, the force is set by $We$ and $Ec = GR_0/\gamma$, or equivalently by $We$ and the elasticity number $El = G/(\rho V_0^2) = Ec/We$ (Jana, Kolinski, Lohse & Sanjay 2026).
 
-![](../../../_Media/6-Sheets-Bubbles-Drops-5.png)
+![Peak impact force against elasticity number for Weber numbers 1 to 500, showing the Wagner plateau and Hertz scaling, beside a regime map of capillary, Wagner and Hertz regimes](../../../_Media/6-Sheets-Bubbles-Drops-5.png)
 *Left: peak impact force against the elasticity number $El = G/\rho V_0^2$ at $Oh = 0.01$, for Weber numbers from 1 to 500. At small $El$ the large-$We$ curves approach the Wagner plateau, while smaller $We$ keep a capillary contribution; at large $El$ the curves approach the Hertz scaling $\tilde F_{\max} \propto El^{2/5}$. Right: the resulting regime map in the plane of $We$ and $Ec = GR_0/\gamma$, with capillary, Wagner and Hertz regimes. Simulations as in Jana et al. (2026).*
 
 - For $El \lesssim 0.1$ the sphere behaves like a liquid drop: Wagner, $F_{\max} \approx 3.24\,\rho V_0^2R_0^2$, plus a capillary correction at small $We$.
@@ -201,7 +201,7 @@ Sweeping the relaxation time from zero to infinity takes the same sphere continu
 
 ## Summary
 
-![](../../../_Media/6-Sheets-Bubbles-Drops-6.png)
+![Schematic map with viscous Newtonian, elastic solid and viscoelastic solid regions in the plane of Deborah number and retardation time](../../../_Media/6-Sheets-Bubbles-Drops-6.png)
 *Where the three behaviours live, in terms of the Deborah number $De = \lambda/\tau$ (relaxation time over flow time) and the retardation time $\eta_s/G$ over the flow time $\tau$.*
 
 1. One model, the Oldroyd-B family, covers viscous liquids ($De \to 0$), elastic solids ($De \to \infty$, $\eta_s/(G\tau) \ll 1$) and viscoelastic Kelvin–Voigt solids ($De \to \infty$, $\eta_s/(G\tau)$ of order one or larger).
