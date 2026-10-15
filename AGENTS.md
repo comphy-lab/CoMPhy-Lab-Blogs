@@ -113,6 +113,23 @@ does not prove a live header change. Follow
 [`docs/browser-security.md`](docs/browser-security.md) before proposing
 browser-header changes.
 
+### Authoring
+
+- Authors write in Obsidian. Obsidian Sync carries their edits to the one Git
+  checkout of this repository, where they appear as uncommitted changes. Other
+  synced copies of the vault have no `.git`. Sync must exclude `.git/` and
+  `_quartz/`.
+- Uncommitted changes in that checkout belong to the author. Never reset,
+  restore, clean or stash them. Review them against the privacy boundary, then
+  commit them as their own commit before making other changes.
+- Drafts stay outside this repository until they are ready to publish; move
+  them in rather than keeping a second copy.
+- To publish: commit the reviewed author edits, run `npm run build:tex-pdfs` in
+  `_quartz/` if a lecture note changed (after committing, since uncommitted
+  files change the vault inventory hash), commit the PDFs and manifest, pass
+  `npm run build:cloudflare`, push `main`, and then confirm the Cloudflare
+  build and the live page.
+
 ### PDF copies
 
 - During `build:cloudflare`, `_quartz/scripts/build-pdfs.mjs` copies fresh,

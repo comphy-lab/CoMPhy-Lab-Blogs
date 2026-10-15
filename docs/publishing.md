@@ -11,6 +11,17 @@ keeps one folder per year (for example `Lecture-Notes/Intro-Soft-Matter/2025/`);
 old URLs are kept working with 301 rules in `_quartz/quartz/static/_redirects`. Tracked media, including existing
 PDFs, is copied into the static site.
 
+## Authoring
+
+Authors edit in Obsidian, and Obsidian Sync delivers their edits to a single
+Git checkout of this repository. Other synced copies of the vault carry no
+`.git`, and Sync excludes `.git/` and `_quartz/`, so build tooling never
+syncs. In the checkout, the author's edits are uncommitted changes. They are
+reviewed against the privacy boundary in `AGENTS.md` and committed on their
+own before any other change; they are never reset, cleaned or stashed. A
+publish then typesets changed lecture notes (see below), passes
+`npm run build:cloudflare` and pushes `main`. The push is the release.
+
 ## Production build
 
 The `comphy-blogs` Cloudflare Worker serves Quartz's static assets. Configure
