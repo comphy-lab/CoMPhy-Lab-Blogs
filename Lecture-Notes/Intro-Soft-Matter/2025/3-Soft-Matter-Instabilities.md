@@ -15,7 +15,7 @@ publish: true
 <!-- BLOG-PDF-LINK-START -->
 <!-- PDF-EXPORT-IGNORE-START -->
 > [!pdf] PDF version
-> [[_Media/PDF/Lecture-Notes/Intro-Soft-Matter/3-Soft-Matter-Instabilities.pdf|Download this page as PDF]]
+> [[_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/3-Soft-Matter-Instabilities.pdf|Download this page as PDF]]
 <!-- PDF-EXPORT-IGNORE-END -->
 <!-- BLOG-PDF-LINK-END -->
 
@@ -29,12 +29,12 @@ Patterns are everywhere: dunes and ripples, icicle ribs, dew beads on spider web
 
 Think of a bead in a landscape: at the bottom of a well (stable), on a flat shelf (neutral), or on a hilltop (unstable). 
 
-![](../../_Media/Lecture3-Instabilities-1761841931414.png)
+![](../../../_Media/Lecture3-Instabilities-1761841931414.png)
 
 
 A “standing pencil” fails in practice because the slightest perturbation makes it fall—no physical system is perfectly disturbance‑free. We use this picture to interpret flows: _stable_ states damp disturbances; _unstable_ ones amplify them; _neutral_ ones neither grow nor decay until nonlinearities tip them.
 
-![](../../_Media/Lecture3-Instabilities-1761841962795.png)
+![](../../../_Media/Lecture3-Instabilities-1761841962795.png)
 
 Where do disturbances come from? Ambient vibrations, thermal fluctuations, surface roughness, composition heterogeneity, or imposed forcing (e.g. vibration). Even when continuum hypotheses hold (Knudsen number small), the flow “feels” these small perturbations; if the base state cannot damp them, patterns emerge.
 
@@ -52,7 +52,7 @@ Rule of thumb: the same effect (surface tension, elasticity, gravity) that stabi
 
 In words of James Clerk Maxwell
 
-![](../../_Media/Lecture3-Instabilities-1761842034192.png)
+![](../../../_Media/Lecture3-Instabilities-1761842034192.png)
 
 
 ---
@@ -65,7 +65,7 @@ Mechanism. A small bulge on a liquid thread lowers capillary pressure locally; l
 
 What to look for. On a dripping faucet, you see the regular drop train because this instability picks a wavelength/time scale of breakup.
 
-![](../../_Media/Lecture3-Instabilities-1761842080703.png)
+![](../../../_Media/Lecture3-Instabilities-1761842080703.png)
 Cressey, D. 365 days: Images of the year. Nature 516, 304–309 (2014) - image taken at [Physics of Fluids Department, University of Twente](https://pof.tnw.utwente.nl/).
 
 <div style="text-align: center;">
@@ -82,14 +82,14 @@ Mechanism. Two fluids sliding past each other create a vorticity sheet at the in
 
 What to look for. In counter‑flowing layers (or the “flag flapping” movie on your slide set), once the interfacial shear is large enough, coherent vortical waves appear and then pair/roll up.
 
-![](../../_Media/Lecture3-Instabilities-1761842604089.png)
+![](../../../_Media/Lecture3-Instabilities-1761842604089.png)
 
 
 ### (iii) Rayleigh–Taylor (heavy‑over‑light → spikes & bubbles)
 
 Mechanism. Gravity pulls a heavy fluid down through a light one; a downward dent increases the hydrostatic pressure drop there and accelerates further—positive feedback. Surface tension stabilizes short waves; the competition picks a dominant wavelength. Thin‑film variants (heavy film above air) yield honeycomb/hexagonal hole patterns.
 
-![](../../_Media/Lecture3-Instabilities-1761842685134.png)
+![](../../../_Media/Lecture3-Instabilities-1761842685134.png)
 Image by Shengtai Li, Hui Li - "Parallel AMR Code for Compressible MHD or HD Equations", Attribution, <a href="https://commons.wikimedia.org/w/index.php?curid=6513545">Link</a>
 
 
@@ -112,6 +112,16 @@ Mechanism. Heating from below (buoyancy) or surface‑tension gradients along a 
 
 <div style="text-align: center;">
     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/v2vMXmuC818" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+</div>
+
+The same experiment as the oil layer is made thicker, from 0.14 cm to 0.49 cm (50 cSt silicone oil seeded with copper pigment, on a hot aluminium plate; description in German). The cells grow with the layer depth.
+
+<div style="text-align: center;">
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9Ru_bjW3eL8" 
         title="YouTube video player" frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
@@ -154,7 +164,7 @@ Mechanism. A falling viscous thread buckles and coils from a balance of gravity,
 1. Force balance & scales. Ask which pair of effects compete: inertia vs capillarity (Weber number), viscous vs capillarity (capillary number), inertia vs viscosity (Reynolds number), gravity vs capillarity (Bond number), elasticity vs capillarity (elastocapillary mumber) or inertia in soft materials (elasticity number). These dimensionless groups flag likely instabilities and the direction of selection.
 2. Dispersion‑curve picture (qualitative). Most interfacial problems have a “bell‑shaped” growth‑rate vs wavelength: short waves stabilized by surface tension/viscosity, long waves limited by the finite driving (e.g. pressure or gravity). The peak sets the emergent spacing observed in your videos/demos. (Keep this as a mental model.)
 
-![](../../_Media/3-Soft-Matter-Instabilities-1761860668972.png)
+![](../../../_Media/3-Soft-Matter-Instabilities-1761860668972.png)
 Sketch of the interfacial instabilities discussed in F. Gallaire & P-T. Brun, Philos. Trans. R. Soc. A, 375:2093, 20160155 (2017). DOI: [10.1098/rsta.2016.0155](https://doi.org/10.1098/rsta.2016.0155)
 The dispersion relation, $\sigma$ is the growth rate and $k$ the wave vector, is provided when available. (a(i)–a(iv)) Plateau–Rayleigh instability, (b) Kelvin–Helmoltz instability, (c(i),c(ii)) Rayleigh–Taylor instability in two-phase flows and in a thin layer, (d) Faraday waves arising in a bath subject to periodic oscillatory forcing, (e) Rayleigh–Bénard–Marangoni instability obtained when heating up a thin layer of fluid, (\*) hexagonal tilling, (f(i),f (ii)) plane and radial Saffman–Taylor instability in a Hele–Shaw cell, (g(i),g(ii)) capillary ridge instability and wine tears, (h) Kapitza waves and (i) viscous coiling, with the last three being examples of instabilities found in everyday life. (c(ii)),(d) and (e) typically arrange in patterns such as shown in (\*). Taken from F. Gallaire & P-T. Brun, Philos. Trans. R. Soc. A, 375:2093, 20160155 (2017). DOI: [10.1098/rsta.2016.0155](https://doi.org/10.1098/rsta.2016.0155)
 
@@ -189,4 +199,4 @@ Engineers used to fear instabilities as failure modes. Soft‑matter physics rep
 > [!link] Back to main website
 > [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
 >
-> 📝 [Edit this page on GitHub](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/blob/main/Lecture-Notes/Intro-Soft-Matter/3-Soft-Matter-Instabilities.md)
+> 📝 [Edit this page on GitHub](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/blob/main/Lecture-Notes/Intro-Soft-Matter/2025/3-Soft-Matter-Instabilities.md)

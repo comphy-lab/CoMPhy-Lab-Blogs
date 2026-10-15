@@ -51,7 +51,8 @@ test("explorer filter remains self-contained when Quartz serialises it", () => {
   assert.equal(revived({ slugSegments: ["Talks"], slugSegment: "Talks" }), true)
 })
 
-const course = "Lecture-Notes/Intro-Soft-Matter"
+// Courses taught more than once keep one folder per year.
+const course = "Lecture-Notes/Intro-Soft-Matter/2025"
 const lectureStems = [
   "7.5-Presentation-Paper-Topics",
   "2-What-is-Viscosity",
@@ -103,6 +104,16 @@ test("explorer lists lecture notes in course order, decimals included", () => {
       .sort(sortExplorer)
       .map((node) => node.slugSegment),
     ["0-README", "1-conduction-takeaways", "1st-workingAssignment", "4th-workingAssignment"],
+  )
+  const years = ["2026", "2025"].map((year) => ({
+    slugSegments: ["Lecture-Notes", "Intro-Soft-Matter", year],
+    slugSegment: year,
+    isFolder: true,
+    displayName: year,
+  }))
+  assert.deepEqual(
+    years.sort(sortExplorer).map((node) => node.slugSegment),
+    ["2025", "2026"],
   )
 })
 

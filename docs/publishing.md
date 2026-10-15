@@ -6,7 +6,9 @@ emits only Markdown pages with `publish: true`. Linked `_AtomicNotes` pages keep
 their routes even though they are hidden from the primary navigation. A page
 with `unlisted: true` is likewise published but left out of the Explorer and
 folder listings. Lecture notes with a numeric filename prefix are listed in
-numeric course order (1, 1.5, 1.75, 2, …). Tracked media, including existing
+numeric course order (1, 1.5, 1.75, 2, …). A course taught in several years
+keeps one folder per year (for example `Lecture-Notes/Intro-Soft-Matter/2025/`);
+old URLs are kept working with 301 rules in `_quartz/quartz/static/_redirects`. Tracked media, including existing
 PDFs, is copied into the static site.
 
 ## Production build

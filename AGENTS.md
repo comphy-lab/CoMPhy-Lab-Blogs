@@ -48,6 +48,7 @@ website: https://blogs.comphy-lab.org/your-post-url
 ### Lecture notes
 - Files in `Lecture-Notes/` with a numeric filename prefix (`0-README`, `1-…`, `1.5-…`, `2-…`, `7-8-…`) are listed in that numeric order in the Explorer and folder pages
 - Add `unlisted: true` to a published page that should be reached only through links (for example homework answers); it stays published but is left out of the Explorer and folder listings. Link it from the lecture that uses it
+- A course that runs more than once keeps one folder per year (`Lecture-Notes/Intro-Soft-Matter/2025/`, `2026/`). A new year starts by linking to the previous year's notes and adds or revises lectures as they are taught; do not copy a whole year forward. When notes move, add a 301 rule for every old page and PDF URL to `_quartz/quartz/static/_redirects` (slides and old links point at them). Do not use `aliases:` for old paths: alias slugs join link resolution, so a bare `[[2-What-is-Viscosity]]` becomes ambiguous and breaks
 
 ## Development Commands
 

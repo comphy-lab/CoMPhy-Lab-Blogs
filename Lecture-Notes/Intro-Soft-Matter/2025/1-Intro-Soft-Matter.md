@@ -15,7 +15,7 @@ publish: true
 <!-- BLOG-PDF-LINK-START -->
 <!-- PDF-EXPORT-IGNORE-START -->
 > [!pdf] PDF version
-> [[_Media/PDF/Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.pdf|Download this page as PDF]]
+> [[_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/1-Intro-Soft-Matter.pdf|Download this page as PDF]]
 <!-- PDF-EXPORT-IGNORE-END -->
 <!-- BLOG-PDF-LINK-END -->
 
@@ -49,11 +49,11 @@ Observe the transformation of gelatin and water:
 
 The gel feels solid (can hold shape), yet wobbles easily when pushed—a hallmark of soft matter.
 
-![](../../_Media/1-Intro-Soft-Matter-1761103784897.png)
+![](../../../_Media/1-Intro-Soft-Matter-1761103784897.png)
 
 #### Beer Foam (Foam 🍺)
 
-![](../../_Media/1-Intro-Soft-Matter-1761103818495.png)
+![](../../../_Media/1-Intro-Soft-Matter-1761103818495.png)
 
 Good foam (left): Stable bubble structure with clear thin walls<br>
 Bad foam (right): Bubbles coalesce and collapse
@@ -65,13 +65,13 @@ Foams are gas bubbles trapped in liquid with surfactants stabilizing the interfa
 - Flow and rearrange under sustained forces
 - Evolve over time via coalescence and coarsening
 
-![](../../_Media/1-Intro-Soft-Matter-1761103864489.png)
+![](../../../_Media/1-Intro-Soft-Matter-1761103864489.png)
 
 *Reference:* P. S. Stewart & S. Hilgenfeldt, *Annu. Rev. Fluid Mech.*, 55:1, 323–350 (2023)
 
 #### Shaving Cream
 
-![](../../_Media/1-Intro-Soft-Matter-1761103886417.png)
+![](../../../_Media/1-Intro-Soft-Matter-1761103886417.png)
 
 A dense foam of gas + liquid—microstructure determines function:
 - Spreads easily (flows under shear)
@@ -88,7 +88,7 @@ A dense foam of gas + liquid—microstructure determines function:
 
 ### Atomic Scaling Argument
 
-![](../../_Media/1-Intro-Soft-Matter-1761103927376.png)
+![](../../../_Media/1-Intro-Soft-Matter-1761103927376.png)
 
 When you compress a solid, you push overlapping electron clouds closer together. The bulk modulus scales roughly as:
 
@@ -258,13 +258,13 @@ References:
 > [*Proc. Roy. Inst.* XIII. pp. 261–272, Feb. 1891; *Nature*, XLIV. pp. 249–254, 1891.]
 
 
-![](../../_Media/1-Intro-Soft-Matter-1761105367372.png)
+![](../../../_Media/1-Intro-Soft-Matter-1761105367372.png)
 
 John William Strutt, 2nd Baron Rayleigh, one of the 19th century's greatest physicists, used instantaneous photography to capture:
 
 - Falling jets breaking into droplets (Rayleigh–Plateau instability)
 
-![](../../_Media/1-Intro-Soft-Matter-1761105418528.png)
+![](../../../_Media/1-Intro-Soft-Matter-1761105418528.png)
 
 - Liquid stream dynamics and surface tension effects
 - Capillary flows driven by interfacial forces
@@ -274,7 +274,7 @@ His 1891 paper essentially pioneered the study of liquid dynamics—a cornerston
 ### Taylor–Culick Retraction: The Dupré–Rayleigh Paradox
 
 
-![](../../_Media/1-Intro-Soft-Matter-1761105451051.png)
+![](../../../_Media/1-Intro-Soft-Matter-1761105451051.png)
 
 When you puncture a thin soap bubble, the film edge retracts rapidly inward. The film consists of a thin water layer (thickness $h_0$) with surfactant molecules at both liquid–air interfaces (surface tension $\gamma_{fa}$ per interface).
 
@@ -314,7 +314,7 @@ Question: Where did the energy go?
 
 ## Friday Afternoon Experiment: Timescale Matters
 
-Researchers at Sorbonne Université studied bubble formation dynamics by varying the air-blowing rate during bubble generation:
+Researchers at the University of Naples Federico II studied bubble formation dynamics by varying the air-blowing rate during bubble generation:
 
 <div style="text-align: center;">
     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zLucBJkUI5c?si=0AV6BMzb_oK8VpkG" 
@@ -479,4 +479,4 @@ See the next lecture for a rigorous treatment of the Taylor–Culick paradox and
 > [!link] Back to main website
 > [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
 >
-> 📝 [Edit this page on GitHub](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/blob/main/Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.md)
+> 📝 [Edit this page on GitHub](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/blob/main/Lecture-Notes/Intro-Soft-Matter/2025/1-Intro-Soft-Matter.md)

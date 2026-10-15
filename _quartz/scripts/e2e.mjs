@@ -258,19 +258,21 @@ try {
 
   // Lecture notes keep course order (1, 1.5, 2, 2.5, …) in the folder listing
   // and in the Explorer, independent of titles and dates.
-  await page.goto(base + "/Lecture-Notes/Intro-Soft-Matter/", { waitUntil: "networkidle" })
-  await page.waitForSelector(".explorer-content a[href*='Intro-Soft-Matter/']", {
+  await page.goto(base + "/Lecture-Notes/Intro-Soft-Matter/2025/", { waitUntil: "networkidle" })
+  await page.waitForSelector(".explorer-content a[href*='Intro-Soft-Matter/2025/']", {
     state: "attached",
   })
   const lectureOrder = await page.evaluate(() => {
     const numbers = (selector) =>
       [...document.querySelectorAll(selector)]
-        .map((a) => /Intro-Soft-Matter\/(\d+(?:\.\d+)?)[^/]*$/.exec(a.getAttribute("href") ?? ""))
+        .map((a) =>
+          /Intro-Soft-Matter\/2025\/(\d+(?:\.\d+)?)[^/]*$/.exec(a.getAttribute("href") ?? ""),
+        )
         .filter(Boolean)
         .map((match) => Number(match[1]))
     return {
       listing: numbers(".page-listing .section-li h3 a.internal"),
-      explorer: numbers(".explorer-content a[href*='Intro-Soft-Matter/']"),
+      explorer: numbers(".explorer-content a[href*='Intro-Soft-Matter/2025/']"),
     }
   })
   for (const [where, numbers] of Object.entries(lectureOrder)) {
@@ -281,6 +283,25 @@ try {
     )
   }
   report.interactions.lectureOrder = true
+
+  // The 2025 notes moved into a year folder; old URLs, including those printed
+  // on the 2025 slides, must keep working.
+  for (const [from, to] of [
+    ["/Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity", "/2025/2-What-is-Viscosity"],
+    ["/Lecture-Notes/Intro-Soft-Matter/2-Conservation-Laws", "/2025/2.5-Conservation-Laws"],
+    [
+      "/_Media/PDF/Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.pdf",
+      "/2025/1-Intro-Soft-Matter.pdf",
+    ],
+  ]) {
+    const response = await page.request.get(base + from, { maxRedirects: 0 })
+    const location = response.headers()["location"] ?? ""
+    assert(
+      response.status() === 301 && location.endsWith(to),
+      `old course URL ${from} gave ${response.status()} ${location}`,
+    )
+  }
+  report.interactions.courseRedirects = true
 
   await page.goto(base, { waitUntil: "networkidle" })
   await page.locator(".search button").first().click()

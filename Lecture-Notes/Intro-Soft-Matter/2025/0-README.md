@@ -7,12 +7,12 @@ aliases:
 date: 2025-10-14
 ---
 
-# Soft Condensed Matter: An Introduction
+# Soft Condensed Matter: An Introduction (2025)
 
 <!-- BLOG-PDF-LINK-START -->
 <!-- PDF-EXPORT-IGNORE-START -->
 > [!pdf] PDF version
-> [[_Media/PDF/Lecture-Notes/Intro-Soft-Matter/0-README.pdf|Download this page as PDF]]
+> [[_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/0-README.pdf|Download this page as PDF]]
 <!-- PDF-EXPORT-IGNORE-END -->
 <!-- BLOG-PDF-LINK-END -->
 
@@ -37,7 +37,7 @@ Course Overview. A journey through soft materials—from everyday foams and gels
 - Lecture 3: [[3-Soft-Matter-Instabilities|Soft Matter Instabilities]] – Pattern formation through instability mechanisms: Rayleigh–Plateau, Kelvin–Helmholtz, Rayleigh–Taylor, Faraday waves, Rayleigh–Bénard–Marangoni, Saffman–Taylor fingering, and viscous coiling. Understanding how competing forces select characteristic length scales and how to harness instabilities for fabrication.
 - Lecture 4: [[4-Soft-Matter-Singularities|Soft Matter Singularities]] – Finite-time singularities, contact lines, and the mid-course open-science assignment
 - Lecture 5: [[5-Viscoelasticity|Elastic, Viscous, and Viscoelastic Behaviour]] – Constitutive response, mechanical analogues, and relaxation times
-- Lecture 6: [[6-Rheology|Rheology]] – Measuring softness and interpreting time-dependent response
+- Lecture 6: [[6-Sheets-Bubbles-Drops|Sheets, Bubbles and Drops]] – Elastic, viscous and viscoelastic behaviour in retracting sheets, bursting bubbles and impacting drops
 - Lectures 7–8: [[7-8-Student-Presentations|Student Presentations]] – Paper-led synthesis and discussion
   - [[7.5-Presentation-Paper-Topics|Presentation Paper Topics]] – Paper choices, preparation process, and assessment criteria
 
@@ -124,4 +124,4 @@ Have questions? Come to office hours or send an email — I'm here to help!
 > [!link] Back to main website
 > [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
 >
-> 📝 [Edit this page on GitHub](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/blob/main/Lecture-Notes/Intro-Soft-Matter/0-README.md)
+> 📝 [Edit this page on GitHub](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/blob/main/Lecture-Notes/Intro-Soft-Matter/2025/0-README.md)

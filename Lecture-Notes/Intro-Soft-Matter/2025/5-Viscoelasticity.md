@@ -17,7 +17,7 @@ publish: true
 <!-- BLOG-PDF-LINK-START -->
 <!-- PDF-EXPORT-IGNORE-START -->
 > [!pdf] PDF version
-> [[_Media/PDF/Lecture-Notes/Intro-Soft-Matter/5-Viscoelasticity.pdf|Download this page as PDF]]
+> [[_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/5-Viscoelasticity.pdf|Download this page as PDF]]
 <!-- PDF-EXPORT-IGNORE-END -->
 <!-- BLOG-PDF-LINK-END -->
 
@@ -437,7 +437,7 @@ Consider:
 ---
 
 **Previous Lecture:** [[4-Soft-Matter-Singularities|Lecture 4: Finite-Time Singularities]]<br>
-**Next Lecture:** [[6-Rheology|Lecture 6: Rheology]]<br>
+**Next Lecture:** [[6-Sheets-Bubbles-Drops|Lecture 6: Sheets, Bubbles and Drops]]<br>
 **Course Home:** [[0-README|Course Overview]]
 
 > [!significance]- Metadata
@@ -448,4 +448,4 @@ Consider:
 > [!link] Back to main website
 > [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
 >
-> 📝 [Edit this page on GitHub](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/blob/main/Lecture-Notes/Intro-Soft-Matter/5-Viscoelasticity.md)
+> 📝 [Edit this page on GitHub](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/blob/main/Lecture-Notes/Intro-Soft-Matter/2025/5-Viscoelasticity.md)

@@ -8,8 +8,6 @@ tags:
   - rheology
   - no-slip-condition
 lecture-number: 2
-aliases:
-  - Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity
 date: 2025-10-29
 status: done ✅
 publish: true
@@ -20,7 +18,7 @@ publish: true
 <!-- BLOG-PDF-LINK-START -->
 <!-- PDF-EXPORT-IGNORE-START -->
 > [!pdf] PDF version
-> [[_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.pdf|Download this page as PDF]]
+> [[_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/2-What-is-Viscosity.pdf|Download this page as PDF]]
 <!-- PDF-EXPORT-IGNORE-END -->
 <!-- BLOG-PDF-LINK-END -->
 
@@ -50,7 +48,7 @@ $$\boxed{\tau_{xy} = \eta \dot{\gamma} = \eta \frac{\partial u_x}{\partial y}}$$
 
 This equation states that shear stress is proportional to shear rate, with a constant of proportionality—the viscosity $\eta$—that depends on the material and temperature, but *not* on how fast we shear it. This is the foundational definition of a Newtonian fluid.
 
-![](../../_Media/2-What-is-Viscosity-1761738216814.png)
+![](../../../_Media/2-What-is-Viscosity-1761738216814.png)
 
 ### Key Definitions
 
@@ -59,7 +57,7 @@ This equation states that shear stress is proportional to shear rate, with a con
 - Viscosity $\eta$ (Pa$\cdot$s): the coupling coefficient; higher $\eta$ means stickier fluid
 - Kinematic viscosity $\nu = \eta/\rho$ (m$^2$/s): the "speed" at which momentum diffuses through the fluid
 
-![](../../_Media/2-What-is-Viscosity-1761738244038.png)
+![](../../../_Media/2-What-is-Viscosity-1761738244038.png)
 
 > [!important] Distinguishing Newtonian vs. Non-Newtonian Fluids
 >
@@ -79,7 +77,7 @@ Viscosity emerges because molecules carry momentum across planes during free fli
 
 ### Setup: Simple Couette Flow
 
-![](../../_Media/2-What-is-Viscosity-1761738283101.png)
+![](../../../_Media/2-What-is-Viscosity-1761738283101.png)
 
 Consider a steady shear flow where:
 1. Velocity varies linearly: $u_x(y) = \dot{\gamma} \cdot y$
@@ -111,7 +109,7 @@ $$\langle v_y^+ \rangle_{\text{dir}} = \frac{1}{4\pi} \int_{\text{hemisphere}} c
 
 Averaging over the Maxwellian speed distribution yields $J = n \bar{c}/4$.
 
-![](../../_Media/2-What-is-Viscosity-1761738310141.png)
+![](../../../_Media/2-What-is-Viscosity-1761738310141.png)
 
 ---
 
@@ -180,7 +178,7 @@ Dimensional Analysis: $[\bar{c}][\lambda] = \text{(m/s)} \times \text{(m)} = \te
 
 ### The Wall Picture
 
-![](../../_Media/2-What-is-Viscosity-1761767758968.png)
+![](../../../_Media/2-What-is-Viscosity-1761767758968.png)
 
 ### Physical Mechanism
 
@@ -403,4 +401,4 @@ Understanding why momentum diffusion acts as a dissipative force (damping) is ce
 > [!link] Back to main website
 > [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
 >
-> 📝 [Edit this page on GitHub](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/blob/main/Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.md)
+> 📝 [Edit this page on GitHub](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/blob/main/Lecture-Notes/Intro-Soft-Matter/2025/2-What-is-Viscosity.md)

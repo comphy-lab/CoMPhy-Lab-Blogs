@@ -5,6 +5,8 @@ aliases:
   - Basilisk101
 ---
 
+# Basilisk 101: Computational Fluid Dynamics with Basilisk C
+
 <!-- BLOG-PDF-LINK-START -->
 <!-- PDF-EXPORT-IGNORE-START -->
 > [!pdf] PDF version

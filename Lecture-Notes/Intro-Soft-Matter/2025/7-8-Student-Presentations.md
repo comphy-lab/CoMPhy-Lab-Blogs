@@ -17,7 +17,7 @@ publish: true
 <!-- BLOG-PDF-LINK-START -->
 <!-- PDF-EXPORT-IGNORE-START -->
 > [!pdf] PDF version
-> [[_Media/PDF/Lecture-Notes/Intro-Soft-Matter/7-8-Student-Presentations.pdf|Download this page as PDF]]
+> [[_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/7-8-Student-Presentations.pdf|Download this page as PDF]]
 <!-- PDF-EXPORT-IGNORE-END -->
 <!-- BLOG-PDF-LINK-END -->
 
@@ -27,7 +27,7 @@ publish: true
 
 **Structure:**
 - Each student presents one selected paper
-- **8 minutes** per presentation
+- **10–12 minutes** per presentation
 - Followed by peer discussion and Q&A (3 minutes)
 - Instructor moderates and connects to course themes
 
@@ -79,7 +79,7 @@ publish: true
 - **Clarity:** Explain jargon and technical terms
 - **Focus:** Don't try to cover everything
 - **Engagement:** Make eye contact, invite questions
-- **Time:** Practice to stay within 8 minutes
+- **Time:** Practise to finish within 10–12 minutes
 
 ### Peer Discussion
 
@@ -155,7 +155,7 @@ publish: true
 
 **Connection to Course:**
 - Lecture 5: Viscoelastic behavior of polymers
-- Lecture 6: Rheology, relaxation times
+- Lecture 6: Relaxation time and the Deborah number
 
 ### Paper 4: Auxetic Materials
 
@@ -218,7 +218,7 @@ publish: true
 - Spawned new research field
 
 **Connection to Course:**
-- Lecture 6: G' and G" behavior
+- Lecture 5: Solid-like versus liquid-like response
 - Transition from fluid to solid
 - Shear thickening (related to paper 10)
 
@@ -264,7 +264,7 @@ publish: true
 - Understanding developmental biology
 
 **Connection to Course:**
-- Lecture 6: Modulus as meaningful parameter (kPa range matters!)
+- Lectures 5–6: The elastic modulus as a control parameter (kPa range matters!)
 - Biological relevance of "softness"
 - Cells as mechanical sensors
 
@@ -313,13 +313,13 @@ publish: true
 - Shear-thickening fluids in protective gear
 
 **Connection to Course:**
-- Lecture 6: Non-Newtonian rheology
+- Lectures 5–6: Non-Newtonian flow
 - Lecture 3: Instabilities and pattern formation
 - Dramatic material behavior change under stress
 
 ## Schedule Overview
 
-The final running order is set after paper selection. For a cohort of ten, each slot is 11 minutes: 8 minutes to present and 3 minutes for questions. This leaves 10 minutes for opening and synthesis within the two-hour session. Smaller cohorts use the same presentation limit with additional discussion time.
+The final running order is set after paper selection. Each slot is about 15 minutes: 10–12 minutes to present and about 3 minutes for questions.
 
 ## Instructor Role
 
@@ -333,7 +333,7 @@ The final running order is set after paper selection. For a cohort of ten, each 
 
 **Connect to Course Concepts:**
 - Example: "Einstein (1905) relates to Brownian motion and energy scales from Lecture 1"
-- Example: "Engler et al. (2006) ties into importance of modulus from Lecture 6"
+- Example: "Engler et al. (2006) ties into the importance of the elastic modulus from Lectures 5–6"
 
 **Facilitate Discussion:**
 - Encourage questions
@@ -382,7 +382,7 @@ This final presentation contributes **60% of the course grade**. The percentages
 - **Content Understanding (30%):** Grasp of paper's main ideas
 - **Clarity of Explanation (20%):** Clear, organized presentation
 - **Visual Aids (10%):** Effective use of slides/figures
-- **Time Management (10%):** Stay within 8 minutes
+- **Time Management (10%):** Finish within 10–12 minutes
 
 ### Discussion Participation (30%)
 
@@ -395,7 +395,7 @@ Full citations are provided in the [[7.5-Presentation-Paper-Topics|Student Prese
 
 ---
 
-**Previous Lecture:** [[6-Rheology|Lecture 6: Rheology]]<br>
+**Previous Lecture:** [[6-Sheets-Bubbles-Drops|Lecture 6: Sheets, Bubbles and Drops]]<br>
 **Course Home:** [[0-README|Course Overview]]<br>
 **Paper Selection:** [[7.5-Presentation-Paper-Topics|Detailed Paper Topics]]
 
@@ -407,4 +407,4 @@ Full citations are provided in the [[7.5-Presentation-Paper-Topics|Student Prese
 > [!link] Back to main website
 > [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
 >
-> 📝 [Edit this page on GitHub](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/blob/main/Lecture-Notes/Intro-Soft-Matter/7-8-Student-Presentations.md)
+> 📝 [Edit this page on GitHub](https://github.com/comphy-lab/CoMPhy-Lab-Blogs/blob/main/Lecture-Notes/Intro-Soft-Matter/2025/7-8-Student-Presentations.md)
