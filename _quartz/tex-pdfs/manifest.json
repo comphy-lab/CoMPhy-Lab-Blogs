@@ -18,9 +18,9 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "c6a2a2ff4cb581c9e0a2dbd4949ab253473bbef76af8286f6b188eb0aad9df2a",
+      "sha256": "e5800e42c1f003593514628e4a5257bbc1cf0862a3af7e3e03bb8a8a61529e81",
       "pdfSha256": "3b01ae1a2ce880e86781d42ecd149540da3c39f94dd3aff632061243808b2a39",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -70,9 +70,9 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "9bb13edc3a35710582157d90264e6b72d2c8babad8b83b177e5f400aa8663893",
+      "sha256": "91d055c601c24db8d9d1a77ccf22d5a12edb51616f2f8745b72afa4fa7c3e493",
       "pdfSha256": "c72724935e99c68d3e2547c4a7c3645d0ab78ecea82dce3fd23d1305d5531b79",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -98,9 +98,9 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "745a84761a35a0652604d40be2e4d21c359b4ce274de5fb75419ad095592de30",
+      "sha256": "73619fcda0594c85fc6792b9d57fb990eb877718dfc4c5488a902040bc42d0a1",
       "pdfSha256": "c02b33b089b06b8845a2566587576c5f8bfbe84115f7e078f760445e8906a595",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -126,9 +126,9 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "4a932cae875fdeab82d2ef8eb2a167ee09c34476960b0a4eab163f166d099318",
+      "sha256": "8384ecb2260288070f948b6dc60a2f3858e72e1840b358de93581427ee32d88b",
       "pdfSha256": "8a2087c59a7d5e900b9a71d2fd9ff49d9368261ce16e753304138efb89b24c86",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -154,9 +154,9 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "d49d6b49c3281fabfdeab5624ed3890f07b51f254c08dc641d81bb97882f06c9",
+      "sha256": "1f5a44b2d546cd436fc45a98a3ae0a64493c4f078d7cea8bc75592dd1a4d8d14",
       "pdfSha256": "e8de8b4e2ee624899285adc9472bfaa52866ce298aed1e76037387efc94ac687",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -186,9 +186,9 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "7f6554f702f86bc0392f9e05083abfa998b3a0660eeb45404d4d3df148c54454",
+      "sha256": "26a9fc62b49a96d852213d9be975fbf375d9cbeddcfd524c897470df286f071f",
       "pdfSha256": "74d9be4bbe7b6fe7d7f3dfd0039c7d1843bb5630c43ad70815dfeac32039e8b9",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -218,9 +218,9 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "ec0eff0a37ebef6b1b91ccc653613df46a41039b1530ce8b03f808786307a4d2",
+      "sha256": "efd98cf06abfc0ea60d8c574247a9aad6f4a0d4538d2ebf9d437cc98fc75df95",
       "pdfSha256": "1bac66e27ab5910d207fa32e90e77ee2088d7f68e0216aabbe7bac9fc7b8516d",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -250,9 +250,9 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "2ce7da9bd4b1a1edf3d0357456634a4d3542bc5a9b58cf9df860836b90aefcf6",
+      "sha256": "b5866fbd0d3c6fd594cf38d9be122943f0f639940cdb1cb5a3f8b388b44bc93d",
       "pdfSha256": "0ced3fd36397246061dc395324f387e11e1de141bfef147c9188991992404ec8",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -282,9 +282,9 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "3484b77504dc80b11a241071509fa2027f2500a6dcc8954029e19522286b7213",
+      "sha256": "be8e7022bf6c0a0d4fba94275b8c5aded2bedb0980f33397f6a60a5b8ad5e138",
       "pdfSha256": "5eb8f45c505a5c7ff428e5a6e8e6f2fb27066465481b3cf41177a682ba1c6a3f",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -303,17 +303,23 @@
         "_Media/6-Sheets-Bubbles-Drops-3.png",
         "_Media/6-Sheets-Bubbles-Drops-4.png",
         "_Media/6-Sheets-Bubbles-Drops-5.png",
-        "_Media/6-Sheets-Bubbles-Drops-6.png"
+        "_Media/6-Sheets-Bubbles-Drops-6.png",
+        "_Media/6-Sheets-Bubbles-Drops-7.png",
+        "_Media/6-Sheets-Bubbles-Drops-8.png",
+        "_Media/6-Sheets-Bubbles-Drops-9.png"
       ],
       "inputs": {
         "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
-        "Lecture-Notes/Intro-Soft-Matter/2025/6-Sheets-Bubbles-Drops.md": "bc340c5e3549a3f0c47f71c923a1b0a2cef15d3cadaff4ef3e6d8b4840af391d",
+        "Lecture-Notes/Intro-Soft-Matter/2025/6-Sheets-Bubbles-Drops.md": "a6071aca065ea73bbfbbf706854f55e461e0e2932e170031226126efc27c4bc4",
         "_Media/6-Sheets-Bubbles-Drops-1.png": "cbac5f8f9a257970b7d561ed1c5856f415758c9310a803dfa9c44effd40a814c",
         "_Media/6-Sheets-Bubbles-Drops-2.png": "ff7492eac8350c26c60c3909f43e27499735bf44679770ce75a1343c2e944a3f",
         "_Media/6-Sheets-Bubbles-Drops-3.png": "384cd740e63297673633abd3372eb63d614f0b549ee91a19119630396911791f",
         "_Media/6-Sheets-Bubbles-Drops-4.png": "9ccb801222608d7c9a27f6a6a531ee67b6b96bc37e18e5fc0581d52132a930df",
         "_Media/6-Sheets-Bubbles-Drops-5.png": "996ab8055a4bd8264a321bfdcd2a5f3e2279d533c6cad5e554acafad989176aa",
         "_Media/6-Sheets-Bubbles-Drops-6.png": "ff34080bb18aa766a1bd39d723d95913922eb7cb4140d75667ffd3ec93bd1067",
+        "_Media/6-Sheets-Bubbles-Drops-7.png": "65e3008e39ab0ff04119f9284f581f0ece2dbf5e25b2135d4438f3af2ca0b5de",
+        "_Media/6-Sheets-Bubbles-Drops-8.png": "b85036590b28ca0a10f24dede12b405386c964f3438620b48cb2264fb6b69afe",
+        "_Media/6-Sheets-Bubbles-Drops-9.png": "5e3c8e735501cd9c48471bc77dd806ddbc052f874bd3dc8c2be8624c78cb7fd7",
         "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
         "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
         "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
@@ -326,10 +332,10 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "286f493db51da872212b806dbf07727ae6d3c942657fe34debbbbd996672cf0c",
-      "pdfSha256": "92fa14d383d04250f88cea7a9b46048f92c19e634f8eb64ebab210ca7e0c2897",
+      "sha256": "0b76af03fb6d21a6dd960bb4063ee4ea03e0c2b17b3afa1809e20f55e58bcfb3",
+      "pdfSha256": "c03e594d71124db175a5a56a3feae4c84851a2b20d8b17d256931138cfd3b46e",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
@@ -354,9 +360,9 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "e3b771825d45e8152e9e5fbdb18a0c2c96d69daa8cbdadc60af0b39cc8b67c62",
+      "sha256": "56effd309f10fd8ead5676f873826ef552256f218c250d63378d0b2ea4833e7e",
       "pdfSha256": "48816d1eb0454f26a2ddec5454a00ed5637ff3cc117ca314460df90f89d0d245",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -402,9 +408,9 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "faa8eec9985d925082ac2bc51f371cf2b899f49d3a4345fef3b6c87f2ca603d1",
+      "sha256": "e940f758675e82912aa6025e964e49b9e36465e1546a7519fa70e2eae15cc03b",
       "pdfSha256": "1116cb6740c7592c7c11e3d3d8e6178da54241fe374036a8511080035b227587",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -431,7 +437,7 @@
       ],
       "inputs": {
         "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
-        "Lecture-Notes/Intro-Soft-Matter/2025/1.5-Taylor-Culick-Paradox.md": "f5f875f5732651d5d1f82d07d0707e27a685d986cfacd2553b5618c7f4ec8574",
+        "Lecture-Notes/Intro-Soft-Matter/2025/1.5-Taylor-Culick-Paradox.md": "68920a5af16371a606cbb2acb910f354fc21f198025bb74846dce5d9a8946d2c",
         "_Media/1.5-Taylor-Culick-01.png": "30d07b5b250d75c74e34de2d3bd5271dc2c1d2fae1a119bf800da34d5b98cdd2",
         "_Media/1.5-Taylor-Culick-03.png": "e5d40ee1d1893ceebcdb7d4d01e7dfb310934063fb18b27adc3dd6b61a3f1a04",
         "_Media/1.5-Taylor-Culick-05.png": "10820c8ea44b7d1c9662ed6a1d9de1a4c459252aed60c3a02e3adcdf687d551e",
@@ -454,10 +460,10 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "b1122bb5dbe3c9bab790bf5ac94cb5bd600e43f3b8d9cb45b0711f526446908e",
-      "pdfSha256": "7b83ec5fb3160954b86694bc4d0bd6b5466602b5e097a44b093e6fa5c72895de",
+      "sha256": "52e20c5ee6e16d7bfd9286f404c6546c025188963e65ca8b93bc5d024b5200fa",
+      "pdfSha256": "54d7b3bdd513a406297cab62b3603b2073d42f9f82411656f9b617a389353fd7",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
@@ -486,9 +492,9 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "daa06eab7cc5c9276ee09f515f92c298857805e0788b3d3494e8f0bd0350c995",
+      "sha256": "650edb888da554cc50c5005f2ab686ed8a6b612225695adc43b01556c6e58b6f",
       "pdfSha256": "d38b1b1cbd3d46e1f18116b810b0302cfcb1ff38a38ce5356bdf45db691e4e1a",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -510,7 +516,7 @@
       ],
       "inputs": {
         "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
-        "Lecture-Notes/Intro-Soft-Matter/2025/2-What-is-Viscosity.md": "fe9596585180f7d616c87e6143aa238895b0d071908a3c4cfdd3d790ff692907",
+        "Lecture-Notes/Intro-Soft-Matter/2025/2-What-is-Viscosity.md": "c1291388dda2279f746ee58ab90f1f3014ce51b6f017b5efd94567da66edf66e",
         "_Media/2-What-is-Viscosity-1761738216814.png": "f9288fc9a5a128c05dfd8cfa694508812f5ba82b21ccc0689987b78d2de79dab",
         "_Media/2-What-is-Viscosity-1761738244038.png": "fb136f55682a78a19ce0d44c83c8082d19a592987ac449a2ab5ba1e4af65c39e",
         "_Media/2-What-is-Viscosity-1761738283101.png": "412cc2c23b876696045c3886535badfa159620a8a1ce4b041e927678c6c41d8c",
@@ -528,10 +534,10 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "c6234935d46a26c053925c5db7dfa85399c804aac1f42da2ac89696aa991865e",
-      "pdfSha256": "4661109cb5a18517a25cf66a2c7e77ae2a833ebf3f3041692d422a40887dbd99",
+      "sha256": "3dfd30be54f895f4cbb3de876c18b321406752885adf7315b6435027fa13e6f7",
+      "pdfSha256": "38d3003d7026176cac6079ef7f31f0f0d6223450e43472c6a7155a1dc0d1ba3d",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
@@ -548,7 +554,7 @@
       ],
       "inputs": {
         "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
-        "Lecture-Notes/Intro-Soft-Matter/2025/2.5-Conservation-Laws.md": "cb7b8ea9f3a0ae69390cd7462eff5e5160fb4a57532c5490bd7260eaddaec791",
+        "Lecture-Notes/Intro-Soft-Matter/2025/2.5-Conservation-Laws.md": "878b40ad34348996b952833061d9b4cec7c63d93cc30e3dcc2ae122b9ab3b304",
         "_Media/2-Conservation-Laws-1761807318276.png": "ad5e53df63737b05baf393ef984edd5b923816ba57e01db2272c02d6447b99e8",
         "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
         "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
@@ -562,10 +568,10 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "adf931a43cdf97d354028849070da62f810048b411838e19233d0298c7517762",
-      "pdfSha256": "0c329b78205c41a9612c210f71dc812b6ae40de3e28f76fdf7216fca3bc62ea8",
+      "sha256": "29ba197fa8f9a79f8fd4d561e8aa6229dd21e2be63f2e0227d93f1fc91d74d6e",
+      "pdfSha256": "c4ade7939753674b0232bfd19da7e3de3be38e743a3ae4a77d0f2c599f64cdeb",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
@@ -594,9 +600,9 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "86c661c0bd05c4eeffb7f8f3fffd1d85199d769ee9d580504222ed2e65ac3390",
+      "sha256": "e1972b1030df408997fdae1f46b1f11d5d6f8bc97e9754cd22f4e0def23af5c0",
       "pdfSha256": "e9cb91dff7e2e9f7420cf65ce1260c44dae18c7a3ee7537d246ee7f4d44fcb65",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -640,9 +646,9 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "2c1c9deca862b4d96362822513771db8267e674b4bb8d63c634ec50d87fa8f51",
+      "sha256": "da6f5e2e6b92825ce6d930fa3801b3b5d190c9329442eeb091bc3fbc511d46b3",
       "pdfSha256": "bd6d119392a82369769713235bc3a1c6227c56e3adda9109e4c36b0750f1f0e8",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -692,9 +698,9 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "45941a2f0724ef0d10a50c4c88af6eb005442d47ab9135aae1c62acd6915a728",
+      "sha256": "f9d4d4c56d096bebb75a93f915289682a3a725359ba68201009cf2bc83b5099f",
       "pdfSha256": "6830c56e7919247d3ea71bb5c4d6d1920c20a325d9a8c40849cf497c5399bd96",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -707,11 +713,21 @@
       "pdf": "Lecture-Notes/Intro-Soft-Matter/2025/5-Viscoelasticity.pdf",
       "dependencies": [
         "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md",
-        "Lecture-Notes/Intro-Soft-Matter/2025/5-Viscoelasticity.md"
+        "Lecture-Notes/Intro-Soft-Matter/2025/5-Viscoelasticity.md",
+        "_Media/5-Viscoelasticity-1.png",
+        "_Media/5-Viscoelasticity-2.png",
+        "_Media/5-Viscoelasticity-3.png",
+        "_Media/5-Viscoelasticity-4.png",
+        "_Media/5-Viscoelasticity-5.png"
       ],
       "inputs": {
         "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
-        "Lecture-Notes/Intro-Soft-Matter/2025/5-Viscoelasticity.md": "9ea3359987b4b719c25773350ca428c8035ffca4fbe8ce48c1291d18bf45a01e",
+        "Lecture-Notes/Intro-Soft-Matter/2025/5-Viscoelasticity.md": "7e53d4023d43f5774003d22c5df4d765da477e6b6daa031344bfcf8c090b24d0",
+        "_Media/5-Viscoelasticity-1.png": "1e25e72d61013a5b5f6d303fdc636a7cbcfcc7133960d0b5dbfdde927b707a98",
+        "_Media/5-Viscoelasticity-2.png": "1285bd879e6fc52db082e3f44ceb9ee70b401717f6b6909380aa0bbf4c4706a7",
+        "_Media/5-Viscoelasticity-3.png": "cf75ec45ada5d966100fc5c722eee9ee10a8d50fd8e7bdf74b7643711a5fc594",
+        "_Media/5-Viscoelasticity-4.png": "34abb7da76082577dfbb7a82e77405bfa62ad3477ace82ec3320aab6f6d09b95",
+        "_Media/5-Viscoelasticity-5.png": "c9256b671645308e082bfc628be9e0825ae028ee029d009f706a6854584d823c",
         "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
         "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
         "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
@@ -724,10 +740,10 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "71176c4b494e482f3e0c5d8bdeabcc1b9ac855c93e78d745a0a838472b9e3699",
-      "pdfSha256": "406387d35969a31b120fd669a5cfb41b970e63df2635772b1f8edd46676ed005",
+      "sha256": "7e3865945224995f7cf65c4264f8dd7a18122a2fdb71f93fc3b0260ade00c1ea",
+      "pdfSha256": "75621c887519287cd57746fdd9f2d993826c016e76a459cd4e23442ca8e6d876",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
@@ -756,9 +772,9 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "7ea282f3a1b8a94e74c4821ecff0395adba20c013f357cbceda413e4764a9859",
+      "sha256": "a3c5cf83f452d05dcce2c213028181a6cc8d91ebda59ee018b7106aae21f6aeb",
       "pdfSha256": "b5e8f0634d209dc92ff8d72ffbaf9f6b42ea58ed48f7db38da002fb061d51d1e",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -788,9 +804,9 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "b814ef31e29e404b1129f0ebb7c5f0e0d645a3ba80725cdf65960a36a16f47a2",
+      "sha256": "68d5e063a8ee5e892e16ed9cc791cc149501140ef56c8d45efb2748232169a31",
       "pdfSha256": "2779b9dfcf39ba6d88b62ea66084c394c27e142a2de15fc3c5027df5a09d25bb",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -816,10 +832,42 @@
         "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
         "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "e2ab4b561e622aeb2f18dfe5bab363ab1d7a567edc56f3b3732bc6fcc59f6120",
+      "sha256": "40805cefc1141b7d94d9e53c889b57a80c362da4aea69747c2d468fd0fd529e7",
       "pdfSha256": "3369f806584d175488d4d72efadf9927387e32407ffb920419f9acb8d9d1a8f5",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Basilisk101/4th-workingAssignment.md": {
+      "pdf": "Lecture-Notes/Basilisk101/4th-workingAssignment.pdf",
+      "dependencies": [
+        "Lecture-Notes/Basilisk101/0-README.md",
+        "Lecture-Notes/Basilisk101/4th-workingAssignment.md"
+      ],
+      "inputs": {
+        "Lecture-Notes/Basilisk101/0-README.md": "912611519a1da08272976bef606e20310ca1d64ca8ed26950bf43d38f471c128",
+        "Lecture-Notes/Basilisk101/4th-workingAssignment.md": "a7857c98372eb11fe057492d6e88710e6e08efe397ca61f22bcbc6985cbd9e92",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
+      },
+      "sha256": "2aaaaa72897467ac1c8286359032bd5443b1bc36e09b326c588dcd67ee1eae9b",
+      "pdfSha256": "365a6cfdaa668e476fc36e7bd2db2c8c9e912cf93455664bc8e79dfdea582c17",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
