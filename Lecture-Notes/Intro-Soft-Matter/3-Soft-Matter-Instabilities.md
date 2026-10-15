@@ -98,21 +98,25 @@ Image by Shengtai Li, Hui Li - "Parallel AMR Code for Compressible MHD or HD Equ
 
 Mechanism. Parametric forcing periodically modulates the effective gravity; the flat surface becomes unstable to standing waves at half the drive frequency. Hexagons/stripes are common near onset. Use this as a canonical example of parametric (not spontaneous) instability and _pattern selection near threshold_.
 
-Video: [Run, Faraday, Run](https://www.youtube.com/watch?v=0d_D6yvXAFo) (American Physical Society, on YouTube).
-
-### (v) Rayleigh–Bénard–Marangoni (heated film → rolls/hexagons)
-
-Mechanism. Heating from below (buoyancy) or surface‑tension gradients along a free surface (Marangoni) drive cellular convection. Thin layers emphasize Marangoni; thicker ones emphasize buoyancy, flipping flow directions inside the cells. Amplitude/envelope equations near onset rationalize which planforms (rolls, hexagons) persist.
-
-<!-- Video 6sW5rWcWfkQ is private on YouTube (checked 2026-10-14); replace with a public Rayleigh–Bénard–Marangoni clip.
 <div style="text-align: center;">
-    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6sW5rWcWfkQ?si=7IoOPp9aYS6_I2a8" 
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0d_D6yvXAFo?si=oLZxGjb-EvhSI2Wi" 
         title="YouTube video player" frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
     </iframe>
 </div>
--->
+
+### (v) Rayleigh–Bénard–Marangoni (heated film → rolls/hexagons)
+
+Mechanism. Heating from below (buoyancy) or surface‑tension gradients along a free surface (Marangoni) drive cellular convection. Thin layers emphasize Marangoni; thicker ones emphasize buoyancy, flipping flow directions inside the cells. Amplitude/envelope equations near onset rationalize which planforms (rolls, hexagons) persist.
+
+<div style="text-align: center;">
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/v2vMXmuC818" 
+        title="YouTube video player" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+    </iframe>
+</div>
 
 
 ### (vi) Saffman–Taylor (viscous fingering in Hele‑Shaw cells)
