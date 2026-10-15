@@ -233,13 +233,16 @@ test("print derivatives cap width without upscaling, preserve aspect and alpha, 
 
 test("source epoch follows Git history and has a fixed fallback", () => {
   const source = "Lecture-Notes/Intro-Soft-Matter/2025/2.5-Conservation-Laws.md"
-  assert.equal(
-    sourceDateEpoch(source),
-    execFileSync("git", ["log", "-1", "--format=%ct", "--", source], {
+  let gitEpoch = ""
+  try {
+    gitEpoch = execFileSync("git", ["log", "-1", "--format=%ct", "--", source], {
       cwd: resolve(".."),
       encoding: "utf8",
-    }).trim(),
-  )
+    }).trim()
+  } catch {
+    // Builds without Git (archives, some CI images) use the fixed fallback below.
+  }
+  if (gitEpoch) assert.equal(sourceDateEpoch(source), gitEpoch)
   assert.equal(sourceDateEpoch("does-not-exist.md"), "946684800")
 })
 
