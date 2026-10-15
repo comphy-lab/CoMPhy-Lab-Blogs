@@ -1,5 +1,5 @@
 ---
-modified: 2026-10-15T12:00:00+01:00
+modified: 2026-10-16T12:00:00+01:00
 tags:
   - lecture
   - soft-matter
@@ -84,19 +84,50 @@ What resists the opening? Picture a circular hole of radius $r_{\mathrm{tip}}(t)
 - **Vertically**, as the rim thickens (normal stress $\bar\sigma_{zz}$).
 - **Azimuthally**, because each material ring is carried from its original radius $R$ out to a larger radius $r$. This is a hoop stretch $r/R > 1$, and it produces a tensile hoop stress $\sigma_{\theta\theta}$.
 
+![Side and top views of the rim of an opening hole. In the side view the rim is thicker than the sheet, surface tension pulls on both faces of the sheet and the vertical stress acts across the rim; in the top view a piece of the rim is stretched around the hole, producing the hoop stress](../../../_Media/6-Sheets-Bubbles-Drops-7.png)
+*Stretching in the rim of an opening hole. Side view: the rim thickens, stretching the polymers vertically. Top view: material carried outwards from its original radius is stretched around the hole. Overbars denote thickness-averaged stresses, and $r_0$ is the hole radius ($r_{\mathrm{tip}}$ in the text).*
+
 Only the hoop stress acts on the radial motion of the rim. With $\sigma_{\theta\theta}$ the polymeric hoop stress and $\gamma$ the surface tension of each face of the sheet, the momentum balance of the rim reads
 
 $$\frac{d}{dt}\left(\rho h_0 \pi r_{\mathrm{tip}}^2\frac{dr_{\mathrm{tip}}}{dt}\right) = \left(2\pi r_{\mathrm{tip}}\right)2\gamma - F_{\mathrm{hoop}},$$
 
 $$F_{\mathrm{hoop}} = 2\pi\int_{r_{\mathrm{tip}}}^{\infty}\int_0^{h(r)}\sigma_{\theta\theta}\,dz\,dr.$$
 
-The left-hand side is the rate of change of the rim's momentum; capillarity pulls with $2\gamma$ per unit length of the rim, and the hoop tension of the stretched sheet pulls back.
+The left-hand side is the rate of change of the rim's momentum (its mass $\rho h_0\pi r_{\mathrm{tip}}^2$ assumes the hole is much larger than its initial size); capillarity pulls with $2\gamma$ per unit length of the rim, and the hoop tension of the stretched sheet pulls back.
 
 To evaluate $\sigma_{\theta\theta}$ in the elastic limit we need the deformation, which is set by kinematics alone (Snoeijer, Pandey, Herrada & Eggers 2020). A material point at $\boldsymbol{R} = (R, Z)$ in the undeformed sheet is mapped to $\boldsymbol{r} = (r, z)$. If the vertical stretching is homogeneous ($Z/H = z/h(r)$, with $H$ and $h$ the undeformed and deformed local thicknesses) and shear-free, volume conservation fixes the map from the thickness profile $h(r)$. For a neo-Hookean (Oldroyd-B elastic-limit) material, $\boldsymbol{\sigma}_p = G(\boldsymbol{\mathcal{A}} - \boldsymbol{I})$ with $\boldsymbol{\mathcal{A}} = \boldsymbol{\mathcal{F}}\cdot\boldsymbol{\mathcal{F}}^{T}$ and $\boldsymbol{\mathcal{F}} = \partial\boldsymbol{r}/\partial\boldsymbol{R}$, so the hoop stress is
 
 $$\sigma_{\theta\theta} = G\left(\frac{r^2}{R^2} - 1\right).$$
 
-The hoop stretch is largest for the material that has travelled furthest, which sits next to the rim. The hoop tension is therefore concentrated near the tip and grows as the hole opens. Comparing the modulus $G$ with the capillary stress $\gamma/h_0$ gives $Ec = Gh_0/\gamma$. For stretches of order one, this suggests strong elastic resistance once $Ec$ is of order one, possibly enough to stop the hole from opening. This is a dimensional estimate: the actual outcome also depends on the accumulated stretch and on the geometry of the sheet.
+The hoop stretch is largest for the material that has travelled furthest, which sits next to the rim. The hoop tension is therefore concentrated near the tip and grows as the hole opens. Comparing the modulus $G$ with the capillary stress $\gamma/h_0$ gives $Ec = Gh_0/\gamma$. For stretches of order one, this suggests strong elastic resistance once $Ec$ is of order one, possibly enough to stop the hole from opening.
+
+We can go one step further. Suppose all the swept-up material sits in a thin rim at $r \approx r_{\mathrm{tip}}$, and the sheet outside it is unstretched. A ring that started at radius $R$, between the initial hole radius $\tilde{R}_0$ and $r_{\mathrm{tip}}$, now carries $\sigma_{\theta\theta} = G(r_{\mathrm{tip}}^2/R^2 - 1)$, and its volume $2\pi R h_0\,dR$ sets its share of the rim's cross-section. Summing over the rim,
+
+$$F_{\mathrm{hoop}} = 2\pi G h_0 r_{\mathrm{tip}}\left[\ln\frac{r_{\mathrm{tip}}}{\tilde{R}_0} - \frac{1}{2}\left(1 - \frac{\tilde{R}_0^2}{r_{\mathrm{tip}}^2}\right)\right] \approx 2\pi G h_0 r_{\mathrm{tip}}\ln\frac{r_{\mathrm{tip}}}{\tilde{R}_0} \qquad (r_{\mathrm{tip}} \gg \tilde{R}_0).$$
+
+To leading order, the ratio of this elastic resistance to the capillary pull $4\pi\gamma r_{\mathrm{tip}}$ is $(Ec/2)\ln(r_{\mathrm{tip}}/\tilde{R}_0)$. It grows only logarithmically as the hole opens, but it grows without bound. The two forces balance at a radius set by $\ln(r_{\mathrm{tip}}/\tilde{R}_0) \approx 2/Ec$, which grows exponentially as $Ec$ decreases: stiff sheets are held back at small radii, soft sheets only at very large ones. This is a quasi-static force balance. It ignores the rim's inertia, which can carry the rim past the balance, and the stretched sheet just outside the rim, so it predicts neither the stopping time nor the actual maximum radius; it gives trends rather than numbers.
+
+### 1.3 What the simulations show
+
+Our direct numerical simulations (not yet published) solve the elastic limit $De \to \infty$ for $10^{-3} \le Ec \le 100$, alongside a Newtonian reference sheet, with lengths measured in units of $h_0$ and times in units of $\tau_\gamma = \sqrt{\rho h_0^3/\gamma}$.
+
+![Two panels against time in units of the inertio-capillary time. Left: tip speed divided by the Taylor–Culick speed; the Newtonian case rises to one, the elastic cases peak below one and then slow down, more strongly at larger Ec, and the Ec = 1 case drops to zero. Right: hole radius divided by the film thickness; the Newtonian case grows linearly to about 420, and the elastic cases grow more slowly, with Ec = 1 stopping near 6](../../../_Media/6-Sheets-Bubbles-Drops-8.png)
+*Opening of a hole in an elastic sheet. Left: tip speed $v_{\mathrm{tip}}$, scaled by the Taylor–Culick speed $\sqrt{2\gamma/\rho h_0}$. Right: hole radius $r_{\mathrm{tip}}/h_0$. Times are in units of $\sqrt{\rho h_0^3/\gamma}$. The black curve is the Newtonian sheet ($Ec = 0$, $De = 0$); the others are elastic sheets ($De \to \infty$) with $Ec$ from 0.01 to 1.*
+
+- **Newtonian sheet** ($Ec = 0$): the rim reaches the Taylor–Culick speed, and the hole grows linearly in time.
+- **Soft sheets** ($Ec \le 0.25$): the rim never reaches $v_{TC}$ and then slows gradually; at $t = 300\,\tau_\gamma$ it moves at about $0.9$, $0.8$ and $0.7\,v_{TC}$ for $Ec = 0.01$, $0.1$ and $0.25$.
+- **Stiffer sheets**: at $Ec = 0.5$ the rim has almost stopped by $t = 300\,\tau_\gamma$. At $Ec = 1$ it overshoots, recoils slightly and stops within about $50\,\tau_\gamma$, at $r_{\mathrm{tip}} \approx 6h_0$.
+
+This is the trend of the hoop-force estimate: stiffer sheets stop sooner, and softer sheets keep slowing down.
+
+![Two panels. Left: rim thickness divided by the film thickness against time; the Newtonian rim keeps thickening to about 14 film thicknesses, while elastic rims level off at values that decrease with Ec. Right: final rim thickness against Ec on logarithmic axes; the points follow a dashed line of slope minus one third up to Ec of about 0.1 and approach one for Ec of order one and above](../../../_Media/6-Sheets-Bubbles-Drops-9.png)
+*Rim thickness $h_j$. Left: $h_j/h_0$ against time for the cases above. Right: the final rim thickness against $Ec = Gh_0/\gamma$; the dashed line has slope $-1/3$.*
+
+The rim thickness tells a second story. A Newtonian rim keeps collecting liquid and thickening ($h_j \approx 14h_0$ at $t = 300\,\tau_\gamma$). An elastic rim stops thickening at a height that decreases with $Ec$: about $5.9h_0$ at $Ec = 0.01$ and $2.7h_0$ at $Ec = 0.1$. For $Ec \ge 1$ hardly any rim forms. Thickening the rim from $h_0$ to $h_j$ stretches its polymers vertically by $h_j/h_0$, and the stretch stops when the vertical elastic stress balances the capillary pressure in the rim:
+
+$$\frac{\gamma}{h_j} \sim \bar{\sigma}_{zz} \approx G\left(\frac{h_j}{h_0}\right)^2 \quad\Rightarrow\quad \frac{h_j}{h_0} \sim Ec^{-1/3},$$
+
+which the simulations follow for $Ec \lesssim 0.1$.
 
 ## 2) Bubbles: Worthington jets in viscoelastic liquids
 
@@ -132,7 +163,7 @@ $$\frac{\partial v}{\partial t} + v\frac{\partial v}{\partial z} = -\frac{\gamma
 
 with $\kappa$ the interface curvature. The bracket is the tensile stress difference in the jet: the solvent contributes $3\eta_s\,\partial v/\partial z$ and the polymers $G(\mathcal{A}_{zz} - \mathcal{A}_{rr})$.
 
-Integrating over the jet, the momentum $p_j = \int_0^{L_j}\rho v h^2\,dz$ of a jet of length $L_j$ changes through the tensile stress at its base. When the polymers relax quickly compared with the local deformation, $\mathcal{A}_{zz} - 1 \approx 2\lambda\,\partial v/\partial z$ and $\mathcal{A}_{rr} - 1 \approx -\lambda\,\partial v/\partial z$, so the polymer contribution is $3G\lambda\,\partial v/\partial z$. The base stress is then $\eta_{\mathrm{eff}}\,\partial v/\partial z$ with an effective extensional viscosity $\eta_{\mathrm{eff}} = 3(\eta_s + G\lambda)$: solvent and polymers both carry the Trouton factor three.
+Integrating over the jet, the momentum $p_j = \int_0^{L_j}\rho v h^2\,dz$ of a jet of length $L_j$ changes, in this simplified control-volume argument, through the tensile stress at its base; capillary and momentum-flux contributions at the ends are set aside. When the polymers relax quickly compared with the local deformation, $\mathcal{A}_{zz} - 1 \approx 2\lambda\,\partial v/\partial z$ and $\mathcal{A}_{rr} - 1 \approx -\lambda\,\partial v/\partial z$, so the polymer contribution is $3G\lambda\,\partial v/\partial z$. The base stress is then $\eta_{\mathrm{eff}}\,\partial v/\partial z$ with an effective extensional viscosity $\eta_{\mathrm{eff}} = 3(\eta_s + G\lambda)$: solvent and polymers both carry the Trouton factor three.
 
 Balancing the jet's momentum flux against this stress gives $\rho V_j^2 \sim \eta_{\mathrm{eff}} V_j/\delta_j$, with $V_j$ the jet speed and $\delta_j$ the length scale at the jet base. If the jet Weber number $We_j = \rho V_j^2\delta_j/\gamma$ stays roughly constant across the cases compared, eliminating $\delta_j$ gives
 
@@ -205,7 +236,7 @@ Sweeping the relaxation time from zero to infinity takes the same sphere continu
 *Where the three behaviours live, in terms of the Deborah number $De = \lambda/\tau$ (relaxation time over flow time) and the retardation time $\eta_s/G$ over the flow time $\tau$.*
 
 1. One model, the Oldroyd-B family, covers viscous liquids ($De \to 0$), elastic solids ($De \to \infty$, $\eta_s/(G\tau) \ll 1$) and viscoelastic Kelvin–Voigt solids ($De \to \infty$, $\eta_s/(G\tau)$ of order one or larger).
-2. Sheets: viscous dissipation in a retracting film stays finite as the viscosity vanishes. Elasticity adds a hoop stress that slows the opening and, once $Ec$ is of order one, is expected to stop it.
+2. Sheets: viscous dissipation in a retracting film stays finite as the viscosity vanishes. Elasticity adds a hoop stress that slows the opening; in simulations the hole stops at $Ec = 1$, and the saturated rim thickness follows $h_j/h_0 \sim Ec^{-1/3}$ for $Ec \lesssim 0.1$, approaching one for large $Ec$.
 3. Bubbles: polymers can suppress the Worthington jet. For the parameter cut shown, the jet stops at roughly $Oh_p = Ec\,De \gtrsim 0.1$ at small $De$, where the polymers act as extra viscosity, and at roughly $Ec \gtrsim 0.1$ at large $De$, where they act elastically. A yield stress can freeze the cavity before it relaxes.
 4. Drops: the impact force goes from Wagner, $F \sim \rho V_0^2R_0^2$, to Hertz, $F \sim (GR_0^2)^{2/5}(\rho V_0^2R_0^2)^{3/5}$, as the elasticity number $El = G/\rho V_0^2$ crosses one.
 
@@ -215,7 +246,7 @@ Sweeping the relaxation time from zero to infinity takes the same sphere continu
 2. In the Kelvin–Voigt limit ($\lambda \to \infty$), what is $\boldsymbol{\mathcal{A}}$ for a simple shear of amount $\gamma_s$, and what is the resulting shear stress?
 3. Derive the Hertz scaling $F_{\max} \sim (GR_0^2)^{2/5}(\rho V_0^2R_0^2)^{3/5}$ from an energy balance, and show that the Wagner and Hertz forces are equal when $El = G/\rho V_0^2$ is of order one.
 4. Why is the first force peak of a low-viscosity drop insensitive to viscosity? Compare the impact time $R_0/V_0$ with the time for viscous effects to diffuse across the drop.
-5. Estimate when elasticity can halt the opening of a hole in a sheet by comparing the elastic stress $G$ with the capillary stress $\gamma/h_0$.
+5. Estimate when elasticity can halt the opening of a hole in a sheet by comparing the elastic stress $G$ with the capillary stress $\gamma/h_0$. Then derive the thin-rim hoop force $F_{\mathrm{hoop}}$ of §1.2 and the rim-thickness law $h_j/h_0 \sim Ec^{-1/3}$ of §1.3.
 
 ## References
 
@@ -244,7 +275,7 @@ Sweeping the relaxation time from zero to infinity takes the same sphere continu
 > [!significance]- Metadata
 > Author:: [Vatsal Sanjay](https://vatsalsanjay.com)<br>
 > Date published:: Jul 19, 2026<br>
-> Date modified:: Oct 15, 2026
+> Date modified:: Oct 16, 2026
 
 > [!link] Back to main website
 > [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
