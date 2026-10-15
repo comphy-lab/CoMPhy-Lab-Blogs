@@ -1,0 +1,831 @@
+{
+  "version": 1,
+  "pages": {
+    "Lecture-Notes/Basilisk101/0-README.md": {
+      "pdf": "Lecture-Notes/Basilisk101/0-README.pdf",
+      "dependencies": ["Lecture-Notes/Basilisk101/0-README.md"],
+      "inputs": {
+        "Lecture-Notes/Basilisk101/0-README.md": "912611519a1da08272976bef606e20310ca1d64ca8ed26950bf43d38f471c128",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "c6a2a2ff4cb581c9e0a2dbd4949ab253473bbef76af8286f6b188eb0aad9df2a",
+      "pdfSha256": "3b01ae1a2ce880e86781d42ecd149540da3c39f94dd3aff632061243808b2a39",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Gauss-law-of-Electrostatics.md": {
+      "pdf": "Lecture-Notes/Gauss-law-of-Electrostatics.pdf",
+      "dependencies": [
+        "Lecture-Notes/Gauss-law-of-Electrostatics.md",
+        "_Media/20250121002320090_Gauss law of Electrostatics.png",
+        "_Media/20250121013316786_Gauss law of Electrostatics.png",
+        "_Media/20250121013334249_Gauss law of Electrostatics.png",
+        "_Media/20250121015925070_Gauss law of Electrostatics.png",
+        "_Media/20250121023006325_Gauss law of Electrostatics.png",
+        "_Media/20250121033252912_Gauss law of Electrostatics.png",
+        "_Media/20250121033734979_Gauss law of Electrostatics.png",
+        "_Media/20250121035211075_Gauss law of Electrostatics.png",
+        "_Media/plates.png",
+        "_Media/shell.png",
+        "_Media/uniformly-charged-sphere.png"
+      ],
+      "inputs": {
+        "Lecture-Notes/Gauss-law-of-Electrostatics.md": "0f71f6adc81088e50e2e7c96c8c8b513b2aed20ad6e193e46748356efa976de2",
+        "_Media/20250121002320090_Gauss law of Electrostatics.png": "612e5bc79276bd71a7495c1b39bbb5c08bdef0583ed0123a5d35e6e196011370",
+        "_Media/20250121013316786_Gauss law of Electrostatics.png": "ea31aab0fe073202552c096274cb3eecae227ffd182bca9197ad8c76f54c71ad",
+        "_Media/20250121013334249_Gauss law of Electrostatics.png": "2eb911fb135926c862610b0f4950b46b4efd16e2f3ed989cff81d1ce183f34d2",
+        "_Media/20250121015925070_Gauss law of Electrostatics.png": "a91f67c6457d947a7fcf77c40db6fbf728306896493588809c488d63b9ba446d",
+        "_Media/20250121023006325_Gauss law of Electrostatics.png": "f201387856156901fac81f56d123992d31fe8f0a3ade008d9cb4be0da91f841f",
+        "_Media/20250121033252912_Gauss law of Electrostatics.png": "92161104a76ef4085a950b1b834dc1a89bb441b1652fefceafcbecbe38c0696a",
+        "_Media/20250121033734979_Gauss law of Electrostatics.png": "41e4dd92905248d63170d8f1eca2f32a5f6f8e24198802e7ff993b5edefe65b0",
+        "_Media/20250121035211075_Gauss law of Electrostatics.png": "0bb9c22a68f1711493290b0d3812d38e245219bb4e0fe8453effae046064e157",
+        "_Media/plates.png": "01466ddbe0fc7e51a62aeb5c1d121c9b9dfe789c8ab55e6e0fbbc25dd1abd4a6",
+        "_Media/shell.png": "37256f0c767126f4d6dfb4b55429b107597fd2cf433b03977811ef9b9ebeadd1",
+        "_Media/uniformly-charged-sphere.png": "34dde939ddff582cd047cbc6d83e617131efcaf27dbd75c32b6692c8cd98e924",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "9bb13edc3a35710582157d90264e6b72d2c8babad8b83b177e5f400aa8663893",
+      "pdfSha256": "c72724935e99c68d3e2547c4a7c3645d0ab78ecea82dce3fd23d1305d5531b79",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Slender-Jets/from-slender-jet-to-uniform-filament.md": {
+      "pdf": "Lecture-Notes/Slender-Jets/from-slender-jet-to-uniform-filament.pdf",
+      "dependencies": ["Lecture-Notes/Slender-Jets/from-slender-jet-to-uniform-filament.md"],
+      "inputs": {
+        "Lecture-Notes/Slender-Jets/from-slender-jet-to-uniform-filament.md": "8543035ca1d942e2d44e0b009d8850bb8f93c00cb603aeb5ec234b69f8036722",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "745a84761a35a0652604d40be2e4d21c359b4ce274de5fb75419ad095592de30",
+      "pdfSha256": "c02b33b089b06b8845a2566587576c5f8bfbe84115f7e078f760445e8906a595",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Slender-Jets/slender-jets-VE-order-0.md": {
+      "pdf": "Lecture-Notes/Slender-Jets/slender-jets-VE-order-0.pdf",
+      "dependencies": ["Lecture-Notes/Slender-Jets/slender-jets-VE-order-0.md"],
+      "inputs": {
+        "Lecture-Notes/Slender-Jets/slender-jets-VE-order-0.md": "5d4876302687367f64d6a3698f179766aaae09dad239ebceb1e323a014a3e1f2",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "4a932cae875fdeab82d2ef8eb2a167ee09c34476960b0a4eab163f166d099318",
+      "pdfSha256": "8a2087c59a7d5e900b9a71d2fd9ff49d9368261ce16e753304138efb89b24c86",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Slender-Jets/slender-jets-VE-order-2.md": {
+      "pdf": "Lecture-Notes/Slender-Jets/slender-jets-VE-order-2.pdf",
+      "dependencies": ["Lecture-Notes/Slender-Jets/slender-jets-VE-order-2.md"],
+      "inputs": {
+        "Lecture-Notes/Slender-Jets/slender-jets-VE-order-2.md": "b3c83c93f1b886f8a8b660ffed828547b1acc07578344376c1d97ef35d1e4cb6",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "d49d6b49c3281fabfdeab5624ed3890f07b51f254c08dc641d81bb97882f06c9",
+      "pdfSha256": "e8de8b4e2ee624899285adc9472bfaa52866ce298aed1e76037387efc94ac687",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Basilisk101/1-conduction-takeaways.md": {
+      "pdf": "Lecture-Notes/Basilisk101/1-conduction-takeaways.pdf",
+      "dependencies": [
+        "Lecture-Notes/Basilisk101/0-README.md",
+        "Lecture-Notes/Basilisk101/1-conduction-takeaways.md"
+      ],
+      "inputs": {
+        "Lecture-Notes/Basilisk101/0-README.md": "912611519a1da08272976bef606e20310ca1d64ca8ed26950bf43d38f471c128",
+        "Lecture-Notes/Basilisk101/1-conduction-takeaways.md": "6fe5b72e578135bd43ee43743a34fc4764b129c4ed7f9e1a0c97774b1b369619",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "7f6554f702f86bc0392f9e05083abfa998b3a0660eeb45404d4d3df148c54454",
+      "pdfSha256": "74d9be4bbe7b6fe7d7f3dfd0039c7d1843bb5630c43ad70815dfeac32039e8b9",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Basilisk101/1st-workingAssignment.md": {
+      "pdf": "Lecture-Notes/Basilisk101/1st-workingAssignment.pdf",
+      "dependencies": [
+        "Lecture-Notes/Basilisk101/0-README.md",
+        "Lecture-Notes/Basilisk101/1st-workingAssignment.md"
+      ],
+      "inputs": {
+        "Lecture-Notes/Basilisk101/0-README.md": "912611519a1da08272976bef606e20310ca1d64ca8ed26950bf43d38f471c128",
+        "Lecture-Notes/Basilisk101/1st-workingAssignment.md": "08617fc26adbd8c2b104faa29e60ccaf0e5167415656c2724ce6461c87306f13",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "ec0eff0a37ebef6b1b91ccc653613df46a41039b1530ce8b03f808786307a4d2",
+      "pdfSha256": "1bac66e27ab5910d207fa32e90e77ee2088d7f68e0216aabbe7bac9fc7b8516d",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Basilisk101/2nd-workingAssignment.md": {
+      "pdf": "Lecture-Notes/Basilisk101/2nd-workingAssignment.pdf",
+      "dependencies": [
+        "Lecture-Notes/Basilisk101/0-README.md",
+        "Lecture-Notes/Basilisk101/2nd-workingAssignment.md"
+      ],
+      "inputs": {
+        "Lecture-Notes/Basilisk101/0-README.md": "912611519a1da08272976bef606e20310ca1d64ca8ed26950bf43d38f471c128",
+        "Lecture-Notes/Basilisk101/2nd-workingAssignment.md": "de74117238cf1d43db1cd60af8289012b9807103d70a7e03e6e86d9f5bfe66fc",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "2ce7da9bd4b1a1edf3d0357456634a4d3542bc5a9b58cf9df860836b90aefcf6",
+      "pdfSha256": "0ced3fd36397246061dc395324f387e11e1de141bfef147c9188991992404ec8",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Basilisk101/3rd-workingAssignment.md": {
+      "pdf": "Lecture-Notes/Basilisk101/3rd-workingAssignment.pdf",
+      "dependencies": [
+        "Lecture-Notes/Basilisk101/0-README.md",
+        "Lecture-Notes/Basilisk101/3rd-workingAssignment.md"
+      ],
+      "inputs": {
+        "Lecture-Notes/Basilisk101/0-README.md": "912611519a1da08272976bef606e20310ca1d64ca8ed26950bf43d38f471c128",
+        "Lecture-Notes/Basilisk101/3rd-workingAssignment.md": "f0c827e2b06f7a4511e8970604cf47edcd425d4bc89a530b7205aae589fefb12",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "3484b77504dc80b11a241071509fa2027f2500a6dcc8954029e19522286b7213",
+      "pdfSha256": "5eb8f45c505a5c7ff428e5a6e8e6f2fb27066465481b3cf41177a682ba1c6a3f",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Intro-Soft-Matter/2025/6-Sheets-Bubbles-Drops.md": {
+      "pdf": "Lecture-Notes/Intro-Soft-Matter/2025/6-Sheets-Bubbles-Drops.pdf",
+      "dependencies": [
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md",
+        "Lecture-Notes/Intro-Soft-Matter/2025/6-Sheets-Bubbles-Drops.md",
+        "_Media/6-Sheets-Bubbles-Drops-1.png",
+        "_Media/6-Sheets-Bubbles-Drops-2.png",
+        "_Media/6-Sheets-Bubbles-Drops-3.png",
+        "_Media/6-Sheets-Bubbles-Drops-4.png",
+        "_Media/6-Sheets-Bubbles-Drops-5.png",
+        "_Media/6-Sheets-Bubbles-Drops-6.png"
+      ],
+      "inputs": {
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/6-Sheets-Bubbles-Drops.md": "bc340c5e3549a3f0c47f71c923a1b0a2cef15d3cadaff4ef3e6d8b4840af391d",
+        "_Media/6-Sheets-Bubbles-Drops-1.png": "cbac5f8f9a257970b7d561ed1c5856f415758c9310a803dfa9c44effd40a814c",
+        "_Media/6-Sheets-Bubbles-Drops-2.png": "ff7492eac8350c26c60c3909f43e27499735bf44679770ce75a1343c2e944a3f",
+        "_Media/6-Sheets-Bubbles-Drops-3.png": "384cd740e63297673633abd3372eb63d614f0b549ee91a19119630396911791f",
+        "_Media/6-Sheets-Bubbles-Drops-4.png": "9ccb801222608d7c9a27f6a6a531ee67b6b96bc37e18e5fc0581d52132a930df",
+        "_Media/6-Sheets-Bubbles-Drops-5.png": "996ab8055a4bd8264a321bfdcd2a5f3e2279d533c6cad5e554acafad989176aa",
+        "_Media/6-Sheets-Bubbles-Drops-6.png": "ff34080bb18aa766a1bd39d723d95913922eb7cb4140d75667ffd3ec93bd1067",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "286f493db51da872212b806dbf07727ae6d3c942657fe34debbbbd996672cf0c",
+      "pdfSha256": "92fa14d383d04250f88cea7a9b46048f92c19e634f8eb64ebab210ca7e0c2897",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": {
+      "pdf": "Lecture-Notes/Intro-Soft-Matter/2025/0-README.pdf",
+      "dependencies": ["Lecture-Notes/Intro-Soft-Matter/2025/0-README.md"],
+      "inputs": {
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "e3b771825d45e8152e9e5fbdb18a0c2c96d69daa8cbdadc60af0b39cc8b67c62",
+      "pdfSha256": "48816d1eb0454f26a2ddec5454a00ed5637ff3cc117ca314460df90f89d0d245",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Intro-Soft-Matter/2025/1-Intro-Soft-Matter.md": {
+      "pdf": "Lecture-Notes/Intro-Soft-Matter/2025/1-Intro-Soft-Matter.pdf",
+      "dependencies": [
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md",
+        "Lecture-Notes/Intro-Soft-Matter/2025/1-Intro-Soft-Matter.md",
+        "_Media/1-Intro-Soft-Matter-1761103784897.png",
+        "_Media/1-Intro-Soft-Matter-1761103818495.png",
+        "_Media/1-Intro-Soft-Matter-1761103864489.png",
+        "_Media/1-Intro-Soft-Matter-1761103886417.png",
+        "_Media/1-Intro-Soft-Matter-1761103927376.png",
+        "_Media/1-Intro-Soft-Matter-1761105367372.png",
+        "_Media/1-Intro-Soft-Matter-1761105418528.png",
+        "_Media/1-Intro-Soft-Matter-1761105451051.png"
+      ],
+      "inputs": {
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/1-Intro-Soft-Matter.md": "53b4c5714c87b303757032ec023f3feff2d81cd5bb508996e0c6dd8e647e37cc",
+        "_Media/1-Intro-Soft-Matter-1761103784897.png": "b174844fd62827dc47331f6114b76b76829ec6bbcfd0fda7b455ad6ec90ac11e",
+        "_Media/1-Intro-Soft-Matter-1761103818495.png": "eca3c6f56ac9fbfc6cedc4207e5165c25d510d04e6a365456f07aa7fc9cdb77c",
+        "_Media/1-Intro-Soft-Matter-1761103864489.png": "4697bd886bdccc23070cd0e0f5edbb60898373cac62e39eab4ac6144c8ce275b",
+        "_Media/1-Intro-Soft-Matter-1761103886417.png": "d6affe85847fe247475807f18c03abd27a2c5a126bd6e07cff7fa88e4bfae6d8",
+        "_Media/1-Intro-Soft-Matter-1761103927376.png": "26d4e94a48ad4fb2ad4e0940eb046f9a8f812597fe26d4d9870305c1b25b51bf",
+        "_Media/1-Intro-Soft-Matter-1761105367372.png": "4e8097a4208fe991d2f8a81fc4f7962eb50b6791e4585f7a84f9ea883ad6de90",
+        "_Media/1-Intro-Soft-Matter-1761105418528.png": "81982b96bcbb2d76b7185425364e3523e78dc2bfb3be79bb82b85da9e775f412",
+        "_Media/1-Intro-Soft-Matter-1761105451051.png": "e80220a201801f2d3e2f1c3bf74b7d16bab8ec4d9d6ac48f5e1be4054b45faa2",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "faa8eec9985d925082ac2bc51f371cf2b899f49d3a4345fef3b6c87f2ca603d1",
+      "pdfSha256": "1116cb6740c7592c7c11e3d3d8e6178da54241fe374036a8511080035b227587",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Intro-Soft-Matter/2025/1.5-Taylor-Culick-Paradox.md": {
+      "pdf": "Lecture-Notes/Intro-Soft-Matter/2025/1.5-Taylor-Culick-Paradox.pdf",
+      "dependencies": [
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md",
+        "Lecture-Notes/Intro-Soft-Matter/2025/1.5-Taylor-Culick-Paradox.md",
+        "_Media/1.5-Taylor-Culick-01.png",
+        "_Media/1.5-Taylor-Culick-03.png",
+        "_Media/1.5-Taylor-Culick-05.png",
+        "_Media/1.5-Taylor-Culick-08.png",
+        "_Media/1.5-Taylor-Culick-11.png",
+        "_Media/1.5-Taylor-Culick-13.png",
+        "_Media/1.5-Taylor-Culick-14.png",
+        "_Media/1.5-Taylor-Culick-16.png",
+        "_Media/1.5-Taylor-Culick-17.png",
+        "_Media/1.5-Taylor-Culick-18.png"
+      ],
+      "inputs": {
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/1.5-Taylor-Culick-Paradox.md": "f5f875f5732651d5d1f82d07d0707e27a685d986cfacd2553b5618c7f4ec8574",
+        "_Media/1.5-Taylor-Culick-01.png": "30d07b5b250d75c74e34de2d3bd5271dc2c1d2fae1a119bf800da34d5b98cdd2",
+        "_Media/1.5-Taylor-Culick-03.png": "e5d40ee1d1893ceebcdb7d4d01e7dfb310934063fb18b27adc3dd6b61a3f1a04",
+        "_Media/1.5-Taylor-Culick-05.png": "10820c8ea44b7d1c9662ed6a1d9de1a4c459252aed60c3a02e3adcdf687d551e",
+        "_Media/1.5-Taylor-Culick-08.png": "9ff8624c9b194bbddacaf13639f2271ddf0bc17f2b6f6bfdb23d4d2bdd40d365",
+        "_Media/1.5-Taylor-Culick-11.png": "b2b2ef89aefad2bf8dbdbeed841b867b7b1e2b16c0dc2a0e835ddceb98a597cb",
+        "_Media/1.5-Taylor-Culick-13.png": "e4855bd267881de3caa0cc06d324015d966f884d6333fa03e2190a1ef5e9708f",
+        "_Media/1.5-Taylor-Culick-14.png": "8e0174b17ea25dd44f4365e83c2a07a5c46945c766c4fb36f83ffb025c333fee",
+        "_Media/1.5-Taylor-Culick-16.png": "a72d8b8dcb6bf0e0922eaebe4c8060488988f991e8e3757139b014d2794da087",
+        "_Media/1.5-Taylor-Culick-17.png": "8ced290acbd7315e448e39eefc5c3ec9af66954af69138eb56334decd36a2fe5",
+        "_Media/1.5-Taylor-Culick-18.png": "a614229fbd57ff06184a3ff77e9830c87a4bcd9f99ff9f5123f6ba927debb098",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "b1122bb5dbe3c9bab790bf5ac94cb5bd600e43f3b8d9cb45b0711f526446908e",
+      "pdfSha256": "7b83ec5fb3160954b86694bc4d0bd6b5466602b5e097a44b093e6fa5c72895de",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Intro-Soft-Matter/2025/1.75-Complementary-Questions-Answers.md": {
+      "pdf": "Lecture-Notes/Intro-Soft-Matter/2025/1.75-Complementary-Questions-Answers.pdf",
+      "dependencies": [
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md",
+        "Lecture-Notes/Intro-Soft-Matter/2025/1.75-Complementary-Questions-Answers.md"
+      ],
+      "inputs": {
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/1.75-Complementary-Questions-Answers.md": "99f29ae2b1103bbb4ccbf04bde09adccdc465071f0f57e29f9914e227bcba3f3",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "daa06eab7cc5c9276ee09f515f92c298857805e0788b3d3494e8f0bd0350c995",
+      "pdfSha256": "d38b1b1cbd3d46e1f18116b810b0302cfcb1ff38a38ce5356bdf45db691e4e1a",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Intro-Soft-Matter/2025/2-What-is-Viscosity.md": {
+      "pdf": "Lecture-Notes/Intro-Soft-Matter/2025/2-What-is-Viscosity.pdf",
+      "dependencies": [
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md",
+        "Lecture-Notes/Intro-Soft-Matter/2025/2-What-is-Viscosity.md",
+        "_Media/2-What-is-Viscosity-1761738216814.png",
+        "_Media/2-What-is-Viscosity-1761738244038.png",
+        "_Media/2-What-is-Viscosity-1761738283101.png",
+        "_Media/2-What-is-Viscosity-1761738310141.png",
+        "_Media/2-What-is-Viscosity-1761767758968.png"
+      ],
+      "inputs": {
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/2-What-is-Viscosity.md": "fe9596585180f7d616c87e6143aa238895b0d071908a3c4cfdd3d790ff692907",
+        "_Media/2-What-is-Viscosity-1761738216814.png": "f9288fc9a5a128c05dfd8cfa694508812f5ba82b21ccc0689987b78d2de79dab",
+        "_Media/2-What-is-Viscosity-1761738244038.png": "fb136f55682a78a19ce0d44c83c8082d19a592987ac449a2ab5ba1e4af65c39e",
+        "_Media/2-What-is-Viscosity-1761738283101.png": "412cc2c23b876696045c3886535badfa159620a8a1ce4b041e927678c6c41d8c",
+        "_Media/2-What-is-Viscosity-1761738310141.png": "6edbfa93842de502046680ed87bf67d94484d0a106a47710656e9f7d1f5a5575",
+        "_Media/2-What-is-Viscosity-1761767758968.png": "f988206e9647c933944baf0d394fcbb5e56f2448adaf60920f644730f0dc4bde",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "c6234935d46a26c053925c5db7dfa85399c804aac1f42da2ac89696aa991865e",
+      "pdfSha256": "4661109cb5a18517a25cf66a2c7e77ae2a833ebf3f3041692d422a40887dbd99",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Intro-Soft-Matter/2025/2.5-Conservation-Laws.md": {
+      "pdf": "Lecture-Notes/Intro-Soft-Matter/2025/2.5-Conservation-Laws.pdf",
+      "dependencies": [
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md",
+        "Lecture-Notes/Intro-Soft-Matter/2025/2.5-Conservation-Laws.md",
+        "_Media/2-Conservation-Laws-1761807318276.png"
+      ],
+      "inputs": {
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/2.5-Conservation-Laws.md": "cb7b8ea9f3a0ae69390cd7462eff5e5160fb4a57532c5490bd7260eaddaec791",
+        "_Media/2-Conservation-Laws-1761807318276.png": "ad5e53df63737b05baf393ef984edd5b923816ba57e01db2272c02d6447b99e8",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "adf931a43cdf97d354028849070da62f810048b411838e19233d0298c7517762",
+      "pdfSha256": "0c329b78205c41a9612c210f71dc812b6ae40de3e28f76fdf7216fca3bc62ea8",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Intro-Soft-Matter/2025/2.75-Complementary-Questions-Answers.md": {
+      "pdf": "Lecture-Notes/Intro-Soft-Matter/2025/2.75-Complementary-Questions-Answers.pdf",
+      "dependencies": [
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md",
+        "Lecture-Notes/Intro-Soft-Matter/2025/2.75-Complementary-Questions-Answers.md"
+      ],
+      "inputs": {
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/2.75-Complementary-Questions-Answers.md": "6af632169c86d14ced95b6057415fdd24451c2ed4296a9728877371a755900e1",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "86c661c0bd05c4eeffb7f8f3fffd1d85199d769ee9d580504222ed2e65ac3390",
+      "pdfSha256": "e9cb91dff7e2e9f7420cf65ce1260c44dae18c7a3ee7537d246ee7f4d44fcb65",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Intro-Soft-Matter/2025/3-Soft-Matter-Instabilities.md": {
+      "pdf": "Lecture-Notes/Intro-Soft-Matter/2025/3-Soft-Matter-Instabilities.pdf",
+      "dependencies": [
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md",
+        "Lecture-Notes/Intro-Soft-Matter/2025/3-Soft-Matter-Instabilities.md",
+        "_Media/3-Soft-Matter-Instabilities-1761860668972.png",
+        "_Media/Lecture3-Instabilities-1761841931414.png",
+        "_Media/Lecture3-Instabilities-1761841962795.png",
+        "_Media/Lecture3-Instabilities-1761842034192.png",
+        "_Media/Lecture3-Instabilities-1761842080703.png",
+        "_Media/Lecture3-Instabilities-1761842604089.png",
+        "_Media/Lecture3-Instabilities-1761842685134.png"
+      ],
+      "inputs": {
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/3-Soft-Matter-Instabilities.md": "1d3ee97ae32db133c9acc07af9ed5ed3cc34d499b0f0d5adc433e3de8dc8e41d",
+        "_Media/3-Soft-Matter-Instabilities-1761860668972.png": "8c83da6f0d2ae40748c688915821d9f8b58cd05858e59a5d8c042c63ce9bf2d9",
+        "_Media/Lecture3-Instabilities-1761841931414.png": "427e78cf518dcfdea47ed9fbb0a3d0e1541680218456d94e89574b09c7c62e75",
+        "_Media/Lecture3-Instabilities-1761841962795.png": "80a9908decc3d5dd343be67bf59f6092bb3fc7ca98f7326b97924c3100d0b7c7",
+        "_Media/Lecture3-Instabilities-1761842034192.png": "0a045c7189a9ba2b5f3fb16da1792f0ae4032627439a1fb02c964f2237a748f9",
+        "_Media/Lecture3-Instabilities-1761842080703.png": "ed7c612ffcd4fa1f1664d7cabae1a4412fc6b3aff040f37a532372c6a4d87126",
+        "_Media/Lecture3-Instabilities-1761842604089.png": "1368641418b53f4f307ab298193c5b2f1e09f7abff4176392eead48a60445773",
+        "_Media/Lecture3-Instabilities-1761842685134.png": "27f6d108be112cf05e9a0ba6311e22a451984eb198799bc88a69a0d5af9656dc",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "2c1c9deca862b4d96362822513771db8267e674b4bb8d63c634ec50d87fa8f51",
+      "pdfSha256": "bd6d119392a82369769713235bc3a1c6227c56e3adda9109e4c36b0750f1f0e8",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Intro-Soft-Matter/2025/4-Soft-Matter-Singularities.md": {
+      "pdf": "Lecture-Notes/Intro-Soft-Matter/2025/4-Soft-Matter-Singularities.pdf",
+      "dependencies": [
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md",
+        "Lecture-Notes/Intro-Soft-Matter/2025/4-Soft-Matter-Singularities.md",
+        "_Media/4-Soft-Matter-Singularities-1762960009091.png",
+        "_Media/4-Soft-Matter-Singularities-1762960022513.png",
+        "_Media/4-Soft-Matter-Singularities-1762960047460.png",
+        "_Media/4-Soft-Matter-Singularities-1762960060765.png",
+        "_Media/4-Soft-Matter-Singularities-1762960099435.png",
+        "_Media/4-Soft-Matter-Singularities-1763535973289.png",
+        "_Media/4-Soft-Matter-Singularities-1763537342994.png",
+        "_Media/4-Soft-Matter-Singularities-1763537371241.png",
+        "_Media/4-Soft-Matter-Singularities-1763537416977.png",
+        "_Media/4-Soft-Matter-Singularities-1763559996509.png"
+      ],
+      "inputs": {
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/4-Soft-Matter-Singularities.md": "9ce9345157b977966a0f36c32ab9ee9fe7a5847c313fe4f25d90946dd6790d12",
+        "_Media/4-Soft-Matter-Singularities-1762960009091.png": "ca8912c83e5145aaa6182d08e6119ead058a43a6a8a3b53ee5f6725dd3608d4b",
+        "_Media/4-Soft-Matter-Singularities-1762960022513.png": "e57e7aa42e610a7399bc5c3566abf090f93e9bca39cbb27f621f50460c2c6875",
+        "_Media/4-Soft-Matter-Singularities-1762960047460.png": "9873d003a751fe325733d39efc993d56e63e0b4fcb95366fa2144c71cafa722a",
+        "_Media/4-Soft-Matter-Singularities-1762960060765.png": "bbf646fad5d979b3e857329e68b454e87cb32aaf61784d42bc50e1d0c16de22c",
+        "_Media/4-Soft-Matter-Singularities-1762960099435.png": "f26dd566fb5c0ba15c900babcb6d8afd16259eca93c4ed9876e3ef19cf7476e8",
+        "_Media/4-Soft-Matter-Singularities-1763535973289.png": "b8598d02a3540ae66f5c6905290271ec4e9d5741f4667fe843231e718be050f5",
+        "_Media/4-Soft-Matter-Singularities-1763537342994.png": "bf6e5802590914fa0ec48e14fda9942ad495d63daf715227d1514427e24a8906",
+        "_Media/4-Soft-Matter-Singularities-1763537371241.png": "0de83ce9cc8d7433305e26533bbb4c590be7cfe37524511220ce0b73cdff6d54",
+        "_Media/4-Soft-Matter-Singularities-1763537416977.png": "fcbef4d5c495541cf03c4af2c90f6e9652712f43a0e2aef150c7b9afda0d27a3",
+        "_Media/4-Soft-Matter-Singularities-1763559996509.png": "602f7663c4a3d7548e2269488c349d3bdca83798c5e53bc94af9c748ce7d5387",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "45941a2f0724ef0d10a50c4c88af6eb005442d47ab9135aae1c62acd6915a728",
+      "pdfSha256": "6830c56e7919247d3ea71bb5c4d6d1920c20a325d9a8c40849cf497c5399bd96",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Intro-Soft-Matter/2025/5-Viscoelasticity.md": {
+      "pdf": "Lecture-Notes/Intro-Soft-Matter/2025/5-Viscoelasticity.pdf",
+      "dependencies": [
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md",
+        "Lecture-Notes/Intro-Soft-Matter/2025/5-Viscoelasticity.md"
+      ],
+      "inputs": {
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/5-Viscoelasticity.md": "9ea3359987b4b719c25773350ca428c8035ffca4fbe8ce48c1291d18bf45a01e",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "71176c4b494e482f3e0c5d8bdeabcc1b9ac855c93e78d745a0a838472b9e3699",
+      "pdfSha256": "406387d35969a31b120fd669a5cfb41b970e63df2635772b1f8edd46676ed005",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Intro-Soft-Matter/2025/7-8-Student-Presentations.md": {
+      "pdf": "Lecture-Notes/Intro-Soft-Matter/2025/7-8-Student-Presentations.pdf",
+      "dependencies": [
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md",
+        "Lecture-Notes/Intro-Soft-Matter/2025/7-8-Student-Presentations.md"
+      ],
+      "inputs": {
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/7-8-Student-Presentations.md": "1f506ed057dff5da8c0d96eb84b4ca7e03c10559835bffc502a9aa1430e0e6a1",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "7ea282f3a1b8a94e74c4821ecff0395adba20c013f357cbceda413e4764a9859",
+      "pdfSha256": "b5e8f0634d209dc92ff8d72ffbaf9f6b42ea58ed48f7db38da002fb061d51d1e",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Intro-Soft-Matter/2025/7.5-Presentation-Paper-Topics.md": {
+      "pdf": "Lecture-Notes/Intro-Soft-Matter/2025/7.5-Presentation-Paper-Topics.pdf",
+      "dependencies": [
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md",
+        "Lecture-Notes/Intro-Soft-Matter/2025/7.5-Presentation-Paper-Topics.md"
+      ],
+      "inputs": {
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/7.5-Presentation-Paper-Topics.md": "c4f272924d7700e903328783cf5da5ec36022961a6f22a6fbcc4f27300d47b8e",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "b814ef31e29e404b1129f0ebb7c5f0e0d645a3ba80725cdf65960a36a16f47a2",
+      "pdfSha256": "2779b9dfcf39ba6d88b62ea66084c394c27e142a2de15fc3c5027df5a09d25bb",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Intro-Soft-Matter/2026/0-README.md": {
+      "pdf": "Lecture-Notes/Intro-Soft-Matter/2026/0-README.pdf",
+      "dependencies": ["Lecture-Notes/Intro-Soft-Matter/2026/0-README.md"],
+      "inputs": {
+        "Lecture-Notes/Intro-Soft-Matter/2026/0-README.md": "696384108b3fda46ed9403106266f1082bc9f6717297692047a690ec369daf76",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36c1d3f7bd4ac2546d95233e9963c9f5d9482d2bffecb8bd8cda3899b3689dde",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "4e10cf0bf4b3cf35d30460e769092622237eaac5ff1157f1ab96f11222c672f8",
+        "_quartz/scripts/tex/prepare.ts": "b208f9eed1ff677b351f4d88daf1cd4b51efa8bf0bbd2b3d185c0ea2e484bfa5",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@vault-paths": "431d3252178831c4af6a2b51052e3e3304b66dd49f73163dbfb43d63e3262440"
+      },
+      "sha256": "e2ab4b561e622aeb2f18dfe5bab363ab1d7a567edc56f3b3732bc6fcc59f6120",
+      "pdfSha256": "3369f806584d175488d4d72efadf9927387e32407ffb920419f9acb8d9d1a8f5",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    }
+  }
+}
