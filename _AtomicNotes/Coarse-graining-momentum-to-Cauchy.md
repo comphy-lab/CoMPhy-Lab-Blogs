@@ -99,7 +99,7 @@ At continuum level, we assign the fluctuation flux together with the configurati
 $$\boxed{\overline{\boldsymbol{\Pi}} = \rho\,\boldsymbol{v}\boldsymbol{v} - \boldsymbol{\sigma}}$$
 with the Cauchy stress tensor
 $$\boxed{\boldsymbol{\sigma} = \underbrace{-\rho\,\langle\boldsymbol{c}\,\boldsymbol{c}\rangle}_{\boldsymbol{\sigma}_{\text{kin}}} + \underbrace{\boldsymbol{\sigma}_{\text{config}}}_{\text{from forces, see below}}}.$$
-This is a philosophical split: macroscopic convective transport vs microscopic agitation + interparticle interactions.
+This split is a definition, not an approximation: macroscopic convective transport on one side, microscopic agitation and interparticle interactions on the other.
 
 > Key point: the convective part of $\langle\boldsymbol{K}\rangle$ is $\rho\,\boldsymbol{v}\boldsymbol{v}$. We place the rest, $\rho\langle\boldsymbol{c}\boldsymbol{c}\rangle$, into $\boldsymbol{\sigma}$, i.e. we declare it part of the non-convective transport. This defines $\boldsymbol{\sigma}$; nothing is approximated.
 
@@ -156,7 +156,7 @@ The derivation above defines $\boldsymbol{\sigma}$ kinematically. To close the e
 $$\langle K_{ij}\rangle = \rho\,v_i v_j + \rho\,\langle c_i c_j\rangle.$$
 The second term is non-zero in general. The coarse-graining philosophy is to assign all non-convective momentum transport—random agitation and interparticle push/pull—to the stress:
 $$\underbrace{\rho\,v_i v_j}_{\text{coherent bulk}} \quad\Big|\quad \underbrace{\rho\,\langle c_i c_j\rangle + \text{(configurational)}}_{\text{non-convective, define as } -\sigma_{ij}}.$$
-Thus we decide the book keeping that renders the continuum equation local, symmetric, and physically interpretable. This is exactly the Reynolds decomposition idea: for turbulence, $\overline{\rho\,\boldsymbol{v}\boldsymbol{v}} = \rho\,\tilde{\boldsymbol{v}}\tilde{\boldsymbol{v}} + \boldsymbol{\tau}^{\text{(Re)}}$ with the Reynolds stress $\boldsymbol{\tau}^{\text{(Re)}} \equiv \rho\,\widetilde{\boldsymbol{v}'\boldsymbol{v}'}$ absorbed into an effective $\boldsymbol{\sigma}$.
+This bookkeeping is a definition, chosen because it renders the continuum equation local, symmetric, and physically interpretable. This is exactly the Reynolds decomposition idea: for turbulence, $\overline{\rho\,\boldsymbol{v}\boldsymbol{v}} = \rho\,\tilde{\boldsymbol{v}}\tilde{\boldsymbol{v}} + \boldsymbol{\tau}^{\text{(Re)}}$ with the Reynolds stress $\boldsymbol{\tau}^{\text{(Re)}} \equiv \rho\,\widetilde{\boldsymbol{v}'\boldsymbol{v}'}$ absorbed into an effective $\boldsymbol{\sigma}$.
 
 ---
 

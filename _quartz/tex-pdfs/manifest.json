@@ -554,7 +554,7 @@
       ],
       "inputs": {
         "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
-        "Lecture-Notes/Intro-Soft-Matter/2025/2.5-Conservation-Laws.md": "878b40ad34348996b952833061d9b4cec7c63d93cc30e3dcc2ae122b9ab3b304",
+        "Lecture-Notes/Intro-Soft-Matter/2025/2.5-Conservation-Laws.md": "e1c1f6ffe02e17f91b9ba198ec65e1411416ebaae1fca0f30cdc799373e7bdf1",
         "_Media/2-Conservation-Laws-1761807318276.png": "ad5e53df63737b05baf393ef984edd5b923816ba57e01db2272c02d6447b99e8",
         "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
         "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
@@ -570,8 +570,8 @@
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
         "@vault-paths": "4d052c3cf35e644b4c54c52fbc3be5707e193db81b57596e76c2271900f892bf"
       },
-      "sha256": "29ba197fa8f9a79f8fd4d561e8aa6229dd21e2be63f2e0227d93f1fc91d74d6e",
-      "pdfSha256": "c4ade7939753674b0232bfd19da7e3de3be38e743a3ae4a77d0f2c599f64cdeb",
+      "sha256": "eea8689ae70d79161c82127d90015d51b71bbcdf1b71dad0fd179c27999ea658",
+      "pdfSha256": "d5401f13d9ad446fb50134e4b813043bf6caf331a9e9dde64604cd64997e23aa",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
