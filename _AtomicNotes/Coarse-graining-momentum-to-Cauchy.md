@@ -18,7 +18,7 @@ publish: true
   $$
   where $\boldsymbol{v}$ is the mean velocity and $\boldsymbol{c}$ the peculiar fluctuation.
 
-* Meaning of $\langle\boldsymbol{K}\rangle = \rho\,\boldsymbol{v}\boldsymbol{v}$. This is not just a definition; it encodes a closure: macroscopic transport $= \rho\,\boldsymbol{v}\boldsymbol{v}$; microscopic agitation $\to$ stress. The fluctuation term $\rho\langle\boldsymbol{c}\boldsymbol{c}\rangle$ is absorbed into $\boldsymbol{\sigma}$.
+* Meaning of the split. The averaged kinetic flux is exactly $\langle\boldsymbol{K}\rangle = \rho\,\boldsymbol{v}\boldsymbol{v} + \rho\langle\boldsymbol{c}\boldsymbol{c}\rangle$. Its convective part $\rho\,\boldsymbol{v}\boldsymbol{v}$ is the macroscopic transport; the fluctuation term $\rho\langle\boldsymbol{c}\boldsymbol{c}\rangle$ is assigned to $\boldsymbol{\sigma}$. This assignment defines $\boldsymbol{\sigma}$; it is an exact split, not an approximation.
 
 * Meaning of $\boldsymbol{C}$: The line-integral representation is the minimal local encoding of Newton's third law, ensuring local momentum conservation, symmetry of stress, and correct torques. Upon averaging, $\langle\boldsymbol{C}\rangle = -\boldsymbol{\sigma}_{\text{config}}$.
 
@@ -101,7 +101,7 @@ with the Cauchy stress tensor
 $$\boxed{\boldsymbol{\sigma} = \underbrace{-\rho\,\langle\boldsymbol{c}\,\boldsymbol{c}\rangle}_{\boldsymbol{\sigma}_{\text{kin}}} + \underbrace{\boldsymbol{\sigma}_{\text{config}}}_{\text{from forces, see below}}}.$$
 This is a philosophical split: macroscopic convective transport vs microscopic agitation + interparticle interactions.
 
-> Key point: Saying $\langle\boldsymbol{K}\rangle = \rho\,\boldsymbol{v}\boldsymbol{v}$ is not a mere definition; it encodes a closure: we place $\rho\langle\boldsymbol{c}\boldsymbol{c}\rangle$ into $\boldsymbol{\sigma}$, i.e. we declare it part of the non-convective transport.
+> Key point: the convective part of $\langle\boldsymbol{K}\rangle$ is $\rho\,\boldsymbol{v}\boldsymbol{v}$. We place the rest, $\rho\langle\boldsymbol{c}\boldsymbol{c}\rangle$, into $\boldsymbol{\sigma}$, i.e. we declare it part of the non-convective transport. This defines $\boldsymbol{\sigma}$; nothing is approximated.
 
 ### 3.2 Configurational part and stress
 
@@ -151,7 +151,7 @@ The derivation above defines $\boldsymbol{\sigma}$ kinematically. To close the e
 
 ---
 
-## 6. Why $\langle\boldsymbol{K}\rangle = \rho\,\boldsymbol{v}\boldsymbol{v}$ is a closure, not a tautology
+## 6. Splitting $\langle\boldsymbol{K}\rangle$: convective part and kinetic stress
 
 $$\langle K_{ij}\rangle = \rho\,v_i v_j + \rho\,\langle c_i c_j\rangle.$$
 The second term is non-zero in general. The coarse-graining philosophy is to assign all non-convective momentum transport—random agitation and interparticle push/pull—to the stress:
@@ -184,7 +184,7 @@ consistent with the configurational origin of capillary stresses in a molecular 
 ## 10. Common pitfalls and sign conventions (quick checklist)
 
 * Where does the minus sign come from? We choose $\overline{\boldsymbol{\Pi}} = \rho\,\boldsymbol{v}\boldsymbol{v} - \boldsymbol{\sigma}$ so that internal stresses enter as $+\nabla\cdot\boldsymbol{\sigma}$ in the equation of motion.
-* Is $\langle\boldsymbol{K}\rangle = \rho\boldsymbol{v}\boldsymbol{v}$ exact? No. It is a modeling split: we define the convective part as $\rho\boldsymbol{v}\boldsymbol{v}$ and absorb the fluctuations into $\boldsymbol{\sigma}$.
+* Is $\langle\boldsymbol{K}\rangle = \rho\boldsymbol{v}\boldsymbol{v}$? No: exactly, $\langle\boldsymbol{K}\rangle = \rho\boldsymbol{v}\boldsymbol{v} + \rho\langle\boldsymbol{c}\boldsymbol{c}\rangle$. We call $\rho\boldsymbol{v}\boldsymbol{v}$ the convective part and put the fluctuation term into $\boldsymbol{\sigma}$. The split is a definition, so nothing is approximated.
 * Symmetry of stress. Guaranteed by construction of $\boldsymbol{C}$ (plus micro-torque balance). If couple-stresses or micro-rotations are relevant, one must generalize to Cosserat/micropolar continua.
 
 ---
@@ -255,7 +255,7 @@ $$
 
 ### Final perspective
 
-1. $\langle\boldsymbol{K}\rangle = \rho\,\boldsymbol{v}\boldsymbol{v}$ expresses a scale separation: we keep coherent transport as convective and lump fluctuations into stress—a closure, not a tautology.
+1. The convective part of $\langle\boldsymbol{K}\rangle$ is $\rho\,\boldsymbol{v}\boldsymbol{v}$; the fluctuation part $\rho\langle\boldsymbol{c}\boldsymbol{c}\rangle$ goes into the stress. This exact split expresses a scale separation: coherent transport stays convective, and microscopic agitation becomes stress.
 2. $\boldsymbol{C}$ localizes Newton's third law so that internal forces become a divergence of a symmetric tensor, producing the right local force and torque balances. Averaging gives $\langle\boldsymbol{C}\rangle = -\boldsymbol{\sigma}_{\text{config}}$.
 3. The Cauchy equation then drops out cleanly:
    $$\boxed{\rho\,\frac{D\boldsymbol{v}}{Dt} = \nabla\cdot\boldsymbol{\sigma} + \rho\,\boldsymbol{b},}$$

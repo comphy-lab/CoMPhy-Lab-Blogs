@@ -147,12 +147,12 @@ where $\rho = nm$ is the mass density.
 
 ### Step 4: Identifying Shear Stress and Viscosity
 
-Critical Relationship: The *shear stress* in the continuum description is minus the downward flux of $x$-momentum. The minus sign accounts for direction convention: if molecules flow momentum downward (from fast to slow regions), this represents a stress acting downward.
+Critical Relationship: The *shear stress* in the continuum description is the net downward flux of $x$-momentum (equivalently, minus the upward flux). Momentum carried down from the faster layer above is the force per unit area that the upper fluid exerts on the lower fluid, which is $\tau_{xy}$ on a plane with normal $+\hat{\boldsymbol{y}}$.
 
-$$\tau_{xy} = -\Phi_{x}^{\text{net}} = -\frac{1}{2} \rho \bar{c} \lambda \frac{\partial u_x}{\partial y}$$
+$$\tau_{xy} = \Phi_{x}^{\text{net}} = \frac{1}{2} \rho \bar{c} \lambda \frac{\partial u_x}{\partial y}$$
 
 Comparing with Newton's law:
-$$\tau_{xy} = -\eta \frac{\partial u_x}{\partial y}$$
+$$\tau_{xy} = \eta \frac{\partial u_x}{\partial y}$$
 
 We obtain:
 
@@ -199,7 +199,7 @@ $$\text{Removal rate} \sim \underbrace{\left(\frac{1}{4}n\bar{c}\right)}_{\text{
 where $u_x(0^+)$ is the fluid velocity just outside the wall.
 
 Rate of momentum supply via viscous diffusion:
-$$\text{Supply rate} = -\tau_{xy}\big|_{\text{wall}} = \eta \frac{\partial u_x}{\partial y}\bigg|_{\text{wall}}$$
+$$\text{Supply rate} = \tau_{xy}\big|_{\text{wall}} = \eta \frac{\partial u_x}{\partial y}\bigg|_{\text{wall}}$$
 
 Steady-state balance:
 $$\eta \frac{\partial u_x}{\partial y}\bigg|_{\text{wall}} \sim \frac{1}{4}n\bar{c} \, m \, u_x(0^+)$$
@@ -396,7 +396,7 @@ Understanding why momentum diffusion acts as a dissipative force (damping) is ce
 > [!significance]- Metadata
 > Author:: [Vatsal Sanjay](https://vatsalsanjay.com)<br>
 > Date published:: Oct 29, 2025<br>
-> Date modified:: Oct 30, 2025
+> Date modified:: Oct 16, 2026
 
 > [!link] Back to main website
 > [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)

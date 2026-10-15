@@ -54,7 +54,7 @@ For non-Newtonian fluids, this relationship becomes more complex:
 
 1. Viscoplastic fluids (e.g., Bingham plastics, Herschel-Bulkley fluids) exhibit a yield stress $\tau_y$ that must be exceeded before flow occurs:
 
-$$\boldsymbol{\tau} = \begin{cases} \tau_{y}\frac{\dot{\boldsymbol{\gamma}}}{|\dot{\boldsymbol{\gamma}}|} + K|\dot{\boldsymbol{\gamma}}|^{n-1}\dot{\boldsymbol{\gamma}}, & \text{if } |\boldsymbol{\tau}| > \tau_y \ \dot{\boldsymbol{\gamma}} = 0, & \text{if } |\boldsymbol{\tau}| \leq \tau_y \end{cases} $$
+$$\boldsymbol{\tau} = \begin{cases} \tau_{y}\frac{\dot{\boldsymbol{\gamma}}}{|\dot{\boldsymbol{\gamma}}|} + K|\dot{\boldsymbol{\gamma}}|^{n-1}\dot{\boldsymbol{\gamma}}, & \text{if } |\boldsymbol{\tau}| > \tau_y \\ \dot{\boldsymbol{\gamma}} = 0, & \text{if } |\boldsymbol{\tau}| \leq \tau_y \end{cases} $$
 
 2. Viscoelastic fluids exhibit memory effects, with stress depending on the deformation history. A common model is the Oldroyd-B model:
 
