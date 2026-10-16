@@ -726,7 +726,7 @@
       ],
       "inputs": {
         "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
-        "Lecture-Notes/Intro-Soft-Matter/2025/5-Viscoelasticity.md": "7e53d4023d43f5774003d22c5df4d765da477e6b6daa031344bfcf8c090b24d0",
+        "Lecture-Notes/Intro-Soft-Matter/2025/5-Viscoelasticity.md": "406cc6ef3bded47ee2f9d5669f4274c99497c03aea1a19881e581bf52fe01f86",
         "_Media/5-Viscoelasticity-1.png": "1e25e72d61013a5b5f6d303fdc636a7cbcfcc7133960d0b5dbfdde927b707a98",
         "_Media/5-Viscoelasticity-2.png": "1285bd879e6fc52db082e3f44ceb9ee70b401717f6b6909380aa0bbf4c4706a7",
         "_Media/5-Viscoelasticity-3.png": "cf75ec45ada5d966100fc5c722eee9ee10a8d50fd8e7bdf74b7643711a5fc594",
@@ -746,8 +746,8 @@
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
         "@vault-paths": "ac67570f1e8decf978772ce2a09a697d0646ea905d9d6d018fd710eeb223d281"
       },
-      "sha256": "18c5a2da2d229c11927c337160d923c82737e0424347822d1c86ba4a1b68c928",
-      "pdfSha256": "75621c887519287cd57746fdd9f2d993826c016e76a459cd4e23442ca8e6d876",
+      "sha256": "b7ea9f018dd23fec5a4ecff4103d166a779143557b693ca9a71ba9f33d207e3a",
+      "pdfSha256": "46a114ea881a436549b23f6a46d00f289ad0e46ddc591cb2befb1874a4464c3e",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
