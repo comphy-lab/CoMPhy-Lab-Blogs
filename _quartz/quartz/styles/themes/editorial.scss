@@ -126,7 +126,7 @@ article {
     margin-top: 2rem;
   }
   & p > strong {
-    color: var(--c-accent-coral);
+    color: var(--c-accent-coral-text);
   }
   & a:not(.tag-link):not(:has(> img)) {
     color: var(--fg-strong);

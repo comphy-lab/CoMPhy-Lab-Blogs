@@ -12,6 +12,7 @@
   --c-brand-purple: #68236d;
   --c-brand-blue: #0056b3;
   --c-accent-coral: #cf4900;
+  --c-accent-coral-text: #c04400;
   --c-accent-violet: #4c6ef5;
   --c-accent-teal: #254c4a;
   --c-accent-teal-fg: #ffffff;
@@ -64,6 +65,7 @@
   --c-accent-teal: #6ac2bd;
   --c-accent-teal-fg: #0f1c1b;
   --c-accent-teal-hover: #88d2ce;
+  --c-accent-coral-text: var(--c-accent-coral);
   --c-eyebrow: #c09bc4;
   --c-link: #8fb8ff;
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
