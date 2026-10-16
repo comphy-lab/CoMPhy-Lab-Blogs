@@ -129,6 +129,20 @@ $$\frac{\gamma}{h_j} \sim \bar{\sigma}_{zz} \approx G\left(\frac{h_j}{h_0}\right
 
 which the simulations follow for $Ec \lesssim 0.1$.
 
+The stress fields show where these forces come from. In the figures below ($Ec = 0.1$, $De \to \infty$, $t = 50\,\tau_\gamma$), solid lines are the simulation and dashed lines the elastic-mapping prediction of §1.2.
+
+![Three panels of stress against distance from the tip of the opening hole, with the rim shape coloured by each stress component as insets. The radial stress is about minus G inside the rim and oscillates around zero beyond it; the vertical stress is about 6 G inside the rim and about G beyond it; the hoop stress rises to several thousand G at the tip and is negligible elsewhere on a linear scale. Solid and dashed curves overlap almost everywhere](../../../_Media/6-Sheets-Bubbles-Drops-10.png)
+*Radial ($\sigma_{rr}$), vertical ($\sigma_{zz}$) and hoop ($\sigma_{\theta\theta}$) stresses, scaled by $G$, against the distance $r - R_{\mathrm{tip}}$ from the tip (in units of $h_0$), at $Ec = 0.1$ and $t = 50\,\tau_\gamma$. Solid: simulation; dashed: elastic-mapping prediction. Insets: the rim coloured by each stress component.*
+
+- **Vertical stress.** Inside the rim $\sigma_{zz} \approx 6G$. The rim is then about $2.6h_0$ thick, and a vertical stretch of $2.6$ gives $G(2.6^2 - 1) \approx 6G$: this is the stress that stops the rim from thickening further.
+- **Radial stress.** Inside the rim $\sigma_{rr} \approx -G$. Material stretched vertically and around the hole is squeezed radially, so $\mathcal{A}_{rr} \to 0$ and $G(\mathcal{A}_{rr} - 1) \to -G$.
+- **Hoop stress.** $\sigma_{\theta\theta}$ is concentrated at the very tip, where the material has travelled furthest.
+
+![Hoop stress scaled by G against distance from the tip on logarithmic axes, with an inset of the rim coloured by hoop stress. The dashed prediction rises to about 3000 G towards the tip; the solid simulation curve follows it except within about 0.1 film thicknesses of the tip, where it peaks at about 3000 G and falls to about 800 G at the tip](../../../_Media/6-Sheets-Bubbles-Drops-11.png)
+*The hoop stress of the previous figure on logarithmic axes. Solid: simulation; dashed: elastic-mapping prediction.*
+
+On logarithmic axes the hoop stress falls by more than three decades over the plotted range. The prediction follows the simulation everywhere except within about $0.1h_0$ of the tip. Closer in, the simulated stress peaks at about $3\times10^3\,G$ and drops to about $8\times10^2\,G$ at the tip itself, where the mapping's assumptions of homogeneous, shear-free stretching are least likely to hold.
+
 ## 2) Bubbles: Worthington jets in viscoelastic liquids
 
 ### 2.1 Champagne and Worthington jets
