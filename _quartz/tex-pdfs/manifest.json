@@ -311,7 +311,7 @@
         "_Media/6-Sheets-Bubbles-Drops-9.png"
       ],
       "inputs": {
-        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "b10e199c4d53bc49b49477de691c147377b1b6be463cc29273fdfeb49377824c",
         "Lecture-Notes/Intro-Soft-Matter/2025/6-Sheets-Bubbles-Drops.md": "c76c37495c72acbec55acd9aaa462e298b10d748419c6942da709931f416077c",
         "_Media/6-Sheets-Bubbles-Drops-1.png": "cbac5f8f9a257970b7d561ed1c5856f415758c9310a803dfa9c44effd40a814c",
         "_Media/6-Sheets-Bubbles-Drops-10.png": "7e4b2f6c11b699eb0f5d1c78002b00cc0d86c98c9c4b78e6c2f561249358fcb8",
@@ -338,7 +338,7 @@
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
         "@vault-paths": "ac67570f1e8decf978772ce2a09a697d0646ea905d9d6d018fd710eeb223d281"
       },
-      "sha256": "df52dcdd55a4ea58028560e19dbfa334df98110d3aded05968d4503940735fdc",
+      "sha256": "7a6a30a6f784c926dbff2ff55e212f5775c8e8271daac5d2656b0d9142fd6839",
       "pdfSha256": "b2f380b62af0276e546d25ed6e1cb89fa070d8230e49725bf705a67167f63044",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -351,7 +351,7 @@
       "pdf": "Lecture-Notes/Intro-Soft-Matter/2025/0-README.pdf",
       "dependencies": ["Lecture-Notes/Intro-Soft-Matter/2025/0-README.md"],
       "inputs": {
-        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "b10e199c4d53bc49b49477de691c147377b1b6be463cc29273fdfeb49377824c",
         "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
         "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
         "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
@@ -366,8 +366,8 @@
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
         "@vault-paths": "ac67570f1e8decf978772ce2a09a697d0646ea905d9d6d018fd710eeb223d281"
       },
-      "sha256": "7708d930bf8866e9e18b48f1bc58b01702745e17780fff66680b69dd27d1fea3",
-      "pdfSha256": "48816d1eb0454f26a2ddec5454a00ed5637ff3cc117ca314460df90f89d0d245",
+      "sha256": "c87d2ec7e6cba504a432ed732796c05dfc907c84cd75b01493ff3d030e1c47df",
+      "pdfSha256": "908679526f328fa7acb146ac98bf31e9de9ac669a6674b7413a749f101126ab7",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
@@ -390,8 +390,8 @@
         "_Media/1-Intro-Soft-Matter-1761105451051.png"
       ],
       "inputs": {
-        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
-        "Lecture-Notes/Intro-Soft-Matter/2025/1-Intro-Soft-Matter.md": "53b4c5714c87b303757032ec023f3feff2d81cd5bb508996e0c6dd8e647e37cc",
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "b10e199c4d53bc49b49477de691c147377b1b6be463cc29273fdfeb49377824c",
+        "Lecture-Notes/Intro-Soft-Matter/2025/1-Intro-Soft-Matter.md": "21033a80732b09ab3e29d35bf83dace40f1228d37681218779c5c3957ed7a8da",
         "_Media/1-Intro-Soft-Matter-1761103784897.png": "b174844fd62827dc47331f6114b76b76829ec6bbcfd0fda7b455ad6ec90ac11e",
         "_Media/1-Intro-Soft-Matter-1761103818495.png": "eca3c6f56ac9fbfc6cedc4207e5165c25d510d04e6a365456f07aa7fc9cdb77c",
         "_Media/1-Intro-Soft-Matter-1761103864489.png": "4697bd886bdccc23070cd0e0f5edbb60898373cac62e39eab4ac6144c8ce275b",
@@ -414,8 +414,8 @@
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
         "@vault-paths": "ac67570f1e8decf978772ce2a09a697d0646ea905d9d6d018fd710eeb223d281"
       },
-      "sha256": "d2d572f0a7a18cc691923a91bda80d0855ab237cea8e22f5011ba5e65165f00a",
-      "pdfSha256": "1116cb6740c7592c7c11e3d3d8e6178da54241fe374036a8511080035b227587",
+      "sha256": "5516be58218c755bcb5472aaf6b12919df5e29c41f3671ab121ce4ad597e700a",
+      "pdfSha256": "a3d60a05d3e089a100843d9b24e8f3e2495986a0634e7b669f18717a8a2f82c4",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
@@ -440,8 +440,8 @@
         "_Media/1.5-Taylor-Culick-18.png"
       ],
       "inputs": {
-        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
-        "Lecture-Notes/Intro-Soft-Matter/2025/1.5-Taylor-Culick-Paradox.md": "cd96fae3a7b8e896c55d07fe0c5ebae9008f448bebd01318b8affae8cbdf4317",
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "b10e199c4d53bc49b49477de691c147377b1b6be463cc29273fdfeb49377824c",
+        "Lecture-Notes/Intro-Soft-Matter/2025/1.5-Taylor-Culick-Paradox.md": "bfb8d55ca9ab82d7da98dd1b4bc46ffa484c97e3903c3e9b84cc3286078c6fc3",
         "_Media/1.5-Taylor-Culick-01.png": "30d07b5b250d75c74e34de2d3bd5271dc2c1d2fae1a119bf800da34d5b98cdd2",
         "_Media/1.5-Taylor-Culick-03.png": "e5d40ee1d1893ceebcdb7d4d01e7dfb310934063fb18b27adc3dd6b61a3f1a04",
         "_Media/1.5-Taylor-Culick-05.png": "10820c8ea44b7d1c9662ed6a1d9de1a4c459252aed60c3a02e3adcdf687d551e",
@@ -466,8 +466,8 @@
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
         "@vault-paths": "ac67570f1e8decf978772ce2a09a697d0646ea905d9d6d018fd710eeb223d281"
       },
-      "sha256": "179b5e79255f0ac32a50d8e0774daa07972c33142a70e18408923d4255893514",
-      "pdfSha256": "fab8ba59e0fb806db0b2843693609fec3f5d147b83d1805cf3e83edfaa3ccdc1",
+      "sha256": "cc52fcad252160f4082a5f2db99a8955ccba77f6b040af9c0af0e95cb228c70d",
+      "pdfSha256": "47d78645489df9d62bb1b691f57aceacbceb4c01040257451c802eb651901acf",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
@@ -482,8 +482,8 @@
         "Lecture-Notes/Intro-Soft-Matter/2025/1.75-Complementary-Questions-Answers.md"
       ],
       "inputs": {
-        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
-        "Lecture-Notes/Intro-Soft-Matter/2025/1.75-Complementary-Questions-Answers.md": "99f29ae2b1103bbb4ccbf04bde09adccdc465071f0f57e29f9914e227bcba3f3",
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "b10e199c4d53bc49b49477de691c147377b1b6be463cc29273fdfeb49377824c",
+        "Lecture-Notes/Intro-Soft-Matter/2025/1.75-Complementary-Questions-Answers.md": "0c912617c30e88a47cff85ac9b2a1ef85d0b078d8ccfba255ea5fd7b44105513",
         "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
         "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
         "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
@@ -498,8 +498,8 @@
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
         "@vault-paths": "ac67570f1e8decf978772ce2a09a697d0646ea905d9d6d018fd710eeb223d281"
       },
-      "sha256": "f411c8aa6deebbe1714bd96a6dc01508b6500c90b430f86cc32937460d898273",
-      "pdfSha256": "d38b1b1cbd3d46e1f18116b810b0302cfcb1ff38a38ce5356bdf45db691e4e1a",
+      "sha256": "096809dc244e57550d987789dce95c34faaa25900443260e5c761ffffac1982a",
+      "pdfSha256": "d42677620f6c0b0cfcc3f0eb63792eb99a9887cde293725a5c892746ab355ef3",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
@@ -519,7 +519,7 @@
         "_Media/2-What-is-Viscosity-1761767758968.png"
       ],
       "inputs": {
-        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "b10e199c4d53bc49b49477de691c147377b1b6be463cc29273fdfeb49377824c",
         "Lecture-Notes/Intro-Soft-Matter/2025/2-What-is-Viscosity.md": "c1291388dda2279f746ee58ab90f1f3014ce51b6f017b5efd94567da66edf66e",
         "_Media/2-What-is-Viscosity-1761738216814.png": "f9288fc9a5a128c05dfd8cfa694508812f5ba82b21ccc0689987b78d2de79dab",
         "_Media/2-What-is-Viscosity-1761738244038.png": "fb136f55682a78a19ce0d44c83c8082d19a592987ac449a2ab5ba1e4af65c39e",
@@ -540,7 +540,7 @@
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
         "@vault-paths": "ac67570f1e8decf978772ce2a09a697d0646ea905d9d6d018fd710eeb223d281"
       },
-      "sha256": "1c16508f977c59deb3a150e9f1647627f1875f07d258ae905e9c96b7b9c9a48b",
+      "sha256": "075062cd119b6ee8df13d52627685702a1cea2e7197788d7d52f0667bcdf47d8",
       "pdfSha256": "38d3003d7026176cac6079ef7f31f0f0d6223450e43472c6a7155a1dc0d1ba3d",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -557,7 +557,7 @@
         "_Media/2-Conservation-Laws-1761807318276.png"
       ],
       "inputs": {
-        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "b10e199c4d53bc49b49477de691c147377b1b6be463cc29273fdfeb49377824c",
         "Lecture-Notes/Intro-Soft-Matter/2025/2.5-Conservation-Laws.md": "a151b810ff6640c4f1226f092a22c588fca07e16ba3367f70481fe44a9bcf649",
         "_Media/2-Conservation-Laws-1761807318276.png": "ad5e53df63737b05baf393ef984edd5b923816ba57e01db2272c02d6447b99e8",
         "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
@@ -574,7 +574,7 @@
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
         "@vault-paths": "ac67570f1e8decf978772ce2a09a697d0646ea905d9d6d018fd710eeb223d281"
       },
-      "sha256": "320b947aa2aec31fc0a67826acbf73dd6a01da0a035505c8c99a28f85db39fce",
+      "sha256": "1ca1a3c8b973004617715668dbee93d6dacfe37a0622a3fdd9833b564ca6e5ea",
       "pdfSha256": "223b9021518d0670a1969b9cb913687a45659f128b27030cb89942f0058de4f6",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -590,7 +590,7 @@
         "Lecture-Notes/Intro-Soft-Matter/2025/2.75-Complementary-Questions-Answers.md"
       ],
       "inputs": {
-        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "b10e199c4d53bc49b49477de691c147377b1b6be463cc29273fdfeb49377824c",
         "Lecture-Notes/Intro-Soft-Matter/2025/2.75-Complementary-Questions-Answers.md": "6af632169c86d14ced95b6057415fdd24451c2ed4296a9728877371a755900e1",
         "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
         "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
@@ -606,7 +606,7 @@
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
         "@vault-paths": "ac67570f1e8decf978772ce2a09a697d0646ea905d9d6d018fd710eeb223d281"
       },
-      "sha256": "321468ef8ffd0b3d3ccb38b86df364a61b6d566cc61f4bf93aff64751ee7f270",
+      "sha256": "e2cc00d7a88e64c36e2980cb29ea0a4af05b921c80d0fa0f1f4aac3d790c544f",
       "pdfSha256": "e9cb91dff7e2e9f7420cf65ce1260c44dae18c7a3ee7537d246ee7f4d44fcb65",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -629,7 +629,7 @@
         "_Media/Lecture3-Instabilities-1761842685134.png"
       ],
       "inputs": {
-        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "b10e199c4d53bc49b49477de691c147377b1b6be463cc29273fdfeb49377824c",
         "Lecture-Notes/Intro-Soft-Matter/2025/3-Soft-Matter-Instabilities.md": "1d3ee97ae32db133c9acc07af9ed5ed3cc34d499b0f0d5adc433e3de8dc8e41d",
         "_Media/3-Soft-Matter-Instabilities-1761860668972.png": "8c83da6f0d2ae40748c688915821d9f8b58cd05858e59a5d8c042c63ce9bf2d9",
         "_Media/Lecture3-Instabilities-1761841931414.png": "427e78cf518dcfdea47ed9fbb0a3d0e1541680218456d94e89574b09c7c62e75",
@@ -652,7 +652,7 @@
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
         "@vault-paths": "ac67570f1e8decf978772ce2a09a697d0646ea905d9d6d018fd710eeb223d281"
       },
-      "sha256": "dfe184c6572bdceee382eb1439e381c96d359d59eeeb4fa3314dda92472c064c",
+      "sha256": "d6bc4695366b9ecd0666039f7262f9549221d10a0d1a01a7f03f41cfa8691396",
       "pdfSha256": "bd6d119392a82369769713235bc3a1c6227c56e3adda9109e4c36b0750f1f0e8",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -678,7 +678,7 @@
         "_Media/4-Soft-Matter-Singularities-1763559996509.png"
       ],
       "inputs": {
-        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "b10e199c4d53bc49b49477de691c147377b1b6be463cc29273fdfeb49377824c",
         "Lecture-Notes/Intro-Soft-Matter/2025/4-Soft-Matter-Singularities.md": "9ce9345157b977966a0f36c32ab9ee9fe7a5847c313fe4f25d90946dd6790d12",
         "_Media/4-Soft-Matter-Singularities-1762960009091.png": "ca8912c83e5145aaa6182d08e6119ead058a43a6a8a3b53ee5f6725dd3608d4b",
         "_Media/4-Soft-Matter-Singularities-1762960022513.png": "e57e7aa42e610a7399bc5c3566abf090f93e9bca39cbb27f621f50460c2c6875",
@@ -704,7 +704,7 @@
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
         "@vault-paths": "ac67570f1e8decf978772ce2a09a697d0646ea905d9d6d018fd710eeb223d281"
       },
-      "sha256": "b7932469dbf87db2cb4641e044ea7cfc1c593a8ecaadef38503ffb058f1a5fb5",
+      "sha256": "0bfed0251bd233f8814996b9d6ec8f899834cf47a707638623c00c10d204c9d5",
       "pdfSha256": "6830c56e7919247d3ea71bb5c4d6d1920c20a325d9a8c40849cf497c5399bd96",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -725,7 +725,7 @@
         "_Media/5-Viscoelasticity-5.png"
       ],
       "inputs": {
-        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "b10e199c4d53bc49b49477de691c147377b1b6be463cc29273fdfeb49377824c",
         "Lecture-Notes/Intro-Soft-Matter/2025/5-Viscoelasticity.md": "406cc6ef3bded47ee2f9d5669f4274c99497c03aea1a19881e581bf52fe01f86",
         "_Media/5-Viscoelasticity-1.png": "1e25e72d61013a5b5f6d303fdc636a7cbcfcc7133960d0b5dbfdde927b707a98",
         "_Media/5-Viscoelasticity-2.png": "1285bd879e6fc52db082e3f44ceb9ee70b401717f6b6909380aa0bbf4c4706a7",
@@ -746,7 +746,7 @@
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
         "@vault-paths": "ac67570f1e8decf978772ce2a09a697d0646ea905d9d6d018fd710eeb223d281"
       },
-      "sha256": "b7ea9f018dd23fec5a4ecff4103d166a779143557b693ca9a71ba9f33d207e3a",
+      "sha256": "3dd20a6be74ae8c3305e8b09054b914bc9eaa69dbad57723475b70cf7a2c2fad",
       "pdfSha256": "46a114ea881a436549b23f6a46d00f289ad0e46ddc591cb2befb1874a4464c3e",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -762,7 +762,7 @@
         "Lecture-Notes/Intro-Soft-Matter/2025/7-8-Student-Presentations.md"
       ],
       "inputs": {
-        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "b10e199c4d53bc49b49477de691c147377b1b6be463cc29273fdfeb49377824c",
         "Lecture-Notes/Intro-Soft-Matter/2025/7-8-Student-Presentations.md": "1f506ed057dff5da8c0d96eb84b4ca7e03c10559835bffc502a9aa1430e0e6a1",
         "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
         "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
@@ -778,7 +778,7 @@
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
         "@vault-paths": "ac67570f1e8decf978772ce2a09a697d0646ea905d9d6d018fd710eeb223d281"
       },
-      "sha256": "99b0f5971e8f339038937376ff7b23469022ae9d555d704e801c235a9e90ff97",
+      "sha256": "f12f4f69171bf194dc50320ae53f475be87558172de55c55d3e653bed5a4e103",
       "pdfSha256": "b5e8f0634d209dc92ff8d72ffbaf9f6b42ea58ed48f7db38da002fb061d51d1e",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -794,7 +794,7 @@
         "Lecture-Notes/Intro-Soft-Matter/2025/7.5-Presentation-Paper-Topics.md"
       ],
       "inputs": {
-        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "545b5e846eb074df7b6c3414005e5c0f8f1ca477a9e550f8120ecc121d340ef2",
+        "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "b10e199c4d53bc49b49477de691c147377b1b6be463cc29273fdfeb49377824c",
         "Lecture-Notes/Intro-Soft-Matter/2025/7.5-Presentation-Paper-Topics.md": "c4f272924d7700e903328783cf5da5ec36022961a6f22a6fbcc4f27300d47b8e",
         "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
         "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
@@ -810,7 +810,7 @@
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
         "@vault-paths": "ac67570f1e8decf978772ce2a09a697d0646ea905d9d6d018fd710eeb223d281"
       },
-      "sha256": "7411081090bba6427b71a99a29454af93c8410b3ea5fa0257fd296dde4c79e2b",
+      "sha256": "3321e46e8ed4a534525fb2132cecbf587082c7e0440dcca99b3510d20278a710",
       "pdfSha256": "2779b9dfcf39ba6d88b62ea66084c394c27e142a2de15fc3c5027df5a09d25bb",
       "toolchain": {
         "pandoc": "pandoc 3.10",
