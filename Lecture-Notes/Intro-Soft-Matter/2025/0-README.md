@@ -95,7 +95,7 @@ This list will be populated as we go through the course
 
 ### Modern Overviews
 
-- Tom McLeish, *Liquid Crystal Polymers* (Oxford University Press, 2018) — contemporary soft matter overview [Link](https://global.oup.com/academic/product/soft-matter-9780198807131?cc=gb&lang=en&)
+- Tom McLeish, *Soft Matter: A Very Short Introduction* (Oxford University Press, 2020) — contemporary soft matter overview [Link](https://global.oup.com/academic/product/soft-matter-9780198807131?cc=gb&lang=en&)
 
 ### Research Journals
 
@@ -119,7 +119,7 @@ Have questions? Come to office hours or send an email — I'm here to help!
 > [!significance]- Metadata
 > Author:: [Vatsal Sanjay](https://vatsalsanjay.com)<br>
 > Date published:: Oct 14, 2025<br>
-> Date modified:: Jul 19, 2026
+> Date modified:: Oct 20, 2026
 
 > [!link] Back to main website
 > [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)

@@ -131,29 +131,33 @@ $$K \sim \frac{14.4\,\text{eV}}{(1\,\text{Å})^3} \approx 2.3 \times 10^6\,\text
 
 ## Why is Soft Matter *Soft*? — The Entropic Shear Modulus
 
-For soft solids (rubbers, gels, polymer networks), the small-strain shear modulus arises fundamentally from entropy, not stiff bond stretching:
+For an ideal network of flexible polymer strands (rubbers and many swollen polymer gels), the small-strain shear modulus arises from entropy, not from stiff bond stretching:
 
 $$\boxed{G = n k_B T \quad \text{or} \quad G \sim \frac{k_B T}{\xi^3}}$$
 
 where:
-- $n$ = strand/crosslink density (number per unit volume)
-- $\xi$ = mesh size of the network (typical strand spacing, 10–100 nm)
+- $n$ = number of elastically active strands per unit volume (strands joined to the network at both ends; dangling ends and loops do not count)
+- $\xi$ = mesh size of the network, so that $n \sim \xi^{-3}$ (about 1–2 nm in rubbers, 10–100 nm in soft gels)
 - $k_B T$ = thermal energy (~$4.1 \times 10^{-21}\,\text{J}$ at room temperature)
 
 > [!note]
-> This relation applies specifically to semi-dilute polymer networks forming blob structures—see [[Polymer-Concentration-Regimes-and-Blob-Networks]] for details.
+> $G = n k_B T$ is the ideal-network result; real networks differ from it by factors of order one. The form $G \sim k_B T/\xi^3$ is its scaling version for semi-dilute polymer networks forming blob structures—see [[Polymer-Concentration-Regimes-and-Blob-Networks]] for details.
+
+Not all soft matter is soft for this reason. In foams and concentrated emulsions, the shear modulus comes from surface tension: shearing the packing of bubbles or drops stretches their interfaces, so $G \sim \gamma/R$, where $\gamma$ is the surface tension and $R$ the bubble or drop radius, up to a prefactor smaller than one that depends on the liquid fraction. For $\gamma \approx 30\,\text{mN/m}$ and $R \approx 30\,\mu\text{m}$, $\gamma/R \approx 1\,\text{kPa}$: enough for shaving cream to hold its shape, with no entropic elasticity involved.
 
 ### Microscopic Origin: Stretching Reduces Configurations
 
 At the chain level:
 - Stretching a polymer coil reduces the number of configurations it can adopt
-- Entropy decreases when stretched
-- System resists entropy loss with restoring force: $F = -T\frac{\partial S}{\partial x}$
+- Entropy decreases when stretched: $\partial S/\partial x < 0$ for an extension $x > 0$
+- For an ideal chain, the internal energy $U$ does not depend on $x$, so at fixed temperature the free energy $F = U - TS$ changes only through the entropy. The force the chain exerts on whatever holds its ends, the restoring force, is
+$$f_{\text{chain}} = -\frac{\partial F}{\partial x} = T\frac{\partial S}{\partial x} < 0,$$
+which pulls the ends back together. Holding the chain at extension $x$ requires the opposite external force, $f_{\text{ext}} = -T\,\partial S/\partial x > 0$
 - Unlike a metal spring (stiff atomic bonds resist), this force is statistical
 
 From one chain to a network:
 
-Crosslink $n$ strands per unit volume $\Rightarrow$ the free-energy density is:
+Crosslink the chains into a network with $n$ elastically active strands per unit volume $\Rightarrow$ the elastic free-energy density is:
 
 $$F/V \sim n k_B T \quad \Rightarrow \quad G = n k_B T$$
 
@@ -177,6 +181,8 @@ Interpretation: Small changes in mesh size (network crosslink density) move the 
 
 > [!tip] The Soft Matter Paradox Resolved
 > Soft in shear, hard in bulk. Stretching a polymer network just rearranges coil conformations (easy, entropy-driven). Compressing it still pushes on dense electron clouds and liquid trapped in pores (hard, bonding physics). This is why rubbers and gels are "soft" yet "incompressible".
+>
+> Two caveats. A gel is incompressible only on times too short for its solvent to flow through the network; given time, the solvent drains and the network alone can change volume. Foams are compressible: their gas sets a bulk modulus of order the gas pressure, about $0.1\,\text{MPa}$, far below the GPa values of liquids and rubbers.
 
 ---
 
@@ -232,18 +238,13 @@ Bubbles rising through champagne display remarkable dynamics driven by:
 - Surfactants from wine components
 - Viscoelasticity of the liquid (if polymers are present)
 
-Key observation: Adding trace amounts of polymer ($c = 0.001\%$ to $0.1\%$) dramatically changes bubble shape and bursting dynamics.
-
-| Polymer Concentration | Bubble Shape | Behavior | Physical Origin |
-|---|---|---|---|
-| $c = 0.001\%$ | Nearly spherical | Like clean water | No elastic effects |
-| $c = 0.01\%$ | Slightly distorted | Viscoelastic effects emerge | Polymer chains begin to store energy |
-| $c = 0.1\%$ | Highly deformed | Viscoelasticity dominates | Strong elastic resistance to flow |
+Key observation: Adding a small amount of long-chain polymer changes what happens after the bubble bursts, not the bubble itself. In the high-speed movies shown in the lecture, the bubbles look the same before bursting. After the cap ruptures, the Worthington jet becomes shorter as the polymer concentration increases, drops stay tethered to the jet by thin polymer threads, and at the highest concentration no jet forms at all. The polymer chains resist the strong stretching flow in the jet. Simulations of bubble bursting in viscoelastic liquids show the same suppression of jets and droplets as the elasticity of the liquid increases.
 
 References:
 - E. Ghabache, G. Liger-Belair, A. Antkowiak & T. Séon, *Sci. Rep.*, 6, 25148 (2016)
 - E. Ghabache, A. Antkowiak, C. Josserand & T. Séon, *Phys. Fluids*, 26(12) (2014)
 - P. L. L. Walls, L. Henaux & J. C. Bird, *Phys. Rev. E*, 92(2), 021002 (2015)
+- A. K. Dixit, A. Oratis, K. Zinelis, D. Lohse & V. Sanjay, *J. Fluid Mech.*, 1010, A2 (2025) — simulations of viscoelastic Worthington jets and droplets
 
 > [!tip] Tiny Additives, Huge Effects
 > Trace amounts of soft matter (ppm–‰ polymer) can dramatically alter flows and instabilities. This is an engineer's lever in mixing, coating, printing, and food science applications.
@@ -260,7 +261,7 @@ References:
 
 ![](../../../_Media/1-Intro-Soft-Matter-1761105367372.png)
 
-John William Strutt, 2nd Baron Rayleigh, one of the 19th century's greatest physicists, used instantaneous photography to capture:
+John William Strutt, 3rd Baron Rayleigh, one of the 19th century's greatest physicists, used instantaneous photography to capture:
 
 - Falling jets breaking into droplets (Rayleigh–Plateau instability)
 
@@ -276,12 +277,14 @@ His 1891 paper essentially pioneered the study of liquid dynamics—a cornerston
 
 ![](../../../_Media/1-Intro-Soft-Matter-1761105451051.png)
 
-When you puncture a thin soap bubble, the film edge retracts rapidly inward. The film consists of a thin water layer (thickness $h_0$) with surfactant molecules at both liquid–air interfaces (surface tension $\gamma_{fa}$ per interface).
+When you puncture a soap film, the hole expands rapidly: the film retracts away from the puncture and gathers into a rim at the edge of the growing hole. The film consists of a thin water layer (thickness $h_0$) with surfactant molecules at both liquid–air interfaces (surface tension $\gamma_{fa}$ per interface).
 
 > [!question] The Paradox:
 > Two seemingly correct approaches give different predictions for retraction speed $v_f$:
 
-#### Energy Approach (Rayleigh, 1891)
+#### Naïve Lossless-Energy Estimate (Dupré; Rayleigh, 1891)
+
+Assume that no mechanical energy is lost, so that all the released surface energy becomes kinetic energy of the rim:
 
 Rate of surface energy decrease = Rate of kinetic energy increase
 
@@ -301,9 +304,9 @@ $$\Rightarrow \quad v_f = \sqrt{\frac{2\gamma_{fa}}{\rho h_0}}$$
 
 #### The Factor of 2 Discrepancy
 
-$$\text{Energy method:} \quad v_f = \sqrt{\frac{4\gamma_{fa}}{\rho h_0}}$$
+$$\text{Naïve lossless-energy estimate:} \quad v_f = \sqrt{\frac{4\gamma_{fa}}{\rho h_0}}$$
 
-$$\text{Momentum method:} \quad v_f = \sqrt{\frac{2\gamma_{fa}}{\rho h_0}}$$
+$$\text{Momentum balance:} \quad v_f = \sqrt{\frac{2\gamma_{fa}}{\rho h_0}}$$
 
 Question: Where did the energy go?
 
@@ -381,13 +384,13 @@ Example: A 1 atm pressure change (100 kPa) on water with $K = 2\,\text{GPa}$ giv
 
 - Definition: Stress needed to shear a material at (nearly) constant volume
 - Small $G$ → easy to reshape → "soft in shear"
-- Typical values: Soft matter $G \sim 1\,\text{kPa}$ to $1\,\text{MPa}$; hard matter $G \sim 50$–$200\,\text{GPa}$
+- Typical values: rubbers and gels $G \sim 1\,\text{kPa}$ to $1\,\text{MPa}$; hard matter $G \sim 50$–$200\,\text{GPa}$
 
 #### Young's Modulus ($E$) — Uniaxial Stiffness
 
 - Definition: Stress divided by strain in a simple tension/compression test
 - Not independent: Combines both shear and bulk responses via the Poisson effect
-- Typical values: Soft matter $E \sim 1$–$100\,\text{MPa}$; hard matter $E \sim 100$–$1000\,\text{GPa}$
+- Typical values: rubbers and gels $E \approx 3G \sim 3\,\text{kPa}$ to $3\,\text{MPa}$; hard matter $E = 2G(1+\nu) \sim 100$–$500\,\text{GPa}$
 
 #### Poisson's Ratio ($\nu$) — Lateral Contraction
 
@@ -425,22 +428,25 @@ A Newtonian liquid (water, simple oils) cannot support static shear stress, so:
 > Large $K$ doesn't imply large $G$.
 >
 > - Bulk modulus ($K$): Controls volume resistance under hydrostatic pressure (bonding/packing physics)
-> - Shear modulus ($G$): Controls shape resistance at nearly constant volume (entropy in networks; viscosity in liquids)
+> - Shear modulus ($G$): Controls shape resistance at nearly constant volume (entropy in polymer networks; surface tension in foams and emulsions; viscosity in liquids)
 >
-> Soft matter is soft in $G$ (easy to reshape), not in $K$ (hard to compress).
+> Rubbers, gels and liquids are soft in $G$ (easy to reshape), not in $K$ (hard to compress).
 >
-> - Rubbers/gels: $K \gg G$, $\nu \approx 0.5$, $E \approx 3G$
+> - Rubbers/gels: $K \gg G$, $\nu \approx 0.5$, $E \approx 3G$ (for gels, on times too short for the solvent to drain)
 > - Liquids: $K$ large, $G = 0$ (use $\eta$ instead), no meaningful $E$
+> - Foams: small $G \sim \gamma/R$ from surface tension, and compressible: the gas sets $K$ of order the gas pressure, about $0.1\,\text{MPa}$
 > - Hard solids: Both $K$ and $G$ large
 
 ### Quick Reference Table
 
-| Property | Soft Matter (typical) | Hard Matter (typical) | Meaning |
+| Property | Rubbers and gels (typical) | Hard Matter (typical) | Meaning |
 |----------|----------------------|----------------------|---------|
 | $K$ (Bulk) | 1–2 GPa | 100–400 GPa | Volume stiffness (hydrostatic) |
 | $G$ (Shear) | 1 kPa – 1 MPa | 50–200 GPa | Shape stiffness |
-| $E$ (Young's) | 1–100 MPa | 100–1000 GPa | Uniaxial stiffness |
+| $E$ (Young's) | 3 kPa – 3 MPa ($E \approx 3G$) | 100–500 GPa ($E = 2G(1+\nu)$) | Uniaxial stiffness |
 | $\nu$ (Poisson) | $\approx 0.5$ | 0.2–0.35 | Lateral contraction ratio |
+
+Each column describes one population of materials, so its entries are mutually consistent: for rubbers and gels, $\nu \approx 0.5$ gives $E \approx 3G$. Foams do not fit this column: their $G$ comes from surface tension and their gas makes them compressible.
 
 ---
 
@@ -448,9 +454,9 @@ A Newtonian liquid (water, simple oils) cannot support static shear stress, so:
 
 1. Soft matter is everywhere. From gels and foams to champagne bubbles and mud, soft materials dominate our everyday experience.
 
-2. "Soft" and "incompressible" are not contradictory. Most soft materials are hard to compress (large $K$) but easy to reshape (small $G$).
+2. "Soft" and "incompressible" are not contradictory. Rubbers, gels and other liquid-based soft materials are hard to compress (large $K$) but easy to reshape (small $G$). Foams are the exception: their gas makes them compressible.
 
-3. Entropic elasticity is different. In polymer networks, the shear modulus arises from statistical resistance to entropy loss, not stiff bond stretching. This makes them temperature-sensitive and tunable via crosslink density.
+3. Entropic elasticity is different. In ideal flexible polymer networks, the shear modulus arises from statistical resistance to entropy loss, not stiff bond stretching. At a fixed density $n$ of elastically active strands, $G = n k_B T$ grows in proportion to the absolute temperature; changing the crosslink density changes $n$. Foams and emulsions are soft for a different reason: their shear modulus comes from surface tension.
 
 4. Time matters. The same soft material behaves differently over different timescales—as a solid at short times, as a fluid at long times. This time-dependent response is central to soft matter physics.
 
@@ -462,7 +468,7 @@ A Newtonian liquid (water, simple oils) cannot support static shear stress, so:
 
 - Textbook: Pierre-Gilles de Gennes, *Scaling Concepts in Polymer Physics* (Cornell University Press, 1979) — foundational work on soft matter scaling [Link](https://www.amazon.co.uk/Scaling-Concepts-Polymer-Physics-Pierre-Gilles/dp/080141203X)
 - Review: Patrick Oswald & Pierre Pieranski, *Nematic and Cholesteric Liquid Crystals: Concepts and Physical Properties Illustrated by Experiments* (Taylor & Francis, 2005) — detailed liquid crystal physics [DOI: 10.1201/9780203023013](https://doi.org/10.1201/9780203023013)
-- Modern perspective: Tom McLeish, *Liquid Crystal Polymers* (Oxford University Press, 2018) — contemporary soft matter overview [Link](https://global.oup.com/academic/product/soft-matter-9780198807131?cc=gb&lang=en&)
+- Modern perspective: Tom McLeish, *Soft Matter: A Very Short Introduction* (Oxford University Press, 2020) — contemporary soft matter overview [Link](https://global.oup.com/academic/product/soft-matter-9780198807131?cc=gb&lang=en&)
 
 See the next lecture for a rigorous treatment of the Taylor–Culick paradox and momentum/energy conservation in soft matter flows.
 
@@ -474,7 +480,7 @@ See the next lecture for a rigorous treatment of the Taylor–Culick paradox and
 > [!significance]- Metadata
 > Author:: [Vatsal Sanjay](https://vatsalsanjay.com)<br>
 > Date published:: Oct 14, 2025<br>
-> Date modified:: Oct 30, 2025
+> Date modified:: Oct 20, 2026
 
 > [!link] Back to main website
 > [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
