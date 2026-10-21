@@ -28,20 +28,35 @@
 /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/6-Rheology.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/6-Sheets-Bubbles-Drops.pdf 301
 /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/7-8-Student-Presentations.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/7-8-Student-Presentations.pdf 301
 /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/7.5-Presentation-Paper-Topics.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/7.5-Presentation-Paper-Topics.pdf 301
-/Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.pdf /Lecture-Notes/Intro-Soft-Matter/2025/1-Intro-Soft-Matter.pdf 301
-/Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.pdf /Lecture-Notes/Intro-Soft-Matter/2025/1.5-Taylor-Culick-Paradox.pdf 301
-/Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.pdf /Lecture-Notes/Intro-Soft-Matter/2025/1.75-Complementary-Questions-Answers.pdf 301
-/Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.pdf /Lecture-Notes/Intro-Soft-Matter/2025/2-What-is-Viscosity.pdf 301
-/Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.pdf /Lecture-Notes/Intro-Soft-Matter/2025/2.5-Conservation-Laws.pdf 301
-/Lecture-Notes/Intro-Soft-Matter/2.75-Complementary-Questions-Answers.pdf /Lecture-Notes/Intro-Soft-Matter/2025/2.75-Complementary-Questions-Answers.pdf 301
-/Lecture-Notes/Intro-Soft-Matter/3-Soft-Matter-Instabilities.pdf /Lecture-Notes/Intro-Soft-Matter/2025/3-Soft-Matter-Instabilities.pdf 301
-/Lecture-Notes/Intro-Soft-Matter/4-Soft-Matter-Singularities.pdf /Lecture-Notes/Intro-Soft-Matter/2025/4-Soft-Matter-Singularities.pdf 301
-/Lecture-Notes/Intro-Soft-Matter/5-Viscoelasticity.pdf /Lecture-Notes/Intro-Soft-Matter/2025/5-Viscoelasticity.pdf 301
-/Lecture-Notes/Intro-Soft-Matter/6-Rheology.pdf /Lecture-Notes/Intro-Soft-Matter/2025/6-Rheology.pdf 301
-/Lecture-Notes/Intro-Soft-Matter/7-8-Student-Presentations.pdf /Lecture-Notes/Intro-Soft-Matter/2025/7-8-Student-Presentations.pdf 301
-/Lecture-Notes/Intro-Soft-Matter/7.5-Presentation-Paper-Topics.pdf /Lecture-Notes/Intro-Soft-Matter/2025/7.5-Presentation-Paper-Topics.pdf 301
 /Lecture-Notes/Intro-Soft-Matter/Dupre-Rayleigh-paradox.pdf /Lecture-Notes/Intro-Soft-Matter/2025/Dupre-Rayleigh-paradox.pdf 301
 /Lecture-Notes/Intro-Soft-Matter/whatIsViscosity.pdf /Lecture-Notes/Intro-Soft-Matter/2025/whatIsViscosity.pdf 301
+# Notes PDFs exported in 2025 are superseded by the TeX PDFs. The old files stay
+# in the vault, as removing them changes every TeX fingerprint; redirects take
+# precedence over files.
+/Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/1-Intro-Soft-Matter.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/1.5-Taylor-Culick-Paradox.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/1.75-Complementary-Questions-Answers.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/2-What-is-Viscosity.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/2-What-is-Viscosity.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/2.5-Conservation-Laws.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/2.5-Conservation-Laws.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/2.75-Complementary-Questions-Answers.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/2.75-Complementary-Questions-Answers.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/3-Soft-Matter-Instabilities.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/3-Soft-Matter-Instabilities.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/4-Soft-Matter-Singularities.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/4-Soft-Matter-Singularities.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/5-Viscoelasticity.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/5-Viscoelasticity.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/6-Rheology.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/6-Sheets-Bubbles-Drops.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/7-8-Student-Presentations.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/7-8-Student-Presentations.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/7.5-Presentation-Paper-Topics.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/7.5-Presentation-Paper-Topics.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/2025/1-Intro-Soft-Matter.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/1-Intro-Soft-Matter.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/2025/1.5-Taylor-Culick-Paradox.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/1.5-Taylor-Culick-Paradox.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/2025/1.75-Complementary-Questions-Answers.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/1.75-Complementary-Questions-Answers.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/2025/2-What-is-Viscosity.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/2-What-is-Viscosity.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/2025/2.5-Conservation-Laws.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/2.5-Conservation-Laws.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/2025/2.75-Complementary-Questions-Answers.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/2.75-Complementary-Questions-Answers.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/2025/3-Soft-Matter-Instabilities.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/3-Soft-Matter-Instabilities.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/2025/4-Soft-Matter-Singularities.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/4-Soft-Matter-Singularities.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/2025/5-Viscoelasticity.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/5-Viscoelasticity.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/2025/6-Rheology.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/6-Sheets-Bubbles-Drops.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/2025/7-8-Student-Presentations.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/7-8-Student-Presentations.pdf 301
+/Lecture-Notes/Intro-Soft-Matter/2025/7.5-Presentation-Paper-Topics.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/7.5-Presentation-Paper-Topics.pdf 301
 # Earlier names still linked from the 2025 slides.
 /Lecture-Notes/Intro-Soft-Matter/1-Complementary-Questions-Answers /Lecture-Notes/Intro-Soft-Matter/2025/1.75-Complementary-Questions-Answers 301
 /Lecture-Notes/Intro-Soft-Matter/Lecture1-ComplementaryQuestions-Answers /Lecture-Notes/Intro-Soft-Matter/2025/1.75-Complementary-Questions-Answers 301
