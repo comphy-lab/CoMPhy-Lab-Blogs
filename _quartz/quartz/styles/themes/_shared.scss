@@ -339,8 +339,9 @@ ul.toc-content.overflow {
   }
 }
 
-// The PDF callout becomes a compact ghost button row.
-article .callout[data-callout="pdf"] {
+// The PDF and slides callouts become compact ghost buttons.
+article .callout[data-callout="pdf"],
+article .callout[data-callout="slides"] {
   border: 1px solid var(--c-border-strong);
   background: transparent;
   border-radius: var(--r-pill);
@@ -354,6 +355,12 @@ article .callout[data-callout="pdf"] {
     background: transparent;
     padding: 0;
   }
+}
+
+// The slides callout puts its title above the links, so it is a card, not a
+// pill.
+article .callout[data-callout="slides"] {
+  border-radius: var(--r-sm);
 }
 
 // Callouts: the design-system radius and border.

@@ -19,6 +19,9 @@ publish: true
 <!-- PDF-EXPORT-IGNORE-END -->
 <!-- BLOG-PDF-LINK-END -->
 
+> [!slides] Slides
+> [PDF](https://www.dropbox.com/scl/fi/rvib78g9e8q6oqh65godc/2026-10-21-Lecture1.pdf?rlkey=c6ml73bjq7jqy5vg6l2q96sba&dl=1 "One page per slide; movies as still frames")&nbsp;*32 MB* · [PowerPoint](https://www.dropbox.com/scl/fi/v4ftq7zdnsyzqhqmfov7r/2026-10-21-Lecture1.pptx?rlkey=znicyu05ss9irn42rsl6lfl5m&dl=1 "Every click as in the lecture; movies play through")&nbsp;*146 MB* · [Keynote](https://www.dropbox.com/scl/fi/o6q170kmrqe7bt8lqsc6h/2026-10-21-Lecture1.key?rlkey=lsfcixpjfd1nz5u3u8tnwf74e&dl=1 "Every click as in the lecture; movies play through")&nbsp;*160 MB*
+
 An introduction to soft materials, why they're soft, and how we measure softness. See [[0-README|course overview and structure]] for context.
 
 ---
@@ -478,7 +481,7 @@ See the next lecture for a rigorous treatment of the Taylor–Culick paradox and
 > [!significance]- Metadata
 > Author:: [Vatsal Sanjay](https://vatsalsanjay.com)<br>
 > Date published:: Oct 14, 2025<br>
-> Date modified:: Oct 20, 2026
+> Date modified:: Oct 21, 2026
 
 > [!link] Back to main website
 > [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
