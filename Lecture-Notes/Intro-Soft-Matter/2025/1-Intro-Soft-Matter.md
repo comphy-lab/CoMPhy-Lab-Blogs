@@ -238,7 +238,7 @@ Bubbles rising through champagne display remarkable dynamics driven by:
 - Surfactants from wine components
 - Viscoelasticity of the liquid (if polymers are present)
 
-Key observation: Adding a small amount of long-chain polymer changes what happens after the bubble bursts, not the bubble itself. In the high-speed movies shown in the lecture, the bubbles look the same before bursting. After the cap ruptures, the Worthington jet becomes shorter as the polymer concentration increases, drops stay tethered to the jet by thin polymer threads, and at the highest concentration no jet forms at all. The polymer chains resist the strong stretching flow in the jet. Simulations of bubble bursting in viscoelastic liquids show the same suppression of jets and droplets as the elasticity of the liquid increases.
+Key observation: Adding a small amount of long-chain polymer changes what happens after the bubble bursts, not the bubble itself. In the high-speed movies shown in the lecture (experiments by Alexandros T. Oratis, Physics of Fluids, University of Twente), the bubbles look the same before bursting. After the cap ruptures, the Worthington jet becomes shorter as the polymer concentration increases, drops stay tethered to the jet by thin polymer threads, and at the highest concentration no jet forms at all. The polymer chains resist the strong stretching flow in the jet. Simulations of bubble bursting in viscoelastic liquids show the same suppression of jets and droplets as the elasticity of the liquid increases.
 
 References:
 - E. Ghabache, G. Liger-Belair, A. Antkowiak & T. Séon, *Sci. Rep.*, 6, 25148 (2016)
