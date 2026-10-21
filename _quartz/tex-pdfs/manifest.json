@@ -391,7 +391,7 @@
       ],
       "inputs": {
         "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "b10e199c4d53bc49b49477de691c147377b1b6be463cc29273fdfeb49377824c",
-        "Lecture-Notes/Intro-Soft-Matter/2025/1-Intro-Soft-Matter.md": "5b1926e89cf8365900a9a0418151d7b0167e5cb9356e3165fe8311778f27762f",
+        "Lecture-Notes/Intro-Soft-Matter/2025/1-Intro-Soft-Matter.md": "7851c33559379be1fa352f587f48cedb582db1c978d433105231cadb896eabdc",
         "_Media/1-Intro-Soft-Matter-1761103784897.png": "b174844fd62827dc47331f6114b76b76829ec6bbcfd0fda7b455ad6ec90ac11e",
         "_Media/1-Intro-Soft-Matter-1761103818495.png": "eca3c6f56ac9fbfc6cedc4207e5165c25d510d04e6a365456f07aa7fc9cdb77c",
         "_Media/1-Intro-Soft-Matter-1761103864489.png": "4697bd886bdccc23070cd0e0f5edbb60898373cac62e39eab4ac6144c8ce275b",
@@ -414,8 +414,8 @@
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
         "@vault-paths": "ac67570f1e8decf978772ce2a09a697d0646ea905d9d6d018fd710eeb223d281"
       },
-      "sha256": "72058761a73d453854761709db084ae979c5e647c89cf4abf5276cff44bb5d59",
-      "pdfSha256": "3cbc258e3844e681fc8c0906f2cfa535dd72226aabc2cd3f1f78d3697a9fe574",
+      "sha256": "d00641dcb7a0b35a6b99be924b21c92ab3785255b215725ecbe471f49c8dd602",
+      "pdfSha256": "1c8fa1cbb209783d5c0b247f9f0b510494d3934da8df12da31ff426a3ce41de5",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
@@ -823,7 +823,7 @@
       "pdf": "Lecture-Notes/Intro-Soft-Matter/2026/0-README.pdf",
       "dependencies": ["Lecture-Notes/Intro-Soft-Matter/2026/0-README.md"],
       "inputs": {
-        "Lecture-Notes/Intro-Soft-Matter/2026/0-README.md": "696384108b3fda46ed9403106266f1082bc9f6717297692047a690ec369daf76",
+        "Lecture-Notes/Intro-Soft-Matter/2026/0-README.md": "d6f65e8b79bdb2d752cc00b3df6ec7d8d62cb2a97eed3aa2b29e8f0922334877",
         "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
         "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
         "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
@@ -838,8 +838,8 @@
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
         "@vault-paths": "ac67570f1e8decf978772ce2a09a697d0646ea905d9d6d018fd710eeb223d281"
       },
-      "sha256": "6daabbdcadb53ac0a62febac177bddab6ee2830e615957ef89d378637565fc53",
-      "pdfSha256": "3369f806584d175488d4d72efadf9927387e32407ffb920419f9acb8d9d1a8f5",
+      "sha256": "0ff3a73cb96fe7fde560d42f90955ba6d16fe7ce05c671e72d7f301157f4fdef",
+      "pdfSha256": "f8cbc3831a003acdbd5293f2f9f75de3e7311f3d56259710210c4182b16e0a76",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
