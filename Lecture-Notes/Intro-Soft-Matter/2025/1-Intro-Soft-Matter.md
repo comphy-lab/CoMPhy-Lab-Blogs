@@ -282,9 +282,7 @@ When you puncture a soap film, the hole expands rapidly: the film retracts away 
 > [!question] The Paradox:
 > Two seemingly correct approaches give different predictions for retraction speed $v_f$:
 
-#### Naïve Lossless-Energy Estimate (Dupré; Rayleigh, 1891)
-
-Assume that no mechanical energy is lost, so that all the released surface energy becomes kinetic energy of the rim:
+#### Energy Approach (Dupré; Rayleigh, 1891)
 
 Rate of surface energy decrease = Rate of kinetic energy increase
 
@@ -304,9 +302,9 @@ $$\Rightarrow \quad v_f = \sqrt{\frac{2\gamma_{fa}}{\rho h_0}}$$
 
 #### The Factor of 2 Discrepancy
 
-$$\text{Naïve lossless-energy estimate:} \quad v_f = \sqrt{\frac{4\gamma_{fa}}{\rho h_0}}$$
+$$\text{Energy method:} \quad v_f = \sqrt{\frac{4\gamma_{fa}}{\rho h_0}}$$
 
-$$\text{Momentum balance:} \quad v_f = \sqrt{\frac{2\gamma_{fa}}{\rho h_0}}$$
+$$\text{Momentum method:} \quad v_f = \sqrt{\frac{2\gamma_{fa}}{\rho h_0}}$$
 
 Question: Where did the energy go?
 
