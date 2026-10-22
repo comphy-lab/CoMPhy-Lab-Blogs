@@ -391,7 +391,7 @@
       ],
       "inputs": {
         "Lecture-Notes/Intro-Soft-Matter/2025/0-README.md": "b10e199c4d53bc49b49477de691c147377b1b6be463cc29273fdfeb49377824c",
-        "Lecture-Notes/Intro-Soft-Matter/2025/1-Intro-Soft-Matter.md": "0f80f8f8011184dd489c520dfe66bc6f065d20ffcfb3a6de9a9b69c3c144df5a",
+        "Lecture-Notes/Intro-Soft-Matter/2025/1-Intro-Soft-Matter.md": "548430274156603da7f945712cdda8a85ff7b3548cd24452bc1f3292b6100158",
         "_Media/1-Intro-Soft-Matter-1761103784897.png": "b174844fd62827dc47331f6114b76b76829ec6bbcfd0fda7b455ad6ec90ac11e",
         "_Media/1-Intro-Soft-Matter-1761103818495.png": "eca3c6f56ac9fbfc6cedc4207e5165c25d510d04e6a365456f07aa7fc9cdb77c",
         "_Media/1-Intro-Soft-Matter-1761103864489.png": "4697bd886bdccc23070cd0e0f5edbb60898373cac62e39eab4ac6144c8ce275b",
@@ -414,8 +414,8 @@
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
         "@vault-paths": "ac67570f1e8decf978772ce2a09a697d0646ea905d9d6d018fd710eeb223d281"
       },
-      "sha256": "88115510d511621064e8a09ac16bcb5d85195272368c6fa01ac5048ca1232735",
-      "pdfSha256": "3f9e5bd02dc227a5fef4c5b1bbdfd79892e46b462a53e9ead632a610a5a6a2d9",
+      "sha256": "029f171f3cd94e09dc600e5b1c3db1dafadd8686ed1209171831b56e344f26f5",
+      "pdfSha256": "26b118bf4b3d78e5630bd6cddfcc46dbc06a5d5217cecc8fa106a81484c5a398",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
