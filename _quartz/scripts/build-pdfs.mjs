@@ -7,6 +7,7 @@ import { fileURLToPath } from "node:url"
 import { chromium } from "playwright"
 import matter from "gray-matter"
 import { freshTexPdf, pdfPathFor, vaultFiles } from "./tex/manifest.mjs"
+import { manifestDefect, texRegressions } from "./tex-fallback.mjs"
 
 const quartzRoot = resolve(fileURLToPath(new URL("..", import.meta.url)))
 const vaultRoot = resolve(quartzRoot, "..")
@@ -20,6 +21,7 @@ function optionsFrom(argv) {
     outputDir: join(siteRoot, "_Media", "PDF"),
     only: null,
     injectLinks: false,
+    requireFreshTex: false,
   }
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i]
@@ -27,6 +29,7 @@ function optionsFrom(argv) {
     else if (arg === "--output-dir") options.outputDir = resolve(argv[++i])
     else if (arg === "--only") options.only = argv[++i]
     else if (arg === "--inject-links") options.injectLinks = true
+    else if (arg === "--require-fresh-tex") options.requireFreshTex = true
     else throw new Error(`Unknown option: ${arg}`)
   }
   if (!/^https?:\/\/(?:127\.0\.0\.1|localhost)(?::\d+)?\/?$/.test(options.baseUrl)) {
@@ -255,11 +258,15 @@ async function main() {
   const results = []
   const files = await vaultFiles(vaultRoot)
   let manifest = null
+  let manifestProblem = null
   try {
     manifest = JSON.parse(await readFile(join(quartzRoot, "tex-pdfs", "manifest.json"), "utf8"))
+    manifestProblem = manifestDefect(manifest)
   } catch (error) {
     // A missing manifest is normal before the first TeX export; a damaged one is
     // not, but it must still fall back to browser PDFs rather than block a deploy.
+    // A strict local build rejects both: this repository tracks its manifest.
+    manifestProblem = error.code === "ENOENT" ? "missing" : error.message
     if (error.code !== "ENOENT")
       console.warn(
         `[build-pdfs] TeX manifest unreadable (${error.message}); every lecture uses the browser PDF`,
@@ -310,6 +317,19 @@ async function main() {
     } catch (error) {
       console.warn(`[build-pdfs] Could not write GitHub step summary: ${error.message}`)
     }
+  }
+  if (options.requireFreshTex) {
+    const regressions = texRegressions(manifest, stale, files)
+    if (manifestProblem || regressions.length)
+      throw new Error(
+        [
+          manifestProblem
+            ? `TeX manifest unusable (${manifestProblem})`
+            : "Lecture PDFs fell back from TeX to the browser:",
+          ...regressions.map(({ source, reason }) => `  ${source}: ${reason}`),
+          "Regenerate with `cd _quartz && npm run build:tex-pdfs`, or set ALLOW_STALE_TEX_PDFS=1 to accept the fallback.",
+        ].join("\n"),
+      )
   }
   if (options.injectLinks) {
     let added = 0

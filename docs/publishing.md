@@ -180,8 +180,14 @@ installation.
 During `build:cloudflare`, `build-pdfs.mjs` validates the manifest using Node.
 A fresh TeX PDF is copied to its public download path. Missing, stale or
 damaged TeX output produces a page-specific warning and a new browser PDF.
-Staleness never blocks publishing. The report is
-`output/tex-pdf-status.json`, with a non-blocking GitHub step summary in CI.
+Staleness never blocks publishing: Workers Builds and CI fall back and
+continue. The report is `output/tex-pdf-status.json`, with a non-blocking
+GitHub step summary in CI. A local `npm run build:cloudflare` fails instead
+when a page with a manifest entry falls back, an entry's note has moved or
+gone, or the manifest is missing or unusable. Editing a note, or adding, renaming or
+removing any vault file, causes this until `npm run build:tex-pdfs` is rerun. Set `ALLOW_STALE_TEX_PDFS=1` to accept
+the fallback locally. Pages without an entry (new, or refused by the
+converter) still fall back with a warning.
 Previously checked-in `_Media/PDF/` assets are replaced in generated `public/`
 by whichever exporter was selected, so an old copy cannot silently win.
 

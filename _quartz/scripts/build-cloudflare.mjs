@@ -8,6 +8,7 @@ import { resolve } from "node:path"
 import { fileURLToPath } from "node:url"
 import { setTimeout as sleep } from "node:timers/promises"
 import { prepareBrowserRuntime } from "./install-browser-deps.mjs"
+import { requireFreshTex } from "./tex-fallback.mjs"
 
 const quartzRoot = resolve(fileURLToPath(new URL("..", import.meta.url)))
 const repoRoot = resolve(quartzRoot, "..")
@@ -211,7 +212,13 @@ try {
     await run(
       "render published PDFs and link generated HTML",
       npm,
-      ["run", "build:pdfs", "--", "--inject-links"],
+      [
+        "run",
+        "build:pdfs",
+        "--",
+        "--inject-links",
+        ...(requireFreshTex(process.env) ? ["--require-fresh-tex"] : []),
+      ],
       {
         ...browserEnv,
         E2E_BASE_URL: baseUrl,
