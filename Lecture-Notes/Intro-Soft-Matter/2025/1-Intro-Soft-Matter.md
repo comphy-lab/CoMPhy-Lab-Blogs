@@ -312,7 +312,7 @@ $$\text{Momentum method:} \quad v_f = \sqrt{\frac{2\gamma_{fa}}{\rho h_0}}$$
 Question: Where did the energy go?
 
 > [!question] Think About It
-> The resolution of this paradox requires careful accounting of energy dissipation and momentum conservation. We will resolve it in [[1.5-Taylor-Culick-Paradox|Lecture 1.5]], where we properly track kinetic energy, surface energy, and dissipation mechanisms.
+> We will return to this question in [[1.5-Taylor-Culick-Paradox|Lecture 1.5]].
 
 ---
 
@@ -481,7 +481,7 @@ See the next lecture for a rigorous treatment of the Taylor–Culick paradox and
 > [!significance]- Metadata
 > Author:: [Vatsal Sanjay](https://vatsalsanjay.com)<br>
 > Date published:: Oct 14, 2025<br>
-> Date modified:: Oct 21, 2026
+> Date modified:: Oct 22, 2026
 
 > [!link] Back to main website
 > [Home](https://comphy-lab.org/), [Team](https://comphy-lab.org/team), [Research](https://comphy-lab.org/research), [Github](https://github.com/comphy-lab)
