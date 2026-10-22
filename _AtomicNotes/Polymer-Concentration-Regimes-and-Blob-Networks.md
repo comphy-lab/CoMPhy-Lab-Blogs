@@ -7,7 +7,7 @@ publish: true
 
 ## Executive Summary
 
-The entropic elasticity relation $G = n k_B T \sim k_B T / \xi^3$ applies specifically to **semi-dilute polymer solutions** forming blob networks, not to all polymer systems. Understanding when this scaling holds requires distinguishing between concentration regimes and recognizing the physical nature of $\xi$ as a correlation length (blob size), not the Kuhn length of individual chains.
+$G = n k_B T$ is the ideal-network result, with $n$ the number of elastically active strands per unit volume; real networks differ from it by factors of order one. Its scaling form $G \sim k_B T / \xi^3$ applies to **semi-dilute polymer solutions** forming blob networks and, with $\xi$ the crosslink spacing, to crosslinked networks (Section 7); it does not apply to all polymer systems. Understanding when this scaling holds requires distinguishing between concentration regimes and recognizing the physical nature of $\xi$ as a correlation length (blob size), not the Kuhn length of individual chains.
 
 Key points:
 - **Dilute regime** ($c < c^*$): Isolated chains, no network, $G \sim k_B T / \xi^3$ does NOT apply
@@ -79,7 +79,7 @@ Each blob contains roughly $g_{\text{blob}} \sim (c/c^*)^{-1/(3\nu-1)}$ monomers
 
 ## 3. Entropic Elasticity of Blob Networks
 
-### 3.1 Why $G = k_B T / \xi^3$ for Semi-Dilute Polymer Networks
+### 3.1 Why $G \sim k_B T / \xi^3$ for Semi-Dilute Polymer Networks
 
 The elastic modulus of a semi-dilute polymer solution arises from the entropic elasticity of the blob network:
 
@@ -115,7 +115,7 @@ These predictions have been extensively validated experimentally (rheology, ligh
 
 ---
 
-## 4. When Does $G = k_B T / \xi^3$ NOT Apply?
+## 4. When Does $G \sim k_B T / \xi^3$ NOT Apply?
 
 ### 4.1 Dilute Solutions ($c < c^*$)
 
@@ -131,7 +131,7 @@ Result: The relation $G \sim k_B T / \xi^3$ is **not applicable**.
 
 A **Kuhn segment** is the fundamental statistical unit of a polymer chain (contour length $l_K$, Kuhn length).
 
-Why $G = k_B T / \xi^3$ doesn't work:
+Why $G \sim k_B T / \xi^3$ doesn't work:
 - A single Kuhn chain does not form a network
 - The Kuhn length $l_K$ is a molecular parameter, not a mesh size
 - Without crosslinks or entanglements, there is no collective elastic modulus
@@ -191,7 +191,7 @@ Static light scattering can directly measure the correlation length $\xi$:
 For chemically crosslinked networks (rubbers):
 - Crosslinks are permanent (covalent bonds)
 - Network structure is frozen
-- Still entropic elasticity: $G = n_{\text{crosslink}} k_B T$
+- Still entropic elasticity: $G = n k_B T$, with $n$ the number of elastically active strands per unit volume (about two per tetrafunctional crosslink)
 - $\xi$ now represents average distance between crosslinks
 - $G \sim k_B T / \xi^3$ applies to both dilute and concentrated crosslinked networks
 
@@ -208,7 +208,7 @@ Key difference: Permanent vs temporary network structure affects long-time behav
 
 ---
 
-## 8. Summary: When to Use $G = k_B T / \xi^3$
+## 8. Summary: When to Use $G \sim k_B T / \xi^3$
 
 Use this relation when:
 1. Polymer concentration is in the **semi-dilute regime** ($c^* < c < c^{**}$)
@@ -252,7 +252,7 @@ This is consistent with typical semi-dilute polymer solution rheology.
 
 ## 10. Connection to Rubber Elasticity Theory
 
-The relation $G = k_B T / \xi^3$ is the soft-matter analogue of classical rubber elasticity:
+The relation $G \sim k_B T / \xi^3$ is the soft-matter analogue of classical rubber elasticity:
 
 Classical rubber theory (Flory):
 $$G = \frac{\rho R T}{M_c}$$
@@ -282,7 +282,7 @@ Landmark experimental papers:
 
 ## 12. Key Takeaways
 
-1. $G = k_B T / \xi^3$ is a **semi-dilute polymer network** relation, not universal
+1. $G \sim k_B T / \xi^3$ is a **semi-dilute polymer network** relation, not universal
 2. Requires **blob network formation** at $c > c^*$
 3. $\xi$ is the **correlation/blob length**, NOT the Kuhn length $l_K$
 4. Does NOT apply to:
