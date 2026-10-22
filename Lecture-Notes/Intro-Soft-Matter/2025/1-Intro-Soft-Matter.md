@@ -309,7 +309,7 @@ $$\text{Energy method:} \quad v_f = \sqrt{\frac{4\gamma_{fa}}{\rho h_0}}$$
 
 $$\text{Momentum method:} \quad v_f = \sqrt{\frac{2\gamma_{fa}}{\rho h_0}}$$
 
-Question: Where did the energy go?
+Question: Which velocity is right?
 
 > [!question] Think About It
 > We will return to this question in [[1.5-Taylor-Culick-Paradox|Lecture 1.5]].
