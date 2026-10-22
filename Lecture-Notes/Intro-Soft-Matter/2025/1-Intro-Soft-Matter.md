@@ -144,7 +144,7 @@ where:
 - $k_B T$ = thermal energy (~$4.1 \times 10^{-21}\,\text{J}$ at room temperature)
 
 > [!note]
-> $G = n k_B T$ is the ideal-network result; real networks differ from it by factors of order one. The form $G \sim k_B T/\xi^3$ is its scaling version for semi-dilute polymer networks forming blob structures—see [[Polymer-Concentration-Regimes-and-Blob-Networks]] for details.
+> $G = n k_B T$ is the ideal-network result; real networks differ from it by factors of order one. The form $G \sim k_B T/\xi^3$ is its scaling version for a network of mesh size $\xi$. An entangled semi-dilute polymer solution follows the same scaling with concentration, but its plateau modulus is about a hundred times smaller, because the spacing between entanglements is about ten times the blob size $\xi$; see [[Polymer-Concentration-Regimes-and-Blob-Networks]] for details.
 
 Not all soft matter is soft for this reason. In foams and concentrated emulsions, the shear modulus comes from surface tension: shearing the packing of bubbles or drops stretches their interfaces, so $G \sim \gamma/R$, where $\gamma$ is the surface tension and $R$ the bubble or drop radius, up to a prefactor smaller than one that depends on the liquid fraction. For $\gamma \approx 30\,\text{mN/m}$ and $R \approx 30\,\mu\text{m}$, $\gamma/R \approx 1\,\text{kPa}$: enough for shaving cream to hold its shape, with no entropic elasticity involved.
 
