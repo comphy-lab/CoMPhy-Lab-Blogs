@@ -58,7 +58,7 @@ website: https://blogs.comphy-lab.org/your-post-url
 
 ### PDF Export
 
-Typeset published lecture notes locally with Pandoc 3.10 and TeX Live 2026:
+Typeset published lecture notes and talks locally with Pandoc 3.10 and TeX Live 2026:
 
 ```bash
 cd _quartz
@@ -125,18 +125,18 @@ browser-header changes.
 - Drafts stay outside this repository until they are ready to publish; move
   them in rather than keeping a second copy.
 - To publish: commit the reviewed author edits, run `npm run build:tex-pdfs` in
-  `_quartz/` if a lecture note changed (after committing, since uncommitted
-  files change the vault inventory hash), commit the PDFs and manifest, pass
+  `_quartz/` if a lecture note, talk or PDF converter changed, commit the PDFs
+  and manifest, pass
   `npm run build:cloudflare`, push `main`, and then confirm the Cloudflare
   build and the live page.
 
 ### PDF copies
 
 - During `build:cloudflare`, `_quartz/scripts/build-pdfs.mjs` copies fresh,
-  integrity-checked lecture PDFs from `_quartz/tex-pdfs/` to generated
+  integrity-checked lecture and talk PDFs from `_quartz/tex-pdfs/` to generated
   `public/_Media/PDF/`. Missing/stale TeX output warns and falls back to browser
-  rendering. Production never runs or downloads TeX. Blog, Talks and
-  Code-Documentations always retain browser rendering.
+  rendering. Production never runs or downloads TeX. Blog and
+  Code-Documentations retain browser rendering.
   It adds a missing PDF download link to generated HTML only; source Markdown
   is unchanged.
 - Blog PDF paths remain `_Media/PDF/<Markdown-filename>.pdf` for compatibility.

@@ -6,7 +6,7 @@ import { resolve, dirname, join, posix, sep } from "node:path"
 import { fileURLToPath } from "node:url"
 import { chromium } from "playwright"
 import matter from "gray-matter"
-import { freshTexPdf, pdfPathFor, vaultFiles } from "./tex/manifest.mjs"
+import { freshTexPdf, isTexPdfSource, pdfPathFor, vaultFiles } from "./tex/manifest.mjs"
 
 const quartzRoot = resolve(fileURLToPath(new URL("..", import.meta.url)))
 const vaultRoot = resolve(quartzRoot, "..")
@@ -262,14 +262,14 @@ async function main() {
     // not, but it must still fall back to browser PDFs rather than block a deploy.
     if (error.code !== "ENOENT")
       console.warn(
-        `[build-pdfs] TeX manifest unreadable (${error.message}); every lecture uses the browser PDF`,
+        `[build-pdfs] TeX manifest unreadable (${error.message}); lectures and talks use browser PDFs`,
       )
   }
   const stale = []
   let texCount = 0
   try {
     for (const pageInfo of pages) {
-      if (pageInfo.source.startsWith("Lecture-Notes/")) {
+      if (isTexPdfSource(pageInfo.source)) {
         const tex = await freshTexPdf(vaultRoot, pageInfo.source, manifest, files)
         if (tex.bytes) {
           const destination = safePath(options.outputDir, pageInfo.pdfRelativePath)
@@ -300,7 +300,7 @@ async function main() {
   )
   if (process.env.GITHUB_STEP_SUMMARY) {
     const text = [
-      `### Lecture-note PDFs`,
+      `### Lecture-note and talk PDFs`,
       `${texCount} fresh TeX PDFs; ${stale.length} browser fallbacks.`,
       ...stale.map(({ source, reason }) => `- ${source}: ${reason}`),
       "Regenerate locally with `cd _quartz && npm run build:tex-pdfs`.",

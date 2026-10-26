@@ -19,6 +19,8 @@ import {
 } from "./tex/prepare"
 import {
   fingerprint,
+  isTexPdfSource,
+  linkInventory,
   pdfPathFor,
   readInput,
   safePath,
@@ -92,6 +94,7 @@ const cleanText = (text: string) =>
     .replace(/❌|✗/g, "no")
 
 export async function courseInfo(source: string, read: (path: string) => Promise<Buffer>) {
+  if (source.startsWith("Talks/")) return { title: "Talks", path: undefined }
   let dir = posix.dirname(source)
   while (dir.startsWith("Lecture-Notes/")) {
     const path = `${dir}/0-README.md`
@@ -107,6 +110,23 @@ export async function courseInfo(source: string, read: (path: string) => Promise
   return { title: posix.basename(posix.dirname(source)).replace(/-/g, " "), path: undefined }
 }
 
+export function documentLinks(doc: unknown, metadata: { bibliography?: unknown; csl?: unknown }) {
+  const links = new Set<string>()
+  const walk = (node: any): void => {
+    if (!node || typeof node !== "object") return
+    if (["Link", "Image"].includes(node.t) && typeof node.c?.[2]?.[0] === "string")
+      links.add(node.c[2][0])
+    for (const value of Object.values(node)) {
+      if (Array.isArray(value)) value.forEach(walk)
+      else walk(value)
+    }
+  }
+  walk(doc)
+  for (const target of [metadata.bibliography ?? [], metadata.csl ?? []].flat())
+    links.add(String(target))
+  return links
+}
+
 export async function convert(
   source: string,
   files: string[],
@@ -115,6 +135,7 @@ export async function convert(
 ) {
   const initial = baseline ?? (await fingerprint(root, [], files))
   const readHashes = new Map<string, string>()
+  const missingPaths = new Set<string>()
   const read = async (path: string) => {
     const bytes = await readInput(root, path)
     readHashes.set(path, sha256(bytes))
@@ -139,7 +160,15 @@ export async function convert(
       prepared,
     ),
   )
-  const course = await courseInfo(source, read)
+  const links = documentLinks(doc, parsed.data)
+  const course = await courseInfo(source, async (path) => {
+    try {
+      return await read(path)
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code === "ENOENT") missingPaths.add(path)
+      throw error
+    }
+  })
   if (course.path) dependencies.add(course.path)
   const titleAt = doc.blocks.findIndex((node: Node) => node.t === "Header" && node.c[0] === 1)
   const title =
@@ -255,7 +284,9 @@ export async function convert(
         column[1] = { t: "ColWidth", c: weights[index] / total }
       })
     }
-    if (value.t === "Link") value.c[2][0] = webLink(source, value.c[2][0], files)
+    if (value.t === "Link") {
+      value.c[2][0] = webLink(source, value.c[2][0], files)
+    }
     if (value.t === "Image") await image(value)
     if (value.t === "RawBlock" || value.t === "RawInline") {
       if (value.c[0] !== "html") throw new Error("Unexpected raw content")
@@ -329,8 +360,16 @@ export async function convert(
   // A README without an H1 still affected the course-title search and must
   // remain a dependency (adding an H1 should invalidate the previous PDF).
   for (const path of readHashes.keys()) dependencies.add(path)
-  const current = await fingerprint(root, [...dependencies], files)
+  const lookups = { links: [...links].sort(), missingPaths: [...missingPaths].sort() }
+  const latestFiles = await vaultFiles(root)
+  if (
+    JSON.stringify(linkInventory(files, lookups.links)) !==
+    JSON.stringify(linkInventory(latestFiles, lookups.links))
+  )
+    throw new Error("Link candidates changed during conversion; regenerate")
+  const current = await fingerprint(root, [...dependencies], latestFiles, lookups)
   for (const [path, hash] of [...Object.entries(initial.inputs), ...readHashes]) {
+    if (path === "@vault-paths") continue
     if (current.inputs[path] !== hash)
       throw new Error(`Input changed during conversion: ${path}; regenerate`)
   }
@@ -342,6 +381,7 @@ export async function convert(
   return {
     pdf,
     dependencies: [...dependencies].sort(),
+    lookups,
     ...current,
     pdfSha256: sha256(bytes),
     toolchain: versions,
@@ -370,13 +410,11 @@ async function main() {
   }
   const files = await vaultFiles(root)
   const pages = []
-  for (const source of files.filter(
-    (file) => file.startsWith("Lecture-Notes/") && file.endsWith(".md"),
-  )) {
+  for (const source of files.filter((file) => isTexPdfSource(file))) {
     if (matter((await readInput(root, source)).toString()).data.publish === true) pages.push(source)
   }
   if (args[1] && !pages.includes(args[1]))
-    throw new Error(`Not a published lecture page: ${args[1]}`)
+    throw new Error(`Not a published lecture or talk page: ${args[1]}`)
   const selected = args[1] ? [args[1]] : pages
   const baseline = await fingerprint(root, [], files)
   let succeeded = 0

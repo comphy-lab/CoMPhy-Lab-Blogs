@@ -19,7 +19,7 @@ Git checkout of this repository. Other synced copies of the vault carry no
 syncs. In the checkout, the author's edits are uncommitted changes. They are
 reviewed against the privacy boundary in `AGENTS.md` and committed on their
 own before any other change; they are never reset, cleaned or stashed. A
-publish then typesets changed lecture notes (see below), passes
+publish then typesets changed lecture notes and talks (see below), passes
 `npm run build:cloudflare` and pushes `main`. The push is the release.
 
 ## Production build
@@ -99,11 +99,11 @@ previous Worker version available for rollback if a live check fails.
 ## PDFs
 
 The source repository retains its existing `_Media/PDF/` copies. Lecture notes
-can use locally typeset PDFs; other sections keep browser PDFs. Both use the
-existing download URLs: Blog paths are flat, and other sections mirror the
+and talks use fresh locally typeset PDFs when available; other sections keep
+browser PDFs. Both use the existing download URLs: Blog paths are flat, and other sections mirror the
 full source path at any depth under `_Media/PDF/`.
 
-### Typesetting lecture notes locally
+### Typesetting lecture notes and talks locally
 
 Install Pandoc 3.10, TeX Live 2026 (LuaLaTeX, latexmk, TeX Gyre, DejaVu and
 tcolorbox) and `rsvg-convert` on the authoring machine. Then run:
@@ -113,16 +113,20 @@ cd _quartz
 npm run build:tex-pdfs
 # Or regenerate one published page:
 npm run build:tex-pdfs -- --only Lecture-Notes/Basilisk101/1-conduction-takeaways.md
+# Or regenerate one talk:
+npm run build:tex-pdfs -- --only Talks/Seminar-Singular-Bursting-Bubbles.md
 ```
 
 The command selects `publish: true` Markdown pages anywhere under
-`Lecture-Notes/`. It normalises Obsidian maths with Quartz's own helper,
+`Lecture-Notes/` and `Talks/`. It normalises Obsidian maths with Quartz's own helper,
 resolves vault links with Quartz's resolver, converts images locally and uses
 Pandoc plus the template/filter in `scripts/tex/` to produce LuaLaTeX PDFs.
 It preserves source Markdown. The title comes from the first H1, the date
 from frontmatter, and the course from the nearest ancestor `0-README.md` H1
-(with a folder-name fallback). Footnotes, numbered references, links, tables,
-code and callouts are typeset locally. Bibliography/CSL frontmatter and Pandoc
+(with a folder-name fallback); talks use the label "Talks", including in nested
+folders. Footnotes, numbered references, links, tables,
+code and callouts are typeset locally. Videos become labelled links; YouTube
+links retain the selected start time. Bibliography/CSL frontmatter and Pandoc
 citations use citeproc when provided. Remote images must first be saved in the
 vault; conversion failures use the browser fallback.
 
@@ -135,7 +139,8 @@ run `node scripts/tex/verify-maths.mjs` from `_quartz` (requires `pdftotext`
 from Poppler as well as Pandoc and LuaLaTeX).
 
 Review the PDFs, then commit `tex-pdfs/manifest.json` together with the relevant
-`tex-pdfs/Lecture-Notes/**/*.pdf` files. These tracked source assets deliberately
+`tex-pdfs/Lecture-Notes/**/*.pdf` and `tex-pdfs/Talks/**/*.pdf` files. These
+tracked source assets deliberately
 live under `_quartz/`, which Quartz excludes from its ordinary asset copy.
 They cannot be overwritten by the browser exporter. Intermediate Markdown,
 Pandoc JSON, `.tex`, compilation logs and converted images stay in the ignored
@@ -171,9 +176,12 @@ produce identical PDF bytes.
 
 The manifest binds each page to SHA-256 hashes of its Markdown, course README,
 referenced local images and bibliography/CSL files, the converter, shared
-helpers, template, Lua filter, dependency lock and Quartz configuration. A
-hash of the vault filename inventory also detects changes that affect shortest
-link resolution. PDF bytes have a separate integrity hash; toolchain versions
+helpers, template, Lua filter, dependency lock and Quartz configuration.
+Each PDF also records the candidate filenames for the local links it uses,
+including unresolved links, and the absent course READMEs checked during title
+selection. A new competing link target or newly available course title makes
+that PDF stale; adding an unrelated page does not. PDF bytes have a separate
+integrity hash; toolchain versions
 are recorded for provenance. Deploys do not run TeX or verify a local TeX
 installation.
 
