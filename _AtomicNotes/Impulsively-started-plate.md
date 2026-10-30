@@ -6,7 +6,7 @@ publish: true
 # Stokes' first problem
 
 > [!link] Related lecture material
-> This derivation is part of [[2-What-is-Viscosity|Lecture 2: Viscosity and Momentum Diffusion]]
+> This derivation is part of [[Lecture-Notes/Intro-Soft-Matter/Viscosity|Lecture 2: Viscosity and Momentum Diffusion]]
 
 <div style="text-align: center;">
     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/cJWlouRJUNU?si=iWYa8eQIgSscSFBo"
@@ -239,7 +239,7 @@ $$\boxed{\frac{u}{u_0} = \operatorname{erfc}\left(\frac{y}{2\sqrt{\nu t}}\right)
 >
 > 4. Penetration depth: At any given time, most of the velocity change occurs within $y \lesssim \sqrt{\nu t}$
 
-The solution demonstrates that viscosity is fundamentally a diffusive process for momentum transport, validating the kinetic theory picture developed in [[2-What-is-Viscosity|Lecture 2]].
+The solution demonstrates that viscosity is fundamentally a diffusive process for momentum transport, validating the kinetic theory picture developed in [[Lecture-Notes/Intro-Soft-Matter/Viscosity|Lecture 2]].
 
 
 ![[StokesFirstProblem.pdf]]

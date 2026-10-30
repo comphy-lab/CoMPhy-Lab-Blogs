@@ -52,13 +52,13 @@ website: https://blogs.comphy-lab.org/your-post-url
 
 - Files in `Lecture-Notes/` with a numeric filename prefix (`0-README`, `1-…`, `1.5-…`, `2-…`, `7-8-…`) are listed in that numeric order in the Explorer and folder pages
 - Add `unlisted: true` to a published page that should be reached only through links (for example homework answers); it stays published but is left out of the Explorer and folder listings. Link it from the lecture that uses it
-- A course that runs more than once keeps one folder per year (`Lecture-Notes/Intro-Soft-Matter/2025/`, `2026/`). A new year starts by linking to the previous year's notes and adds or revises lectures as they are taught; do not copy a whole year forward. When notes move, add a 301 rule for every old page and PDF URL to `_quartz/quartz/static/_redirects` (slides and old links point at them). Do not use `aliases:` for old paths: alias slugs join link resolution, so a bare `[[2-What-is-Viscosity]]` becomes ambiguous and breaks
+- Introduction to Soft Matter keeps shared subject notes directly under `Lecture-Notes/Intro-Soft-Matter/`, with `index.md` as the hub. Year folders carry teaching dates, delivered slides and assessments. The former 2025 subject pages remain published, unlisted one-line links to their new locations; do not add HTTP redirects or aliases for this move. Preserve the pre-existing legacy redirects and their trailing-slash forms. Other courses may retain their numbered year structure. Do not use `aliases:` for old paths: aliases participate in link resolution and can make short wikilinks ambiguous.
 
 ## Development Commands
 
 ### PDF Export
 
-Typeset published lecture notes locally with Pandoc 3.10 and TeX Live 2026:
+Typeset published lecture notes and talks locally with Pandoc 3.10 and TeX Live 2026:
 
 ```bash
 cd _quartz
@@ -125,18 +125,18 @@ browser-header changes.
 - Drafts stay outside this repository until they are ready to publish; move
   them in rather than keeping a second copy.
 - To publish: commit the reviewed author edits, run `npm run build:tex-pdfs` in
-  `_quartz/` if a lecture note changed (after committing, since uncommitted
-  files change the vault inventory hash), commit the PDFs and manifest, pass
+  `_quartz/` if a lecture note, talk or PDF converter changed, commit the PDFs
+  and manifest, pass
   `npm run build:cloudflare`, push `main`, and then confirm the Cloudflare
   build and the live page.
 
 ### PDF copies
 
 - During `build:cloudflare`, `_quartz/scripts/build-pdfs.mjs` copies fresh,
-  integrity-checked lecture PDFs from `_quartz/tex-pdfs/` to generated
+  integrity-checked lecture and talk PDFs from `_quartz/tex-pdfs/` to generated
   `public/_Media/PDF/`. Missing/stale TeX output warns and falls back to browser
-  rendering. Production never runs or downloads TeX. Blog, Talks and
-  Code-Documentations always retain browser rendering.
+  rendering. Production never runs or downloads TeX. Blog and
+  Code-Documentations retain browser rendering.
   It adds a missing PDF download link to generated HTML only; source Markdown
   is unchanged.
 - Blog PDF paths remain `_Media/PDF/<Markdown-filename>.pdf` for compatibility.

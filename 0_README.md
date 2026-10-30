@@ -51,7 +51,7 @@ See: [About us](https://comphy-lab.org/about)
 - Hands-on coding assignments with practical implementations
 
 #### Introduction to Soft Matter
-[Intro-Soft-Matter](Lecture-Notes/Intro-Soft-Matter/2025/0-README.md) (2025 notes; 2026 notes in preparation): Graduate-level course exploring soft condensed matter physics. Course structure includes:
+[Intro-Soft-Matter](Lecture-Notes/Intro-Soft-Matter/index.md): Graduate-level course exploring soft condensed matter physics. Course structure includes:
 - Fundamental concepts: What makes materials "soft"?
 - Viscosity and momentum diffusion from kinetic theory
 - Soft matter instabilities and singularities
@@ -59,7 +59,7 @@ See: [About us](https://comphy-lab.org/about)
 - Weekly lectures with self-assessed homework and student presentations
 
 #### Individual Lecture Notes:
-2025-11-05 [[4-Soft-Matter-Singularities]]: Lecture on finite-time singularities in soft matter, covering pinch-off, contact-line singularities, and scaling behavior across inertial, viscous, and viscoelastic regimes.
+2025-11-05 [[Lecture-Notes/Intro-Soft-Matter/Singularities|Soft matter singularities]]: Lecture on finite-time singularities in soft matter, covering pinch-off, contact-line singularities, and scaling behavior across inertial, viscous, and viscoelastic regimes.
 
 ### Talks:
 #### 2026

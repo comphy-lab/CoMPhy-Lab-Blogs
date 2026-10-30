@@ -70,7 +70,21 @@ export function stripExportBlocks(source: string): string {
 }
 
 function htmlAttribute(tag: string, name: string): string {
-  return new RegExp(`\\b${name}\\s*=\\s*["']([^"']*)["']`, "i").exec(tag)?.[1] ?? ""
+  return new RegExp(`(?:^|\\s)${name}\\s*=\\s*(["'])([\\s\\S]*?)\\1`, "i").exec(tag)?.[2] ?? ""
+}
+
+function videoLink(url: string, title = "Video"): string {
+  if (!url) return ""
+  const label = title
+    .trim()
+    .replace(/\s+/g, " ")
+    .replace(/[\x21-\x2f\x3a-\x40\x5b-\x60\x7b-\x7e]/g, "\\$&")
+  const target = url
+    .replace(/&amp;/g, "&")
+    .replace(/</g, "%3C")
+    .replace(/>/g, "%3E")
+    .replace(/\s/g, "%20")
+  return `\n\n[${label}](<${target}>)\n\n`
 }
 
 export function prepareMarkdown(source: string): string {
@@ -81,8 +95,22 @@ export function prepareMarkdown(source: string): string {
       .replace(/<iframe\b[\s\S]*?<\/iframe>/gi, (html) => {
         const url = htmlAttribute(html, "src").replace(/&amp;/g, "&")
         const id = /https?:\/\/(?:www\.)?youtube(?:-nocookie)?\.com\/embed\/([\w-]+)/.exec(url)?.[1]
-        const target = id ? `https://www.youtube.com/watch?v=${id}` : url
-        return target ? `\n\nVideo: <${target}>\n\n` : ""
+        let target = id ? `https://www.youtube.com/watch?v=${id}` : url
+        if (id) {
+          const start = new URL(url).searchParams.get("start")
+          if (start && /^\d+(?:\.\d+)?$/.test(start)) target += `&t=${start}s`
+        }
+        const title = htmlAttribute(html, "title").trim()
+        return videoLink(target, !title || /^youtube video player$/i.test(title) ? "Video" : title)
+      })
+      .replace(/<video\b[\s\S]*?<\/video>/gi, (html) => {
+        const tag = /^<video\b[^>]*>/i.exec(html)?.[0] ?? ""
+        const sourceTag = /<source\b[^>]*>/i.exec(html)?.[0] ?? ""
+        const target = htmlAttribute(tag, "src") || htmlAttribute(sourceTag, "src")
+        return videoLink(
+          target,
+          htmlAttribute(tag, "aria-label") || htmlAttribute(tag, "title") || "Video",
+        )
       })
       .replace(/<img\b[^>]*>/gi, (html) => {
         const src = htmlAttribute(html, "src")

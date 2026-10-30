@@ -13,12 +13,14 @@ import {
   imageLayout,
   courseHeader,
 } from "../../scripts/tex/prepare"
-import { convert, courseInfo, sourceDateEpoch } from "../../scripts/build-tex-pdfs"
+import { convert, courseInfo, documentLinks, sourceDateEpoch } from "../../scripts/build-tex-pdfs"
 import { assertSafeSource, assertSelfContainedSvg } from "../../scripts/tex/safety"
 import { rasterDerivative } from "../../scripts/tex/images"
 import {
   fingerprint,
   freshTexPdf,
+  isTexPdfSource,
+  linkInventory,
   pipelineInputs,
   sha256,
   validPdf,
@@ -49,6 +51,36 @@ test("course titles follow the nearest README H1 and retain the year", async () 
   assert(long.length <= 52)
   assert(long.endsWith("… (2026)"))
   assert.equal(courseHeader("  Short   course  "), "Short course")
+  assert.deepEqual(await courseInfo("Talks/Seminar.md", read), {
+    title: "Talks",
+    path: undefined,
+  })
+  assert.deepEqual(await courseInfo("Talks/2026/Seminar.md", read), {
+    title: "Talks",
+    path: undefined,
+  })
+})
+
+test("course titles use an index hub after trying the local README", async () => {
+  const visited: string[] = []
+  const read = async (path: string) => {
+    visited.push(path)
+    if (path === "Lecture-Notes/Course/index.md")
+      return Buffer.from("# Soft Condensed Matter: An Introduction\n")
+    throw Object.assign(new Error(path), { code: "ENOENT" })
+  }
+  assert.deepEqual(await courseInfo("Lecture-Notes/Course/Viscosity.md", read), {
+    title: "Soft Condensed Matter: An Introduction",
+    path: "Lecture-Notes/Course/index.md",
+  })
+  assert.deepEqual(visited, ["Lecture-Notes/Course/0-README.md", "Lecture-Notes/Course/index.md"])
+})
+
+test("lectures and talks share the TeX route at any folder depth", () => {
+  for (const source of ["Talks/Seminar.md", "Talks/2026/Seminar.md", "Lecture-Notes/one.md"])
+    assert(isTexPdfSource(source))
+  for (const source of ["Blog/one.md", "_AtomicNotes/one.md", "Talks/one.pdf", "Talks.md"])
+    assert(!isTexPdfSource(source))
 })
 
 test("export markers remove download blocks, preserve literal examples and keep adjacent content", () => {
@@ -76,11 +108,63 @@ test("Obsidian links and HTML are bridged without touching code or maths", () =>
   assert(result.includes("[label](<note#Heading>)"))
   assert(result.includes("![|750](<image.png>)"))
   assert(result.includes("https://www.youtube.com/watch?v=abc123"))
+  assert(result.includes("&t=90s"))
   assert(result.includes("![caption|640x480](<x.png>)"))
   assert(result.includes("`[[literal]]`"))
   assert(result.includes("$$\n\\begin{cases}"))
   assert(result.includes("\\end{cases}\n$$\ntrailing prose"))
   assert(!result.includes("<iframe"))
+})
+
+test("native video becomes a labelled link while source code examples stay literal", () => {
+  const video =
+    '<video aria-label="Bubble bursting"><source src="https://media.example/movie.mp4" type="video/mp4"><p>Fallback text</p></video>'
+  const result = prepareMarkdown(
+    `${video}\n\nCredit: the experimenters.\n\n\`\`\`html\n${video}\n\`\`\``,
+  )
+  assert(result.startsWith("\n\n[Bubble bursting](<https://media.example/movie.mp4>)"))
+  assert(result.includes("Credit: the experimenters."))
+  assert(result.includes(`\`\`\`html\n${video}\n\`\`\``))
+  assert(
+    prepareMarkdown(
+      '<video src="https://media.example/direct.mp4" title="Direct clip"></video>',
+    ).includes("[Direct clip](<https://media.example/direct.mp4>)"),
+  )
+})
+
+test("video labels preserve punctuation, ignore data attributes and resolve relative media", () => {
+  const prepared = prepareMarkdown(
+    `<video data-src="wrong.mp4" src="../_Media/my clip.mp4" aria-label="Worthington's $jet$ [1]"></video>`,
+  )
+  assert(prepared.includes("Worthington\\'s \\$jet\\$ \\[1\\]"))
+  assert(prepared.includes("(<../_Media/my%20clip.mp4>)"))
+  assert(!prepared.includes("wrong.mp4"))
+  assert(
+    prepareMarkdown(
+      '<iframe data-title="Wrong" title="YouTube video player" src="https://www.youtube.com/embed/abc123?start=7"></iframe>',
+    ).includes("[Video](<https://www.youtube.com/watch?v=abc123&t=7s>)"),
+  )
+})
+
+test("the conversion collects title, image, unresolved and bibliography link queries", () => {
+  const link = (target: string) => ({
+    t: "Link",
+    c: [["", [], []], [{ t: "Str", c: "label" }], [target, ""]],
+  })
+  const doc = {
+    blocks: [
+      { t: "Header", c: [1, ["", [], []], [link("title-note")]] },
+      {
+        t: "Para",
+        c: [link("unresolved"), { t: "Image", c: [["", [], []], [], ["figure.png", ""]] }],
+      },
+      { t: "CodeBlock", c: [["", [], []], "[literal](not-a-link)"] },
+    ],
+  }
+  assert.deepEqual(
+    [...documentLinks(doc, { bibliography: ["refs.bib"], csl: "style.csl" })].sort(),
+    ["figure.png", "refs.bib", "style.csl", "title-note", "unresolved"],
+  )
 })
 
 test("callouts after display maths start a new Pandoc block, preserving literal markers", () => {
@@ -347,4 +431,71 @@ test("freshness binds source, assets, converter, resolution inventory and PDF by
   } finally {
     await rm(root, { recursive: true, force: true })
   }
+})
+
+test("unrelated pages keep TeX PDFs fresh; link collisions and newly present targets do not", async () => {
+  await mkdir(resolve(".quartz-cache"), { recursive: true })
+  const root = await mkdtemp(join(resolve(".quartz-cache"), "tex-lookups-"))
+  const source = "Talks/Seminar.md"
+  const image = "_Media/figure.png"
+  const missing = "Lecture-Notes/Course/2026/0-README.md"
+  const files = [source, image]
+  const put = async (name: string, value: string | Buffer) => {
+    await mkdir(dirname(join(root, name)), { recursive: true })
+    await writeFile(join(root, name), value)
+  }
+  try {
+    for (const path of [...pipelineInputs, source, image]) await put(path, path)
+    const pdf = Buffer.from("%PDF-1.7\n" + "x".repeat(1100) + "\n%%EOF\n")
+    const lookups = {
+      links: ["figure.png", "not-written-yet", "https://example.org/", "#local"],
+      missingPaths: [missing],
+    }
+    const entry = {
+      pdf: "Talks/Seminar.pdf",
+      dependencies: [source, image],
+      lookups,
+      ...(await fingerprint(root, [source, image], files, lookups)),
+      pdfSha256: sha256(pdf),
+    }
+    const manifest = { version: 1, pages: { [source]: entry } }
+    await put(`_quartz/tex-pdfs/${entry.pdf}`, pdf)
+    assert((await freshTexPdf(root, source, manifest, files)).bytes)
+    assert((await freshTexPdf(root, source, manifest, [...files, "Talks/Unrelated.md"])).bytes)
+    assert.equal(
+      (await freshTexPdf(root, source, manifest, [...files, "Other/figure.png"])).reason,
+      "inputs changed",
+    )
+    assert.equal(
+      (await freshTexPdf(root, source, manifest, [...files, "Other/not-written-yet.md"])).reason,
+      "inputs changed",
+    )
+    await put(missing, "# A new course title")
+    assert.match(
+      (await freshTexPdf(root, source, manifest, [...files, missing])).reason!,
+      /Previously absent input now exists/,
+    )
+    await rm(join(root, missing))
+    for (const changed of [source, image, pipelineInputs[0]!]) {
+      await put(changed, "changed")
+      assert.equal((await freshTexPdf(root, source, manifest, files)).reason, "inputs changed")
+      await put(changed, changed)
+    }
+    await put(`_quartz/tex-pdfs/${entry.pdf}`, Buffer.from("damaged"))
+    assert((await freshTexPdf(root, source, manifest, files)).reason)
+  } finally {
+    await rm(root, { recursive: true, force: true })
+  }
+})
+
+test("link inventory uses Quartz slug names, handles escaped names and preserves ambiguity", () => {
+  const files = ["B/figure name.md", "A/figure name.md", "Other.md"]
+  assert.deepEqual(linkInventory(files, ["figure%20name.md#Heading"]), [
+    ["figure-name", ["A/figure name.md", "B/figure name.md"]],
+  ])
+  assert.deepEqual(linkInventory(files, ["https://example.org/figure-name", "#here"]), [])
+  assert.deepEqual(linkInventory(["Z.md", "a.md"], ["a", "Z"]), [
+    ["Z", ["Z.md"]],
+    ["a", ["a.md"]],
+  ])
 })

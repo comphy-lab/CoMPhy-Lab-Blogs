@@ -271,36 +271,58 @@ try {
   await page.waitForFunction(() => document.body.dataset.slug === "Lecture-Notes/index")
   report.interactions.gaussAndHistory = true
 
-  // Lecture notes keep course order (1, 1.5, 2, 2.5, …) in the folder listing
-  // and in the Explorer, independent of titles and dates.
-  await page.goto(base + "/Lecture-Notes/Intro-Soft-Matter/2025/", { waitUntil: "networkidle" })
-  await page.waitForSelector(".explorer-content a[href*='Intro-Soft-Matter/2025/']", {
-    state: "attached",
-  })
-  const lectureOrder = await page.evaluate(() => {
-    const numbers = (selector) =>
-      [...document.querySelectorAll(selector)]
-        .map((a) =>
-          /Intro-Soft-Matter\/2025\/(\d+(?:\.\d+)?)[^/]*$/.exec(a.getAttribute("href") ?? ""),
-        )
-        .filter(Boolean)
-        .map((match) => Number(match[1]))
-    return {
-      listing: numbers(".page-listing .section-li h3 a.internal"),
-      explorer: numbers(".explorer-content a[href*='Intro-Soft-Matter/2025/']"),
-    }
-  })
-  for (const [where, numbers] of Object.entries(lectureOrder)) {
-    assert(numbers.length > 5, `${where}: lecture links missing`)
+  // Subject notes live outside year folders. Teaching order belongs to the
+  // hub; old pages are ordinary 200 notices with a link, never redirects.
+  const course = "/Lecture-Notes/Intro-Soft-Matter/"
+  const movedNotes = [
+    ["1-Intro-Soft-Matter", "Faces-of-Soft-Matter"],
+    ["1.5-Taylor-Culick-Paradox", "Taylor-Culick-Paradox"],
+    ["1.75-Complementary-Questions-Answers", "Faces-of-Soft-Matter-Questions-Answers"],
+    ["2-What-is-Viscosity", "Viscosity"],
+    ["2.5-Conservation-Laws", "Conservation-Laws"],
+    ["2.75-Complementary-Questions-Answers", "Conservation-Laws-Questions-Answers"],
+    ["3-Soft-Matter-Instabilities", "Instabilities"],
+    ["4-Soft-Matter-Singularities", "Singularities"],
+    ["5-Viscoelasticity", "Viscoelasticity"],
+    ["6-Sheets-Bubbles-Drops", "Sheets-Bubbles-Drops"],
+  ]
+  await page.goto(base + course, { waitUntil: "networkidle" })
+  const subjectOrder = await page
+    .locator("article ol > li > a.internal")
+    .evaluateAll((links) => links.map((link) => new URL(link.href).pathname.split("/").at(-1)))
+  assert.deepEqual(subjectOrder, [
+    "Faces-of-Soft-Matter",
+    "Viscosity",
+    "Instabilities",
+    "Singularities",
+    "Viscoelasticity",
+    "Sheets-Bubbles-Drops",
+  ])
+  for (const [oldName, newName] of movedNotes) {
+    const response = await page.goto(base + course + "2025/" + oldName, {
+      waitUntil: "networkidle",
+    })
+    assert.equal(response.status(), 200, `old notice ${oldName}`)
+    assert.equal(new URL(page.url()).pathname, course + "2025/" + oldName)
+    const notice = page.locator("article a.internal").filter({ hasText: /./ })
+    assert((await page.locator("article").innerText()).includes("These notes are now at"))
     assert(
-      numbers.every((n, i) => i === 0 || numbers[i - 1] <= n),
-      `${where}: lectures out of course order (${numbers.join(", ")})`,
+      (
+        await notice.evaluateAll((links) => links.map((link) => new URL(link.href).pathname))
+      ).includes(course + newName),
+      `old notice ${oldName} does not link to ${newName}`,
     )
+    const target = await page.request.get(base + course + newName)
+    try {
+      assert.equal(target.status(), 200, `subject ${newName}`)
+    } finally {
+      await target.dispose()
+    }
   }
-  report.interactions.lectureOrder = true
+  report.interactions.subjectNotes = true
 
-  // Moved notes keep their old URLs, including those printed on the 2025
-  // slides: every rule must answer 301 and land on a page or file that exists.
+  // Pre-existing legacy redirects, including slash variants, must land on
+  // a page or file that exists. The subject migration adds no redirects.
   const redirects = readFileSync(join(publicDir, "_redirects"), "utf8")
     .split("\n")
     .map((line) => line.trim())
@@ -327,6 +349,30 @@ try {
     }
   }
   report.interactions.courseRedirects = true
+
+  // Existing PDF redirects must deliver the full current notes, rather than
+  // a valid PDF containing only an old web-page notice.
+  for (const [oldName, newName] of movedNotes) {
+    const legacyName = oldName === "6-Sheets-Bubbles-Drops" ? "6-Rheology" : oldName
+    const oldPdf = course + "2025/" + legacyName + ".pdf"
+    const subjectPdf = "/_Media/PDF" + course + newName + ".pdf"
+    assert(
+      redirects.some(([from, to]) => from === oldPdf && to === subjectPdf),
+      `legacy PDF ${oldPdf} must target the subject notes`,
+    )
+    const response = await page.request.get(base + oldPdf)
+    try {
+      assert.equal(response.status(), 200, `legacy PDF ${oldPdf}`)
+      assert.deepEqual(
+        await response.body(),
+        readFileSync(join(publicDir, subjectPdf.slice(1))),
+        `legacy PDF ${oldPdf} did not serve the current subject PDF`,
+      )
+    } finally {
+      await response.dispose()
+    }
+  }
+  report.interactions.legacySubjectPdfs = true
 
   await page.goto(base, { waitUntil: "networkidle" })
   await page.locator(".search button").first().click()

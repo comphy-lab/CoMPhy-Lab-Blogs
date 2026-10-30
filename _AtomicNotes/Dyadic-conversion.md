@@ -107,7 +107,7 @@ If $v_x(y) = \dot{\gamma} y$ (linear shear), then:
 - Particles at height $y$ move faster than particles at height $y - \lambda$.
 - Fast particles carry momentum downward and slow particles carry momentum upward.
 - The net *transport* of $x$-momentum in the $y$-direction is $\boldsymbol{K}_{xy}$.
-- This is exactly where viscosity comes from! (See [[2-What-is-Viscosity]].)
+- This is exactly where viscosity comes from! (See [[Lecture-Notes/Intro-Soft-Matter/Viscosity|Viscosity and momentum diffusion]].)
 
 ---
 

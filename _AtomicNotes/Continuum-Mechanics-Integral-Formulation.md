@@ -5,7 +5,7 @@ publish: true
 # Coarse-Grained Continuum Mechanics – Conservation Laws
 
 > Here, we only consider the continuum picture. <br>
-> See [[2.5-Conservation-Laws]] for first principle derivations
+> See [[Lecture-Notes/Intro-Soft-Matter/Conservation-Laws|Conservation laws]] for first principle derivations
 
 ## Key Topics
 

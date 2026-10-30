@@ -16,6 +16,8 @@ date: 2025-10-14
 <!-- PDF-EXPORT-IGNORE-END -->
 <!-- BLOG-PDF-LINK-END -->
 
+Subject notes now live outside the year folders. This page records the 2025 course structure; see the [[Lecture-Notes/Intro-Soft-Matter/index|course hub]] for all subjects and years.
+
 Course Overview. A journey through soft materials—from everyday foams and gels to polymer networks and interfacial dynamics. We develop the conceptual and mathematical foundations to understand why soft matter behaves so differently from hard solids and liquids.
 
 
@@ -28,18 +30,20 @@ Course Overview. A journey through soft materials—from everyday foams and gels
 
 ## Course Structure (Lectures + Bridges)
 
-- Lecture 1: [[1-Intro-Soft-Matter|Different Faces of Soft Condensed Matter]] – What is soft matter, why is it soft, and how do we measure softness?
-  - [[1.5-Taylor-Culick-Paradox|Bridge 1.5: The Taylor–Culick Paradox]] – Resolving a century-old paradox through proper energy accounting and momentum conservation
-  - [[1.75-Complementary-Questions-Answers|Homework Solutions: Lecture 1]] – Self-assessed questions with model answers
-- Lecture 2: [[2-What-is-Viscosity|Viscosity and Momentum Diffusion]] – Viscosity as an emergent property from kinetic theory; the no-slip condition; continuum momentum transport
-  - [[2.5-Conservation-Laws|Bridge 2.5: From Newton's Laws to Conservation Equations]] – Microscopic particle dynamics to continuum momentum balance and Cauchy stress
-  - [[2.75-Complementary-Questions-Answers|Homework Solutions: Lecture 2]] – Model answers to the conceptual questions in Bridge 2.5
-- Lecture 3: [[3-Soft-Matter-Instabilities|Soft Matter Instabilities]] – Pattern formation through instability mechanisms: Rayleigh–Plateau, Kelvin–Helmholtz, Rayleigh–Taylor, Faraday waves, Rayleigh–Bénard–Marangoni, Saffman–Taylor fingering, and viscous coiling. Understanding how competing forces select characteristic length scales and how to harness instabilities for fabrication.
-- Lecture 4: [[4-Soft-Matter-Singularities|Soft Matter Singularities]] – Finite-time singularities, contact lines, and the mid-course open-science assignment
-- Lecture 5: [[5-Viscoelasticity|Elastic, Viscous, and Viscoelastic Behaviour]] – Constitutive response, mechanical analogues, and relaxation times
-- Lecture 6: [[6-Sheets-Bubbles-Drops|Sheets, Bubbles and Drops]] – Elastic, viscous and viscoelastic behaviour in retracting sheets, bursting bubbles and impacting drops
+- Lecture 1: [[Lecture-Notes/Intro-Soft-Matter/Faces-of-Soft-Matter|Different Faces of Soft Condensed Matter]] – What is soft matter, why is it soft, and how do we measure softness?
+  - [[Lecture-Notes/Intro-Soft-Matter/Taylor-Culick-Paradox|Bridge 1.5: The Taylor–Culick Paradox]] – Resolving a century-old paradox through proper energy accounting and momentum conservation
+  - [[Lecture-Notes/Intro-Soft-Matter/Faces-of-Soft-Matter-Questions-Answers|Homework Solutions: Lecture 1]] – Self-assessed questions with model answers
+- Lecture 2: [[Lecture-Notes/Intro-Soft-Matter/Viscosity|Viscosity and Momentum Diffusion]] – Viscosity as an emergent property from kinetic theory; the no-slip condition; continuum momentum transport
+  - [[Lecture-Notes/Intro-Soft-Matter/Conservation-Laws|Bridge 2.5: From Newton's Laws to Conservation Equations]] – Microscopic particle dynamics to continuum momentum balance and Cauchy stress
+  - [[Lecture-Notes/Intro-Soft-Matter/Conservation-Laws-Questions-Answers|Homework Solutions: Lecture 2]] – Model answers to the conceptual questions in Bridge 2.5
+- Lecture 3: [[Lecture-Notes/Intro-Soft-Matter/Instabilities|Soft Matter Instabilities]] – Pattern formation through instability mechanisms: Rayleigh–Plateau, Kelvin–Helmholtz, Rayleigh–Taylor, Faraday waves, Rayleigh–Bénard–Marangoni, Saffman–Taylor fingering, and viscous coiling. Understanding how competing forces select characteristic length scales and how to harness instabilities for fabrication.
+- Lecture 4: [[Lecture-Notes/Intro-Soft-Matter/Singularities|Soft Matter Singularities]] – Finite-time singularities, contact lines, and the mid-course open-science assignment
+- Lecture 5: [[Lecture-Notes/Intro-Soft-Matter/Viscoelasticity|Elastic, Viscous, and Viscoelastic Behaviour]] – Constitutive response, mechanical analogues, and relaxation times
+- Lecture 6: [[Lecture-Notes/Intro-Soft-Matter/Sheets-Bubbles-Drops|Sheets, Bubbles and Drops]] – Elastic, viscous and viscoelastic behaviour in retracting sheets, bursting bubbles and impacting drops
 - Lectures 7–8: [[7-8-Student-Presentations|Student Presentations]] – Paper-led synthesis and discussion
   - [[7.5-Presentation-Paper-Topics|Presentation Paper Topics]] – Paper choices, preparation process, and assessment criteria
+
+The 2025 coding exercise is recorded in [[Lecture-Notes/Intro-Soft-Matter/2025/Assessment|Contact Line Assignment (2025)]].
 
 ## Administrative Information
 
@@ -65,7 +69,7 @@ By the end of this course, you will be able to:
 
 ## How to Use These Lecture Notes
 
-- Start here: Read [[1-Intro-Soft-Matter|Lecture 1]] for foundational concepts and examples
+- Start here: Read [[Lecture-Notes/Intro-Soft-Matter/Faces-of-Soft-Matter|Lecture 1]] for foundational concepts and examples
 - Work through systematically: Each lecture builds on the previous one
 - Try the homework: Self-assessment questions reinforce key ideas
 - Use the references: Further reading suggestions at the end of each lecture

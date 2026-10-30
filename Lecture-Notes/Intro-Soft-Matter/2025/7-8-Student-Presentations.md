@@ -395,7 +395,7 @@ Full citations are provided in the [[7.5-Presentation-Paper-Topics|Student Prese
 
 ---
 
-**Previous Lecture:** [[6-Sheets-Bubbles-Drops|Lecture 6: Sheets, Bubbles and Drops]]<br>
+**Previous Lecture:** [[Lecture-Notes/Intro-Soft-Matter/Sheets-Bubbles-Drops|Lecture 6: Sheets, Bubbles and Drops]]<br>
 **Course Home:** [[0-README|Course Overview]]<br>
 **Paper Selection:** [[7.5-Presentation-Paper-Topics|Detailed Paper Topics]]
 
