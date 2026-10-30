@@ -30,9 +30,10 @@
 /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/7.5-Presentation-Paper-Topics.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/7.5-Presentation-Paper-Topics.pdf 301
 /Lecture-Notes/Intro-Soft-Matter/Dupre-Rayleigh-paradox.pdf /Lecture-Notes/Intro-Soft-Matter/2025/Dupre-Rayleigh-paradox.pdf 301
 /Lecture-Notes/Intro-Soft-Matter/whatIsViscosity.pdf /Lecture-Notes/Intro-Soft-Matter/2025/whatIsViscosity.pdf 301
-# Historical PDF download links serve the current subject PDFs. Historical
-# source exports remain in the vault; these existing rules take precedence.
-# The old web pages separately remain one-line links, without new redirects.
+# These pre-existing PDF redirect sources serve the current subject PDFs.
+# Direct /_Media/PDF/.../2025/ download URLs remain PDFs of the one-line
+# notices, including destinations of previously cached 301 responses.
+# The old web pages remain one-line links, without new migration redirects.
 /Lecture-Notes/Intro-Soft-Matter/1-Intro-Soft-Matter.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/Faces-of-Soft-Matter.pdf 301
 /Lecture-Notes/Intro-Soft-Matter/1.5-Taylor-Culick-Paradox.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/Taylor-Culick-Paradox.pdf 301
 /Lecture-Notes/Intro-Soft-Matter/1.75-Complementary-Questions-Answers.pdf /_Media/PDF/Lecture-Notes/Intro-Soft-Matter/Faces-of-Soft-Matter-Questions-Answers.pdf 301

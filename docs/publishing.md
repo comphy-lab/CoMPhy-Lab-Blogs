@@ -11,6 +11,9 @@ can keep year-specific teaching information in year folders. Introduction to
 Soft Matter shares subject notes outside those folders; its old 2025 subject
 pages contain one-line links to the new locations, without HTTP redirects.
 Pre-existing legacy redirects remain in `_quartz/quartz/static/_redirects`.
+Their PDF rules point to the full subject PDFs. Direct 2025 download URLs under
+`/_Media/PDF/Lecture-Notes/Intro-Soft-Matter/2025/` remain PDFs of the one-line
+notices; browsers holding a cached 301 to those URLs also receive the notices.
 Tracked media, including existing
 PDFs, is copied into the static site.
 

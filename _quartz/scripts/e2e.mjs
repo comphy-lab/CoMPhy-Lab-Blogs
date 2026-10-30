@@ -350,8 +350,9 @@ try {
   }
   report.interactions.courseRedirects = true
 
-  // Existing PDF redirects must deliver the full current notes, rather than
-  // a valid PDF containing only an old web-page notice.
+  // The pre-existing redirect sources below deliver full subject notes.
+  // Direct /_Media/PDF/.../2025/ URLs still serve the one-line notice PDFs;
+  // cached 301s to those direct URLs retain that documented behaviour.
   for (const [oldName, newName] of movedNotes) {
     const legacyName = oldName === "6-Sheets-Bubbles-Drops" ? "6-Rheology" : oldName
     const oldPdf = course + "2025/" + legacyName + ".pdf"
