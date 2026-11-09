@@ -14,7 +14,9 @@
     padding-right: var(--gutter);
 
     & > .site-topbar {
-      background: color-mix(in srgb, var(--c-paper) 82%, transparent);
+      // Sticky chrome must fully obscure scrolled body text in both themes.
+      // Solid paper matches the design-system opaque surface; avoid glass mixes.
+      background: var(--c-paper);
       border-bottom: 1px solid var(--c-border-strong);
       margin: 0 calc(-1 * var(--gutter)) 0 0;
       & .site-topbar-inner {
