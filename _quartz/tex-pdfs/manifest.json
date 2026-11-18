@@ -514,10 +514,10 @@
         "_quartz/scripts/tex/manifest.mjs": "bf371817d76e6e76a650d6227840981ccca2359cdb82a679885254cd80bf38a6",
         "_quartz/scripts/tex/prepare.ts": "ef092549953457c1700cfc78e87309badf31e56326679b996bfd93af35877a2c",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@link-candidates": "68b5c2ab24d3a3f0e1b6a94d79496e6d4659f9bf4ba0af33bde0591f2f8ae4c8",
+        "@link-candidates": "354475a5216ecc28728f2e33ac20f2effc0bd7493fc0cd173708c439500351df",
         "@missing-paths": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
       },
-      "sha256": "e014bef2e4131c288068fb4807827807ed3afdae486dc22c3748408cc6c894ff",
+      "sha256": "51ebec5a615ecdc71d9854bc4abb91eb511f5f7d4b63374472c9ce4eeb6e5158",
       "pdfSha256": "aed8bbd6a497c06f986b5b898ad9a49101475cc2833817142d4036b37a7b034e",
       "toolchain": {
         "pandoc": "pandoc 3.10",
@@ -948,6 +948,7 @@
       "dependencies": ["Lecture-Notes/Intro-Soft-Matter/2026/0-README.md"],
       "lookups": {
         "links": [
+          "Lecture-Notes/Intro-Soft-Matter/2026/Assessment",
           "Lecture-Notes/Intro-Soft-Matter/Conservation-Laws",
           "Lecture-Notes/Intro-Soft-Matter/Faces-of-Soft-Matter",
           "Lecture-Notes/Intro-Soft-Matter/Instabilities",
@@ -957,14 +958,23 @@
           "Lecture-Notes/Intro-Soft-Matter/Viscosity",
           "Lecture-Notes/Intro-Soft-Matter/index",
           "https://github.com/comphy-lab/Intro-Soft-Matter-2026",
+          "https://www.dropbox.com/scl/fi/03assxsn84adn2rbufue3/2026-11-11-Lecture3.pptx?rlkey=r0nbtyb72gcot3n7251uold7u&dl=1",
+          "https://www.dropbox.com/scl/fi/0xc5ouow1911m4na87mvv/2026-11-18-Lecture4.key?rlkey=96dnu31hk4pu0cb4g0k2gtv16&dl=1",
+          "https://www.dropbox.com/scl/fi/5xsx74ut5uw0pp9n3rjji/2026-10-28-Lecture2.key?rlkey=89f4o8jtp5fla360p7jzn0n1r&dl=1",
+          "https://www.dropbox.com/scl/fi/7kfo8nljua2bmm9qkhwgu/2026-11-18-Lecture4.pptx?rlkey=kfm2ugx0g4xug2xriem0uk2ee&dl=1",
+          "https://www.dropbox.com/scl/fi/db6t0i5n5dmrqk204r0oq/2026-11-18-Lecture4.pdf?rlkey=btwy6ly9tw18vpv693cw1zhy4&dl=1",
           "https://www.dropbox.com/scl/fi/o6q170kmrqe7bt8lqsc6h/2026-10-21-Lecture1.key?rlkey=lsfcixpjfd1nz5u3u8tnwf74e&dl=1",
           "https://www.dropbox.com/scl/fi/rvib78g9e8q6oqh65godc/2026-10-21-Lecture1.pdf?rlkey=c6ml73bjq7jqy5vg6l2q96sba&dl=1",
-          "https://www.dropbox.com/scl/fi/v4ftq7zdnsyzqhqmfov7r/2026-10-21-Lecture1.pptx?rlkey=znicyu05ss9irn42rsl6lfl5m&dl=1"
+          "https://www.dropbox.com/scl/fi/tbfyr1js2xadc62bujqx3/2026-11-11-Lecture3.pdf?rlkey=vzgi9cpcgmmq4b16sm87eavs8&dl=1",
+          "https://www.dropbox.com/scl/fi/v4ftq7zdnsyzqhqmfov7r/2026-10-21-Lecture1.pptx?rlkey=znicyu05ss9irn42rsl6lfl5m&dl=1",
+          "https://www.dropbox.com/scl/fi/zi6xo0brcgqnsixi07l30/2026-11-11-Lecture3.key?rlkey=4reigcukfh0klqnpzzfu9h2nl&dl=1",
+          "https://www.dropbox.com/scl/fi/zldiu9g6y0psizwgziun3/2026-10-28-Lecture2.pdf?rlkey=u7n3w326qptlx8sqojp6gx7z3&dl=1",
+          "https://www.dropbox.com/scl/fi/zwvnlpglmkuhkwxqq6g6a/2026-10-28-Lecture2.pptx?rlkey=sc9ryrrw5z6pntup7dw5bpxuv&dl=1"
         ],
         "missingPaths": []
       },
       "inputs": {
-        "Lecture-Notes/Intro-Soft-Matter/2026/0-README.md": "d1adde91fe1c4f027776bcc2500a4e4e21a01789f2f193a0e3187c186bbe8c55",
+        "Lecture-Notes/Intro-Soft-Matter/2026/0-README.md": "6d456eab1c85ba365913ac4ed11c8423f7b822126b304e7352c4422dbf38d91f",
         "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
         "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
         "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
@@ -977,11 +987,11 @@
         "_quartz/scripts/tex/manifest.mjs": "bf371817d76e6e76a650d6227840981ccca2359cdb82a679885254cd80bf38a6",
         "_quartz/scripts/tex/prepare.ts": "ef092549953457c1700cfc78e87309badf31e56326679b996bfd93af35877a2c",
         "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
-        "@link-candidates": "edf21df423b8edabbb5a203168d0b46ed6c81722d4d96092be94aed2b8d0762c",
+        "@link-candidates": "464b2a946f680dcfc3293042229adc25376cde7bda17beab09d2086e8c277fc9",
         "@missing-paths": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
       },
-      "sha256": "3b13935bc428c4b21316c4aac4e74bbbbb5f7c2f221187643b573d5f065a9a5e",
-      "pdfSha256": "d87e7a69b04ca6a7d197b16ad710a1c0b9570a4071dd24a2f391b3b3fc3bdbfd",
+      "sha256": "417f4f0ff0f220dc3f54c822eff34925a5c73e1357f519af3a106a221cdfd750",
+      "pdfSha256": "f9b355ea6f94535f0c56045390db38932d282d418ebdaacab70e2a2d7c065723",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
@@ -2114,6 +2124,53 @@
       },
       "sha256": "fd440aef2a170dc9faefde23b049d69c47792e8ebebd418c40e3ce518495f8c9",
       "pdfSha256": "c55030c1ada5fbc8861cdbcb2070b44032df796004dd207551b869bdd443e909",
+      "toolchain": {
+        "pandoc": "pandoc 3.10",
+        "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
+        "lualatex": "This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)",
+        "rsvg-convert": "rsvg-convert version 2.62.3"
+      }
+    },
+    "Lecture-Notes/Intro-Soft-Matter/2026/Assessment.md": {
+      "pdf": "Lecture-Notes/Intro-Soft-Matter/2026/Assessment.pdf",
+      "dependencies": [
+        "Lecture-Notes/Intro-Soft-Matter/2026/0-README.md",
+        "Lecture-Notes/Intro-Soft-Matter/2026/Assessment.md"
+      ],
+      "lookups": {
+        "links": [
+          "Lecture-Notes/Intro-Soft-Matter/2026/0-README",
+          "Lecture-Notes/Intro-Soft-Matter/Singularities",
+          "https://arxiv.org/abs/2608.11060",
+          "https://doi.org/10.1080/00107514.2026.2721118",
+          "https://github.com/comphy-lab/Intro-Soft-Matter-2026",
+          "https://github.com/comphy-lab/Intro-Soft-Matter-2026#public-visibility-and-consent",
+          "https://www.dropbox.com/scl/fi/2dj32vardrg2col6zlq2i/2026-11-18-Assessment.pdf?rlkey=ow1ip6u040eimxbrnvhuy77fj&dl=1",
+          "https://www.dropbox.com/scl/fi/44llao27xe3muhvva18s4/2026-11-18-Assessment.pptx?rlkey=kf9hx1o7arctzl8nxdg3ua8k0&dl=1",
+          "https://www.dropbox.com/scl/fi/o2hfy09me2nwpn558p7pm/2026-11-18-Assessment.key?rlkey=crxrg95n2w2omoxov7mqmjrjh&dl=1"
+        ],
+        "missingPaths": []
+      },
+      "inputs": {
+        "Lecture-Notes/Intro-Soft-Matter/2026/0-README.md": "6d456eab1c85ba365913ac4ed11c8423f7b822126b304e7352c4422dbf38d91f",
+        "Lecture-Notes/Intro-Soft-Matter/2026/Assessment.md": "37f6b1ee80605f9b0905655170a675690b153745a167b13b702aec37f5ac6799",
+        "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
+        "_quartz/quartz.config.yaml": "47cbea86942f61d1daf894c4e23767e549ca4ca116b2b60bc066194326847ea6",
+        "_quartz/quartz/plugins/site-links.ts": "b9f0057ac64a095fa3274a8dfb086fcdda88dadb380740bf596c3d9d65c11a0a",
+        "_quartz/quartz/plugins/site-math.ts": "b730a3b26837e57933f2ea489782f5fa8ff01899165451f7b4540ce7122e5ee2",
+        "_quartz/quartz/plugins/site-media.ts": "a62731d6141d71ff108f5fe078ecad4b4773f6727d5442e9d8f7bca646f00b28",
+        "_quartz/scripts/build-tex-pdfs.ts": "36b40cc5112c4a5b2ed694dd7cd24a650f9c9b26102f111c31b4f8130d122416",
+        "_quartz/scripts/tex/images.ts": "869f1b51db9996e3e8d70c7718b33c820961414b9fb6af453658b3069b1538dd",
+        "_quartz/scripts/tex/lecture.lua": "f228d504e8232592286f96b5af8efb2e0fc3842fbe9755e6dbb597661e32b39e",
+        "_quartz/scripts/tex/lecture.tex": "29145b02e388a87b37c49dbc550198af4570117c295727360ca82e29bf8e6c44",
+        "_quartz/scripts/tex/manifest.mjs": "bf371817d76e6e76a650d6227840981ccca2359cdb82a679885254cd80bf38a6",
+        "_quartz/scripts/tex/prepare.ts": "ef092549953457c1700cfc78e87309badf31e56326679b996bfd93af35877a2c",
+        "_quartz/scripts/tex/safety.ts": "75263c4e299d50ea0c71b0feea6e6659ea905935acd9d62fedab6b24b0ab0ddf",
+        "@link-candidates": "0632977c0e84d266c127ff68b8f8905aa7047ad0a7ff31a3e3c5c0e529db1579",
+        "@missing-paths": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      },
+      "sha256": "a7d1ff96e587e4783c0525dab6204219c2979c8eef99707819fe56b7c04beb7c",
+      "pdfSha256": "0450916b6d9cc1484c258e4a9dfb7314eb72c418e38c9ae42b489dc5ab4b708e",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
