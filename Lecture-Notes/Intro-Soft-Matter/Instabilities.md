@@ -38,7 +38,65 @@ Where do disturbances come from? Ambient vibrations, thermal fluctuations, surfa
 
 ---
 
-## 2) What to identify in any instability
+## 2) Linear stability of a bead
+
+![Linear stability of a bead](../../_Media/Intro-Soft-Matter-i01-bead.png)
+
+The pencil has a quantitative version. Put a bead in a landscape $V(x)$ and let it move through honey, so that friction dominates inertia and the velocity is proportional to the force:
+
+$$\zeta\,\dot x = -V'(x).$$
+
+Choose units with $\zeta = 1$. The equilibria are the points where the force vanishes, $V'(x^*) = 0$: the bottom of a well, the top of a hill, anywhere on a flat stretch. All of them are exact solutions. The question is which ones we would ever see.
+
+Follow Maxwell and displace the bead by a small amount, $x = x^* + \delta x$. Taylor-expand the force about $x^*$:
+
+$$V'(x^* + \delta x) = V'(x^*) + V''(x^*)\,\delta x + \tfrac12 V'''(x^*)\,\delta x^2 + \dots$$
+
+The first term is zero because $x^*$ is an equilibrium, and the $\delta x^2$ term is negligible when $\delta x$ is small enough. That is all *linearisation* means: keep terms up to first order in the disturbance. What remains is
+
+$$\frac{d\,\delta x}{dt} = -V''(x^*)\,\delta x \quad\Rightarrow\quad \delta x = \delta x_0\, e^{\sigma t}, \qquad \sigma = -V''(x^*).$$
+
+$\sigma$ is the growth rate, and $1/|\sigma|$ is the time over which a kick grows or dies. The size of the kick, $\delta x_0$, only sets the prefactor: stability is a property of the state, not of the kick. Read off the signs.
+
+- **Well**, $V'' > 0$: $\sigma < 0$, every kick decays. Stable.
+- **Hilltop**, $V'' < 0$: $\sigma > 0$, the kick grows until $\delta x$ is no longer small and the linear theory stops applying. The bead then rolls into a neighbouring well. Linear theory tells you *that* it leaves and how fast, not where it ends up. This is the pencil.
+- **Flat stretch**, $V'' = 0$: $\sigma = 0$. To linear order nothing happens, and the next term in the Taylor series decides. This case returns twice: at the onset of an instability (below) and at a critical point (in [[Lecture-Notes/Intro-Soft-Matter/Singularities|Singularities]]).
+
+With inertia, $m\ddot x = -V'(x)$ gives $\sigma^2 = -V''/m$: the same sign criterion, but in the well the bead oscillates instead of creeping back.
+
+> [!important] The recipe
+> 1. Find a base state that satisfies the equations exactly.
+> 2. Add an infinitesimal disturbance.
+> 3. Keep only the terms linear in it.
+> 4. Look for exponential solutions and read off the sign of the growth rate.
+>
+> For a liquid jet the "bead position" becomes the radius at each point along the jet, and $\sigma$ depends on the wavelength. For a magnet it is the magnetisation; for a pinching neck it is a whole similarity profile. The steps do not change.
+
+## 3) Push the bead: response, soft wells and a flat well
+
+![Push the bead](../../_Media/Intro-Soft-Matter-i01b-push.png)
+
+Now change the question. Instead of asking whether a kick grows, ask how far the bead moves if we push it steadily. A constant force $F$ adds the potential energy $-Fx$, which tilts the landscape. The minimum shifts, and the bead creeps to the new equilibrium, where the tilted slope vanishes: $V'(x^* + \delta x) = F$. The same Taylor step, valid while the push is small, gives $V''(x^*)\,\delta x = F$, so
+
+$$\delta x = \frac{F}{V''(x^*)}.$$
+
+The displacement is proportional to the force: linear response. This is Hooke's law, $F = k\,\delta x$, with spring constant $k = V''(x^*)$; the curvature of the landscape *is* the stiffness. The coefficient $1/V''$ is the response function (a compliance; for a magnet it will be the susceptibility). Stability ($V'' > 0$) and a finite response are the same statement: linear stability and linear response are two faces of one second derivative.
+
+![Same push, softer well](../../_Media/Intro-Soft-Matter-i01e-soft.png)
+
+Apply the same push to wells of decreasing curvature. The stiff well barely moves; halving the curvature doubles the displacement. As the well flattens, $V'' \to 0$, the response per unit force at vanishing force, $d\,\delta x/dF$ at $F = 0$, diverges: a tiny push produces a large change. The range of forces over which the response stays linear shrinks at the same time. The same curvature sets the relaxation time. After a kick, $\delta x$ decays as $e^{-V'' t}$, so the settling time $1/|\sigma| = 1/V''$ diverges too. Soft systems are both easily pushed and slow. Near a transition this is called *critical slowing down*. A diverging response as a parameter is tuned is our first singularity; [[Lecture-Notes/Intro-Soft-Matter/Singularities|Singularities]] returns to it for a magnet.
+
+![Push a flat-bottomed well](../../_Media/Intro-Soft-Matter-i01f-flat.png)
+
+Exactly at the flat point linear theory fails, not the physics. Take the simplest flat-bottomed well, $V = cx^4/4$, with $V''(0) = 0$. The linear term vanishes, so the next approximation keeps the first higher-order term that survives: the restoring force is $-c\,\delta x^3$, so the push is balanced when $c\,\delta x^3 = F$, and
+
+$$\delta x = \left(\frac{F}{c}\right)^{1/3}.$$
+
+The response is finite but not proportional to $F$, with an infinite slope at $F = 0$. The same law appears for a magnet at its critical temperature in mean-field theory, where the magnetisation grows as the cube root of the applied field.
+
+---
+
+## 4) What to identify in any instability
 
 1. Base state: the simplest flow/interface we’d like to hold (a cylinder of liquid, a flat film, two fluids sliding past each other).
 2. Competing forces: inertia, viscosity, gravity, surface tension, and sometimes elasticity (soft matter).
@@ -55,13 +113,13 @@ In words of James Clerk Maxwell
 
 ---
 
-## 3) Core examples you can recognize in the lab
+## 5) Core examples you can recognize in the lab
 
 ### (i) Rayleigh–Plateau (cylindrical thread → droplets)
 
 Mechanism. A small bulge on a liquid thread lowers capillary pressure locally; liquid is drawn from the necks toward the bulge, further enlarging it—positive feedback. Surface tension itself is the _driver_ (seeking to reduce area) yet also damps very short ripples, so a fastest‑growing wavelength emerges and sets droplet spacing. In inviscid limits, that spacing is order‑ten radii (qualitative memory worth keeping).
 
-What to look for. On a dripping faucet, you see the regular drop train because this instability picks a wavelength/time scale of breakup.
+What to look for. When a faucet runs as a thin jet, you see a regular drop train because this instability picks a wavelength/time scale of breakup (slow dripping is a different, pendant-drop process; see section 6).
 
 ![](../../_Media/Lecture3-Instabilities-1761842080703.png)
 Cressey, D. 365 days: Images of the year. Nature 516, 304–309 (2014) - image taken at [Physics of Fluids Department, University of Twente](https://pof.tnw.utwente.nl/).
@@ -154,7 +212,37 @@ Mechanism. A falling viscous thread buckles and coils from a balance of gravity,
 
 ---
 
-## 4) How to “predict” without doing heavy math
+## 6) Plateau and Rayleigh: why a thread breaks, and at what spacing
+
+![Plateau's argument](../../_Media/Intro-Soft-Matter-i02-plateau.png)
+
+**Plateau's energy argument (1873).** Which shapes lower the surface energy of a liquid cylinder of radius $R$? Perturb the radius with a varicose (sausage) mode, $r(z) = a + \varepsilon\cos kz$, of wavelength $\lambda = 2\pi/k$. The volume is fixed. Over a length $L$ containing a whole number of wavelengths, $V = \pi L\,(a^2 + \varepsilon^2/2) = \pi R^2 L$, so to second order $a = R - \varepsilon^2/(4R)$: the mean radius shrinks slightly, because the bulges hold more liquid than the necks lose. The surface area is
+
+$$A = \int 2\pi r\sqrt{1 + r'^2}\,dz \approx 2\pi L a + \frac{\pi}{2} R\,\varepsilon^2 k^2 L,$$
+
+and inserting $a$ gives
+
+$$\Delta A = \frac{\pi\varepsilon^2 L}{2R}\left(k^2R^2 - 1\right).$$
+
+Two effects compete: the shrinking mean radius lowers the area, the corrugation adds area. For $kR < 1$, i.e. $\lambda > 2\pi R$ (a wavelength longer than the circumference), the area decreases. In this direction the surface energy $\gamma A$ is a hilltop, $V'' < 0$ in the language of the bead, and every long enough wave can grow.
+
+![Which wavelength wins?](../../_Media/Intro-Soft-Matter-i03-rayleigh.png)
+
+**Rayleigh's growth rate (1878).** Plateau says which modes can grow, not how fast. Rayleigh wrote the disturbance as a normal mode, $r = R + \varepsilon\,e^{ikz + \sigma t}$, and solved the linearised inviscid flow inside the jet. Each wavenumber is its own bead, with its own growth rate:
+
+$$\sigma^2 = \frac{\gamma}{\rho R^3}\,kR\,\frac{I_1(kR)}{I_0(kR)}\left(1 - k^2R^2\right),$$
+
+where $I_0$ and $I_1$ are modified Bessel functions (they carry the flow inside the cylinder), $\gamma$ is the surface tension and $\rho$ the density. $\sigma^2 > 0$ exactly when $0 < kR < 1$, Plateau's criterion. The growth rate vanishes at $k = 0$ (very long waves have to move liquid very far) and at $kR = 1$, and peaks at $kR \approx 0.697$ with
+
+$$\sigma^* \approx 0.343\sqrt{\frac{\gamma}{\rho R^3}}, \qquad \lambda^* = \frac{2\pi R}{0.697} \approx 9.01\,R.$$
+
+For a nearly cylindrical jet left to itself, the fastest mode outruns all the others exponentially and sets the drop spacing: about 4.5 diameters. This holds when the jet is long enough for that mode to dominate; a pendant drop at a slowly dripping faucet detaches without first forming such a jet, and an inkjet printer imposes its own wavelength by vibrating the nozzle. For water with $R = 1$ mm the capillary time is $\sqrt{\rho R^3/\gamma} \approx 3.7$ ms, so $1/\sigma^* \approx 11$ ms. Viscosity slows the growth and moves the maximum to longer waves, but keeps the threshold $kR = 1$.
+
+Linear theory ends here: it says the corrugation grows, not how the thread detaches. The detachment is a finite-time singularity, and [[Lecture-Notes/Intro-Soft-Matter/Singularities|Singularities]] picks up the story exactly at this point.
+
+---
+
+## 7) How to “predict” without doing heavy math
 
 
 1. Force balance & scales. Ask which pair of effects compete: inertia vs capillarity (Weber number), viscous vs capillarity (capillary number), inertia vs viscosity (Reynolds number), gravity vs capillarity (Bond number), elasticity vs capillarity (elastocapillary mumber) or inertia in soft materials (elasticity number). These dimensionless groups flag likely instabilities and the direction of selection.
@@ -177,9 +265,53 @@ The dispersion relation, $\sigma$ is the growth rate and $k$ the wave vector, is
 
 ---
 
-## 5) From “avoid” to “use”: harnessing instabilities
+## 8) Just past onset: growth, then saturation
+
+![Just past onset](../../_Media/Intro-Soft-Matter-i04-onset.png)
+
+Linear theory predicts exponential growth forever, which is clearly wrong: something stops it. The cleanest example to try at home is a plastic ruler squeezed between the palms (Euler buckling). Below a critical load $P_c$ it stays straight; above it, it bows sideways by an amplitude $A$.
+
+Take the bowing as a single mode whose motion is overdamped, like the bead in honey (without damping the straight ruler would still become unstable above $P_c$, but with a growth rate proportional to $\sqrt{P - P_c}$, and it would oscillate about a buckled shape instead of settling into it). Near the threshold the growth rate is small and changes sign: $\sigma \approx \mu$, with $\mu \propto P - P_c$ the distance past onset. Symmetry decides the form of the next term. Bowing left is the same as bowing right, so the equation must be unchanged under $A \to -A$. That forbids $A^2$, and the first allowed nonlinear term is $A^3$; symmetry does not fix its sign. When its sign is negative, rescaling $A$ and $t$ gives the amplitude (Landau) equation
+
+$$\frac{dA}{dt} = \mu A - A^3.$$
+
+This is the normal form of a *supercritical* pitchfork for a single overdamped mode: any such system with this symmetry and a negative cubic coefficient reduces to it near onset. With a positive cubic coefficient (a *subcritical* bifurcation) the cubic does not stop the growth, and either higher-order terms or a jump to a distant state take over.
+
+**Read it as a flow on a line.** Where $dA/dt > 0$, $A$ increases; where it is negative, $A$ decreases. The fixed points are $A = 0$ and $A = \pm\sqrt{\mu}$. Linearising about them is the bead recipe again: $A = A^* + \delta A$ gives $\sigma = \mu - 3A^{*2}$. At $A^* = 0$, $\sigma = \mu$, unstable for $\mu > 0$. At $A^* = \pm\sqrt\mu$, $\sigma = -2\mu$, stable. For $\mu < 0$ only $A = 0$ exists, and it is stable.
+
+**Or as a bead in a landscape.** $dA/dt = -V'(A)$ with $V(A) = -\mu A^2/2 + A^4/4$. For $\mu < 0$ there is one well at $A = 0$; at $\mu = 0$ the bottom is flat (the $V'' = 0$ case above); for $\mu > 0$ the middle becomes a hilltop and two wells appear. Plotting the equilibria against $\mu$ gives the *pitchfork*. Which branch is chosen, $+\sqrt\mu$ or $-\sqrt\mu$, is decided by the noise in the initial condition: spontaneous symmetry breaking. The ruler buckles left or right with equal probability. The saturated amplitude grows as
+
+$$A^* = \pm\mu^{1/2}.$$
+
+The exponent $1/2$ comes from balancing $\mu A$ against $A^3$; it is not a material property. It returns as the mean-field exponent $\beta = 1/2$ of a magnet.
+
+![Growth, then saturation](../../_Media/Intro-Soft-Matter-i04c-time.png)
+
+**In time.** For $\mu > 0$ and a small seed, $0 < |A_0| \ll \sqrt\mu$, the exact solution is
+
+$$A(t) = \frac{A_0\, e^{\mu t}}{\left[1 + (A_0^2/\mu)\left(e^{2\mu t} - 1\right)\right]^{1/2}}.$$
+
+Early on it cannot be told apart from the linear prediction $A_0 e^{\mu t}$; then the cubic catches up and $A$ levels off at $\sqrt\mu$ (or $-\sqrt\mu$ if $A_0 < 0$). This is the generic life story of an instability: noise, exponential growth of the fastest mode, nonlinear saturation. Near the saturated state perturbations decay at rate $2\mu$, so the time to settle, $\tau \propto 1/|\mu|$, diverges at onset from either side. Onset therefore already has two divergences in the parameter $\mu$, the response and the relaxation time, exactly as for the soft well.
+
+## 9) When linear theory fails: the transition to turbulence
+
+Reynolds (1883) injected dye on the axis of a pipe. At low flow rate it stays a thin line; at high flow rate it suddenly mixes across the pipe. Linear stability theory famously fails here: pipe flow is linearly stable at every Reynolds number studied, yet it turns turbulent around $Re \approx 2000$. Finite-amplitude disturbances do it. The flow is stable to small pushes, not to large ones: nonlinearly unstable.
+
+---
+
+## 10) From “avoid” to “use”: harnessing instabilities
 
 Engineers used to fear instabilities as failure modes. Soft‑matter physics repurposes them as fabrication tools: microfluidic emulsification (controlled Rayleigh–Plateau), capillarity‑guided assembly of nanopillars (elastocapillary coalescence), and other self‑organization pathways. The mindset shift is to select initial/boundary conditions so the _natural_ instability builds the desired pattern. The inverse problem—choosing those conditions up‑front—is still an open research space. See: P-T. Brun, Shape formation in interfacial flows, Phys. Rev. Fluids, 9:11, 110501 (2024). [DOI: 10.1103/PhysRevFluids.9.110501](https://doi.org/10.1103/PhysRevFluids.9.110501)
+
+
+---
+
+## Further reading
+
+1. **J. Plateau**, *Statique expérimentale et théorique des liquides soumis aux seules forces moléculaires* (Gauthier-Villars, Paris, 1873). – The energy argument for the capillary instability of a cylinder.
+2. **Lord Rayleigh**, On the instability of jets, Proc. Lond. Math. Soc., 10, 4–13 (1878). – The dispersion relation and the fastest-growing wavelength.
+3. **J. Eggers & E. Villermaux**, Physics of liquid jets, Rep. Prog. Phys., 71, 036601 (2008). [DOI: 10.1088/0034-4885/71/3/036601](https://doi.org/10.1088/0034-4885/71/3/036601).
+4. **S. H. Strogatz**, *Nonlinear Dynamics and Chaos* (Westview Press, 2nd ed., 2015). – Flows on a line, fixed points and bifurcations, at the level of these notes.
 
 ---
 
