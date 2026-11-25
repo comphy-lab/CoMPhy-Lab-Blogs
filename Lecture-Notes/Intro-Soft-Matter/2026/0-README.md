@@ -45,15 +45,10 @@ Wednesdays, 10:00–11:00, PH132.
 > [!slides] Slides
 > [PDF](https://www.dropbox.com/scl/fi/db6t0i5n5dmrqk204r0oq/2026-11-18-Lecture4.pdf?rlkey=btwy6ly9tw18vpv693cw1zhy4&dl=1 "One page per slide; movies as still frames")&nbsp;*23 MB* · [PowerPoint](https://www.dropbox.com/scl/fi/7kfo8nljua2bmm9qkhwgu/2026-11-18-Lecture4.pptx?rlkey=kfm2ugx0g4xug2xriem0uk2ee&dl=1 "Every click as in the lecture; movies play through")&nbsp;*137 MB* · [Keynote](https://www.dropbox.com/scl/fi/0xc5ouow1911m4na87mvv/2026-11-18-Lecture4.key?rlkey=96dnu31hk4pu0cb4g0k2gtv16&dl=1 "Every click as in the lecture; movies play through")&nbsp;*137 MB*
 
-### 25 November: Rheology
+### 25 November and 2 December: Rheology and some examples of viscoelasticity
 
 > [!slides] Slides
-> [PDF](https://www.dropbox.com/scl/fi/a1213vuz5mlqhk5uqkig8/2026-11-25-Lecture5.pdf?rlkey=10akmkaon4tkk72tl217crkhn&dl=1 "One page per slide; movies as still frames")&nbsp;*13 MB* · [PowerPoint](https://www.dropbox.com/scl/fi/7q8p49mp1jeeuv2gtdv25/2026-11-25-Lecture5.pptx?rlkey=agvzj5taknnjpg1yivqy1t43l&dl=1 "Every click as in the lecture; movies play through")&nbsp;*45 MB* · [Keynote](https://www.dropbox.com/scl/fi/zpzhqouf2humkn60r4mpu/2026-11-25-Lecture5.key?rlkey=ijld6pz3vti8zaj6uww37n90c&dl=1 "Every click as in the lecture; movies play through")&nbsp;*31 MB*
-
-### 2 December: Some examples of viscoelasticity
-
-> [!slides] Slides
-> [PDF](https://www.dropbox.com/scl/fi/1buzlxaftrg2mnxwmxpd2/2026-12-02-Lecture6.pdf?rlkey=k294g43uc8ayzkni3k1lnrl3k&dl=1 "One page per slide; movies as still frames")&nbsp;*5 MB* · [PowerPoint](https://www.dropbox.com/scl/fi/jb8pvw8u61b7psktosomg/2026-12-02-Lecture6.pptx?rlkey=smb592zt589u6e0xqib3iyj5d&dl=1 "Every click as in the lecture; movies play through")&nbsp;*22 MB* · [Keynote](https://www.dropbox.com/scl/fi/2zn7mray3olb03a4p20pk/2026-12-02-Lecture6.key?rlkey=h1ztss6aiar06aahnf70mfy47&dl=1 "Every click as in the lecture; movies play through")&nbsp;*17 MB*
+> [PDF](https://www.dropbox.com/scl/fi/a1213vuz5mlqhk5uqkig8/2026-11-25-Lecture5.pdf?rlkey=10akmkaon4tkk72tl217crkhn&dl=1 "One page per slide; movies as still frames")&nbsp;*19 MB* · [PowerPoint](https://www.dropbox.com/scl/fi/7q8p49mp1jeeuv2gtdv25/2026-11-25-Lecture5.pptx?rlkey=agvzj5taknnjpg1yivqy1t43l&dl=1 "Every click as in the lecture; movies play through")&nbsp;*66 MB* · [Keynote](https://www.dropbox.com/scl/fi/zpzhqouf2humkn60r4mpu/2026-11-25-Lecture5.key?rlkey=ijld6pz3vti8zaj6uww37n90c&dl=1 "Every click as in the lecture; movies play through")&nbsp;*48 MB*
 
 ## Assessment
 
