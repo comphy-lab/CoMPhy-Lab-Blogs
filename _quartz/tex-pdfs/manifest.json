@@ -1384,7 +1384,7 @@
         "missingPaths": ["Lecture-Notes/Intro-Soft-Matter/0-README.md"]
       },
       "inputs": {
-        "Lecture-Notes/Intro-Soft-Matter/Conservation-Laws.md": "8025ef78b27b4cc95778fd6c244286af128f4c76b149793daa30ae7a07fde9c6",
+        "Lecture-Notes/Intro-Soft-Matter/Conservation-Laws.md": "10782d637fb298678e26a857f7b9e95f93a7b92625f32111668428283a21663d",
         "Lecture-Notes/Intro-Soft-Matter/index.md": "7f4420e9cda5304f764ab0784b090eac4278a184ed559d02d5c575a27bb441dc",
         "_Media/2-Conservation-Laws-1761807318276.png": "ad5e53df63737b05baf393ef984edd5b923816ba57e01db2272c02d6447b99e8",
         "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
@@ -1402,8 +1402,8 @@
         "@link-candidates": "81c7b73eeae506ec0a05fc7fbcc5870331e931ebf04592628820f3eef6cf4e08",
         "@missing-paths": "0c18ba8d753d7b0067ec50736abd8527751969757517b54e1d419ff41c3488ad"
       },
-      "sha256": "0960f2e324e2853dd4157d90ad4126c5c73d1dd443a390ca576609435693ed6b",
-      "pdfSha256": "6321e7b01ea668c54560993682b89d370d69e03e9ae1b8543880bafc472fbe99",
+      "sha256": "1e91538dbaf2b15db0af7565f528272e90fb6c7c61ca997afb171aeac609208c",
+      "pdfSha256": "bd3ff30fe9c660e4b47ce1d077a4f1f6b148fda7e28bfcbb2204ec8afc66e712",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
@@ -2017,7 +2017,7 @@
         "missingPaths": ["Lecture-Notes/Intro-Soft-Matter/0-README.md"]
       },
       "inputs": {
-        "Lecture-Notes/Intro-Soft-Matter/Viscoelasticity.md": "cf68485c9cb78cfe49a563d4e9a35f28b16f996aaeb9d2519de3308ca95276bf",
+        "Lecture-Notes/Intro-Soft-Matter/Viscoelasticity.md": "a97993c6296738e62b8cd5c97f649c767d9e4b1c33286adbb8dbd5c649c32362",
         "Lecture-Notes/Intro-Soft-Matter/index.md": "7f4420e9cda5304f764ab0784b090eac4278a184ed559d02d5c575a27bb441dc",
         "_Media/Intro-Soft-Matter-t-s17-tc-speed.png": "5b38cb6f96c1f52dcc91622823e543af673933d7640f9f0c5bbf055ff0b8c1d3",
         "_Media/Intro-Soft-Matter-t-s28-speed-ladder-3.png": "882862cb3f730f78458c1fde26bf6a30035344b62de83687287593f8bc479d84",
@@ -2048,8 +2048,8 @@
         "@link-candidates": "37cf6eda3b145eb16d76443f9d0cb886a22b19bb96b38c4e02c29c1695318f38",
         "@missing-paths": "0c18ba8d753d7b0067ec50736abd8527751969757517b54e1d419ff41c3488ad"
       },
-      "sha256": "3e784f09d23d97f189cfdf072d1bc99c01fa656e385712fc12aec44424f8ade6",
-      "pdfSha256": "48ec8f31e30df3380edb51034ebd269f2986cf311ff96a1ddccb0b7905e1879f",
+      "sha256": "ccda995cf057b2c243b4d389cb4983f3b82a977433a32d8c1960afa349909c9d",
+      "pdfSha256": "167528ec6dd7bf8538ee29d00eee1fd12ce8276464d908faa0c13e599c6e12ea",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",

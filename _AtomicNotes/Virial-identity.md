@@ -11,11 +11,11 @@ Show that the internal forces (pairwise interactions) can be written as a diverg
 
 $$\boxed{\sum_i \sum_{j \ne i} \boldsymbol{f}_{ij} \, \delta_i = -\nabla \cdot \boldsymbol{C}}$$
 
-where $\boldsymbol{C}$ is the configurational (virial) momentum-flux tensor:
+where $\boldsymbol{C}$ is the configurational (virial) momentum-flux tensor, with $\boldsymbol{r}_{ij} = \boldsymbol{r}_i - \boldsymbol{r}_j$ and divergence contracting the second index, $(\nabla \cdot \boldsymbol{C})_\alpha = \partial_\beta C_{\alpha\beta}$:
 
-$$\boldsymbol{C}(\boldsymbol{r}, t) = \frac{1}{2} \sum_{i \ne j} \boldsymbol{r}_{ij} \, \boldsymbol{f}_{ij} \int_0^1 \delta(\boldsymbol{r} - \boldsymbol{r}_j - s \boldsymbol{r}_{ij}) \, ds$$
+$$\boldsymbol{C}(\boldsymbol{r}, t) = \frac{1}{2} \sum_{i \ne j} \boldsymbol{f}_{ij} \, \boldsymbol{r}_{ij} \int_0^1 \delta(\boldsymbol{r} - \boldsymbol{r}_j - s \boldsymbol{r}_{ij}) \, ds$$
 
-This is the non-obvious bridge from particles to continuum stress.
+For central pair forces ($\boldsymbol{f}_{ij} \parallel \boldsymbol{r}_{ij}$), the dyad $\boldsymbol{f}_{ij}\boldsymbol{r}_{ij}$ is symmetric, so the factor order does not matter. This is the non-obvious bridge from particles to continuum stress.
 
 ---
 
@@ -37,11 +37,9 @@ The miracle: Newton's third law ($\boldsymbol{f}_{ij} = -\boldsymbol{f}_{ji}$) a
 Start with:
 $$\sum_i \sum_{j \ne i} \boldsymbol{f}_{ij} \, \delta_i$$
 
-Rewrite as a sum over *unordered pairs* $(i, j)$ with $i \ne j$:
+Symmetrize the double sum over *ordered pairs* $(i, j)$ with $i \ne j$; the factor $\frac{1}{2}$ accounts for counting each pair in both orders:
 
 $$\sum_i \sum_{j \ne i} \boldsymbol{f}_{ij} \, \delta_i = \frac{1}{2} \sum_{i \ne j} \left( \boldsymbol{f}_{ij} \delta_i + \boldsymbol{f}_{ji} \delta_j \right)$$
-
-(We're summing each pair twice, so we divide by 2.)
 
 Use $\boldsymbol{f}_{ij} = -\boldsymbol{f}_{ji}$ (Newton's third law):
 
@@ -103,10 +101,10 @@ $$\sum_i \sum_{j \ne i} \boldsymbol{f}_{ij} \, \delta_i = \frac{1}{2} \sum_{i \n
 $$= -\frac{1}{2} \sum_{i \ne j} \boldsymbol{f}_{ij} \, \nabla \cdot \int_0^1 \boldsymbol{r}_{ij} \, \delta(\boldsymbol{r} - \boldsymbol{r}_j - s \boldsymbol{r}_{ij}) \, ds$$
 
 Factor out the divergence:
-$$= -\nabla \cdot \left[ \frac{1}{2} \sum_{i \ne j} \boldsymbol{r}_{ij} \, \boldsymbol{f}_{ij} \int_0^1 \delta(\boldsymbol{r} - \boldsymbol{r}_j - s \boldsymbol{r}_{ij}) \, ds \right]$$
+$$= -\nabla \cdot \left[ \frac{1}{2} \sum_{i \ne j} \boldsymbol{f}_{ij} \, \boldsymbol{r}_{ij} \int_0^1 \delta(\boldsymbol{r} - \boldsymbol{r}_j - s \boldsymbol{r}_{ij}) \, ds \right]$$
 
 Define the virial tensor:
-$$\boxed{\boldsymbol{C}(\boldsymbol{r}, t) = \frac{1}{2} \sum_{i \ne j} \boldsymbol{r}_{ij} \, \boldsymbol{f}_{ij} \int_0^1 \delta(\boldsymbol{r} - \boldsymbol{r}_j - s \boldsymbol{r}_{ij}) \, ds}$$
+$$\boxed{\boldsymbol{C}(\boldsymbol{r}, t) = \frac{1}{2} \sum_{i \ne j} \boldsymbol{f}_{ij} \, \boldsymbol{r}_{ij} \int_0^1 \delta(\boldsymbol{r} - \boldsymbol{r}_j - s \boldsymbol{r}_{ij}) \, ds}$$
 
 Result:
 $$\boxed{\sum_i \sum_{j \ne i} \boldsymbol{f}_{ij} \, \delta_i = -\nabla \cdot \boldsymbol{C}}$$
@@ -114,7 +112,7 @@ $$\boxed{\sum_i \sum_{j \ne i} \boldsymbol{f}_{ij} \, \delta_i = -\nabla \cdot \
 ---
 
 > [!summary] Take-home message
-> Newton's third law says $\boldsymbol{f}_{ij} = -\boldsymbol{f}_{ji}$. So we can pair up forces: $\boldsymbol{f}_{ij}(\delta_i - \delta_j)$ is a force at $i$ minus its reaction at $j$. Now, the difference of two deltas can be written as a divergence along the bond connecting them—that's the calculus step. When we take a divergence, we 'smear' the pair force uniformly along the bond, and the divergence recovers the point forces at the ends. This is how pair forces become components of a stress tensor.
+> Newton's third law says $\boldsymbol{f}_{ij} = -\boldsymbol{f}_{ji}$, so the force at $i$ is paired with its equal and opposite reaction at $j$: $\boldsymbol{f}_{ij}\delta_i + \boldsymbol{f}_{ji}\delta_j = \boldsymbol{f}_{ij}(\delta_i - \delta_j)$. The difference of two deltas can be written as a divergence along the bond connecting them—that's the calculus step. The bond integral distributes the dyad $\boldsymbol{f}_{ij}\boldsymbol{r}_{ij}$ uniformly along the segment, and $-\nabla \cdot \boldsymbol{C}$ recovers the endpoint force density (force per unit volume). This is how pair forces enter the continuum stress tensor.
 
 ---
 
@@ -127,13 +125,13 @@ $$\text{Force on bond} = \boldsymbol{f}_{ij}$$
 $$\text{Distance along bond} = \boldsymbol{r}_{ij}$$
 
 The virial tensor $\boldsymbol{C}$ represents this:
-- Each bond contributes a dyadic product $\boldsymbol{r}_{ij} \boldsymbol{f}_{ij}$ (position times force).
+- Each bond contributes a dyadic product $\boldsymbol{f}_{ij} \boldsymbol{r}_{ij}$ (force times bond vector).
 - The integral $\int_0^1 \delta(\boldsymbol{r} - \boldsymbol{r}_j - s\boldsymbol{r}_{ij}) ds$ "smears" this contribution uniformly along the bond.
-- When we take a divergence, we recover the traction (force per unit area) on surfaces within the fluid.
+- Taking $-\nabla \cdot \boldsymbol{C}$ recovers the endpoint force density (force per unit volume); traction (force per unit area) is the stress contracted with the surface normal, $\boldsymbol{\sigma} \cdot \boldsymbol{n}$.
 
-Example: Central forces. If $\boldsymbol{f}_{ij} \parallel \boldsymbol{r}_{ij}$ (force along the line connecting the particles), then $\boldsymbol{r}_{ij} \boldsymbol{f}_{ij}$ is a symmetric dyad, and the virial tensor contributes to an *isotropic* stress (like pressure).
+Example: Central forces. If $\boldsymbol{f}_{ij} \parallel \boldsymbol{r}_{ij}$ (force along the line connecting the particles), then $\boldsymbol{f}_{ij} \boldsymbol{r}_{ij}$ is a symmetric dyad, giving a symmetric stress tensor (see Symmetry below). The averaged configurational stress is isotropic when the weighted second moment of the bond directions $\sum f_{ij} r_{ij} \hat{\boldsymbol{r}}_{ij}\hat{\boldsymbol{r}}_{ij}$ is proportional to the identity, with $f_{ij} = \boldsymbol{f}_{ij} \cdot \hat{\boldsymbol{r}}_{ij}$ the signed radial force. That holds for statistically isotropic bonds, as in a simple liquid at rest, and also for discrete bond sets whose weighted distribution has cubic symmetry, such as the nearest neighbours of a cubic crystal. A sheared solid or a flowing liquid held together by central forces can carry shear stress and normal-stress differences.
 
-Non-central forces (with components perpendicular to the bond) contribute to *anisotropic* stresses, including shear.
+Non-central pair forces (with components perpendicular to the bond) make the dyad $\boldsymbol{f}_{ij} \boldsymbol{r}_{ij}$ non-symmetric.
 
 ---
 
@@ -143,7 +141,7 @@ In index notation, the pair force contribution to the momentum balance is:
 $$f_\alpha^{(\text{int})} = -\partial_\beta C_{\alpha\beta}$$
 
 where
-$$C_{\alpha\beta} = \frac{1}{2} \sum_{i \ne j} r_{ij,\alpha} \, f_{ij,\beta} \int_0^1 \delta(\boldsymbol{r} - \boldsymbol{r}_j - s\boldsymbol{r}_{ij}) \, ds$$
+$$C_{\alpha\beta} = \frac{1}{2} \sum_{i \ne j} f_{ij,\alpha} \, r_{ij,\beta} \int_0^1 \delta(\boldsymbol{r} - \boldsymbol{r}_j - s\boldsymbol{r}_{ij}) \, ds$$
 
 This is the configurational part of the stress tensor. Together with the kinetic part ($\boldsymbol{K}$ from [[Dyadic-conversion]]), it forms the total microscopic stress $\boldsymbol{\Pi} = \boldsymbol{K} + \boldsymbol{C}$.
 
@@ -153,7 +151,7 @@ This is the configurational part of the stress tensor. Together with the kinetic
 
 Theorem: If all forces are central (i.e., $\boldsymbol{f}_{ij} \parallel \boldsymbol{r}_{ij}$), then the Cauchy stress tensor $\boldsymbol{\sigma}$ is symmetric: $\sigma_{\alpha\beta} = \sigma_{\beta\alpha}$.
 
-Proof sketch: For central forces, $\boldsymbol{r}_{ij} \boldsymbol{f}_{ij}$ is symmetric (the outer product of two parallel vectors). The kinetic part $\boldsymbol{K}$ is automatically symmetric (it's $m v_\alpha v_\beta$). So $\boldsymbol{\Pi} = \boldsymbol{K} + \boldsymbol{C}$ is symmetric, and hence $\boldsymbol{\sigma}$ is symmetric.
+Proof sketch: For central forces, $\boldsymbol{f}_{ij} \boldsymbol{r}_{ij}$ is symmetric (the outer product of two parallel vectors). The kinetic part $\boldsymbol{K}$ is automatically symmetric (it's $m v_\alpha v_\beta$). So $\boldsymbol{\Pi} = \boldsymbol{K} + \boldsymbol{C}$ is symmetric, and hence $\boldsymbol{\sigma}$ is symmetric.
 
 Why it matters: Symmetric stress is a consequence of angular momentum conservation. If the stress weren't symmetric, rotational torques wouldn't be balanced.
 

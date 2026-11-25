@@ -165,7 +165,7 @@ $$\partial_t \boldsymbol{g} + \nabla \cdot \boldsymbol{K} = \rho \boldsymbol{b} 
 
 ### Step 3: Turn pairwise forces into a divergence of the virial tensor
 
-This is the non-obvious step. See [[Virial-identity|detailed derivation]] for the bond-delta proof (its displayed dyad $\boldsymbol{r}_{ij}\,\boldsymbol{f}_{ij}$ agrees with the convention below for central pair forces). The key result is:
+This is the non-obvious step. See [[Virial-identity|detailed derivation]] for the bond-delta proof. The key result is:
 
 $$\boxed{\sum_i \sum_{j \ne i} \boldsymbol{f}_{ij} \, \delta_i = -\nabla \cdot \boldsymbol{C}}$$
 
@@ -420,7 +420,7 @@ These notes contain the mathematical details and alternative proofs that are too
 
 1. [[Moving-Delta-identity]]: Three detailed proofs of $\partial_t \delta_i = -\boldsymbol{v}_i \cdot \nabla \delta_i$ (chain rule, distributions, 1D sanity check)
 2. [[Dyadic-conversion]]: The algebraic steps to show $\sum_i m_i \boldsymbol{v}_i \partial_t \delta_i = -\nabla \cdot \sum_i m_i \boldsymbol{v}_i \boldsymbol{v}_i \delta_i$
-3. [[Virial-identity]]: Bond-delta derivation of $\delta_i - \delta_j = -\nabla \cdot \int_0^1 \boldsymbol{r}_{ij} \delta(\ldots) ds$ and its application to pair forces (its displayed dyad $\boldsymbol{r}_{ij}\boldsymbol{f}_{ij}$ agrees with the convention above for central forces)
+3. [[Virial-identity]]: Bond-delta derivation of $\delta_i - \delta_j = -\nabla \cdot \int_0^1 \boldsymbol{r}_{ij} \delta(\ldots) ds$ and its application to pair forces
 
 ---
 

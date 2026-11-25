@@ -242,7 +242,7 @@ Compare a liquid drop ($Ec = 0$) and a soft elastic bead ($De \to \infty$) of ra
 - **Liquid drop (Wagner):** contact grows as $r \sim \sqrt{3V_0 R_0 t}$ and, at large $We$, inertia controls the first force peak, $F \sim \rho V_0^2 R_0^2$, while low $We$ carries a capillary contribution (Zhang, Sanjay *et al.* 2022). At fixed $We$, this first peak varies weakly with viscosity over $Oh = \eta/\sqrt{\rho\gamma D_0} = 0.0025$–$0.2$ ($D_0 = 2R_0$; Sanjay, Zhang, Lv & Lohse 2025).
 - **Soft solid (Hertz):** compression $\delta(t)$ gives $r \sim \sqrt{R_0\delta}$ and stored energy $\sim GR_0^{1/2}\delta^{5/2}$. Balancing kinetic energy $\sim \rho R_0^3 V_0^2$ fixes $\delta \sim R_0(\rho V_0^2/G)^{2/5}$ and $F \sim GR_0^{1/2}\delta^{3/2} \sim (GR_0^2)^{2/5}(\rho V_0^2 R_0^2)^{3/5}$.
 
-On $El = G/(\rho V_0^2) = Ec/We$, large-$We$ simulations at $Oh = \eta_s/\sqrt{\rho\gamma R_0} = 0.01$ (radius-based) scaled by $\rho V_0^2 R_0^2$ collapse onto one curve (Jana, Kolinski, Lohse & Sanjay 2026): small $El$ sits on the Wagner plateau (capillarity lifts low-$We$ points), while large $El$ gives a single Hertz pulse growing as $El^{2/5}$ (theoretical prefactor $5.27$ against $5.25$ from simulations). See [[Lecture-Notes/Intro-Soft-Matter/Sheets-Bubbles-Drops|Sheets, Bubbles and Drops]] §3 for force histories and the $(We, Ec)$ map.
+The peak force normalized by $\rho V_0^2 R_0^2$ in large-$We$ simulations at $Oh = \eta_s/\sqrt{\rho\gamma R_0} = 0.01$ (radius-based) collapses onto one curve against $El = G/(\rho V_0^2) = Ec/We$ (Jana, Kolinski, Lohse & Sanjay 2026). At small $El$, it sits on the Wagner plateau (capillarity lifts low-$We$ points); at large $El$, impact gives a single Hertz pulse whose normalized peak grows as $El^{2/5}$ (prefactor $5.27$ in theory, $5.25$ in simulations). See [[Lecture-Notes/Intro-Soft-Matter/Sheets-Bubbles-Drops|Sheets, Bubbles and Drops]] §3 for force histories and the $(We, Ec)$ map.
 
 ## 7) Example 2: a hole in an elastic sheet
 
@@ -357,7 +357,7 @@ Restoring finite $De$ in Oldroyd-B ($Ec = 1$, $Oh = \sqrt{2}$) removes permanent
 *Opening speed $u^* = U/V_{\mathrm{TC}}$ against dimensionless time $t$ at $Ec = 1$, $Oh = \sqrt{2}$ for $De = 0$ (dash-dotted), $De \to \infty$ (orange), and finite $De = 0.1$–$316$ (V. Bertin et al., in preparation).*
 
 - **Fast to moderate relaxation ($De = 0.1, 1, 10$):** speed rises throughout, with a shoulder at $De = 10$. At $De = 1$, stretch builds at the tip and then relaxes, so the hole opens near $V_{\mathrm{TC}}$.
-- **Slow relaxation ($De = 31.6, 100, 316$):** for $t \ll De$, speed follows the arrested Kelvin–Voigt curve and dips; once stress relaxes, speed climbs back towards $V_{\mathrm{TC}}$ ($De = 31.6$ nears $V_{\mathrm{TC}}$ within the simulated time; $De = 100$ and $316$ are still climbing at its end).
+- **Slow relaxation ($De = 31.6, 100, 316$):** for $t \ll De$, speed follows the arrested Kelvin–Voigt curve and dips; once stress relaxes, speed climbs back towards $V_{\mathrm{TC}}$ ($De = 31.6$ nears $V_{\mathrm{TC}}$ by the end of its run; $De = 100$ and $316$ are still climbing at the end of theirs).
 
 ## Summary
 
@@ -377,7 +377,7 @@ Restoring finite $De$ in Oldroyd-B ($Ec = 1$, $Oh = \sqrt{2}$) removes permanent
 4. For finite simple shear $x = X + \gamma_s Y$, $y = Y$, $z = Z$ in a neo-Hookean solid ($\lambda \to \infty$), compute $\boldsymbol{\mathcal{F}}$ and $\boldsymbol{\mathcal{B}} = \boldsymbol{\mathcal{F}}\cdot\boldsymbol{\mathcal{F}}^{T}$ to find $\sigma_{xy}$ and $N_1 = G\gamma_s^2$, and connect to the $Wi \gtrsim De \gg 1$ Pipkin corner.
 5. Solve steady Oldroyd-B in planar extension ($u_x = \dot\varepsilon x$, $u_y = -\dot\varepsilon y$, $u_z = 0$) for $\mathcal{A}_{xx}$, $\mathcal{A}_{yy}$, and $\eta_{E,\mathrm{planar}} = (\sigma_{xx} - \sigma_{yy})/\dot\varepsilon$; compare its low-$Wi$ Trouton ratio and divergence with uniaxial extension (§5.1).
 6. For fixed $G$ and $R_0$ at large $We$, use $El = G/(\rho V_0^2)$ to find the speed $V_0$ separating Hertz ($El \gg 1$) and Wagner ($El \ll 1$) impact, and compare the $V_0$-scaling of peak force on each side.
-7. In the constant-thickness approximation ($k = e^{-2y}$ from §7.4), keep $Y = \ln(R_\infty/R_0)$ finite rather than taking $Y \to \infty$. Show that $\int_0^Y e^{-2y}\,dy = (1 - e^{-2Y})/2$ and solve $Y = 2/Ec - (1 - e^{-2Y})/2$ numerically at $Ec = 1$ (verifying $Y \approx 1.52$, $R_\infty \approx 4.6 R_0$). Compare this with the $Y \to \infty$ value of the same approximation ($R_0 e^{3/2} \approx 4.5 R_0$), the leading-order estimate $R_0 e^{2} \approx 7.4 R_0$, and the static equilibrium $4.24 R_0$; identify whether the remaining gap to $4.24 R_0$ comes from truncating $Y$ or from the rim shape $k(y)$.
+7. In the constant-thickness approximation ($k = e^{-2y}$ from §7.4), keep $Y = \ln(R_\infty/R_0)$ finite rather than taking $Y \to \infty$. Show that $\int_0^Y e^{-2y}\,dy = (1 - e^{-2Y})/2$ and solve $Y = 2/Ec - (1 - e^{-2Y})/2$ numerically at $Ec = 1$ (verifying $Y \approx 1.52$, $R_\infty \approx 4.6 R_0$). Compare this with the value from the same approximation when the upper limit of the integral is taken to infinity ($R_0 e^{3/2} \approx 4.5 R_0$), the leading-order estimate $R_0 e^{2} \approx 7.4 R_0$, and the static equilibrium $4.24 R_0$; identify whether the remaining gap to $4.24 R_0$ comes from truncating $Y$ or from the rim shape $k(y)$.
 
 ## References
 
@@ -391,7 +391,7 @@ Restoring finite $De$ in Oldroyd-B ($Ec = 1$, $Oh = \sqrt{2}$) removes permanent
 8. B. Zhang, V. Sanjay, S. Shi, Y. Zhao, C. Lv, X.-Q. Feng & D. Lohse, Impact forces of water drops falling on superhydrophobic surfaces, *Phys. Rev. Lett.* **129**, 104501 (2022). [doi:10.1103/PhysRevLett.129.104501](https://doi.org/10.1103/PhysRevLett.129.104501)
 9. V. Sanjay, B. Zhang, C. Lv & D. Lohse, The role of viscosity on drop impact forces on non-wetting surfaces, *J. Fluid Mech.* **1004**, A6 (2025). [doi:10.1017/jfm.2024.982](https://doi.org/10.1017/jfm.2024.982)
 10. S. Jana, J. Kolinski, D. Lohse & V. Sanjay, Impacting spheres: from liquid drops to elastic beads, *Soft Matter* **22**, 2226–2236 (2026). [doi:10.1039/D5SM01078K](https://doi.org/10.1039/D5SM01078K)
-11. G. I. Taylor, The dynamics of thin sheets of fluid. III. Disintegration of fluid sheets, *Proc. R. Soc. A* **253**, 313–321 (1959). [doi:10.1098/rspa.1959.0196](https://doi.org/10.1098/rspa.1959.0196)
+11. G. I. Taylor, The dynamics of thin sheets of fluid. III. Disintegration of fluid sheets, *Proc. R. Soc. Lond. A* **253**, 313–321 (1959). [doi:10.1098/rspa.1959.0196](https://doi.org/10.1098/rspa.1959.0196)
 12. F. E. C. Culick, Comments on a ruptured soap film, *J. Appl. Phys.* **31**, 1128–1129 (1960). [doi:10.1063/1.1735765](https://doi.org/10.1063/1.1735765)
 13. P.-G. de Gennes, Mechanics of soft interfaces, *Faraday Discuss.* **104**, 1–8 (1996). [doi:10.1039/FD9960400001](https://doi.org/10.1039/FD9960400001)
 14. V. Sanjay, U. Sen, P. Kant & D. Lohse, Taylor–Culick retractions and the influence of the surroundings, *J. Fluid Mech.* **948**, A14 (2022). [doi:10.1017/jfm.2022.671](https://doi.org/10.1017/jfm.2022.671)
