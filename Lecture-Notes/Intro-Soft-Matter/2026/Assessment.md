@@ -9,7 +9,7 @@ date: 2026-11-18
 Each student chooses one of two singularities, computes it, submits the work as a pull request to the [course repository](https://github.com/comphy-lab/Intro-Soft-Matter-2026), and presents and defends it in the final session. The repository README is the authoritative brief; this page summarises it. For the teaching sequence, see the [[Lecture-Notes/Intro-Soft-Matter/2026/0-README|2026 course page]].
 
 > [!slides] Slides
-> [PDF](https://www.dropbox.com/scl/fi/2dj32vardrg2col6zlq2i/2026-11-18-Assessment.pdf?rlkey=ow1ip6u040eimxbrnvhuy77fj&dl=1 "One page per slide")&nbsp;*1 MB* · [PowerPoint](https://www.dropbox.com/scl/fi/44llao27xe3muhvva18s4/2026-11-18-Assessment.pptx?rlkey=kf9hx1o7arctzl8nxdg3ua8k0&dl=1 "Every click as in the lecture")&nbsp;*4 MB* · [Keynote](https://www.dropbox.com/scl/fi/o2hfy09me2nwpn558p7pm/2026-11-18-Assessment.key?rlkey=crxrg95n2w2omoxov7mqmjrjh&dl=1 "Every click as in the lecture")&nbsp;*2 MB*
+> [PDF](https://www.dropbox.com/scl/fi/2dj32vardrg2col6zlq2i/2026-11-18-Assessment.pdf?rlkey=ow1ip6u040eimxbrnvhuy77fj&dl=1 "One page per slide")&nbsp;*3 MB* · [PowerPoint](https://www.dropbox.com/scl/fi/44llao27xe3muhvva18s4/2026-11-18-Assessment.pptx?rlkey=kf9hx1o7arctzl8nxdg3ua8k0&dl=1 "Every click as in the lecture")&nbsp;*5 MB* · [Keynote](https://www.dropbox.com/scl/fi/o2hfy09me2nwpn558p7pm/2026-11-18-Assessment.key?rlkey=crxrg95n2w2omoxov7mqmjrjh&dl=1 "Every click as in the lecture")&nbsp;*3 MB*
 
 | Part | Weight |
 |---|---|
