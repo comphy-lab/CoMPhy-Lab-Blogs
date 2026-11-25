@@ -287,7 +287,16 @@ export async function convert(
       })
     }
     if (value.t === "Link") {
-      value.c[2][0] = webLink(source, value.c[2][0], files)
+      const target = value.c[2][0]
+      const destination = webLink(source, target, files)
+      // Keep relative paths, file names, and fragments URL-formatted after rebasing.
+      if (
+        destination !== target &&
+        /[/#]|\.[A-Za-z0-9]{1,5}$/.test(target) &&
+        stringify(value.c[1]) === target
+      )
+        value.c[0][1].push("pdf-url-label")
+      value.c[2][0] = destination
     }
     if (value.t === "Image") await image(value)
     if (value.t === "RawBlock" || value.t === "RawInline") {

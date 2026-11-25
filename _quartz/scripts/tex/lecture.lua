@@ -48,4 +48,72 @@ function Image(el)
   return pandoc.RawInline('latex', tex .. '\\end{center}')
 end
 
-return {{BlockQuote = BlockQuote}, {Math = Math, Image = Image}}
+local function hasWhitespace(text)
+  if text:find('%s') then return true end
+  -- Lua's %s does not cover the non-ASCII Unicode White_Space characters.
+  for _, c in utf8.codes(text) do
+    if c == 0x85 or c == 0xA0 or c == 0x1680 or (c >= 0x2000 and c <= 0x200A)
+        or c == 0x2028 or c == 0x2029 or c == 0x202F or c == 0x205F or c == 0x3000 then
+      return true
+    end
+  end
+  return false
+end
+
+local function urlText(inline)
+  -- Escape TeX specials before hyperref scans the URL label.
+  local label = inline.text:gsub('[\\{}%%#%^&_$~]', function(char)
+    return ('\\lectureurlchar{%d}'):format(char:byte())
+  end)
+  local tex = '\\lectureurl{' .. label .. '}'
+  if inline.t == 'Code' then tex = '\\texttt{' .. tex .. '}' end
+  -- Keep the original inline available for Pandoc's PDF bookmark text.
+  return {pandoc.RawInline('latex', '\\texorpdfstring{' .. tex .. '}{'),
+          inline, pandoc.RawInline('latex', '}')}
+end
+
+function Link(el)
+  local label = pandoc.utils.stringify(el.content)
+  local prefix = label:match('^[dD][oO][iI]: *') or ''
+  local identifier = label:sub(#prefix + 1)
+  if hasWhitespace(identifier) or identifier:find('##', 1, true) then return end
+  local registrant = identifier:match('^10%.(%d+)/.+$')
+  local isDoi = registrant and #registrant >= 4 and #registrant <= 9
+  local isUrl = label:match('^[a-zA-Z][a-zA-Z0-9+.-]*://.+$') or label:match('^www%..+$')
+      or el.classes:includes('pdf-url-label')
+  if not isDoi and (not isUrl or hasWhitespace(label)) then return end
+
+  -- Pandoc's native \url already uses xurl and preserves URL annotations.
+  local native = pandoc.write(pandoc.Pandoc({pandoc.Plain({el})}), 'latex')
+  if native:match('^\\url{') then return end
+
+  -- The prefix may span text and spaces or share an inline with the identifier.
+  local remaining = isDoi and prefix or ''
+  local function formatText(inline)
+    if remaining == '' then return urlText(inline) end
+    local count = math.min(#remaining, #inline.text)
+    local prefixText = inline.text:sub(1, count)
+    if prefixText ~= remaining:sub(1, count) then return end
+    remaining = remaining:sub(count + 1)
+    if count == #inline.text then return end
+
+    local prefixInline = inline:clone()
+    prefixInline.text = prefixText
+    inline.text = inline.text:sub(count + 1)
+    local formatted = urlText(inline)
+    table.insert(formatted, 1, prefixInline)
+    return formatted
+  end
+  local formatted = el:walk {
+    traverse = 'topdown',
+    Note = function(note) return note, false end,
+    Space = function()
+      if remaining:sub(1, 1) == ' ' then remaining = remaining:sub(2) end
+    end,
+    Str = formatText,
+    Code = formatText,
+  }
+  if remaining == '' then return formatted end
+end
+
+return {{Link = Link, BlockQuote = BlockQuote}, {Math = Math, Image = Image}}

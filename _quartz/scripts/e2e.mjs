@@ -1,4 +1,4 @@
-import { chromium } from "playwright"
+import { chromium, errors } from "playwright"
 import { readdirSync, readFileSync, mkdirSync, writeFileSync } from "node:fs"
 import { join, relative, resolve } from "node:path"
 import assert from "node:assert/strict"
@@ -443,46 +443,107 @@ try {
   await page.waitForFunction(() => !document.querySelector(".global-graph-outer.active"))
   report.interactions.globalGraphReopen = true
 
+  // Observe the local simulation on the next redraw. The graph sets
+  // data-graph-ready as soon as it mounts, while the nodes are still moving.
+  await page.evaluate(() => {
+    const simulate = window.d3.forceSimulation
+    window.d3.forceSimulation = function (...args) {
+      const simulation = simulate.apply(this, args)
+      const canvas = document.querySelector('.graph-container[data-graph-ready="false"] canvas')
+      if (canvas) {
+        simulation.on("end.e2e", () => {
+          // Give Pixi a frame to draw the final node positions.
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              canvas.e2eGraphNodes = simulation.nodes()
+              canvas.dataset.e2eGraphSettled = "true"
+            })
+          })
+        })
+      }
+      return simulation
+    }
+  })
   for (let attempt = 0; attempt < 2; attempt++) {
     await page.locator(".darkmode").first().click()
     await localGraph.waitFor()
     assert.equal(await localGraph.locator("canvas").count(), 1)
   }
   report.interactions.graphThemeChange = true
-  await page.setViewportSize({ width: 390, height: 844 })
-  await page.waitForFunction(() => {
+  const graphMatchesViewport = () => {
     const graph = document.querySelector('.graph-container[data-graph-ready="true"]')
     const canvas = graph?.querySelector("canvas")
-    return canvas && Math.abs(canvas.getBoundingClientRect().width - graph.clientWidth) <= 1
-  })
+    // CSS can shrink the old canvas before the resize handler redraws it.
+    return (
+      canvas &&
+      Math.abs(canvas.width / devicePixelRatio - graph.clientWidth) <= 1 &&
+      Math.abs(canvas.getBoundingClientRect().width - graph.clientWidth) <= 1
+    )
+  }
+  await page.setViewportSize({ width: 390, height: 844 })
+  await page.waitForFunction(graphMatchesViewport)
   assert(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1))
   await page.setViewportSize({ width: 1280, height: 900 })
-  await page.waitForFunction(() => {
-    const graph = document.querySelector('.graph-container[data-graph-ready="true"]')
-    const canvas = graph?.querySelector("canvas")
-    return canvas && Math.abs(canvas.getBoundingClientRect().width - graph.clientWidth) <= 1
-  })
+  await page.waitForFunction(graphMatchesViewport)
   report.interactions.graphResize = true
-  const beforeGraph = page.url()
-  const canvas = localGraph.locator("canvas")
-  // The graph redraws on resize and theme change, replacing its canvas; wait
-  // for a laid-out canvas rather than measuring during a redraw.
-  let box = null
-  for (let attempt = 0; attempt < 50 && !box; attempt++) {
-    box = await canvas.boundingBox().catch(() => null)
-    if (!box) await page.waitForTimeout(100)
-  }
-  assert(box, "local graph canvas never became measurable")
-  graphHit: for (let y = 8; y < box.height; y += 8) {
-    for (let x = 8; x < box.width; x += 8) {
-      await page.mouse.move(box.x + x, box.y + y)
-      if ((await canvas.evaluate((el) => getComputedStyle(el).cursor)) !== "pointer") continue
-      await page.mouse.click(box.x + x, box.y + y)
-      await page.waitForTimeout(200)
-      if (page.url() !== beforeGraph) break graphHit
+  const beforeGraph = canonicalPath(page.url())
+  const graphNavigated = (url) => canonicalPath(url) !== beforeGraph
+  const settledCanvas = localGraph.locator('canvas[data-e2e-graph-settled="true"]')
+  const graphReadyBy = Date.now() + 30_000
+  const readinessTimeLeft = () => Math.max(1, graphReadyBy - Date.now())
+  const tried = new Set([simplifySlug(graphPage)])
+  let clickPoint
+  while (Date.now() < graphReadyBy) {
+    let currentCanvas
+    try {
+      // Resolve each candidate against the current canvas in case it redraws.
+      await settledCanvas.scrollIntoViewIfNeeded({ timeout: readinessTimeLeft() })
+      currentCanvas = await settledCanvas.elementHandle({ timeout: readinessTimeLeft() })
+      const point = await currentCanvas.evaluate(
+        (el, tried) => {
+          if (!el.isConnected) return null
+          const node = el.e2eGraphNodes.find(({ id }) => !tried.includes(id))
+          if (!node) return false
+          const box = el.getBoundingClientRect()
+          return {
+            id: node.id,
+            x: box.x + box.width / 2 + node.x,
+            y: box.y + box.height / 2 + node.y,
+          }
+        },
+        [...tried],
+      )
+      if (point === null) continue
+      if (!point || Date.now() >= graphReadyBy) break
+      await page.mouse.move(point.x, point.y)
+      const hit = await currentCanvas.evaluate((el, { x, y }) => {
+        if (!el.isConnected) return null
+        return document.elementFromPoint(x, y) === el && getComputedStyle(el).cursor === "pointer"
+      }, point)
+      if (hit === null) continue
+      tried.add(point.id)
+      if (!hit) continue
+      clickPoint = point
+      break
+    } catch (error) {
+      if (!(error instanceof errors.TimeoutError)) throw error
+      break
+    } finally {
+      await currentCanvas?.dispose()
     }
   }
-  assert.notEqual(page.url(), beforeGraph, "graph node click did not navigate")
+  assert(clickPoint, "local graph did not expose a clickable non-current node")
+  // Arm the navigation wait at the click, after releasing the canvas handle.
+  const [navigation, click] = await Promise.allSettled([
+    page.waitForURL(graphNavigated, { waitUntil: "commit", timeout: 30_000 }),
+    page.mouse.click(clickPoint.x, clickPoint.y),
+  ])
+  if (!graphNavigated(page.url())) {
+    if (click.status === "rejected") throw click.reason
+    if (navigation.status === "rejected" && !(navigation.reason instanceof errors.TimeoutError))
+      throw navigation.reason
+    assert.fail("graph node click did not navigate")
+  }
   await localGraph.waitFor()
   assert.equal(
     await localGraph.getAttribute("data-graph-slug"),

@@ -33,6 +33,18 @@
 \definecolor{accent}{HTML}{254C4A}
 \usepackage[colorlinks=true,allcolors=accent,breaklinks=true]{hyperref}
 \usepackage{xurl}
+% Expand literal URL characters when hyperref scans the label. Keep the
+% escapes intact when LaTeX writes a heading to its auxiliary files.
+\ExplSyntaxOn
+\cs_new_protected:Npn \lectureurlchar #1 { \char_generate:nn {#1} {12} }
+\NewDocumentCommand{\lectureurl}{m}{
+  \group_begin:
+  \cs_set:Npn \lectureurlchar ##1 { \char_generate:nn {##1} {12} }
+  \urlstyle{same}\Urlmuskip=0mu\relax
+  \nolinkurl{#1}
+  \group_end:
+}
+\ExplSyntaxOff
 \usepackage{bookmark}
 \hypersetup{pdftitle={$title$},pdfauthor={Vatsal Sanjay}}
 \pagestyle{fancy}
