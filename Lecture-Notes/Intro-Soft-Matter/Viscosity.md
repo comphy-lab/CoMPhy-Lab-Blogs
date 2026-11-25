@@ -20,7 +20,7 @@ publish: true
 <!-- PDF-EXPORT-IGNORE-END -->
 <!-- BLOG-PDF-LINK-END -->
 
-Understanding viscosity as an emergent property arising from molecular collisions and free flights—the diffusion of tangential momentum through a fluid. This lecture bridges [[Lecture-Notes/Intro-Soft-Matter/Taylor-Culick-Paradox|the Taylor–Culick paradox]]'s resolution of the Taylor–Culick paradox with the continuum mechanics framework needed to model soft matter flows.
+Understanding viscosity as an emergent transport property arising from molecular collisions and free flights—the diffusion of tangential momentum through a fluid. This lecture bridges [[Lecture-Notes/Intro-Soft-Matter/Taylor-Culick-Paradox|the Taylor–Culick paradox]] with the continuum mechanics needed to model soft matter flows.
 
 ---
 
@@ -28,40 +28,40 @@ Understanding viscosity as an emergent property arising from molecular collision
 
 By the end of this lecture, you should understand these five core concepts:
 
-1. What viscosity is: a coefficient quantifying the *diffusion of tangential momentum*
-2. Where it comes from (kinetics): molecular collisions + free flights over the mean free path $\lambda$
-3. Why no-slip is natural: collisions at a wall randomize tangential momentum → momentum sink → velocity gradient forms
+1. What viscosity is: a transport coefficient governing the *diffusion of tangential momentum*
+2. Where it comes from (kinetics): molecular collisions and free flights over the mean free path $\lambda$
+3. Why no-slip emerges: wall collisions randomize tangential momentum, creating a momentum sink and a velocity gradient
 4. Two key scalings:
-   - $\eta \sim \frac{1}{3}\rho \bar{c} \lambda$ (viscosity; depends on density, speed, path length)
+   - $\eta \sim \frac{1}{3}\rho \bar{c} \lambda$ (dynamic viscosity; angle-averaged kinetic estimate)
    - $\nu = \eta/\rho \sim \frac{\bar{c}\lambda}{3}$ (kinematic viscosity = momentum diffusivity)
-1. Later connections: Newtonian stress law in continuum mechanics; relaxation-function picture in rheology
+5. Later connections: the Newtonian stress law in continuum mechanics and the relaxation-function picture in rheology
 
 ---
 
 ## Part A: Empirical Starting Point — Newton's Law
 
-We begin with Newton's law of viscosity, the foundational definition of a Newtonian fluid:
+We begin with Newton's law of viscosity, the defining relation of a Newtonian fluid:
 
 $$\boxed{\tau_{xy} = \eta \dot{\gamma} = \eta \frac{\partial u_x}{\partial y}}$$
 
-This equation states that shear stress is proportional to shear rate, with a constant of proportionality—the viscosity $\eta$—that depends on the material and temperature, but *not* on how fast we shear it. This is the foundational definition of a Newtonian fluid.
+Shear stress is proportional to shear rate, with a proportionality constant—the dynamic viscosity $\eta$—that depends on the material and temperature, and not on how fast the fluid is sheared.
 
 ![](../../_Media/2-What-is-Viscosity-1761738216814.png)
 
 ### Key Definitions
 
 - Shear stress $\tau_{xy}$ (Pa = N/m$^2$): force per unit area acting tangentially on a fluid layer
-- Strain rate $\dot{\gamma} = \partial u_x / \partial y$ (s$^{-1}$): the spatial gradient of velocity; how quickly the velocity changes across the fluid
-- Viscosity $\eta$ (Pa$\cdot$s): the coupling coefficient; higher $\eta$ means stickier fluid
-- Kinematic viscosity $\nu = \eta/\rho$ (m$^2$/s): the "speed" at which momentum diffuses through the fluid
+- Strain rate $\dot{\gamma} = \partial u_x / \partial y$ (s$^{-1}$): the spatial gradient of velocity across the shear layer
+- Viscosity $\eta$ (Pa$\cdot$s): the transport coefficient coupling shear rate to shear stress
+- Kinematic viscosity $\nu = \eta/\rho$ (m$^2$/s): the momentum diffusivity (setting the time $L^2/\nu$ for shear to diffuse across a distance $L$)
 
 ![](../../_Media/2-What-is-Viscosity-1761738244038.png)
 
 > [!important] Distinguishing Newtonian vs. Non-Newtonian Fluids
 >
-> A Newtonian fluid has constant $\eta$ at fixed temperature—it doesn't matter if you shear slowly or fast. Many familiar fluids like water, air, and simple oils are Newtonian. However, ketchup, blood, and polymer solutions are *non-Newtonian* ($\eta$ changes with $\dot{\gamma}$); we'll encounter these behaviors in Lectures 5 and 6.
+> A Newtonian fluid has constant $\eta$ at fixed temperature, independent of shear rate. Water, air and simple oils are Newtonian. Ketchup, blood and polymer solutions are *non-Newtonian*, with $\eta$ varying with $\dot{\gamma}$; these behaviours appear later in the course (viscoelasticity and free-surface flows).
 
-Physical Interpretation: Viscosity represents internal friction—the resistance of the fluid to shearing motion.
+Viscosity represents internal friction: the resistance of a fluid to shearing motion.
 
 ---
 
@@ -69,7 +69,7 @@ Physical Interpretation: Viscosity represents internal friction—the resistance
 
 ### The Fundamental Concept
 
-Viscosity emerges because molecules carry momentum across planes during free flights between collisions. When the flow has a shear (velocity gradient), molecules from fast and slow regions mix, and this diffuses momentum down the gradient.
+Viscosity arises because molecules carry momentum across planes during free flights between collisions. When the flow is sheared, molecules from faster and slower regions exchange places, diffusing tangential momentum down the velocity gradient.
 
 ---
 
@@ -80,10 +80,10 @@ Viscosity emerges because molecules carry momentum across planes during free fli
 Consider a steady shear flow where:
 1. Velocity varies linearly: $u_x(y) = \dot{\gamma} \cdot y$
 2. Mean free path: $\lambda$
-3. Mean molecular speed: $\bar{c} = \sqrt{8 k_B T / (\pi m)}$ (monatomic gas)
+3. Mean molecular speed: $\bar{c} = \sqrt{8 k_B T / (\pi m)}$ (Maxwell–Boltzmann distribution for molecules of mass $m$)
 4. Number density: $n$
 
-In this geometry, molecules at height $y$ have average $x$-velocity $u_x(y)$. But they only came to height $y$ after traveling a distance $\sim \lambda$ through the fluid. The $x$-momentum they carry reflects the conditions they saw $\sim \lambda$ away—this is where the velocity gradient matters.
+Molecules at height $y$ have mean $x$-velocity $u_x(y)$, but they arrive there after travelling a distance $\sim \lambda$ since their previous collision. The $x$-momentum they carry reflects the mean velocity roughly a distance $\lambda$ away, which is how the velocity gradient enters.
 
 ---
 
@@ -93,15 +93,15 @@ For an isotropic gas, the number of molecules crossing a plane (per unit area pe
 
 $$\boxed{J = \frac{1}{4} n \bar{c}}$$
 
-This factor of 1/4 arises from two geometric considerations:
-1. Half the molecules move upward and half downward (factor of 1/2)
-2. Of those moving upward, the average normal component of velocity is $\bar{c}/2$ because the mean direction makes approximately a 60° angle to the normal
+The factor of $1/4$ comes from two geometric factors:
+1. Half the molecules move upwards and half downwards (factor of $1/2$)
+2. Of those moving upwards, the average normal velocity component is $\bar{c}/2$, because the hemisphere average of $\cos\theta$ is $1/2$ ($\cos 60^\circ$)
 
-Therefore: $\langle v_y^+ \rangle = (1/2) \times (1/2) \bar{c} = \bar{c}/4$, giving $J = n \bar{c}/4$.
+Therefore $\langle v_y^+ \rangle = (1/2) \times (1/2)\bar{c} = \bar{c}/4$, giving $J = n\bar{c}/4$.
 
 #### Alternative Derivation
 
-For a more rigorous approach, we integrate over the hemisphere of upward directions:
+Integrating over the hemisphere of upward directions gives:
 
 $$\langle v_y^+ \rangle_{\text{dir}} = \frac{1}{4\pi} \int_{\text{hemisphere}} c \cos\theta \, d\Omega = \frac{1}{4\pi} \int_0^{2\pi} d\phi \int_0^{\pi/2} c\cos\theta \sin\theta \, d\theta = \frac{c}{4}$$
 
@@ -113,7 +113,7 @@ Averaging over the Maxwellian speed distribution yields $J = n \bar{c}/4$.
 
 ### Step 2: Momentum Transport
 
-A molecule crossing the plane upward was last collided at approximately $y-\lambda$, so it carries the mean $x$-momentum from that height. Similarly, a molecule crossing downward carries momentum from around $y+\lambda$.
+A molecule crossing the plane upwards last collided near $y - \lambda$ and carries the mean $x$-momentum from that height. Likewise, a molecule crossing downwards carries momentum from near $y + \lambda$.
 
 ---
 
@@ -156,7 +156,7 @@ We obtain:
 
 $$\boxed{\eta \sim C \, \rho \, \bar{c} \, \lambda, \quad\text{where } C = \mathcal{O}(1)}$$
 
-The more sophisticated Chapman-Enskog theory gives $C \approx 1/3$ for a monatomic gas, but the scaling relationship is the key physical insight.
+Accounting for oblique crossing angles replaces the vertical step $\lambda$ with its flux-weighted average $\frac{2}{3}\lambda$, giving $C = 1/3$. With the standard hard-sphere mean-free-path convention $\lambda = 1/(\sqrt{2}\pi n d^2)$, the more detailed Chapman–Enskog theory gives $C = 5\pi/32 \approx 0.491$ (and $0.499$ at higher order). Across all of these approximations, the scaling $\eta \sim \rho \bar{c} \lambda$ is unchanged.
 
 ---
 
@@ -166,9 +166,9 @@ The kinematic viscosity is:
 
 $$\boxed{\nu = \frac{\eta}{\rho} \sim C \, \bar{c} \, \lambda}$$
 
-Physical Interpretation: The kinematic viscosity $\nu$ is the diffusivity for momentum. Just as thermal diffusivity ($\alpha$) measures how fast heat spreads, $\nu$ measures how fast shear (tangential momentum) propagates through a fluid.
+The kinematic viscosity $\nu$ is the diffusivity of momentum: just as thermal diffusivity $\alpha$ sets how fast heat spreads, $\nu$ sets how fast shear (tangential momentum) spreads through a fluid.
 
-Dimensional Analysis: $[\bar{c}][\lambda] = \text{(m/s)} \times \text{(m)} = \text{m}^2/\text{s}$ ✓
+Dimensional check: $[\bar{c}][\lambda] = \text{(m/s)} \times \text{(m)} = \text{m}^2/\text{s}$ ✓
 
 ---
 
@@ -183,7 +183,7 @@ Dimensional Analysis: $[\bar{c}][\lambda] = \text{(m/s)} \times \text{(m)} = \te
 > [!summary] Momentum Accommodation at Walls
 > When a gas molecule collides with a stationary wall, the wall randomizes (thermalizes) its tangential velocity component. The molecule re-emits with zero mean tangential velocity in the wall frame. This process is called diffuse reflection with full tangential momentum accommodation.
 
-The wall acts as a sink of $x$-momentum. Every molecule that hits the wall loses its tangential velocity. Just outside the wall, there's a deficit in mean $u_x$ compared to the interior.
+The wall acts as a sink of $x$-momentum. Every molecule that hits the wall loses its mean tangential velocity, creating a deficit in $u_x$ adjacent to the wall relative to the interior.
 
 ---
 
@@ -191,7 +191,7 @@ The wall acts as a sink of $x$-momentum. Every molecule that hits the wall loses
 
 In steady state, the viscous flux from the interior must feed the momentum sink at the wall.
 
-Rate of momentum removal at wall (per unit area):
+Rate of momentum removal at the wall (per unit area):
 $$\text{Removal rate} \sim \underbrace{\left(\frac{1}{4}n\bar{c}\right)}_{\text{collision rate}} \times \underbrace{m u_x(0^+)}_{\text{momentum per molecule}}$$
 
 where $u_x(0^+)$ is the fluid velocity just outside the wall.
@@ -202,7 +202,7 @@ $$\text{Supply rate} = \tau_{xy}\big|_{\text{wall}} = \eta \frac{\partial u_x}{\
 Steady-state balance:
 $$\eta \frac{\partial u_x}{\partial y}\bigg|_{\text{wall}} \sim \frac{1}{4}n\bar{c} \, m \, u_x(0^+)$$
 
-For small $u_x(0^+)$ or perfect accommodation, this forces $u_x(0^+) \to u_{\text{wall}} = 0$.
+Substituting $\eta \sim \rho \bar{c} \lambda = n m \bar{c} \lambda$ gives $u_x(0^+) \sim \lambda \, (\partial u_x / \partial y)\big|_{\text{wall}}$. Over a macroscopic length $L$ with flow speed $U$, the ratio $u_x(0^+)/U \sim \lambda/L = \text{Kn}$ vanishes when $\lambda \ll L$, forcing $u_x(0^+) \to u_{\text{wall}} = 0$.
 
 Result:
 
@@ -212,25 +212,23 @@ $$\boxed{u_{\text{fluid}}(\text{wall}) = u_{\text{wall}} \quad\text{(no-slip con
 
 ### When Does Slip Appear?
 
-No-slip is the continuum limit, valid when the mean free path $\lambda$ is much smaller than any relevant geometric length (Knudsen number $\text{Kn} = \lambda/L \ll 1$).
+No-slip is the leading-order continuum limit, valid when the Knudsen number $\text{Kn} = \lambda/L \ll 1$ for diffuse walls (more generally $b/L \ll 1$, with the slip length $b$ defined below).
 
-For rarefied gases or special surfaces (non-accommodating walls):
-
-The wall doesn't fully thermalize the tangential momentum, resulting in partial slip:
+When $\text{Kn}$ is small but nonzero (the slip-flow regime, as in moderately rarefied gases or microchannels), the first-order boundary condition for the extrapolated continuum velocity at the wall is the Maxwell slip law:
 
 $$u_{\text{slip}} = u_{\text{fluid}}(0) - u_{\text{wall}} = b \frac{\partial u_x}{\partial y}\bigg|_{\text{wall}}$$
 
-where the slip length is $b \sim \mathcal{O}(\lambda)$, modulated by an accommodation coefficient.
+where the slip length $b$ is proportional to $\lambda$, with a slip coefficient set by the tangential momentum accommodation coefficient $\alpha_t \in (0, 1]$:
 
-Maxwell slip law:
+$$\boxed{b \approx C_{\text{acc}} \lambda, \quad C_{\text{acc}} \approx \frac{2-\alpha_t}{\alpha_t}}$$
 
-$$\boxed{b \approx C_{\text{acc}} \lambda, \quad C_{\text{acc}} \approx 1-2}$$
+Full diffuse accommodation ($\alpha_t = 1$) gives $C_{\text{acc}} = 1$, typical surfaces with $\alpha_t \approx 0.7\text{–}1$ give $C_{\text{acc}} \approx 1\text{–}2$, and incomplete accommodation ($\alpha_t < 1$) increases $b$. When $b/L \ll 1$, this condition reduces to no-slip at leading order.
 
 ---
 
 ### Connecting Bulk Viscosity to Wall Shear
 
-Key Insight: The same $\eta$ that represents bulk momentum diffusion also sets the wall shear rate:
+The same interior shear viscosity $\eta$ that governs momentum diffusion in the bulk (not the dilatational bulk viscosity $\zeta$ introduced in [[Lecture-Notes/Intro-Soft-Matter/Conservation-Laws|conservation laws]]) also sets the wall shear stress:
 
 $$
 \boxed{\tau_{\text{wall}} = \eta \frac{\partial u_x}{\partial y}\bigg|_{\text{wall}} = \text{rate at which wall removes } x\text{-momentum}}
@@ -259,7 +257,7 @@ where $\nu = \eta/\rho$ is the kinematic viscosity (momentum diffusivity).
 The momentum penetrates into the fluid over a diffusion layer of thickness:
 $$\boxed{\delta(t) \sim \sqrt{\nu t}}$$
 
-Physical Insight: This equation is *exactly* analogous to heat diffusion or dye diffusion. Viscosity $\nu$ plays the role of thermal or mass diffusivity. This confirms our kinetic picture: viscosity is the diffusivity for momentum.
+This equation has the exact form of heat diffusion or dye diffusion, with kinematic viscosity $\nu$ playing the role of thermal or mass diffusivity. This confirms the kinetic picture: $\nu$ is the diffusivity of momentum.
 
 > [!link] Full derivation
 > Head to [[Impulsively-started-plate]] for the derivation. 
@@ -280,16 +278,16 @@ Physical Insight: This equation is *exactly* analogous to heat diffusion or dye 
 
 ### Non-Newtonian Fluids
 
-The Newtonian law $\tau = \eta \dot{\gamma}$ works when:
+The Newtonian law $\tau = \eta \dot{\gamma}$ holds when:
 1. The fluid has no internal structure that deforms under shear
-2. Or the structure adapts quickly compared to the flow timescale
+2. Or that structure relaxes much faster than the flow timescale
 
-For polymer solutions, suspensions, or emulsions:
-1. Microstructure (chains, particles) realigns under shear
-2. Viscosity becomes a function of shear rate: $\eta(\dot{\gamma})$
-3. This leads to phenomena like shear-thinning or shear-thickening
+For polymer solutions, suspensions or emulsions:
+1. Microstructure (chains, particles, droplets) deforms and aligns under shear
+2. The viscosity depends on shear rate: $\eta(\dot{\gamma})$
+3. This produces shear-thinning or shear-thickening
 
-Today we derived why Newtonian behavior is natural for a dilute gas. Real soft-matter systems are more interesting because their microstructure evolves—that's where non-Newtonian rheology comes in.
+The kinetic derivation above shows why Newtonian behaviour is natural for a dilute gas. Soft-matter systems depart from it because their microstructure evolves on the timescale of the flow.
 
 ---
 
@@ -301,9 +299,9 @@ $$\boxed{\text{Re} = \frac{U L}{\nu}}$$
 2. $\nu$: characteristic scale of *momentum diffusion* (viscous effects)
 
 Physical Interpretation:
-1. High Re: Inertia dominates → turbulence, jets
-2. Low Re: Viscosity dominates → creeping flow, microfluidics
-3. The transition region is where rich physics emerges
+1. High $\text{Re}$: inertia dominates → boundary layers, jets, turbulence
+2. Low $\text{Re}$: viscosity dominates → creeping flow, microfluidics
+3. Intermediate $\text{Re}$: inertial and viscous forces compete directly (for instance in vortex shedding and the transition to turbulence)
 
 ---
 
@@ -314,9 +312,9 @@ $$\boxed{\text{Newton's Law:} \quad \tau_{xy} = \eta \dot{\gamma}}$$
 $$\boxed{\text{Kinetic Picture:} \quad \eta \sim \frac{1}{3} \rho \bar{c} \lambda, \quad \nu = \frac{\eta}{\rho} \sim \frac{\bar{c} \lambda}{3}}$$
 
 $$\boxed{\text{Wall Physics (No-Slip):} \quad u_{\text{fluid}}(\text{wall}) = u_{\text{wall}}}$$
-(emerges when wall thermalizes momentum; fails at high Kn)
+No-slip is the leading-order condition when $b/L \ll 1$ (which reduces to $\text{Kn} = \lambda/L \ll 1$ for diffuse walls, since $b/\lambda \approx (2-\alpha_t)/\alpha_t$). When $\text{Kn}$ is small but nonzero, wall momentum balance gives Maxwell slip as the first-order correction; this slip-flow description fails once $\text{Kn}$ is no longer small.
 
-$$\boxed{\text{Continuum Picture:} \quad \frac{\partial u}{\partial t} = \nu \frac{\partial^2 u}{\partial y^2} \quad \Rightarrow \quad \delta(t) \sim \sqrt{\nu t}}$$
+$$\boxed{\text{Continuum Picture:} \quad \frac{\partial u_x}{\partial t} = \nu \frac{\partial^2 u_x}{\partial y^2} \quad \Rightarrow \quad \delta(t) \sim \sqrt{\nu t}}$$
 
 ---
 
@@ -328,13 +326,11 @@ $$\boxed{\text{Continuum Picture:} \quad \frac{\partial u}{\partial t} = \nu \fr
 
 ## Temperature Scaling
 
-An important distinction emerges between gases and liquids:
+Gases and liquids show opposite temperature trends:
 
-Gases: Viscosity increases with temperature because faster molecules (larger $\bar{c}$) transport momentum more efficiently over larger mean free paths.
+Dilute gases: In $\eta \sim \rho \bar{c} \lambda$, the density cancels because $\lambda \propto 1/(n d^2)$ (where $d$ is the molecular diameter), leaving $\rho \lambda \sim m/d^2$ independent of pressure in the dilute-gas regime. Viscosity therefore increases with temperature primarily because molecular speed grows as $\bar{c} \propto T^{1/2}$ (and slightly faster in real dilute gases as the effective collision cross-section shrinks at higher impact speeds).
 
-Liquids: Viscosity typically decreases with temperature due to cage-breaking dynamics and activation processes—fundamentally different from the gas-phase mechanism.
-
-This inversion is crucial for developing physical intuition across different material systems.
+Liquids: Viscosity typically decreases with temperature because molecules move past neighbours by thermally activated cage-breaking rather than dilute free flights.
 
 ---
 
@@ -343,7 +339,7 @@ This inversion is crucial for developing physical intuition across different mat
 ### Primary Literature
 
 - Chapman & Cowling (1970): *The Mathematical Theory of Non-Uniform Gases.* (Classic kinetic theory; Sections 2–4 for viscosity.)
-- Reif (1965): *Fundamentals of Statistical and Thermal Physics.* (Kinetic-theory.)
+- Reif (1965): *Fundamentals of Statistical and Thermal Physics.* (Kinetic theory of transport.)
 - Bird, Stewart & Lightfoot (2007): *Transport Phenomena.* (Chapter 1: connection between kinetic theory and continuum viscosity.)
 
 ### Supplementary Materials
@@ -365,25 +361,23 @@ This inversion is crucial for developing physical intuition across different mat
 
 ## Connection to instabilities
 
-The viscosity framework we've developed—understanding it as momentum diffusion—directly connects to the instabilities and singularities that emerge in soft matter flows. In the notes on instabilities, we see how surface tension and viscosity compete to either suppress or amplify perturbations at interfaces, leading to phenomena like the Rayleigh–Plateau instability and capillary breakup.
-
-Understanding why momentum diffusion acts as a dissipative force (damping) is central to analyzing these instabilities.
+Viewing viscosity as momentum diffusion carries directly into soft-matter instabilities and singularities. In the notes on instabilities, surface tension and viscosity compete to amplify or damp interfacial perturbations, as in Rayleigh–Plateau breakup.
 
 ---
 
 ## Key Takeaways
 
-1. Viscosity is momentum diffusion. The same framework that describes heat spreading describes how shear spreads through a fluid.
+1. Viscosity is momentum diffusion: shear spreads through a fluid by the same diffusive mechanism as heat or a solute.
 
-2. Kinetics connects to continuum. A simple kinetic-theory argument ($\eta \sim \rho \bar{c} \lambda$) bridges molecular collisions and macroscopic stress.
+2. Kinetics links to continuum mechanics through $\eta \sim \rho \bar{c} \lambda$, bridging molecular collisions and macroscopic stress.
 
-3. No-slip emerges from momentum accommodation. The wall isn't a boundary condition imposed from above—it's a consequence of efficient tangential momentum randomization at collisions.
+3. Tangential momentum accommodation at the wall gives no-slip as the leading-order condition when $b/L \ll 1$ (which reduces to $\text{Kn} = \lambda/L \ll 1$ for diffuse walls). When $\text{Kn}$ is small but nonzero, the same wall momentum balance gives Maxwell slip as the first-order correction, with the slip coefficient set by wall accommodation.
 
-4. Temperature effects differ. Gases become more viscous when heated (faster molecules); liquids usually become less viscous (cage-breaking). Recognizing this inversion is important for intuition.
+4. Gases and liquids respond oppositely to heating: dilute-gas viscosity rises with $T$ (faster molecular speeds, with $\rho\lambda$ independent of pressure in the dilute regime), whereas liquid viscosity usually falls (thermally activated cage-breaking).
 
-5. Reynolds number quantifies the balance. Re = (inertial effects) / (viscous effects). High Re: inertia dominates. Low Re: viscosity dominates. The transition is where interesting physics happens.
+5. The Reynolds number $\text{Re} = UL/\nu$ compares advection with momentum diffusion, separating creeping flows ($\text{Re} \ll 1$) from inertia-dominated flows ($\text{Re} \gg 1$).
 
-6. Continuum equation mirrors diffusion. The PDE $\partial u/\partial t = \nu \partial^2 u/\partial y^2$ is the Navier–Stokes momentum equation in its simplest form. Recognizing $\nu$ as a diffusivity (not just a material property) unifies understanding.
+6. For an impulsively started plate, $\partial u_x/\partial t = \nu\,\partial^2 u_x/\partial y^2$ is the simplest form of the Navier–Stokes momentum equation; it gives a momentum boundary layer $\delta(t) \sim \sqrt{\nu t}$ and identifies $\nu$ as momentum diffusivity.
 
 ---
 

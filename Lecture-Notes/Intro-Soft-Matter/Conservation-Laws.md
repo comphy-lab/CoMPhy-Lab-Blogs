@@ -31,18 +31,14 @@ By the end of this lecture, you should understand:
 
 ### Single particle (warm-up)
 
-Write on board:
-
 $$\boxed{m \dot{\boldsymbol{v}} = \boldsymbol{F}^{\text{ext}}}$$
 
 ### Many particles (N particles, pairwise forces)
 
-Write:
-
 $$\boxed{m_i \dot{\boldsymbol{v}}_i = \boldsymbol{f}_i^{\rm ext} + \sum_{j \ne i} \boldsymbol{f}_{ij}, \qquad \boldsymbol{f}_{ij} = -\boldsymbol{f}_{ji}}$$
 
 > [!important] Important
-> We start here: every particle obeys Newton's second law with external forces and pair interactions. The key assumption — which is exact in classical mechanics — is that the force one particle exerts on another is *equal and opposite* ($\boldsymbol{f}_{ij} = -\boldsymbol{f}_{ji}$, Newton's third law). This symmetry is crucial: it will let us turn distributed forces into a stress tensor.
+> Every particle obeys Newton's second law under external forces and pairwise interactions. For classical pairwise forces, action and reaction are equal and opposite ($\boldsymbol{f}_{ij} = -\boldsymbol{f}_{ji}$, Newton's third law). This antisymmetry lets us rewrite internal pair forces as the divergence of a stress tensor.
 
  1. $m_i$: mass of particle $i$
  2. $\boldsymbol{v}_i = \dot{\boldsymbol{r}}_i(t)$: velocity of particle $i$
@@ -73,11 +69,11 @@ $$\boxed{\rho(\boldsymbol{r}, t) = \sum_{i=1}^N m_i \, \delta(\boldsymbol{r} - \
 #### Momentum:
 $$\boxed{\boldsymbol{g}(\boldsymbol{r}, t) = \sum_{i=1}^N m_i \, \boldsymbol{v}_i(t) \, \delta(\boldsymbol{r} - \boldsymbol{r}_i(t))}$$
 
-where $\delta_i(\boldsymbol{r}, t) := \delta(\boldsymbol{r} - \boldsymbol{r}_i(t))$ is a spike centered on particle $i$.
+where $\delta_i(\boldsymbol{r}, t) := \delta(\boldsymbol{r} - \boldsymbol{r}_i(t))$ is a spike centred on particle $i$.
 
 
 > [!tldr] TL;DR
-> Each particle contributes a delta spike to the density field. At the location $\boldsymbol{r}_i$, the spike has 'height' (or weight) equal to the particle's mass. The momentum density $\boldsymbol{g}$ does the same but weights by $m_i \boldsymbol{v}_i$. These fields are exact — there's no averaging yet. But they're spiky and discontinuous; what we want eventually is a smooth continuum limit.
+> Each particle contributes a delta spike weighted by its mass $m_i$ to the density field, and by $m_i \boldsymbol{v}_i$ to the momentum density $\boldsymbol{g}$. These fields are exact, with no averaging yet, though they are singular and discontinuous; coarse-graining later turns them into smooth continuum fields.
 
 ---
 
@@ -87,7 +83,7 @@ where $\delta_i(\boldsymbol{r}, t) := \delta(\boldsymbol{r} - \boldsymbol{r}_i(t
 
 
 > [!important]
-> To convert particle equations into field equations, we need one crucial identity: how does a Dirac delta change when the particle moves? This is the moving delta identity (see [[Moving-Delta-identity|detailed derivation]]).
+> Converting particle equations into field equations relies on one identity: how a Dirac delta changes as a particle moves (see [[Moving-Delta-identity|detailed derivation]]).
 
 
 $$\boxed{\partial_t \delta_i(\boldsymbol{r}, t) = -\boldsymbol{v}_i \cdot \nabla_{\boldsymbol{r}} \delta_i(\boldsymbol{r}, t) = -\boldsymbol{v}_i \cdot \nabla_{\boldsymbol{r}} \delta(\boldsymbol{r} - \boldsymbol{r}_i(t))}$$
@@ -123,7 +119,7 @@ $$\boxed{\partial_t \rho + \nabla \cdot \boldsymbol{g} = 0} \quad \text{(Microsc
 ## Part D: Microscopic Momentum Balance — Where Stress Is Born
 
 > [!question] Idea
-> Now we take the time derivative of the momentum density. Newton's second law says particles accelerate due to the net external forces. When we convert that into a field equation, the internal (pair) forces turn into a divergence of a tensor—and that tensor is the stress.
+> Now we take the time derivative of the momentum density. Newton's second law says each particle accelerates under the external force and the pairwise forces from other particles. In the field equation, those internal pair forces turn into the divergence of a tensor—the configurational part of the stress.
 
 ---
 
@@ -169,18 +165,20 @@ $$\partial_t \boldsymbol{g} + \nabla \cdot \boldsymbol{K} = \rho \boldsymbol{b} 
 
 ### Step 3: Turn pairwise forces into a divergence of the virial tensor
 
-This is the non-obvious step. See [[Virial-identity|detailed derivation]] for the full proof, but the key result is:
+This is the non-obvious step. See [[Virial-identity|detailed derivation]] for the bond-delta proof (its displayed dyad $\boldsymbol{r}_{ij}\,\boldsymbol{f}_{ij}$ agrees with the convention below for central pair forces). The key result is:
 
 $$\boxed{\sum_i \sum_{j \ne i} \boldsymbol{f}_{ij} \, \delta_i = -\nabla \cdot \boldsymbol{C}}$$
 
-where $\boldsymbol{C}$ is the configurational (virial) momentum-flux tensor:
+where $\boldsymbol{C}$ is the configurational (virial) momentum-flux tensor, with $\boldsymbol{r}_{ij} := \boldsymbol{r}_i - \boldsymbol{r}_j$:
 
-$$\boldsymbol{C}(\boldsymbol{r}, t) = \frac{1}{2} \sum_{i \ne j} \boldsymbol{r}_{ij} \, \boldsymbol{f}_{ij} \int_0^1 \delta(\boldsymbol{r} - \boldsymbol{r}_j - s \boldsymbol{r}_{ij}) \, ds$$
+$$\boldsymbol{C}(\boldsymbol{r}, t) = \frac{1}{2} \sum_{i \ne j} \boldsymbol{f}_{ij} \, \boldsymbol{r}_{ij} \int_0^1 \delta(\boldsymbol{r} - \boldsymbol{r}_j - s \boldsymbol{r}_{ij}) \, ds$$
+
+Here $(\nabla \cdot \boldsymbol{C})_\alpha = \partial_\beta C_{\alpha\beta}$ contracts with the bond vector $r_{ij,\beta}$, so the dyad has components $f_{ij,\alpha} r_{ij,\beta}$, matching the traction convention $\boldsymbol{\sigma}\cdot\boldsymbol{n}$ below. For central pair forces ($\boldsymbol{f}_{ij} \parallel \boldsymbol{r}_{ij}$), the dyad is symmetric and $\boldsymbol{f}_{ij}\boldsymbol{r}_{ij} = \boldsymbol{r}_{ij}\boldsymbol{f}_{ij}$.
 > [!tldr] Note:
-> Each pair force is 'smeared' uniformly along the bond connecting the two particles. When you take the divergence, you recover the two point forces at the ends—equal and opposite, as required. The integral parameterizes the bond; it's just a mathematical trick to convert point forces into a flux.
+> Each pair force is smeared uniformly along the segment connecting particles $j$ and $i$. The negative divergence $-\nabla \cdot \boldsymbol{C}$ recovers the pair-force density (the two equal and opposite point forces at the ends); the integral parameterizes that line segment so point forces appear as a flux.
 
 > [!important] Important
-> Internal forces don't vanish when summed over all particles, but they appear locally as a divergence of a stress-like tensor. This is the transition from particles to continuum: pair forces become components of the stress tensor.
+> Internal forces cancel when summed over the entire system, so they cannot accelerate the centre of mass, yet they do not vanish locally: in the local momentum balance they appear as the divergence of a stress tensor. This is the step from discrete particles to continuum stress.
 
 ---
 
@@ -226,7 +224,7 @@ Key observation: write each particle velocity as $\boldsymbol{v}_i = \boldsymbol
 
 ### Split the flux: convection + stress
 
-Write the crucial definition:
+Split the averaged momentum flux into bulk convection and stress:
 
 $$\boxed{\overline{\boldsymbol{\Pi}} = \rho \boldsymbol{v} \boldsymbol{v} - \boldsymbol{\sigma}}$$
 
@@ -235,11 +233,11 @@ where $\boldsymbol{\sigma}$ is the Cauchy stress tensor:
 Breaking it down:
 - $\overline{\boldsymbol{K}} \equiv \langle \boldsymbol{K} \rangle = \rho \boldsymbol{v} \boldsymbol{v} + \rho\langle \boldsymbol{c}\boldsymbol{c} \rangle$: bulk convection plus the kinetic part of the stress, with $\boldsymbol{c} = \boldsymbol{v}_i - \boldsymbol{v}$ the thermal velocity
 - $\overline{\boldsymbol{C}} \equiv \langle \boldsymbol{C} \rangle$: the configurational (virial) part, from pair forces (the atomic note writes $\langle \boldsymbol{C} \rangle = -\boldsymbol{\sigma}_{\text{config}}$)
-- So $\boldsymbol{\sigma} = -\rho\langle \boldsymbol{c}\boldsymbol{c} \rangle - \overline{\boldsymbol{C}}$. For an ideal gas at rest, $\overline{\boldsymbol{C}} = 0$ and $\langle \boldsymbol{c}\boldsymbol{c} \rangle = (k_B T/m)\,\boldsymbol{I}$, so $\boldsymbol{\sigma} = -p\boldsymbol{I}$ with $p = \rho k_B T/m$.
+- So $\boldsymbol{\sigma} = -\rho\langle \boldsymbol{c}\boldsymbol{c} \rangle - \overline{\boldsymbol{C}}$. For an ideal gas of particles of mass $m$ at rest, $\overline{\boldsymbol{C}} = 0$ and $\langle \boldsymbol{c}\boldsymbol{c} \rangle = (k_B T/m)\,\boldsymbol{I}$, so $\boldsymbol{\sigma} = -p\boldsymbol{I}$ with $p = \rho k_B T/m$.
 
 
 > [!important]
-> The stress tensor is defined as the part of the momentum flux that isn't accounted for by the bulk drift. It captures how internal forces and thermal motion resist (or facilitate) deformation. For a gas at rest, it's just pressure. For a flowing fluid under shear, it includes viscous stresses.
+> Minus the stress tensor, $-\boldsymbol{\sigma}$, is the non-convective momentum flux (the part of $\overline{\boldsymbol{\Pi}}$ not carried by bulk convection). Thus $\boldsymbol{\sigma}$ captures how internal forces and thermal motion exert tractions across fluid elements: pressure alone for a gas at rest, plus viscous or elastic stresses when the fluid deforms.
 
 ---
 
@@ -271,8 +269,6 @@ where $\frac{D}{Dt} = \frac{\partial}{\partial t} + \boldsymbol{v} \cdot \nabla$
 ## Part F: Why This Matters—Physical Intuition
 
 ### The stress tensor is the flux of momentum
-
-Draw on the board:
 
 ```
     → → → (fast fluid)
@@ -310,12 +306,12 @@ $$\boldsymbol{\sigma} = -p \boldsymbol{I} + \boldsymbol{\tau}$$
 
 where $\boldsymbol{\tau}$ is the viscous stress (from internal friction and momentum diffusion):
 
-$$\tau_{\alpha\beta} = \eta \left( \frac{\partial v_\alpha}{\partial x_\beta} + \frac{\partial v_\beta}{\partial x_\alpha} \right) + \zeta \delta_{\alpha\beta} (\nabla \cdot \boldsymbol{v})$$
+$$\tau_{\alpha\beta} = \eta \left( \frac{\partial v_\alpha}{\partial x_\beta} + \frac{\partial v_\beta}{\partial x_\alpha} - \frac{2}{3}\delta_{\alpha\beta}(\nabla \cdot \boldsymbol{v}) \right) + \zeta\,\delta_{\alpha\beta} (\nabla \cdot \boldsymbol{v})$$
 
-(The second term involves bulk viscosity $\zeta$; for many fluids it's negligible.)
+(The last term involves the bulk viscosity $\zeta$. For incompressible flows, $\nabla \cdot \boldsymbol{v} = 0$, both divergence terms vanish, leaving $\boldsymbol{\tau} = \eta[\nabla\boldsymbol{v} + (\nabla\boldsymbol{v})^T]$; in compressible flows, $\zeta$ itself is negligible for a dilute monatomic gas, though not in general for liquids.)
 
 
-> The viscous stress is proportional to the strain rate $\nabla \boldsymbol{v} + (\nabla \boldsymbol{v})^T$. Faster shear means stronger viscous stress. This is the microscopic momentum diffusion we derived in [[Lecture-Notes/Intro-Soft-Matter/Viscosity|viscosity]]—the kinetic theory. But here we've derived it from first principles: a consequence of particle interactions and collisions.
+> For an incompressible Newtonian fluid, the viscous stress is proportional to $\nabla \boldsymbol{v} + (\nabla \boldsymbol{v})^T$. Faster shear produces larger viscous stress—the continuum counterpart of the microscopic momentum diffusion derived in [[Lecture-Notes/Intro-Soft-Matter/Viscosity|viscosity]].
 
 ---
 
@@ -345,8 +341,8 @@ $$\boxed{\text{Cauchy momentum equation:}\quad \rho \frac{D\boldsymbol{v}}{Dt} =
 | The moving delta identity is obvious.                | It's not! It requires careful treatment of the chain rule (or test functions). See [[Moving-Delta-identity\|the detailed note]].                                      |
 | Internal forces cancel, so they don't matter.        | They cancel *globally*, but they create *local* stresses and are essential for momentum balance in the fluid.                                                         |
 | Stress is the same as pressure.                      | Pressure is an isotropic stress (equal in all directions). Stress is more general: it can be anisotropic (different in different directions) and depends on the flow. |
-| Coarse-graining is an approximation.                 | It's not an approximation—it's a change of perspective. The microscopic equation is exact but spiky. Averaging converts it into a smooth, usable form.                |
-| The Cauchy equation only works for Newtonian fluids. | No. It's exact for *any* fluid. The assumption of Newtonian behavior (constant viscosity) comes *later*, when you specify the constitutive relation.                  |
+| Coarse-graining is an approximation.                 | Ensemble averaging of the linear balance is exact, because averaging commutes with $\partial_t$ and $\nabla$. Approximations enter later, when we close the equation with a local continuum constitutive law for $\boldsymbol{\sigma}$. |
+| The Cauchy equation only works for Newtonian fluids. | No. It holds for *any* continuum material. The assumption of Newtonian behaviour (constant viscosity) enters later, when you specify the constitutive relation.                  |
 
 
 ---
@@ -357,16 +353,16 @@ $$\boxed{\text{Cauchy momentum equation:}\quad \rho \frac{D\boldsymbol{v}}{Dt} =
 
 Ask: "What if I summed all the internal forces on all particles and got a non-zero result? What would happen?"
 
-> Answer: The center of mass would accelerate without an external force—violating Newton's first law. So action–reaction must hold. And when it does, internal forces create *local* stresses but don't change the total momentum."
+> Answer: The centre of mass would accelerate without an external force, violating momentum conservation (Newton's first law for the isolated system). Action–reaction must hold so that internal forces transfer momentum locally through stress without changing the total momentum.
 
 ---
 
 ### 2. Pressure vs. viscous stress
 
 1. Pressure: acts equally in all directions; no preferred axis.
-2. Viscous stress: depends on velocity gradients; has a preferred direction (the direction of shear).
+2. Viscous stress: depends on velocity gradients; has a preferred direction (set by the local shear or stretching).
 
-Imagine honey being poured. Gravity provides a pressure gradient (accelerating the fluid downward), and viscosity creates shear stress (resisting the motion between fast-flowing and slow-flowing regions).
+Imagine honey being poured from a jar. Inside the jar and in the flowing liquid near the lip, pressure acts isotropically on fluid elements while gravity pulls the honey downwards as a body force and viscous shear stress resists the relative motion between faster- and slower-moving layers. Once the honey leaves the lip as a freely falling thread, gravity stretches the stream against viscous extensional stress, while the pressure inside the thread stays close to atmospheric (apart from small capillary and viscous normal-stress corrections).
 
 ---
 
@@ -394,8 +390,8 @@ Imagine honey being poured. Gravity provides a pressure gradient (accelerating t
 
 After this lecture, students should be able to:
 
-1. Newton's second law for a single particle and for N particles.
-2. Microscopic fields ($\rho$, $\boldsymbol{g}$) using Dirac deltas and explain why deltas are the right tool.
+1. State Newton's second law for a single particle and for $N$ interacting particles.
+2. Construct microscopic fields ($\rho$, $\boldsymbol{g}$) using Dirac deltas and explain why distributions are needed.
 3. Explain the moving delta identity and use it to derive the microscopic continuity equation.
 4. Explain how pair forces (Newton's third law) turn into a divergence of the virial tensor.
 5. Derive the microscopic momentum balance and identify the kinetic and configurational components of stress.
@@ -413,7 +409,7 @@ After this lecture, students should be able to:
 3. Foundation for understanding:
 	1. Fluid instabilities (next lecture)
 	2. Rheology (later lectures)
-	3. All continuum modeling of soft matter
+	3. All continuum modelling of soft matter
 
 
 ---
@@ -424,7 +420,7 @@ These notes contain the mathematical details and alternative proofs that are too
 
 1. [[Moving-Delta-identity]]: Three detailed proofs of $\partial_t \delta_i = -\boldsymbol{v}_i \cdot \nabla \delta_i$ (chain rule, distributions, 1D sanity check)
 2. [[Dyadic-conversion]]: The algebraic steps to show $\sum_i m_i \boldsymbol{v}_i \partial_t \delta_i = -\nabla \cdot \sum_i m_i \boldsymbol{v}_i \boldsymbol{v}_i \delta_i$
-3. [[Virial-identity]]: Full derivation of $\delta_i - \delta_j = -\nabla \cdot \int_0^1 \boldsymbol{r}_{ij} \delta(\ldots) ds$ and its application to pair forces
+3. [[Virial-identity]]: Bond-delta derivation of $\delta_i - \delta_j = -\nabla \cdot \int_0^1 \boldsymbol{r}_{ij} \delta(\ldots) ds$ and its application to pair forces (its displayed dyad $\boldsymbol{r}_{ij}\boldsymbol{f}_{ij}$ agrees with the convention above for central forces)
 
 ---
 

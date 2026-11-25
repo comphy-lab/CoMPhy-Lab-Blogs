@@ -70,7 +70,7 @@ Simulations make the energy budget visible. Of the surface energy released, $-\D
 
 $$-\Delta\dot{E}_\gamma \approx \dot{E}_k + \dot{E}_d, \qquad \dot{E}_d = \frac{1}{2}\frac{dm}{dt}\,v^2.$$
 
-The dissipation is concentrated in the neck where the film joins the rim, and its rate does not depend on the viscosity. Even as $Oh_{\mathrm{film}} \to 0$ we cannot neglect viscous dissipation in the thin film: a vanishing viscosity still dissipates a finite amount of energy, because the velocity gradients sharpen as the viscosity drops. This "dissipative anomaly" is the mathematical version of de Gennes's inelastic-collision argument. The same simulation framework is used to study films retracting in viscous surroundings (Sanjay, Sen, Kant & Lohse 2022).
+The dissipation is concentrated in the neck where the film joins the rim, and its rate does not depend on the viscosity. Even as $Oh_{\mathrm{film}} \to 0$ we cannot neglect viscous dissipation in the thin film: a vanishing viscosity still dissipates a finite amount of energy, because the velocity gradients sharpen as the viscosity drops. This "dissipative anomaly" is the continuum counterpart of Culick's inelastic-collision argument (revisited by de Gennes in 1996). The same simulation framework is used to study films retracting in viscous surroundings (Sanjay, Sen, Kant & Lohse 2022).
 
 ### 1.2 What if the film is viscoelastic?
 
@@ -129,7 +129,7 @@ which the simulations follow for $Ec \lesssim 0.1$.
 The stress fields show where these forces come from. In the figures below ($Ec = 0.1$, $De \to \infty$, $t = 50\,\tau_\gamma$), solid lines are the simulation and dashed lines the elastic-mapping prediction of §1.2.
 
 ![Three panels of stress against distance from the tip of the opening hole, with the rim shape coloured by each stress component as insets. The radial stress is about minus G inside the rim and oscillates around zero beyond it; the vertical stress is about 6 G inside the rim and about G beyond it; the hoop stress rises to several thousand G at the tip and is negligible elsewhere on a linear scale. Solid and dashed curves overlap almost everywhere](../../_Media/6-Sheets-Bubbles-Drops-10.png)
-*Radial ($\sigma_{rr}$), vertical ($\sigma_{zz}$) and hoop ($\sigma_{\theta\theta}$) stresses, scaled by $G$, against the distance $r - R_{\mathrm{tip}}$ from the tip (in units of $h_0$), at $Ec = 0.1$ and $t = 50\,\tau_\gamma$. Solid: simulation; dashed: elastic-mapping prediction. Insets: the rim coloured by each stress component.*
+*Radial ($\sigma_{rr}$), vertical ($\sigma_{zz}$) and hoop ($\sigma_{\theta\theta}$) stresses, scaled by $G$, against the distance $r - R_{\mathrm{tip}}$ from the tip, in units of $h_0$ ($R_{\mathrm{tip}}$ on the axis is the hole radius $r_{\mathrm{tip}}$ of the text), at $Ec = 0.1$ and $t = 50\,\tau_\gamma$. Solid: simulation; dashed: elastic-mapping prediction. Insets: the rim coloured by each stress component.*
 
 - **Vertical stress.** Inside the rim $\sigma_{zz} \approx 6G$. The rim is then about $2.6h_0$ thick, and a vertical stretch of $2.6$ gives $G(2.6^2 - 1) \approx 6G$: this is the stress that stops the rim from thickening further.
 - **Radial stress.** Inside the rim $\sigma_{rr} \approx -G$. Material stretched vertically and around the hole is squeezed radially, so $\mathcal{A}_{rr} \to 0$ and $G(\mathcal{A}_{rr} - 1) \to -G$.

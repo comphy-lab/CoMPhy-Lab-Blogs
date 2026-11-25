@@ -25,7 +25,7 @@ An introduction to soft materials, why they're soft, and how we measure softness
 
 > [!question] "Name one soft material you've touched today."
 
-Soft matter is everywhere in daily life—from the water in your shower and shampoo to the bread on your table, tissues, foams, and gels. This simple question anchors a deeper truth: the materials we interact with most are soft.
+Soft matter appears throughout daily life—from shampoo and shaving cream to bread, biological tissues, foams and gels. Most of the materials we handle every day are soft.
 
 ---
 
@@ -43,9 +43,9 @@ Observe the transformation of gelatin and water:
 - Liquid state: Individual molecules move freely
 - Cooling: Gelatin chains form a crosslinked network
 - Solid state: Wobbly, flexible gel structure
-- Mechanism: Structure held by *weak* (often reversible) interactions, not rigid covalent bonds
+- Mechanism: structure held by *weak* (often reversible) interactions rather than rigid covalent bonds
 
-The gel feels solid (can hold shape), yet wobbles easily when pushed—a hallmark of soft matter.
+The gel holds its shape like a solid yet deforms easily when pushed.
 
 ![](../../_Media/1-Intro-Soft-Matter-1761103784897.png)
 
@@ -71,14 +71,14 @@ Foams are gas bubbles trapped in liquid with surfactants stabilizing the interfa
 
 ![](../../_Media/1-Intro-Soft-Matter-1761103886417.png)
 
-A dense foam of gas + liquid—microstructure determines function:
+A dense gas–liquid foam whose microstructure sets its response:
 - Spreads easily (flows under shear)
-- Holds shape temporarily (stores energy)
-- Responds to manual deformation (viscoelastic behavior)
+- Holds its shape temporarily (stores elastic energy)
+- Responds differently depending on how fast it is deformed (viscoelastic behaviour)
 
 
 > [!note] Key Insight
-> In many soft materials, surface tension, entropy, and geometry govern structure and mechanics far more than stiff, covalent bond stretching does.
+> In many soft materials, surface tension, entropy and geometry govern structure and mechanics far more than covalent bond stretching does.
 
 ---
 
@@ -88,15 +88,15 @@ A dense foam of gas + liquid—microstructure determines function:
 
 ![](../../_Media/1-Intro-Soft-Matter-1761103927376.png)
 
-When you compress a solid, you push overlapping electron clouds closer together. The bulk modulus scales roughly as:
+Compressing a crystalline solid pushes overlapping electron clouds closer together. The bulk modulus scales as:
 
 $$K \sim \frac{U}{a^3}$$
 
 where:
-- $U$ = interaction energy per atom (~tens of eV, from Coulombic/quantum mechanics)
+- $U$ = interaction energy per atom (~tens of eV, from Coulombic and quantum-mechanical interactions)
 - $a$ = atomic length scale (~1 Ångström)
 
-This is the correct scaling: interaction energies packed into atomic volumes yield enormous bulk moduli.
+Packing electron-volt energies into atomic volumes gives bulk moduli of order $100\,\text{GPa}$ and above.
 
 ### Numerical Estimate
 
@@ -123,7 +123,7 @@ $$K \sim \frac{14.4\,\text{eV}}{(1\,\text{Å})^3} \approx 2.3 \times 10^6\,\text
 | Rubber | $(1\text{–}2) \times 10^3$ | 1–2 | Hard to compress, soft in shear |
 
 > [!important]
-> Most condensed matter is hard to compress (large $K$). What makes something feel "hard" in everyday life is actually the shear modulus $G$, not the bulk modulus. Everyday "hardness" ≈ resistance to shape change, not resistance to compression.
+> Most condensed matter is hard to compress (large $K$). What makes a material feel "hard" in everyday life is the shear modulus $G$ (resistance to shape change), rather than the bulk modulus $K$ (resistance to compression).
 
 ---
 
@@ -135,11 +135,11 @@ $$\boxed{G = n k_B T \quad \text{or} \quad G \sim \frac{k_B T}{\xi^3}}$$
 
 where:
 - $n$ = number of elastically active strands per unit volume (strands joined to the network at both ends; dangling ends and loops do not count)
-- $\xi$ = mesh size of the network, so that $n \sim \xi^{-3}$ (about 1–2 nm in rubbers, 10–100 nm in soft gels)
+- $\xi$ = mesh size of the network, so that $n \sim \xi^{-3}$ (about 1–2 nm in rubbers and 10–100 nm in soft gels; $\xi \sim 1\text{–}10\,\text{nm}$ gives the kPa–MPa examples below, while $\xi \sim 100\,\text{nm}$ reaches the Pa range)
 - $k_B T$ = thermal energy (~$4.1 \times 10^{-21}\,\text{J}$ at room temperature)
 
 > [!note]
-> $G = n k_B T$ is the ideal-network result; real networks differ from it by factors of order one. The form $G \sim k_B T/\xi^3$ is its scaling version for a network of mesh size $\xi$. An entangled semi-dilute polymer solution follows the same scaling with concentration, but its plateau modulus is about a hundred times smaller, because the spacing between entanglements is about ten times the blob size $\xi$; see [[Polymer-Concentration-Regimes-and-Blob-Networks]] for details.
+> $G = n k_B T$ is the ideal-network result; real networks differ from it by factors of order one. The form $G \sim k_B T/\xi^3$ is its scaling version for a network of mesh size $\xi$. In a good solvent, an entangled semi-dilute polymer solution follows the same scaling with concentration, but its plateau modulus is smaller: $G_e \sim k_B T/(a_t^2 \xi)$, where $\xi$ is the correlation-blob size and $a_t \propto \xi$ is the tube diameter (the spacing between entanglements). For a typical $a_t \approx 10\xi$ this is about a hundred times below $k_B T/\xi^3$; see [[Polymer-Concentration-Regimes-and-Blob-Networks]] for details.
 
 Not all soft matter is soft for this reason. In foams and concentrated emulsions, the shear modulus comes from surface tension: shearing the packing of bubbles or drops stretches their interfaces, so $G \sim \gamma/R$, where $\gamma$ is the surface tension and $R$ the bubble or drop radius, up to a prefactor smaller than one that depends on the liquid fraction. For $\gamma \approx 30\,\text{mN/m}$ and $R \approx 30\,\mu\text{m}$, $\gamma/R \approx 1\,\text{kPa}$: enough for shaving cream to hold its shape, with no entropic elasticity involved.
 
@@ -155,7 +155,7 @@ which pulls the ends back together. Holding the chain at extension $x$ requires 
 
 From one chain to a network:
 
-Crosslink the chains into a network with $n$ elastically active strands per unit volume $\Rightarrow$ the elastic free-energy density is:
+Crosslink the chains into a network with $n$ elastically active strands per unit volume; for order-one strains the elastic free-energy density scales as:
 
 $$F/V \sim n k_B T \quad \Rightarrow \quad G = n k_B T$$
 
@@ -175,10 +175,10 @@ G \sim \frac{k_B T}{\xi^3} \quad \Rightarrow \quad
 \end{cases}
 $$
 
-Interpretation: Small changes in mesh size (network crosslink density) move the shear modulus from the kPa range (very soft, like a loose gel) to the MPa range (stiffer, more rubber-like), while the bulk modulus stays large (still hard to compress).
+Changing the mesh size (crosslink density) moves the shear modulus from the kPa range (a loose gel) to the MPa range (a rubber), while the bulk modulus remains large.
 
 > [!tip] The Soft Matter Paradox Resolved
-> Soft in shear, hard in bulk. Stretching a polymer network just rearranges coil conformations (easy, entropy-driven). Compressing it still pushes on dense electron clouds and liquid trapped in pores (hard, bonding physics). This is why rubbers and gels are "soft" yet "incompressible".
+> Soft in shear, hard in bulk. Stretching a polymer network rearranges coil conformations (entropy-driven, low stress), whereas compressing it pushes on dense electron clouds and liquid trapped in pores (bonding physics, high stress). Rubbers and gels are therefore soft in shear yet nearly incompressible.
 >
 > Two caveats. A gel is incompressible only on times too short for its solvent to flow through the network; given time, the solvent drains and the network alone can change volume. Foams are compressible: their gas sets a bulk modulus of order the gas pressure, about $0.1\,\text{MPa}$, far below the GPa values of liquids and rubbers.
 
@@ -186,7 +186,7 @@ Interpretation: Small changes in mesh size (network crosslink density) move the 
 
 ## Far from Equilibrium: Dynamics Dominate
 
-Soft matter reveals its richness when driven away from equilibrium. Time and forcing history often matter more than equilibrium structure alone.
+Soft matter shows much of its distinctive behaviour when driven away from equilibrium, where loading rate and forcing history often matter more than equilibrium structure alone.
 
 ### Drop Impact in Microgravity (ISS "Liquid Ping-Pong")
 
@@ -198,10 +198,9 @@ Soft matter reveals its richness when driven away from equilibrium. Time and for
     </iframe>
 </div>
 
-Without gravity, a water droplet maintains a sphere. When two droplets collide:
-- Surface tension dominates (gravity suppressed)
-- Complex coalescence dynamics unfold
-- Demonstrates soft matter far from equilibrium
+Without gravity, a water drop stays spherical. When two drops collide:
+- Impact inertia deforms the drops while surface tension restores their shape (gravity is negligible)
+- Complex coalescence dynamics unfold far from equilibrium
 
 ### Mud Volcano at Yellowstone
 
@@ -213,11 +212,11 @@ Without gravity, a water droplet maintains a sphere. When two droplets collide:
     </iframe>
 </div>
 
-Mud is a elastoviscoplastic soft material:
+Mud is an elastoviscoplastic soft material:
 
-- Behaves as solid over short times (can support surface bumps and cones)
-- Flows like liquid over long times (material spreads slowly)
-- Time-dependent response is essential to understanding behavior
+- Behaves as a solid over short times and below its yield stress (supporting surface bumps and cones)
+- Flows like a liquid over longer times once yielded (the material spreads slowly)
+- Its response depends on both stress level and timescale
 
 ### Champagne Bubbles: A Glass of Soft Matter
 
@@ -229,12 +228,12 @@ Mud is a elastoviscoplastic soft material:
     </iframe>
 </div>
 
-Bubbles rising through champagne display remarkable dynamics driven by:
+The dynamics of rising and bursting champagne bubbles depend on:
 
-- Liquid-gas interfaces (surface tension $\gamma$)
+- Liquid–gas interfaces (surface tension $\gamma$)
 - Dissolved CO₂ (pressure inside bubbles)
 - Surfactants from wine components
-- Viscoelasticity of the liquid (if polymers are present)
+- Viscoelasticity of the liquid (when polymers are present)
 
 Key observation: Adding a small amount of long-chain polymer changes what happens after the bubble bursts, not the bubble itself. In the high-speed movies shown in the lecture (experiments by Alexandros T. Oratis, Physics of Fluids, University of Twente), the bubbles look the same before bursting. After the cap ruptures, the Worthington jet becomes shorter as the polymer concentration increases, drops stay tethered to the jet by thin polymer threads, and at the highest concentration no jet forms at all. The polymer chains resist the strong stretching flow in the jet. Simulations of bubble bursting in viscoelastic liquids show the same suppression of jets and droplets as the elasticity of the liquid increases.
 
@@ -245,7 +244,7 @@ References:
 - A. K. Dixit, A. Oratis, K. Zinelis, D. Lohse & V. Sanjay, *J. Fluid Mech.*, 1010, A2 (2025) — simulations of viscoelastic Worthington jets and droplets
 
 > [!tip] Tiny Additives, Huge Effects
-> Trace amounts of soft matter (ppm–‰ polymer) can dramatically alter flows and instabilities. This is an engineer's lever in mixing, coating, printing, and food science applications.
+> Trace amounts of soft matter (ppm–‰ polymer) can strongly alter flows and instabilities, providing a practical lever in mixing, coating, printing and food processing.
 
 ---
 
@@ -259,38 +258,38 @@ References:
 
 ![](../../_Media/1-Intro-Soft-Matter-1761105367372.png)
 
-John William Strutt, 3rd Baron Rayleigh, one of the 19th century's greatest physicists, used instantaneous photography to capture:
+John William Strutt, 3rd Baron Rayleigh, used instantaneous spark photography to capture:
 
 - Falling jets breaking into droplets (Rayleigh–Plateau instability)
 
 ![](../../_Media/1-Intro-Soft-Matter-1761105418528.png)
 
-- Liquid stream dynamics and surface tension effects
+- Liquid stream dynamics and surface-tension effects
 - Capillary flows driven by interfacial forces
 
-His 1891 paper essentially pioneered the study of liquid dynamics—a cornerstone of soft matter physics.
+His 1891 paper was an early use of instantaneous photography in interfacial fluid dynamics.
 
 ### Taylor–Culick Retraction: The Dupré–Rayleigh Paradox
 
 
 ![](../../_Media/1-Intro-Soft-Matter-1761105451051.png)
 
-When you puncture a soap film, the hole expands rapidly: the film retracts away from the puncture and gathers into a rim at the edge of the growing hole. The film consists of a thin water layer (thickness $h_0$) with surfactant molecules at both liquid–air interfaces (surface tension $\gamma_{fa}$ per interface).
+When a soap film is punctured, the hole of radius $R(t)$ expands rapidly as the film retracts into a rim of mass $m(t)$ at its edge. The film is a thin liquid layer of density $\rho$ and thickness $h_0$, with surfactant molecules at both liquid–air interfaces (surface tension $\gamma_{fa}$ per interface).
 
 > [!question] The Paradox:
-> Two seemingly correct approaches give different predictions for retraction speed $v_f$:
+> Two seemingly sound approaches give different predictions for the retraction speed $v_f$:
 
 #### Energy Approach (Dupré; Rayleigh, 1891)
 
 Rate of surface energy decrease = Rate of kinetic energy increase
 
-$$\frac{d}{dt}\left(\frac{1}{2}m v^2\right) = 2\gamma_{fa}(2\pi R) v$$
+$$\frac{d}{dt}\left(\frac{1}{2}m v_f^2\right) = 2\gamma_{fa}(2\pi R) v_f$$
 
 $$\Rightarrow \quad v_f = \sqrt{\frac{4\gamma_{fa}}{\rho h_0}}$$
 
 #### Momentum Approach (Taylor, 1959)
 
-Force from surface tension = Rate of momentum change
+Radial surface-tension force on the rim = rate of change of its radial momentum $P = m v_f$, summed over angular sectors
 
 $$\frac{dP}{dt} = 2\gamma_{fa}(2\pi R)$$
 
@@ -299,6 +298,8 @@ $$\Rightarrow \quad \frac{d}{dt}(m v_f) = 2\gamma_{fa}(2\pi R)$$
 $$\Rightarrow \quad v_f = \sqrt{\frac{2\gamma_{fa}}{\rho h_0}}$$
 
 #### The Factor of 2 Discrepancy
+
+The two predictions differ by a factor of $2$ in $v_f^2$ (a factor of $\sqrt{2}$ in $v_f$):
 
 $$\text{Energy method:} \quad v_f = \sqrt{\frac{4\gamma_{fa}}{\rho h_0}}$$
 
@@ -313,7 +314,7 @@ Question: Which velocity is right?
 
 ## Friday Afternoon Experiment: Timescale Matters
 
-Researchers at the University of Naples Federico II studied bubble formation dynamics by varying the air-blowing rate during bubble generation:
+Researchers at the University of Naples Federico II inflated viscoelastic bubbles at different air-blowing rates and punctured them to study how inflation history alters film rupture:
 
 <div style="text-align: center;">
     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zLucBJkUI5c?si=0AV6BMzb_oK8VpkG" 
@@ -326,10 +327,10 @@ Researchers at the University of Naples Federico II studied bubble formation dyn
 Reference: D. Tammaro, R. Pasquino, M. M. Villone, G. D'Avino, V. Ferraro, E. Di Maio, A. Langella, N. Grizzuti & P. L. Maffettone, *Langmuir*, 34(19), 5646–5654 (2018)
 
 Key Observation:
-- Low blowing rate: Bubbles form slowly; film drains gradually; stable bubble structure
-- High blowing rate: Bubbles form rapidly; less drainage time; different dynamics and breakup modes
+- Low inflation rate: polymers relax more during slower inflation, so the hole opens more slowly upon puncture (though Tammaro et al. found a residual elastic contribution even at the lowest tested rate)
+- High inflation rate: less relaxation occurs during rapid inflation, so more elastic energy remains stored in the film and drives faster initial hole opening when the bubble is punctured
 
-Lesson: In soft matter, protocol and timescale are decisive control parameters. The same material exhibits wildly different behavior depending on how fast you drive it.
+Lesson: In soft matter, protocol and timescale act as control parameters. The same material can exhibit quite different behaviour depending on how fast it is driven.
 
 ---
 
@@ -454,9 +455,9 @@ Each column describes one population of materials, so its entries are mutually c
 
 3. Entropic elasticity is different. In ideal flexible polymer networks, the shear modulus arises from statistical resistance to entropy loss, not stiff bond stretching. At a fixed density $n$ of elastically active strands, $G = n k_B T$ grows in proportion to the absolute temperature; changing the crosslink density changes $n$. Foams and emulsions are soft for a different reason: their shear modulus comes from surface tension.
 
-4. Time matters. The same soft material behaves differently over different timescales—as a solid at short times, as a fluid at long times. This time-dependent response is central to soft matter physics.
+4. Time matters. The same soft material can respond as a solid at short times and flow as a liquid at long times.
 
-5. Tiny additives, huge effects. Trace polymer additions can dramatically alter interfacial dynamics, instabilities, and flow behavior—an important design lever in engineering and biology.
+5. Tiny additives, huge effects. Trace polymer additions can strongly alter interfacial dynamics, instabilities and flow behaviour in engineering and biology.
 
 ---
 
@@ -466,7 +467,7 @@ Each column describes one population of materials, so its entries are mutually c
 - Review: Patrick Oswald & Pierre Pieranski, *Nematic and Cholesteric Liquid Crystals: Concepts and Physical Properties Illustrated by Experiments* (Taylor & Francis, 2005) — detailed liquid crystal physics [DOI: 10.1201/9780203023013](https://doi.org/10.1201/9780203023013)
 - Modern perspective: Tom McLeish, *Soft Matter: A Very Short Introduction* (Oxford University Press, 2020) — contemporary soft matter overview [Link](https://global.oup.com/academic/product/soft-matter-9780198807131?cc=gb&lang=en&)
 
-See the next lecture for a rigorous treatment of the Taylor–Culick paradox and momentum/energy conservation in soft matter flows.
+For a full treatment of film retraction and momentum conservation in soft matter flows, see [[Lecture-Notes/Intro-Soft-Matter/Taylor-Culick-Paradox|Taylor–Culick paradox]] and [[Lecture-Notes/Intro-Soft-Matter/Conservation-Laws|Conservation laws]].
 
 ---
 

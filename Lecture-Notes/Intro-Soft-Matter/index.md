@@ -5,7 +5,7 @@ publish: true
 
 # Soft Condensed Matter: An Introduction
 
-A journey through soft materials, from everyday foams and gels to polymer networks and interfacial dynamics. We develop the conceptual and mathematical foundations to understand why soft matter behaves so differently from hard solids and liquids.
+These notes cover soft materials (foams, gels, polymer networks) and the interfacial flows they display. They develop the physical and mathematical tools needed to explain why soft matter responds so differently from crystalline solids and simple Newtonian liquids.
 
 ## Subject notes
 

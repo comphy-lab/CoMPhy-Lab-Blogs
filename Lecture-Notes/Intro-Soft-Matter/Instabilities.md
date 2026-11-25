@@ -19,7 +19,7 @@ publish: true
 
 ## 0) Why talk about instability?
 
-Patterns are everywhere: dunes and ripples, icicle ribs, dew beads on spider webs, hexagonal cracks in drying mud. Their regularity—despite messy materials—signals robust mechanisms. In fluids (and soft solids), instabilities often set the pattern scale and shape by amplifying tiny disturbances into organized structures. Our goal today is to recognize those mechanisms and the forces that select length and time scales.
+Patterns appear throughout nature: dunes and ripples, icicle ribs, dew beads on spider webs, hexagonal cracks in drying mud. Their regularity, despite messy materials, often comes from an instability that amplifies tiny disturbances into organized structures and selects a characteristic length and time scale. Our goal here is to identify those instabilities and the competing forces that set their scales.
 
 ---
 
@@ -30,7 +30,7 @@ Think of a bead in a landscape: at the bottom of a well (stable), on a flat shel
 ![](../../_Media/Lecture3-Instabilities-1761841931414.png)
 
 
-A “standing pencil” fails in practice because the slightest perturbation makes it fall—no physical system is perfectly disturbance‑free. We use this picture to interpret flows: _stable_ states damp disturbances; _unstable_ ones amplify them; _neutral_ ones neither grow nor decay until nonlinearities tip them.
+A “standing pencil” fails in practice because the slightest perturbation makes it fall—no physical system is perfectly disturbance-free. We use this picture to interpret flows: _stable_ states damp disturbances; _unstable_ ones amplify them; _neutral_ ones neither grow nor decay until nonlinearities tip them.
 
 ![](../../_Media/Lecture3-Instabilities-1761841962795.png)
 
@@ -52,7 +52,7 @@ Follow Maxwell and displace the bead by a small amount, $x = x^* + \delta x$. Ta
 
 $$V'(x^* + \delta x) = V'(x^*) + V''(x^*)\,\delta x + \tfrac12 V'''(x^*)\,\delta x^2 + \dots$$
 
-The first term is zero because $x^*$ is an equilibrium, and the $\delta x^2$ term is negligible when $\delta x$ is small enough. That is all *linearisation* means: keep terms up to first order in the disturbance. What remains is
+The first term is zero because $x^*$ is an equilibrium, and the $\delta x^2$ term is negligible when $\delta x$ is small enough. That is all *linearization* means: keep terms up to first order in the disturbance. What remains is
 
 $$\frac{d\,\delta x}{dt} = -V''(x^*)\,\delta x \quad\Rightarrow\quad \delta x = \delta x_0\, e^{\sigma t}, \qquad \sigma = -V''(x^*).$$
 
@@ -70,7 +70,7 @@ With inertia, $m\ddot x = -V'(x)$ gives $\sigma^2 = -V''/m$: the same sign crite
 > 3. Keep only the terms linear in it.
 > 4. Look for exponential solutions and read off the sign of the growth rate.
 >
-> For a liquid jet the "bead position" becomes the radius at each point along the jet, and $\sigma$ depends on the wavelength. For a magnet it is the magnetisation; for a pinching neck it is a whole similarity profile. The steps do not change.
+> For a liquid jet the "bead position" becomes the radius at each point along the jet, and $\sigma$ depends on the wavelength. For a magnet it is the magnetization; for a pinching neck it is a whole similarity profile. The steps do not change.
 
 ## 3) Push the bead: response, soft wells and a flat well
 
@@ -92,7 +92,7 @@ Exactly at the flat point linear theory fails, not the physics. Take the simples
 
 $$\delta x = \left(\frac{F}{c}\right)^{1/3}.$$
 
-The response is finite but not proportional to $F$, with an infinite slope at $F = 0$. The same law appears for a magnet at its critical temperature in mean-field theory, where the magnetisation grows as the cube root of the applied field.
+The response is finite but not proportional to $F$, with an infinite slope at $F = 0$. The same law appears for a magnet at its critical temperature in mean-field theory, where the magnetization grows as the cube root of the applied field.
 
 ---
 
@@ -117,7 +117,7 @@ In words of James Clerk Maxwell
 
 ### (i) Rayleigh–Plateau (cylindrical thread → droplets)
 
-Mechanism. A small bulge on a liquid thread lowers capillary pressure locally; liquid is drawn from the necks toward the bulge, further enlarging it—positive feedback. Surface tension itself is the _driver_ (seeking to reduce area) yet also damps very short ripples, so a fastest‑growing wavelength emerges and sets droplet spacing. In inviscid limits, that spacing is order‑ten radii (qualitative memory worth keeping).
+Mechanism. For perturbations with wavelength longer than the circumference, a small bulge on a liquid thread lowers the capillary pressure locally; liquid is drawn from the necks towards the bulge, further enlarging it—positive feedback. Surface tension drives the breakup of long waves (reducing surface area) while restoring very short ripples (which viscosity damps), so a fastest-growing wavelength emerges and sets the droplet spacing. In the inviscid limit, that spacing is order-ten radii (a qualitative number worth keeping).
 
 What to look for. When a faucet runs as a thin jet, you see a regular drop train because this instability picks a wavelength/time scale of breakup (slow dripping is a different, pendant-drop process; see section 6).
 
@@ -134,16 +134,16 @@ Cressey, D. 365 days: Images of the year. Nature 516, 304–309 (2014) - image t
 
 ### (ii) Kelvin–Helmholtz (shear across an interface → billows)
 
-Mechanism. Two fluids sliding past each other create a vorticity sheet at the interface. A ripple tilts that sheet and rolls it up into billows; shear feeding exceeds restoring forces. Surface tension and density contrast stabilize short waves and set a threshold for onset and a preferred scale.
+Mechanism. Two fluids sliding past each other create a vorticity sheet at the interface. A ripple tilts that sheet and rolls it up into billows when shear feeding exceeds restoring forces. In a stably stratified layer (heavier fluid below lighter), gravity restores long waves while capillarity stabilizes short ones, setting a threshold for onset and a preferred scale.
 
-What to look for. In counter‑flowing layers (or the “flag flapping” movie on your slide set), once the interfacial shear is large enough, coherent vortical waves appear and then pair/roll up.
+What to look for. In counter-flowing layers (or the “flag flapping” movie on your slide set), once the interfacial shear is large enough, coherent vortical waves appear and then pair or roll up.
 
 ![](../../_Media/Lecture3-Instabilities-1761842604089.png)
 
 
-### (iii) Rayleigh–Taylor (heavy‑over‑light → spikes & bubbles)
+### (iii) Rayleigh–Taylor (heavy-over-light → spikes & bubbles)
 
-Mechanism. Gravity pulls a heavy fluid down through a light one; a downward dent increases the hydrostatic pressure drop there and accelerates further—positive feedback. Surface tension stabilizes short waves; the competition picks a dominant wavelength. Thin‑film variants (heavy film above air) yield honeycomb/hexagonal hole patterns.
+Mechanism. Gravity pulls a heavy fluid down through a light one; a downward bulge of heavy fluid is negatively buoyant (its excess weight pulls it downwards) and sinks further—positive feedback. Surface tension stabilizes short waves; the competition picks a dominant wavelength. Thin-film variants (heavy film above air) yield honeycomb or hexagonal hole patterns.
 
 ![](../../_Media/Lecture3-Instabilities-1761842685134.png)
 Image by Shengtai Li, Hui Li - "Parallel AMR Code for Compressible MHD or HD Equations", Attribution, <a href="https://commons.wikimedia.org/w/index.php?curid=6513545">Link</a>
@@ -151,7 +151,7 @@ Image by Shengtai Li, Hui Li - "Parallel AMR Code for Compressible MHD or HD Equ
 
 ### (iv) Faraday waves (vertical vibration → subharmonic surface patterns)
 
-Mechanism. Parametric forcing periodically modulates the effective gravity; the flat surface becomes unstable to standing waves at half the drive frequency. Hexagons/stripes are common near onset. Use this as a canonical example of parametric (not spontaneous) instability and _pattern selection near threshold_.
+Mechanism. Parametric forcing periodically modulates the effective gravity; the flat surface becomes unstable to standing waves at half the drive frequency. Hexagons and stripes are common near onset. Use this as a canonical example of parametric (rather than spontaneous) instability and _pattern selection near threshold_.
 
 <div style="text-align: center;">
     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0d_D6yvXAFo?si=oLZxGjb-EvhSI2Wi" 
@@ -163,7 +163,7 @@ Mechanism. Parametric forcing periodically modulates the effective gravity; the 
 
 ### (v) Rayleigh–Bénard–Marangoni (heated film → rolls/hexagons)
 
-Mechanism. Heating from below (buoyancy) or surface‑tension gradients along a free surface (Marangoni) drive cellular convection. Thin layers emphasize Marangoni; thicker ones emphasize buoyancy, flipping flow directions inside the cells. Amplitude/envelope equations near onset rationalize which planforms (rolls, hexagons) persist.
+Mechanism. Heating from below (buoyancy) or surface-tension gradients along a free surface (Marangoni) drive cellular convection. Thin layers emphasize Marangoni; thicker ones emphasize buoyancy, and the cells grow with the layer depth. Amplitude and envelope equations near onset rationalize which planforms (rolls, hexagons) persist.
 
 <div style="text-align: center;">
     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/v2vMXmuC818" 
@@ -184,9 +184,9 @@ The same experiment as the oil layer is made thicker, from 0.14 cm to 0.49 cm (5
 </div>
 
 
-### (vi) Saffman–Taylor (viscous fingering in Hele‑Shaw cells)
+### (vi) Saffman–Taylor (viscous fingering in Hele-Shaw cells)
 
-Mechanism. A less viscous fluid pushing a more viscous one creates a pressure‑gradient focusing at finger tips (“tip effect”). Any protrusion experiences larger local pressure gradient and advances faster—runaway growth—while surface tension blunts the tip and limits short waves. Capillary number ($Ca = \eta U/\gamma$) summarizes the competition; channel geometry further selects finger width and number. In radial injection, secondary instabilities (tip‑splitting/side‑branching) govern the branching morphology.
+Mechanism. A less viscous fluid pushing a more viscous one creates pressure-gradient focusing at finger tips (“tip effect”). Any protrusion experiences a larger local pressure gradient and advances faster—runaway growth—while surface tension blunts the tip and limits short waves. The capillary number ($Ca = \eta U/\gamma$) summarizes the competition; channel geometry further selects finger width and number. In radial injection, secondary instabilities (tip-splitting and side-branching) govern the branching morphology.
 
 <div style="text-align: center;">
     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9Flsy0sc_cg?si=n0tpcsNHr-7JgXkG" 
@@ -199,7 +199,7 @@ Mechanism. A less viscous fluid pushing a more viscous one creates a pressure‑
 
 ### (vii) Viscous coiling & “fluid mechanical sewing machine”
 
-Mechanism. A falling viscous thread buckles and coils from a balance of gravity, bending, stretching, and surface tension; on a moving belt the contact‑point dynamics introduce memory and rich states (coils, meanders, W‑patterns). Linear stability alone is insufficient—nonlinear, geometry‑driven dynamics dominate far from threshold.
+Mechanism. A falling viscous thread buckles and coils from a balance of gravity, bending, stretching and surface tension; on a moving belt the contact-point dynamics introduce memory and distinct states (coils, meanders, W-patterns). Linear stability alone is insufficient—nonlinear, geometry-driven dynamics dominate far from threshold.
 
 <div style="text-align: center;">
     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5SpnabbGRQo?si=eUdxJPld0RVSWR_G" 
@@ -228,7 +228,7 @@ Two effects compete: the shrinking mean radius lowers the area, the corrugation 
 
 ![Which wavelength wins?](../../_Media/Intro-Soft-Matter-i03-rayleigh.png)
 
-**Rayleigh's growth rate (1878).** Plateau says which modes can grow, not how fast. Rayleigh wrote the disturbance as a normal mode, $r = R + \varepsilon\,e^{ikz + \sigma t}$, and solved the linearised inviscid flow inside the jet. Each wavenumber is its own bead, with its own growth rate:
+**Rayleigh's growth rate (1878).** Plateau says which modes can grow, not how fast. Rayleigh wrote the disturbance as a normal mode, $r = R + \varepsilon\,e^{ikz + \sigma t}$, and solved the linearized inviscid flow inside the jet. Each wavenumber is its own bead, with its own growth rate:
 
 $$\sigma^2 = \frac{\gamma}{\rho R^3}\,kR\,\frac{I_1(kR)}{I_0(kR)}\left(1 - k^2R^2\right),$$
 
@@ -245,12 +245,12 @@ Linear theory ends here: it says the corrugation grows, not how the thread detac
 ## 7) How to “predict” without doing heavy math
 
 
-1. Force balance & scales. Ask which pair of effects compete: inertia vs capillarity (Weber number), viscous vs capillarity (capillary number), inertia vs viscosity (Reynolds number), gravity vs capillarity (Bond number), elasticity vs capillarity (elastocapillary mumber) or inertia in soft materials (elasticity number). These dimensionless groups flag likely instabilities and the direction of selection.
-2. Dispersion‑curve picture (qualitative). Most interfacial problems have a “bell‑shaped” growth‑rate vs wavelength: short waves stabilized by surface tension/viscosity, long waves limited by the finite driving (e.g. pressure or gravity). The peak sets the emergent spacing observed in your videos/demos. (Keep this as a mental model.)
+1. Force balance & scales. Ask which pair of effects compete: inertia vs capillarity (Weber number), viscous vs capillarity (capillary number), inertia vs viscosity (Reynolds number), gravity vs capillarity (Bond number), elasticity vs capillarity (elastocapillary number) or elasticity vs inertia in soft materials (elasticity number). These dimensionless groups flag likely instabilities and the direction of selection.
+2. Dispersion-curve picture (qualitative). Many interfacial problems have a growth rate that peaks at a finite wavelength (a “bell-shaped” growth-rate curve): short waves are stabilized by surface tension and damped by viscosity, while long waves are limited by the finite driving (e.g. pressure or gravity). The peak sets the emergent spacing observed in the videos and demos.
 
 ![](../../_Media/3-Soft-Matter-Instabilities-1761860668972.png)
 Sketch of the interfacial instabilities discussed in F. Gallaire & P-T. Brun, Philos. Trans. R. Soc. A, 375:2093, 20160155 (2017). DOI: [10.1098/rsta.2016.0155](https://doi.org/10.1098/rsta.2016.0155)
-The dispersion relation, $\sigma$ is the growth rate and $k$ the wave vector, is provided when available. (a(i)–a(iv)) Plateau–Rayleigh instability, (b) Kelvin–Helmoltz instability, (c(i),c(ii)) Rayleigh–Taylor instability in two-phase flows and in a thin layer, (d) Faraday waves arising in a bath subject to periodic oscillatory forcing, (e) Rayleigh–Bénard–Marangoni instability obtained when heating up a thin layer of fluid, (\*) hexagonal tilling, (f(i),f (ii)) plane and radial Saffman–Taylor instability in a Hele–Shaw cell, (g(i),g(ii)) capillary ridge instability and wine tears, (h) Kapitza waves and (i) viscous coiling, with the last three being examples of instabilities found in everyday life. (c(ii)),(d) and (e) typically arrange in patterns such as shown in (\*). Taken from F. Gallaire & P-T. Brun, Philos. Trans. R. Soc. A, 375:2093, 20160155 (2017). DOI: [10.1098/rsta.2016.0155](https://doi.org/10.1098/rsta.2016.0155)
+The dispersion relation, where $\sigma$ is the growth rate and $k$ the wave vector, is provided when available. (a(i)–a(iv)) Plateau–Rayleigh instability, (b) Kelvin–Helmholtz instability, (c(i),c(ii)) Rayleigh–Taylor instability in two-phase flows and in a thin layer, (d) Faraday waves arising in a bath subject to periodic oscillatory forcing, (e) Rayleigh–Bénard–Marangoni instability obtained when heating up a thin layer of fluid, (\*) hexagonal tiling, (f(i),f(ii)) plane and radial Saffman–Taylor instability in a Hele–Shaw cell, (g(i),g(ii)) capillary ridge instability and wine tears, (h) Kapitza waves and (i) viscous coiling, with the last three being examples of instabilities found in everyday life. (c(ii)), (d) and (e) typically arrange in patterns such as shown in (\*). Taken from F. Gallaire & P-T. Brun, Philos. Trans. R. Soc. A, 375:2093, 20160155 (2017). DOI: [10.1098/rsta.2016.0155](https://doi.org/10.1098/rsta.2016.0155)
 
 - Convective vs absolute. If a disturbance amplifies but is advected away, we get localized activity; if it grows in place, patterns fill the domain. This informs whether we expect clean, global patterns or drifting, patchy ones in experiments.   
 
@@ -277,7 +277,7 @@ $$\frac{dA}{dt} = \mu A - A^3.$$
 
 This is the normal form of a *supercritical* pitchfork for a single overdamped mode: any such system with this symmetry and a negative cubic coefficient reduces to it near onset. With a positive cubic coefficient (a *subcritical* bifurcation) the cubic does not stop the growth, and either higher-order terms or a jump to a distant state take over.
 
-**Read it as a flow on a line.** Where $dA/dt > 0$, $A$ increases; where it is negative, $A$ decreases. The fixed points are $A = 0$ and $A = \pm\sqrt{\mu}$. Linearising about them is the bead recipe again: $A = A^* + \delta A$ gives $\sigma = \mu - 3A^{*2}$. At $A^* = 0$, $\sigma = \mu$, unstable for $\mu > 0$. At $A^* = \pm\sqrt\mu$, $\sigma = -2\mu$, stable. For $\mu < 0$ only $A = 0$ exists, and it is stable.
+**Read it as a flow on a line.** Where $dA/dt > 0$, $A$ increases; where it is negative, $A$ decreases. The fixed points are $A = 0$ and $A = \pm\sqrt{\mu}$. Linearizing about them is the bead recipe again: $A = A^* + \delta A$ gives $\sigma = \mu - 3A^{*2}$. At $A^* = 0$, $\sigma = \mu$, unstable for $\mu > 0$. At $A^* = \pm\sqrt\mu$, $\sigma = -2\mu$, stable. For $\mu < 0$ only $A = 0$ exists, and it is stable.
 
 **Or as a bead in a landscape.** $dA/dt = -V'(A)$ with $V(A) = -\mu A^2/2 + A^4/4$. For $\mu < 0$ there is one well at $A = 0$; at $\mu = 0$ the bottom is flat (the $V'' = 0$ case above); for $\mu > 0$ the middle becomes a hilltop and two wells appear. Plotting the equilibria against $\mu$ gives the *pitchfork*. Which branch is chosen, $+\sqrt\mu$ or $-\sqrt\mu$, is decided by the noise in the initial condition: spontaneous symmetry breaking. The ruler buckles left or right with equal probability. The saturated amplitude grows as
 
@@ -301,7 +301,7 @@ Reynolds (1883) injected dye on the axis of a pipe. At low flow rate it stays a 
 
 ## 10) From “avoid” to “use”: harnessing instabilities
 
-Engineers used to fear instabilities as failure modes. Soft‑matter physics repurposes them as fabrication tools: microfluidic emulsification (controlled Rayleigh–Plateau), capillarity‑guided assembly of nanopillars (elastocapillary coalescence), and other self‑organization pathways. The mindset shift is to select initial/boundary conditions so the _natural_ instability builds the desired pattern. The inverse problem—choosing those conditions up‑front—is still an open research space. See: P-T. Brun, Shape formation in interfacial flows, Phys. Rev. Fluids, 9:11, 110501 (2024). [DOI: 10.1103/PhysRevFluids.9.110501](https://doi.org/10.1103/PhysRevFluids.9.110501)
+Engineers used to treat instabilities only as failure modes. Soft-matter physics repurposes them as fabrication tools: microfluidic emulsification (controlled Rayleigh–Plateau), capillarity-guided assembly of nanopillars (elastocapillary coalescence), and other self-organization pathways. The strategy is to choose initial and boundary conditions so the _natural_ instability builds the desired pattern; the inverse problem of prescribing those conditions up-front remains an open research problem. See: P-T. Brun, Shape formation in interfacial flows, Phys. Rev. Fluids, 9:11, 110501 (2024). [DOI: 10.1103/PhysRevFluids.9.110501](https://doi.org/10.1103/PhysRevFluids.9.110501)
 
 
 ---

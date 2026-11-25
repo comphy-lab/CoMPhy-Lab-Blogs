@@ -19,7 +19,7 @@ publish: true
 <!-- PDF-EXPORT-IGNORE-END -->
 <!-- BLOG-PDF-LINK-END -->
 
-Resolving the Dupré–Rayleigh paradox through proper energy accounting and momentum conservation. This lecture bridges [[Lecture-Notes/Intro-Soft-Matter/Faces-of-Soft-Matter|Faces of Soft Matter]]'s introduction to the paradox with a complete resolution.
+Resolving the Dupré–Rayleigh paradox through momentum conservation and complete energy accounting, following on from [[Lecture-Notes/Intro-Soft-Matter/Faces-of-Soft-Matter|Faces of Soft Matter]].
 
 ![](../../_Media/1.5-Taylor-Culick-03.png)
 
@@ -27,7 +27,7 @@ Resolving the Dupré–Rayleigh paradox through proper energy accounting and mom
 
 ## Introduction: The Unresolved Paradox
 
-In the introduction, we encountered a puzzle: when you puncture a soap film, the hole expands with remarkable speed as the film retracts away from the puncture. Yet two seemingly correct physical approaches gave different predictions for this retraction velocity:
+In the introduction, we encountered a puzzle: when a soap film is punctured, the hole expands rapidly as the film retracts away from the puncture. Yet two seemingly sound arguments gave different predictions for the retraction speed:
 
 $$\text{Dupré–Rayleigh (naïve lossless-energy estimate):} \quad v = \sqrt{\frac{4\gamma_{fa}}{\rho h_0}} \quad \text{(too fast)}$$
 
@@ -45,7 +45,7 @@ This lecture resolves the paradox. The resolution was already given by F. E. C. 
 
 ![](../../_Media/1.5-Taylor-Culick-01.png)
 
-John William Strutt, 3rd Baron Rayleigh, used instantaneous photography to capture the dynamics of liquid jets and interfaces. In a remarkable 1891 paper, he observed breaking jets and reported Dupré's energy-balance argument for the speed of film retraction:
+John William Strutt, 3rd Baron Rayleigh, used instantaneous photography to capture the dynamics of liquid jets and interfaces. In his 1891 paper, he photographed breaking jets and reported Dupré's energy-balance argument for the speed of film retraction:
 
 > Rate of surface energy decrease = Rate of kinetic energy increase
 
@@ -53,11 +53,11 @@ Mathematically:
 $$\frac{d}{dt}\left(\frac{1}{2}mv^2\right) = 2\gamma_{fa}(2\pi R) v$$
 
 This yielded:
-$$v_{\text{Dupre-Rayleigh}} = \sqrt{\frac{4\gamma_{fa}}{\rho h_0}}$$
+$$v_{\text{Dupré–Rayleigh}} = \sqrt{\frac{4\gamma_{fa}}{\rho h_0}}$$
 
 ### A Curious Anomaly
 
-Despite its elegant derivation, this is a naïve lossless-energy estimate: it is a factor of $\sqrt{2}$ faster than the momentum-balance speed derived by Taylor (1959) and Culick (1960), the speed at which bursting films are observed to retract.
+Despite its clean derivation, this naïve lossless-energy estimate is a factor of $\sqrt{2}$ faster than the momentum-balance speed derived by Taylor (1959) and Culick (1960), which matches the speed measured in bursting films.
 
 ---
 
@@ -72,7 +72,7 @@ The energy balance assumes that all surface energy released goes into kinetic en
 Setup: a circular hole of radius $R(t)$ opens in a flat film of thickness $h_0$, density $\rho$ and surface tension $\gamma_{fa}$ on each of its two faces. The hole grows at speed $v_f = dR/dt > 0$, and the film material it sweeps up collects in a rim at its edge. Let $R_i$ be the initial radius of the hole.
 
 Surface energy released: two faces of area $\pi(R^2 - R_i^2)$ have disappeared, so, neglecting the surface area of the rim itself,
-$$E_{released} = 2\pi\gamma_{fa}\left(R^2 - R_i^2\right), \qquad \dot{E}_{released} = 2\gamma_{fa} \cdot 2\pi R \cdot v_f$$
+$$E_{\text{released}} = 2\pi\gamma_{fa}\left(R^2 - R_i^2\right), \qquad \dot{E}_{\text{released}} = 2\gamma_{fa} \cdot 2\pi R \cdot v_f$$
 
 Mass collected in the rim:
 $$m = \rho\pi h_0\left(R^2 - R_i^2\right), \qquad \frac{dm}{dt} = \rho \cdot (2\pi R) \cdot h_0 \cdot v_f$$
@@ -93,16 +93,18 @@ $$\boxed{v_f = \sqrt{\frac{4\gamma_{fa}}{\rho h_0}}} \quad \text{(naïve lossles
 
 ![](../../_Media/1.5-Taylor-Culick-08.png)
 
-G. I. Taylor (1886–1975), one of the greatest fluid mechanicists, approached the problem differently: he used momentum conservation instead of energy.
+G. I. Taylor (1886–1975) approached the problem through momentum conservation rather than energy.
 
 Newton's second law: Force = Rate of momentum change
 
-Forces on the film:
-- Surface tension acts on the perimeter of the film at both interfaces
-- Total force: $F = 2\gamma_{fa}(2\pi R)$ (pointing radially outwards, driving the expansion of the hole)
+Because the hole is circular, the net vector force on the entire rim vanishes by symmetry; we apply the radial momentum balance to a small angular sector $d\theta$ and sum around the perimeter ($2\pi$):
 
-Rate of momentum change:
-The rim is pulled radially outwards by surface tension. The material in the rim has momentum $p = mv$.
+Forces on the film:
+- Surface tension pulls radially outwards at both interfaces along the perimeter
+- Total radial force summed around the rim: $F = 2\gamma_{fa}(2\pi R)$
+
+Rate of radial momentum change:
+The material collected in the rim moves radially outwards at speed $v_f$, carrying summed radial momentum $p = m v_f$:
 
 $$\frac{dp}{dt} = 2\gamma_{fa}(2\pi R)$$
 
@@ -112,7 +114,7 @@ $$\frac{d}{dt}(mv_f) = 2\gamma_{fa}(2\pi R)$$
 This gives:
 $$v_f \frac{dm}{dt} + m\frac{dv_f}{dt} = 2\gamma_{fa}(2\pi R)$$
 
-Assuming steady-state ($\frac{dv_f}{dt} = 0$) and $\frac{dm}{dt} = \rho (2\pi R) h_0 v_f$:
+Assuming steady state ($\frac{dv_f}{dt} = 0$) and $\frac{dm}{dt} = \rho (2\pi R) h_0 v_f$:
 
 $$v_f \cdot \rho (2\pi R) h_0 v_f = 2\gamma_{fa}(2\pi R)$$
 
@@ -120,7 +122,7 @@ $$\rho h_0 v_f^2 = 2\gamma_{fa}$$
 
 $$\boxed{v_f = \sqrt{\frac{2\gamma_{fa}}{\rho h_0}}} \quad \text{(Taylor–Culick prediction)}$$
 
-Remarkable fact: Taylor's prediction agrees with experiments! This immediately suggested that the energy approach was wrong—but why?
+Taylor's prediction agrees with experiment, showing that the lossless energy balance misses an energy sink.
 
 ---
 
@@ -132,21 +134,21 @@ F. E. C. Culick identified the missing piece in 1960, in a short comment on meas
 
 > [!important] The Key Insight
 >
-> The film material does not smoothly flow into the retracting rim. Instead, it collides inelastically with the rim, dissipating energy. This is a plastic collision, not an elastic process.
+> The film material does not enter the retracting rim reversibly. Each element of stationary film is accelerated abruptly to the rim speed in an inelastic collision, dissipating mechanical energy as heat.
 
 ### Energy Budget with Dissipation
 
-When the soap film retracts, the material at the film edge joins the rim. This material transition is inelastic:
+When the soap film retracts, material at the film edge joins the rim inelastically:
 
-- Before collision: the film ahead of the rim is at rest
-- After collision: it moves with the rim at $v_f$
-- Energy dissipated: each mass element is accelerated from $0$ to $v_f$ in a plastic (perfectly inelastic) collision
+- Before capture: the film ahead of the rim is at rest
+- After capture: it moves with the rim at $v_f$
+- Energy dissipated: each mass element is accelerated from $0$ to $v_f$ in a perfectly inelastic collision
 
 ![](../../_Media/1.5-Taylor-Culick-14.png)
 
-The energy dissipation rate from the inelastic collision:
+The energy dissipation rate from the inelastic collision is:
 
-$$\dot{E}_{dissipated} = \frac{1}{2}\frac{dm}{dt}v_f^2$$
+$$\dot{E}_{\text{dissipated}} = \frac{1}{2}\frac{dm}{dt}v_f^2$$
 
 In the rim's frame the film arrives at $v_f$ and stops, losing $\frac{1}{2}v_f^2$ per unit mass. Half the surface energy released is dissipated this way; the other half goes into the rim's kinetic energy.
 
@@ -154,16 +156,16 @@ In the rim's frame the film arrives at $v_f$ and stops, losing $\frac{1}{2}v_f^2
 
 ## Complete Energy Balance
 
-Let's now account for all energy flows:
+Accounting for both kinetic energy and dissipation:
 
 Energy released by surface tension:
-$$\dot{E}_{released} = 2\gamma_{fa} \cdot 2\pi R \cdot v_f = 4\pi \gamma_{fa} R v_f$$
+$$\dot{E}_{\text{released}} = 2\gamma_{fa} \cdot 2\pi R \cdot v_f = 4\pi \gamma_{fa} R v_f$$
 
 Energy dissipated (inelastic collision):
-$$\dot{E}_{dissipated} = \frac{1}{2}\frac{dm}{dt}v_f^2 = \frac{1}{2}\rho (2\pi R h_0) v_f \cdot v_f^2 = \pi \rho R h_0 v_f^3$$
+$$\dot{E}_{\text{dissipated}} = \frac{1}{2}\frac{dm}{dt}v_f^2 = \frac{1}{2}\rho (2\pi R h_0) v_f \cdot v_f^2 = \pi \rho R h_0 v_f^3$$
 
 Energy conservation (with dissipation):
-$$\dot{E}_{released} = \dot{E}_{dissipated} + \dot{E}_{kinetic}$$
+$$\dot{E}_{\text{released}} = \dot{E}_{\text{dissipated}} + \dot{E}_{\text{kinetic}}$$
 
 $$4\pi \gamma_{fa} R v_f = 2\pi \rho R h_0 v_f^3$$
 
@@ -175,29 +177,29 @@ $$\boxed{v_f = \sqrt{\frac{2\gamma_{fa}}{\rho h_0}}} \quad \text{(Corrected ener
 
 ## Resolving the Apparent Contradiction
 
-The resolution lies in momentum conservation vs. energy conservation:
+The resolution lies in the difference between momentum conservation and mechanical energy conservation:
 
 ### Why Momentum Conservation Works
 
-Momentum balance directly applies regardless of dissipation:
+Momentum balance applies directly regardless of internal dissipation:
 
 $$\text{Force} = \frac{dp}{dt}$$
 
-This is valid whether the process is elastic or inelastic. The surface tension force acts on the film perimeter, and momentum is conserved:
+This holds whether the capture is elastic or inelastic. The surface tension force acts along the perimeter, fixing the rate of momentum gain:
 
 $$v_f = \sqrt{\frac{2\gamma_{fa}}{\rho h_0}} \quad \checkmark$$
 
 ### Why the Original Energy Balance Failed
 
-The error in the Dupré–Rayleigh approach was assuming that only kinetic energy matters. 
+The Dupré–Rayleigh estimate assumed that all released surface energy becomes kinetic energy of the rim:
 
 $$2\gamma_{fa} \cdot 2\pi R \cdot v_f = \frac{d}{dt}\left[\frac{1}{2}m v_f^2\right]$$
 
-But this neglected  dissipation as the film material is "compressed" into the rim. The correct energy balance is:
+This omitted viscous dissipation as stationary film is swept into the moving rim. The complete energy balance is:
 
-$$2\gamma_{fa} \cdot 2\pi R \cdot v_f = \frac{d}{dt}\left[\frac{1}{2}m v_f^2\right] + \dot{E}_\text{dissipation}$$
+$$2\gamma_{fa} \cdot 2\pi R \cdot v_f = \frac{d}{dt}\left[\frac{1}{2}m v_f^2\right] + \dot{E}_{\text{dissipation}}$$
 
-The "missing" energy, $\dot{E}_\text{dissipation} = \frac{1}{2}\frac{dm}{dt}v_f^2$, is lost where the stationary film is swept into the moving rim, and viscous stresses turn it into heat. Its rate is fixed by the momentum balance, not by the value of the viscosity: a less viscous film dissipates the same power in a smaller region.
+The "missing" energy, $\dot{E}_{\text{dissipation}} = \frac{1}{2}\frac{dm}{dt}v_f^2$, is lost where the stationary film is swept into the moving rim, and viscous stresses turn it into heat. Its rate is fixed by the momentum balance, not by the value of the viscosity: a less viscous film dissipates the same power in a smaller region.
 
 ---
 
@@ -221,17 +223,17 @@ In both regimes, an isolated flat film with negligible resistance from the surro
 
 ## Experimental Validation and Simulations
 
-Modern high-speed imaging and numerical simulations have beautifully confirmed the resolution:
+High-speed imaging and numerical simulations confirm this resolution:
 
 Key observations:
 - Bursting films retract at speeds very close to Taylor's prediction
-- Velocity field shows strong acceleration from rest to $v_f$
+- The velocity field accelerates sharply from rest to $v_f$ across the neck joining film to rim
 - Dissipation concentrates near the retracting edge (the rim region)
-- At high Oh, viscous stresses spread the deformation along the film instead of concentrating it in a compact rim (a viscous effect; viscoelasticity requires an elastic, for example polymeric, liquid)
+- At high $Oh$, viscous stresses spread the deformation along the film instead of concentrating it in a compact rim (a viscous effect; viscoelasticity requires an elastic, for example polymeric, liquid)
 
 ![](../../_Media/1.5-Taylor-Culick-16.png)
 
-Simulations reveal that the velocity profile is not uniform—there's acceleration from the edge into the rim, and stress concentrations that lead to localized dissipation.
+Simulations show that the velocity profile is non-uniform, with steep gradients and localized viscous dissipation where the film enters the rim.
 
 ---
 
@@ -242,27 +244,27 @@ Simulations reveal that the velocity profile is not uniform—there's accelerati
 | Year | Contributor | Contribution |
 |------|---|---|
 | 1891 | Rayleigh | Photographs bursting films; reports Dupré's energy-balance estimate |
-| 1959 | G. I. Taylor | Momentum-balance approach; predicts $v = \sqrt{2\gamma/(\rho h_0)}$ |
+| 1959 | G. I. Taylor | Momentum-balance approach; predicts $v_f = \sqrt{2\gamma_{fa}/(\rho h_0)}$ |
 | 1960 | F. E. C. Culick | Same speed for bursting soap films; identifies the inelastic acceleration of the film and the resulting loss of mechanical energy to viscous dissipation |
 | 1996 | P.-G. de Gennes | Revisits bursting films in a lecture on the mechanics of soft interfaces |
 | 2009 | N. Savva & J. W. M. Bush | Viscous films reach the Taylor–Culick speed after a viscosity-dependent transient |
 
 > [!note] On the importance of this problem
-> The Taylor–Culick paradox exemplifies a deep principle: momentum conservation is always valid, but energy conservation requires accounting for dissipation mechanisms. This lesson transfers to many soft matter phenomena where interfaces dominate.
+> The Taylor–Culick paradox illustrates a general principle: momentum conservation holds regardless of internal dissipation, whereas an energy balance fails unless every dissipative sink is included.
 
 ---
 
 ## Key Takeaways
 
-1. Momentum conservation is robust. The Taylor–Culick speed $v_f = \sqrt{2\gamma_{fa}/(\rho h_0)}$ follows directly from force balance and does not depend on details of energy dissipation.
+1. Momentum conservation is insensitive to internal dissipation. The Taylor–Culick speed $v_f = \sqrt{2\gamma_{fa}/(\rho h_0)}$ follows directly from force balance and does not depend on the microscopic mechanism of energy loss.
 
-2. Energy dissipation is not negligible. The naive energy-balance approach fails because it ignores the inelastic collision process—energy is *not* smoothly converted to kinetic energy alone.
+2. Energy dissipation is not negligible. The naïve energy-balance approach fails because accelerating stationary film into the rim is inelastic, dissipating half of the released surface energy.
 
-3. Multiple equilibrium approaches. For the same physical process, different conservation laws give different perspectives. Momentum is fundamental; energy requires accounting for all sinks.
+3. Complementary conservation laws. Momentum and energy balances apply to the same dynamic process, but momentum fixes the speed directly while mechanical energy requires accounting for every sink.
 
-4. Viscosity sets the transient, not the final speed. At low Oh a compact rim forms quickly; at high Oh viscous stresses spread the retraction along the film and the edge takes longer to accelerate. An isolated film eventually retracts at the Taylor–Culick speed in both cases. Viscosity is not viscoelasticity: elastic films are a separate problem (see the notes on sheets, bubbles and drops).
+4. Viscosity sets the transient, not the final speed. At low $Oh$ a compact rim forms quickly; at high $Oh$ viscous stresses spread the retraction along the film and the edge takes longer to accelerate. An isolated film eventually retracts at the Taylor–Culick speed in both cases. Viscosity is not viscoelasticity: elastic films are a separate problem (see the notes on sheets, bubbles and drops).
 
-5. Paradoxes resolve through careful accounting. Many apparent contradictions in physics arise from incomplete accounting of energy or momentum sinks/sources. Always ask: "Where did the energy/momentum go?"
+5. Paradoxes resolve through careful accounting. Apparent contradictions between conservation laws usually signal an omitted sink or source of energy or momentum.
 
 ![](../../_Media/1.5-Taylor-Culick-18.png)
 
@@ -283,13 +285,13 @@ Simulations reveal that the velocity profile is not uniform—there's accelerati
 
 ## Connection to viscosity and conservation laws
 
-This resolution of the Taylor–Culick paradox illustrates the power of conservation laws in fluid mechanics. In the notes on viscosity and conservation laws, we develop a systematic framework for:
+The Taylor–Culick paradox sets up the continuum conservation laws developed in the notes on viscosity and conservation laws:
 
 - Conservation of momentum → Euler and Navier–Stokes equations
-- Conservation of energy → Thermodynamics and dissipation
-- Continuum mechanics → Coarse-grained descriptions of soft matter
+- Conservation of energy → thermodynamics and viscous dissipation
+- Continuum mechanics → coarse-grained descriptions of soft matter
 
-Understanding *why* momentum conservation works (even when energy accounting is subtle) is central to soft matter hydrodynamics.
+Seeing why momentum balance succeeds when a lossless mechanical-energy balance fails prepares us for viscous and viscoelastic flows later in the course.
 
 ---
 
