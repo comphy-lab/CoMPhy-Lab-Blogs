@@ -19,256 +19,384 @@ publish: true
 <!-- BLOG-PDF-LINK-END -->
 
 > [!tldr] TL;DR
-> An elastic solid resists deformation, a viscous liquid resists the rate of deformation, and a viscoelastic material does both; which response wins depends on how fast the material is deformed. Tiny amounts of dissolved polymer change how jets, filaments and films break into droplets, from inkjet printing to coughs and sneezes. To describe such flows we keep Cauchy's momentum equation and add a polymer stress that depends on the conformation tensor $\boldsymbol{\mathcal{A}}$, which measures how stretched the polymers are. In the Oldroyd-B family of models the polymers are stretched by the flow and relax with a single relaxation time $\lambda$. Its limits are a viscous liquid ($\lambda = 0$) and a Kelvin–Voigt solid ($\lambda \to \infty$). The Kelvin–Voigt solid is elastic or purely dissipative depending on its retardation time (solvent viscosity divided by elastic modulus). In dimensionless form, three numbers span the parameter space: the Deborah number $De$ (material memory against flow time), the elastocapillary number $Ec$ (elastic against capillary stress) and the solvent Ohnesorge number $Oh_s$ (viscous against inertio-capillary effects). Both $De = 0$ and $Ec = 0$ give a Newtonian liquid.
+> A flexible polymer chain acts as an entropic spring that stiffens with temperature. Coarse-graining dumbbells in a Newtonian solvent gives Oldroyd-B: solvent viscosity plus polymer stress that grows as flow stretches the chains and relaxes over time $\lambda$. Fast relaxation gives a Newtonian liquid; no relaxation at fixed modulus gives a neo-Hookean (or Kelvin–Voigt) solid. Strong extension unravels chains and makes steady extensional viscosity diverge, while a thinning thread spans pinch-off, exponential thinning, and arrest. Impacting spheres cross from Wagner to Hertz scaling. Punctured elastic sheets arrest by logarithmic hoop tension at a radius exponential in $1/Ec$ to leading order as $Ec \to 0^+$; relaxation releases arrest.
 
-## 0) Continuum mechanics across fields
+These notes cover two sessions taught from one slide deck, **Rheology** (25 November) and **Some examples of viscoelasticity** (2 December): one continuum model derived from a single polymer chain, then tested on an impacting drop and a punctured elastic sheet.
 
-The lecture opened with two images that show the same pattern. In the first, a bubble resting on the surface of a very viscous liquid is punctured at its apex. As the hole opens and the thin film collapses, the film develops a ring of radial wrinkles (Oratis, Bush, Stone & Bird 2020). In the second, a rod pushed into an inflated beach ball produces radial wrinkles in a ring around the rod (Vella, Ajdari, Vaziri & Boudaoud 2011). One material is a liquid and the other a solid, yet they wrinkle in the same way.
+Trace polymers alter liquid breakup: water jets pinch off with satellites, whereas aqueous polyethylene oxide (PEO) at roughly $0.003$ wt% in an inkjet filament holds a slender thread that retracts without satellites (Sen *et al.* 2021). That elasticity comes from single molecules stretched by flow.
 
-In both cases a thin sheet is compressed along the azimuthal direction, and a thin sheet would rather bend out of its plane than shorten within it. For the indented shell, Vella et al. showed that a single dimensionless tension sets the pattern, $\tau = pR^2/(EhB)^{1/2} \sim (p/E)(R/h)^2$. Here $p$ is the internal pressure, $R$ the shell radius, $h$ its thickness, $E$ its Young's modulus and $B = Eh^3/[12(1-\nu^2)]$ its bending stiffness, with $\nu$ the Poisson ratio. Pushed far enough, an unpressurised shell such as a ping-pong ball inverts a cap into a dimple ("mirror buckling"), and the compressive hoop stress that this creates then buckles the shell again (Gomez, Moulton & Vella 2016). The result is a polygon; for unpressurised and weakly pressurised shells, with $\tau \ll 1$, it has three vertices at onset (Vella et al. 2011). As $\tau$ increases, the polygons give way smoothly to wrinkles confined to an annulus around the indenter. When $\tau \gg 1$, a balance between bending and stretching sets a wrinkle wavelength of order $(hR)^{1/2}$, and the wrinkles occupy a region of size of order $\ell_p = (pR/Eh)^{1/2}R$. Their number therefore grows as $n \sim \ell_p/(hR)^{1/2} \sim \tau^{1/2}$: simulations give $n \approx 1.33\,\tau^{1/2}$, and experiments on an inflated ball agree. Counting the wrinkles thus gives the internal pressure of a shell whose $E$, $h$ and $R$ are known.
+## 1) Closing Cauchy's equation
 
-For the viscous bubble, Oratis et al. tilted bubbles sideways and turned them upside down, and showed that gravity is not what drives the collapse: surface tension and the dynamic stress in the compressed liquid film drive both the collapse and the wrinkling.
+[[Lecture-Notes/Intro-Soft-Matter/Conservation-Laws|Lecture 2]] left Cauchy's momentum equation open without body forces:
 
-Continuum mechanics treats both systems with the same momentum balance. Only the constitutive law changes, that is, the relation between stress and deformation. For slow flows, in which inertia is negligible, the governing equations correspond exactly. An incompressible Newtonian liquid, with stress $\boldsymbol{\sigma} = -p\boldsymbol{I} + 2\eta\boldsymbol{\mathcal{D}}$ and $\nabla\cdot\boldsymbol{u} = 0$, obeys the same equations as an incompressible linear elastic solid, with $\boldsymbol{\sigma} = -p\boldsymbol{I} + 2G\boldsymbol{\varepsilon}$ and $\nabla\cdot\boldsymbol{\xi} = 0$. Here $p$ is the pressure, $\boldsymbol{I}$ the identity tensor, $\eta$ the viscosity, $\boldsymbol{u}$ the velocity, $\boldsymbol{\mathcal{D}} = \left(\nabla\boldsymbol{u} + (\nabla\boldsymbol{u})^{T}\right)/2$ the strain-rate tensor, $G$ the shear modulus, $\boldsymbol{\xi}$ the displacement and $\boldsymbol{\varepsilon} = \left(\nabla\boldsymbol{\xi} + (\nabla\boldsymbol{\xi})^{T}\right)/2$ the strain. Velocity replaces displacement, strain rate replaces strain, and viscosity replaces the shear modulus (the Stokes–Rayleigh analogy). A viscous sheet can therefore wrinkle like an elastic one, with stresses set by how fast it deforms rather than by how much.
+$$\rho\,\frac{D\boldsymbol{u}}{Dt} = \nabla\cdot\boldsymbol{\sigma},$$
 
-This lecture is about the materials in between, whose stress depends on both the deformation and its rate.
+with density $\rho$, velocity $\boldsymbol{u}(\boldsymbol{x}, t)$, material derivative $D/Dt = \partial/\partial t + \boldsymbol{u}\cdot\nabla$, and stress $\boldsymbol{\sigma}$. Only the closure for $\boldsymbol{\sigma}$ depends on the material:
 
-## 1) Why do we care?
+- **Pressure only** ($\boldsymbol{\sigma} = -p\boldsymbol{\mathcal{I}}$): Euler's equation, $\rho\,D\boldsymbol{u}/Dt = -\nabla p$.
+- **Newtonian** ([[Lecture-Notes/Intro-Soft-Matter/Viscosity|Viscosity]]): $\boldsymbol{\sigma} = -p\boldsymbol{\mathcal{I}} + 2\eta\boldsymbol{\mathcal{D}}$ with constant $\eta$ and $\boldsymbol{\mathcal{D}} = \frac{1}{2}\big(\nabla\boldsymbol{u} + (\nabla\boldsymbol{u})^{T}\big)$ ($(\nabla\boldsymbol{u})_{ij} = \partial_i u_j$) gives Navier–Stokes, $\rho\,D\boldsymbol{u}/Dt = -\nabla p + \eta\nabla^2\boldsymbol{u}$, for $\nabla\cdot\boldsymbol{u} = 0$.
 
-### 1.1 Elastocapillary jets in inkjet printing
+For polymer solutions or soft rubber, stress depends on deformation as well as deformation rate:
 
-An inkjet printhead fires a drop trailed by a long, slender filament. Ideally the filament retracts into a single drop; if it breaks up instead, it leaves satellite droplets that degrade the print and contaminate the printer. Sen et al. (2021) showed that a minute amount of polymer can prevent this. Aqueous solutions of polyethylene oxide (PEO) at concentrations of about $0.003$ wt%, corresponding to a nozzle-based Deborah number of about $3$ (Deborah numbers are defined in §5 and §6), suppress satellite droplets. For given driving conditions there is a window of concentrations: below it satellites still form, and above it the printhead stops jetting. Inside the window the filament retracts faster than the Newtonian Taylor–Culick speed of [[Lecture-Notes/Intro-Soft-Matter/Taylor-Culick-Paradox|the Taylor–Culick paradox]], because polymers stretched during jetting add an elastic tension that pulls the filament back. In the lecture, a video compared water with $0.003\,\%$ and $0.009\,\%$ PEO solutions.
+$$\boldsymbol{\sigma} = -p\boldsymbol{\mathcal{I}} + 2\eta_s\boldsymbol{\mathcal{D}} + \boldsymbol{\sigma}_p,$$
 
-"Elastocapillary" means that elastic and capillary stresses compete. The elastocapillary number $Ec$ of §6 measures that competition.
+with solvent viscosity $\eta_s$ and polymer stress $\boldsymbol{\sigma}_p$ to be determined.
 
-### 1.2 Mist: how sneezes make droplets
+## 2) Spring, dashpot, Maxwell element and the Deborah number
 
-Coughs and sneezes are turbulent, multiphase flows that can carry pathogen-bearing droplets of mucosalivary fluid, and how far the contamination reaches is largely set by droplet size. High-speed imaging at the mouths of healthy subjects (Scharfman, Techet, Bush & Bourouiba 2016) showed that the fluid keeps breaking up after it has left the mouth, through a cascade from sheets to bursting bags to ligaments and finally to droplets. The viscoelasticity of the mucosalivary fluid delays this fragmentation: droplet precursors that form along stretched filaments merge, which changes the drop-size distribution further downstream.
+For scalar stress $\sigma$ and strain $\varepsilon$, two ideal elements set the limits:
 
-### 1.3 Where do the droplets come from?
+- **Spring (elastic solid):** $\sigma = G\varepsilon$ (shear modulus $G$), storing energy reversibly and remembering its reference shape.
+- **Dashpot (viscous liquid):** $\sigma = \eta\dot\varepsilon$ (viscosity $\eta$, strain rate $\dot\varepsilon = d\varepsilon/dt$), dissipating energy and forgetting its shape at once.
 
-Wei & Li (2016) summarise three places where respiratory droplets form (their figure 1):
+In series, they form the Maxwell element, sharing stress $\sigma$ while strain rates add:
 
-- **The upper airways (larynx and trachea).** Fast airflow destabilises the liquid that lines the airway wall and tears droplets from it.
-- **The oral cavity.** Saliva in the mouth is atomised by the outgoing air.
-- **The bronchioles.** Liquid films close the smallest airways during exhalation and rupture when the airways reopen during inhalation.
+$$\dot\varepsilon = \frac{\dot\sigma}{G} + \frac{\sigma}{\eta} \quad\Rightarrow\quad \sigma + \lambda\dot\sigma = \eta\dot\varepsilon,$$
 
-These sites go with three proposed droplet-size modes: a bronchiolar film-burst mode during normal breathing (diameters up to about $1\,\mu\mathrm{m}$), a laryngeal mode most active during voicing and coughing (about $1\,\mu\mathrm{m}$ and larger), and an oral mode during speech and coughing (about $100\,\mu\mathrm{m}$ and larger).
+with relaxation time $\lambda = \eta/G$. Under a held step strain $\varepsilon_0$ from $t = 0$ ($\dot\varepsilon = 0$ for $t > 0$), the solid keeps $\sigma = G\varepsilon_0$, the liquid gives an impulse and drops to zero, and the Maxwell element relaxes as $\sigma(t) = G\varepsilon_0\,e^{-t/\lambda}$.
 
-### 1.4 Coughing as mimicked in the lab
+![Stress relaxation after a step strain](../../_Media/Intro-Soft-Matter-v04-relax.png)
+*Stress $\sigma/(G\varepsilon_0)$ against $t/\lambda$ after a held step strain $\varepsilon_0$ for an elastic solid (blue), viscous liquid (orange), and Maxwell element (purple).*
 
-A "cough machine" reproduces the first of these mechanisms (Kant, Pairetti, Saade, Popinet, Zaleski & Lohse 2023). A horizontal channel, $30$ cm long with a $2\,\mathrm{cm} \times 1\,\mathrm{cm}$ rectangular cross-section, stands in for the trachea. Its floor is coated with a thin liquid film, and a valve releases a blast of air from a pressurised tank at free-stream speeds of about $10$–$30$ m/s. The film is lifted into a sheet that inflates into bag-like structures; holes then open and retract across the bags, and the liquid rims bounding these holes break into droplets. A more viscous film stabilises the bags and produces smaller droplets, with the mean size falling by almost a factor of two over the viscosities studied.
+Comparing $\lambda$ with observation time $t_{\mathrm{obs}}$ defines the Deborah number, $De = \lambda/t_{\mathrm{obs}}$. The material acts as a solid for $De \gg 1$ ($t_{\mathrm{obs}} \ll \lambda$) and flows as a liquid for $De \ll 1$ ($t_{\mathrm{obs}} \gg \lambda$): Silly Putty bounces on impact yet spreads on a bench. Reiner (1964) named the group after the prophetess Deborah, whose song says "the mountains flowed before the Lord".
 
-Li, Saade, Zaleski, Sen, Kant & Lohse (2025) replaced the Newtonian film with mucosalivary-mimetic PEO solutions. The viscoelastic films still fragment through bags, but the bags inflate further, so their sheets are thinner before they rupture (and, in the simulations, more uniform), and the droplets are smaller. Their simulations use the Oldroyd-B model that we build in §3.
+## 3) From a single polymer chain to Oldroyd-B
 
-The lecture contrasted two routes from liquid to droplets: **jetting**, in which liquid is drawn into a jet or filament that then breaks up (the inkjet filaments of §1.1, or the Worthington jets of [[Lecture-Notes/Intro-Soft-Matter/Sheets-Bubbles-Drops|sheets, bubbles and drops]]), and **bag-mediated atomisation** of a sheared film, as here. In every example a thin film or filament is stretched and thinned, and its fate depends on whether the liquid resists viscously, elastically or both. To say more we need a constitutive model.
+In a dilute polymer solution, $G$ and $\lambda$ follow from single-chain statistics and Stokes drag (Bird *et al.* 1987, ch. 13; Larson 1988, ch. 2).
 
-## 2) How do we model polymeric flows?
+### 3.1 A polymer is an entropic spring
 
-### 2.1 Momentum balance
+A freely jointed chain of $N$ segments of length $b$ executes a three-dimensional random walk with mean-square end-to-end distance $\langle R^2 \rangle = Nb^2$. For $N \gg 1$, the end-to-end vector $\boldsymbol{R}$ is Gaussian,
 
-We keep the Cauchy momentum equation,
+$$P(\boldsymbol{R}) \propto \exp\!\left(-\frac{3R^2}{2Nb^2}\right),$$
 
-$$\frac{\partial(\rho\boldsymbol{u})}{\partial t} + \nabla\cdot\left(\rho\boldsymbol{u}\boldsymbol{u}\right) = \nabla\cdot\boldsymbol{\sigma},$$
+where the factor $3$ fixes $\langle R_x^2\rangle = \langle R_y^2\rangle = \langle R_z^2\rangle = Nb^2/3$.
 
-with $\rho$ the density and $\boldsymbol{\sigma}$ the Cauchy stress tensor. Combined with mass conservation, $\partial\rho/\partial t + \nabla\cdot(\rho\boldsymbol{u}) = 0$, this is the equation $\rho\,D\boldsymbol{u}/Dt = \nabla\cdot\boldsymbol{\sigma}$ of [[Lecture-Notes/Intro-Soft-Matter/Conservation-Laws|conservation laws]], without body forces. Gravity is left out here, and surface tension enters through the boundary condition at the interface. We consider incompressible liquids, $\nabla\cdot\boldsymbol{u} = 0$. The equation holds for any continuum; the material enters only through $\boldsymbol{\sigma}$.
+![Entropic spring from a random-walk polymer chain](../../_Media/Intro-Soft-Matter-v05-entropic.png)
+*Random-walk chain of $N$ segments of length $b$ with end-to-end vector $\boldsymbol{R}$ and its entropic spring constant.*
 
-### 2.2 Splitting the stress
+Separating the ends removes accessible conformations, raising the entropic free energy
 
-![Cartoon of a dilute polymer solution: grey coiled polymer chains dispersed in a blue solvent](../../_Media/5-Viscoelasticity-1.png)
-*A dilute polymer solution: flexible polymer coils (grey) dispersed in a Newtonian solvent (blue). The solvent contributes a viscous stress; the coils contribute a stress that depends on how stretched they are.*
+$$\Psi(\boldsymbol{R}) = -k_{\mathrm{B}}T\ln P(\boldsymbol{R}) = \frac{3k_{\mathrm{B}}T}{2Nb^2}\,R^2 + \mathrm{const},$$
 
-For a dilute polymer solution we write
+with Boltzmann's constant $k_{\mathrm{B}}$ and temperature $T$. The chain pulls its ends back together with Hookean restoring force $-\nabla_{\boldsymbol{R}}\Psi = -H\boldsymbol{R}$, while $+H\boldsymbol{R} = \nabla_{\boldsymbol{R}}\Psi$ is the tension needed to hold them apart, with
 
-$$\boldsymbol{\sigma} = -p\boldsymbol{I} + 2\eta_s\boldsymbol{\mathcal{D}} + \boldsymbol{\sigma}_p\left(\boldsymbol{\mathcal{A}}\right), \qquad \boldsymbol{\mathcal{D}} = \frac{\nabla\boldsymbol{u} + (\nabla\boldsymbol{u})^{T}}{2}.$$
+$$H = \frac{3k_{\mathrm{B}}T}{Nb^2}.$$
 
-The pressure $p$ enforces incompressibility. The second term is the viscous stress of the solvent, with solvent viscosity $\eta_s$: Newton's law from [[Lecture-Notes/Intro-Soft-Matter/Viscosity|viscosity]]. The polymer stress $\boldsymbol{\sigma}_p$ does not depend on the instantaneous strain rate but on the state of the polymers, which is encoded in the conformation tensor $\boldsymbol{\mathcal{A}}$. It is convenient to write
+Because $H \propto T$, heating stiffens the chain: thermal agitation drives it back towards high-entropy crumpled states, matching [[Lecture-Notes/Intro-Soft-Matter/Faces-of-Soft-Matter|Lecture 1]]'s scaling $G \sim k_{\mathrm{B}}T/v$ ($v$ the volume per molecule).
 
-$$\boldsymbol{T} = \boldsymbol{\sigma} + p\boldsymbol{I} = 2\eta_s\boldsymbol{\mathcal{D}} + \boldsymbol{\sigma}_p$$
+### 3.2 Coarse-graining to a dumbbell
 
-for the extra stress, the part of the stress that is not pressure. The diagrams in this lecture write this extra stress as $\boldsymbol{\sigma}$; here we keep the two apart.
+Retain only the connector vector $\boldsymbol{Q} = \boldsymbol{x}_2 - \boldsymbol{x}_1$ and model the chain as two beads at $\boldsymbol{x}_1, \boldsymbol{x}_2$, each with drag coefficient $\zeta$, joined by spring $H = 3k_{\mathrm{B}}T/(Nb^2)$.
 
-### 2.3 The conformation tensor: an order parameter for polymer stretch
+![Bead-spring dumbbell in shear flow](../../_Media/Intro-Soft-Matter-v06-dumbbell.png)
+*Bead-spring dumbbell with connector $\boldsymbol{Q}$, bead drag $\zeta$, and spring constant $H$ in flow $\boldsymbol{u}(\boldsymbol{x})$.*
 
-In the simplest microscopic picture each polymer coil is a dumbbell: two beads joined by an entropic spring, with end-to-end vector $\boldsymbol{R}$. The conformation tensor is the average of $\boldsymbol{R}\boldsymbol{R}$, normalised by its value at rest:
+Neglecting bead inertia, the spring pulls bead $1$ towards bead $2$ with $+H\boldsymbol{Q}$ and bead $2$ back towards bead $1$ with $-H\boldsymbol{Q}$ (matching $-\nabla_{\boldsymbol{R}}\Psi$ in §3.1). Balancing drag against spring pull and Brownian kicks gives
 
-$$\boldsymbol{\mathcal{A}} = \frac{\langle\boldsymbol{R}\boldsymbol{R}\rangle}{\langle R^2\rangle_{\mathrm{eq}}/3}.$$
+$$\zeta\big(\dot{\boldsymbol{x}}_i - \boldsymbol{u}(\boldsymbol{x}_i)\big) = \pm H\boldsymbol{Q} + \text{thermal kicks}.$$
 
-At rest the coils are isotropic, $\langle\boldsymbol{R}\boldsymbol{R}\rangle = \left(\langle R^2\rangle_{\mathrm{eq}}/3\right)\boldsymbol{I}$, so $\boldsymbol{\mathcal{A}} = \boldsymbol{I}$. The tensor is symmetric and positive definite. Its eigenvectors give the directions along which the polymers are stretched on average, its eigenvalues are the squared stretch ratios along those directions, and $\operatorname{tr}\boldsymbol{\mathcal{A}}/3 = \langle R^2\rangle/\langle R^2\rangle_{\mathrm{eq}}$ is the mean-square stretch. The deviation $\boldsymbol{\mathcal{A}} - \boldsymbol{I}$ therefore plays the role of an order parameter: it vanishes in the relaxed, isotropic state and measures how far the flow has pulled the microstructure away from equilibrium.
+Subtracting bead $1$ from bead $2$ and expanding $\boldsymbol{u}(\boldsymbol{x}_2) - \boldsymbol{u}(\boldsymbol{x}_1) \simeq (\boldsymbol{Q}\cdot\nabla)\boldsymbol{u} = (\nabla\boldsymbol{u})^{T}\cdot\boldsymbol{Q}$ yields
 
-For linear (Hookean) entropic springs the polymer stress is linear in $\boldsymbol{\mathcal{A}}$:
+$$\frac{d\boldsymbol{Q}}{dt} = (\nabla\boldsymbol{u})^{T}\cdot\boldsymbol{Q} - \frac{2H}{\zeta}\,\boldsymbol{Q} + \text{thermal kicks}.$$
 
-$$\boldsymbol{\sigma}_p = G\left(\boldsymbol{\mathcal{A}} - \boldsymbol{I}\right), \qquad G = nk_BT,$$
+In a quiescent solvent, the conditional mean of $\boldsymbol{Q}$ decays under the spring drift at rate $2H/\zeta$, while Brownian trajectories keep fluctuating. The second moment $\langle\boldsymbol{Q}\boldsymbol{Q}\rangle$ relaxes to its thermal value at twice that rate, $4H/\zeta$, giving relaxation time
 
-where $n$ is the number of polymer chains per unit volume and $k_BT$ the thermal energy. This is the same entropic modulus as in [[Lecture-Notes/Intro-Soft-Matter/Faces-of-Soft-Matter|Faces of Soft Matter]].
+$$\lambda = \frac{\zeta}{4H}.$$
 
-## 3) The Oldroyd-B family of models
+### 3.3 The conformation tensor and the upper-convected derivative
 
-![Spring–dashpot diagram of the Oldroyd-B model: a solvent dashpot of viscosity η_s in parallel with a polymeric dashpot of viscosity η_p in series with a spring of elastic modulus G, pulled by a stress σ, next to the relaxation time λ = η_p/G and the retardation time λ′ = η_s/G](../../_Media/5-Viscoelasticity-2.png)
-*Mechanical analogue of the Oldroyd-B model. The solvent (blue) acts as a dashpot of viscosity $\eta_s$. The polymers (orange) act as a Maxwell element: a dashpot of "polymeric" viscosity $\eta_p$ in series with a spring of elastic modulus $G$. The two branches deform together and their stresses add. The two time scales are the relaxation time $\lambda = \eta_p/G$ and the retardation time $\lambda' = \eta_s/G$.*
+Average $\boldsymbol{Q}\boldsymbol{Q}$ over dumbbells inside a fluid parcel of size $\ell$, large compared with a chain (size $a$) and small compared with the flow scale $L$ ($a \ll \ell \ll L$, [[Lecture-Notes/Intro-Soft-Matter/Conservation-Laws|Lecture 2]]), normalized so rest is the identity:
 
-The Oldroyd-B model completes the description with an evolution equation for $\boldsymbol{\mathcal{A}}$:
+$$\boldsymbol{\mathcal{A}} = \frac{H}{k_{\mathrm{B}}T}\,\langle\boldsymbol{Q}\boldsymbol{Q}\rangle.$$
 
-$$\boldsymbol{T} = 2\eta_s\boldsymbol{\mathcal{D}} + G\left(\boldsymbol{\mathcal{A}} - \boldsymbol{I}\right), \qquad \overset{\nabla}{\boldsymbol{\mathcal{A}}} = -\frac{1}{\lambda}\left(\boldsymbol{\mathcal{A}} - \boldsymbol{I}\right).$$
+At rest, equipartition gives $\langle Q_i Q_j\rangle = (k_{\mathrm{B}}T/H)\delta_{ij}$ and $\boldsymbol{\mathcal{A}} = \boldsymbol{\mathcal{I}}$. The symmetric, positive-definite tensor $\boldsymbol{\mathcal{A}}$ encodes principal stretch directions (eigenvectors) and mean-square stretch ratios (eigenvalues).
 
-The mechanical analogue has two time scales,
+Differentiating $\boldsymbol{Q}\boldsymbol{Q}$ via the dumbbell equation and parcel-averaging yields $\boldsymbol{\mathcal{A}}$'s evolution via the upper-convected derivative $\overset{\nabla}{\boldsymbol{\mathcal{A}}}$:
 
-$$\lambda = \frac{\eta_p}{G} \quad \text{(relaxation time)}, \qquad \lambda' = \frac{\eta_s}{G} \quad \text{(retardation time)},$$
+$$\overset{\nabla}{\boldsymbol{\mathcal{A}}} \equiv \frac{D\boldsymbol{\mathcal{A}}}{Dt} - (\nabla\boldsymbol{u})^{T}\cdot\boldsymbol{\mathcal{A}} - \boldsymbol{\mathcal{A}}\cdot\nabla\boldsymbol{u} = -\frac{\boldsymbol{\mathcal{A}} - \boldsymbol{\mathcal{I}}}{\lambda}.$$
 
-so the polymer viscosity is $\eta_p = G\lambda$. The upper-convected derivative is
+We state the thermal-kick average without derivation (Bird *et al.* 1987, ch. 13): Brownian motion balances spring contraction at rest and supplies $+\boldsymbol{\mathcal{I}}/\lambda$. Since material lines obey $d(\delta\boldsymbol{x})/dt = (\nabla\boldsymbol{u})^{T}\cdot\delta\boldsymbol{x}$, the dyad $\delta\boldsymbol{x}\,\delta\boldsymbol{x}$ has zero upper-convected derivative. Thus $\overset{\nabla}{\boldsymbol{\mathcal{A}}}$ is the rate of change in a frame moving, rotating, and deforming with the fluid: flow stretches $\boldsymbol{\mathcal{A}}$ affinely while relaxation restores $\boldsymbol{\mathcal{I}}$ over $\lambda$.
 
-$$\overset{\nabla}{\boldsymbol{\mathcal{A}}} = \frac{\partial\boldsymbol{\mathcal{A}}}{\partial t} + (\boldsymbol{u}\cdot\nabla)\boldsymbol{\mathcal{A}} - 2\operatorname{Sym}\left(\boldsymbol{\mathcal{A}}\cdot\nabla\boldsymbol{u}\right) = \frac{\partial\boldsymbol{\mathcal{A}}}{\partial t} + (\boldsymbol{u}\cdot\nabla)\boldsymbol{\mathcal{A}} - \boldsymbol{\mathcal{A}}\cdot\nabla\boldsymbol{u} - (\nabla\boldsymbol{u})^{T}\cdot\boldsymbol{\mathcal{A}},$$
+### 3.4 Kramers stress and the Oldroyd-B model
 
-with $\operatorname{Sym}(\boldsymbol{X}) = \left(\boldsymbol{X} + \boldsymbol{X}^{T}\right)/2$ and $(\nabla\boldsymbol{u})_{ij} = \partial_i u_j$.
+Across a plane through a solution of $n$ dumbbells per unit volume, each crossing spring exerts tension $H\boldsymbol{Q}$ across separation $\boldsymbol{Q}$. Summing $\boldsymbol{Q}\,H\boldsymbol{Q}$ per unit volume and subtracting the isotropic thermal momentum flux $nk_{\mathrm{B}}T\boldsymbol{\mathcal{I}}$ present at rest gives the Kramers stress (Bird *et al.* 1987; Larson 1988),
 
-Why this derivative? If the polymers were simply carried by the flow, each end-to-end vector would deform like a material line element, $d\boldsymbol{R}/dt = \boldsymbol{R}\cdot\nabla\boldsymbol{u}$. Then $d\langle\boldsymbol{R}\boldsymbol{R}\rangle/dt = (\nabla\boldsymbol{u})^{T}\cdot\langle\boldsymbol{R}\boldsymbol{R}\rangle + \langle\boldsymbol{R}\boldsymbol{R}\rangle\cdot\nabla\boldsymbol{u}$, which is exactly $\overset{\nabla}{\boldsymbol{\mathcal{A}}} = 0$. The upper-convected derivative is thus the rate of change of $\boldsymbol{\mathcal{A}}$ seen by a material element that moves, rotates and stretches with the flow. The evolution equation says that the flow stretches the polymers as it stretches material lines, while the polymers relax back towards their equilibrium coil, $\boldsymbol{\mathcal{A}} = \boldsymbol{I}$, on the single time scale $\lambda$. Oldroyd (1950) showed how to formulate rheological equations of state that do not depend on the motion of the observer; convected derivatives of this kind are the key ingredient, and "liquid B" of that paper is today's Oldroyd-B model.
+$$\boldsymbol{\sigma}_p = n\langle\boldsymbol{Q}\,H\boldsymbol{Q}\rangle - nk_{\mathrm{B}}T\boldsymbol{\mathcal{I}} = G(\boldsymbol{\mathcal{A}} - \boldsymbol{\mathcal{I}}), \qquad G = nk_{\mathrm{B}}T,$$
 
-In steady simple shear the Oldroyd-B viscosity is $\eta_s + \eta_p$, whatever the shear rate, while a first normal stress difference appears (self-check 5). There is no shear thinning. The model therefore suits Boger fluids, dilute and elastic polymer solutions whose shear viscosity hardly changes with shear rate; most of the PEO solutions of Li et al. (2025) behave this way.
+matching $G = k_{\mathrm{B}}T/v$ with $v = 1/n$ ([[Lecture-Notes/Intro-Soft-Matter/Faces-of-Soft-Matter|Lecture 1]]), where chain spacing $v^{1/3} \ll \ell$.
 
-> [!note] Which retardation time?
-> The lecture defines $\lambda' = \eta_s/G$, the retardation time of the Kelvin–Voigt limit (§4). For finite $\lambda$, eliminating $\boldsymbol{\mathcal{A}}$ shows that the total extra stress obeys
-> $$\boldsymbol{T} + \lambda\overset{\nabla}{\boldsymbol{T}} = 2\left(\eta_s + \eta_p\right)\left(\boldsymbol{\mathcal{D}} + \lambda_r\overset{\nabla}{\boldsymbol{\mathcal{D}}}\right), \qquad \lambda_r = \frac{\lambda\eta_s}{\eta_s + \eta_p} = \frac{\lambda'}{1 + \lambda'/\lambda}.$$
-> This $\lambda_r$ is the usual textbook retardation time of the Oldroyd-B model. It reduces to $\lambda'$ when $\lambda \gg \lambda'$, which is the limit in which $\lambda'$ matters below.
+Adding the Newtonian solvent gives Oldroyd-B (Oldroyd 1950):
 
-## 4) The limits of the Oldroyd-B family
+$$\boldsymbol{\sigma} = -p\boldsymbol{\mathcal{I}} + 2\eta_s\boldsymbol{\mathcal{D}} + G(\boldsymbol{\mathcal{A}} - \boldsymbol{\mathcal{I}}), \qquad \overset{\nabla}{\boldsymbol{\mathcal{A}}} = -\frac{\boldsymbol{\mathcal{A}} - \boldsymbol{\mathcal{I}}}{\lambda}, \qquad \eta_p = G\lambda.$$
 
-![Diagrams of the two limits of the Oldroyd-B model: for zero relaxation time only the solvent dashpot remains, giving a viscous liquid; for infinite relaxation time a spring sits in parallel with the solvent dashpot, giving a Kelvin–Voigt solid, which becomes an elastic solid for zero retardation time and a dissipative system for infinite retardation time](../../_Media/5-Viscoelasticity-3.png)
-*The limits of the Oldroyd-B family. Left: $\lambda = 0$, a viscous liquid with $\boldsymbol{\mathcal{A}} = \boldsymbol{I}$. Right: $\lambda \to \infty$, a Kelvin–Voigt solid with $\overset{\nabla}{\boldsymbol{\mathcal{A}}} = \boldsymbol{0}$. It is an elastic solid for $\lambda' = 0$ and a purely dissipative system for $\lambda' \to \infty$, in which the polymers are deformed ($\boldsymbol{\mathcal{A}} \neq \boldsymbol{I}$) but carry negligible stress. The stresses in the diagram are extra stresses, $\boldsymbol{T} = \boldsymbol{\sigma} + p\boldsymbol{I}$.*
+![Oldroyd-B mechanical analogue and equations](../../_Media/Intro-Soft-Matter-v09-oldroydb.png)
+*One-dimensional mechanical analogue and constitutive equations of Oldroyd-B.*
 
-### 4.1 $\lambda = 0$: viscous liquid
+In one dimension, solvent dashpot $\eta_s$ sits in parallel with a Maxwell branch ($\eta_p$ in series with $G$); in three dimensions, $\overset{\nabla}{\boldsymbol{\mathcal{A}}}$ ensures frame invariance. The dumbbell assumptions omit three effects:
 
-At fixed $G$, $\lambda = 0$ means $\eta_p = G\lambda = 0$. The dashpot in the polymer branch offers no resistance, the spring is never loaded, and the polymers relax instantly: $\boldsymbol{\mathcal{A}} = \boldsymbol{I}$. What remains is a Newtonian liquid,
+- **Finite extensibility:** Hookean springs stretch unboundedly; FENE-P caps chain length.
+- **Shear thinning:** steady simple shear gives constant viscosity $\eta_s + \eta_p$ and quadratic $N_1$ (self-check 3), fitting Boger fluids rather than shear-thinning melts.
+- **Chain interactions:** each dumbbell sees only solvent (dilute limit).
 
-$$\boldsymbol{T} = 2\eta_s\boldsymbol{\mathcal{D}}.$$
+## 4) Two limits and the elastic correspondence
 
-For small but finite $\lambda$, write $\boldsymbol{\mathcal{A}} = \boldsymbol{I} + \lambda\boldsymbol{\mathcal{A}}_1 + \dots$ in the evolution equation. Because $\overset{\nabla}{\boldsymbol{I}} = -\nabla\boldsymbol{u} - (\nabla\boldsymbol{u})^{T} = -2\boldsymbol{\mathcal{D}}$, the leading order gives $\boldsymbol{\mathcal{A}} \approx \boldsymbol{I} + 2\lambda\boldsymbol{\mathcal{D}}$, and the polymer stress becomes $G(\boldsymbol{\mathcal{A}} - \boldsymbol{I}) \approx 2G\lambda\boldsymbol{\mathcal{D}} = 2\eta_p\boldsymbol{\mathcal{D}}$. The polymers simply add a viscosity $\eta_p$, and the liquid is Newtonian with viscosity $\eta_s + \eta_p$, as long as $\lambda$ is short compared with the local deformation time, $\lambda|\nabla\boldsymbol{u}| \ll 1$.
+Varying $\lambda$ moves Oldroyd-B from liquid to nonlinear elastic solid, depending on which parameter stays fixed.
 
-### 4.2 $\lambda \to \infty$: Kelvin–Voigt solid
+### 4.1 Fast relaxation ($\lambda \to 0$ at fixed $\eta_p$): a Newtonian liquid
 
-Now $\eta_p = G\lambda \to \infty$: the dashpot in the polymer branch locks, leaving the spring in parallel with the solvent dashpot. The polymers never relax, $\overset{\nabla}{\boldsymbol{\mathcal{A}}} = \boldsymbol{0}$, and $\boldsymbol{\mathcal{A}}$ simply records the deformation. Starting from a relaxed state ($\boldsymbol{\mathcal{A}} = \boldsymbol{I}$ initially),
+From $\boldsymbol{\mathcal{A}} - \boldsymbol{\mathcal{I}} = -\lambda\overset{\nabla}{\boldsymbol{\mathcal{A}}}$, expand near $\boldsymbol{\mathcal{A}} = \boldsymbol{\mathcal{I}}$. The identity tensor is not frozen in flow; its material derivative vanishes, leaving $\overset{\nabla}{\boldsymbol{\mathcal{I}}} = -(\nabla\boldsymbol{u})^{T} - \nabla\boldsymbol{u} = -2\boldsymbol{\mathcal{D}}$, so $\boldsymbol{\mathcal{A}} - \boldsymbol{\mathcal{I}} \simeq 2\lambda\boldsymbol{\mathcal{D}}$. Holding $\eta_p = G\lambda$ fixed as $\lambda \to 0$ gives
 
-$$\boldsymbol{\mathcal{A}} = \boldsymbol{\mathcal{F}}\cdot\boldsymbol{\mathcal{F}}^{T}, \qquad \mathcal{F}_{ij} = \frac{\partial r_i}{\partial R_j},$$
+$$\boldsymbol{\sigma} \simeq -p\boldsymbol{\mathcal{I}} + 2(\eta_s + \eta_p)\boldsymbol{\mathcal{D}}.$$
 
-where the deformation gradient $\boldsymbol{\mathcal{F}}$ maps a material point at $\boldsymbol{R}$ in the relaxed reference state to its current position $\boldsymbol{r}$. The polymer stress $G(\boldsymbol{\mathcal{F}}\cdot\boldsymbol{\mathcal{F}}^{T} - \boldsymbol{I})$ is that of a neo-Hookean elastic solid (Snoeijer, Pandey, Herrada & Eggers 2020); for an incompressible material the isotropic part $-G\boldsymbol{I}$ can be absorbed into the pressure. With the solvent in parallel,
+Dumbbells relax before flow stretches them, adding only viscosity $\eta_p$. (Fixing $G$ instead sends $\eta_p = G\lambda \to 0$, leaving $\eta_s$; §7.1.)
 
-$$\boldsymbol{T} = 2\eta_s\boldsymbol{\mathcal{D}} + G\left(\boldsymbol{\mathcal{A}} - \boldsymbol{I}\right), \qquad \overset{\nabla}{\boldsymbol{\mathcal{A}}} = \boldsymbol{0},$$
+### 4.2 No relaxation ($\lambda \to \infty$ at fixed $G$): the Finger tensor and neo-Hookean solids
 
-which is a Kelvin–Voigt solid. Which of the two parallel branches dominates depends on the retardation time $\lambda'$ compared with the time $\tau$ over which the material is deformed:
+Fixing $G$ and sending $\lambda \to \infty$ leaves $\overset{\nabla}{\boldsymbol{\mathcal{A}}} = \boldsymbol{0}$. In finite-deformation elasticity (Snoeijer, Pandey, Herrada & Eggers 2020), mapping reference coordinates $\boldsymbol{X}$ to current coordinates $\boldsymbol{x}(\boldsymbol{X}, t)$ defines the deformation gradient and Finger (left Cauchy–Green) tensor,
 
-- **$\lambda' \to 0$ ($\lambda'/\tau \ll 1$): elastic solid**, $\boldsymbol{T} = G(\boldsymbol{\mathcal{A}} - \boldsymbol{I})$. Solvent damping is negligible.
-- **$\lambda' \to \infty$ ($\lambda'/\tau \gg 1$): dissipative system**, $\boldsymbol{T} \approx 2\eta_s\boldsymbol{\mathcal{D}}$. The polymers are deformed and $\boldsymbol{\mathcal{A}} \neq \boldsymbol{I}$ keeps recording the deformation, but on this time scale the stress they carry is negligible compared with the viscous stress, and the response looks purely viscous.
-- **$\lambda'/\tau$ of order one**: a genuinely viscoelastic solid.
+$$\boldsymbol{\mathcal{F}} = \frac{\partial\boldsymbol{x}}{\partial\boldsymbol{X}}, \qquad d\boldsymbol{x} = \boldsymbol{\mathcal{F}}\cdot d\boldsymbol{X}, \qquad \boldsymbol{\mathcal{B}} = \boldsymbol{\mathcal{F}}\cdot\boldsymbol{\mathcal{F}}^{T}.$$
 
-> [!important] Not every viscoelastic material flows
-> For any finite $\lambda$ the Oldroyd-B material is a viscoelastic **liquid**: under a constant stress it eventually flows steadily with viscosity $\eta_s + \eta_p$ (§5.1). The Kelvin–Voigt limit is a viscoelastic **solid**: under a constant stress $\sigma_0$ its shear strain saturates at $\sigma_0/G$, and it recovers completely when the stress is removed. A time-dependent response does not by itself mean that a material flows at long times.
+Like $\boldsymbol{\mathcal{A}}$, $\boldsymbol{\mathcal{B}}$ is Eulerian and symmetric, with eigenvalues $\Lambda_i^2$ (squared principal stretches) and $\boldsymbol{\mathcal{B}} = \boldsymbol{\mathcal{I}}$ undeformed. For an incompressible solid ($\det\boldsymbol{\mathcal{F}} = 1$), the simplest isotropic energy linear in $\operatorname{tr}\boldsymbol{\mathcal{B}}$ is neo-Hookean:
 
-## 5) Viscosity + elasticity = viscoelasticity
+$$W = \frac{G}{2}\left(\operatorname{tr}\boldsymbol{\mathcal{B}} - 3\right) \quad\Rightarrow\quad \boldsymbol{\sigma} = -p\boldsymbol{\mathcal{I}} + G(\boldsymbol{\mathcal{B}} - \boldsymbol{\mathcal{I}}),$$
 
-![Three cartoons: a fluid layer sheared between two plates with σ = ηγ̇; a solid bar pulled at both ends with σ = Gγ; a polymer-laden bar both pulled and sheared with σ = ηγ̇ + Gγ](../../_Media/5-Viscoelasticity-4.png)
-*Viscosity + elasticity = viscoelasticity. A fluid resists the rate of deformation, a solid resists the deformation itself, and a viscoelastic material does both. The $\gamma$ in the image is the shear strain, written $\gamma_s$ in the text.*
+matching $G(\boldsymbol{\mathcal{A}} - \boldsymbol{\mathcal{I}})$.
 
-Strip the model down to one dimension. In simple shear, with shear stress $\sigma$, shear strain $\gamma_s$ and shear rate $\dot\gamma_s = d\gamma_s/dt$:
+![Deformation gradient, Finger tensor, and neo-Hookean stress](../../_Media/Intro-Soft-Matter-v11-finger.png)
+*Mapping $\boldsymbol{X} \mapsto \boldsymbol{x}$ via $\boldsymbol{\mathcal{F}}$, Finger tensor $\boldsymbol{\mathcal{B}}$, and neo-Hookean stress (after Snoeijer et al. 2020).*
 
-- **Fluid:** $\sigma = \eta\dot\gamma_s$ (Newton). Stress is proportional to the rate of deformation, and the work done is dissipated.
-- **Solid:** $\sigma = G\gamma_s$ (Hooke, in shear). Stress is proportional to the deformation, and the work done is stored.
-- **Viscoelastic:** $\sigma = \eta\dot\gamma_s + G\gamma_s$.
+The two tensors share the same kinematics. Since $\boldsymbol{u} = d\boldsymbol{x}/dt$ at fixed $\boldsymbol{X}$, $d\boldsymbol{\mathcal{F}}/dt = (\nabla\boldsymbol{u})^{T}\cdot\boldsymbol{\mathcal{F}}$, giving the exact kinematic identity
 
-The cartoon draws the solid being stretched rather than sheared. For uniaxial stretching of an incompressible material the corresponding coefficients are Young's modulus $E = 3G$ for small strains ([[Lecture-Notes/Intro-Soft-Matter/Faces-of-Soft-Matter|Faces of Soft Matter]]) and the extensional (Trouton) viscosity $3\eta$.
+$$\frac{d\boldsymbol{\mathcal{B}}}{dt} = (\nabla\boldsymbol{u})^{T}\cdot\boldsymbol{\mathcal{B}} + \boldsymbol{\mathcal{B}}\cdot\nabla\boldsymbol{u} \quad\Rightarrow\quad \overset{\nabla}{\boldsymbol{\mathcal{B}}} = \boldsymbol{0}.$$
 
-The combined law is exactly the Kelvin–Voigt limit of §4, with $\eta = \eta_s$. For the simple shear flow $\boldsymbol{u} = (\dot\gamma_s y, 0, 0)$ starting from $\boldsymbol{\mathcal{A}} = \boldsymbol{I}$, the condition $\overset{\nabla}{\boldsymbol{\mathcal{A}}} = \boldsymbol{0}$ gives $\mathcal{A}_{yy} = 1$ and $d\mathcal{A}_{xy}/dt = \dot\gamma_s\mathcal{A}_{yy}$, so $\mathcal{A}_{xy} = \gamma_s$ and
+From a stress-free, incompressible start ($\boldsymbol{\mathcal{A}}(0) = \boldsymbol{\mathcal{B}}(0) = \boldsymbol{\mathcal{I}}$), $\overset{\nabla}{\boldsymbol{\mathcal{A}}} = \boldsymbol{0}$ implies $\boldsymbol{\mathcal{A}} = \boldsymbol{\mathcal{B}}$ for all $t \ge 0$; the reference shape enters via the initial condition. At $\eta_s = 0$, upper-convected Maxwell at $\lambda \to \infty$ is an exact neo-Hookean solid; keeping $\eta_s$ gives a Kelvin–Voigt solid,
 
-$$T_{xy} = \eta_s\dot\gamma_s + G\gamma_s.$$
+$$\boldsymbol{\sigma} = -p\boldsymbol{\mathcal{I}} + 2\eta_s\boldsymbol{\mathcal{D}} + G(\boldsymbol{\mathcal{B}} - \boldsymbol{\mathcal{I}}),$$
 
-This holds at any strain, not only small ones: the neo-Hookean shear stress is linear in $\gamma_s$. What the one-dimensional picture misses are the normal stresses (self-check 4).
+which recovers its reference shape once unloaded while dissipating energy during transients (Snoeijer *et al.* 2020).
 
-### 5.1 Two ways to combine a spring and a dashpot
+## 5) Stretching polymers, the Pipkin diagram and a thinning thread
 
-**Kelvin–Voigt (parallel), $\sigma = G\gamma_s + \eta_s\dot\gamma_s$.** Apply a constant stress $\sigma_0$ from $t = 0$:
+Three flows show how relaxation and nonlinear kinematics compete in Oldroyd-B.
 
-$$\gamma_s(t) = \frac{\sigma_0}{G}\left(1 - e^{-t/\lambda'}\right).$$
+### 5.1 Uniaxial extension, extensional viscosity and the coil–stretch transition
 
-There is no instantaneous jump in strain, because the dashpot cannot move in zero time. The strain creeps towards $\sigma_0/G$ and stays bounded: a solid. If the stress is removed at $t_1$, the strain decays back to zero as $e^{-(t - t_1)/\lambda'}$. Imposing a sudden strain $\gamma_0$ instead requires an impulsive stress at $t = 0$, after which $\sigma = G\gamma_0$ indefinitely: there is no stress relaxation.
+Stretch an incompressible fluid element steadily along $z$ at rate $\dot\varepsilon$: $u_z = \dot\varepsilon z$, $u_r = -\frac{1}{2}\dot\varepsilon r$. At $\lambda = \infty$, material lines elongate as $e^{\dot\varepsilon t}$ and $\mathcal{B}_{zz} = e^{2\dot\varepsilon t}$. At finite $\lambda$,
 
-**Maxwell (series), $\dot\gamma_s = \dot\sigma/G + \sigma/\eta_p$.** The spring and dashpot carry the same stress, and their strains add. After a sudden strain $\gamma_0$ the stress relaxes,
+$$\frac{d\mathcal{A}_{zz}}{dt} = 2\dot\varepsilon\,\mathcal{A}_{zz} - \frac{\mathcal{A}_{zz} - 1}{\lambda}.$$
 
-$$\sigma(t) = G\gamma_0\,e^{-t/\lambda}, \qquad \lambda = \frac{\eta_p}{G}.$$
+The Weissenberg number $Wi = \lambda\dot\varepsilon$ governs the outcome:
 
-Under a constant stress $\sigma_0$ the strain jumps elastically and then grows without bound, $\gamma_s(t) = \sigma_0/G + \sigma_0 t/\eta_p$: a liquid. If the stress is removed at $t_1$, only the elastic part $\sigma_0/G$ is recovered; the viscous part $\sigma_0 t_1/\eta_p$ is permanent.
+- **$Wi < 1/2$:** relaxation wins and $\mathcal{A}_{zz}$ saturates at $1/(1 - 2Wi)$.
+- **$Wi > 1/2$:** flow beats relaxation and $\mathcal{A}_{zz} \sim e^{(2\dot\varepsilon - 1/\lambda)t}$ grows exponentially.
 
-**Oldroyd-B (solvent dashpot in parallel with a Maxwell element).** Linearised in simple shear, the model gives $\sigma = \eta_s\dot\gamma_s + \sigma_p$ with $\sigma_p + \lambda\dot\sigma_p = \eta_p\dot\gamma_s$.
+Past $Wi = 1/2$, chains unravel in the coil–stretch transition.
 
-> [!note] Creep of the full model
-> Under a constant stress $\sigma_0$ applied to relaxed polymers at $t = 0$, the linearised model gives
-> $$\gamma_s(t) = \frac{\sigma_0 t}{\eta_s + \eta_p} + \frac{\sigma_0}{G}\left(\frac{\eta_p}{\eta_s + \eta_p}\right)^2\left(1 - e^{-t/\lambda_r}\right), \qquad \lambda_r = \frac{\lambda\eta_s}{\eta_s + \eta_p}.$$
-> At first the polymers are unstretched and only the solvent resists, so the material starts to shear at the rate $\sigma_0/\eta_s$. At long times it flows steadily with viscosity $\eta_s + \eta_p$: a viscoelastic liquid. As $\eta_s \to 0$ this becomes the Maxwell response; as $\lambda \to \infty$ at fixed $G$ and $\eta_s$, it becomes the Kelvin–Voigt response with $\lambda_r \to \lambda'$.
+In steady uniaxial extension ($Wi < 1/2$), combining that steady $\mathcal{A}_{zz}$ with $\mathcal{A}_{rr} = 1/(1 + Wi)$ yields the steady extensional viscosity (Bird *et al.* 1987, ch. 13),
 
-### 5.2 The time scale decides
+$$\eta_E = \frac{\sigma_{zz} - \sigma_{rr}}{\dot\varepsilon} = 3\eta_s + \frac{3\eta_p}{(1 - 2Wi)(1 + Wi)}.$$
 
-The comparison that runs through this lecture is between the relaxation time $\lambda$ and the time $\tau$ over which the flow deforms the material, the Deborah number $De = \lambda/\tau$. Deformed slowly ($De \ll 1$), a Maxwell or Oldroyd-B material flows like a liquid. Deformed quickly ($De \gg 1$), its polymers respond elastically; the full Oldroyd-B response is then solid-like only if solvent damping is also small, $\lambda'/\tau \ll 1$, and otherwise it is a Kelvin–Voigt response with a substantial viscous stress. Reiner (1964) named the number after the prophetess Deborah, whose song says that "the mountains flowed before the Lord": for a material with a finite relaxation time, whether it looks solid or liquid depends on how long you watch it.
+As $Wi \to 0$, $\eta_E$ recovers Trouton's $3(\eta_s + \eta_p)$; as $Wi \to 1/2^-$, it diverges, with no steady state beyond $Wi = 1/2$ because Hookean dumbbells stretch without limit (finitely extensible models such as FENE-P cap $\eta_E$).
 
-## 6) Parameter space
+![Steady extensional viscosity of Oldroyd-B against Weissenberg number](../../_Media/Intro-Soft-Matter-v13b-extvisc.png)
+*Dimensionless steady polymeric extensional viscosity $\eta_{E,p}/(3\eta_p)$ (with $\eta_{E,p} = \eta_E - 3\eta_s$) against $Wi = \lambda\dot\varepsilon$ in Oldroyd-B, showing the Trouton limit at $Wi \to 0$, divergence at $Wi = 1/2$, and the shaded band $Wi > 1/2$ with no steady state (Bird et al. 1987, ch. 13).*
 
-![Three axes labelled with the Deborah number De, the elastocapillary number Ec and the solvent Ohnesorge number Oh_s, next to the dimensionless Oldroyd-B equations and a box stating that both De = 0 and Ec = 0 represent Newtonian liquids](../../_Media/5-Viscoelasticity-5.png)
-*The parameter space of the dimensionless Oldroyd-B model. The $\tilde{\boldsymbol{\sigma}}$ in the diagram is the dimensionless extra stress $\tilde{\boldsymbol{T}}$.*
+### 5.2 The Pipkin diagram
 
-For the free-surface flows of [[Lecture-Notes/Intro-Soft-Matter/Sheets-Bubbles-Drops|sheets, bubbles and drops]], take a length scale $\mathcal{L}$ (a film thickness, or a bubble or drop radius), the density $\rho$ and the surface tension $\gamma$. Measure time in units of the inertio-capillary time $\tau_\gamma = \sqrt{\rho\mathcal{L}^3/\gamma}$ and stress in units of the capillary stress $\gamma/\mathcal{L}$. Three dimensionless numbers remain:
+In start-up simple shear at rate $\dot\gamma$ from rest ($\boldsymbol{\mathcal{A}}(0) = \boldsymbol{\mathcal{I}}$), comparing $\lambda$ with observation time $t$ and shear time $1/\dot\gamma$ gives
 
-$$De = \frac{\lambda}{\sqrt{\rho\mathcal{L}^3/\gamma}}, \qquad Ec = \frac{G\mathcal{L}}{\gamma}, \qquad Oh_s = \frac{\eta_s}{\sqrt{\rho\gamma\mathcal{L}}}.$$
+$$De = \frac{\lambda}{t}, \qquad Wi = \lambda\dot\gamma,$$
 
-The Deborah number $De$ compares the polymer relaxation time with the inertio-capillary time, the elastocapillary number $Ec$ compares the elastic modulus with the capillary stress, and the solvent Ohnesorge number $Oh_s$ compares viscous with inertio-capillary effects. With tildes marking dimensionless quantities, the model becomes
+whose ratio is the accumulated strain, $Wi/De = \dot\gamma t$.
 
-$$\tilde{\boldsymbol{T}} = 2Oh_s\tilde{\boldsymbol{\mathcal{D}}} + Ec\left(\boldsymbol{\mathcal{A}} - \boldsymbol{I}\right), \qquad \overset{\nabla}{\boldsymbol{\mathcal{A}}} = -\frac{1}{De}\left(\boldsymbol{\mathcal{A}} - \boldsymbol{I}\right),$$
+![Pipkin diagram in the De-Wi plane](../../_Media/Intro-Soft-Matter-v14-pipkin.png)
+*Pipkin diagram for the polymer stress $\boldsymbol{\sigma}_p$ in start-up shear; the dashed line $Wi/De = 1$ separates small and large strain (adapted from Snoeijer et al. 2020).*
 
-where $\boldsymbol{\mathcal{A}}$ is already dimensionless and the upper-convected derivative is now taken with respect to $\tilde t = t/\tau_\gamma$. The momentum equation becomes $D\tilde{\boldsymbol{u}}/D\tilde t = -\tilde\nabla\tilde p + \tilde\nabla\cdot\tilde{\boldsymbol{T}}$ with no prefactors, and the capillary jump in normal traction across the interface is simply the curvature in units of $1/\mathcal{L}$ (the pressure jump also includes any jump in the extra normal stress).
+Four corners appear for $\boldsymbol{\sigma}_p$:
 
-Two combinations recur:
+- **$De \ll 1$, $Wi \ll 1$ (Newtonian):** slow, steady shear adding only viscosity.
+- **$De \ll 1$, $Wi \gg 1$ (nonlinear viscoelastic):** steady shear generating normal-stress differences.
+- **$De \gg 1$, $Wi/De \ll 1$ (linear elastic):** fast probing at small strain.
+- **$Wi \gtrsim De \gg 1$ (neo-Hookean rubber):** large strain reached before relaxation acts.
 
-$$Oh_p = \frac{\eta_p}{\sqrt{\rho\gamma\mathcal{L}}} = Ec\,De, \qquad \frac{\lambda'}{\tau_\gamma} = \frac{Oh_s}{Ec}.$$
+Two caveats apply (Snoeijer *et al.* 2020): the rubber corner ($Wi \gtrsim De \gg 1$) exists only for affine models like Oldroyd-B (non-affine slip models such as Johnson–Segalman oscillate under shear and lack an elastic limit), and the map tracks $\boldsymbol{\sigma}_p$ alone, whereas $2\eta_s\boldsymbol{\mathcal{D}}$ can dominate during rapid probing.
 
-The polymeric Ohnesorge number $Oh_p$ measures the viscosity the polymers add, and $Oh_s/Ec$ is the retardation time in units of $\tau_\gamma$. The limits of §4 now sit in this space:
+### 5.3 One model from liquid to solid: a thinning thread
 
-- **$De \to 0$:** viscous liquid. At small $De$ with $Oh_p = Ec\,De$ finite, the liquid is Newtonian with total Ohnesorge number $Oh_s + Oh_p$.
-- **$De \to \infty$:** Kelvin–Voigt solid. It is elastic when $Oh_s/Ec \ll 1$ and dissipative when $Oh_s/Ec \gg 1$.
-- **$Ec \to 0$:** the polymer stress vanishes whatever $\boldsymbol{\mathcal{A}}$ is, leaving a Newtonian liquid with viscosity $\eta_s$. At large $De$ this is the dissipative limit of §4 seen from the other side, since $\lambda'/\tau_\gamma = Oh_s/Ec \to \infty$.
+A capillary thread of initial radius $R_0$, scaled in time by $\tau = \sqrt{\rho R_0^3/\gamma}$, displays all three regimes of Oldroyd-B (Snoeijer *et al.* 2020):
 
-> [!important] Two routes to a Newtonian liquid
-> Both $De = 0$ and $Ec = 0$ represent Newtonian liquids, for different reasons. At $De = 0$ the polymers relax before the flow can stretch them ($\boldsymbol{\mathcal{A}} = \boldsymbol{I}$). At $Ec = 0$ the flow may stretch them ($\boldsymbol{\mathcal{A}} \neq \boldsymbol{I}$), but they carry no stress.
+- **$\lambda = 0$:** Newtonian finite-time pinch-off ([[Lecture-Notes/Intro-Soft-Matter/Singularities|Soft Matter Singularities]]).
+- **Finite $\lambda$:** strong neck extension forms a uniform filament with $\dot h_{\mathrm{thr}}/h_{\mathrm{thr}} = -\dot\varepsilon/2$, so $h_{\mathrm{thr}} \propto e^{-\dot\varepsilon t/2}$. Balancing capillary pressure $\gamma/h_{\mathrm{thr}} \propto e^{\dot\varepsilon t/2}$ against polymer stress $G\mathcal{A}_{zz} \propto e^{(2\dot\varepsilon - 1/\lambda)t}$ selects $\dot\varepsilon\lambda = 2/3$ and
+  $$h_{\mathrm{thr}} \sim e^{-t/(3\lambda)}$$
+  (Entov & Hinch 1997; Snoeijer *et al.* 2020). In the Oldroyd-B model's late elastocapillary regime, polymer stress replaces finite-time pinch-off with exponential thinning.
+- **$\lambda = \infty$:** thinning arrests where neo-Hookean stress balances capillarity.
 
-Two cautions. First, $Ec = 0$ means no polymer stress at all, but a small nonzero $Ec$ does not guarantee a small polymer stress: in a strong stretching flow the Oldroyd-B conformation tensor can grow without bound, so $Ec(\boldsymbol{\mathcal{A}} - \boldsymbol{I})$ can become of order one (self-check 7). Second, other flows have other natural time scales; for drop impact, the drop-impact example uses the impact time instead. The logic stays the same: compare the material times $\lambda$ and $\lambda'$ with the flow time, and the modulus $G$ with the stress that drives the flow.
+![Thinning dynamics of an Oldroyd-B capillary thread](../../_Media/Intro-Soft-Matter-v15-thread.png)
+*Thread radius $h_{\mathrm{thr}}/R_0$ against $t/\tau$ ($\tau = \sqrt{\rho R_0^3/\gamma}$) in Oldroyd-B for $\lambda = 0$, finite $\lambda$, and $\lambda = \infty$, with an experimental inset of a dilute polymer filament (adapted from Snoeijer et al. 2020, Fig. 2, CC BY 4.0; inset courtesy A. Deblais and D. Bonn).*
+
+## 6) Example 1: a drop hits a wall
+
+Compare a liquid drop ($Ec = 0$) and a soft elastic bead ($De \to \infty$) of radius $R_0$ and density $\rho$ hitting a rigid wall at speed $V_0$, with $Ec = GR_0/\gamma$ and $We = \rho V_0^2 R_0/\gamma$. Only the constitutive law changes, from Newtonian to Kelvin–Voigt:
+
+- **Liquid drop (Wagner):** contact grows as $r \sim \sqrt{3V_0 R_0 t}$ and, at large $We$, inertia controls the first force peak, $F \sim \rho V_0^2 R_0^2$, while low $We$ carries a capillary contribution (Zhang, Sanjay *et al.* 2022). At fixed $We$, this first peak varies weakly with viscosity over $Oh = \eta/\sqrt{\rho\gamma D_0} = 0.0025$–$0.2$ ($D_0 = 2R_0$; Sanjay, Zhang, Lv & Lohse 2025).
+- **Soft solid (Hertz):** compression $\delta(t)$ gives $r \sim \sqrt{R_0\delta}$ and stored energy $\sim GR_0^{1/2}\delta^{5/2}$. Balancing kinetic energy $\sim \rho R_0^3 V_0^2$ fixes $\delta \sim R_0(\rho V_0^2/G)^{2/5}$ and $F \sim GR_0^{1/2}\delta^{3/2} \sim (GR_0^2)^{2/5}(\rho V_0^2 R_0^2)^{3/5}$.
+
+On $El = G/(\rho V_0^2) = Ec/We$, large-$We$ simulations at $Oh = \eta_s/\sqrt{\rho\gamma R_0} = 0.01$ (radius-based) scaled by $\rho V_0^2 R_0^2$ collapse onto one curve (Jana, Kolinski, Lohse & Sanjay 2026): small $El$ sits on the Wagner plateau (capillarity lifts low-$We$ points), while large $El$ gives a single Hertz pulse growing as $El^{2/5}$ (theoretical prefactor $5.27$ against $5.25$ from simulations). See [[Lecture-Notes/Intro-Soft-Matter/Sheets-Bubbles-Drops|Sheets, Bubbles and Drops]] §3 for force histories and the $(We, Ec)$ map.
+
+## 7) Example 2: a hole in an elastic sheet
+
+Consider a circular hole opening in a free sheet of thickness $h_0$, density $\rho$, and surface tension $\gamma$ per face. The elastic-sheet results in §§7.2–7.6 are from V. Bertin, V. Sanjay, C. Datt, A. T. Oratis & J. H. Snoeijer (in preparation).
+
+### 7.1 Taylor–Culick recap and sheet dimensionless groups
+
+In a Newtonian sheet ([[Lecture-Notes/Intro-Soft-Matter/Taylor-Culick-Paradox|the Taylor–Culick paradox]]), capillarity pulls with $2\gamma$ per unit rim length. For a straight rim gathering mass per unit length $m = \rho h_0 \ell$ ($\dot\ell = U$), $d(mU)/dt = 2\gamma$ gives $\rho h_0 U^2 = 2\gamma$ at steady speed, selecting $U = V_{\mathrm{TC}} = \sqrt{2\gamma/(\rho h_0)}$ (Taylor 1959; Culick 1960); this balance carries over to a circular hole once $R \gg h_0$. Even as $Oh \to 0$, half the released surface-energy power per unit rim length ($2\gamma U$) is dissipated: in the rim frame, incoming mass $dm$ arrives at speed $U$ and stops inelastically, giving dissipation power per unit rim length $\dot E_d = \frac{1}{2}\dot m U^2 = \gamma U$ (de Gennes 1996; Sanjay *et al.* 2022).
+
+![Taylor-Culick rim momentum balance and energy dissipation](../../_Media/Intro-Soft-Matter-t-s17-tc-speed.png)
+*Straight-rim schematic, momentum balance, and rim-frame capture for a Newtonian sheet (Taylor 1959; Culick 1960; de Gennes 1996).*
+
+Polymers alter this retraction: puncturing a blown polymeric bubble leaves a small hole at low blowing rate but bursts it at high blowing rate (Tammaro *et al.* 2018). Can elasticity stop a hole from opening?
+
+Scaling lengths by $h_0$, time by $\tau_\gamma = \sqrt{\rho h_0^3/\gamma}$, velocity by $\sqrt{\gamma/(\rho h_0)}$ ($V_{\mathrm{TC}} = \sqrt{2}$), and stress by $\gamma/h_0$ leaves
+
+$$Oh = \frac{\eta_s}{\sqrt{\rho\gamma h_0}}, \qquad Ec = \frac{Gh_0}{\gamma}, \qquad De = \frac{\lambda}{\sqrt{\rho h_0^3/\gamma}},$$
+
+$$\boldsymbol{\sigma} = -p\boldsymbol{\mathcal{I}} + 2Oh\,\boldsymbol{\mathcal{D}} + Ec(\boldsymbol{\mathcal{A}} - \boldsymbol{\mathcal{I}}), \qquad \overset{\nabla}{\boldsymbol{\mathcal{A}}} = -\frac{\boldsymbol{\mathcal{A}} - \boldsymbol{\mathcal{I}}}{De}.$$
+
+Here $Ec$ uses $h_0$ rather than $R_0$. Either $Ec = 0$ or $De = 0$ gives a Newtonian sheet: $Ec = 0$ advects $\boldsymbol{\mathcal{A}}$ without stress, while $De \to 0$ at fixed $Ec$ sends $\eta_p = G\lambda \to 0$ (unlike §4.1 at fixed $\eta_p$), leaving $\eta_s$. At $De = \infty$, $Ec \to 0^+$ recovers the Newtonian sheet only at fixed $t$, not for $t \to \infty$ (§7.5).
+
+### 7.2 No relaxation ($De \to \infty$): slowing and arrest
+
+Take $De \to \infty$, giving a Kelvin–Voigt sheet with $\boldsymbol{\mathcal{A}} = \boldsymbol{\mathcal{F}}\cdot\boldsymbol{\mathcal{F}}^{T}$. Runs below fix $Oh = \sqrt{2}$ and a rounded-edge hole of radius $R_0 = h_0$, varying $Ec$ (Bertin *et al.*, in preparation).
+
+![Opening speed against hole radius for Kelvin-Voigt sheets](../../_Media/Intro-Soft-Matter-t-s28-speed-ladder-3.png)
+*Opening speed $u^* = U/V_{\mathrm{TC}}$ against $R/h_0$ at $De \to \infty$, $Oh = \sqrt{2}$, $R_0 = h_0$, with Newtonian reference (dash-dotted) and first stops $U = 0$ (open circles) at $Ec = 0.5, 1$ (V. Bertin et al., in preparation).*
+
+- **$Ec = 0$:** $\boldsymbol{\mathcal{A}}$ stretches at the tip without stress; $u^* \to 1$.
+- **$Ec = 10^{-6}$–$10^{-3}$:** curves follow the Newtonian reference; $Ec = 10^{-2}$ lies slightly below.
+- **$Ec = 0.1, 0.15, 0.2, 0.3$:** speed peaks below $V_{\mathrm{TC}}$ and falls; at $Ec = 0.1$, the rim stretches long and flat.
+- **$Ec = 0.5, 1$:** the hole stops ($U = 0$, open circles). At $Ec = 1$, no bulbous rim forms; the edge overshoots slightly, recoils, and rests.
+
+### 7.3 Hoop stretch, the elastic mapping and the logarithmic force
+
+A material ring starting at radius $\xi$ and moving to $r > \xi$ acquires hoop stretch $\Lambda_\theta = r/\xi$. In the neo-Hookean limit, $\mathcal{A}_{\theta\theta} = \Lambda_\theta^2$, giving polymer hoop stress
+
+$$\sigma_{p,\theta\theta} = G(\mathcal{A}_{\theta\theta} - 1) \simeq G\Lambda_\theta^2 \qquad (\Lambda_\theta \gg 1),$$
+
+with the isotropic part absorbed into $p$. Since the tip remains the original edge ($\xi = R_0$), $\mathcal{A}_{\theta\theta}^{\mathrm{tip}} = (R/R_0)^2$ exactly.
+
+![Hoop stretch of a material ring around an opening hole](../../_Media/Intro-Soft-Matter-t-s32-hoop-stretch.png)
+*Expansion of a material ring from initial radius $\xi$ to current radius $r$ around an opening hole (V. Bertin et al., in preparation).*
+
+If vertical columns stay vertical in an incompressible flat sheet with sharp edge $R_0$, volume conservation defines an elastic mapping from thickness $h(s, t)$ alone back to $\xi(r, t)$ (Snoeijer *et al.* 2020; Bertin *et al.*, in preparation):
+
+$$h_0\left(\xi^2 - R_0^2\right) = 2\int_R^{r} h(s, t)\,s\,ds \;\Rightarrow\; \xi(r, t), \qquad \mathcal{A}_{\theta\theta}(r, t) = \left(\frac{r}{\xi(r, t)}\right)^2.$$
+
+Gather all rings between $R_0$ and $R$ into a narrow rim at $r \simeq R$, where $\Lambda_\theta = R/\xi$ and $\sigma_{p,\theta\theta} \simeq GR^2/\xi^2$. By volume conservation, ring volume $2\pi\xi h_0\,d\xi$ occupies cross-section $\xi h_0\,d\xi/R$ in the rim, contributing hoop tension $dN_\theta = \sigma_{p,\theta\theta}(\xi h_0\,d\xi/R) = Gh_0 R\,d\xi/\xi$. Hoop tension $N_\theta$ pulls radially inwards with $N_\theta/R$ per unit rim length, so for $R \gg R_0$,
+
+$$F_{\mathrm{el}} \simeq Gh_0 \int_{R_0}^{R} \frac{d\xi}{\xi} = Gh_0 \ln\frac{R}{R_0}$$
+
+per unit rim length: every $e$-fold in radius adds the same force $Gh_0$.
+
+### 7.4 Arrest radius, rim-shape corrections and the regular small-$Ec$ variable
+
+At rest, the rim-gathering balance against $2\gamma$ gives, to leading order as $Ec \to 0^+$,
+
+$$Gh_0\ln\frac{R_\infty}{R_0} \simeq 2\gamma \quad\Rightarrow\quad \ln\frac{R_\infty}{R_0} \sim \frac{2}{Ec}, \qquad R_\infty \approx R_0\,e^{2/Ec} \quad (Ec \to 0^+),$$
+
+diverging faster than any power of $1/Ec$.
+
+Any $O(1)$ shift in the exponent multiplies $R_\infty$ by an $O(1)$ factor: at $Ec = 1$, $R_0 e^{2/Ec} \approx 7.4 R_0$, whereas full static equilibrium gives $R_\infty = 4.24 R_0$. That shift comes from the rim shape. Treating the sheet as a depth-averaged neo-Hookean membrane in dimensionless radial tension $\mathcal{T} = N_{rr}/(Gh_0)$, logarithmic hoop stretch $y = \ln(r/\xi)$, and stretch ratio $k = \Lambda_r/\Lambda_\theta$ yields (Bertin *et al.*, in preparation)
+
+$$\frac{d\mathcal{T}}{dy} = -(1 + k).$$
+
+Integrating from the undisturbed far field ($y = 0$, $\mathcal{T} = 0$) to the hole edge ($y = Y \equiv \ln(R_\infty/R_0)$, where compressive elastic stress cancels $2\gamma$ so $\mathcal{T} = -2/Ec$) gives
+
+$$-\frac{2}{Ec} = -Y - \int_0^{Y} k\,dy \quad\Rightarrow\quad \ln\frac{R_\infty}{R_0} = \frac{2}{Ec} - \int_0^{Y} k\,dy.$$
+
+Three choices of $k(y)$ give the small-$Ec$ (large-radius, $Y \to \infty$) asymptotes:
+
+- **Rim gathering ($r \simeq R$, $k \to 0$):** $2/Ec$.
+- **Constant thickness ($\Lambda_z = 1$):** incompressibility ($\Lambda_r\Lambda_\theta\Lambda_z = 1$) gives $k = \Lambda_\theta^{-2} = e^{-2y}$, whose integral over $[0, \infty)$ is $1/2$, giving $2/Ec - 1/2$ as $Ec \to 0^+$.
+- **Depth-averaged neo-Hookean sheet:** $k(y)$ follows one universal trajectory as $Y \to \infty$, giving $C = \int_0^\infty k\,dy = 0.4725$ and $2/Ec - C$ as $Ec \to 0^+$ (and edge thickening $h/h_0 \sim Ec^{-1/3}$).
+
+A rounded initial edge adds a smaller opposite shift $D_{\mathrm{cap}} = 0.0972$, yielding
+
+$$\ln\frac{R_\infty}{R_0} = \frac{2}{Ec} - C + D_{\mathrm{cap}} + o(1) \qquad (Ec \to 0^+).$$
+
+Dynamic runs reaching rest sit on the static equilibrium curve.
+
+![Arrest radius against Ec comparing equilibria, theory, and dynamics](../../_Media/Intro-Soft-Matter-t-s38-rinf-5.png)
+*Arrest radius $R_\infty/h_0$ against $Ec$ ($R_0 = h_0$): static equilibria (black curve with dots), dynamic simulations (purple diamonds), leading-order $R_0 e^{2/Ec}$ (grey dashed), constant-thickness $-1/2$ (orange dash-dotted), depth-averaged $-C$ (dark blue dashed), rounded-edge $-C + D_{\mathrm{cap}}$ (cyan band), and full depth-averaged solution (solid purple) (V. Bertin et al., in preparation).*
+
+While $R_\infty$ is singular as $Ec \to 0^+$, the combination $Ec\ln(R_\infty/R_0)$ is regular and approaches $2$ from below with slope $-(C - D_{\mathrm{cap}})$:
+
+$$Ec\ln\frac{R_\infty}{R_0} = 2 - Ec(C - D_{\mathrm{cap}}) + o(Ec).$$
+
+![Regularized arrest quantity Ec ln(R_infinity / R_0) against Ec](../../_Media/Intro-Soft-Matter-t-s38b-small-ec.png)
+*Regularized arrest quantity $Ec\ln(R_\infty/R_0)$ against $Ec$: static equilibria (black curve with dots), dynamic simulations (purple diamonds), small-$Ec$ asymptotes, and full depth-averaged solution (V. Bertin et al., in preparation).*
+
+### 7.5 Two limits that do not commute
+
+At $De = \infty$, the order of $t \to \infty$ and $Ec \to 0^+$ matters:
+
+- **Fix $t$, then $Ec \to 0^+$:** elastic stress vanishes on $[0, t]$, recovering Newtonian $U \to U_N(t) \to V_{\mathrm{TC}}$ as $t \to \infty$.
+- **Fix $Ec > 0$, then $t \to \infty$:** hoop stress balances capillarity, giving $U \to 0$ and $R \to R_\infty(Ec)$.
+
+Thus
+
+$$\lim_{t\to\infty}\lim_{Ec\to 0^+} U = V_{\mathrm{TC}} \;\neq\; 0 = \lim_{Ec\to 0^+}\lim_{t\to\infty} U.$$
+
+Since $\ln(R_\infty/R_0) = 2/Ec - C + D_{\mathrm{cap}} + o(1)$, $R_0/R_\infty \sim e^{C - D_{\mathrm{cap}}} e^{-2/Ec}$ is smaller than any power of $Ec$ as $Ec \to 0^+$: all derivatives vanish at $Ec = 0^+$, so no power series in $Ec$ detects arrest. At $Ec = 0.1$, $R_\infty/R_0 \approx 3 \times 10^8$ (beyond what real elastomers survive), and quasi-steady arrival scales as $t_{\mathrm{qs}} \sim (R_\infty/V_{\mathrm{TC}})(2\pi/Ec)^{1/2}$, growing exponentially as $Ec$ falls. Small-$Ec$ arrest is therefore a property of the idealized neo-Hookean model, and rest states at small $Ec$ must come from the static problem.
+
+### 7.6 Finite relaxation releases the arrest
+
+Restoring finite $De$ in Oldroyd-B ($Ec = 1$, $Oh = \sqrt{2}$) removes permanent arrest at $R_\infty = 4.24 R_0$, and every finite-$De$ case shown keeps opening (Bertin *et al.*, in preparation).
+
+![Opening speed against time for finite De at Ec = 1](../../_Media/Intro-Soft-Matter-t-s45-finite-de-2.png)
+*Opening speed $u^* = U/V_{\mathrm{TC}}$ against dimensionless time $t$ at $Ec = 1$, $Oh = \sqrt{2}$ for $De = 0$ (dash-dotted), $De \to \infty$ (orange), and finite $De = 0.1$–$316$ (V. Bertin et al., in preparation).*
+
+- **Fast to moderate relaxation ($De = 0.1, 1, 10$):** speed rises throughout, with a shoulder at $De = 10$. At $De = 1$, stretch builds at the tip and then relaxes, so the hole opens near $V_{\mathrm{TC}}$.
+- **Slow relaxation ($De = 31.6, 100, 316$):** for $t \ll De$, speed follows the arrested Kelvin–Voigt curve and dips; once stress relaxes, speed climbs back towards $V_{\mathrm{TC}}$ ($De = 31.6$ nears $V_{\mathrm{TC}}$ within the simulated time; $De = 100$ and $316$ are still climbing at its end).
 
 ## Summary
 
-1. Viscous and elastic sheets obey the same momentum balance and can show the same patterns; only the constitutive law differs, and for slow flows the two are mathematically equivalent.
-2. Small amounts of polymer change how liquids fragment: they suppress satellite droplets in inkjet printing, delay the breakup of sneeze ejecta and make thinner bags and smaller droplets in a cough machine.
-3. Polymeric flows are modelled by adding a polymer stress $G(\boldsymbol{\mathcal{A}} - \boldsymbol{I})$ to the Newtonian stress, where the conformation tensor $\boldsymbol{\mathcal{A}}$ ($= \boldsymbol{I}$ at rest) measures polymer stretch. In the Oldroyd-B model it obeys $\overset{\nabla}{\boldsymbol{\mathcal{A}}} = -(\boldsymbol{\mathcal{A}} - \boldsymbol{I})/\lambda$, with $\eta_p = G\lambda$ and retardation time $\lambda' = \eta_s/G$.
-4. Limits: $\lambda = 0$ gives a viscous liquid; $\lambda \to \infty$ gives a Kelvin–Voigt solid, which is an elastic solid for $\lambda' \to 0$ and a purely dissipative system for $\lambda' \to \infty$. For finite $\lambda$ the material is a viscoelastic liquid; the Kelvin–Voigt solid is a viscoelastic solid.
-5. In one dimension, $\sigma = \eta\dot\gamma_s + G\gamma_s$ is the Kelvin–Voigt solid. It creeps to $\sigma_0/G$ without an initial jump, whereas a Maxwell element relaxes stress and flows.
-6. In dimensionless form, $De$, $Ec$ and $Oh_s$ span the parameter space, with $Oh_p = Ec\,De$ and $\lambda'/\tau_\gamma = Oh_s/Ec$. Both $De = 0$ and $Ec = 0$ give Newtonian liquids.
+1. **Constitutive closure:** polymer stress $\boldsymbol{\sigma}_p$ extends the Newtonian closure of Cauchy's equation.
+2. **Entropic spring and dumbbell:** a random-walk chain ($N$ segments of length $b$) has $H = 3k_{\mathrm{B}}T/(Nb^2)$ (stiffer when hotter); for two beads of drag $\zeta$ in a quiescent solvent, the mean of $\boldsymbol{Q}$ decays at rate $2H/\zeta$ while $\langle\boldsymbol{Q}\boldsymbol{Q}\rangle$ relaxes on $\lambda = \zeta/(4H)$.
+3. **Oldroyd-B:** $\boldsymbol{\mathcal{A}} = (H/k_{\mathrm{B}}T)\langle\boldsymbol{Q}\boldsymbol{Q}\rangle$ yields $\boldsymbol{\sigma} = -p\boldsymbol{\mathcal{I}} + 2\eta_s\boldsymbol{\mathcal{D}} + G(\boldsymbol{\mathcal{A}} - \boldsymbol{\mathcal{I}})$ ($G = nk_{\mathrm{B}}T$) and $\overset{\nabla}{\boldsymbol{\mathcal{A}}} = -(\boldsymbol{\mathcal{A}} - \boldsymbol{\mathcal{I}})/\lambda$, omitting finite extensibility, shear thinning, and chain interactions.
+4. **Two limits:** $\lambda \to 0$ at fixed $\eta_p = G\lambda$ gives a Newtonian liquid ($\eta_s + \eta_p$); $\lambda \to \infty$ at fixed $G$ from a stress-free start gives $\boldsymbol{\mathcal{A}} = \boldsymbol{\mathcal{B}} = \boldsymbol{\mathcal{F}}\cdot\boldsymbol{\mathcal{F}}^{T}$, a neo-Hookean solid (Kelvin–Voigt with $\eta_s$).
+5. **Extensional flows and regimes:** uniaxial extension triggers coil–stretch and diverging $\eta_E$ at $Wi = 1/2$; the Pipkin map locates neo-Hookean rubber response in the large-strain, high-$De$ corner ($Wi \gtrsim De \gg 1$), which exists only for affine models; a thinning thread spans pinch-off ($\lambda = 0$), $e^{-t/(3\lambda)}$ thinning (finite $\lambda$), and arrest ($\lambda = \infty$).
+6. **Drop impact:** peak force crosses from Wagner $F \sim \rho V_0^2 R_0^2$ to Hertz $F \sim (GR_0^2)^{2/5}(\rho V_0^2 R_0^2)^{3/5}$ on $El = G/(\rho V_0^2) = Ec/We$ (Hertz prefactor $5.27$ from theory; simulations give $5.25$).
+7. **Elastic sheet:** hoop stretch $\Lambda_\theta = r/\xi$ gives $F_{\mathrm{el}} \simeq Gh_0\ln(R/R_0)$. At $De \to \infty$, $\ln(R_\infty/R_0) = 2/Ec - C + D_{\mathrm{cap}} + o(1)$ as $Ec \to 0^+$ ($C = 0.4725$, $D_{\mathrm{cap}} = 0.0972$), $t \to \infty$ and $Ec \to 0^+$ do not commute, and finite $De$ releases arrest.
 
 ## Self-check questions
 
-1. Show that $\partial(\rho\boldsymbol{u})/\partial t + \nabla\cdot(\rho\boldsymbol{u}\boldsymbol{u}) = \nabla\cdot\boldsymbol{\sigma}$ and $\rho\,D\boldsymbol{u}/Dt = \nabla\cdot\boldsymbol{\sigma}$ are equivalent. Which conservation law do you need?
-2. Show that if every end-to-end vector deforms like a material line element, $d\boldsymbol{R}/dt = \boldsymbol{R}\cdot\nabla\boldsymbol{u}$, then $\overset{\nabla}{\boldsymbol{\mathcal{A}}} = 0$. Use $d\boldsymbol{\mathcal{F}}/dt = (\nabla\boldsymbol{u})^{T}\cdot\boldsymbol{\mathcal{F}}$ to show that $\boldsymbol{\mathcal{A}} = \boldsymbol{\mathcal{F}}\cdot\boldsymbol{\mathcal{F}}^{T}$ in the limit $\lambda \to \infty$.
-3. Expand the Oldroyd-B equation for small $\lambda$ to show that $\boldsymbol{\mathcal{A}} \approx \boldsymbol{I} + 2\lambda\boldsymbol{\mathcal{D}}$, and hence that the polymers add a viscosity $\eta_p = G\lambda$.
-4. In the Kelvin–Voigt limit, find all components of $\boldsymbol{\mathcal{A}}$ for a simple shear of amount $\gamma_s$, and show that the first normal stress difference is $N_1 = T_{xx} - T_{yy} = G\gamma_s^2$. What does the scalar law $\sigma = \eta\dot\gamma_s + G\gamma_s$ miss?
-5. For finite $\lambda$ in steady simple shear at rate $\dot\gamma_s$, show that $\mathcal{A}_{xy} = \lambda\dot\gamma_s$ and $\mathcal{A}_{xx} = 1 + 2(\lambda\dot\gamma_s)^2$, that the shear viscosity is $\eta_s + \eta_p$, and that $N_1 = 2\eta_p\lambda\dot\gamma_s^2$. Does the Oldroyd-B liquid shear-thin?
-6. A constant stress $\sigma_0$ is applied for $0 < t < t_1$ and then removed. Sketch $\gamma_s(t)$ for a Maxwell element and for a Kelvin–Voigt solid. Which one shows an instantaneous strain jump, and which one recovers completely?
-7. For a $0.10$ wt% PEO solution, Li et al. (2025) report $\lambda = 0.41$ ms, a plateau viscosity of $1.4$ mPa·s (against $0.9$ mPa·s for the solvent), $\rho = 993$ kg/m³ and $\gamma = 62$ mN/m, for films of thickness $1$ mm. Assuming an Oldroyd-B liquid with $\eta_s = 0.9$ mPa·s and $\mathcal{L} = 1$ mm, estimate $\eta_p$, $G$, $De$, $Ec$, $Oh_s$ and $Oh_p$. Then show that in uniaxial extension at rate $\dot\varepsilon$, $\mathcal{A}_{zz}$ grows exponentially when $\lambda\dot\varepsilon > 1/2$. Why might the polymers matter in a thinning bag even though $Ec \ll 1$?
+1. Impose constant step stress $\sigma_0$ ($t > 0$) on a Maxwell element ($\dot\varepsilon = \dot\sigma/G + \sigma/\eta$) and a Kelvin–Voigt element ($\sigma = G\varepsilon + \eta_s\dot\varepsilon$). Find $\varepsilon(t)$ for both and state how long-time creep separates liquid from solid.
+2. In a quiescent solvent ($\nabla\boldsymbol{u} = \boldsymbol{0}$), the deterministic dumbbell equation reduces to $d\boldsymbol{Q}/dt = -(2H/\zeta)\boldsymbol{Q}$. Differentiate $\boldsymbol{Q}\boldsymbol{Q}$ to verify the factor of two between the decay rates $2H/\zeta$ of $\boldsymbol{Q}$ and $4H/\zeta$ of $\boldsymbol{Q}\boldsymbol{Q}$ (giving $\lambda = \zeta/(4H)$), and find how $\lambda$ scales with $N$ at fixed $\zeta$ and $T$.
+3. Solve $\overset{\nabla}{\boldsymbol{\mathcal{A}}} = -(\boldsymbol{\mathcal{A}} - \boldsymbol{\mathcal{I}})/\lambda$ in steady simple shear $\boldsymbol{u} = (\dot\gamma y, 0, 0)$ to verify viscosity $\eta_s + \eta_p$ and $N_1 = \sigma_{xx} - \sigma_{yy} = 2\eta_p\lambda\dot\gamma^2$.
+4. For finite simple shear $x = X + \gamma_s Y$, $y = Y$, $z = Z$ in a neo-Hookean solid ($\lambda \to \infty$), compute $\boldsymbol{\mathcal{F}}$ and $\boldsymbol{\mathcal{B}} = \boldsymbol{\mathcal{F}}\cdot\boldsymbol{\mathcal{F}}^{T}$ to find $\sigma_{xy}$ and $N_1 = G\gamma_s^2$, and connect to the $Wi \gtrsim De \gg 1$ Pipkin corner.
+5. Solve steady Oldroyd-B in planar extension ($u_x = \dot\varepsilon x$, $u_y = -\dot\varepsilon y$, $u_z = 0$) for $\mathcal{A}_{xx}$, $\mathcal{A}_{yy}$, and $\eta_{E,\mathrm{planar}} = (\sigma_{xx} - \sigma_{yy})/\dot\varepsilon$; compare its low-$Wi$ Trouton ratio and divergence with uniaxial extension (§5.1).
+6. For fixed $G$ and $R_0$ at large $We$, use $El = G/(\rho V_0^2)$ to find the speed $V_0$ separating Hertz ($El \gg 1$) and Wagner ($El \ll 1$) impact, and compare the $V_0$-scaling of peak force on each side.
+7. In the constant-thickness approximation ($k = e^{-2y}$ from §7.4), keep $Y = \ln(R_\infty/R_0)$ finite rather than taking $Y \to \infty$. Show that $\int_0^Y e^{-2y}\,dy = (1 - e^{-2Y})/2$ and solve $Y = 2/Ec - (1 - e^{-2Y})/2$ numerically at $Ec = 1$ (verifying $Y \approx 1.52$, $R_\infty \approx 4.6 R_0$). Compare this with the $Y \to \infty$ value of the same approximation ($R_0 e^{3/2} \approx 4.5 R_0$), the leading-order estimate $R_0 e^{2} \approx 7.4 R_0$, and the static equilibrium $4.24 R_0$; identify whether the remaining gap to $4.24 R_0$ comes from truncating $Y$ or from the rim shape $k(y)$.
 
 ## References
 
-1. A. T. Oratis, J. W. M. Bush, H. A. Stone & J. C. Bird, A new wrinkle on liquid sheets: Turning the mechanism of viscous bubble collapse upside down, *Science* **369**, 685–688 (2020). [doi:10.1126/science.aba0593](https://doi.org/10.1126/science.aba0593)
-2. D. Vella, A. Ajdari, A. Vaziri & A. Boudaoud, Wrinkling of pressurized elastic shells, *Phys. Rev. Lett.* **107**, 174301 (2011). [doi:10.1103/PhysRevLett.107.174301](https://doi.org/10.1103/PhysRevLett.107.174301)
-3. M. Gomez, D. E. Moulton & D. Vella, The shallow shell approach to Pogorelov's problem and the breakdown of 'mirror buckling', *Proc. R. Soc. A* **472**, 20150732 (2016). [doi:10.1098/rspa.2015.0732](https://doi.org/10.1098/rspa.2015.0732)
-4. U. Sen, C. Datt, T. Segers, H. Wijshoff, J. H. Snoeijer, M. Versluis & D. Lohse, The retraction of jetted slender viscoelastic liquid filaments, *J. Fluid Mech.* **929**, A25 (2021). [doi:10.1017/jfm.2021.855](https://doi.org/10.1017/jfm.2021.855)
-5. B. E. Scharfman, A. H. Techet, J. W. M. Bush & L. Bourouiba, Visualization of sneeze ejecta: steps of fluid fragmentation leading to respiratory droplets, *Exp. Fluids* **57**, 24 (2016). [doi:10.1007/s00348-015-2078-4](https://doi.org/10.1007/s00348-015-2078-4)
-6. J. Wei & Y. Li, Airborne spread of infectious agents in the indoor environment, *Am. J. Infect. Control* **44**, S102–S108 (2016). [doi:10.1016/j.ajic.2016.06.003](https://doi.org/10.1016/j.ajic.2016.06.003)
-7. P. Kant, C. Pairetti, Y. Saade, S. Popinet, S. Zaleski & D. Lohse, Bag-mediated film atomization in a cough machine, *Phys. Rev. Fluids* **8**, 074802 (2023). [doi:10.1103/PhysRevFluids.8.074802](https://doi.org/10.1103/PhysRevFluids.8.074802)
-8. M. Li, Y. Saade, S. Zaleski, U. Sen, P. Kant & D. Lohse, Viscoelasticity reduces the droplet size in mucosalivary film fragmentation during intense respiratory events, *Phys. Rev. Fluids* **10**, 084001 (2025). [doi:10.1103/zlgy-36dk](https://doi.org/10.1103/zlgy-36dk); preprint [arXiv:2502.05105](https://arxiv.org/abs/2502.05105)
-9. J. G. Oldroyd, On the formulation of rheological equations of state, *Proc. R. Soc. Lond. A* **200**, 523–541 (1950). [doi:10.1098/rspa.1950.0035](https://doi.org/10.1098/rspa.1950.0035)
-10. J. H. Snoeijer, A. Pandey, M. A. Herrada & J. Eggers, The relationship between viscoelasticity and elasticity, *Proc. R. Soc. A* **476**, 20200419 (2020). [doi:10.1098/rspa.2020.0419](https://doi.org/10.1098/rspa.2020.0419)
-11. M. Reiner, The Deborah number, *Phys. Today* **17**, 62 (1964). [doi:10.1063/1.3051374](https://doi.org/10.1063/1.3051374)
-12. A. Morozov & S. E. Spagnolie, Introduction to complex fluids, in *Complex Fluids in Biological Systems*, ed. S. E. Spagnolie, pp. 3–52 (Springer, New York, 2015). [doi:10.1007/978-1-4939-2065-5_1](https://doi.org/10.1007/978-1-4939-2065-5_1) (further reading)
+1. R. B. Bird, C. F. Curtiss, R. C. Armstrong & O. Hassager, *Dynamics of Polymeric Liquids*, Vol. 2: *Kinetic Theory*, 2nd edn (Wiley, New York, 1987), ch. 13.
+2. R. G. Larson, *Constitutive Equations for Polymer Melts and Solutions* (Butterworths, 1988), ch. 2.
+3. J. G. Oldroyd, On the formulation of rheological equations of state, *Proc. R. Soc. Lond. A* **200**, 523–541 (1950). [doi:10.1098/rspa.1950.0035](https://doi.org/10.1098/rspa.1950.0035)
+4. M. Reiner, The Deborah number, *Phys. Today* **17**(1), 62 (1964). [doi:10.1063/1.3051374](https://doi.org/10.1063/1.3051374)
+5. V. M. Entov & E. J. Hinch, Effect of a spectrum of relaxation times on the capillary thinning of a filament of elastic liquid, *J. Non-Newtonian Fluid Mech.* **72**, 31–53 (1997). [doi:10.1016/S0377-0257(97)00022-0](https://doi.org/10.1016/S0377-0257(97)00022-0)
+6. J. H. Snoeijer, A. Pandey, M. A. Herrada & J. Eggers, The relationship between viscoelasticity and elasticity, *Proc. R. Soc. A* **476**, 20200419 (2020). [doi:10.1098/rspa.2020.0419](https://doi.org/10.1098/rspa.2020.0419)
+7. U. Sen, C. Datt, T. Segers, H. Wijshoff, J. H. Snoeijer, M. Versluis & D. Lohse, The retraction of jetted slender viscoelastic liquid filaments, *J. Fluid Mech.* **929**, A25 (2021). [doi:10.1017/jfm.2021.855](https://doi.org/10.1017/jfm.2021.855)
+8. B. Zhang, V. Sanjay, S. Shi, Y. Zhao, C. Lv, X.-Q. Feng & D. Lohse, Impact forces of water drops falling on superhydrophobic surfaces, *Phys. Rev. Lett.* **129**, 104501 (2022). [doi:10.1103/PhysRevLett.129.104501](https://doi.org/10.1103/PhysRevLett.129.104501)
+9. V. Sanjay, B. Zhang, C. Lv & D. Lohse, The role of viscosity on drop impact forces on non-wetting surfaces, *J. Fluid Mech.* **1004**, A6 (2025). [doi:10.1017/jfm.2024.982](https://doi.org/10.1017/jfm.2024.982)
+10. S. Jana, J. Kolinski, D. Lohse & V. Sanjay, Impacting spheres: from liquid drops to elastic beads, *Soft Matter* **22**, 2226–2236 (2026). [doi:10.1039/D5SM01078K](https://doi.org/10.1039/D5SM01078K)
+11. G. I. Taylor, The dynamics of thin sheets of fluid. III. Disintegration of fluid sheets, *Proc. R. Soc. A* **253**, 313–321 (1959). [doi:10.1098/rspa.1959.0196](https://doi.org/10.1098/rspa.1959.0196)
+12. F. E. C. Culick, Comments on a ruptured soap film, *J. Appl. Phys.* **31**, 1128–1129 (1960). [doi:10.1063/1.1735765](https://doi.org/10.1063/1.1735765)
+13. P.-G. de Gennes, Mechanics of soft interfaces, *Faraday Discuss.* **104**, 1–8 (1996). [doi:10.1039/FD9960400001](https://doi.org/10.1039/FD9960400001)
+14. V. Sanjay, U. Sen, P. Kant & D. Lohse, Taylor–Culick retractions and the influence of the surroundings, *J. Fluid Mech.* **948**, A14 (2022). [doi:10.1017/jfm.2022.671](https://doi.org/10.1017/jfm.2022.671)
+15. D. Tammaro, R. Pasquino, M. M. Villone, G. D'Avino, V. Ferraro, E. Di Maio, A. Langella, N. Grizzuti & P. L. Maffettone, Elasticity in bubble rupture, *Langmuir* **34**, 5646–5654 (2018). [doi:10.1021/acs.langmuir.8b00520](https://doi.org/10.1021/acs.langmuir.8b00520)
+16. V. Bertin, V. Sanjay, C. Datt, A. T. Oratis & J. H. Snoeijer, in preparation.
 
 ---
 

@@ -19,8 +19,8 @@ Wednesdays, 10:00–11:00, PH132.
 - **4 November:** the rest of Lecture 2.
 - **11 November:** [[Lecture-Notes/Intro-Soft-Matter/Instabilities|instabilities]] (Lecture 3).
 - **18 November:** [[Lecture-Notes/Intro-Soft-Matter/Singularities|singularities]] and the assessment brief (Lecture 4).
-- **25 November:** [[Lecture-Notes/Intro-Soft-Matter/Viscoelasticity|viscoelasticity]].
-- **2 December:** [[Lecture-Notes/Intro-Soft-Matter/Sheets-Bubbles-Drops|sheets, bubbles and drops]].
+- **25 November:** Rheology ([[Lecture-Notes/Intro-Soft-Matter/Viscoelasticity|viscoelasticity]], Lecture 5).
+- **2 December:** Some examples of viscoelasticity ([[Lecture-Notes/Intro-Soft-Matter/Viscoelasticity|viscoelasticity]] and [[Lecture-Notes/Intro-Soft-Matter/Sheets-Bubbles-Drops|sheets, bubbles and drops]], Lecture 6).
 - **9 December:** project presentations and defence.
 
 ## Slides
