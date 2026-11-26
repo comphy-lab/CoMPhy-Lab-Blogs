@@ -168,7 +168,7 @@ With no interparticle forces, $\boldsymbol{C} = \boldsymbol{0}$.
 
 ### Example B (dense liquid).
 
-Configurational stresses typically dominate the shear stress. In a homogeneous bulk region of volume $V$, the full-volume average gives the unweighted bond sum
+Configurational stresses typically dominate the shear stress. For a homogeneous state, averaging over a volume $V$ that is the whole system or a periodic cell (with each pair interacting through a single image of $m$, and $\boldsymbol{r}_{nm} = \boldsymbol{r}_n - \boldsymbol{r}_m$ measured to that image) gives the unweighted bond sum
 $$\boldsymbol{\sigma}_{\text{config}} = -\frac{1}{2V}\sum_{n\neq m}\langle\boldsymbol{f}_{nm}\otimes\boldsymbol{r}_{nm}\rangle,$$
 with the force in the momentum index and the bond in the flux index. At equilibrium, $-\tfrac{1}{3}\operatorname{tr}\boldsymbol{\sigma}_{\text{config}}$ is the interaction (virial) term of the pressure in Exercise 5; in steady shear, its off-diagonal part is the configurational contribution to the shear stress.
 

@@ -99,7 +99,7 @@ Ising proved in 1925 that the 1D nearest-neighbour chain has no phase transition
 | Critical temperature $k_B T_c / J$ | $4$ | $2/\ln(1 + \sqrt{2}) \approx 2.269$ |
 | Magnetization exponent $\beta$ in $m^* \propto (T_c - T)^\beta$ | $1/2$ | $1/8$ |
 
-Weiss theory predicts the transition qualitatively but misses both $T_c$ and $\beta$.[^chaikin1995][^yeomans1992] Replacing the fluctuating local field by its mean suppresses both the spread from having only four neighbours and their correlations. Keeping the field distribution of four independent neighbours of mean $m$ already lowers $k_B T_c/J$ from Weiss's $4$ to about $3.09$, the root of $\tanh(2J/k_B T_c) + \frac{1}{2}\tanh(4J/k_B T_c) = 1$, but still gives $\beta = 1/2$. The exact $2.269$ and $\beta = 1/8$ come only from the full square-lattice solution, in which correlations extend over all scales at $T_c$.
+Weiss theory predicts the transition qualitatively but misses both $T_c$ and $\beta$.[^chaikin1995][^yeomans1992] Replacing the fluctuating local field by its mean suppresses both the spread from having only four neighbours and their correlations. Keeping the field distribution of four independent neighbours of mean $m$ already lowers $k_B T_c/J$ from Weiss's $4$ to about $3.09$, the root of $\tanh(2J/k_B T_c) + \frac{1}{2}\tanh(4J/k_B T_c) = 1$, but still gives $\beta = 1/2$. The exact $k_B T_c/J \approx 2.269$ and $\beta = 1/8$ come from the full square-lattice solution, in which correlations extend over all scales at $T_c$.
 
 ---
 

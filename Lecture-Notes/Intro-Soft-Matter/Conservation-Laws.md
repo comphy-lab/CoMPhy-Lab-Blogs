@@ -216,9 +216,9 @@ $$\langle \rho \rangle = \rho, \quad \langle \boldsymbol{g} \rangle = \rho \bold
 
 where the angle brackets denote ensemble (or volume) averaging.
 
-Key observation: write each particle velocity as $\boldsymbol{v}_i = \boldsymbol{v} + \boldsymbol{c}_i$, the local mean velocity plus a random (thermal) velocity $\boldsymbol{c}_i$.
-1. In the momentum density the thermal velocities average to zero, so $\langle \boldsymbol{g} \rangle = \rho \boldsymbol{v}$ is the bulk momentum alone.
-2. In the momentum flux they do not cancel: $\boldsymbol{K}$ is quadratic in the velocities, so the thermal motion leaves a contribution $\rho\langle \boldsymbol{c}\boldsymbol{c} \rangle$.
+Key observation: write each particle velocity as $\boldsymbol{v}_i = \boldsymbol{v} + \boldsymbol{c}_i$, where $\boldsymbol{c}_i$ is the fluctuation about the local mass-weighted mean velocity $\boldsymbol{v}$ (thermal motion plus any flow variation the averaging does not resolve).
+1. In the momentum density the fluctuations have zero mass-weighted mean, so $\langle \boldsymbol{g} \rangle = \rho \boldsymbol{v}$ is the bulk momentum alone.
+2. In the momentum flux they do not cancel: $\boldsymbol{K}$ is quadratic in the velocities, so the fluctuations leave a contribution $\rho\langle \boldsymbol{c}\boldsymbol{c} \rangle$, where this average is mass-weighted like $\boldsymbol{v}$.
 
 ---
 
@@ -231,8 +231,8 @@ $$\boxed{\overline{\boldsymbol{\Pi}} = \rho \boldsymbol{v} \boldsymbol{v} - \bol
 where $\boldsymbol{\sigma}$ is the Cauchy stress tensor:
 
 Breaking it down:
-- $\overline{\boldsymbol{K}} \equiv \langle \boldsymbol{K} \rangle = \rho \boldsymbol{v} \boldsymbol{v} + \rho\langle \boldsymbol{c}\boldsymbol{c} \rangle$: bulk convection plus the kinetic part of the stress, with $\boldsymbol{c} = \boldsymbol{v}_i - \boldsymbol{v}$ the thermal velocity
-- $\overline{\boldsymbol{C}} \equiv \langle \boldsymbol{C} \rangle$: the configurational (virial) part, from pair forces (the atomic note writes $\langle \boldsymbol{C} \rangle = -\boldsymbol{\sigma}_{\text{config}}$)
+- $\overline{\boldsymbol{K}} \equiv \langle \boldsymbol{K} \rangle = \rho \boldsymbol{v} \boldsymbol{v} + \rho\langle \boldsymbol{c}\boldsymbol{c} \rangle$: bulk convection plus the kinetic part of the stress, with $\boldsymbol{c} = \boldsymbol{v}_i - \boldsymbol{v}$ the velocity fluctuation about the local mean
+- $\overline{\boldsymbol{C}} \equiv \langle \boldsymbol{C} \rangle$: the configurational (virial) part, from pair forces (the atomic note writes $\overline{\boldsymbol{C}} = -\boldsymbol{\sigma}_{\text{config}}$)
 - So $\boldsymbol{\sigma} = -\rho\langle \boldsymbol{c}\boldsymbol{c} \rangle - \overline{\boldsymbol{C}}$. For an ideal gas of particles of mass $m$ at rest, $\overline{\boldsymbol{C}} = 0$ and $\langle \boldsymbol{c}\boldsymbol{c} \rangle = (k_B T/m)\,\boldsymbol{I}$, so $\boldsymbol{\sigma} = -p\boldsymbol{I}$ with $p = \rho k_B T/m$.
 
 

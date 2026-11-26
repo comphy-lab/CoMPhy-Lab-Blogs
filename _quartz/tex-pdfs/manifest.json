@@ -1381,7 +1381,7 @@
         "missingPaths": ["Lecture-Notes/Intro-Soft-Matter/0-README.md"]
       },
       "inputs": {
-        "Lecture-Notes/Intro-Soft-Matter/Conservation-Laws.md": "10782d637fb298678e26a857f7b9e95f93a7b92625f32111668428283a21663d",
+        "Lecture-Notes/Intro-Soft-Matter/Conservation-Laws.md": "0371591e6850901bfa6f8652e0e584b294f9bc95c1525e2a144d9946e270ed37",
         "Lecture-Notes/Intro-Soft-Matter/index.md": "7f4420e9cda5304f764ab0784b090eac4278a184ed559d02d5c575a27bb441dc",
         "_Media/2-Conservation-Laws-1761807318276.png": "ad5e53df63737b05baf393ef984edd5b923816ba57e01db2272c02d6447b99e8",
         "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
@@ -1399,8 +1399,8 @@
         "@link-candidates": "81c7b73eeae506ec0a05fc7fbcc5870331e931ebf04592628820f3eef6cf4e08",
         "@missing-paths": "0c18ba8d753d7b0067ec50736abd8527751969757517b54e1d419ff41c3488ad"
       },
-      "sha256": "3c933c31230928ef09562e6bc8e8cb1c8ef6bd717e0ea78ac7a23c9aa5e39043",
-      "pdfSha256": "bd3ff30fe9c660e4b47ce1d077a4f1f6b148fda7e28bfcbb2204ec8afc66e712",
+      "sha256": "67904ddf91295d404a0ca72443e03d13edf2728585019153a66832c689f87c9a",
+      "pdfSha256": "c924b43f69abe20b201b701c0b32646698594e3084699eb5accd4df78918a35e",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
