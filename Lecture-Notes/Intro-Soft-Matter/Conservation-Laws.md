@@ -17,7 +17,7 @@ publish: true
 By the end of this lecture, you should understand:
 
 > 1. Newton's second law for one particle: $\boldsymbol{F} = m\boldsymbol{a}$, and how it extends to many particles
-> 2. Microscopic fields from particles: how to convert a sum of point particles into continuous density fields using Dirac deltas
+> 2. Microscopic fields from particles: how to convert a sum of point particles into density fields using Dirac deltas
 > 3. The moving delta identity: $\partial_t \delta(\boldsymbol{r} - \boldsymbol{r}_i(t)) = -\boldsymbol{v}_i \cdot \nabla \delta_i$ (see [[Moving-Delta-identity|detailed note]])
 > 4. Microscopic continuity equation: how mass conservation emerges at the particle level
 > 5. Pairwise forces → divergence of stress: how pair forces become a flux tensor (see [[Virial-identity|detailed note]])
@@ -53,7 +53,7 @@ $$\boxed{m_i \dot{\boldsymbol{v}}_i = \boldsymbol{f}_i^{\rm ext} + \sum_{j \ne i
 ### Big idea
 
 > [!info] 
-> We want to describe the fluid at *every point in space*, not just at discrete particle locations. To do that, we represent each particle as a moving point mass — a Dirac delta spike at $\boldsymbol{r}_i(t)$. Then we can define continuous fields: density, momentum, stress, etc.
+> We want to describe the fluid at *every point in space*, not just at discrete particle locations. To do that, we represent each particle as a moving point mass — a Dirac delta spike at $\boldsymbol{r}_i(t)$. Then density, momentum and their fluxes become fields defined over all of space, as distributions.
 
 ---
 
@@ -394,7 +394,7 @@ After this lecture, students should be able to:
 2. Construct microscopic fields ($\rho$, $\boldsymbol{g}$) using Dirac deltas and explain why distributions are needed.
 3. Explain the moving delta identity and use it to derive the microscopic continuity equation.
 4. Explain how pair forces (Newton's third law) turn into a divergence of the virial tensor.
-5. Derive the microscopic momentum balance and identify the kinetic and configurational components of stress.
+5. Derive the microscopic momentum balance and identify the kinetic and configurational components of the momentum flux.
 6. Describe ensemble averaging and explain why it's necessary to transition from spiky microscopic fields to smooth macroscopic fields.
 7. Derive the Cauchy momentum equation from the microscopic balance and identify the role of the Cauchy stress tensor.
 8. Explain the physical meaning of the stress tensor and give examples (pressure, viscous stress).
