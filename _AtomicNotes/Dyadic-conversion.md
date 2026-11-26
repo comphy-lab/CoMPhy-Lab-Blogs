@@ -97,8 +97,8 @@ $$\boldsymbol{K}_{\alpha\beta} = \sum_i m_i \, v_{i\alpha} v_{i\beta} \, \delta_
 
 Physical meaning: This tensor describes the *transport of momentum* due to particle motion.
 
-- Diagonal component $K_{xx}$ = flux of $x$-momentum in the $x$-direction (normal stress)
-- Off-diagonal component $K_{xy}$ = flux of $x$-momentum in the $y$-direction (shear)
+- Diagonal component $K_{xx}$ = flux of $x$-momentum in the $x$-direction (normal momentum flux)
+- Off-diagonal component $K_{xy}$ = flux of $x$-momentum in the $y$-direction (shear momentum flux)
 
 When particles move with velocity $\boldsymbol{v}$, they carry momentum $m\boldsymbol{v}$ with them. If the velocity varies from point to point (e.g., shear flow), then momentum fluxes arise—and those are captured by $\boldsymbol{K}$.
 
@@ -133,7 +133,7 @@ which is a vector (summing over the second index).
 | $\nabla_{\boldsymbol{r}}$ | Operator | Gradient w.r.t. field coordinate $\boldsymbol{r}$ |
 | $\boldsymbol{v}_i \boldsymbol{v}_i$ | Dyad (tensor) | Outer product; components $(v_{i\alpha} v_{i\beta})$ |
 | $\boldsymbol{K} = \sum_i m_i \boldsymbol{v}_i \boldsymbol{v}_i \delta_i$ | Tensor field | Kinetic momentum-flux density |
-| $\nabla \cdot \boldsymbol{K}$ | Vector field | Momentum transport due to bulk and thermal motion |
+| $\nabla \cdot \boldsymbol{K}$ | Vector field | Momentum transport by particle motion |
 
 ---
 
@@ -142,6 +142,6 @@ which is a vector (summing over the second index).
 > [!tldr] Summary
 > The key algebraic move is recognizing that $\boldsymbol{v}_i (\boldsymbol{v}_i \cdot \nabla \delta_i)$ can be rewritten as $\nabla \cdot (\boldsymbol{v}_i \boldsymbol{v}_i \delta_i)$ because $\boldsymbol{v}_i$ is constant w.r.t. the field gradient $\nabla_{\boldsymbol{r}}$.
 > 
-> This gives the microscopic momentum-flux tensor $\boldsymbol{K}$, which—when averaged—contains both thermal and bulk contributions to stress.
+> This gives the microscopic momentum-flux tensor $\boldsymbol{K}$, which—when averaged—splits into bulk convection $\rho\boldsymbol{v}\boldsymbol{v}$ and $\rho\langle\boldsymbol{c}\boldsymbol{c}\rangle$, which enters the stress as $-\rho\langle\boldsymbol{c}\boldsymbol{c}\rangle$. Here $\boldsymbol{v}$ is the local mass-weighted mean velocity, $\boldsymbol{c} = \boldsymbol{v}_i - \boldsymbol{v}$ is the velocity fluctuation about it, and $\langle\cdot\rangle$ is the matching mass-weighted average (see [[Lecture-Notes/Intro-Soft-Matter/Conservation-Laws|Conservation Laws]]).
 
 ---

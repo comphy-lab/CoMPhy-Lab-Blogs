@@ -197,7 +197,7 @@ So:
 $$\boxed{\partial_t \boldsymbol{g} + \nabla \cdot \boldsymbol{\Pi} = \rho \boldsymbol{b}} \quad \text{(Microscopic momentum balance)}$$
 
 > [!important]
-> This is exact: no averaging, no approximation. Every term comes from Newton's second law and the geometry of deltas. The tensor $\boldsymbol{\Pi}$ contains two pieces: kinetic ($\boldsymbol{K}$, from bulk motion and random thermal motion) and configurational ($\boldsymbol{C}$, from pair forces). Together, they form the microscopic stress.
+> This is exact: no averaging, no approximation. Every term comes from Newton's second law and the geometry of deltas. The tensor $\boldsymbol{\Pi}$ contains two pieces: kinetic ($\boldsymbol{K}$, momentum flux due to particle motion) and configurational ($\boldsymbol{C}$, from pair forces). Together, they form the microscopic momentum flux.
 
 ---
 
@@ -231,13 +231,13 @@ $$\boxed{\overline{\boldsymbol{\Pi}} = \rho \boldsymbol{v} \boldsymbol{v} - \bol
 where $\boldsymbol{\sigma}$ is the Cauchy stress tensor:
 
 Breaking it down:
-- $\overline{\boldsymbol{K}} \equiv \langle \boldsymbol{K} \rangle = \rho \boldsymbol{v} \boldsymbol{v} + \rho\langle \boldsymbol{c}\boldsymbol{c} \rangle$: bulk convection plus the kinetic part of the stress, with $\boldsymbol{c} = \boldsymbol{v}_i - \boldsymbol{v}$ the velocity fluctuation about the local mean
+- $\overline{\boldsymbol{K}} \equiv \langle \boldsymbol{K} \rangle = \rho \boldsymbol{v} \boldsymbol{v} + \rho\langle \boldsymbol{c}\boldsymbol{c} \rangle$: bulk convection plus the fluctuation momentum flux $\rho\langle \boldsymbol{c}\boldsymbol{c} \rangle$ (minus the kinetic part of the stress), with $\boldsymbol{c} = \boldsymbol{v}_i - \boldsymbol{v}$ the velocity fluctuation about the local mean
 - $\overline{\boldsymbol{C}} \equiv \langle \boldsymbol{C} \rangle$: the configurational (virial) part, from pair forces (the atomic note writes $\overline{\boldsymbol{C}} = -\boldsymbol{\sigma}_{\text{config}}$)
 - So $\boldsymbol{\sigma} = -\rho\langle \boldsymbol{c}\boldsymbol{c} \rangle - \overline{\boldsymbol{C}}$. For an ideal gas of particles of mass $m$ at rest, $\overline{\boldsymbol{C}} = 0$ and $\langle \boldsymbol{c}\boldsymbol{c} \rangle = (k_B T/m)\,\boldsymbol{I}$, so $\boldsymbol{\sigma} = -p\boldsymbol{I}$ with $p = \rho k_B T/m$.
 
 
 > [!important]
-> Minus the stress tensor, $-\boldsymbol{\sigma}$, is the non-convective momentum flux (the part of $\overline{\boldsymbol{\Pi}}$ not carried by bulk convection). Thus $\boldsymbol{\sigma}$ captures how internal forces and thermal motion exert tractions across fluid elements: pressure alone for a gas at rest, plus viscous or elastic stresses when the fluid deforms.
+> Minus the stress tensor, $-\boldsymbol{\sigma}$, is the non-convective momentum flux (the part of $\overline{\boldsymbol{\Pi}}$ not carried by bulk convection). Thus $\boldsymbol{\sigma}$ captures how interparticle forces and velocity fluctuations transmit tractions across fluid elements: pressure alone for a gas at rest, plus viscous or elastic stresses when the fluid deforms.
 
 ---
 
@@ -279,7 +279,7 @@ where $\frac{D}{Dt} = \frac{\partial}{\partial t} + \boldsymbol{v} \cdot \nabla$
 ```
 
 
-> Imagine a small surface across the interface. Momentum flows across it in two ways: (1) bulk convection ($\rho \boldsymbol{v} \boldsymbol{v}$ term), and (2) microscopic collisions creating a stress ($-\boldsymbol{\sigma}$ term). The outward momentum flux through the surface is $(\rho \boldsymbol{v} \boldsymbol{v} - \boldsymbol{\sigma}) \cdot \boldsymbol{n}$. The traction, the force per unit area that the material outside exerts on the material inside, is $\boldsymbol{\sigma} \cdot \boldsymbol{n}$: opposite to the non-convective part of the outward flux. Taking $\boldsymbol{n}$ pointing up, into the fast fluid, the fast fluid drags the slow fluid forward, so the tangential traction on the slow fluid, $\sigma_{xy}$, is positive.
+> Imagine a small surface across the interface. Momentum flows across it in two ways: (1) bulk convection ($\rho \boldsymbol{v} \boldsymbol{v}$ term), and (2) velocity fluctuations and interparticle forces, which together produce the non-convective momentum flux ($-\boldsymbol{\sigma}$ term). The outward momentum flux through the surface is $(\rho \boldsymbol{v} \boldsymbol{v} - \boldsymbol{\sigma}) \cdot \boldsymbol{n}$. The traction, the force per unit area that the material outside exerts on the material inside, is $\boldsymbol{\sigma} \cdot \boldsymbol{n}$: opposite to the non-convective part of the outward flux. Taking $\boldsymbol{n}$ pointing up, into the fast fluid, the fast fluid drags the slow fluid forward, so the tangential traction on the slow fluid, $\sigma_{xy}$, is positive.
 
 ---
 

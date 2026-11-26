@@ -143,7 +143,7 @@ $$f_\alpha^{(\text{int})} = -\partial_\beta C_{\alpha\beta}$$
 where
 $$C_{\alpha\beta} = \frac{1}{2} \sum_{i \ne j} f_{ij,\alpha} \, r_{ij,\beta} \int_0^1 \delta(\boldsymbol{r} - \boldsymbol{r}_j - s\boldsymbol{r}_{ij}) \, ds$$
 
-This is the configurational part of the stress tensor. Together with the kinetic part ($\boldsymbol{K}$ from [[Dyadic-conversion]]), it forms the total microscopic stress $\boldsymbol{\Pi} = \boldsymbol{K} + \boldsymbol{C}$.
+This is the configurational (virial) momentum-flux tensor. Together with the kinetic part ($\boldsymbol{K}$ from [[Dyadic-conversion]]), it forms the total microscopic momentum flux $\boldsymbol{\Pi} = \boldsymbol{K} + \boldsymbol{C}$.
 
 ---
 

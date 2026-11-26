@@ -1381,7 +1381,7 @@
         "missingPaths": ["Lecture-Notes/Intro-Soft-Matter/0-README.md"]
       },
       "inputs": {
-        "Lecture-Notes/Intro-Soft-Matter/Conservation-Laws.md": "0371591e6850901bfa6f8652e0e584b294f9bc95c1525e2a144d9946e270ed37",
+        "Lecture-Notes/Intro-Soft-Matter/Conservation-Laws.md": "cb946ad3741f481f588a303fd2e873b77ba49cbb2b807e64fb1e9b6995a5ee05",
         "Lecture-Notes/Intro-Soft-Matter/index.md": "7f4420e9cda5304f764ab0784b090eac4278a184ed559d02d5c575a27bb441dc",
         "_Media/2-Conservation-Laws-1761807318276.png": "ad5e53df63737b05baf393ef984edd5b923816ba57e01db2272c02d6447b99e8",
         "_quartz/package-lock.json": "a8e0e9f7adb264e1e1036d3a4f3bcf5242e4a1c93b5fe986c454967d1b86b807",
@@ -1399,8 +1399,8 @@
         "@link-candidates": "81c7b73eeae506ec0a05fc7fbcc5870331e931ebf04592628820f3eef6cf4e08",
         "@missing-paths": "0c18ba8d753d7b0067ec50736abd8527751969757517b54e1d419ff41c3488ad"
       },
-      "sha256": "67904ddf91295d404a0ca72443e03d13edf2728585019153a66832c689f87c9a",
-      "pdfSha256": "c924b43f69abe20b201b701c0b32646698594e3084699eb5accd4df78918a35e",
+      "sha256": "5ff4c4b633bd5794962f991d6a2506dcf89359dbe10d19414af927a13a262460",
+      "pdfSha256": "951a9c09ffaa87679cf04b3b571098e672a6363b13b7f6c396efc233da33ef89",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",
@@ -1824,7 +1824,7 @@
         "missingPaths": ["Lecture-Notes/Intro-Soft-Matter/0-README.md"]
       },
       "inputs": {
-        "Lecture-Notes/Intro-Soft-Matter/Singularities.md": "2c87c893cceded387a1244bf4937bcac1c00256ed7e1ec3b536579909c405125",
+        "Lecture-Notes/Intro-Soft-Matter/Singularities.md": "9e73c8976c9f181985b6bb4848c1910a7e5b1c32b7aa7e3010497357585feedc",
         "Lecture-Notes/Intro-Soft-Matter/index.md": "7f4420e9cda5304f764ab0784b090eac4278a184ed559d02d5c575a27bb441dc",
         "_Media/4-Soft-Matter-Singularities-1762960009091.png": "ca8912c83e5145aaa6182d08e6119ead058a43a6a8a3b53ee5f6725dd3608d4b",
         "_Media/4-Soft-Matter-Singularities-1762960022513.png": "e57e7aa42e610a7399bc5c3566abf090f93e9bca39cbb27f621f50460c2c6875",
@@ -1864,8 +1864,8 @@
         "@link-candidates": "4e915852a2fdfde777330397de97d6da7b62c71b9f1d2bc39bf2e4bf7accf4b7",
         "@missing-paths": "0c18ba8d753d7b0067ec50736abd8527751969757517b54e1d419ff41c3488ad"
       },
-      "sha256": "04df31127052a5a682884e4b295c468d3988295e93f932f83aff5b3f4e39a354",
-      "pdfSha256": "b8c1299b769822d4a7948e625953621701eaff1762e2105d515b99d55c694668",
+      "sha256": "35bdf00e7d1b77500641006c6a60c00d895f65dccf0fbe10701f69ad871d85e6",
+      "pdfSha256": "3ff3e017bc500e344b71df5415823a4404fc85554946ec32a9da1ed29c4fe083",
       "toolchain": {
         "pandoc": "pandoc 3.10",
         "latexmk": "Latexmk, John Collins, 9 March 2026. Version 4.88",

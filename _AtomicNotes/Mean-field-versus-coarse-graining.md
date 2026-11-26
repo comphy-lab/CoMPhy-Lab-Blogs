@@ -68,7 +68,7 @@ $$\frac{1}{2}\tanh(2K) = \frac{\tanh K}{1 + \tanh^2 K} < \tanh K.$$
 
 At $k_B T = 2J$ ($K = 1/2$), the average of $\tanh$ is $\frac{1}{2}\tanh(1) \approx 0.381$, whereas $\tanh(0.5) \approx 0.462$. In this $2J/0$ distribution, every local field is non-negative. Because $\tanh$ is concave for non-negative arguments, replacing that fluctuating field by its mean overestimates alignment. Sites at a local tie ($h_i = 0$) add no bias, while sites with $h_i = 2J$ already saturate toward $+1$ and cannot compensate.
 
-When local fields take both signs, the comparison can go either way. Replacing the spread of local fields by its mean ignores how the neighbours fluctuate. Four neighbours are too few for their average to be sharp, and near $T_c$ they fluctuate together in patches (see [[Lecture-Notes/Intro-Soft-Matter/Singularities|Singularities]]). Ignoring those fluctuations is why Weiss theory overestimates $T_c$ on the square lattice ($k_B T_c = 4J$ against the exact $2.269J$; see [[Ising-model-primer]]).
+When local fields take both signs, the comparison can go either way. Replacing the spread of local fields by its mean ignores how the neighbours fluctuate. Four neighbours are too few for their average to be sharp, and near $T_c$ they fluctuate together in patches (see [[Lecture-Notes/Intro-Soft-Matter/Singularities|Singularities]]). Ignoring those fluctuations is why Weiss theory overestimates $T_c$ on the square lattice ($k_B T_c^{\text{MF}} = 4J$ against the exact $k_B T_c \approx 2.269J$; see [[Ising-model-primer]]).
 
 ---
 

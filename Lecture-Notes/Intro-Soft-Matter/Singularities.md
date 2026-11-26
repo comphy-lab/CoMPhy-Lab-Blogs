@@ -236,7 +236,7 @@ Solve it graphically at $H = 0$, with $k_BT_c = qJ$. Above $T_c$ the curve $\tan
 
 $$m \approx \sqrt3\left(1 - \frac{T}{T_c}\right)^{1/2},$$
 
-the pitchfork, with exponent $\beta = 1/2$. Mean field gets the picture right and the numbers wrong: on the square lattice it predicts $k_BT_c = 4J$ against the exact $2.27J$, and $\beta = 1/2$ against the exact $1/8$. It ignores the fluctuations visible in the pictures; they lower $T_c$ and change the exponents.
+the pitchfork, with exponent $\beta = 1/2$. Mean field gets the picture right and the numbers wrong: on the square lattice it predicts $k_BT_c = 4J$ against the exact $2J/\ln(1+\sqrt{2}) \approx 2.27J$, and $\beta = 1/2$ against the exact $1/8$. It ignores the fluctuations visible in the pictures; they lower $T_c$ and change the exponents.
 
 [[Ising-model-primer|A Primer on the Ising Model]] collects the model's basics in one place, and [[Mean-field-versus-coarse-graining|Mean Field Versus Coarse-Graining]] explains why mean field is a statistical approximation, not a change of resolution.
 
